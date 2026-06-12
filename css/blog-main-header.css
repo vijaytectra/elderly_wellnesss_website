@@ -1,0 +1,72 @@
+/* Main site header on WordPress blog pages */
+body.blog > header:not(.site-header),
+body.single-post > header:not(.site-header) {
+  position: relative;
+  z-index: 200;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+body.blog > header:not(.site-header) .container,
+body.single-post > header:not(.site-header) .container {
+  max-width: 1170px;
+}
+
+body.blog .site.grid-container,
+body.single-post .site.grid-container {
+  padding-top: 24px;
+}
+
+/* Main site footer on blog pages */
+.site-main-footer {
+  width: 100%;
+}
+
+/* Blog listing — hide comment links in post footer */
+body.blog article footer.entry-meta .comments-link {
+  display: none !important;
+}
+
+/* Reset main-site footer styles from WordPress entry-meta footers */
+article footer.entry-meta {
+  background-color: #f7f8f9;
+  background-image: none;
+  padding: 20px 24px;
+  margin-top: 2em;
+  border-radius: 12px;
+  color: #222222;
+}
+
+article footer.entry-meta a {
+  color: #2786a5;
+  text-decoration: none;
+}
+
+article footer.entry-meta a:hover,
+article footer.entry-meta a:focus {
+  color: #1a6578;
+  text-decoration: underline;
+}
+
+article footer.entry-meta .gp-icon {
+  color: #2786a5;
+  opacity: 1;
+}
+
+article footer.entry-meta .gp-icon svg {
+  fill: currentColor;
+}
+
+article footer.entry-meta .nav-previous,
+article footer.entry-meta .nav-next,
+article footer.entry-meta .cat-links,
+article footer.entry-meta .tags-links {
+  display: block;
+  margin-bottom: 10px;
+  color: #222222;
+}
+
+article footer.entry-meta .nav-previous:last-child,
+article footer.entry-meta .nav-next:last-child {
+  margin-bottom: 0;
+}

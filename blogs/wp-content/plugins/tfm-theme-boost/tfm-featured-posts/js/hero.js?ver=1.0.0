@@ -1,0 +1,357 @@
+var _____WB$wombat$assign$function_____=function(name){return (globalThis._wb_wombat && globalThis._wb_wombat.local_init && globalThis._wb_wombat.local_init(name))||globalThis[name];};if(!globalThis.__WB_pmw){globalThis.__WB_pmw=function(obj){this.__WB_source=obj;return this;}}{
+let window = _____WB$wombat$assign$function_____("window");
+let self = _____WB$wombat$assign$function_____("self");
+let document = _____WB$wombat$assign$function_____("document");
+let location = _____WB$wombat$assign$function_____("location");
+let top = _____WB$wombat$assign$function_____("top");
+let parent = _____WB$wombat$assign$function_____("parent");
+let frames = _____WB$wombat$assign$function_____("frames");
+let opener = _____WB$wombat$assign$function_____("opener");
+/*---------------------------------------*/
+/* Slick tfm-featured-posts Inline JS (Fallback)       */
+/*---------------------------------------*/
+
+jQuery(document).ready(function($) {
+
+	"use strict";
+
+	var slidestoshow = $(".tfm-featured-posts .slick").attr("data-slidestoshow");
+	var maxslides = $(".tfm-featured-posts slick.slick").attr("data-maxslides");
+	var slidenum = $(".tfm-featured-posts .slick").attr("data-slides");
+	var slickdots = $(".tfm-featured-posts .slick").attr("data-initial-status");
+	var centermode = $(".tfm-featured-posts .slick").attr("data-centermode");
+	var autospeed = $(".tfm-featured-posts .slick").attr("data-autoplay-speed");
+	var speed = $(".tfm-featured-posts .slick").attr("data-speed");
+	var fullwidth = $(".tfm-featured-posts .slick").attr("data-fullwidth");
+	var aspectratio = $(".tfm-featured-posts .slick").attr("data-aspectratio");
+	var margins = $(".tfm-featured-posts").attr("data-margins");
+	var style = $(".tfm-featured-posts").attr("data-poststyle");
+
+	// Calculate slidestoshow breakpoints
+
+	var slidestoshow_seven = 7;
+	if ( slidestoshow_seven > slidestoshow ) {
+		slidestoshow_seven = slidestoshow;
+	}
+	var slidestoshow_six = 6;
+	if ( slidestoshow_six > slidestoshow ) {
+		slidestoshow_six = slidestoshow;
+	}
+	var slidestoshow_five = 5;
+	if ( slidestoshow_five > slidestoshow ) {
+		slidestoshow_five = slidestoshow;
+	}
+	var slidestoshow_four = 4;
+	if ( slidestoshow_four > slidestoshow ) {
+		slidestoshow_four = slidestoshow;
+	}
+	var slidestoshow_three = 3;
+	if ( slidestoshow_three > slidestoshow ) {
+		slidestoshow_three = slidestoshow;
+	}
+	var slidestoshow_two = 2;
+	if ( slidestoshow_two > slidestoshow ) {
+		slidestoshow_two = slidestoshow;
+	}
+	var slidestoshow_769 = 2;
+	var slidestoshow_list = slidestoshow_three;
+	// list layout breakpoint
+	if ($(".tfm-featured-posts .post-grid").hasClass("list")) {
+		slidestoshow_list = 1;
+		slidestoshow_two = 1;
+		slidestoshow_four = 2;
+		slidestoshow_three = 2;
+	}
+
+	// If we have center mode reduce slides to show by one
+	if ( centermode == "true") {
+		slidestoshow = slidestoshow - 1;
+		slidestoshow_six = slidestoshow_six - 1;
+		slidestoshow_five = slidestoshow_five - 1;
+		slidestoshow_four = slidestoshow_four - 1;
+		slidestoshow_three = slidestoshow_three - 1;
+		slidestoshow_two = 1;
+		if ( style == 'cover' ) {
+			slidestoshow_769 = 1;
+		}
+		slidestoshow_list = slidestoshow_three;
+
+		if ($(".tfm-featured-posts .post-grid").hasClass("list")) {
+			slidestoshow_three = 1;
+			slidestoshow_list = slidestoshow_three;
+			slidestoshow_four = slidestoshow;
+		}
+	}
+	
+	//////////////////////////////
+	// Center Padding
+	//////////////////////////////
+
+	// slider center padding calulateed at 1920px minus default site width
+	var centerpadding = ! slidestoshow ? 12.5 + '%' : 12.5 + '%'; // slider / carousel
+	if ( "false" == centermode ) {
+		centerpadding = 0;
+	}
+	var mobile_centerpadding = "true" == centermode ? '17' + '%' : '0';
+	var list_centerpadding = centerpadding;
+
+	if ($(".tfm-featured-posts .post-grid").hasClass("list")) {
+			mobile_centerpadding = 0;
+			list_centerpadding = 0;
+	}
+
+	// width sidebar before loop
+
+	if ($("body").hasClass("has-sidebar") && $(".tfm-featured-posts").hasClass("tfm_before_loop") ) {
+		slidestoshow_three = 2;
+		slidestoshow_list = 2;
+	}
+
+	if ($("body").hasClass("rtl")) {
+
+		//////////////////////////////
+		// RTL
+		//////////////////////////////
+
+		$(".tfm-featured-posts .slider")
+
+		.slick({
+			dots: true,
+			infinite: true,
+			autoplay: true,
+			autoplaySpeed: + autospeed,
+			speed: + speed,
+			cssEase: "ease-in-out",
+			slidesToShow: 1,
+			rtl: true,
+			centerMode: true, // set to true but zero centerpadding if false
+			centerPadding: "" + centerpadding + "",
+			responsive: [
+			{
+				breakpoint: 769,
+				settings: {
+					centerPadding: "0",
+				}
+			},
+		]
+		}); 
+
+		$(".tfm-featured-posts .carousel")
+
+		.slick({
+			dots: true,
+			infinite: true,
+			autoplay: true,
+			autoplaySpeed: + autospeed,
+			speed: + speed,
+			slidesToShow: + slidestoshow,
+			centerMode: true, // set to true but zero centerpadding if false
+			centerPadding: "" + centerpadding + "",
+			responsive: [
+				{
+					breakpoint: 1361,
+					settings: {
+						slidesToShow: + slidestoshow_three,
+					}
+				},
+				{
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: + slidestoshow_three,
+					}
+				},
+				{
+					breakpoint: 1061,
+					settings: {
+						centerPadding: "" + mobile_centerpadding + "",
+						slidesToShow: + slidestoshow_two,
+					}
+				},
+				{
+					breakpoint: 769,
+					settings: {
+						centerPadding: "0",
+						slidesToShow:  + slidestoshow_769,
+					}
+				},
+				{
+					breakpoint: 601,
+					settings: {
+						slidesToShow: 1,
+						centerPadding: "0",
+					}
+				},
+			]
+		}); 
+
+	} else {
+
+		//////////////////////////////
+		// LTR
+		//////////////////////////////
+
+		$(".tfm-featured-posts .slider")
+
+		.slick({
+			dots: true,
+			infinite: true,
+			autoplay: true,
+			autoplaySpeed: + autospeed,
+			speed: + speed,
+			cssEase: "ease-in-out",
+			slidesToShow: 1,
+			centerMode: true, // set to true but zero centerpadding if false
+			centerPadding: "" + centerpadding + "",
+			responsive: [
+			{ // exclusive list breakpoint
+				breakpoint: 1061,
+				settings: {
+					centerPadding: "" + list_centerpadding + "",
+				}
+			},
+			{
+				breakpoint: 769,
+				settings: {
+					centerPadding: "0",
+				}
+			},
+		]
+		}); 
+
+		if ( "true" == centermode ) {
+
+		//
+		// center mode
+		//
+
+		$(".tfm-featured-posts .carousel")
+
+		.slick({
+			dots: true,
+			infinite: true,
+			autoplay: true,
+			autoplaySpeed: + autospeed,
+			speed: + speed,
+			slidesToShow: + slidestoshow,
+			centerMode: true, // set to true but zero centerpadding if false
+			centerPadding: "" + centerpadding + "",
+			responsive: [
+				{
+					breakpoint: 1801,
+					settings: {
+						slidesToShow: + slidestoshow_four,
+					}
+				},
+				{
+					breakpoint: 1361,
+					settings: {
+						slidesToShow: + slidestoshow_three,
+					}
+				},
+				{ // exclusive list breakpoint
+					breakpoint: 1200,
+					settings: {
+						slidesToShow: + slidestoshow_list,
+					}
+				},
+				{ // exclusive list breakpoint
+					breakpoint: 1061,
+					settings: {
+						centerPadding: "" + list_centerpadding + "",
+						slidesToShow: + slidestoshow_three,
+					}
+				},
+				{
+					breakpoint: 861,
+					settings: {
+						centerPadding: "" + mobile_centerpadding + "",
+						slidesToShow: + slidestoshow_two,
+					}
+				},
+				{
+					breakpoint: 769,
+					settings: {
+						centerPadding: "0",
+						slidesToShow:  1,
+					}
+				},
+			]
+		});
+
+		} else {
+
+			//
+			// NOT center mode
+			//
+
+			$(".tfm-featured-posts .carousel")
+
+			.slick({
+				dots: true,
+				infinite: true,
+				autoplay: true,
+				autoplaySpeed: + autospeed,
+				speed: + speed,
+				slidesToShow: + slidestoshow,
+				centerMode: true, // set to true but zero centerpadding if false
+				centerPadding: "" + centerpadding + "",
+				responsive: [
+					{
+						breakpoint: 1651,
+						settings: {
+							slidesToShow: + slidestoshow_four,
+						}
+					},
+					{
+						breakpoint: 1361,
+						settings: {
+							slidesToShow: + slidestoshow_three,
+						}
+					},
+					// exclusive list breakpoint
+					{
+						breakpoint: 1200,
+						settings: {
+							slidesToShow: + slidestoshow_list,
+						}
+					},
+					{
+						breakpoint: 1061,
+						settings: {
+							centerPadding: "" + mobile_centerpadding + "",
+							slidesToShow: + slidestoshow_two,
+						}
+					},
+					{
+						breakpoint: 769,
+						settings: {
+							centerPadding: "0",
+							slidesToShow:  1,
+						}
+					},
+				]
+			});
+
+		}  // endif centermode
+
+	} // end LTR
+});
+
+}
+
+/*
+     FILE ARCHIVED ON 07:21:44 Apr 23, 2025 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 09:35:24 Jun 12, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 0.425
+  load_resource: 178.401
+  PetaboxLoader3.resolve: 103.56
+  PetaboxLoader3.datanode: 59.105 (2)
+  loaddict: 43.605
+*/

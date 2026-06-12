@@ -1,0 +1,63 @@
+/* Rank Math FAQ accordion on blog posts */
+#rank-math-faq {
+  margin: 40px 0;
+}
+
+#rank-math-faq .rank-math-list-item {
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+#rank-math-faq .rank-math-question {
+  cursor: pointer;
+  padding: 18px 56px 18px 22px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  position: relative;
+  color: #000;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+#rank-math-faq .rank-math-list-item.is-open .rank-math-question {
+  color: var(--primery, #2786a5);
+}
+
+#rank-math-faq .rank-math-question::after {
+  content: "+";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 26px;
+  line-height: 1;
+  color: var(--primery, #2786a5);
+  font-weight: 400;
+}
+
+#rank-math-faq .rank-math-list-item.is-open .rank-math-question::after {
+  content: "−";
+}
+
+#rank-math-faq .rank-math-answer {
+  display: none !important;
+  padding: 0 22px 18px;
+  color: #555;
+}
+
+#rank-math-faq .rank-math-list-item.is-open .rank-math-answer {
+  display: block !important;
+}
+
+#rank-math-faq .rank-math-answer p:last-child {
+  margin-bottom: 0;
+}
+
+#rank-math-faq .rank-math-list-item.is-hidden {
+  display: none;
+}

@@ -1,0 +1,230 @@
+/* Elderly Wellness — blog right sidebar (search + recent posts) */
+
+.ew-sidebar {
+  --ew-side-accent: #2786a5;
+  --ew-side-accent-dark: #1a6578;
+  --ew-side-soft: #eaf5f8;
+  --ew-side-ink: #1a2e35;
+  --ew-side-muted: #5b6f78;
+  --ew-side-line: #d7e6ec;
+  --ew-side-bg: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: sticky;
+  top: 96px;
+}
+
+.ew-sidebar__panel {
+  background: var(--ew-side-bg);
+  border: 1px solid var(--ew-side-line);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 28px rgba(26, 101, 120, 0.06);
+}
+
+.ew-sidebar__eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ew-side-accent);
+}
+
+.ew-sidebar__title {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ew-side-ink);
+  line-height: 1.25;
+}
+
+/* Search */
+.ew-sidebar__search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 6px 6px 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f7fbfd 0%, #eef6f9 100%);
+  border: 1px solid var(--ew-side-line);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ew-sidebar__search:focus-within {
+  border-color: var(--ew-side-accent);
+  box-shadow: 0 0 0 3px rgba(39, 134, 165, 0.15);
+}
+
+.ew-sidebar__search-input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 0.92rem;
+  color: var(--ew-side-ink);
+  padding: 8px 0;
+}
+
+.ew-sidebar__search-input::placeholder {
+  color: #8aa0a9;
+}
+
+.ew-sidebar__search-btn {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--ew-side-accent) 0%, var(--ew-side-accent-dark) 100%);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.ew-sidebar__search-btn:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.ew-sidebar__search-btn:focus-visible {
+  outline: 2px solid var(--ew-side-accent-dark);
+  outline-offset: 2px;
+}
+
+.ew-sidebar__search-hint {
+  margin: 10px 2px 0;
+  font-size: 0.78rem;
+  color: var(--ew-side-muted);
+  min-height: 1.1em;
+}
+
+/* Recent posts list */
+.ew-sidebar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ew-sidebar__item {
+  margin: 0;
+}
+
+.ew-sidebar__link {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 8px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.ew-sidebar__link:hover,
+.ew-sidebar__link:focus-visible {
+  background: var(--ew-side-soft);
+  border-color: #cfe3ea;
+  transform: translateX(2px);
+  outline: none;
+}
+
+.ew-sidebar__thumb {
+  width: 72px;
+  height: 56px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  background: var(--ew-side-soft);
+}
+
+.ew-sidebar__thumb--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ew-side-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.ew-sidebar__meta {
+  min-width: 0;
+}
+
+.ew-sidebar__post-title {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ew-side-ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ew-sidebar__date {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.72rem;
+  color: var(--ew-side-muted);
+  letter-spacing: 0.02em;
+}
+
+.ew-sidebar__empty {
+  margin: 0;
+  padding: 12px 4px;
+  font-size: 0.88rem;
+  color: var(--ew-side-muted);
+}
+
+.ew-sidebar__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--ew-side-accent);
+  text-decoration: none;
+}
+
+.ew-sidebar__more:hover {
+  color: var(--ew-side-accent-dark);
+}
+
+.ew-sidebar__item.is-hidden {
+  display: none;
+}
+
+.ew-sidebar .screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 991px) {
+  .ew-sidebar {
+    position: static;
+    margin-top: 8px;
+  }
+}

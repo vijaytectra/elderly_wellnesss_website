@@ -12,12 +12,19 @@ async function loadBlogs() {
             year: "numeric",
           })
         : "";
-      // Always use /blogs/<slug> so cards never link to the site root
-      const slug = (item.slug || "").replace(/^\/+|\/+$/g, "");
-      const link = slug
-        ? `/blogs/${slug}`
-        : (item.link || "#").replace(/\/index\.html\/?$/, "");
-      const imageSrc = (item.image || "").replace(/^\//, "");
+
+      // Always stay under blogs/ — never link to /slug at the site root
+      let slug = (item.slug || "").replace(/^\/+|\/+$/g, "");
+      if (!slug && item.link) {
+        const match = String(item.link).match(/blogs\/([^/?#]+)/i);
+        slug = match ? match[1] : "";
+      }
+      // Relative from homepage so Live Server + production both resolve correctly
+      const link = slug ? `blogs/${slug}/` : "blogs/";
+
+      const imageSrc = (item.image || "")
+        .replace(/^\//, "")
+        .replace(/^https?:\/\/(www\.)?theelderlywellness\.com\//i, "");
       const image = imageSrc
         ? `<a href="${link}" class="img"><img src="${imageSrc}" alt="${item.title}"/></a>`
         : "";

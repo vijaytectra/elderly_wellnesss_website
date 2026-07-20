@@ -89,7 +89,7 @@ def main() -> None:
             "title": title,
             "description": desc[:220],
             "date": date_m.group(1) if date_m else "",
-            "link": f"/blogs/{d.name}",
+            "link": f"blogs/{d.name}/",
             "slug": d.name,
             "image": image,
         })

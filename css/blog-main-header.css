@@ -1,3 +1,5 @@
+@import url("blog-pages.css");
+
 /* Site navbar — keep sticky (style.css targets all <header> tags) */
 body.blog > header,
 body.single-post > header {
@@ -72,11 +74,12 @@ body.blog article footer.entry-meta .comments-link {
 
 /* Reset main-site footer styles from WordPress entry-meta footers */
 article footer.entry-meta {
-  background-color: #f7f8f9;
+  background-color: var(--blog-accent-soft, #f0f7fa);
   background-image: none;
   padding: 20px 24px;
-  margin-top: 2em;
+  margin: 2em 32px 32px;
   border-radius: 12px;
+  border: 1px solid var(--blog-border, #e2ecf0);
   color: #222222;
 }
 
@@ -212,7 +215,7 @@ body.single-post .wp-block-latest-posts__featured-image img {
   max-width: 100% !important;
   display: block !important;
   position: static !important;
-  object-fit: fill;
+  object-fit: cover;
   object-position: center;
   border-radius: 0;
 }

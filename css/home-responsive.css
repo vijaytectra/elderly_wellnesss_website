@@ -1,0 +1,558 @@
+/* Homepage-only responsive fixes — all devices */
+
+/* Base safety: prevent horizontal scroll from decorative elements */
+html,
+body {
+  max-width: 100%;
+}
+
+.banner_section,
+.key_feature_section,
+.about_section,
+.task_app_section,
+.downaload_section,
+.blog_section,
+footer {
+  max-width: 100%;
+}
+
+.banner_section img,
+.key_feature_section img,
+.about_section img,
+.task_app_section img,
+.downaload_section img,
+.pricing_inner img,
+.blog_section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pricing_inner {
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.pricing_inner img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---------- Large tablets / small desktops ---------- */
+@media screen and (max-width: 1199px) {
+  .banner_section::before {
+    width: min(100vw, 1100px);
+    height: 80%;
+    background-size: contain;
+  }
+
+  .banner_section .banner_text #banner-font2 {
+    font-size: 52px;
+  }
+
+  .banner_section .banner_text #banner-font2 .hero-age {
+    font-size: 80px;
+  }
+
+  .task_app_section .task_block {
+    padding: 50px 60px;
+  }
+
+  .slider_media {
+    max-height: 420px;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post {
+    width: calc(50% - 12px);
+  }
+}
+
+/* ---------- Tablets ---------- */
+@media screen and (max-width: 991px) {
+  .banner_section {
+    margin-top: 24px;
+    padding-bottom: 20px;
+  }
+
+  .banner_section::before {
+    width: 100%;
+    top: 10%;
+    opacity: 0.45;
+  }
+
+  .banner_section .banner_text {
+    margin-top: 0;
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  .banner_section .banner_text #banner-font2 {
+    font-size: 42px;
+    margin-bottom: 24px;
+  }
+
+  .banner_section .banner_text #banner-font2 .hero-age {
+    font-size: 64px;
+    top: 4px;
+    margin-right: 6px;
+  }
+
+  .banner_section .banner_text p.remove-br {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+  }
+
+  .banner_section .app_btn {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .banner_section .app_btn li:last-child {
+    margin-left: 0;
+  }
+
+  .banner_section .banner_slider {
+    margin-top: 36px;
+    padding: 0 10px;
+  }
+
+  .slider_media {
+    aspect-ratio: 16 / 11;
+    max-height: 360px;
+    border-radius: 28px;
+  }
+
+  .slider_media video,
+  .banner_section .banner_slider #frmae_slider,
+  .owl-carousel .owl-stage-outer {
+    border-radius: 28px;
+  }
+
+  /* Services carousel */
+  .key_innner {
+    padding: 48px 0 56px;
+    border-radius: 16px;
+    margin: 0 10px;
+  }
+
+  .feature_box {
+    min-height: 360px;
+    padding: 24px 20px 0;
+  }
+
+  .feature_box h3 {
+    font-size: 20px;
+  }
+
+  /* Task / feature blocks */
+  .task_app_section .task_block {
+    position: relative !important;
+    top: auto !important;
+    padding: 40px 36px;
+    border-radius: 20px;
+  }
+
+  .task_app_section .task_block .row {
+    flex-direction: column;
+  }
+
+  .task_app_section .task_img {
+    margin-bottom: 24px;
+  }
+
+  .task_app_section .task_img::before {
+    width: 240px;
+    height: 240px;
+  }
+
+  .task_app_section .task_text .section_title {
+    text-align: center;
+  }
+
+  .task_app_section .task_text .section_title .icon {
+    margin: 10px auto 20px;
+  }
+
+  .task_app_section .task_text .section_title h2 {
+    font-size: 28px;
+  }
+
+  .task_app_section .dotes_blue {
+    left: -40px;
+    bottom: -60px;
+    opacity: 0.35;
+    max-width: 180px;
+  }
+
+  /* Download CTA */
+  .downaload_section {
+    padding: 70px 0;
+  }
+
+  .downaload_section .center_screen .img img {
+    width: 55%;
+    max-width: 320px;
+  }
+
+  .downaload_section .yellow_dotes img {
+    max-width: 90vw;
+  }
+
+  .downaload_section .app_btn {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .downaload_section .app_btn li:last-child {
+    margin-left: 0;
+  }
+
+  #home-blog-section .home-blog-listing {
+    gap: 20px;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post {
+    width: calc(50% - 10px);
+    padding: 22px;
+  }
+}
+
+/* ---------- Phones ---------- */
+@media screen and (max-width: 767px) {
+  .banner_section {
+    margin-top: 8px;
+    padding-bottom: 28px;
+  }
+
+  .banner_section .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .banner_section .banner_text {
+    padding: 0 8px;
+  }
+
+  .banner_section .banner_text #banner-font2 {
+    font-size: 32px;
+    letter-spacing: 0.03em;
+    margin-bottom: 18px;
+    line-height: 1.15;
+  }
+
+  .banner_section .banner_text #banner-font2 .hero-age {
+    font-size: 48px;
+    top: 2px;
+    display: block;
+    margin: 0 auto 4px;
+  }
+
+  .banner_section .banner_text #banner-font2 .hero-line2 {
+    margin-top: 0;
+  }
+
+  .banner_section .banner_text p.remove-br {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    padding: 0 4px;
+  }
+
+  .banner_section .app_btn {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .banner_section .app_btn li {
+    margin: 0;
+  }
+
+  .banner_section .app_btn li a {
+    padding: 10px 18px;
+  }
+
+  .banner_section .app_btn li a img {
+    height: 24px;
+  }
+
+  .banner_section .banner_slider {
+    margin-top: 16px;
+    padding: 0;
+  }
+
+  .slider_media {
+    aspect-ratio: 4 / 3;
+    max-height: 280px;
+    border-radius: 20px;
+  }
+
+  .slider_media video,
+  .banner_section .banner_slider #frmae_slider,
+  .owl-carousel .owl-stage-outer {
+    border-radius: 20px;
+  }
+
+  /* Services */
+  .key_feature_section {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .key_innner {
+    margin: 0;
+    padding: 40px 0 48px;
+    border-radius: 16px;
+  }
+
+  .key_innner .section_title h2 {
+    font-size: 26px;
+    padding: 0 12px;
+  }
+
+  .key_innner .dotes_blue {
+    top: -30%;
+    max-width: 220px;
+    opacity: 0.4;
+  }
+
+  .key_innner .owl-nav button.owl-next {
+    right: 0;
+  }
+
+  .key_innner .owl-nav button.owl-prev {
+    left: 0;
+  }
+
+  .feature_box {
+    min-height: auto;
+    padding: 22px 18px 0;
+  }
+
+  .feature_box .img img {
+    max-height: 160px;
+  }
+
+  /* Task blocks */
+  .task_app_section {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-bottom: 30px;
+  }
+
+  .task_app_section .task_block {
+    padding: 32px 20px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+  }
+
+  .task_app_section .task_text .section_title h2 {
+    font-size: 24px;
+  }
+
+  .task_app_section .task_text .section_title p {
+    font-size: 15px;
+  }
+
+  .task_app_section .task_img::before {
+    width: 180px;
+    height: 180px;
+  }
+
+  .task_app_section .dotes_blue {
+    display: none;
+  }
+
+  /* Marquee / why choose */
+  .text_list_section .text_block span {
+    font-size: 22px;
+  }
+
+  /* Full-bleed image band */
+  .pricing_section {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .pricing_inner {
+    border-radius: 16px;
+  }
+
+  /* Download */
+  .downaload_section {
+    padding: 50px 0 40px;
+    overflow: hidden;
+  }
+
+  .downaload_section .center_screen .img img {
+    width: 70%;
+    max-width: 240px;
+  }
+
+  .downaload_section .background_slider {
+    padding: 80px 0;
+  }
+
+  .downaload_section .yellow_dotes {
+    opacity: 0.5;
+  }
+
+  .downaload_section .app_btn {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .downaload_section .app_btn li a {
+    padding: 12px 28px;
+  }
+
+  .downaload_section .app_btn li a img {
+    height: 28px;
+  }
+
+  /* Blogs */
+  #home-blog-section {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  #home-blog-section .section_title {
+    margin-bottom: 24px;
+  }
+
+  #home-blog-section .section_title h2 {
+    font-size: 26px;
+  }
+
+  #home-blog-section .home-blog-listing {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post .img img {
+    height: 180px;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post h3 {
+    font-size: 18px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 48px 0 30px !important;
+    background-size: cover;
+  }
+
+  footer .logo_side .logo {
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  footer .logo_side h3,
+  footer .download_side h3 {
+    text-align: center;
+  }
+
+  footer .col-md-4 {
+    margin-bottom: 8px;
+  }
+}
+
+/* ---------- Small phones ---------- */
+@media screen and (max-width: 480px) {
+  .banner_section .banner_text #banner-font2 {
+    font-size: 28px;
+  }
+
+  .banner_section .banner_text #banner-font2 .hero-age {
+    font-size: 42px;
+  }
+
+  .banner_section .banner_text p.remove-br {
+    font-size: 14px;
+  }
+
+  .banner_section .app_btn {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner_section .app_btn li a {
+    min-width: 180px;
+    text-align: center;
+  }
+
+  .slider_media {
+    max-height: 220px;
+    border-radius: 16px;
+  }
+
+  .slider_media video,
+  .banner_section .banner_slider #frmae_slider,
+  .owl-carousel .owl-stage-outer {
+    border-radius: 16px;
+  }
+
+  .key_innner .section_title h2,
+  .about_section .section_title h2,
+  #home-blog-section .section_title h2 {
+    font-size: 22px;
+  }
+
+  .task_app_section .task_block {
+    padding: 28px 16px;
+  }
+
+  .task_app_section .task_text .section_title h2 {
+    font-size: 20px;
+  }
+
+  .feature_box h3 {
+    font-size: 18px;
+  }
+
+  .feature_box p {
+    font-size: 14px;
+  }
+
+  .downaload_section .center_screen .img img {
+    max-width: 200px;
+  }
+}
+
+/* ---------- Very small phones ---------- */
+@media screen and (max-width: 360px) {
+  .banner_section .banner_text #banner-font2 {
+    font-size: 24px;
+  }
+
+  .banner_section .banner_text #banner-font2 .hero-age {
+    font-size: 36px;
+  }
+
+  .section_title h2 {
+    font-size: 20px !important;
+  }
+}
+
+/* Prefer reduced motion on mobile hero video when requested */
+@media (prefers-reduced-motion: reduce) {
+  .slider_media video {
+    display: none;
+  }
+
+  .slider_media {
+    background: linear-gradient(135deg, #1a6578, #2786a5);
+  }
+}

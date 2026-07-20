@@ -239,16 +239,19 @@ body.single-post .page-header-image-single {
   margin-bottom: 0 !important;
   border-radius: 0;
   overflow: hidden;
-  max-height: 440px;
+  max-height: none;
+  line-height: 0;
 }
 
 body.single-post .featured-image img,
 body.single-post .page-header-image-single img {
   width: 100% !important;
-  height: 100%;
+  height: auto !important;
   max-height: 440px;
   object-fit: cover !important;
+  object-position: center;
   border-radius: 0 !important;
+  display: block;
 }
 
 body.single-post header.entry-header {
@@ -716,11 +719,12 @@ body.blog .paging-navigation .page-numbers:hover:not(.current):not(.dots) {
 
   body.single-post .featured-image,
   body.single-post .page-header-image-single {
-    max-height: 260px;
+    max-height: none;
   }
 
   body.single-post .featured-image img,
   body.single-post .page-header-image-single img {
     max-height: 260px;
+    height: auto !important;
   }
 }

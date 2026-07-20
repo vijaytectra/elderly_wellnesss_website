@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 TEMPLATE = ROOT / "blogs/how-to-hire-best-caregiver-for-seniors-in-chennai/index.html"
 BLOGS = ROOT / "blogs"
-UPLOAD = "../wp-content/uploads/2026/07"
+UPLOAD = "../../images/blogs"
 PUB = "2026-07-20T10:00:00+00:00"
 MOD = "2026-07-20T10:00:00+00:00"
 DATE_DISP = "July 20, 2026"
@@ -1073,7 +1073,7 @@ def render_post(template: str, blog: dict, prev_slug: str, prev_title: str, next
     )
     html = re.sub(
         r'<meta property="og:image:secure_url" content="[^"]*"/>',
-        f'<meta property="og:image:secure_url" content="https://theelderlywellness.com/blogs/wp-content/uploads/2026/07/{blog["image"]}"/>',
+        f'<meta property="og:image:secure_url" content="https://www.theelderlywellness.com/images/blogs/{blog["image"]}"/>',
         html,
         count=1,
     )
@@ -1221,7 +1221,7 @@ def listing_card(blog: dict) -> str:
 			<div class="post-image">
 						
 						<a href="{blog["slug"]}">
-							<img width="1200" height="628" src="wp-content/uploads/2026/07/{blog["image"]}" class="attachment-full size-full wp-post-image" alt="{esc(blog["alt"])}" itemprop="image" decoding="async" title="{esc(blog["title"])}">
+							<img width="1200" height="628" src="../images/blogs/{blog["image"]}" class="attachment-full size-full wp-post-image" alt="{esc(blog["alt"])}" itemprop="image" decoding="async" title="{esc(blog["title"])}">
 						</a>
 					</div>
 			<div class="entry-summary" itemprop="text">

@@ -1215,17 +1215,17 @@ def listing_card(blog: dict) -> str:
     return f'''<article id="post-{blog["post_id"]}" class="post-{blog["post_id"]} post type-post status-publish format-standard has-post-thumbnail hentry category-{blog["category_slug"]} has-tfm-read-time" itemtype="https://schema.org/CreativeWork" itemscope>
 	<div class="inside-article">
 					<header class="entry-header">
-				<h2 class="entry-title" itemprop="headline"><a href="{blog["slug"]}/index.html" rel="bookmark">{blog["title"]}</a></h2>		<div class="entry-meta">
+				<h2 class="entry-title" itemprop="headline"><a href="{blog["slug"]}" rel="bookmark">{blog["title"]}</a></h2>		<div class="entry-meta">
 			<span class="posted-on"><time class="updated" datetime="{MOD}" itemprop="dateModified">{DATE_DISP}</time><time class="entry-date published" datetime="{PUB}" itemprop="datePublished">{DATE_DISP}</time></span> <span class="byline">by <span class="author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope><a class="url fn n" href="author/elderly" title="View all posts by Elderly" rel="author" itemprop="url"><span class="author-name" itemprop="name">Elderly</span></a></span></span> 		</div>
 					</header>
 			<div class="post-image">
 						
-						<a href="{blog["slug"]}/index.html">
+						<a href="{blog["slug"]}">
 							<img width="1200" height="628" src="wp-content/uploads/2026/07/{blog["image"]}" class="attachment-full size-full wp-post-image" alt="{esc(blog["alt"])}" itemprop="image" decoding="async" title="{esc(blog["title"])}">
 						</a>
 					</div>
 			<div class="entry-summary" itemprop="text">
-				<p>{esc(blog["excerpt"])} &#8230; <a title="{esc(blog["title"])}" class="read-more" href="{blog["slug"]}/index.html" aria-label="Read more about {esc(blog["title"])}">Read more</a></p>
+				<p>{esc(blog["excerpt"])} &#8230; <a title="{esc(blog["title"])}" class="read-more" href="{blog["slug"]}" aria-label="Read more about {esc(blog["title"])}">Read more</a></p>
 			</div>
 
 				<footer class="entry-meta" aria-label="Entry meta">

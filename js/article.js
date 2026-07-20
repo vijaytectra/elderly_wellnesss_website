@@ -11,8 +11,14 @@ async function loadBlogs() {
             year: "numeric",
           })
         : "";
-      const image = item.image
-        ? `<a href="${item.link}" class="img"><img src="${item.image.replace(/^\//, "")}" alt="${item.title}"/></a>`
+      // Always use /blogs/<slug> so cards never link to the site root
+      const slug = (item.slug || "").replace(/^\/+|\/+$/g, "");
+      const link = slug
+        ? `/blogs/${slug}`
+        : (item.link || "#").replace(/\/index\.html\/?$/, "");
+      const imageSrc = (item.image || "").replace(/^\//, "");
+      const image = imageSrc
+        ? `<a href="${link}" class="img"><img src="${imageSrc}" alt="${item.title}"/></a>`
         : "";
       blogContainer.innerHTML += `
           <div class="blog_post" data-aos="fade-up" data-aos-duration="1500">
@@ -22,10 +28,10 @@ async function loadBlogs() {
                 <li>${date}</li>
                 <li>Blogs</li>
               </ul>
-              <h3><a href="${item.link}">${item.title}</a></h3>
+              <h3><a href="${link}">${item.title}</a></h3>
               <div class="tag_more">
                 <span class="tag">Blogs</span>
-                <a href="${item.link}">Read more <i class="icofont-arrow-right"></i></a>
+                <a href="${link}">Read more <i class="icofont-arrow-right"></i></a>
               </div>
             </div>
           </div>

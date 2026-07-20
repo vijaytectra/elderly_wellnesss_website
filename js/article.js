@@ -3,6 +3,7 @@ async function loadBlogs() {
   try {
     const response = await fetch("blogs/blog-manifest.json");
     const posts = await response.json();
+    // Homepage shows 3 newest posts that exist with a local image (see blog-manifest.json)
     posts.slice(0, 3).forEach((item) => {
       const date = item.date
         ? new Date(item.date).toLocaleDateString("en-US", {

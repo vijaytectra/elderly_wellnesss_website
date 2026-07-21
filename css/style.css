@@ -4946,10 +4946,10 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
 
   footer .download_side {
     padding-top: 60px !important;
-    text-align: right !important;
+    text-align: left !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-end !important;
+    align-items: flex-start !important;
   }
 
   /* All 3 Headings exact height & alignment */

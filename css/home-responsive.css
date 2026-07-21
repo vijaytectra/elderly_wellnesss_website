@@ -454,8 +454,15 @@ footer {
     padding: 20px;
   }
 
+  #home-blog-section .home-blog-listing .blog_post .img {
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+  }
+
   #home-blog-section .home-blog-listing .blog_post .img img {
-    height: 180px;
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
   }
 
   #home-blog-section .home-blog-listing .blog_post h3 {

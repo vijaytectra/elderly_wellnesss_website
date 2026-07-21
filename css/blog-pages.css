@@ -927,7 +927,7 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
   padding-bottom: 40px !important;
 }
 
-/* Mobile */
+/* Mobile & Tablet Responsive Layout */
 @media screen and (max-width: 991.98px) {
   :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .site-main {
     grid-template-columns: 1fr;
@@ -938,6 +938,17 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
     padding-bottom: 24px;
   }
 
+  body.single-post #page,
+  body.single-post #content,
+  body.single-post .site-content,
+  body.single-post main#main,
+  body.single-post .site-main,
+  body.single-post .content-area,
+  body.single-post article {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
   body.single-post .content-area {
     flex: 1 1 100%;
     max-width: 100%;
@@ -946,14 +957,50 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
 
   body.single-post .site-content {
     display: block;
+    padding-top: 8px !important;
+    padding-bottom: 24px !important;
+    margin-top: 0 !important;
+  }
+
+  body.single-post .featured-image,
+  body.single-post .page-header-image-single {
+    margin-top: 4px !important;
+    margin-bottom: 14px !important;
+  }
+
+  body.single-post .featured-image img,
+  body.single-post .page-header-image-single img {
+    width: 100% !important;
+    max-height: 240px !important;
+    object-fit: cover !important;
+    border-radius: 10px !important;
+    display: block !important;
+  }
+
+  body.single-post header.entry-header {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  body.single-post h1.entry-title {
+    font-size: 1.45rem !important;
+    line-height: 1.35 !important;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
   }
 
   body.single-post .entry-content {
-    padding-bottom: 28px;
+    padding-top: 12px !important;
+    padding-bottom: 28px !important;
   }
 
-  body.single-post .site-content {
-    padding-bottom: 0 !important;
+  .chaty-widget,
+  div[class*="chaty-widget"],
+  .chaty-main-button {
+    bottom: 12px !important;
+    left: 12px !important;
+    transform: scale(0.82) !important;
+    transform-origin: bottom left !important;
   }
 }
 

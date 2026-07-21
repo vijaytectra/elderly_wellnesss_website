@@ -525,7 +525,7 @@ body.single-post .entry-content ul li a {
   text-decoration: none !important;
   border-bottom: none !important;
   box-shadow: none !important;
-  font-weight: inherit !important;
+  font-weight: 400 !important;
 }
 
 .entry-content a:hover,
@@ -557,11 +557,19 @@ body.single-post .entry-content ul li a:hover {
   list-style-position: inside !important;
 }
 
-.entry-content li {
+.entry-content li,
+.entry-content li *,
+.entry-content ul li,
+.entry-content ul li *,
+.entry-content ul li a,
+.entry-content ul li strong,
+.entry-content ul li a strong,
+.entry-content ul li strong a {
   list-style-type: inherit !important;
   margin-bottom: 0.8em !important;
   line-height: 1.7;
-  color: var(--blog-text);
+  color: #334155 !important;
+  font-weight: 400 !important;
 }
 
 .entry-content li strong {

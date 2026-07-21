@@ -2184,88 +2184,204 @@ footer a,
   }
 }
 
-/* Professional Mobile Footer Optimization */
-@media screen and (max-width: 767.98px) {
+/* Professional Unique Mobile Footer Design System */
+@media screen and (max-width: 991.98px) {
   footer {
-    padding: 24px 0 16px !important;
-    text-align: center !important;
+    padding: 28px 0 16px !important;
+    background-color: #0c0e12 !important;
+    text-align: left !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
 
-  footer .logo_side,
-  footer .download_side {
-    text-align: center !important;
+  footer .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  footer .row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  footer .logo_side {
+    padding-top: 0 !important;
+    text-align: left !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
   }
 
   footer .logo_side .logo {
-    margin-bottom: 12px !important;
-    display: flex !important;
-    justify-content: center !important;
+    margin-bottom: 10px !important;
+    display: block !important;
   }
 
   footer .logo img {
-    max-height: 32px !important;
+    height: 26px !important;
+    max-height: 26px !important;
     width: auto !important;
   }
 
   footer h3 {
-    font-size: 1.12rem !important;
+    font-size: 1.02rem !important;
     margin-top: 0 !important;
     margin-bottom: 10px !important;
     font-weight: 700 !important;
-    text-align: center !important;
+    color: #ffffff !important;
+    text-align: left !important;
+    width: auto !important;
+    white-space: nowrap !important;
   }
 
   footer .contact_info {
-    gap: 6px !important;
-    margin-bottom: 12px !important;
-    justify-content: center !important;
-    align-items: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    margin-bottom: 10px !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  footer .contact_info li {
+    text-align: left !important;
+    white-space: nowrap !important;
+  }
+
+  footer .contact_info li a {
+    font-size: 0.88rem !important;
+    color: #cbd5e1 !important;
+    text-decoration: none !important;
   }
 
   footer .social_media {
-    margin: 12px 0 !important;
-    gap: 12px !important;
-    justify-content: center !important;
+    margin: 8px 0 0 !important;
+    gap: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  footer .social_media li a {
+    width: 32px !important;
+    height: 32px !important;
+    line-height: 30px !important;
+    font-size: 0.85rem !important;
+  }
+
+  footer #quick_links_side {
+    padding-top: 0 !important;
+    text-align: left !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
   }
 
   #quick_links {
-    margin-top: 8px !important;
-    row-gap: 8px !important;
-    justify-content: center !important;
-    align-items: center !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px 16px !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
   }
 
-  /* Zero out paddings of stacked columns on mobile */
-  footer #quick_links_side,
+  #quick_links li {
+    margin: 0 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+  }
+
+  #quick_links li a {
+    font-size: 0.88rem !important;
+    color: #cbd5e1 !important;
+    white-space: nowrap !important;
+  }
+
   footer .download_side {
-    padding-top: 16px !important;
+    padding-top: 0 !important;
+    text-align: left !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  footer .download_side h3 {
+    text-align: left !important;
+    margin-bottom: 10px !important;
   }
 
   footer .download_side .app_btn {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     align-items: center !important;
     gap: 10px !important;
-    margin-top: 10px !important;
+    margin-top: 0 !important;
     padding: 0 !important;
+    width: auto !important;
   }
 
   footer .download_side .app_btn li {
     margin: 0 !important;
+    width: auto !important;
   }
 
   footer .download_side .app_btn li a {
-    display: block !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     padding: 6px 12px !important;
     background-color: #000000 !important;
     border-radius: 8px !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
   }
 
   footer .download_side .app_btn li a img {
     height: 20px !important;
     width: auto !important;
+  }
+
+  /* Integrated Bottom Copyright & Clear Back-To-Top Button */
+  .footer_bottom {
+    margin-top: 20px !important;
+    padding-top: 14px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    border: none !important;
+  }
+
+  .footer_bottom .ft_inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 4px !important;
+    padding: 0 0 44px !important;
+  }
+
+  .footer_bottom .ft_inner p {
+    font-size: 0.82rem !important;
+    color: #94a3b8 !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
+  .go_top {
+    position: fixed !important;
+    right: 14px !important;
+    bottom: 14px !important;
+    z-index: 99999 !important;
+    display: block !important;
+  }
+
+  .go_top span {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 16px !important;
+    border-radius: 50% !important;
   }
 }
 

@@ -325,18 +325,20 @@ body.single-post .page-header-image-single img {
 }
 
 body.single-post header.entry-header {
-  max-width: 820px;
+  width: 100% !important;
+  max-width: 100% !important;
   margin-left: 0;
-  margin-right: auto;
-  padding: 12px 0 0;
+  margin-right: 0;
+  padding: 24px 0 12px;
   box-sizing: border-box;
 }
 
 body.single-post .entry-content {
-  max-width: 820px;
+  width: 100% !important;
+  max-width: 100% !important;
   margin-left: 0;
-  margin-right: auto;
-  padding: 24px 0 48px;
+  margin-right: 0;
+  padding: 16px 0 48px;
   box-sizing: border-box;
 }
 
@@ -610,7 +612,8 @@ body.single-post .entry-content > *:last-child {
 }
 
 body.single-post article footer.entry-meta {
-  max-width: 820px;
+  width: 100% !important;
+  max-width: 100% !important;
   margin: 16px 0 24px !important;
   padding: 16px 20px;
   background-color: var(--blog-accent-soft) !important;

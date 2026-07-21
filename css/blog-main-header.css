@@ -30,7 +30,7 @@ body.single-post .site.grid-container {
 @media screen and (max-width: 991.98px) {
   :is(body.blog, body.archive, body.author, body.search) .site.grid-container,
   body.single-post .site.grid-container {
-    padding-top: 12px;
+    padding-top: 24px !important;
   }
 }
 

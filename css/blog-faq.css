@@ -1,53 +1,61 @@
-/* Rank Math FAQ accordion on blog posts */
 #rank-math-faq {
-  margin: 40px 0;
+  margin: 36px 0 !important;
 }
 
 #rank-math-faq .rank-math-list-item {
-  border: 1px solid #e8e8e8;
-  border-radius: 12px;
-  margin-bottom: 14px;
-  overflow: hidden;
-  background: #fff;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 12px !important;
+  margin-bottom: 16px !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.2s ease !important;
+}
+
+#rank-math-faq .rank-math-list-item:hover {
+  border-color: #94a3b8 !important;
 }
 
 #rank-math-faq .rank-math-question {
-  cursor: pointer;
-  padding: 18px 56px 18px 22px;
-  margin: 0;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.4;
-  position: relative;
-  color: #000;
-  user-select: none;
-  transition: color 0.2s ease;
+  cursor: pointer !important;
+  padding: 20px 60px 20px 24px !important;
+  margin: 0 !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+  position: relative !important;
+  color: #0f172a !important;
+  user-select: none !important;
+  transition: color 0.2s ease !important;
 }
 
 #rank-math-faq .rank-math-list-item.is-open .rank-math-question {
-  color: var(--blog-accent, #334155);
+  color: var(--blog-accent, #2786a5) !important;
 }
 
 #rank-math-faq .rank-math-question::after {
-  content: "+";
-  position: absolute;
-  right: 22px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 26px;
-  line-height: 1;
-  color: var(--blog-accent, #334155);
-  font-weight: 400;
+  content: "+" !important;
+  position: absolute !important;
+  right: 24px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+  color: var(--blog-accent, #2786a5) !important;
+  font-weight: 600 !important;
 }
 
 #rank-math-faq .rank-math-list-item.is-open .rank-math-question::after {
-  content: "−";
+  content: "−" !important;
 }
 
 #rank-math-faq .rank-math-answer {
   display: none !important;
-  padding: 0 22px 18px;
-  color: #555;
+  padding: 14px 24px 22px 24px !important;
+  color: #475569 !important;
+  font-size: 0.98rem !important;
+  line-height: 1.7 !important;
+  border-top: 1px solid #f1f5f9 !important;
 }
 
 #rank-math-faq .rank-math-list-item.is-open .rank-math-answer {

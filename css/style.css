@@ -5037,18 +5037,26 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     transform: translateX(4px) !important;
   }
 
+  footer .download_side h3 {
+    width: 155px !important;
+    text-align: center !important;
+    margin-bottom: 16px !important;
+  }
+
   footer .download_side .app_btn {
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-end !important;
+    align-items: center !important;
     gap: 10px !important;
     margin-top: 0 !important;
     padding: 0 !important;
     list-style: none !important;
+    width: 155px !important;
   }
 
   footer .download_side .app_btn li {
     margin: 0 !important;
+    width: 100% !important;
   }
 
   footer .download_side .app_btn li a {
@@ -5061,7 +5069,7 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     border-radius: 9px !important;
     transition: all 0.25s ease !important;
     text-decoration: none !important;
-    width: 155px !important;
+    width: 100% !important;
     box-sizing: border-box !important;
   }
 

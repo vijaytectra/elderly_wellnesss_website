@@ -675,6 +675,67 @@ div[class*="chaty-widget"],
   transform: translateX(3px);
 }
 
+/* Rank Math FAQ Box 32px Inset Padding Override */
+#rank-math-faq,
+.rank-math-block,
+div#rank-math-faq {
+  margin: 36px 0 !important;
+}
+
+#rank-math-faq .rank-math-list-item,
+.rank-math-block .rank-math-list-item,
+div.rank-math-list-item {
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 12px !important;
+  margin-bottom: 18px !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.2s ease !important;
+}
+
+#rank-math-faq .rank-math-question,
+.rank-math-block .rank-math-question,
+.rank-math-list-item h3.rank-math-question,
+body.single-post .entry-content #rank-math-faq h3.rank-math-question,
+body.single-post article #rank-math-faq h3.rank-math-question,
+body.single-post article .entry-content h3.rank-math-question,
+.entry-content h3.rank-math-question,
+h3.rank-math-question {
+  cursor: pointer !important;
+  padding-top: 22px !important;
+  padding-bottom: 22px !important;
+  padding-left: 32px !important;
+  padding-right: 64px !important;
+  margin: 0 !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+  position: relative !important;
+  color: #0f172a !important;
+  user-select: none !important;
+  transition: color 0.2s ease !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+#rank-math-faq .rank-math-answer,
+.rank-math-block .rank-math-answer,
+.rank-math-list-item .rank-math-answer,
+body.single-post .entry-content #rank-math-faq .rank-math-answer,
+body.single-post article #rank-math-faq .rank-math-answer {
+  display: none !important;
+  padding-top: 16px !important;
+  padding-bottom: 24px !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  color: #475569 !important;
+  font-size: 0.98rem !important;
+  line-height: 1.7 !important;
+  border-top: 1px solid #f1f5f9 !important;
+  box-sizing: border-box !important;
+}
+
 /* Post views */
 .post-views.content-post {
   display: inline-flex;

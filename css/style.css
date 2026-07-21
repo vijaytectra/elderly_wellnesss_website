@@ -4942,14 +4942,18 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
 
   footer #quick_links_side {
     padding-top: 60px !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
   footer .download_side {
     padding-top: 60px !important;
-    text-align: left !important;
+    text-align: right !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: flex-end !important;
   }
 
   /* All 3 Headings exact height & alignment */
@@ -5016,12 +5020,14 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   #quick_links {
     display: flex !important;
     flex-direction: column !important;
+    align-items: center !important;
     gap: 10px !important;
     margin-top: 0 !important;
   }
 
   #quick_links li {
     margin: 0 !important;
+    text-align: center !important;
   }
 
   #quick_links li a {

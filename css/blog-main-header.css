@@ -1,7 +1,5 @@
-@import url("blog-pages.css");
-
 /* Site navbar — keep sticky (style.css targets all <header> tags) */
-body.blog > header,
+:is(body.blog, body.archive, body.author, body.search) > header,
 body.single-post > header {
   position: sticky !important;
   top: 0;
@@ -12,52 +10,47 @@ body.single-post > header {
 }
 
 /* Post title block — must scroll away, not stick */
-body.blog .inside-article header.entry-header,
+:is(body.blog, body.archive, body.author, body.search) .inside-article header.entry-header,
 body.single-post .inside-article header.entry-header {
   position: static !important;
   top: auto !important;
   z-index: auto;
 }
 
-body.blog > header .container,
+:is(body.blog, body.archive, body.author, body.search) > header .container,
 body.single-post > header .container {
   max-width: 1170px;
 }
 
-body.blog .site.grid-container,
+:is(body.blog, body.archive, body.author, body.search) .site.grid-container,
 body.single-post .site.grid-container {
   padding-top: 16px;
 }
 
-@media screen and (max-width: 991px) {
-  body.blog .site.grid-container,
+@media screen and (max-width: 991.98px) {
+  :is(body.blog, body.archive, body.author, body.search) .site.grid-container,
   body.single-post .site.grid-container {
-    padding-top: 12px;
+    padding-top: 24px !important;
   }
 }
 
-@media screen and (max-width: 767px) {
-  body.blog .site-content .content-area,
-  body.single-post .site-content .content-area {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  body.blog .inside-article,
+@media screen and (max-width: 767.98px) {
+  :is(body.blog, body.archive, body.author, body.search) .inside-article,
   body.single-post .inside-article {
     overflow-wrap: break-word;
     word-wrap: break-word;
   }
 
-  body.blog .wp-block-table,
-  body.single-post .wp-block-table {
+  .entry-content .wp-block-table {
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     margin-bottom: 1.5em;
   }
 
-  body.blog .wp-block-table table,
-  body.single-post .wp-block-table table {
+  .entry-content .wp-block-table table {
+    width: 100%;
     min-width: 480px;
   }
 }
@@ -68,7 +61,7 @@ body.single-post .site.grid-container {
 }
 
 /* Blog listing — hide comment links in post footer */
-body.blog article footer.entry-meta .comments-link {
+:is(body.blog, body.archive, body.author, body.search) article footer.entry-meta .comments-link {
   display: none !important;
 }
 
@@ -118,9 +111,9 @@ article footer.entry-meta .nav-next:last-child {
 }
 
 /* Featured hero image — full width */
-body.blog .featured-image,
+:is(body.blog, body.archive, body.author, body.search) .featured-image,
 body.single-post .featured-image,
-body.blog .page-header-image-single,
+:is(body.blog, body.archive, body.author, body.search) .page-header-image-single,
 body.single-post .page-header-image-single {
   width: 100%;
   max-width: 100%;
@@ -128,9 +121,9 @@ body.single-post .page-header-image-single {
   margin-bottom: 1.5em;
 }
 
-body.blog .featured-image img,
+:is(body.blog, body.archive, body.author, body.search) .featured-image img,
 body.single-post .featured-image img,
-body.blog .page-header-image-single img,
+:is(body.blog, body.archive, body.author, body.search) .page-header-image-single img,
 body.single-post .page-header-image-single img {
   width: 100% !important;
   max-width: 100% !important;
@@ -141,14 +134,14 @@ body.single-post .page-header-image-single img {
 }
 
 /* Sidebar latest-posts thumbnails */
-body.blog .wp-block-latest-posts__list li,
+:is(body.blog, body.archive, body.author, body.search) .wp-block-latest-posts__list li,
 body.single-post .wp-block-latest-posts__list li {
   display: block;
   margin-bottom: 1.25em;
   clear: both;
 }
 
-body.blog .wp-block-latest-posts__featured-image,
+:is(body.blog, body.archive, body.author, body.search) .wp-block-latest-posts__featured-image,
 body.single-post .wp-block-latest-posts__featured-image {
   display: block !important;
   width: 100% !important;
@@ -157,12 +150,12 @@ body.single-post .wp-block-latest-posts__featured-image {
   margin: 0 0 12px !important;
 }
 
-body.blog .wp-block-latest-posts__featured-image a,
+:is(body.blog, body.archive, body.author, body.search) .wp-block-latest-posts__featured-image a,
 body.single-post .wp-block-latest-posts__featured-image a {
   display: block;
 }
 
-body.blog .wp-block-latest-posts__featured-image img,
+:is(body.blog, body.archive, body.author, body.search) .wp-block-latest-posts__featured-image img,
 body.single-post .wp-block-latest-posts__featured-image img {
   width: 100% !important;
   max-width: 100% !important;
@@ -236,7 +229,7 @@ body.single-post .wp-block-latest-posts__featured-image img {
   max-width: 100%;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.98px) {
   .entry-content .wp-block-media-text,
   .entry-content .wp-block-media-text.has-media-on-the-right {
     flex-direction: column !important;

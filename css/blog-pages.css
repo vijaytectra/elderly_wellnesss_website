@@ -614,15 +614,16 @@ body.single-post .entry-content > *:last-child {
 body.single-post article footer.entry-meta {
   width: 100% !important;
   max-width: 100% !important;
-  margin: 24px 0 32px !important;
-  padding: 16px 20px;
-  background-color: var(--blog-accent-soft) !important;
-  border-radius: 12px;
-  border: 1px solid var(--blog-border) !important;
+  margin: 28px 0 36px !important;
+  padding: 20px 24px !important;
+  background-color: var(--blog-accent-soft, #f0f9ff) !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--blog-border, #e2e8f0) !important;
   display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
-  gap: 10px 16px !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0 !important;
+  box-sizing: border-box !important;
 }
 
 body.single-post article footer.entry-meta .cat-links,
@@ -630,10 +631,28 @@ body.single-post article footer.entry-meta .tags-links {
   display: inline-flex !important;
   align-items: center !important;
   flex-wrap: wrap !important;
-  gap: 6px !important;
+  gap: 8px !important;
   font-size: 0.92rem !important;
   color: var(--blog-muted) !important;
   margin: 0 !important;
+}
+
+body.single-post article footer.entry-meta .cat-links .gp-icon,
+body.single-post article footer.entry-meta .tags-links .gp-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--blog-accent, #2786a5) !important;
+  font-size: 1rem !important;
+  position: static !important;
+  margin: 0 !important;
+}
+
+body.single-post article footer.entry-meta .cat-links .gp-icon svg,
+body.single-post article footer.entry-meta .tags-links .gp-icon svg {
+  width: 1.1em !important;
+  height: 1.1em !important;
+  fill: currentColor !important;
 }
 
 body.single-post article footer.entry-meta .cat-links a,
@@ -642,24 +661,66 @@ body.single-post article footer.entry-meta .tags-links a {
   align-items: center !important;
   padding: 6px 16px !important;
   background: #ffffff !important;
-  border: 1px solid var(--blog-border) !important;
+  border: 1px solid #cbd5e1 !important;
   border-radius: 999px !important;
   font-size: 0.92rem !important;
   font-weight: 700 !important;
-  color: var(--blog-accent) !important;
+  color: #0f172a !important;
   text-decoration: none !important;
   white-space: normal !important;
   word-break: break-word !important;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
   transition: all 0.2s ease !important;
   line-height: 1.3 !important;
 }
 
 body.single-post article footer.entry-meta .cat-links a:hover,
 body.single-post article footer.entry-meta .tags-links a:hover {
-  background: var(--blog-accent) !important;
+  background: var(--blog-accent, #2786a5) !important;
   color: #ffffff !important;
-  border-color: var(--blog-accent) !important;
+  border-color: var(--blog-accent, #2786a5) !important;
+}
+
+body.single-post article footer.entry-meta nav.post-navigation {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 12px 24px !important;
+  margin-top: 14px !important;
+  padding-top: 14px !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+body.single-post article footer.entry-meta nav.post-navigation .nav-previous,
+body.single-post article footer.entry-meta nav.post-navigation .nav-next {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+  margin: 0 !important;
+  max-width: 48% !important;
+}
+
+body.single-post article footer.entry-meta nav.post-navigation .nav-next {
+  margin-left: auto !important;
+  text-align: right !important;
+  justify-content: flex-end !important;
+}
+
+body.single-post article footer.entry-meta nav.post-navigation a {
+  color: var(--blog-accent, #2786a5) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: color 0.2s ease !important;
+}
+
+body.single-post article footer.entry-meta nav.post-navigation a:hover {
+  color: #0f172a !important;
+  text-decoration: underline !important;
 }
 
 /* Sidebar shell — content styles live in blog-sidebar.css */

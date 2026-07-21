@@ -238,21 +238,22 @@ footer {
   }
 
   .banner_section .banner_text #banner-font2 {
-    font-size: 32px;
+    font-size: 30px;
     letter-spacing: 0.03em;
     margin-bottom: 18px;
-    line-height: 1.15;
+    line-height: 1.2;
   }
 
   .banner_section .banner_text #banner-font2 .hero-age {
-    font-size: 48px;
+    font-size: 46px;
     top: 2px;
-    display: block;
-    margin: 0 auto 4px;
+    display: inline-block !important;
+    margin: 0 6px 0 0 !important;
   }
 
   .banner_section .banner_text #banner-font2 .hero-line2 {
-    margin-top: 0;
+    display: block !important;
+    margin-top: 0 !important;
   }
 
   .banner_section .banner_text p.remove-br {
@@ -472,11 +473,13 @@ footer {
 /* ---------- Small phones ---------- */
 @media screen and (max-width: 480px) {
   .banner_section .banner_text #banner-font2 {
-    font-size: 28px;
+    font-size: 26px !important;
   }
 
   .banner_section .banner_text #banner-font2 .hero-age {
-    font-size: 42px;
+    font-size: 40px !important;
+    display: inline-block !important;
+    margin-right: 5px !important;
   }
 
   .banner_section .banner_text p.remove-br {

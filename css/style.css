@@ -1902,28 +1902,34 @@ iframe#youtubevideo {
 } */
 
 .key_innner .owl-nav button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 100px;
-  border: 1px solid var(--dark-greay) !important;
-  transition: 0.4s all;
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+  z-index: 20 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.25s ease !important;
 }
 
 .key_innner .owl-nav button span {
   color: var(--dark-greay);
-  font-size: 22px;
-  line-height: 1.2;
+  font-size: 20px;
+  line-height: 1;
 }
 
 .key_innner .owl-nav button.owl-prev {
-  left: -50px;
+  left: 16px !important;
 }
 
 .key_innner .owl-nav button.owl-next {
-  right: -50px;
+  right: 16px !important;
 }
 
 .key_innner .owl-nav button:hover {

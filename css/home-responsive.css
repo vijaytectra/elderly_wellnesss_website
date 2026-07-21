@@ -336,11 +336,11 @@ footer {
   }
 
   .key_innner .owl-nav button.owl-next {
-    right: 0;
+    right: 16px !important;
   }
 
   .key_innner .owl-nav button.owl-prev {
-    left: 0;
+    left: 16px !important;
   }
 
   .feature_box {

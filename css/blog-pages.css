@@ -967,11 +967,16 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
 
   :is(body.blog, body.archive, body.author, body.search) .featured-image,
   :is(body.blog, body.archive, body.author, body.search) .post-image,
+  .post-image {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
   body.single-post .featured-image,
   body.single-post .page-header-image-single,
-  body.single-post article .featured-image,
-  .featured-image,
-  .post-image {
+  body.single-post article .featured-image {
     margin-top: 8px !important;
     margin-bottom: 18px !important;
     max-height: none !important;
@@ -999,13 +1004,17 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
     padding: 0 !important;
   }
 
-  :is(body.blog, body.archive, body.author, body.search) .entry-title,
-  body.single-post h1.entry-title,
-  body.single-post .entry-title,
-  .entry-title,
-  h2.entry-title,
-  h1.entry-title {
+  :is(body.blog, body.archive, body.author, body.search) .entry-title {
     font-size: 1.35rem !important;
+    line-height: 1.32 !important;
+    margin-top: 2px !important;
+    margin-bottom: 6px !important;
+    padding-top: 0 !important;
+  }
+
+  body.single-post h1.entry-title,
+  body.single-post .entry-title {
+    font-size: 1.45rem !important;
     line-height: 1.35 !important;
     margin-top: 4px !important;
     margin-bottom: 10px !important;

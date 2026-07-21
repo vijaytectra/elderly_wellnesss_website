@@ -2356,31 +2356,56 @@ footer .download_side {
   text-align: right;
 }
 
+footer .download_side h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 0;
+}
+
 footer .download_side .app_btn {
-  display: grid;
-  gap: 12px;
-  place-content: end;
-  place-items: end;
-  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 0;
+  list-style: none;
+}
+
+footer .download_side .app_btn li {
+  margin: 0;
 }
 
 footer .download_side .app_btn li a {
-  display: block;
-  padding: 15px 35px;
-  background-color: var(--black);
-  border: none;
-  position: relative;
-  border-radius: 12px;
-  transition: 0.4s all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background-color: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  width: 155px;
+  box-sizing: border-box;
+}
+
+footer .download_side .app_btn li a:hover {
+  background-color: #1a1e24;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
 }
 
 footer .download_side .app_btn li:last-child {
-  margin-left: 25px;
+  margin-left: 0;
 }
 
 footer .download_side .app_btn li a img {
-  transition: 0.4s all;
-  height: 36px;
+  transition: all 0.25s ease;
+  height: 24px;
+  width: auto;
+  display: block;
 }
 
 .footer_bottom {
@@ -4618,7 +4643,7 @@ footer .design_by {
   display: flex;
   flex-direction: column;
   row-gap: 12px;
-  margin-top: 40px;
+  margin-top: 14px;
 }
 #quick_links li:after {
   display: none;

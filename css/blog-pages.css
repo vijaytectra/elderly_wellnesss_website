@@ -957,15 +957,15 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
 
   body.single-post .site-content {
     display: block;
-    padding-top: 8px !important;
+    padding-top: 18px !important;
     padding-bottom: 24px !important;
     margin-top: 0 !important;
   }
 
   body.single-post .featured-image,
   body.single-post .page-header-image-single {
-    margin-top: 4px !important;
-    margin-bottom: 14px !important;
+    margin-top: 6px !important;
+    margin-bottom: 16px !important;
   }
 
   body.single-post .featured-image img,

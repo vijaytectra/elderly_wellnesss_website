@@ -962,18 +962,29 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
     margin-top: 0 !important;
   }
 
+  :is(body.blog, body.archive, body.author, body.search) .featured-image,
+  :is(body.blog, body.archive, body.author, body.search) .post-image,
   body.single-post .featured-image,
   body.single-post .page-header-image-single,
-  body.single-post article .featured-image {
-    margin-top: 16px !important;
-    margin-bottom: 20px !important;
+  body.single-post article .featured-image,
+  .featured-image,
+  .post-image {
+    margin-top: 12px !important;
+    margin-bottom: 16px !important;
+    max-height: none !important;
+    height: auto !important;
   }
 
+  :is(body.blog, body.archive, body.author, body.search) .featured-image img,
+  :is(body.blog, body.archive, body.author, body.search) .post-image img,
   body.single-post .featured-image img,
-  body.single-post .page-header-image-single img {
+  body.single-post .page-header-image-single img,
+  .featured-image img,
+  .post-image img {
     width: 100% !important;
-    max-height: 240px !important;
-    object-fit: cover !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
     border-radius: 10px !important;
     display: block !important;
   }

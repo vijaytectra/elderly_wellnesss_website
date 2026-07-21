@@ -577,13 +577,16 @@ body.single-post .entry-content ul li a:hover {
 }
 
 /* Styled Blockquote / Client Testimonial Cards */
+blockquote,
 .entry-content blockquote,
 .entry-content .wp-block-quote,
+.client-testimonial-card,
 body.single-post article blockquote,
 body.single-post blockquote {
   margin: 32px 0 !important;
   padding: 24px 30px !important;
   background: #f0f9ff !important;
+  border: 1px solid #e0f2fe !important;
   border-left: 5px solid var(--blog-accent, #2786a5) !important;
   border-radius: 12px !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
@@ -594,14 +597,19 @@ body.single-post blockquote {
   clear: both !important;
 }
 
+blockquote p,
 .entry-content blockquote p,
-.entry-content .wp-block-quote p {
+.entry-content .wp-block-quote p,
+.client-testimonial-card p {
   margin-bottom: 8px !important;
   color: #0f172a !important;
+  font-style: italic !important;
 }
 
+blockquote cite,
 .entry-content blockquote cite,
-.entry-content .wp-block-quote cite {
+.entry-content .wp-block-quote cite,
+.client-testimonial-card cite {
   font-style: normal !important;
   font-weight: 700 !important;
   color: var(--blog-accent, #2786a5) !important;

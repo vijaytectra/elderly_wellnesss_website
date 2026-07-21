@@ -4851,3 +4851,32 @@ footer .design_by {
     width: auto !important;
   }
 }
+
+/* Global Content Links Color & Underline Alignment */
+p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn),
+.entry-content li a {
+  color: var(--primery, #2786a5) !important;
+  text-decoration: underline !important;
+}
+
+p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
+.entry-content li a:hover {
+  color: #1a6578 !important;
+  text-decoration: underline !important;
+}
+
+/* Explicit Table of Contents Link Style Reset */
+#rank-math-toc a {
+  color: #475569 !important;
+  text-decoration: none !important;
+}
+#rank-math-toc a:hover {
+  color: var(--primery, #2786a5) !important;
+  text-decoration: none !important;
+}
+
+/* Bold Numbered List Markers */
+.entry-content ol li::marker,
+.content-area ol li::marker {
+  font-weight: 700 !important;
+}

@@ -1,9 +1,9 @@
 /* Elderly Wellness — blog listing & single post design */
 
 :root {
-  --blog-accent: #334155;
-  --blog-accent-dark: #1e293b;
-  --blog-accent-soft: #f1f5f9;
+  --blog-accent: #2786a5;
+  --blog-accent-dark: #1a6578;
+  --blog-accent-soft: #eef7fa;
   --blog-bg: #ffffff;
   --blog-card: #ffffff;
   --blog-text: #334155;
@@ -588,8 +588,8 @@ body.single-post .entry-content > *:last-child {
 }
 
 #rank-math-toc nav a {
-  color: #475569;
-  text-decoration: none;
+  color: #475569 !important;
+  text-decoration: none !important;
   font-size: 0.95rem;
   font-weight: 500;
   display: inline-block;
@@ -598,7 +598,8 @@ body.single-post .entry-content > *:last-child {
 }
 
 #rank-math-toc nav a:hover {
-  color: var(--blog-accent);
+  color: var(--blog-accent) !important;
+  text-decoration: none !important;
   transform: translateX(3px);
 }
 

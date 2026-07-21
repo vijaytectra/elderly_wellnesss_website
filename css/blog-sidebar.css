@@ -1,12 +1,12 @@
 /* Elderly Wellness — blog right sidebar (search + recent posts) */
 
 .ew-sidebar {
-  --ew-side-accent: #2786a5;
-  --ew-side-accent-dark: #1a6578;
-  --ew-side-soft: #eaf5f8;
-  --ew-side-ink: #1a2e35;
-  --ew-side-muted: #5b6f78;
-  --ew-side-line: #d7e6ec;
+  --ew-side-accent: #334155;
+  --ew-side-accent-dark: #1e293b;
+  --ew-side-soft: #f1f5f9;
+  --ew-side-ink: #0f172a;
+  --ew-side-muted: #64748b;
+  --ew-side-line: #e2e8f0;
   --ew-side-bg: #ffffff;
   display: flex;
   flex-direction: column;

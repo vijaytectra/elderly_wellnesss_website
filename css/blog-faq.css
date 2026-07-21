@@ -25,7 +25,7 @@
 }
 
 #rank-math-faq .rank-math-list-item.is-open .rank-math-question {
-  color: var(--primery, #2786a5);
+  color: var(--blog-accent, #334155);
 }
 
 #rank-math-faq .rank-math-question::after {
@@ -36,7 +36,7 @@
   transform: translateY(-50%);
   font-size: 26px;
   line-height: 1;
-  color: var(--primery, #2786a5);
+  color: var(--blog-accent, #334155);
   font-weight: 400;
 }
 

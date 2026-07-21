@@ -222,9 +222,21 @@
   border: 0;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 991.98px) {
   .ew-sidebar {
     position: static;
+    width: 100%;
     margin-top: 8px;
+  }
+
+  .ew-sidebar__panel {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ew-sidebar__panel {
+    padding: 16px;
   }
 }

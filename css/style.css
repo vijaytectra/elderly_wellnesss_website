@@ -417,13 +417,19 @@ header {
 }
 
 .navbar-brand img {
-  width: 52px;
+  height: 32px !important;
+  max-height: 32px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block;
 }
 
 .navbar-brand {
   padding: 0;
   margin-right: 0;
   line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-brand h3 {

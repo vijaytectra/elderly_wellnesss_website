@@ -2134,40 +2134,10 @@ iframe#youtubevideo {
 }
 
 .arrange-home-physio > div:first-child img {
-  width: auto;
-  height: auto;
+  width: 56px;
+  height: 56px;
   max-width: 56px;
   max-height: 56px;
-  object-fit: contain;
-}
-
-/* Google Play badges — match homepage store button style */
-.arrange-home-physio:has(img[src*="Secure-Payment"]),
-.arrange-home-physio:has(img[src*="select-the-service-you-need"]),
-.arrange-home-physio:has(img[src*="googleplay"]) {
-  align-items: center;
-}
-
-.arrange-home-physio > div:first-child:has(img[src*="Secure-Payment"]),
-.arrange-home-physio > div:first-child:has(img[src*="select-the-service-you-need"]),
-.arrange-home-physio > div:first-child:has(img[src*="googleplay"]) {
-  width: auto;
-  height: auto;
-  min-width: 0;
-  min-height: 0;
-  padding: 13px 30px;
-  background-color: var(--black);
-  border-radius: 12px;
-}
-
-.arrange-home-physio > div:first-child:has(img[src*="Secure-Payment"]) img,
-.arrange-home-physio > div:first-child:has(img[src*="select-the-service-you-need"]) img,
-.arrange-home-physio > div:first-child:has(img[src*="googleplay"]) img {
-  display: block;
-  width: auto;
-  height: 36px;
-  max-width: none;
-  max-height: none;
   object-fit: contain;
 }
 

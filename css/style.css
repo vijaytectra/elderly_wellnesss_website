@@ -4882,11 +4882,12 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   font-weight: 700 !important;
 }
 
-/* Perfect Horizontal Alignment & Clean Footer Layout for Desktop */
+/* Modern Professional Grid Footer Layout for Desktop */
 @media screen and (min-width: 992px) {
   footer {
-    padding: 36px 0 20px !important;
-    background-color: var(--dark-black, #111218) !important;
+    padding: 44px 0 24px !important;
+    background-color: #0c0e12 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
 
   footer .container {
@@ -4894,21 +4895,23 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   }
 
   footer .row {
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr 1fr !important;
+    gap: 48px !important;
+    align-items: start !important;
+  }
+
+  footer .logo_side {
+    position: relative !important;
+    padding-top: 0 !important;
     display: flex !important;
+    flex-direction: column !important;
     align-items: flex-start !important;
   }
 
-  /* Equal Top Offset so Headings (Contact Us, Quick Links, Download app) align on the exact same horizontal line */
-  footer .logo_side {
-    position: relative !important;
-    padding-top: 36px !important;
-  }
-
   footer .logo_side .logo {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    margin-bottom: 0 !important;
+    position: static !important;
+    margin-bottom: 14px !important;
   }
 
   footer .logo_side .logo img {
@@ -4917,29 +4920,31 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   }
 
   footer #quick_links_side {
-    padding-top: 36px !important;
-    text-align: center !important;
+    padding-top: 0 !important;
+    text-align: left !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: flex-start !important;
   }
 
   footer .download_side {
-    padding-top: 36px !important;
-    text-align: right !important;
+    padding-top: 0 !important;
+    text-align: left !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-end !important;
+    align-items: flex-start !important;
   }
 
-  /* All 3 Headings exact height & alignment */
+  /* All 3 Headings exact height & left alignment */
   footer h3 {
-    font-size: 1.1rem !important;
+    font-size: 1.05rem !important;
     font-weight: 700 !important;
     color: #ffffff !important;
     margin-top: 0 !important;
     margin-bottom: 12px !important;
     line-height: 1.3 !important;
+    text-align: left !important;
+    width: auto !important;
   }
 
   footer .contact_info {
@@ -4948,6 +4953,12 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     gap: 6px !important;
     margin-top: 0 !important;
     margin-bottom: 10px !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  footer .contact_info li {
+    text-align: left !important;
   }
 
   footer .contact_info li a {
@@ -4968,14 +4979,14 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   footer .social_media {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
-    margin-top: 12px !important;
+    gap: 10px !important;
+    margin-top: 14px !important;
   }
 
   footer .social_media li a {
-    width: 32px !important;
-    height: 32px !important;
-    line-height: 30px !important;
+    width: 34px !important;
+    height: 34px !important;
+    line-height: 32px !important;
     border: 1px solid rgba(255, 255, 255, 0.18) !important;
     border-radius: 50% !important;
     display: flex !important;
@@ -4997,14 +5008,14 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   #quick_links {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     gap: 8px !important;
     margin-top: 0 !important;
   }
 
   #quick_links li {
     margin: 0 !important;
-    text-align: center !important;
+    text-align: left !important;
   }
 
   #quick_links li a {
@@ -5017,24 +5028,24 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
 
   #quick_links li a:hover {
     color: #38bdf8 !important;
-    transform: translateX(3px) !important;
+    transform: translateX(4px) !important;
   }
 
   footer .download_side h3 {
-    width: 155px !important;
-    text-align: center !important;
+    width: auto !important;
+    text-align: left !important;
     margin-bottom: 12px !important;
   }
 
   footer .download_side .app_btn {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    gap: 8px !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
     margin-top: 0 !important;
     padding: 0 !important;
     list-style: none !important;
-    width: 155px !important;
+    width: 145px !important;
   }
 
   footer .download_side .app_btn li {
@@ -5069,23 +5080,24 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     display: block !important;
   }
 
-  /* Compact Copyrights Box Width & Spacing */
+  /* Integrated Bottom Copyright Divider Bar */
   .footer_bottom {
     max-width: 1170px !important;
     width: 100% !important;
-    margin: 20px auto 0 !important;
-    background-color: #0d0f12 !important;
-    border-radius: 10px !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    margin: 36px auto 0 !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    border: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
 
   .footer_bottom .container {
     max-width: 100% !important;
-    padding: 0 16px !important;
+    padding: 0 !important;
   }
 
   .footer_bottom .ft_inner {
-    padding: 10px 0 !important;
+    padding: 16px 0 0 !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;

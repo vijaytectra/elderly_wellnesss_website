@@ -55,10 +55,14 @@ body.single-post .inside-article {
   padding-bottom: 0 !important;
 }
 
-body.single-post .site-content {
-  display: block;
-  padding-top: 36px !important;
-  margin-top: 20px !important;
+body.single-post #content,
+body.single-post .site-content,
+body.single-post main#main,
+body.single-post .site-main {
+  display: block !important;
+  padding-top: 54px !important;
+  margin-top: 24px !important;
+  padding-bottom: 60px !important;
 }
 
 body.single-post .site.grid-container {
@@ -502,14 +506,40 @@ body.single-post .entry-content > *:last-child {
   margin: 1.4em 0 0.6em;
 }
 
-.entry-content a {
-  color: inherit !important;
+/* Force ALL links inside article content to render as normal body text without underline or teal/blue color */
+.entry-content a,
+.entry-content a:link,
+.entry-content a:visited,
+.entry-content p a,
+.entry-content ul a,
+.entry-content ol a,
+.entry-content li a,
+.entry-content strong a,
+.entry-content a strong,
+.entry-content span a,
+.entry-content a span,
+body.single-post article .entry-content a,
+body.single-post .entry-content p a,
+body.single-post .entry-content ul li a {
+  color: #334155 !important;
   text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
   font-weight: inherit !important;
 }
 
-.entry-content a:hover {
-  color: var(--blog-accent, #2786a5) !important;
+.entry-content a:hover,
+.entry-content a:hover *,
+.entry-content p a:hover,
+.entry-content ul a:hover,
+.entry-content ol a:hover,
+.entry-content li a:hover,
+.entry-content strong a:hover,
+.entry-content a:hover strong,
+body.single-post article .entry-content a:hover,
+body.single-post .entry-content p a:hover,
+body.single-post .entry-content ul li a:hover {
+  color: #2786a5 !important;
   text-decoration: none !important;
 }
 
@@ -538,11 +568,13 @@ body.single-post .entry-content > *:last-child {
   color: #0f172a;
 }
 
+/* Styled Blockquote / Client Testimonial Cards */
 .entry-content blockquote,
 .entry-content .wp-block-quote,
-body.single-post article blockquote {
-  margin: 28px 0 !important;
-  padding: 24px 28px !important;
+body.single-post article blockquote,
+body.single-post blockquote {
+  margin: 32px 0 !important;
+  padding: 24px 30px !important;
   background: #f0f9ff !important;
   border-left: 5px solid var(--blog-accent, #2786a5) !important;
   border-radius: 12px !important;
@@ -550,7 +582,8 @@ body.single-post article blockquote {
   font-style: italic !important;
   color: #1e293b !important;
   font-size: 1.05rem !important;
-  line-height: 1.7 !important;
+  line-height: 1.75 !important;
+  clear: both !important;
 }
 
 .entry-content blockquote p,
@@ -566,7 +599,15 @@ body.single-post article blockquote {
   color: var(--blog-accent, #2786a5) !important;
   font-size: 0.95rem !important;
   display: block !important;
-  margin-top: 8px !important;
+  margin-top: 10px !important;
+}
+
+/* Floating WhatsApp Chaty button positioning override */
+.chaty-widget,
+div[class*="chaty-widget"],
+.chaty-main-button {
+  z-index: 99 !important;
+  bottom: 24px !important;
 }
 
 /* Table of contents */

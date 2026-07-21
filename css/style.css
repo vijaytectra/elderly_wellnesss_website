@@ -4909,17 +4909,20 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     padding-right: 0 !important;
   }
 
+  /* Equal Top Offset (44px) so Headings (Contact Us, Quick Links, Download app) start on the EXACT SAME horizontal line */
   footer .logo_side {
     position: relative !important;
-    padding-top: 0 !important;
+    padding-top: 44px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
   }
 
   footer .logo_side .logo {
-    position: static !important;
-    margin-bottom: 12px !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   footer .logo_side .logo img {
@@ -4928,7 +4931,7 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   }
 
   footer #quick_links_side {
-    padding-top: 0 !important;
+    padding-top: 44px !important;
     text-align: left !important;
     display: flex !important;
     flex-direction: column !important;
@@ -4936,7 +4939,7 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   }
 
   footer .download_side {
-    padding-top: 0 !important;
+    padding-top: 44px !important;
     text-align: left !important;
     display: flex !important;
     flex-direction: column !important;

@@ -4885,7 +4885,7 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
 /* Modern Professional Grid Footer Layout for Desktop */
 @media screen and (min-width: 992px) {
   footer {
-    padding: 44px 0 24px !important;
+    padding: 40px 0 20px !important;
     background-color: #0c0e12 !important;
     border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
@@ -4896,9 +4896,17 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
 
   footer .row {
     display: grid !important;
-    grid-template-columns: 1.2fr 1fr 1fr !important;
-    gap: 48px !important;
+    grid-template-columns: 1.4fr 1.6fr 1fr !important;
+    gap: 32px !important;
     align-items: start !important;
+  }
+
+  footer .row > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   footer .logo_side {
@@ -4911,11 +4919,11 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
 
   footer .logo_side .logo {
     position: static !important;
-    margin-bottom: 14px !important;
+    margin-bottom: 12px !important;
   }
 
   footer .logo_side .logo img {
-    height: 28px !important;
+    height: 26px !important;
     width: auto !important;
   }
 
@@ -4935,9 +4943,9 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     align-items: flex-start !important;
   }
 
-  /* All 3 Headings exact height & left alignment */
+  /* All 3 Headings exact height, single line & left alignment */
   footer h3 {
-    font-size: 1.05rem !important;
+    font-size: 1rem !important;
     font-weight: 700 !important;
     color: #ffffff !important;
     margin-top: 0 !important;
@@ -4945,6 +4953,7 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     line-height: 1.3 !important;
     text-align: left !important;
     width: auto !important;
+    white-space: nowrap !important;
   }
 
   footer .contact_info {
@@ -4959,12 +4968,14 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
 
   footer .contact_info li {
     text-align: left !important;
+    white-space: nowrap !important;
   }
 
   footer .contact_info li a {
-    font-size: 0.92rem !important;
+    font-size: 0.88rem !important;
     color: #cbd5e1 !important;
     text-decoration: none !important;
+    white-space: nowrap !important;
     transition: color 0.2s ease !important;
   }
 
@@ -4979,14 +4990,14 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   footer .social_media {
     display: flex !important;
     align-items: center !important;
-    gap: 10px !important;
-    margin-top: 14px !important;
+    gap: 8px !important;
+    margin-top: 12px !important;
   }
 
   footer .social_media li a {
-    width: 34px !important;
-    height: 34px !important;
-    line-height: 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+    line-height: 30px !important;
     border: 1px solid rgba(255, 255, 255, 0.18) !important;
     border-radius: 50% !important;
     display: flex !important;
@@ -4995,7 +5006,7 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     color: #cbd5e1 !important;
     background: transparent !important;
     transition: all 0.25s ease !important;
-    font-size: 0.88rem !important;
+    font-size: 0.85rem !important;
   }
 
   footer .social_media li a:hover {
@@ -5016,12 +5027,14 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   #quick_links li {
     margin: 0 !important;
     text-align: left !important;
+    white-space: nowrap !important;
   }
 
   #quick_links li a {
-    font-size: 0.92rem !important;
+    font-size: 0.88rem !important;
     color: #cbd5e1 !important;
     text-decoration: none !important;
+    white-space: nowrap !important;
     transition: color 0.2s ease, transform 0.2s ease !important;
     display: inline-block !important;
   }
@@ -5035,17 +5048,18 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     width: auto !important;
     text-align: left !important;
     margin-bottom: 12px !important;
+    white-space: nowrap !important;
   }
 
   footer .download_side .app_btn {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 10px !important;
+    gap: 8px !important;
     margin-top: 0 !important;
     padding: 0 !important;
     list-style: none !important;
-    width: 145px !important;
+    width: 140px !important;
   }
 
   footer .download_side .app_btn li {
@@ -5057,7 +5071,7 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 7px 14px !important;
+    padding: 6px 12px !important;
     background-color: #000000 !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 8px !important;
@@ -5074,7 +5088,7 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   }
 
   footer .download_side .app_btn li a img {
-    height: 22px !important;
+    height: 20px !important;
     width: auto !important;
     max-width: 100% !important;
     display: block !important;
@@ -5084,10 +5098,12 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   .footer_bottom {
     max-width: 1170px !important;
     width: 100% !important;
-    margin: 36px auto 0 !important;
+    margin: 28px auto 0 !important;
     background-color: transparent !important;
     border-radius: 0 !important;
     border: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
     border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
 

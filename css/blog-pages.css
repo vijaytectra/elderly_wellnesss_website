@@ -227,12 +227,15 @@ body.blog .site-main::after {
   transform: scale(1.03);
 }
 
-:is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .entry-header {
-  padding: 16px 0 0 !important;
+:is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .entry-header,
+header.entry-header {
+  padding: 4px 0 0 !important;
+  margin-top: 0 !important;
 }
 
 body.single-post header.entry-header {
-  padding: 12px 0 0 !important;
+  padding: 4px 0 0 !important;
+  margin-top: 0 !important;
 }
 
 :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .entry-summary {
@@ -969,8 +972,8 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
   body.single-post article .featured-image,
   .featured-image,
   .post-image {
-    margin-top: 10px !important;
-    margin-bottom: 8px !important;
+    margin-top: 8px !important;
+    margin-bottom: 4px !important;
     max-height: none !important;
     height: auto !important;
   }
@@ -993,7 +996,7 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
   body.single-post header.entry-header,
   header.entry-header {
     margin-top: 0 !important;
-    padding-top: 0 !important;
+    padding: 2px 0 0 !important;
   }
 
   :is(body.blog, body.archive, body.author, body.search) .entry-title,
@@ -1002,9 +1005,10 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
   h2.entry-title,
   h1.entry-title {
     font-size: 1.35rem !important;
-    line-height: 1.35 !important;
-    margin-top: 2px !important;
-    margin-bottom: 6px !important;
+    line-height: 1.32 !important;
+    margin-top: 0 !important;
+    margin-bottom: 4px !important;
+    padding-top: 0 !important;
   }
 
   body.single-post .entry-content {

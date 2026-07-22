@@ -569,13 +569,10 @@ footer {
   }
 }
 
-/* Prefer reduced motion on mobile hero video when requested */
+/* Keep hero videos visible; only soften autoplay motion when requested */
 @media (prefers-reduced-motion: reduce) {
   .slider_media video {
-    display: none;
-  }
-
-  .slider_media {
-    background: linear-gradient(135deg, #1a6578, #2786a5);
+    /* Do not hide — only avoid endless motion */
+    animation: none !important;
   }
 }

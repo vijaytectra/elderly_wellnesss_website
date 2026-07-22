@@ -4312,7 +4312,9 @@ footer .logo a img {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  display: block;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   border-radius: 40px;
 }
 

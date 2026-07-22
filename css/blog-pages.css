@@ -58,7 +58,6 @@ body.single-post .inside-article {
 body.single-post main#main,
 body.single-post .site-main {
   display: block !important;
-<<<<<<< HEAD
 }
 
 /* Single post: two-column layout with sticky Search + Recent Posts */
@@ -72,12 +71,6 @@ body.single-post .site-content {
   margin-top: 24px !important;
   padding-bottom: 60px !important;
   overflow: visible !important;
-=======
-  padding-top: 24px !important;
-  margin-top: 24px !important;
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
->>>>>>> ee2850b (Update mobile responsive styles, service blocks flex ordering, image centering, and blog navigation card layout)
 }
 
 body.single-post .content-area {
@@ -159,12 +152,18 @@ body.single-post.separate-containers .inside-article {
   padding: 0 !important;
 }
 
-/* Blog listing grid + hero */
+/* Blog listing grid + hero — always two cards per row on desktop/tablet */
 :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .site-main {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   column-gap: 28px;
   row-gap: 16px;
+}
+
+:is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .site-main > article {
+  width: auto !important;
+  max-width: none !important;
+  grid-column: auto !important;
 }
 
 :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .site-main > .page-header,
@@ -752,6 +751,31 @@ h3.rank-math-question {
   box-sizing: border-box !important;
 }
 
+#rank-math-faq .rank-math-question::after,
+.rank-math-block .rank-math-question::after,
+h3.rank-math-question::after {
+  content: "+" !important;
+  position: absolute !important;
+  right: 28px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+  color: var(--blog-accent, #2786a5) !important;
+  font-weight: 600 !important;
+}
+
+#rank-math-faq .rank-math-list-item.is-open .rank-math-question,
+.rank-math-block .rank-math-list-item.is-open .rank-math-question,
+body.single-post .entry-content #rank-math-faq .rank-math-list-item.is-open .rank-math-question {
+  color: var(--blog-accent, #2786a5) !important;
+}
+
+#rank-math-faq .rank-math-list-item.is-open .rank-math-question::after,
+.rank-math-block .rank-math-list-item.is-open .rank-math-question::after {
+  content: "−" !important;
+}
+
 #rank-math-faq .rank-math-answer,
 .rank-math-block .rank-math-answer,
 .rank-math-list-item .rank-math-answer,
@@ -767,6 +791,21 @@ body.single-post article #rank-math-faq .rank-math-answer {
   line-height: 1.7 !important;
   border-top: 1px solid #f1f5f9 !important;
   box-sizing: border-box !important;
+}
+
+#rank-math-faq .rank-math-list-item.is-open .rank-math-answer,
+.rank-math-block .rank-math-list-item.is-open .rank-math-answer,
+body.single-post .entry-content #rank-math-faq .rank-math-list-item.is-open .rank-math-answer,
+body.single-post article #rank-math-faq .rank-math-list-item.is-open .rank-math-answer {
+  display: block !important;
+}
+
+#rank-math-faq .rank-math-answer p:last-child {
+  margin-bottom: 0;
+}
+
+#rank-math-faq .rank-math-list-item.is-hidden {
+  display: none;
 }
 
 /* Post views */
@@ -966,7 +1005,6 @@ body.single-post .site-footer {
   padding-top: 24px !important;
 }
 
-<<<<<<< HEAD
 /* Conclusion Box & Callout Styles */
 .blog-conclusion-box {
   background: #f0f9ff !important;
@@ -1023,8 +1061,6 @@ body.single-post .entry-content h2#conclusion ~ p.has-text-align-center {
   color: #334155 !important;
 }
 
-=======
->>>>>>> a3f69ce (Update mobile responsive styles, service blocks flex ordering, image centering, and blog navigation card layout)
 /* Sidebar shell — content styles live in blog-sidebar.css */
 #right-sidebar .inside-right-sidebar {
   padding: 0;
@@ -1102,10 +1138,7 @@ body.single-post #content {
 
 /* Mobile & Tablet Responsive Layout */
 @media screen and (max-width: 991.98px) {
-  :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .site-main {
-    grid-template-columns: 1fr;
-  }
-
+  /* Keep two columns on tablet; only stack on phones below */
   body.blog .site-content {
     padding-top: 0 !important;
     padding-bottom: 24px;
@@ -1301,6 +1334,12 @@ body.single-post #content {
 }
 
 @media screen and (max-width: 767.98px) {
+  :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .site-main {
+    grid-template-columns: 1fr !important;
+    column-gap: 0;
+    row-gap: 20px;
+  }
+
   body.single-post {
     --article-inline: 16px;
   }

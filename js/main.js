@@ -273,7 +273,7 @@ void 0 !== counter_find &&
   $(".toggle-wrap").on("click", function () {
     $(this).toggleClass("active"), $("aside").animate({ width: "toggle" }, 200);
   }),
-  AOS.init();
+  typeof AOS !== "undefined" && AOS.init();
 
 function ActiveMenu() {
   // Get all links

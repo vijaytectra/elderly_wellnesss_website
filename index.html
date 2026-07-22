@@ -15,27 +15,31 @@
     <meta property="og:type" content="website"/>
     <meta property="og:image" content="images/logo.png"/>
     <meta name="Robots" content="index, follow"/>
-    <link rel="canonical" href="index.html"/>
-    <!-- icofont-css-link -->
-    <link rel="stylesheet" href="css/icofont.min.css"/>
-    <!-- Owl-Carosal-Style-link -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css"/>
-    <!-- Bootstrap-Style-link -->
+    <link rel="canonical" href="https://www.theelderlywellness.com/"/>
+    <link rel="preload" as="style" href="css/bootstrap.min.css"/>
+    <link rel="preload" as="style" href="css/style.css?v=20260722perf"/>
+    <!-- Critical path CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <!-- Aos-Style-link -->
+    <link rel="stylesheet" href="css/style.css?v=20260722perf"/>
+    <link rel="stylesheet" href="css/responsive.css?v=20260722perf"/>
+    <link rel="stylesheet" href="css/home-responsive.css?v=20260722perf"/>
+    <link rel="stylesheet" href="css/owl.carousel.min.css"/>
     <link rel="stylesheet" href="css/aos.css"/>
-    <link rel="stylesheet" href="css/style.css?v=20260722b"/>
-    <!-- Responsive-Style-link -->
-    <link rel="stylesheet" href="css/responsive.css?v=20260722b"/>
-    <link rel="stylesheet" href="css/home-responsive.css?v=20260722b"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com/"/>
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
-    
-    <link href="css/cormorant-garamond.css" rel="stylesheet"/>
-    <link href="css/playball.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/icofont.min.css"/>
+    <!-- Non-critical fonts loaded async -->
+    <link rel="stylesheet" href="css/cormorant-garamond.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="css/playball.css" media="print" onload="this.media='all'"/>
+    <noscript>
+      <link rel="stylesheet" href="css/cormorant-garamond.css"/>
+      <link rel="stylesheet" href="css/playball.css"/>
+    </noscript>
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"/>
+    <style id="perf-critical">
+      .banner_section .slider_media{aspect-ratio:4/5;overflow:hidden;border-radius:24px}
+      .banner_section .slider_media video{width:100%;height:100%;object-fit:cover;display:block}
+      img{max-width:100%;height:auto}
+    </style>
     
     <script type="application/ld+json">
       {
@@ -86,14 +90,14 @@
       <div id="loader"></div>
     </div>
 
-                        <!-- Header Start -->
+    <!-- Header Start -->
     <header>
       <!-- container start -->
       <div class="container">
         <!-- navigation bar -->
         <nav class="navbar navbar-expand-lg">
           <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="Elderly Wellness"/>
+            <img src="images/opt/logo.png" width="160" height="160" alt="Elderly Wellness"/>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
@@ -168,6 +172,7 @@
       <!-- container end -->
     </header>
 
+    <main id="main-content">
     <!-- Banner-Section-Start -->
     <section class="banner_section">
       <!-- container start -->
@@ -193,12 +198,12 @@
             <ul class="app_btn">
               <li>
                 <a href="https://play.google.com/store/apps/details?id=com.elderly.nri">
-                  <img class="blue_img" src="images/googleplay.png" alt="image"/>
+                  <img class="blue_img" src="images/opt/googleplay.png" width="135" height="40" alt="image" loading="lazy" decoding="async"/>
                 </a>
               </li>
               <li>
                 <a href="https://apps.apple.com/in/app/elderly-care-plus/id6740391242">
-                  <img class="blue_img" src="images/appstorebtn.png" alt="image"/>
+                  <img class="blue_img" src="images/opt/appstorebtn.png" width="135" height="40" alt="image" loading="lazy" decoding="async"/>
                 </a>
               </li>
             </ul>
@@ -210,17 +215,17 @@
               <div id="frmae_slider" class="owl-carousel owl-theme">
                 <div class="item">
                   <div class="slider_media">
-                    <video src="images/home/1.mp4" autoplay muted loop playsinline webkit-playsinline></video>
+                    <video src="images/home/opt/1.mp4" autoplay muted loop playsinline webkit-playsinline></video>
                   </div>
                 </div>
                 <div class="item">
                   <div class="slider_media">
-                    <video src="images/home/2.mp4" autoplay muted loop playsinline webkit-playsinline></video>
+                    <video src="images/home/opt/2.mp4" autoplay muted loop playsinline webkit-playsinline></video>
                   </div>
                 </div>
                 <div class="item">
                   <div class="slider_media">
-                    <video src="images/home/3.mp4" muted loop autoplay playsinline webkit-playsinline></video>
+                    <video src="images/home/opt/3.mp4" muted loop autoplay playsinline webkit-playsinline></video>
                   </div>
                 </div>
               </div>
@@ -241,7 +246,7 @@
       <section class="key_feature_section row_am" id="home-services-section">
         <div class="key_innner">
           <div class="dotes_blue">
-            <img src="images/blue_dotes.png" alt="image"/>
+            <img src="images/opt/blue_dotes.jpg" width="200" height="200" alt="image" loading="lazy" decoding="async"/>
           </div>
           <div class="container">
             <div class="section_title">
@@ -259,7 +264,7 @@
                       </p>
                     </div>
                     <div class="img">
-                      <img src="images/home/Physiotherapy.png" alt="image"/>
+                      <img src="images/home/opt/Physiotherapy.jpg" width="400" height="400" loading="lazy" decoding="async" alt="image"/>
                     </div>
                   </div>
                 </a>
@@ -275,7 +280,7 @@
                       </p>
                     </div>
                     <div class="img">
-                      <img src="images/home/Nurse.png" alt="image"/>
+                      <img src="images/home/opt/Nurse.jpg" width="400" height="400" loading="lazy" decoding="async" alt="image"/>
                     </div>
                   </div>
                 </a>
@@ -291,7 +296,7 @@
                       </p>
                     </div>
                     <div class="img">
-                      <img src="images/home/geriatric-care.png" alt="image"/>
+                      <img src="images/home/opt/geriatric-care.jpg" width="400" height="400" loading="lazy" decoding="async" alt="image"/>
                     </div>
                   </div>
                 </a>
@@ -307,7 +312,7 @@
                       </p>
                     </div>
                     <div class="img">
-                      <img src="images/home/assisted-living-care.png" alt="image"/>
+                      <img src="images/home/opt/assisted-living-care.jpg" width="400" height="400" loading="lazy" decoding="async" alt="image"/>
                     </div>
                   </div>
                 </a>
@@ -382,7 +387,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
               <div class="abtImg text-center" data-aos="fade-up" data-aos-duration="1500">
-                <img src="images/appscreen.png" alt="image"/>
+                <img src="images/opt/appscreen.jpg" width="600" height="1200" loading="lazy" decoding="async" alt="image"/>
               </div>
             </div>
             <div class="col-lg-4">
@@ -403,10 +408,10 @@
                 ones receive the best possible care when and where they need it.
               </p>
               <div class="video_block" data-aos="fade-up" data-aos-duration="1500">
-                <img class="thumbnil" src="images/applicationvideothumb.jpg" alt="image"/>
+                <img class="thumbnil" src="images/opt/applicationvideothumb.jpg" width="800" height="500" loading="lazy" decoding="async" alt="image"/>
                 <div class="playBtn">
-                  <a href="index.html#" class="popup-youtube play-button play_icon" data-url="https://www.youtube.com/embed/h_Kc4mmA3oU?autoplay=1&amp;mute=1" data-toggle="modal" data-target="#myModal" title="XJj2PbenIsU"><img src="images/play-white.png" alt="img"/></a>
-                  <img class="spin_text" src="images/playvideotext.png" alt="image"/>
+                  <a href="index.html#" class="popup-youtube play-button play_icon" data-url="https://www.youtube.com/embed/h_Kc4mmA3oU?autoplay=1&amp;mute=1" data-toggle="modal" data-target="#myModal" title="XJj2PbenIsU"><img src="images/play-white.png" alt="img" loading="lazy" decoding="async"/></a>
+                  <img class="spin_text" src="images/playvideotext.png" alt="image" loading="lazy" decoding="async"/>
                 </div>
               </div>
             </div>
@@ -421,7 +426,7 @@
       <!-- Task Block start -->
       <div class="task_block">
         <div class="dotes_blue">
-          <img src="images/blue_dotes.png" alt="image"/>
+          <img src="images/opt/blue_dotes.jpg" width="200" height="200" alt="image" loading="lazy" decoding="async"/>
         </div>
         <!-- row start -->
         <div class="row">
@@ -429,7 +434,7 @@
             <!-- task images -->
             <div class="task_img" data-aos="fade-in" data-aos-duration="1500">
               <div class="frame_img">
-                <img src="images/feature1a.png" alt="image"/>
+                <img src="images/opt/feature1a.jpg" width="800" height="600" loading="lazy" decoding="async" alt="image"/>
               </div>
             </div>
           </div>
@@ -438,7 +443,7 @@
             <div class="task_text">
               <div class="section_title white_text" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
                 <span class="icon">
-                  <img src="images/feature-icon1.svg" alt="image"/>
+                  <img src="images/feature-icon1.svg" alt="image" loading="lazy" decoding="async"/>
                 </span>
                 <!-- h2 -->
                 <h2>Simplified Discovery Process</h2>
@@ -459,7 +464,7 @@
       <!-- Task Block start -->
       <div class="task_block">
         <div class="dotes_blue">
-          <img src="images/blue_dotes.png" alt="image"/>
+          <img src="images/opt/blue_dotes.jpg" width="200" height="200" alt="image" loading="lazy" decoding="async"/>
         </div>
         <!-- row start -->
         <div class="row">
@@ -467,7 +472,7 @@
             <!-- task images -->
             <div class="task_img" data-aos="fade-in" data-aos-duration="1500">
               <div class="frame_img">
-                <img src="images/feature2a.png" alt="image"/>
+                <img src="images/opt/feature2a.jpg" width="800" height="600" loading="lazy" decoding="async" alt="image"/>
               </div>
             </div>
           </div>
@@ -476,7 +481,7 @@
             <div class="task_text">
               <div class="section_title white_text" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
                 <span class="icon">
-                  <img src="images/feature-icon3.svg" alt="image"/>
+                  <img src="images/feature-icon3.svg" alt="image" loading="lazy" decoding="async"/>
                 </span>
                 <!-- h2 -->
                 <h2>Affordable, Transparent Care</h2>
@@ -497,7 +502,7 @@
       <!-- Task Block start -->
       <div class="task_block">
         <div class="dotes_blue">
-          <img src="images/blue_dotes.png" alt="image"/>
+          <img src="images/opt/blue_dotes.jpg" width="200" height="200" alt="image" loading="lazy" decoding="async"/>
         </div>
         <!-- row start -->
         <div class="row">
@@ -505,7 +510,7 @@
             <!-- task images -->
             <div class="task_img" data-aos="fade-in" data-aos-duration="1500">
               <div class="frame_img">
-                <img src="images/feature3a.png" alt="image"/>
+                <img src="images/opt/feature3a.jpg" width="800" height="600" loading="lazy" decoding="async" alt="image"/>
               </div>
             </div>
           </div>
@@ -514,7 +519,7 @@
             <div class="task_text">
               <div class="section_title white_text" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
                 <span class="icon">
-                  <img src="images/feature-icon2.svg" alt="image"/>
+                  <img src="images/feature-icon2.svg" alt="image" loading="lazy" decoding="async"/>
                 </span>
                 <!-- h2 -->
                 <h2>Reliable, Long-term Support</h2>
@@ -587,7 +592,7 @@
       <!-- Image-Section -->
       <section class="row_am pricing_section white_text" data-aos="fade-in" data-aos-duration="1500">
         <div class="pricing_inner">
-          <img src="images/e4.jpg" alt=" image"/>
+          <img src="images/opt/e4.jpg" width="1200" height="700" loading="lazy" decoding="async" alt=" image"/>
         </div>
         <!-- container start end -->
       </section>
@@ -597,22 +602,22 @@
       <div class="text_list_section row_am downaload_section" data-aos="fade-in" data-aos-duration="1500">
         <div class="container">
           <div class="yellow_dotes">
-            <img src="images/yellow_dotes.png" alt="image"/>
+            <img src="images/opt/yellow_dotes.jpg" width="200" height="200" alt="image" loading="lazy" decoding="async"/>
           </div>
           <div class="center_screen">
             <div class="img">
-              <img src="images/downloadScreen.png" alt="image"/>
+              <img src="images/opt/downloadScreen.jpg" width="800" height="900" loading="lazy" decoding="async" alt="image"/>
             </div>
             <!-- app buttons -->
             <ul class="app_btn">
               <li>
                 <a href="https://play.google.com/store/apps/details?id=com.elderly.nri">
-                  <img class="blue_img" src="images/googleplay.png" alt="image"/>
+                  <img class="blue_img" src="images/opt/googleplay.png" width="135" height="40" alt="image" loading="lazy" decoding="async"/>
                 </a>
               </li>
               <li>
                 <a href="https://apps.apple.com/in/app/elderly-care-plus/id6740391242">
-                  <img class="blue_img" src="images/appstorebtn.png" alt="image"/>
+                  <img class="blue_img" src="images/opt/appstorebtn.png" width="135" height="40" alt="image" loading="lazy" decoding="async"/>
                 </a>
               </li>
             </ul>
@@ -721,6 +726,7 @@
       </section>
       <!-- Blog Section End -->
 
+      </main>
       <!-- Footer-Section start -->
       <footer class="white_text" data-aos="fade-in" data-aos-duration="1500" id="download-btn" style="margin-top: 0">
         <div class="container">
@@ -729,7 +735,7 @@
               <div class="logo_side">
                 <div class="logo">
                   <a href="index.html">
-                    <img src="images/ft_logo.png" alt="Elderly Wellness"/>
+                    <img src="images/ft_logo.png" alt="Elderly Wellness" loading="lazy" decoding="async"/>
                   </a>
                 </div>
                 <h3 class="mb-4">Contact Us</h3>
@@ -784,12 +790,12 @@
                 <ul class="app_btn">
                   <li>
                     <a href="https://play.google.com/store/apps/details?id=com.elderly.nri">
-                      <img class="blue_img" src="images/googleplay.png" alt="image"/>
+                      <img class="blue_img" src="images/opt/googleplay.png" width="135" height="40" alt="image" loading="lazy" decoding="async"/>
                     </a>
                   </li>
                   <li>
                     <a href="https://apps.apple.com/in/app/elderly-care-plus/id6740391242">
-                      <img class="blue_img" src="images/appstorebtn.png" alt="image"/>
+                      <img class="blue_img" src="images/opt/appstorebtn.png" width="135" height="40" alt="image" loading="lazy" decoding="async"/>
                     </a>
                   </li>
                 </ul>
@@ -841,47 +847,18 @@
     <!-- Page-wrapper-End -->
 
     <!-- Jquery-js-Link -->
-    <script src="js/jquery.js"></script>
+    <script src="js/jquery.js" defer></script>
     <!-- owl-js-Link -->
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/owl.carousel.min.js" defer></script>
     <!-- bootstrap-js-Link -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js" defer></script>
     <!-- aos-js-Link -->
-    <script src="js/aos.js"></script>
-    <!-- Typed Js Cdn -->
-    <script src="js/typed.min.js"></script>
+    <script src="js/aos.js" defer></script>
+    <!-- Typed Js -->
+    <script src="js/typed.min.js" defer></script>
     <!-- main-js-Link -->
-    <script src="js/main.js"></script>
-    <script src="js/article.js?v=20260722b"></script>
-
-    <script>
-      $("#typed").typed({
-        strings: [
-          "Type Writing Text",
-          "Auto Type Text",
-          "Add any text you like here.",
-        ],
-        typeSpeed: 100,
-        startDelay: 0,
-        backSpeed: 60,
-        backDelay: 2000,
-        loop: true,
-        cursorChar: "|",
-        contentType: "html",
-      });
-
-      // Stacked feature cards on scroll
-      $(document).ready(function () {
-        const cardBlocks = document.querySelectorAll(".task_app_section .task_block");
-        let topStyle = 100;
-
-        cardBlocks.forEach((card, index) => {
-          card.style.top = `${topStyle}px`;
-          card.style.zIndex = String(index + 10);
-          topStyle += 28;
-        });
-      });
-
-    </script>
+    <script src="js/main.js?v=20260722perf" defer></script>
+    <script src="js/article.js?v=20260722perf" defer></script>
+    <script src="js/home-perf.js?v=20260722perf" defer></script>
   </body>
 </html>

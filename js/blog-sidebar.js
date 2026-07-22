@@ -6,8 +6,8 @@
   const root = document.getElementById("ew-blog-sidebar");
   if (!root) return;
 
-  const manifestUrl = root.getAttribute("data-manifest") || "../blog-manifest.json";
-  const blogsBase = root.getAttribute("data-blogs-base") || "../";
+  const manifestUrl = root.getAttribute("data-manifest") || "/blogs/blog-manifest.json";
+  const blogsBase = root.getAttribute("data-blogs-base") || "/blogs/";
   const listEl = root.querySelector("[data-ew-recent-list]");
   const inputEl = root.querySelector("[data-ew-search-input]");
   const hintEl = root.querySelector("[data-ew-search-hint]");

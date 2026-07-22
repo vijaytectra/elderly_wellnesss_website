@@ -15,7 +15,20 @@ $(".drp_btn").click(function () {
     nav: !1,
     dots: !0,
     responsive: { 0: { items: 1 }, 600: { items: 1 }, 1e3: { items: 1 } },
-  }),
+  });
+
+  // Keep hero videos playing (Owl clones break native autoplay)
+  function playHeroVideos() {
+    $("#frmae_slider video").each(function () {
+      this.muted = true;
+      var playPromise = this.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(function () {});
+      }
+    });
+  }
+  playHeroVideos();
+  $("#frmae_slider").on("translated.owl.carousel initialized.owl.carousel", playHeroVideos);
   $("#company_slider").owlCarousel({
     loop: !0,
     margin: 10,

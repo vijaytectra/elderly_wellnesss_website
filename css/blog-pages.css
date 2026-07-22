@@ -45,28 +45,57 @@ body.single-post .site.grid-container {
   padding-inline: 15px;
   box-sizing: border-box;
   margin-inline: auto;
+  padding-top: 0 !important;
 }
 
 body.single-post #page,
-body.single-post .content-area,
 body.single-post article,
 body.single-post .inside-article {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
 }
 
-body.single-post #content,
-body.single-post .site-content,
 body.single-post main#main,
 body.single-post .site-main {
   display: block !important;
+}
+
+/* Single post: two-column layout with sticky Search + Recent Posts */
+body.single-post #content,
+body.single-post .site-content {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 32px;
   padding-top: 54px !important;
   margin-top: 24px !important;
   padding-bottom: 60px !important;
+  overflow: visible !important;
 }
 
-body.single-post .site.grid-container {
-  padding-top: 0 !important;
+body.single-post .content-area {
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto !important;
+  max-width: calc(100% - 348px);
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+body.single-post #right-sidebar {
+  display: block !important;
+  flex: 0 0 316px;
+  width: 316px !important;
+  max-width: 316px;
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+  z-index: 20;
+  max-height: calc(100vh - 120px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 body.blog .site-content {
@@ -104,14 +133,8 @@ body.author .content-area {
 body.blog #right-sidebar,
 body.archive #right-sidebar,
 body.search #right-sidebar,
-body.author #right-sidebar,
-body.single-post #right-sidebar {
+body.author #right-sidebar {
   display: none !important;
-}
-
-body.single-post .content-area {
-  width: 100% !important;
-  max-width: 100% !important;
 }
 
 .inside-article,
@@ -867,6 +890,15 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
 /* Sidebar shell — content styles live in blog-sidebar.css */
 #right-sidebar .inside-right-sidebar {
   padding: 0;
+  position: static;
+}
+
+/* Ensure sticky is not clipped by theme wrappers */
+body.single-post .site.grid-container,
+body.single-post .site-content,
+body.single-post #page,
+body.single-post #content {
+  overflow: visible !important;
 }
 
 /* Comments — hide broken static form */
@@ -959,10 +991,23 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
   }
 
   body.single-post .site-content {
-    display: block;
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 32px;
     padding-top: 24px !important;
     padding-bottom: 24px !important;
     margin-top: 0 !important;
+  }
+
+  body.single-post #right-sidebar {
+    position: static;
+    top: auto;
+    max-height: none;
+    overflow: visible;
+    z-index: auto;
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100% !important;
   }
 
   :is(body.blog, body.archive, body.author, body.search) .featured-image,

@@ -937,6 +937,62 @@ body.single-post .site-footer {
   padding-top: 24px !important;
 }
 
+/* Conclusion Box & Callout Styles */
+.blog-conclusion-box {
+  background: #f0f9ff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-left: 5px solid var(--blog-accent, #2786a5) !important;
+  border-radius: 14px !important;
+  padding: 24px 28px !important;
+  margin: 24px 0 28px 0 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+}
+
+.blog-conclusion-box h3 {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin-top: 0 !important;
+  margin-bottom: 14px !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+}
+
+.blog-conclusion-box p {
+  text-align: left !important;
+  font-size: 1.02rem !important;
+  line-height: 1.65 !important;
+  color: #334155 !important;
+  margin-bottom: 14px !important;
+}
+
+.blog-conclusion-box p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.conclusion-callout {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  padding: 14px 18px !important;
+  margin-top: 18px !important;
+  text-align: center !important;
+  color: #0f172a !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Override any stray center aligned conclusion text across all blog posts */
+body.single-post .entry-content h2#conclusion ~ p.has-text-align-center {
+  text-align: left !important;
+  line-height: 1.65 !important;
+  font-size: 1.02rem !important;
+  color: #334155 !important;
+}
+
 /* Sidebar shell — content styles live in blog-sidebar.css */
 #right-sidebar .inside-right-sidebar {
   padding: 0;

@@ -58,6 +58,7 @@ body.single-post .inside-article {
 body.single-post main#main,
 body.single-post .site-main {
   display: block !important;
+<<<<<<< HEAD
 }
 
 /* Single post: two-column layout with sticky Search + Recent Posts */
@@ -71,6 +72,12 @@ body.single-post .site-content {
   margin-top: 24px !important;
   padding-bottom: 60px !important;
   overflow: visible !important;
+=======
+  padding-top: 24px !important;
+  margin-top: 24px !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+>>>>>>> ee2850b (Update mobile responsive styles, service blocks flex ordering, image centering, and blog navigation card layout)
 }
 
 body.single-post .content-area {
@@ -959,6 +966,7 @@ body.single-post .site-footer {
   padding-top: 24px !important;
 }
 
+<<<<<<< HEAD
 /* Conclusion Box & Callout Styles */
 .blog-conclusion-box {
   background: #f0f9ff !important;
@@ -1015,6 +1023,8 @@ body.single-post .entry-content h2#conclusion ~ p.has-text-align-center {
   color: #334155 !important;
 }
 
+=======
+>>>>>>> a3f69ce (Update mobile responsive styles, service blocks flex ordering, image centering, and blog navigation card layout)
 /* Sidebar shell — content styles live in blog-sidebar.css */
 #right-sidebar .inside-right-sidebar {
   padding: 0;

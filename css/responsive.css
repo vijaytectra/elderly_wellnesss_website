@@ -310,7 +310,7 @@ footer a,
   }
 
   #home-blog-section .home-blog-listing .blog_post {
-    width: calc(50% - 12px);
+    width: 100% !important;
   }
 
   .title_badge {
@@ -546,7 +546,7 @@ footer a,
   }
 
   #home-blog-section .home-blog-listing .blog_post {
-    width: 100%;
+    width: 100% !important;
   }
 
   .blog_section .blog_listing .blog_post .blog_info {

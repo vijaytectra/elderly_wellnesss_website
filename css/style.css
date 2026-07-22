@@ -2185,18 +2185,20 @@ iframe#youtubevideo {
 }
 
 #home-blog-section .home-blog-listing {
-  display: flex;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: 24px;
   align-items: stretch;
-  flex-wrap: wrap;
 }
 
 #home-blog-section .home-blog-listing .blog_post {
-  width: calc(33.333% - 16px);
+  width: 100% !important;
+  max-width: none !important;
   padding: 28px;
   margin: 0;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 #home-blog-section .home-blog-listing .blog_post .img,
@@ -4543,7 +4545,7 @@ footer .logo a img {
   }
 
   #home-blog-section .home-blog-listing .blog_post {
-    width: calc(33.333% - 16px);
+    width: 100% !important;
   }
   .our_value_section .value_slider .value_block {
     min-height: 384px !important;

@@ -1306,19 +1306,23 @@ iframe#youtubevideo {
 }
 
 .how_it_inner .steps_block .icon {
-  width: 90px;
-  height: 90px;
+  width: auto;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
-  background-color: var(--light-yellow);
+  background-color: transparent !important;
+  background: transparent !important;
+  border-radius: 0;
+  padding: 0;
   margin: 0 auto;
 }
 
 .how_it_inner .steps_block .icon img {
-  max-width: 48px;
-  max-height: 48px;
+  width: 60px;
+  height: 60px;
+  max-width: 60px;
+  max-height: 60px;
   object-fit: contain;
 }
 
@@ -2129,21 +2133,22 @@ iframe#youtubevideo {
 
 .arrange-home-physio > div:first-child {
   flex-shrink: 0;
-  width: 88px;
-  height: 88px;
+  width: auto;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--light-yellow);
-  border-radius: 18px;
-  padding: 14px;
+  background-color: transparent !important;
+  background: transparent !important;
+  border-radius: 0;
+  padding: 0;
 }
 
 .arrange-home-physio > div:first-child img {
-  width: 56px;
-  height: 56px;
-  max-width: 56px;
-  max-height: 56px;
+  width: 60px;
+  height: 60px;
+  max-width: 60px;
+  max-height: 60px;
   object-fit: contain;
 }
 

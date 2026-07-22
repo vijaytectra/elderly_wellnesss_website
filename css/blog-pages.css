@@ -58,6 +58,7 @@ body.single-post .inside-article {
 body.single-post main#main,
 body.single-post .site-main {
   display: block !important;
+<<<<<<< HEAD
 }
 
 /* Single post: two-column layout with sticky Search + Recent Posts */
@@ -71,6 +72,12 @@ body.single-post .site-content {
   margin-top: 24px !important;
   padding-bottom: 60px !important;
   overflow: visible !important;
+=======
+  padding-top: 24px !important;
+  margin-top: 24px !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+>>>>>>> ee2850b (Update mobile responsive styles, service blocks flex ordering, image centering, and blog navigation card layout)
 }
 
 body.single-post .content-area {
@@ -778,16 +785,17 @@ body.single-post article #rank-math-faq .rank-math-answer {
 body.single-post article footer.entry-meta {
   width: 100% !important;
   max-width: 100% !important;
-  margin: 28px 0 36px !important;
-  padding: 20px 24px !important;
+  margin: 28px 0 0 0 !important;
+  padding: 24px 28px !important;
   background-color: var(--blog-accent-soft, #f0f9ff) !important;
-  border-radius: 12px !important;
+  border-radius: 16px !important;
   border: 1px solid var(--blog-border, #e2e8f0) !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 14px !important;
+  gap: 16px !important;
   box-sizing: border-box !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
 }
 
 body.single-post article footer.entry-meta .cat-links,
@@ -798,7 +806,7 @@ body.single-post article footer.entry-meta .tags-links {
   gap: 8px 12px !important;
   font-size: 0.92rem !important;
   color: var(--blog-muted) !important;
-  margin: 0 0 4px 0 !important;
+  margin: 0 !important;
 }
 
 body.single-post article footer.entry-meta .cat-links .gp-icon,
@@ -848,12 +856,13 @@ body.single-post article footer.entry-meta .tags-links a:hover {
 body.single-post article footer.entry-meta nav.post-navigation {
   width: 100% !important;
   display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   justify-content: space-between !important;
   align-items: center !important;
-  flex-wrap: wrap !important;
-  gap: 12px 24px !important;
+  gap: 16px !important;
   margin-top: 14px !important;
-  padding-top: 14px !important;
+  padding-top: 16px !important;
   border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
 }
 
@@ -866,7 +875,15 @@ body.single-post article footer.entry-meta nav.post-navigation .nav-next {
   font-weight: 600 !important;
   color: #475569 !important;
   margin: 0 !important;
-  max-width: 48% !important;
+  width: 50% !important;
+  max-width: 50% !important;
+  flex: 1 1 50% !important;
+  box-sizing: border-box !important;
+}
+
+body.single-post article footer.entry-meta nav.post-navigation .nav-previous {
+  text-align: left !important;
+  justify-content: flex-start !important;
 }
 
 body.single-post article footer.entry-meta nav.post-navigation .nav-next {
@@ -879,7 +896,9 @@ body.single-post article footer.entry-meta nav.post-navigation a {
   color: var(--blog-accent, #2786a5) !important;
   text-decoration: none !important;
   font-weight: 600 !important;
+  line-height: 1.3 !important;
   transition: color 0.2s ease !important;
+  display: inline-block !important;
 }
 
 body.single-post article footer.entry-meta nav.post-navigation a:hover {
@@ -887,6 +906,125 @@ body.single-post article footer.entry-meta nav.post-navigation a:hover {
   text-decoration: underline !important;
 }
 
+@media screen and (max-width: 767.98px) {
+  body.single-post article footer.entry-meta {
+    margin: 16px 0 0 0 !important;
+    padding: 16px 14px !important;
+    border-radius: 12px !important;
+  }
+
+  body.single-post article footer.entry-meta nav.post-navigation {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    padding-top: 12px !important;
+  }
+
+  body.single-post article footer.entry-meta nav.post-navigation .nav-previous,
+  body.single-post article footer.entry-meta nav.post-navigation .nav-next {
+    width: 50% !important;
+    max-width: 50% !important;
+    flex: 1 1 50% !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 0.82rem !important;
+  }
+
+  body.single-post article footer.entry-meta nav.post-navigation .nav-previous {
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+
+  body.single-post article footer.entry-meta nav.post-navigation .nav-next {
+    text-align: right !important;
+    justify-content: flex-end !important;
+  }
+}
+
+/* Eliminate bottom whitespace gap between blog content / article / sidebar and site footer */
+body.single-post #page,
+body.single-post #content,
+body.single-post .site-content,
+body.single-post main#main,
+body.single-post .site-main,
+body.single-post .content-area,
+body.single-post article,
+body.single-post .inside-article,
+body.single-post #right-sidebar {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+body.single-post footer,
+body.single-post footer#footer,
+body.single-post .site-footer {
+  margin-top: 16px !important;
+  padding-top: 24px !important;
+}
+
+<<<<<<< HEAD
+/* Conclusion Box & Callout Styles */
+.blog-conclusion-box {
+  background: #f0f9ff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-left: 5px solid var(--blog-accent, #2786a5) !important;
+  border-radius: 14px !important;
+  padding: 24px 28px !important;
+  margin: 24px 0 28px 0 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+}
+
+.blog-conclusion-box h3 {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin-top: 0 !important;
+  margin-bottom: 14px !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+}
+
+.blog-conclusion-box p {
+  text-align: left !important;
+  font-size: 1.02rem !important;
+  line-height: 1.65 !important;
+  color: #334155 !important;
+  margin-bottom: 14px !important;
+}
+
+.blog-conclusion-box p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.conclusion-callout {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  padding: 14px 18px !important;
+  margin-top: 18px !important;
+  text-align: center !important;
+  color: #0f172a !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Override any stray center aligned conclusion text across all blog posts */
+body.single-post .entry-content h2#conclusion ~ p.has-text-align-center {
+  text-align: left !important;
+  line-height: 1.65 !important;
+  font-size: 1.02rem !important;
+  color: #334155 !important;
+}
+
+=======
+>>>>>>> a3f69ce (Update mobile responsive styles, service blocks flex ordering, image centering, and blog navigation card layout)
 /* Sidebar shell — content styles live in blog-sidebar.css */
 #right-sidebar .inside-right-sidebar {
   padding: 0;

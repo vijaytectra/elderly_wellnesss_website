@@ -159,6 +159,52 @@ footer {
     font-size: 20px;
   }
 
+  /* About stats circles — 2 per row on tablet/phone */
+  .about_section .app_statstic {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 340px;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    list-style: none !important;
+    justify-items: center;
+  }
+
+  .about_section .app_statstic li,
+  .about_section .app_statstic li:first-child,
+  .about_section .app_statstic li:last-child {
+    width: auto !important;
+    text-align: center !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .about_section .app_statstic li .text {
+    width: 148px !important;
+    max-width: 148px !important;
+    height: 148px !important;
+    margin: 0 auto !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .about_section .app_statstic li .text p {
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   /* Task / feature blocks */
   .task_app_section .task_block {
     position: relative !important;
@@ -226,22 +272,37 @@ footer {
 
   /* Download CTA */
   .downaload_section {
-    padding: 70px 0;
+    padding: 48px 0;
+  }
+
+  .downaload_section .center_screen {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .downaload_section .center_screen .img img {
-    width: 55%;
-    max-width: 320px;
+    width: 62%;
+    max-width: 340px;
   }
 
-  .downaload_section .yellow_dotes img {
-    max-width: 90vw;
+  .downaload_section .background_slider {
+    padding: 36px 0;
+  }
+
+  .downaload_section .yellow_dotes {
+    display: none !important;
   }
 
   .downaload_section .app_btn {
     justify-content: center;
     flex-wrap: wrap;
     gap: 12px;
+    margin-top: 18px !important;
   }
 
   .downaload_section .app_btn li:last-child {
@@ -250,13 +311,35 @@ footer {
 
   #home-blog-section .home-blog-listing {
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 20px;
+    grid-template-columns: 1fr !important;
+    gap: 18px;
   }
 
   #home-blog-section .home-blog-listing .blog_post {
     width: 100% !important;
-    padding: 22px;
+    padding: 20px;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post h3 {
+    font-size: 20px;
+    margin: 14px 0 16px;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post h3 a {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post .tag_more {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post .tag_more a {
+    white-space: nowrap;
   }
 }
 
@@ -391,26 +474,35 @@ footer {
   .task_app_section {
     padding-left: 10px !important;
     padding-right: 10px !important;
-    padding-bottom: 30px;
+    padding-bottom: 24px;
   }
 
   .task_app_section .task_block {
-    padding: 32px 20px;
-    margin-bottom: 20px;
-    border-radius: 16px;
+    padding: 24px 16px;
+    margin-bottom: 16px;
+    border-radius: 18px;
+    position: relative !important;
+  }
+
+  .task_app_section .task_img {
+    margin-bottom: 6px;
+  }
+
+  .task_app_section .task_img img {
+    max-height: min(36vh, 240px) !important;
   }
 
   .task_app_section .task_text .section_title h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .task_app_section .task_text .section_title p {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .task_app_section .task_img::before {
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
   }
 
   .task_app_section .dotes_blue {
@@ -432,37 +524,69 @@ footer {
     border-radius: 16px;
   }
 
-  /* Download */
+  /* Download — stop absolute overlay on tablets/phones so phones + store buttons fit */
   .downaload_section {
-    padding: 50px 0 40px;
+    padding: 40px 0 48px;
     overflow: hidden;
   }
 
+  .downaload_section .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .downaload_section .center_screen {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 420px;
+    margin: 0 auto 8px;
+    padding: 0 12px;
+  }
+
   .downaload_section .center_screen .img img {
-    width: 70%;
-    max-width: 240px;
+    width: 78% !important;
+    max-width: 280px !important;
+    height: auto !important;
+    filter: drop-shadow(0 14px 24px rgba(15, 40, 55, 0.2));
   }
 
   .downaload_section .background_slider {
-    padding: 80px 0;
+    padding: 28px 0;
+    margin-top: -8px;
   }
 
   .downaload_section .yellow_dotes {
-    opacity: 0.5;
+    display: none !important;
   }
 
   .downaload_section .app_btn {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-top: 16px !important;
+  }
+
+  .downaload_section .app_btn li {
+    margin: 0 !important;
+  }
+
+  .downaload_section .app_btn li:last-child {
+    margin-left: 0 !important;
   }
 
   .downaload_section .app_btn li a {
-    padding: 12px 28px;
+    padding: 8px 14px !important;
   }
 
   .downaload_section .app_btn li a img {
-    height: 28px;
+    height: 28px !important;
+    width: auto !important;
   }
 
   /* Blogs */
@@ -482,12 +606,13 @@ footer {
   #home-blog-section .home-blog-listing {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 16px;
+    gap: 16px !important;
   }
 
   #home-blog-section .home-blog-listing .blog_post {
     width: 100% !important;
-    padding: 20px;
+    max-width: 100% !important;
+    padding: 18px;
   }
 
   #home-blog-section .home-blog-listing .blog_post .img {
@@ -503,6 +628,37 @@ footer {
 
   #home-blog-section .home-blog-listing .blog_post h3 {
     font-size: 18px;
+    margin: 12px 0 14px;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post h3 a {
+    -webkit-line-clamp: 3 !important;
+    line-clamp: 3 !important;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post .blog_info {
+    font-size: 12px;
+    flex-wrap: wrap;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post .tag_more {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px 12px;
+    margin-top: auto;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post .tag_more .tag {
+    flex-shrink: 0;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post .tag_more a {
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
   }
 
   /* Footer */
@@ -570,11 +726,22 @@ footer {
   }
 
   .task_app_section .task_block {
-    padding: 28px 16px;
+    padding: 22px 14px;
+    margin-bottom: 16px;
+    border-radius: 18px;
+  }
+
+  .task_app_section .task_img img {
+    max-height: min(38vh, 260px) !important;
   }
 
   .task_app_section .task_text .section_title h2 {
     font-size: 20px;
+  }
+
+  .task_app_section .task_text .section_title p {
+    font-size: 14px;
+    line-height: 1.55;
   }
 
   .feature_box h3 {
@@ -585,8 +752,21 @@ footer {
     font-size: 14px;
   }
 
+  .downaload_section {
+    padding: 32px 0 40px;
+  }
+
   .downaload_section .center_screen .img img {
-    max-width: 200px;
+    width: 72% !important;
+    max-width: 210px !important;
+  }
+
+  .downaload_section .background_slider {
+    padding: 22px 0;
+  }
+
+  .downaload_section .app_btn li a img {
+    height: 26px !important;
   }
 }
 

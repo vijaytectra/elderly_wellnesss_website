@@ -875,10 +875,8 @@ header {
   z-index: 99;
   border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow:
-    0 18px 40px rgba(39, 134, 165, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  border: none;
+  box-shadow: 0 18px 40px rgba(39, 134, 165, 0.28);
 }
 
 .task_app_section .task_block:last-child {
@@ -926,9 +924,9 @@ header {
   width: min(78%, 280px);
   height: min(78%, 280px);
   background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: none;
   border-radius: 50%;
-  box-shadow: 0 0 0 18px rgba(255, 255, 255, 0.05);
+  box-shadow: none;
 }
 
 /* Task App section images*/
@@ -1044,6 +1042,15 @@ header {
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about_section .app_statstic li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .about_section .app_statstic li:first-child,
@@ -1064,6 +1071,9 @@ header {
   background-color: var(--bg-white);
   border: 1px solid var(--primery);
   margin: 0 auto;
+  box-sizing: border-box;
+  padding: 14px;
+  overflow: hidden;
 }
 
 .about_section .app_statstic li .text p span {
@@ -1077,7 +1087,10 @@ header {
   font-weight: 700;
   color: var(--black);
   margin: 0;
-  line-height: 1.2;
+  padding: 0;
+  line-height: 1.25;
+  text-align: center;
+  width: 100%;
 }
 
 .about_section .video_block {
@@ -2036,14 +2049,7 @@ iframe#youtubevideo {
 }
 
 .downaload_section .yellow_dotes {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.downaload_section .yellow_dotes img {
-  width: 850px;
+  display: none;
 }
 
 .downaload_section .center_screen {
@@ -2053,13 +2059,21 @@ iframe#youtubevideo {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: min(920px, 92vw);
+}
+
+.downaload_section .center_screen .img {
+  line-height: 0;
 }
 
 .downaload_section .app_btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 18px;
+  position: relative;
+  z-index: 2;
+  gap: 0;
 }
 
 .downaload_section .app_btn li a {
@@ -2302,6 +2316,38 @@ iframe#youtubevideo {
 
 #home-blog-section .home-blog-listing .blog_post .tag_more {
   margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 12px;
+}
+
+#home-blog-section .home-blog-listing .blog_post .tag_more a {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media screen and (max-width: 991px) {
+  #home-blog-section .home-blog-listing {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post {
+    padding: 20px;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post h3 {
+    font-size: 20px;
+  }
+
+  #home-blog-section .home-blog-listing .blog_post h3 a {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
 }
 
 #blog-page-elderly .blog_post h3 a,
@@ -4446,10 +4492,12 @@ footer .logo a img {
 }
 
 .downaload_section .center_screen .img img {
-  width: 70%;
+  width: min(72%, 560px);
+  height: auto;
+  filter: drop-shadow(0 22px 36px rgba(15, 40, 55, 0.22));
 }
 .downaload_section {
-  padding: 100px 0;
+  padding: 80px 0;
 }
 .smiley_icon img {
   width: 150px;
@@ -4900,19 +4948,20 @@ footer .design_by {
 @media screen and (max-width: 767.98px) {
   /* Spacing between Navbar and the Title */
   .banner_section {
-    margin-top: 32px !important;
-    padding-top: 16px !important;
+    margin-top: 12px !important;
+    padding-top: 8px !important;
   }
 
-  /* App Store & Google Play Buttons Size & Row Layout */
+  /* App Store & Google Play Buttons — keep readable side-by-side */
   .banner_section .app_btn,
   .download_app .app_btn,
   .downaload_section .app_btn {
     display: flex !important;
     flex-direction: row !important;
+    flex-wrap: wrap !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 10px !important;
     padding: 0 !important;
     margin-top: 16px !important;
   }
@@ -4927,7 +4976,7 @@ footer .design_by {
   .download_app .app_btn li a,
   .downaload_section .app_btn li a {
     display: block !important;
-    padding: 6px 12px !important;
+    padding: 8px 14px !important;
     background-color: #000000 !important;
     border-radius: 8px !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
@@ -4936,8 +4985,64 @@ footer .design_by {
   .banner_section .app_btn li a img,
   .download_app .app_btn li a img,
   .downaload_section .app_btn li a img {
-    height: 20px !important;
+    height: 26px !important;
     width: auto !important;
+  }
+
+  /* Download section: flow layout on phones (not absolute overlay) */
+  .downaload_section .center_screen {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  .downaload_section .background_slider {
+    padding: 24px 0 !important;
+  }
+
+  .about_section .abtImg img {
+    max-width: min(220px, 58vw);
+    margin: 0 auto;
+    display: block;
+  }
+
+  .about_section .app_statstic {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    max-width: 300px;
+    justify-items: center;
+  }
+
+  .about_section .app_statstic li,
+  .about_section .app_statstic li:first-child,
+  .about_section .app_statstic li:last-child {
+    width: auto !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .about_section .app_statstic li .text {
+    width: 132px !important;
+    max-width: 132px !important;
+    height: 132px !important;
+    margin: 0 auto !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .about_section .app_statstic li .text p {
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 !important;
   }
 }
 

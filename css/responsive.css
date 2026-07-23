@@ -958,29 +958,45 @@ footer a,
   }
 
   .about_section .app_statstic {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    width: 100%;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+    width: 100% !important;
+    justify-items: center;
   }
 
   .about_section .app_statstic li,
   .about_section .app_statstic li:first-child,
   .about_section .app_statstic li:last-child {
-    width: 100%;
-    text-align: center;
+    width: auto !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .about_section .app_statstic li .text {
-    width: 100%;
-    max-width: 150px;
-    height: 150px;
-    margin: 0 auto;
+    width: 148px !important;
+    max-width: 148px !important;
+    height: 148px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    padding: 12px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
   }
 
   .about_section .app_statstic li .text p {
-    font-size: 12px;
-    padding: 0 8px;
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .about_section .abtImg {

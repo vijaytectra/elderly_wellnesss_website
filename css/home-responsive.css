@@ -594,3 +594,9 @@ footer {
   display: block;
   width: 100%;
 }
+#frmae_slider.owl-carousel:not(.owl-loaded) > .item {
+  display: none;
+}
+#frmae_slider.owl-carousel:not(.owl-loaded) > .item:first-child {
+  display: block;
+}

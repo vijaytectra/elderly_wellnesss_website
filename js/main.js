@@ -7,7 +7,7 @@ $(".drp_btn").click(function () {
 });
 
 $(document).ready(function () {
-  window.setTimeout("preloader_fade();", 500);
+    window.setTimeout("preloader_fade();", 300);
 });
 
 // Hero slider: bind first, then init (so all 3 videos rotate)

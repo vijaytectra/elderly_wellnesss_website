@@ -1,5 +1,6 @@
 async function loadBlogs() {
   const blogContainer = document.getElementById("blog-posts");
+  if (!blogContainer) return;
   try {
     const response = await fetch("blogs/blog-manifest.json");
     const posts = await response.json();
@@ -22,11 +23,18 @@ async function loadBlogs() {
       // Relative from homepage so Live Server + production both resolve correctly
       const link = slug ? `blogs/${slug}/` : "blogs/";
 
-      const imageSrc = (item.image || "")
+      let imageSrc = (item.image || "")
         .replace(/^\//, "")
         .replace(/^https?:\/\/(www\.)?theelderlywellness\.com\//i, "");
+
+      // Prefer compressed homepage thumbs when available (same image, smaller file)
+      if (imageSrc.indexOf("images/blogs/") === 0) {
+        const base = imageSrc.replace(/^images\/blogs\//, "").replace(/\.[^.]+$/, "");
+        imageSrc = "images/blogs/opt/" + base + ".jpg";
+      }
+
       const image = imageSrc
-        ? `<a href="${link}" class="img"><img src="${imageSrc}" alt="${item.title}"/></a>`
+        ? `<a href="${link}" class="img"><img src="${imageSrc}" width="640" height="400" alt="${item.title}" loading="lazy" decoding="async"/></a>`
         : "";
       blogContainer.innerHTML += `
           <div class="blog_post" data-aos="fade-up" data-aos-duration="1500">

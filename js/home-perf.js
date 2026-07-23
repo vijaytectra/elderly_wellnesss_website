@@ -1,7 +1,8 @@
 /**
- * Homepage helpers restored from inline script:
+ * Homepage helpers:
  * - Typed.js init
  * - Stacked feature cards
+ * - Defer heavy icon font until after load (keeps icons, frees LCP bandwidth)
  */
 (function () {
   function onReady(fn) {
@@ -10,6 +11,15 @@
     } else {
       fn();
     }
+  }
+
+  function loadIcoFont() {
+    if (document.querySelector('link[data-ew-icofont]')) return;
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "css/icofont.min.css";
+    link.setAttribute("data-ew-icofont", "1");
+    document.head.appendChild(link);
   }
 
   onReady(function () {
@@ -38,4 +48,24 @@
       topStyle += 28;
     });
   });
+
+  function scheduleIcoFont() {
+    var done = false;
+    var run = function () {
+      if (done) return;
+      done = true;
+      loadIcoFont();
+    };
+    // After LCP window, or on first interaction (icons still appear)
+    window.setTimeout(run, 4500);
+    ["scroll", "touchstart", "mousemove", "keydown"].forEach(function (evt) {
+      window.addEventListener(evt, run, { once: true, passive: true });
+    });
+  }
+
+  if (document.readyState === "complete") {
+    scheduleIcoFont();
+  } else {
+    window.addEventListener("load", scheduleIcoFont);
+  }
 })();

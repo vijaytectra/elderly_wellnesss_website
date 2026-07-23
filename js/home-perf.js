@@ -1,8 +1,7 @@
 /**
  * Homepage helpers:
- * - Typed.js init
  * - Stacked feature cards
- * - Defer heavy icon font until after load (keeps icons, frees LCP bandwidth)
+ * - Defer icon font / AOS / blog JS until after first paint
  */
 (function () {
   function onReady(fn) {
@@ -13,8 +12,37 @@
     }
   }
 
+  function idle(fn, timeout) {
+    if (typeof window.requestIdleCallback === "function") {
+      window.requestIdleCallback(fn, { timeout: timeout || 2500 });
+    } else {
+      window.setTimeout(fn, 1);
+    }
+  }
+
+  function loadStylesheet(href) {
+    if (document.querySelector('link[href="' + href + '"]')) return;
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = href;
+    document.head.appendChild(link);
+  }
+
+  function loadScript(src, onload) {
+    if (document.querySelector('script[src="' + src.split("?")[0] + '"], script[data-ew-src="' + src + '"]')) {
+      if (onload) onload();
+      return;
+    }
+    var s = document.createElement("script");
+    s.src = src;
+    s.async = true;
+    s.setAttribute("data-ew-src", src);
+    if (onload) s.onload = onload;
+    document.body.appendChild(s);
+  }
+
   function loadIcoFont() {
-    if (document.querySelector('link[data-ew-icofont]')) return;
+    if (document.querySelector("link[data-ew-icofont]")) return;
     var link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = "css/icofont.min.css";
@@ -22,24 +50,14 @@
     document.head.appendChild(link);
   }
 
-  onReady(function () {
-    if (window.jQuery && typeof jQuery.fn.typed === "function" && jQuery("#typed").length) {
-      jQuery("#typed").typed({
-        strings: [
-          "Type Writing Text",
-          "Auto Type Text",
-          "Add any text you like here.",
-        ],
-        typeSpeed: 100,
-        startDelay: 0,
-        backSpeed: 60,
-        backDelay: 2000,
-        loop: true,
-        cursorChar: "|",
-        contentType: "html",
-      });
-    }
+  function loadAos() {
+    loadStylesheet("css/aos.css");
+    loadScript("js/aos.js", function () {
+      window.dispatchEvent(new Event("ew:aos-ready"));
+    });
+  }
 
+  onReady(function () {
     var cardBlocks = document.querySelectorAll(".task_app_section .task_block");
     var topStyle = 100;
     cardBlocks.forEach(function (card, index) {
@@ -49,23 +67,26 @@
     });
   });
 
-  function scheduleIcoFont() {
+  function afterFirstPaint() {
+    idle(function () {
+      loadAos();
+    }, 2000);
+
     var done = false;
-    var run = function () {
+    var runIcons = function () {
       if (done) return;
       done = true;
       loadIcoFont();
     };
-    // After LCP window, or on first interaction (icons still appear)
-    window.setTimeout(run, 4500);
+    window.setTimeout(runIcons, 4500);
     ["scroll", "touchstart", "mousemove", "keydown"].forEach(function (evt) {
-      window.addEventListener(evt, run, { once: true, passive: true });
+      window.addEventListener(evt, runIcons, { once: true, passive: true });
     });
   }
 
   if (document.readyState === "complete") {
-    scheduleIcoFont();
+    afterFirstPaint();
   } else {
-    window.addEventListener("load", scheduleIcoFont);
+    window.addEventListener("load", afterFirstPaint);
   }
 })();

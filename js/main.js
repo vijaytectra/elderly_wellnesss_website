@@ -2,8 +2,33 @@ function preloader_fade() {
   $("#preloader").fadeOut("slow");
 }
 
-$(".drp_btn").click(function () {
-  $(this).siblings(".sub_menu").slideToggle(500);
+$(".drp_btn").on("click", function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  var $btn = $(this);
+  var $item = $btn.closest(".has_dropdown");
+  var $menu = $item.children(".sub_menu");
+  var willOpen = !$item.hasClass("open");
+
+  // Accordion: close other open dropdowns in this nav
+  $item
+    .siblings(".has_dropdown.open")
+    .removeClass("open")
+    .find(".drp_btn")
+    .removeClass("active")
+    .end()
+    .children(".sub_menu")
+    .stop(true, true)
+    .slideUp(200);
+
+  $item.toggleClass("open", willOpen);
+  $btn.toggleClass("active", willOpen);
+  $menu.stop(true, true);
+  if (willOpen) {
+    $menu.slideDown(200);
+  } else {
+    $menu.slideUp(200);
+  }
 });
 
 $(document).ready(function () {
@@ -54,25 +79,42 @@ playHeroVideos();
 $heroSlider.find("video").on("loadedmetadata", function () {
   $heroSlider.trigger("refresh.owl.carousel");
 });
-$("#company_slider").owlCarousel({
-  loop: !0,
-  margin: 10,
-  nav: !1,
-  autoplay: !0,
-  smartSpeed: 1500,
-  dots: !0,
-  responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 5 } },
-}),
-  $("#testimonial_slider").owlCarousel({
+
+function ewIdle(fn, timeout) {
+  if (typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(fn, { timeout: timeout || 2500 });
+  } else {
+    window.setTimeout(fn, 1);
+  }
+}
+
+function initOwlIfPresent(selector, options) {
+  var $el = $(selector);
+  if (!$el.length || typeof $el.owlCarousel !== "function") return;
+  $el.owlCarousel(options);
+}
+
+// Non-hero carousels: wait until idle so first paint / LCP stay free
+ewIdle(function () {
+  initOwlIfPresent("#company_slider", {
     loop: !0,
     margin: 10,
     nav: !1,
     autoplay: !0,
-    smartSpeed: 2500,
+    smartSpeed: 1500,
     dots: !0,
-    responsive: { 0: { items: 1 }, 600: { items: 1 }, 1e3: { items: 1 } },
-  }),
-  $("#screen_slider").owlCarousel({
+    responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 5 } },
+  });
+  initOwlIfPresent("#testimonial_slider", {
+    loop: !0,
+    margin: 0,
+    nav: !0,
+    dots: !1,
+    autoplay: !0,
+    smartSpeed: 2500,
+    items: 1,
+  });
+  initOwlIfPresent("#screen_slider", {
     loop: !0,
     margin: 10,
     nav: !1,
@@ -81,8 +123,8 @@ $("#company_slider").owlCarousel({
     smartSpeed: 2500,
     center: !0,
     responsive: { 0: { items: 1 }, 600: { items: 3 }, 1e3: { items: 5 } },
-  }),
-  $("#feature_slider").owlCarousel({
+  });
+  initOwlIfPresent("#feature_slider", {
     loop: !0,
     margin: 16,
     nav: !0,
@@ -95,8 +137,8 @@ $("#company_slider").owlCarousel({
       992: { items: 3 },
       1200: { items: 4, margin: 20 },
     },
-  }),
-  $("#text_list_flow").owlCarousel({
+  });
+  initOwlIfPresent("#text_list_flow", {
     loop: !0,
     margin: 0,
     nav: !1,
@@ -108,8 +150,8 @@ $("#company_slider").owlCarousel({
     autoplaySpeed: 4e3,
     autoWidth: !0,
     responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 4 } },
-  }),
-  $("#text_list_flow_download").owlCarousel({
+  });
+  initOwlIfPresent("#text_list_flow_download", {
     loop: !0,
     margin: 0,
     nav: !1,
@@ -121,8 +163,8 @@ $("#company_slider").owlCarousel({
     autoplaySpeed: 4e3,
     autoWidth: !0,
     responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 4 } },
-  }),
-  $("#client_slider").owlCarousel({
+  });
+  initOwlIfPresent("#client_slider", {
     loop: !0,
     margin: 30,
     nav: !1,
@@ -134,8 +176,8 @@ $("#company_slider").owlCarousel({
     autoplaySpeed: 4e3,
     autoWidth: !0,
     responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 4 } },
-  }),
-  $("#about_slider").owlCarousel({
+  });
+  initOwlIfPresent("#about_slider", {
     loop: !0,
     margin: 20,
     nav: !1,
@@ -147,8 +189,8 @@ $("#company_slider").owlCarousel({
     autoplaySpeed: 4e3,
     autoWidth: !0,
     responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 4 } },
-  }),
-  $("#value_slider").owlCarousel({
+  });
+  initOwlIfPresent("#value_slider", {
     loop: !0,
     margin: 15,
     nav: !0,
@@ -161,16 +203,9 @@ $("#company_slider").owlCarousel({
       1e3: { items: 3 },
       1400: { margin: 60 },
     },
-  }),
-  $("#testimonial_slider").owlCarousel({
-    loop: !0,
-    margin: 0,
-    nav: !0,
-    dots: !1,
-    autoplay: !0,
-    smartSpeed: 2500,
-    items: 1,
   });
+}, 2000);
+
 let counter_find = document.querySelector("#counter");
 void 0 !== counter_find &&
   null != counter_find &&
@@ -212,8 +247,8 @@ void 0 !== counter_find &&
             }
           );
         });
-  }),
-  $(document).ready(function () {
+  });
+$(document).ready(function () {
     $(".collapse.show").each(function () {
       $(this)
         .prev(".card-header")
@@ -294,11 +329,48 @@ void 0 !== counter_find &&
             .removeClass("icofont-close")
             .addClass("icofont-navigation-menu");
     });
+
+    // Sync hamburger ↔ open/close state with Bootstrap collapse
+    var $navCollapse = $("#navbarSupportedContent");
+    var $toggleWrap = $(".navbar-toggler .toggle-wrap");
+    $navCollapse.on("show.bs.collapse", function () {
+      $toggleWrap.addClass("active");
+      $(".navbar-toggler").attr("aria-expanded", "true");
+    });
+    $navCollapse.on("hide.bs.collapse", function () {
+      $toggleWrap.removeClass("active");
+      $(".navbar-toggler").attr("aria-expanded", "false");
+    });
   }),
-  $(".toggle-wrap").on("click", function () {
-    $(this).toggleClass("active"), $("aside").animate({ width: "toggle" }, 200);
-  }),
-  typeof AOS !== "undefined" && AOS.init();
+// Only animate aside drawers when present (not the site navbar hamburger)
+$("aside .toggle-wrap, .sidebar .toggle-wrap").on("click", function () {
+  $(this).toggleClass("active");
+  $("aside").animate({ width: "toggle" }, 200);
+});
+
+function initAosWhenReady() {
+  var done = false;
+  function tryInit() {
+    if (done || typeof AOS === "undefined") return false;
+    done = true;
+    AOS.init({
+      once: true,
+      duration: 700,
+      offset: 60,
+      disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    });
+    return true;
+  }
+  window.addEventListener("ew:aos-ready", tryInit);
+  ewIdle(function () {
+    if (tryInit()) return;
+    var n = 0;
+    var t = setInterval(function () {
+      if (tryInit() || ++n > 50) clearInterval(t);
+    }, 100);
+  }, 2500);
+}
+initAosWhenReady();
 
 function ActiveMenu() {
   // Get all links

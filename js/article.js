@@ -53,9 +53,17 @@ async function loadBlogs() {
           </div>
         `;
     });
+    if (typeof AOS !== "undefined" && typeof AOS.refresh === "function") {
+      AOS.refresh();
+    }
   } catch (error) {
     blogContainer.innerHTML = "<p>Failed to load blog posts.</p>";
   }
 }
 
 loadBlogs();
+window.addEventListener("ew:aos-ready", function () {
+  if (typeof AOS !== "undefined" && typeof AOS.refresh === "function") {
+    AOS.refresh();
+  }
+});

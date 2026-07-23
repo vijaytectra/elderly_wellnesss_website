@@ -1,0 +1,16 @@
+/* Slim self-hosted hero fonts (latin only) — load async; no gstatic critical chain */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/cormorant-garamond-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Playball";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/playball.woff2") format("woff2");
+}

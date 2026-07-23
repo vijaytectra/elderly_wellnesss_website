@@ -1,6 +1,4 @@
-/* --------Font--------------- */
-@import url("manrope.css");
-@import url("manrope.css");
+/* --------Font (loaded async from HTML — do not @import; it blocks render) --------------- */
 /* -----------Css-variable------ */
 
 :root {
@@ -590,7 +588,7 @@ header {
   transform: translateX(-50%);
   width: 1250px;
   height: 1000px;
-  background-image: url(../images/yellow_dotes.png);
+  background-image: url(../images/opt/yellow_dotes_bg.jpg);
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: contain;
@@ -862,32 +860,43 @@ header {
 }
 
 .task_app_section {
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 
 .task_app_section .task_block {
-  max-width: 1370px;
-  margin: 0 auto 40px;
+  max-width: 1200px;
+  margin: 0 auto 28px;
   background-color: #2786a5;
-  padding: 60px 150px;
+  background-image:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.14) 0%, transparent 42%),
+    linear-gradient(325deg, rgba(0, 0, 0, 0.12) 0%, transparent 45%);
+  padding: 36px 56px;
   position: sticky;
   z-index: 99;
-  border-radius: 30px;
+  border-radius: 28px;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 18px 40px rgba(39, 134, 165, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .task_app_section .task_block:last-child {
   margin-bottom: 0;
 }
 
+.task_app_section .task_block--alt .row {
+  flex-direction: row-reverse;
+}
+
 .task_app_section .dotes_blue {
-  position: absolute;
-  left: -80px;
-  bottom: -100px;
+  display: none;
 }
 
 .task_app_section .task_block .row {
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 /* Task App section wraper */
@@ -896,25 +905,43 @@ header {
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: 12px 8px;
+}
+
+.task_app_section .task_img .frame_img {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Soft backdrop behind phone — same brand hue, lighter tint */
+.task_app_section .task_img::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  width: min(78%, 280px);
+  height: min(78%, 280px);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 0 0 18px rgba(255, 255, 255, 0.05);
 }
 
 /* Task App section images*/
 .task_app_section .task_img img {
   max-width: 100%;
-  border-radius: 20px;
-}
-
-.task_app_section .task_img::before {
-  content: "";
-  position: absolute;
-  left: 42%;
-  top: 50%;
-  z-index: -1;
-  transform: translate(-50%, -50%) rotate(-9deg);
-  width: 380px;
-  height: 380px;
-  background-color: var(--primery);
-  border-radius: 30px;
+  max-height: min(48vh, 400px);
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 0;
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.28));
 }
 
 .task_app_section .task_img .screen_img {
@@ -922,29 +949,67 @@ header {
   margin-top: 50px;
 }
 
+.task_app_section .task_text {
+  padding: 8px 12px 8px 28px;
+}
+
+.task_app_section .task_block--alt .task_text {
+  padding: 8px 28px 8px 12px;
+}
+
 .task_app_section .task_text .section_title {
   text-align: left;
+  max-width: 420px;
+}
+
+.task_app_section .task_text .section_title .task_step {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 14px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.1);
+  line-height: 1.2;
 }
 
 .task_app_section .task_text .section_title h2 {
-  margin-bottom: 15px;
-  font-size: 35px;
+  margin-bottom: 12px;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.task_app_section .task_text .section_title p {
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 38ch;
 }
 
 .task_app_section .task_text .section_title .icon {
-  display: block;
-  width: 80px;
-  height: 80px;
-  background-color: var(--bg-white);
-  border-radius: 20px;
   display: flex;
+  width: 58px;
+  height: 58px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
   justify-content: center;
   align-items: center;
-  margin: 60px 0 35px 0;
+  margin: 0 0 18px;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .task_app_section .task_text .section_title .icon img {
-  width: 50px;
+  width: 30px;
   aspect-ratio: 1/1;
   object-fit: cover;
 }
@@ -961,7 +1026,7 @@ header {
   left: 50%;
   transform: translateX(-50%);
   bottom: -100px;
-  background-image: url(../images/yellow_dotes.png);
+  background-image: url(../images/opt/yellow_dotes_bg.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
@@ -1548,7 +1613,7 @@ iframe#youtubevideo {
   left: 50%;
   transform: translateX(-50%);
   top: 0;
-  background-image: url(../images/yellow_dotes.png);
+  background-image: url(../images/opt/yellow_dotes_bg.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
@@ -1596,7 +1661,7 @@ iframe#youtubevideo {
   left: 50%;
   transform: translateX(-50%);
   bottom: -100px;
-  background-image: url(../images/yellow_dotes.png);
+  background-image: url(../images/opt/yellow_dotes_bg.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
@@ -2490,7 +2555,7 @@ footer .download_side .app_btn li a img {
   left: 50%;
   transform: translateX(-50%);
   top: 0;
-  background-image: url(../images/yellow_dotes.png);
+  background-image: url(../images/opt/yellow_dotes_bg.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
@@ -2592,7 +2657,7 @@ footer .download_side .app_btn li a img {
   left: 50%;
   transform: translateX(-50%);
   bottom: -100px;
-  background-image: url(../images/yellow_dotes.png);
+  background-image: url(../images/opt/yellow_dotes_bg.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
@@ -2925,7 +2990,7 @@ footer .download_side .app_btn li a img {
   left: 50%;
   transform: translateX(-50%);
   bottom: 20px;
-  background-image: url(../images/yellow_dotes.png);
+  background-image: url(../images/opt/yellow_dotes_bg.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
@@ -3229,7 +3294,7 @@ footer .download_side .app_btn li a img {
   left: 50%;
   transform: translateX(-50%);
   top: 0;
-  background-image: url(../images/yellow_dotes.png);
+  background-image: url(../images/opt/yellow_dotes_bg.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
@@ -3888,7 +3953,7 @@ footer .download_side .app_btn li a img {
   left: 50%;
   transform: translateX(-50%);
   bottom: -100px;
-  background-image: url(../images/yellow_dotes.png);
+  background-image: url(../images/opt/yellow_dotes_bg.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
@@ -4579,7 +4644,7 @@ footer .logo a img {
   left: 50%;
   transform: translateX(-50%);
   bottom: -100px;
-  background-image: url(../images/yellow_dotes.png);
+  background-image: url(../images/opt/yellow_dotes_bg.jpg);
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;

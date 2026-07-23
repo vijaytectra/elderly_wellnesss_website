@@ -55,7 +55,15 @@ footer {
   }
 
   .task_app_section .task_block {
-    padding: 50px 60px;
+    padding: 32px 40px;
+  }
+
+  .task_app_section .task_img img {
+    max-height: min(46vh, 360px);
+  }
+
+  .task_app_section .task_text {
+    padding-left: 16px;
   }
 
   .slider_media {
@@ -155,40 +163,65 @@ footer {
   .task_app_section .task_block {
     position: relative !important;
     top: auto !important;
-    padding: 40px 36px;
-    border-radius: 20px;
+    padding: 28px 24px;
+    border-radius: 22px;
   }
 
+  .task_app_section .task_block--alt .row,
   .task_app_section .task_block .row {
     flex-direction: column;
   }
 
   .task_app_section .task_img {
-    margin-bottom: 24px;
+    margin-bottom: 8px;
+    padding: 4px;
+  }
+
+  .task_app_section .task_img img {
+    max-height: min(40vh, 300px);
   }
 
   .task_app_section .task_img::before {
-    width: 240px;
-    height: 240px;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0.05);
+  }
+
+  .task_app_section .task_text,
+  .task_app_section .task_block--alt .task_text {
+    padding: 4px 8px 0;
   }
 
   .task_app_section .task_text .section_title {
     text-align: center;
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .task_app_section .task_text .section_title .task_step {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .task_app_section .task_text .section_title .icon {
-    margin: 10px auto 20px;
+    margin: 0 auto 14px;
   }
 
   .task_app_section .task_text .section_title h2 {
-    font-size: 28px;
+    font-size: 24px;
+  }
+
+  .task_app_section .task_text .section_title p {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .task_app_section .dotes_blue {
     left: -40px;
     bottom: -60px;
-    opacity: 0.35;
-    max-width: 180px;
+    opacity: 0.18;
+    max-width: 160px;
   }
 
   /* Download CTA */

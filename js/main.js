@@ -50,11 +50,10 @@ $heroSlider.owlCarousel({
   responsive: { 0: { items: 1 }, 600: { items: 1 }, 1e3: { items: 1 } },
 });
 
-// Recalculate widths after videos have dimensions (prevents stuck first slide)
+playHeroVideos();
 $heroSlider.find("video").on("loadedmetadata", function () {
   $heroSlider.trigger("refresh.owl.carousel");
 });
-
 $("#company_slider").owlCarousel({
   loop: !0,
   margin: 10,

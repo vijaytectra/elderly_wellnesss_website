@@ -1,43 +1,69 @@
 function preloader_fade() {
   $("#preloader").fadeOut("slow");
 }
+
 $(".drp_btn").click(function () {
   $(this).siblings(".sub_menu").slideToggle(500);
-}),
-  $(document).ready(function () {
-    window.setTimeout("preloader_fade();", 500);
-  }),
-  $("#frmae_slider").owlCarousel({
-    loop: !0,
-    margin: 0,
-    autoplay: !0,
-    smartSpeed: 1500,
-    nav: !1,
-    dots: !0,
-    responsive: { 0: { items: 1 }, 600: { items: 1 }, 1e3: { items: 1 } },
-  });
+});
 
-  // Keep hero videos playing (Owl clones break native autoplay)
-  function playHeroVideos() {
-    $("#frmae_slider video").each(function () {
-      this.muted = true;
-      var playPromise = this.play();
+$(document).ready(function () {
+  window.setTimeout("preloader_fade();", 500);
+});
+
+// Hero slider: bind first, then init (so all 3 videos rotate)
+function playHeroVideos() {
+  $("#frmae_slider .owl-item").each(function () {
+    var video = $(this).find("video").get(0);
+    if (!video) return;
+    video.muted = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+    if ($(this).hasClass("active")) {
+      var playPromise = video.play();
       if (playPromise && typeof playPromise.catch === "function") {
         playPromise.catch(function () {});
       }
-    });
-  }
-  playHeroVideos();
-  $("#frmae_slider").on("translated.owl.carousel initialized.owl.carousel", playHeroVideos);
-  $("#company_slider").owlCarousel({
-    loop: !0,
-    margin: 10,
-    nav: !1,
-    autoplay: !0,
-    smartSpeed: 1500,
-    dots: !0,
-    responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 5 } },
-  }),
+    } else {
+      video.pause();
+    }
+  });
+}
+
+var $heroSlider = $("#frmae_slider");
+$heroSlider.on(
+  "initialized.owl.carousel changed.owl.carousel translated.owl.carousel",
+  playHeroVideos
+);
+$heroSlider.owlCarousel({
+  loop: !0,
+  margin: 0,
+  items: 1,
+  autoplay: !0,
+  autoplayTimeout: 4500,
+  autoplayHoverPause: !1,
+  autoplaySpeed: 800,
+  smartSpeed: 800,
+  nav: !1,
+  dots: !0,
+  touchDrag: !0,
+  mouseDrag: !0,
+  responsive: { 0: { items: 1 }, 600: { items: 1 }, 1e3: { items: 1 } },
+});
+
+// Recalculate widths after videos have dimensions (prevents stuck first slide)
+$heroSlider.find("video").on("loadedmetadata", function () {
+  $heroSlider.trigger("refresh.owl.carousel");
+});
+
+$("#company_slider").owlCarousel({
+  loop: !0,
+  margin: 10,
+  nav: !1,
+  autoplay: !0,
+  smartSpeed: 1500,
+  dots: !0,
+  responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 5 } },
+}),
   $("#testimonial_slider").owlCarousel({
     loop: !0,
     margin: 10,

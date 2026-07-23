@@ -580,18 +580,11 @@ footer {
   }
 }
 
-/* Stable hero media box (reduces CLS; videos still autoplay) */
-.banner_section .slider_media {
+/* Keep hero slider dots visible so all 3 slides are obvious */
+.banner_section .owl-dots {
+  display: flex !important;
+  justify-content: center;
+  margin-top: 20px;
   position: relative;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  border-radius: 24px;
-  background: #e8eef1;
-}
-
-.banner_section .slider_media video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  z-index: 2;
 }

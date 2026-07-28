@@ -1218,7 +1218,7 @@ iframe#youtubevideo {
   top: -10px;
   width: 22px;
   height: 22px;
-  background-image: url(../images/bigstar.png);
+  background-image: url(../images/smallStar.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -2367,7 +2367,7 @@ footer {
   padding-left: 15px !important;
   padding-right: 15px !important;
   margin-top: 50px;
-  background-image: url(../images/footer_bg.png);
+  
   background-repeat: no-repeat;
   background-position: 0 0;
 }
@@ -2927,7 +2927,7 @@ footer .download_side .app_btn li a img {
   top: -10px;
   width: 22px;
   height: 22px;
-  background-image: url(../images/bigstar.png);
+  background-image: url(../images/smallStar.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -5353,4 +5353,4 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   .footer_bottom .ft_inner p a:hover {
     text-decoration: underline !important;
   }
-}
+

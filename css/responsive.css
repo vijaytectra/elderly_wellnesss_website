@@ -2726,9 +2726,6 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
 
 /* Explicit Table of Contents Link Style Reset */
 #rank-math-toc a {
-  color: #475569 !important;
-  text-decoration: none !important;
-}
 
 #rank-math-toc a:hover {
   color: var(--primery, #2786a5) !important;

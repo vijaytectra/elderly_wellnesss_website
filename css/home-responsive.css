@@ -421,10 +421,9 @@ footer {
 
   #home-services-section .feature_box .img img {
     width: 100% !important;
-    height: 210px !important;
+    height: auto !important;
     max-height: 230px !important;
-    object-fit: cover !important;
-    object-position: top center !important;
+    object-fit: contain !important;
     border-radius: 0 !important;
     display: block !important;
     margin: 0 auto !important;

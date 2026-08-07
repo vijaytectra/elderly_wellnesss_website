@@ -109,15 +109,39 @@ footer {
   }
 
   .banner_section .app_btn {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
     justify-content: center !important;
-    flex-wrap: wrap !important;
+    align-items: center !important;
     gap: 12px !important;
     margin-top: 16px !important;
     margin-bottom: 0 !important;
+    padding: 0 8px !important;
+    width: 100% !important;
   }
 
+  .banner_section .app_btn li,
   .banner_section .app_btn li:last-child {
-    margin-left: 0 !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .banner_section .app_btn li a {
+    display: inline-flex !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .banner_section .app_btn li a img {
+    height: 38px !important;
+    max-width: 140px !important;
+    width: auto !important;
+    object-fit: contain !important;
   }
 
   .banner_section .banner_slider {

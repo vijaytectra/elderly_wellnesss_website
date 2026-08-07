@@ -682,28 +682,48 @@ header {
 
 /* hero slider button */
 .banner_section .app_btn {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start;
+  gap: 16px !important;
+  margin-top: 24px !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.banner_section .app_btn li,
+.banner_section .app_btn li:last-child {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-block !important;
 }
 
 /* hero slider list */
 .banner_section .app_btn li a {
-  display: block;
-  padding: 15px 35px;
-  background-color: var(--black);
-  border: none;
-  position: relative;
-  border-radius: 12px;
-  transition: 0.4s all;
+  display: inline-block !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: 0.25s all ease !important;
 }
 
-.banner_section .app_btn li:last-child {
-  margin-left: 25px;
+.banner_section .app_btn li a img,
+.banner_section .app_btn li a img.blue_img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 165px !important;
+  display: block !important;
+  border-radius: 10px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+  transition: 0.25s all ease !important;
 }
 
-.banner_section .app_btn li a img {
-  transition: 0.4s all;
-  height: 36px;
+.banner_section .app_btn li a:hover img {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18) !important;
 }
 
 /* hero slider users */

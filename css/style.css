@@ -2043,9 +2043,10 @@ iframe#youtubevideo {
 
 #home-services-section .feature_box .img img {
   width: 100% !important;
-  height: auto !important;
-  max-height: 250px !important;
-  object-fit: contain !important;
+  height: 220px !important;
+  max-height: 240px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
   display: block !important;
   margin: 0 auto !important;
 }

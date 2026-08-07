@@ -2222,6 +2222,7 @@ footer a,
     font-size: clamp(3rem, 14vw, 4.25rem);
   }
 
+  .banner_section .app_btn,
   .download_app .app_btn,
   .downaload_section .app_btn,
   .btn-main-row-service-inner-banner {
@@ -2231,45 +2232,8 @@ footer a,
     width: 100%;
   }
 
-  .banner_section .app_btn {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 14px !important;
-    width: 100% !important;
-    margin-top: 20px !important;
-    margin-bottom: 0 !important;
-    padding: 0 10px !important;
-  }
-
   .banner_section .app_btn li,
-  .banner_section .app_btn li:last-child {
-    margin: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex: 0 0 auto !important;
-  }
-
-  .banner_section .app_btn li a {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-
-  .banner_section .app_btn li a img {
-    height: 42px !important;
-    max-width: 145px !important;
-    width: auto !important;
-    object-fit: contain !important;
-  }
-
+  .banner_section .app_btn li:last-child,
   .download_app .app_btn li,
   .downaload_section .app_btn li {
     margin-left: 0;
@@ -2635,6 +2599,7 @@ footer a,
   }
 
   /* App Store & Google Play Buttons Size & Row Layout */
+  .banner_section .app_btn,
   .download_app .app_btn,
   .downaload_section .app_btn {
     display: flex !important;
@@ -2646,38 +2611,27 @@ footer a,
     margin-top: 16px !important;
   }
 
-  .banner_section .app_btn {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 14px !important;
-    padding: 0 10px !important;
-    margin-top: 18px !important;
-    margin-bottom: 0 !important;
-    width: 100% !important;
-  }
-
-  .banner_section .app_btn li {
+  .banner_section .app_btn li,
+  .download_app .app_btn li,
+  .downaload_section .app_btn li {
     margin: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
   }
 
-  .banner_section .app_btn li a {
-    display: inline-flex !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
+  .banner_section .app_btn li a,
+  .download_app .app_btn li a,
+  .downaload_section .app_btn li a {
+    display: block !important;
+    padding: 6px 12px !important;
+    background-color: #000000 !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
   }
 
-  .banner_section .app_btn li a img {
-    height: 42px !important;
-    max-width: 145px !important;
+  .banner_section .app_btn li a img,
+  .download_app .app_btn li a img,
+  .downaload_section .app_btn li a img {
+    height: 20px !important;
     width: auto !important;
-    object-fit: contain !important;
   }
 }
 

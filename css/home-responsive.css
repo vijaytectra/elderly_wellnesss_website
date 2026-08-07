@@ -109,39 +109,15 @@ footer {
   }
 
   .banner_section .app_btn {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
     justify-content: center !important;
-    align-items: center !important;
+    flex-wrap: wrap !important;
     gap: 12px !important;
     margin-top: 16px !important;
     margin-bottom: 0 !important;
-    padding: 0 8px !important;
-    width: 100% !important;
   }
 
-  .banner_section .app_btn li,
   .banner_section .app_btn li:last-child {
-    margin: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .banner_section .app_btn li a {
-    display: inline-flex !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
-
-  .banner_section .app_btn li a img {
-    height: 38px !important;
-    max-width: 140px !important;
-    width: auto !important;
-    object-fit: contain !important;
+    margin-left: 0 !important;
   }
 
   .banner_section .banner_slider {
@@ -304,21 +280,43 @@ footer {
   }
 
   .banner_section .app_btn {
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+    width: 100% !important;
   }
 
   .banner_section .app_btn li {
-    margin: 0;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 270px !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 
   .banner_section .app_btn li a {
-    padding: 10px 18px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px 20px !important;
+    height: 52px !important;
+    width: 100% !important;
+    background-color: #000000 !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16) !important;
+    box-sizing: border-box !important;
   }
 
   .banner_section .app_btn li a img {
-    height: 24px;
+    height: 34px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
   }
 
   .banner_section .banner_slider {

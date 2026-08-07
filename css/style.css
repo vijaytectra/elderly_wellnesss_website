@@ -683,47 +683,38 @@ header {
 /* hero slider button */
 .banner_section .app_btn {
   display: flex !important;
-  flex-direction: row !important;
   align-items: center !important;
-  justify-content: flex-start;
+  justify-content: center !important;
   gap: 16px !important;
-  margin-top: 24px !important;
-  padding: 0 !important;
-  list-style: none !important;
 }
 
-.banner_section .app_btn li,
-.banner_section .app_btn li:last-child {
+.banner_section .app_btn li {
   margin: 0 !important;
-  padding: 0 !important;
-  display: inline-block !important;
 }
 
-/* hero slider list */
 .banner_section .app_btn li a {
-  display: inline-block !important;
-  padding: 0 !important;
-  background-color: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  transition: 0.25s all ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 14px 32px !important;
+  background-color: #000000 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-.banner_section .app_btn li a img,
-.banner_section .app_btn li a img.blue_img {
-  height: 44px !important;
+.banner_section .app_btn li a:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3) !important;
+  background-color: #0d131f !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.banner_section .app_btn li a img {
+  transition: all 0.3s ease !important;
+  height: 42px !important;
   width: auto !important;
-  max-width: 165px !important;
-  display: block !important;
-  border-radius: 10px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
-  transition: 0.25s all ease !important;
-}
-
-.banner_section .app_btn li a:hover img {
-  transform: translateY(-2px) scale(1.03) !important;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18) !important;
 }
 
 /* hero slider users */

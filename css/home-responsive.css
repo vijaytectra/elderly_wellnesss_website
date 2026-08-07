@@ -651,7 +651,10 @@ footer {
   }
 
   .downaload_section .center_screen .img img {
-    max-width: 200px;
+    width: 90% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
 }
 

@@ -4623,7 +4623,10 @@ footer .logo a img {
 }
 
 .downaload_section .center_screen .img img {
-  width: 70%;
+  width: 90% !important;
+  max-width: 340px !important;
+  margin: 0 auto !important;
+  display: block !important;
 }
 .downaload_section {
   padding: 100px 0;

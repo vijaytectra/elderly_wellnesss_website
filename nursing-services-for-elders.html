@@ -37,9 +37,9 @@
     <!-- Aos-Style-link -->
     <link rel="stylesheet" href="css/aos.css"/>
     <!-- Coustome-Style-link -->
-    <link rel="stylesheet" href="css/style.css?v=2.9"/>
+    <link rel="stylesheet" href="css/style.css?v=6.0"/>
     <!-- Responsive-Style-link -->
-    <link rel="stylesheet" href="css/responsive.css?v=2.9"/>
+    <link rel="stylesheet" href="css/responsive.css?v=5.0"/>
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"/>
     <meta property="og:title" content="Elderly Wellness"/>
@@ -89,7 +89,7 @@
           <a class="navbar-brand" href="index.html">
             <img src="images/logo.png" alt="Elderly Wellness"/>
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
               <span class="toggle-wrap">
                 <span class="toggle-bar"></span>
@@ -167,7 +167,9 @@
         <!-- row start -->
         <div class="row gap-8">
           <div class="col-lg-6 col-md-12 aos-init aos-animate image-sec-banner-inner-service" data-aos="fade-up" data-aos-duration="1500">
-            <img src="images/services/nursing/1.png" alt="image"/>
+            <div class="img">
+              <img src="images/services/nursing/1.png" alt="image"/>
+            </div>
           </div>
           <div class="col-lg-6 col-md-12 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1500">
             <!-- banner text -->
@@ -418,7 +420,7 @@
             </div>
             <div class="col-md-6">
               <div class="inner_block" data-aos="fade-up" data-aos-duration="1500">
-                <div class="img">
+                <div class="img zoom-out-img">
                   <img src="images/services/nursing/4.png" alt=""/>
                 </div>
               </div>
@@ -491,7 +493,7 @@
             <div class="col-md-6">
               <div class="inner_block" data-aos="fade-up" data-aos-duration="1500">
                 <div class="img">
-                  <img src="images/services/nursing/5.png" alt=""/>
+                  <img src="images/services/nursing/5.png?v=2.0" alt=""/>
                 </div>
               </div>
             </div>
@@ -965,7 +967,7 @@
                     <div class="card">
                       <div class="card-header" id="headingfive">
                         <h3 class="mb-0">
-                          <button class="btn btn-link btn-block text-left active" type="button" data-toggle="collapse" data-target="#collapsefive" aria-expanded="true" aria-controls="collapsefive">
+                          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
                             What happens after I sign up and select the nursing
                             care service I need?
                             <span class="icons">
@@ -975,7 +977,7 @@
                           </button>
                         </h3>
                       </div>
-                      <div id="collapsefive" class="collapse show" aria-labelledby="headingfive" data-parent="#accordionGenral">
+                      <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionGenral">
                         <div class="card-body">
                           Once you sign up and select the nursing care service,
                           an Elderly Wellness specialist will contact you. They

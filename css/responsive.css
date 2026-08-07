@@ -478,25 +478,28 @@ footer a,
   .service_section .service_blocks .img,
   .image-sec-banner-inner-service,
   #services-inner-page-banner-section .image-sec-banner-inner-service {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
+    display: block !important;
+    position: relative !important;
     width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     margin-top: 0 !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 20px !important;
+    padding: 0 !important;
   }
 
   .service_section .service_blocks .inner_block img,
   .service_section .service_blocks .img img,
-  .image-sec-banner-inner-service img,
-  .banner_section img {
+  .inner_block .img img,
+  .image-sec-banner-inner-service img {
     display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    width: 100% !important;
     max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border-radius: 16px !important;
+    margin: 0 auto !important;
     float: none !important;
   }
 
@@ -600,11 +603,11 @@ footer a,
   }
 
   .our_value_section .owl-nav button.owl-next {
-    right: -15px;
+    right: 10px !important;
   }
 
   .our_value_section .owl-nav button.owl-prev {
-    left: -15px;
+    left: 10px !important;
   }
 
   .our_value_section {
@@ -958,29 +961,44 @@ footer a,
   }
 
   .about_section .app_statstic {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    width: 100%;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    justify-items: center !important;
   }
 
   .about_section .app_statstic li,
   .about_section .app_statstic li:first-child,
   .about_section .app_statstic li:last-child {
-    width: 100%;
-    text-align: center;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
   }
 
   .about_section .app_statstic li .text {
-    width: 100%;
-    max-width: 150px;
-    height: 150px;
-    margin: 0 auto;
+    width: 145px !important;
+    height: 145px !important;
+    max-width: 145px !important;
+    margin: 0 auto !important;
+    padding: 12px !important;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .about_section .app_statstic li .text .stat_icon {
+    font-size: 22px !important;
+    margin-bottom: 4px !important;
   }
 
   .about_section .app_statstic li .text p {
-    font-size: 12px;
-    padding: 0 8px;
+    font-size: 0.76rem !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    padding: 0 !important;
+    width: 100% !important;
   }
 
   .about_section .abtImg {
@@ -1087,8 +1105,24 @@ footer a,
     margin-bottom: 15px !important;
   }
 
+  .service_section .service_text .listing_block li {
+    margin-bottom: 14px;
+  }
+
+  .service_section .service_text .listing_block li:last-child {
+    margin-bottom: 0;
+  }
+
   .service_section .service_text .listing_block li .text {
     text-align: left;
+  }
+
+  .service_section .service_text .listing_block li .text h3 {
+    margin-bottom: 4px;
+  }
+
+  .service_section .service_text .listing_block li .text p {
+    margin-bottom: 0;
   }
 
   .service_section .service_text .btn_block {
@@ -1373,11 +1407,11 @@ footer a,
   }
 
   .our_value_section .owl-nav button.owl-next {
-    right: -12px;
+    right: 10px !important;
   }
 
   .our_value_section .owl-nav button.owl-prev {
-    left: -12px;
+    left: 10px !important;
   }
 
   .unique_section .unique_inner .dotes_blue {
@@ -1442,21 +1476,11 @@ footer a,
   }
 
   .experts_team_section .experts_box {
-    margin-bottom: 15px;
-  }
-
-  .experts_team_section .col-md-4:last-child,
-  .experts_team_section .col-md-4:last-child .experts_box {
-    margin-bottom: 0 !important;
+    margin-bottom: 20px !important;
   }
 
   .experts_team_section .experts_box .social_media {
-    opacity: 1;
-  }
-
-  .experts_team_section .experts_box:not(:hover) .social_media a {
-    border-color: var(--dark-black);
-    color: var(--dark-black);
+    opacity: 1 !important;
   }
 
   .experts_team_section::before,
@@ -1485,16 +1509,33 @@ footer a,
     background-color: transparent;
   }
 
-  .faq_section .card .card-body {
-    text-align: left;
-  }
-
-  .faq_section .card .card-header button {
-    padding-right: 25px;
+  .faq_section .card {
+    border: none !important;
+    background-color: transparent !important;
+    margin-bottom: 14px !important;
+    box-shadow: none !important;
   }
 
   .faq_section .card .card-header {
-    padding: 12px 15px;
+    padding: 0 !important;
+  }
+
+  .faq_section .card .card-header button {
+    padding: 10px 44px 10px 0 !important;
+    font-size: 0.94rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .faq_section .card .card-header button .icons i {
+    right: 4px !important;
+    font-size: 18px !important;
+  }
+
+  .faq_section .card .card-body {
+    padding: 8px 44px 12px 0 !important;
+    font-size: 0.90rem !important;
+    line-height: 1.55 !important;
+    text-align: left !important;
   }
 
   .faq_section .section_title {
@@ -2319,12 +2360,14 @@ footer a,
     top: 7px !important;
   }
 
-  .navbar-toggler .toggle-wrap.active::before {
+  .navbar-toggler .toggle-wrap.active::before,
+  .navbar-toggler[aria-expanded="true"] .toggle-wrap::before {
     top: 4px !important;
     transform: rotate(45deg) !important;
   }
 
-  .navbar-toggler .toggle-wrap.active::after {
+  .navbar-toggler .toggle-wrap.active::after,
+  .navbar-toggler[aria-expanded="true"] .toggle-wrap::after {
     top: 4px !important;
     transform: rotate(-45deg) !important;
   }
@@ -2622,17 +2665,301 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   font-weight: 700 !important;
 }
 
-color: #475569 !important;
-text-decoration: none !important;
+/* ==========================================================================
+   Comprehensive Mobile Responsive Optimization:
+   Typography Alignment, Widow/Orphan Prevention, Box Padding, & Gap Removal
+   ========================================================================== */
+
+@media screen and (max-width: 991.98px) {
+  /* Prevent horizontal scroll */
+  html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 1. Typography: Balanced Headings & Pretty Paragraph Text Wrap (Prevents Orphan Words) */
+  h1, h2, h3, h4, h5, h6,
+  .section_title h2,
+  .steps_block .text h3,
+  .service_text h3,
+  .about_text h2,
+  .card-title,
+  .arrange-home-physio h3 {
+    text-wrap: balance !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: manual !important;
+  }
+
+  p, li, span,
+  .steps_block .text p,
+  .service_text p,
+  .about_text p,
+  .feature_block p,
+  .our_value_block p,
+  .arrange-home-physio p,
+  .arrange-home-physio li,
+  .card-text,
+  .entry-content p {
+    text-wrap: pretty !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: manual !important;
+    line-height: 1.55 !important;
+  }
+
+  /* 2. Equal Paragraph Spacing Inside Containers & Cards */
+  p {
+    margin-bottom: 12px !important;
+  }
+  p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .steps_block .text p,
+  .service_text p,
+  .about_text p,
+  .feature_block p,
+  .our_value_block p {
+    margin-bottom: 12px !important;
+  }
+  .steps_block .text p:last-child,
+  .service_text p:last-child,
+  .about_text p:last-child,
+  .feature_block p:last-child,
+  .our_value_block p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* 3. Container & Box Padding Optimization: Remove Excess Top & Bottom Gaps */
+  .how_it_inner {
+    padding: 30px 20px 24px 20px !important;
+    border-radius: 16px !important;
+    margin-bottom: 0 !important;
+  }
+
+  #services-inner-icon-section .how_it_inner {
+    padding: 30px 20px 24px 20px !important;
+  }
+
+  .how_it_inner .section_title {
+    margin-bottom: 24px !important;
+  }
+
+  /* Remove excessive top margin on internal grid rows inside teal containers */
+  .how_it_inner .row {
+    margin-top: 0 !important;
+  }
+
+  .how_it_inner .row + .row {
+    margin-top: 16px !important;
+  }
+
+  .how_it_inner .steps_block {
+    margin-bottom: 20px !important;
+    text-align: center !important;
+    padding: 16px 14px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+  }
+
+  .how_it_inner .row:last-child .col-md-4:last-child .steps_block,
+  .how_it_inner .row:last-child .col-12:last-child .steps_block {
+    margin-bottom: 0 !important;
+  }
+
+  .steps_block .icon {
+    margin-bottom: 10px !important;
+  }
+
+  .steps_block .text {
+    margin-top: 10px !important;
+  }
+
+  .steps_block .text h3 {
+    margin-bottom: 8px !important;
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* 4. Section Padding Reduction on Mobile: Eliminate Huge White Spaces */
+  .row_am {
+    padding: 36px 0 !important;
+  }
+
+  .blog_section,
+  .about_section,
+  .service_section,
+  .feature_section,
+  .our_value_section,
+  .contact_section {
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+  }
+
+  .section_title {
+    margin-bottom: 24px !important;
+  }
+
+  .section_title h2 {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section_title p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Our Values Slider - Equal Card Heights, Standalone Images & Inset Nav Icons */
+  .our_value_section .owl-stage {
+    display: flex !important;
+  }
+
+  .our_value_section .owl-item {
+    display: flex !important;
+    flex: 1 0 auto !important;
+  }
+
+  .our_value_section .value_slider .value_block {
+    padding: 38px 52px 36px 52px !important;
+    border-radius: 20px !important;
+    position: relative !important;
+    background-color: var(--bg-white) !important;
+    text-align: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Standalone Image Icon (Green Box Removed & Size Enlarged) */
+  .our_value_section .value_slider .value_block .icon {
+    width: auto !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    border-radius: 0 !important;
+    margin: 0 auto 16px auto !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: none !important;
+  }
+
+  .our_value_section .value_slider .value_block .icon img {
+    width: 135px !important;
+    height: 135px !important;
+    max-width: 135px !important;
+    max-height: 135px !important;
+    object-fit: contain !important;
+  }
+
+  .our_value_section .value_slider .value_block h3 {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    color: var(--primery) !important;
+    text-wrap: balance !important;
+  }
+
+  .our_value_section .value_slider .value_block p {
+    font-size: 16.5px !important;
+    line-height: 1.65 !important;
+    color: #2d3748 !important;
+    margin-bottom: 0 !important;
+    text-wrap: pretty !important;
+    word-break: normal !important;
+    hyphens: manual !important;
+  }
+
+  /* Owl Nav Buttons: Positioned Inset Inside the White Card Container */
+  .our_value_section .owl-nav {
+    display: block !important;
+  }
+
+  .our_value_section .owl-nav button {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    background-color: #f0f7f9 !important;
+    border: 1.5px solid var(--primery) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 20 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+    margin: 0 !important;
+  }
+
+  .our_value_section .owl-nav button.owl-prev {
+    left: 10px !important;
+  }
+
+  .our_value_section .owl-nav button.owl-next {
+    right: 10px !important;
+  }
+
+  .our_value_section .owl-nav button span {
+    color: var(--primery) !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    margin-top: -2px !important;
+  }
+
+  .our_value_section .owl-nav button:hover {
+    background-color: var(--primery) !important;
+    border-color: var(--primery) !important;
+  }
+
+  .our_value_section .owl-nav button:hover span {
+    color: #ffffff !important;
+  }
 }
 
-#rank-math-toc a:hover {
-  color: var(--primery, #2786a5) !important;
-  text-decoration: none !important;
-}
+@media screen and (max-width: 575.98px) {
+  .how_it_inner {
+    padding: 24px 14px 18px 14px !important;
+    border-radius: 12px !important;
+  }
 
-/* Bold Numbered List Markers */
-.entry-content ol li::marker,
-.content-area ol li::marker {
-  font-weight: 700 !important;
+  .how_it_inner .steps_block {
+    padding: 14px 10px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .our_value_section .value_slider .value_block {
+    padding: 32px 44px 28px 44px !important;
+  }
+
+  .our_value_section .value_slider .value_block .icon img {
+    width: 115px !important;
+    height: 115px !important;
+    max-width: 115px !important;
+    max-height: 115px !important;
+  }
+
+  .our_value_section .value_slider .value_block h3 {
+    font-size: 22px !important;
+  }
+
+  .our_value_section .value_slider .value_block p {
+    font-size: 15.5px !important;
+  }
+
+  .row_am {
+    padding: 28px 0 !important;
+  }
+
+  .section_title h2 {
+    font-size: 22px !important;
+  }
 }

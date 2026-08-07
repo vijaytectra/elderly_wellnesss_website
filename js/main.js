@@ -253,25 +253,46 @@ void 0 !== counter_find &&
     $("#youtubevideo").attr("src", "");
   }),
   $(document).ready(function () {
-    $(".navbar-toggler").click(function () {
-      $(this)
-        .children("span")
-        .children(".ico_menu")
-        .hasClass("icofont-navigation-menu")
-        ? $(this)
-            .children("span")
-            .children(".ico_menu")
-            .removeClass("icofont-navigation-menu")
-            .addClass("icofont-close")
-        : $(this)
-            .children("span")
-            .children(".ico_menu")
-            .removeClass("icofont-close")
-            .addClass("icofont-navigation-menu");
+    function setNavState(isOpen) {
+      var $toggler = $(".navbar-toggler");
+      var $wrap = $toggler.find(".toggle-wrap");
+      if (isOpen) {
+        $wrap.addClass("active");
+        $toggler.removeClass("collapsed").attr("aria-expanded", "true");
+      } else {
+        $wrap.removeClass("active");
+        $toggler.addClass("collapsed").attr("aria-expanded", "false");
+      }
+    }
+
+    $(".navbar-collapse")
+      .on("show.bs.collapse", function () {
+        setNavState(true);
+      })
+      .on("hide.bs.collapse", function () {
+        setNavState(false);
+      });
+
+    // Close mobile menu and reset icon to menu icon when selecting a menu item
+    $(document).on("click", ".navbar-collapse a", function (e) {
+      if ($(window).width() < 992) {
+        var href = $(this).attr("href");
+        var isDropdownToggle = (!href || href === "#" || href === "index.html#" || href.endsWith("#") || $(this).siblings(".sub_menu").length > 0);
+
+        if (isDropdownToggle) {
+          var $subMenu = $(this).siblings(".sub_menu");
+          if ($subMenu.length > 0) {
+            e.preventDefault();
+            $subMenu.slideToggle(300);
+          }
+        } else {
+          var $navCollapse = $(this).closest(".navbar-collapse");
+          if ($navCollapse.hasClass("show")) {
+            $navCollapse.collapse("hide");
+          }
+        }
+      }
     });
-  }),
-  $(".toggle-wrap").on("click", function () {
-    $(this).toggleClass("active"), $("aside").animate({ width: "toggle" }, 200);
   }),
   AOS.init();
 

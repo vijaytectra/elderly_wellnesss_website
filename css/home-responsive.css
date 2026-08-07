@@ -319,14 +319,18 @@ footer {
   }
 
   .key_innner {
-    margin: 0;
-    padding: 40px 0 48px;
-    border-radius: 16px;
+    margin: 0 !important;
+    padding: 24px 0 24px !important;
+    border-radius: 18px !important;
+  }
+
+  .key_innner .section_title {
+    margin-bottom: 18px !important;
   }
 
   .key_innner .section_title h2 {
-    font-size: 26px;
-    padding: 0 12px;
+    font-size: 24px !important;
+    padding: 0 12px !important;
   }
 
   .key_innner .dotes_blue {
@@ -335,21 +339,70 @@ footer {
     opacity: 0.4;
   }
 
-  .key_innner .owl-nav button.owl-next {
-    right: 16px !important;
+  .key_innner .owl-nav {
+    display: block !important;
+  }
+
+  .key_innner .owl-nav button {
+    position: absolute !important;
+    top: 58% !important;
+    transform: translateY(-50%) !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    border: 1.5px solid var(--purple, #2786a5) !important;
+    z-index: 20 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
   }
 
   .key_innner .owl-nav button.owl-prev {
-    left: 16px !important;
+    left: 8px !important;
   }
 
-  .feature_box {
-    min-height: auto;
-    padding: 22px 18px 0;
+  .key_innner .owl-nav button.owl-next {
+    right: 8px !important;
   }
 
-  .feature_box .img img {
-    max-height: 160px;
+  #home-services-section .feature_box {
+    min-height: 370px !important;
+    padding: 22px 18px 0 18px !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+  }
+
+  #home-services-section .feature_box h3 {
+    font-size: 1.25rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 10px !important;
+  }
+
+  #home-services-section .feature_box p {
+    font-size: 0.94rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 14px !important;
+  }
+
+  #home-services-section .feature_box .img {
+    width: calc(100% + 36px) !important;
+    margin-left: -18px !important;
+    margin-right: -18px !important;
+    margin-bottom: 0 !important;
+    margin-top: auto !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+  }
+
+  #home-services-section .feature_box .img img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 230px !important;
+    object-fit: contain !important;
+    border-radius: 0 !important;
+    display: block !important;
+    margin: 0 auto !important;
   }
 
   /* Task blocks */

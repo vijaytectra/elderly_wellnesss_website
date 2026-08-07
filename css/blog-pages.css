@@ -736,19 +736,20 @@ body.single-post article .entry-content h3.rank-math-question,
 .entry-content h3.rank-math-question,
 h3.rank-math-question {
   cursor: pointer !important;
-  padding-top: 22px !important;
-  padding-bottom: 22px !important;
-  padding-left: 32px !important;
-  padding-right: 64px !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  padding-left: 16px !important;
+  padding-right: 34px !important;
   margin: 0 !important;
-  font-size: 1.05rem !important;
+  font-size: 0.98rem !important;
   font-weight: 700 !important;
-  line-height: 1.5 !important;
+  line-height: 1.4 !important;
   position: relative !important;
   color: #0f172a !important;
   user-select: none !important;
   transition: color 0.2s ease !important;
   text-align: left !important;
+  text-wrap: wrap !important;
   box-sizing: border-box !important;
 }
 
@@ -758,15 +759,63 @@ h3.rank-math-question {
 body.single-post .entry-content #rank-math-faq .rank-math-answer,
 body.single-post article #rank-math-faq .rank-math-answer {
   display: none !important;
-  padding-top: 16px !important;
-  padding-bottom: 24px !important;
-  padding-left: 32px !important;
-  padding-right: 32px !important;
+  padding-top: 14px !important;
+  padding-bottom: 16px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
   color: #475569 !important;
-  font-size: 0.98rem !important;
-  line-height: 1.7 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
   border-top: 1px solid #f1f5f9 !important;
   box-sizing: border-box !important;
+  text-align: left !important;
+}
+
+#rank-math-faq .rank-math-list-item.is-open .rank-math-answer,
+.rank-math-block .rank-math-list-item.is-open .rank-math-answer,
+.rank-math-list-item.is-open .rank-math-answer,
+body.single-post .entry-content #rank-math-faq .rank-math-list-item.is-open .rank-math-answer,
+body.single-post article #rank-math-faq .rank-math-list-item.is-open .rank-math-answer {
+  display: block !important;
+}
+
+@media screen and (max-width: 767px) {
+  #rank-math-faq .rank-math-question,
+  .rank-math-block .rank-math-question,
+  .rank-math-list-item h3.rank-math-question,
+  body.single-post .entry-content #rank-math-faq h3.rank-math-question,
+  body.single-post article #rank-math-faq h3.rank-math-question,
+  body.single-post article .entry-content h3.rank-math-question,
+  .entry-content h3.rank-math-question,
+  h3.rank-math-question {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    padding-left: 12px !important;
+    padding-right: 24px !important;
+    font-size: 0.90rem !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  #rank-math-faq .rank-math-question::after,
+  .rank-math-block .rank-math-question::after,
+  h3.rank-math-question::after {
+    right: 8px !important;
+    font-size: 18px !important;
+  }
+
+  #rank-math-faq .rank-math-answer,
+  .rank-math-block .rank-math-answer,
+  .rank-math-list-item .rank-math-answer,
+  body.single-post .entry-content #rank-math-faq .rank-math-answer,
+  body.single-post article #rank-math-faq .rank-math-answer {
+    padding-top: 12px !important;
+    padding-bottom: 14px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    font-size: 0.90rem !important;
+    line-height: 1.55 !important;
+  }
 }
 
 /* Post views */
@@ -1417,14 +1466,55 @@ body.single-post #content {
     top: 7px !important;
   }
 
-  .navbar-toggler .toggle-wrap.active::before {
+  .navbar-toggler .toggle-wrap.active::before,
+  .navbar-toggler[aria-expanded="true"] .toggle-wrap::before {
     top: 4px !important;
     transform: rotate(45deg) !important;
   }
 
-  .navbar-toggler .toggle-wrap.active::after {
+  .navbar-toggler .toggle-wrap.active::after,
+  .navbar-toggler[aria-expanded="true"] .toggle-wrap::after {
     top: 4px !important;
     transform: rotate(-45deg) !important;
+  }
+}
+
+/* Mobile Blog & FAQ Responsive Optimization */
+@media screen and (max-width: 991.98px) {
+  .entry-content h1,
+  .entry-content h2,
+  .entry-content h3,
+  .entry-content h4,
+  .blog_detail_title,
+  .blog_card .text h3 {
+    text-wrap: balance !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: manual !important;
+  }
+
+  .entry-content p,
+  .entry-content li,
+  .blog_card .text p,
+  .faq_box p {
+    text-wrap: pretty !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: manual !important;
+    line-height: 1.55 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .entry-content p:last-child,
+  .blog_card .text p:last-child,
+  .faq_box p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .blog_detail_section,
+  .blog_page_section {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
   }
 }
 

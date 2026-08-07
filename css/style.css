@@ -2119,10 +2119,15 @@ iframe#youtubevideo {
 /* --------------Downaload Section Css Start--------------- */
 .downaload_section {
   position: relative;
+  padding: 60px 0 20px 0;
+  text-align: center;
+  overflow: hidden;
 }
 
 .downaload_section .background_slider {
-  padding: 200px 0;
+  position: relative;
+  padding: 30px 0;
+  margin-top: 10px;
 }
 
 .downaload_section .dowanload_slider .downlist {
@@ -2143,7 +2148,7 @@ iframe#youtubevideo {
 
 .downaload_section .yellow_dotes {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -2154,37 +2159,57 @@ iframe#youtubevideo {
 
 .downaload_section .center_screen {
   text-align: center;
-  z-index: 999;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 10;
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  margin: 0 auto !important;
+}
+
+.downaload_section .center_screen .img img {
+  width: 90% !important;
+  max-width: 360px !important;
+  margin: 0 auto 24px auto !important;
+  display: block !important;
 }
 
 .downaload_section .app_btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  margin: 0 auto 20px auto !important;
+  padding: 0 !important;
+}
+
+.downaload_section .app_btn li {
+  margin: 0 !important;
+  width: auto !important;
+  flex: 0 1 auto !important;
 }
 
 .downaload_section .app_btn li a {
-  display: block;
-  padding: 15px 35px;
-  background-color: var(--black);
-  border: none;
-  position: relative;
-  border-radius: 12px;
-  transition: 0.4s all;
-}
-
-.downaload_section .app_btn li:last-child {
-  margin-left: 25px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 20px !important;
+  height: 48px !important;
+  border-radius: 12px !important;
+  background-color: #000000 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  box-sizing: border-box !important;
 }
 
 .downaload_section .app_btn li a img {
-  transition: 0.4s all;
-  height: 36px;
+  height: 30px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  margin: 0 !important;
 }
 
 /* -------------blog-Section-Css-Start------------- */

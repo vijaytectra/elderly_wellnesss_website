@@ -109,18 +109,20 @@ footer {
   }
 
   .banner_section .app_btn {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    margin-top: 16px !important;
+    margin-bottom: 0 !important;
   }
 
   .banner_section .app_btn li:last-child {
-    margin-left: 0;
+    margin-left: 0 !important;
   }
 
   .banner_section .banner_slider {
-    margin-top: 36px;
-    padding: 0 10px;
+    margin-top: 24px !important;
+    padding: 0 10px !important;
   }
 
   .slider_media {

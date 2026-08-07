@@ -769,7 +769,38 @@ header {
 
 /* hero slider control dots */
 .banner_section .owl-dots {
-  margin-top: 40px;
+  margin-top: 14px !important;
+  margin-bottom: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+.banner_section .owl-dots button,
+.banner_section .owl-dots button.owl-dot {
+  width: 7px !important;
+  height: 7px !important;
+  min-width: 7px !important;
+  min-height: 7px !important;
+  border-radius: 50% !important;
+  background-color: #cbd5e1 !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: all 0.25s ease !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.banner_section .owl-dots button.active,
+.banner_section .owl-dots button.owl-dot.active {
+  width: 20px !important;
+  height: 7px !important;
+  min-width: 20px !important;
+  border-radius: 999px !important;
+  background-color: var(--purple, #2786a5) !important;
+  border: none !important;
 }
 
 .owl-carousel .owl-item img {

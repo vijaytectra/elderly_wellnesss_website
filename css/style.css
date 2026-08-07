@@ -3196,64 +3196,98 @@ footer .download_side .app_btn li a img {
   padding-right: 25px;
 }
 
+.experts_team_section .row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.experts_team_section .col-md-4 {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 30px !important;
+}
+
 .experts_team_section .experts_box {
-  position: relative;
-  text-align: center;
-  padding: 10px 10px 30px 10px;
-  border-radius: 20px;
-  background-color: transparent;
-  transition: 0.4s all;
+  position: relative !important;
+  text-align: center !important;
+  padding: 16px 16px 24px 16px !important;
+  border-radius: 20px !important;
+  background-color: transparent !important;
+  transition: all 0.4s ease !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
 }
 
 .experts_team_section .experts_box img {
-  margin-bottom: 30px;
-  max-width: 100%;
-  border-radius: 20px;
+  margin-bottom: 20px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 20px !important;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.experts_team_section .experts_box .text {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-grow: 1 !important;
 }
 
 .experts_team_section .experts_box .text h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--primery);
-  transition: 0.4s all;
-  margin: 0;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--primery) !important;
+  transition: all 0.4s ease !important;
+  margin: 0 0 6px 0 !important;
 }
 
 .experts_team_section .experts_box .text span {
-  color: var(--black);
+  color: var(--black) !important;
+  font-size: 15px !important;
+  line-height: 1.4 !important;
+  margin-bottom: 10px !important;
+  display: block !important;
 }
 
 .experts_team_section .experts_box .social_media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  opacity: 0;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: auto !important;
+  min-height: 33px !important;
+  opacity: 0 !important;
 }
 
 .experts_team_section .experts_box .social_media a {
-  display: block;
-  width: 33px;
-  height: 33px;
-  border: 1px solid #cccce2;
-  border-radius: 50px;
-  text-align: center;
-  line-height: 31px;
-  color: var(--text-white);
-  margin: 0 5px;
-  transition: 0.4s all;
-  font-size: 15px;
+  display: block !important;
+  width: 33px !important;
+  height: 33px !important;
+  border: 1px solid #cccce2 !important;
+  border-radius: 50px !important;
+  text-align: center !important;
+  line-height: 31px !important;
+  color: var(--text-white) !important;
+  margin: 0 5px !important;
+  transition: all 0.4s ease !important;
+  font-size: 15px !important;
 }
 
 .experts_team_section .experts_box .social_media a:hover {
-  border-color: var(--bg-white);
-  background-color: var(--bg-white);
-  color: var(--dark-black);
+  border-color: var(--bg-white) !important;
+  background-color: var(--bg-white) !important;
+  color: var(--dark-black) !important;
 }
 
 .experts_team_section .experts_box:hover {
   background-color: var(--dark-black) !important;
-  box-shadow: 0 4px 10px #ede9fe !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
 }
 
 .experts_team_section .experts_box:hover h3 {

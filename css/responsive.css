@@ -274,13 +274,16 @@ footer a,
 
   .text_block span {
     font-size: 40px;
+    line-height: 1.35 !important;
+    display: inline-block !important;
+    padding-bottom: 4px !important;
   }
 
   .text_list_section .owl-stage,
   .text_list_section .owl-stage-outer,
   .textFlow_list .owl-stage,
   .textFlow_list .owl-stage-outer {
-    height: 45px;
+    height: 60px !important;
   }
 
   footer {
@@ -1049,7 +1052,7 @@ footer a,
   .text_list_section .owl-stage-outer,
   .textFlow_list .owl-stage,
   .textFlow_list .owl-stage-outer {
-    height: 35px;
+    height: 50px !important;
   }
 
   .section_title h2 img {

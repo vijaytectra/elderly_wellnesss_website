@@ -1211,7 +1211,7 @@ iframe#youtubevideo {
 .text_list_section .owl-stage-outer,
 .textFlow_list .owl-stage,
 .textFlow_list .owl-stage-outer {
-  height: 55px;
+  height: 75px !important;
 }
 
 .text_block {
@@ -1224,7 +1224,9 @@ iframe#youtubevideo {
   font-size: 50px;
   font-family: var(--font-bebas);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.35 !important;
+  display: inline-block !important;
+  padding-bottom: 6px !important;
 }
 
 .text_block .mark_star {

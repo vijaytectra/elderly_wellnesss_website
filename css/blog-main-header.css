@@ -67,12 +67,14 @@ body.single-post .site.grid-container {
 
 /* Reset main-site footer styles from WordPress entry-meta footers */
 article footer.entry-meta {
-  background-color: var(--blog-accent-soft, #f0f7fa);
-  background-image: none;
-  padding: 20px 24px;
-  margin: 2em 32px 32px;
-  border-radius: 12px;
-  border: 1px solid var(--blog-border, #e2ecf0);
+  background: transparent !important;
+  background-image: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border-top: none !important;
+  box-shadow: none !important;
   color: #222222;
 }
 

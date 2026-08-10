@@ -1496,13 +1496,23 @@ footer a,
     opacity: 1 !important;
   }
 
+  .experts_team_section .experts_box .social_media a {
+    color: var(--primery) !important;
+    border-color: var(--primery) !important;
+  }
+
+  .experts_team_section .experts_box:hover .social_media a {
+    color: var(--text-white) !important;
+    border-color: var(--text-white) !important;
+  }
+
   .experts_team_section::before,
   .experts_team_section::after {
     display: none;
   }
 
   .faq_section {
-    margin-top: 40px !important;
+    margin-top: 50px !important;
     padding-top: 0 !important;
   }
 
@@ -1534,13 +1544,13 @@ footer a,
   }
 
   .faq_section .card .card-header button {
-    padding: 10px 44px 10px 0 !important;
+    padding: 10px 48px 10px 0 !important;
     font-size: 0.94rem !important;
     line-height: 1.4 !important;
   }
 
   .faq_section .card .card-header button .icons i {
-    right: 4px !important;
+    right: 16px !important;
     font-size: 18px !important;
   }
 
@@ -2279,7 +2289,7 @@ footer a,
 
   .faq_section {
     padding-top: 0 !important;
-    margin-top: 40px !important;
+    margin-top: 50px !important;
   }
 
   .faq_section .section_title {
@@ -2658,17 +2668,6 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
 .entry-content li a:hover {
   color: #1a6578 !important;
   text-decoration: underline !important;
-}
-
-/* Explicit Table of Contents Link Style Reset */
-#rank-math-toc a {
-  color: #475569 !important;
-  text-decoration: none !important;
-}
-
-#rank-math-toc a:hover {
-  color: var(--primery, #2786a5) !important;
-  text-decoration: none !important;
 }
 
 /* Bold Numbered List Markers */

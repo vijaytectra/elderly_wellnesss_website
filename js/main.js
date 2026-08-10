@@ -3,19 +3,23 @@ function preloader_fade() {
 }
 $(".drp_btn").click(function () {
   $(this).siblings(".sub_menu").slideToggle(500);
-}),
-  $(document).ready(function () {
-    window.setTimeout("preloader_fade();", 500);
-  }),
-  $("#frmae_slider").owlCarousel({
-    loop: !0,
-    margin: 0,
-    autoplay: !0,
-    smartSpeed: 1500,
-    nav: !1,
-    dots: !0,
-    responsive: { 0: { items: 1 }, 600: { items: 1 }, 1e3: { items: 1 } },
-  });
+});
+$(document).ready(function () {
+  window.setTimeout("preloader_fade();", 500);
+});
+
+if ($.fn && $.fn.owlCarousel) {
+  if ($("#frmae_slider").length) {
+    $("#frmae_slider").owlCarousel({
+      loop: !0,
+      margin: 0,
+      autoplay: !0,
+      smartSpeed: 1500,
+      nav: !1,
+      dots: !0,
+      responsive: { 0: { items: 1 }, 600: { items: 1 }, 1e3: { items: 1 } },
+    });
+  }
 
   // Keep hero videos playing (Owl clones break native autoplay)
   function playHeroVideos() {
@@ -146,6 +150,7 @@ $(".drp_btn").click(function () {
     smartSpeed: 2500,
     items: 1,
   });
+}
 let counter_find = document.querySelector("#counter");
 void 0 !== counter_find &&
   null != counter_find &&
@@ -328,4 +333,46 @@ document.addEventListener("DOMContentLoaded", function () {
   // Update the DOM to display the updated view count for this page
   const viewCountEl = document.getElementById("view-count");
   if (viewCountEl) viewCountEl.innerText = `${views} Views`;
+
+  // Dynamically wrap post-navigation icons in native <a> tags & attach click handlers
+  function setupPostNavLinks() {
+    document.querySelectorAll(".nav-previous, .nav-next").forEach(function (container) {
+      const link = container.querySelector("a");
+      if (link && link.href) {
+        const href = link.getAttribute("href");
+        const icon = container.querySelector(".gp-icon");
+        if (icon && !icon.closest("a")) {
+          const iconLink = document.createElement("a");
+          iconLink.setAttribute("href", href);
+          if (link.hasAttribute("rel")) {
+            iconLink.setAttribute("rel", link.getAttribute("rel"));
+          }
+          iconLink.className = "gp-icon-link";
+          icon.parentNode.insertBefore(iconLink, icon);
+          iconLink.appendChild(icon);
+        }
+
+        container.style.cursor = "pointer";
+        container.onclick = function (e) {
+          if (e.target.tagName !== "A" && !e.target.closest("a")) {
+            window.location.href = link.href;
+          }
+        };
+      }
+    });
+  }
+
+  setupPostNavLinks();
+
+  // Clean up trailing colons from Table of Contents links (e.g. Problem:, Solution:, Outcome:)
+  function cleanTocColons() {
+    document.querySelectorAll("#rank-math-toc nav a").forEach(function (link) {
+      const text = link.textContent.trim();
+      if (text.endsWith(":")) {
+        link.textContent = text.slice(0, -1).trim();
+      }
+    });
+  }
+
+  cleanTocColons();
 });

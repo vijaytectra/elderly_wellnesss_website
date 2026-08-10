@@ -30,20 +30,29 @@ body.single-post article #rank-math-faq h3.rank-math-question,
 body.single-post article .entry-content h3.rank-math-question,
 h3.rank-math-question {
   cursor: pointer !important;
-  padding-top: 22px !important;
-  padding-bottom: 22px !important;
-  padding-left: 32px !important;
-  padding-right: 64px !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  padding-left: 16px !important;
+  padding-right: 34px !important;
   margin: 0 !important;
-  font-size: 1.05rem !important;
+  font-size: 0.98rem !important;
   font-weight: 700 !important;
-  line-height: 1.5 !important;
+  line-height: 1.4 !important;
   position: relative !important;
   color: #0f172a !important;
   user-select: none !important;
   transition: color 0.2s ease !important;
   text-align: left !important;
+  text-wrap: wrap !important;
   box-sizing: border-box !important;
+}
+
+#rank-math-faq .rank-math-question *,
+.rank-math-block .rank-math-question * {
+  color: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  text-align: left !important;
 }
 
 #rank-math-faq .rank-math-list-item.is-open .rank-math-question,
@@ -56,10 +65,10 @@ h3.rank-math-question {
 h3.rank-math-question::after {
   content: "+" !important;
   position: absolute !important;
-  right: 28px !important;
+  right: 14px !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
-  font-size: 24px !important;
+  font-size: 22px !important;
   line-height: 1 !important;
   color: var(--blog-accent, #2786a5) !important;
   font-weight: 600 !important;
@@ -76,15 +85,22 @@ h3.rank-math-question::after {
 body.single-post .entry-content #rank-math-faq .rank-math-answer,
 body.single-post article #rank-math-faq .rank-math-answer {
   display: none !important;
-  padding-top: 16px !important;
-  padding-bottom: 24px !important;
-  padding-left: 32px !important;
-  padding-right: 32px !important;
+  padding-top: 14px !important;
+  padding-bottom: 16px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
   color: #475569 !important;
-  font-size: 0.98rem !important;
-  line-height: 1.7 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
   border-top: 1px solid #f1f5f9 !important;
   box-sizing: border-box !important;
+  text-align: left !important;
+}
+
+#rank-math-faq .rank-math-answer p,
+.rank-math-block .rank-math-answer p {
+  text-align: left !important;
+  margin-bottom: 0 !important;
 }
 
 #rank-math-faq .rank-math-list-item.is-open .rank-math-answer,
@@ -92,10 +108,37 @@ body.single-post article #rank-math-faq .rank-math-answer {
   display: block !important;
 }
 
-#rank-math-faq .rank-math-answer p:last-child {
-  margin-bottom: 0;
+#rank-math-faq .rank-math-list-item.is-hidden {
+  display: none !important;
 }
 
-#rank-math-faq .rank-math-list-item.is-hidden {
-  display: none;
+@media screen and (max-width: 767px) {
+  #rank-math-faq .rank-math-question,
+  .rank-math-block .rank-math-question,
+  h3.rank-math-question {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    padding-left: 12px !important;
+    padding-right: 24px !important;
+    font-size: 0.90rem !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  #rank-math-faq .rank-math-question::after,
+  .rank-math-block .rank-math-question::after,
+  h3.rank-math-question::after {
+    right: 8px !important;
+    font-size: 18px !important;
+  }
+
+  #rank-math-faq .rank-math-answer,
+  .rank-math-block .rank-math-answer {
+    padding-top: 12px !important;
+    padding-bottom: 14px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    font-size: 0.90rem !important;
+    line-height: 1.55 !important;
+  }
 }

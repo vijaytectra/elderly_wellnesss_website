@@ -58,6 +58,7 @@ body.single-post .inside-article {
 body.single-post main#main,
 body.single-post .site-main {
   display: block !important;
+<<<<<<< HEAD
 }
 
 /* Single post: two-column layout with sticky Search + Recent Posts */
@@ -71,6 +72,12 @@ body.single-post .site-content {
   margin-top: 24px !important;
   padding-bottom: 60px !important;
   overflow: visible !important;
+=======
+  padding-top: 24px !important;
+  margin-top: 24px !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+>>>>>>> ee2850b (Update mobile responsive styles, service blocks flex ordering, image centering, and blog navigation card layout)
 }
 
 body.single-post .content-area {
@@ -99,7 +106,7 @@ body.single-post #right-sidebar {
 }
 
 body.blog .site-content {
-  display: block !important;
+  display: block;
   padding: 0 0 12px !important;
 }
 
@@ -111,11 +118,9 @@ body.blog .site.grid-container {
   padding-top: 0 !important;
 }
 
-body.blog .content-area,
-body.blog .site-content .content-area {
+body.blog .content-area {
   max-width: 100% !important;
   width: 100% !important;
-  float: none !important;
 }
 
 body.archive .site-content,
@@ -154,9 +159,12 @@ body.single-post.separate-containers .inside-article {
   padding: 0 !important;
 }
 
-/* Listing layout now uses .ew-posts-grid wrapper inside #main */
+/* Blog listing grid + hero */
 :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .site-main {
-  display: block !important;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 16px;
 }
 
 :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .site-main > .page-header,
@@ -167,8 +175,13 @@ body.blog .site-main::after {
 }
 
 body.blog .site-main::before {
-  content: none !important;
-  display: none !important;
+  content: "Elderly Wellness Blog";
+  display: block;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #1a2e35;
+  margin-bottom: -8px !important;
+  line-height: 1.2;
 }
 
 :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .site-main > .page-header {
@@ -227,10 +240,11 @@ body.blog .site-main::after {
 }
 
 :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .post-image img {
-  height: 280px !important;
-  max-height: 280px !important;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover !important;
-  border-radius: 12px !important;
+  display: block;
+  transition: transform 0.35s ease;
 }
 
 :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .post-image a {
@@ -722,45 +736,21 @@ body.single-post article .entry-content h3.rank-math-question,
 .entry-content h3.rank-math-question,
 h3.rank-math-question {
   cursor: pointer !important;
-  padding-top: 22px !important;
-  padding-bottom: 22px !important;
-  padding-left: 32px !important;
-  padding-right: 64px !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  padding-left: 16px !important;
+  padding-right: 34px !important;
   margin: 0 !important;
-  font-size: 1.05rem !important;
+  font-size: 0.98rem !important;
   font-weight: 700 !important;
-  line-height: 1.5 !important;
+  line-height: 1.4 !important;
   position: relative !important;
   color: #0f172a !important;
   user-select: none !important;
   transition: color 0.2s ease !important;
   text-align: left !important;
+  text-wrap: wrap !important;
   box-sizing: border-box !important;
-}
-
-#rank-math-faq .rank-math-question::after,
-.rank-math-block .rank-math-question::after,
-h3.rank-math-question::after {
-  content: "+" !important;
-  position: absolute !important;
-  right: 28px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  font-size: 24px !important;
-  line-height: 1 !important;
-  color: var(--blog-accent, #2786a5) !important;
-  font-weight: 600 !important;
-}
-
-#rank-math-faq .rank-math-list-item.is-open .rank-math-question,
-.rank-math-block .rank-math-list-item.is-open .rank-math-question,
-body.single-post .entry-content #rank-math-faq .rank-math-list-item.is-open .rank-math-question {
-  color: var(--blog-accent, #2786a5) !important;
-}
-
-#rank-math-faq .rank-math-list-item.is-open .rank-math-question::after,
-.rank-math-block .rank-math-list-item.is-open .rank-math-question::after {
-  content: "−" !important;
 }
 
 #rank-math-faq .rank-math-answer,
@@ -769,30 +759,63 @@ body.single-post .entry-content #rank-math-faq .rank-math-list-item.is-open .ran
 body.single-post .entry-content #rank-math-faq .rank-math-answer,
 body.single-post article #rank-math-faq .rank-math-answer {
   display: none !important;
-  padding-top: 16px !important;
-  padding-bottom: 24px !important;
-  padding-left: 32px !important;
-  padding-right: 32px !important;
+  padding-top: 14px !important;
+  padding-bottom: 16px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
   color: #475569 !important;
-  font-size: 0.98rem !important;
-  line-height: 1.7 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
   border-top: 1px solid #f1f5f9 !important;
   box-sizing: border-box !important;
+  text-align: left !important;
 }
 
 #rank-math-faq .rank-math-list-item.is-open .rank-math-answer,
 .rank-math-block .rank-math-list-item.is-open .rank-math-answer,
+.rank-math-list-item.is-open .rank-math-answer,
 body.single-post .entry-content #rank-math-faq .rank-math-list-item.is-open .rank-math-answer,
 body.single-post article #rank-math-faq .rank-math-list-item.is-open .rank-math-answer {
   display: block !important;
 }
 
-#rank-math-faq .rank-math-answer p:last-child {
-  margin-bottom: 0;
-}
+@media screen and (max-width: 767px) {
+  #rank-math-faq .rank-math-question,
+  .rank-math-block .rank-math-question,
+  .rank-math-list-item h3.rank-math-question,
+  body.single-post .entry-content #rank-math-faq h3.rank-math-question,
+  body.single-post article #rank-math-faq h3.rank-math-question,
+  body.single-post article .entry-content h3.rank-math-question,
+  .entry-content h3.rank-math-question,
+  h3.rank-math-question {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    padding-left: 12px !important;
+    padding-right: 24px !important;
+    font-size: 0.90rem !important;
+    line-height: 1.35 !important;
+    letter-spacing: -0.01em !important;
+  }
 
-#rank-math-faq .rank-math-list-item.is-hidden {
-  display: none;
+  #rank-math-faq .rank-math-question::after,
+  .rank-math-block .rank-math-question::after,
+  h3.rank-math-question::after {
+    right: 8px !important;
+    font-size: 18px !important;
+  }
+
+  #rank-math-faq .rank-math-answer,
+  .rank-math-block .rank-math-answer,
+  .rank-math-list-item .rank-math-answer,
+  body.single-post .entry-content #rank-math-faq .rank-math-answer,
+  body.single-post article #rank-math-faq .rank-math-answer {
+    padding-top: 12px !important;
+    padding-bottom: 14px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    font-size: 0.90rem !important;
+    line-height: 1.55 !important;
+  }
 }
 
 /* Post views */
@@ -992,6 +1015,7 @@ body.single-post .site-footer {
   padding-top: 24px !important;
 }
 
+<<<<<<< HEAD
 /* Conclusion Box & Callout Styles */
 .blog-conclusion-box {
   background: #f0f9ff !important;
@@ -1048,6 +1072,8 @@ body.single-post .entry-content h2#conclusion ~ p.has-text-align-center {
   color: #334155 !important;
 }
 
+=======
+>>>>>>> a3f69ce (Update mobile responsive styles, service blocks flex ordering, image centering, and blog navigation card layout)
 /* Sidebar shell — content styles live in blog-sidebar.css */
 #right-sidebar .inside-right-sidebar {
   padding: 0;
@@ -1125,7 +1151,10 @@ body.single-post #content {
 
 /* Mobile & Tablet Responsive Layout */
 @media screen and (max-width: 991.98px) {
-  /* Keep two columns on tablet; only stack on phones below */
+  :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .site-main {
+    grid-template-columns: 1fr;
+  }
+
   body.blog .site-content {
     padding-top: 0 !important;
     padding-bottom: 24px;
@@ -1321,12 +1350,6 @@ body.single-post #content {
 }
 
 @media screen and (max-width: 767.98px) {
-  :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .site-main {
-    grid-template-columns: 1fr !important;
-    column-gap: 0;
-    row-gap: 20px;
-  }
-
   body.single-post {
     --article-inline: 16px;
   }
@@ -1443,69 +1466,55 @@ body.single-post #content {
     top: 7px !important;
   }
 
-  .navbar-toggler .toggle-wrap.active::before {
+  .navbar-toggler .toggle-wrap.active::before,
+  .navbar-toggler[aria-expanded="true"] .toggle-wrap::before {
     top: 4px !important;
     transform: rotate(45deg) !important;
   }
 
-  .navbar-toggler .toggle-wrap.active::after {
+  .navbar-toggler .toggle-wrap.active::after,
+  .navbar-toggler[aria-expanded="true"] .toggle-wrap::after {
     top: 4px !important;
     transform: rotate(-45deg) !important;
   }
 }
 
-/* Explicit listing grid wrapper */
-.ew-blog-listing-title {
-  display: block;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 800;
-  color: #1a2e35;
-  margin: 8px 0 20px;
-  line-height: 1.2;
-}
-.ew-posts-grid {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 28px !important;
-  width: 100% !important;
-}
-.ew-posts-grid > article {
-  flex: 0 0 calc(50% - 14px) !important;
-  width: calc(50% - 14px) !important;
-  max-width: calc(50% - 14px) !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  box-sizing: border-box !important;
-}
-@media screen and (max-width: 767.98px) {
-  .ew-posts-grid > article {
-    flex: 0 0 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
+/* Mobile Blog & FAQ Responsive Optimization */
+@media screen and (max-width: 991.98px) {
+  .entry-content h1,
+  .entry-content h2,
+  .entry-content h3,
+  .entry-content h4,
+  .blog_detail_title,
+  .blog_card .text h3 {
+    text-wrap: balance !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: manual !important;
+  }
+
+  .entry-content p,
+  .entry-content li,
+  .blog_card .text p,
+  .faq_box p {
+    text-wrap: pretty !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: manual !important;
+    line-height: 1.55 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .entry-content p:last-child,
+  .blog_card .text p:last-child,
+  .faq_box p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .blog_detail_section,
+  .blog_page_section {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
   }
 }
 
-/* Listing thumbnails — taller, less squat */
-body.blog #main .ew-posts-grid > article .post-image,
-body.home.blog #main .ew-posts-grid > article .post-image {
-  overflow: hidden !important;
-  border-radius: 12px !important;
-  line-height: 0 !important;
-}
-body.blog #main .ew-posts-grid > article .post-image img,
-body.home.blog #main .ew-posts-grid > article .post-image img {
-  width: 100% !important;
-  height: 280px !important;
-  max-height: 280px !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  border-radius: 12px !important;
-  display: block !important;
-}
-@media screen and (max-width: 991.98px) {
-  body.blog #main .ew-posts-grid > article .post-image img,
-  body.home.blog #main .ew-posts-grid > article .post-image img {
-    height: 220px !important;
-    max-height: 220px !important;
-  }
-}

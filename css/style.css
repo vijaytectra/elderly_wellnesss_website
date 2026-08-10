@@ -684,8 +684,9 @@ header {
 .banner_section .app_btn {
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   gap: 14px !important;
+  margin-top: 24px !important;
 }
 
 .banner_section .app_btn li {
@@ -704,6 +705,11 @@ header {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
+.banner_section .app_btn li a[href*="play.google.com"] {
+  padding-left: 30px !important;
+  padding-right: 18px !important;
+}
+
 .banner_section .app_btn li a:hover {
   transform: translateY(-2px) scale(1.02) !important;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25) !important;
@@ -715,6 +721,8 @@ header {
   transition: all 0.3s ease !important;
   height: 34px !important;
   width: auto !important;
+  position: relative !important;
+  top: 4px !important;
 }
 
 /* hero slider users */

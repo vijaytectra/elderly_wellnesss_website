@@ -298,12 +298,14 @@ footer {
     justify-content: center !important;
   }
 
-  .banner_section .app_btn li a {
+  .banner_section .app_btn li a,
+  .banner_section .app_btn li a[href*="play.google.com"] {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 8px 16px !important;
-    height: 44px !important;
+    padding: 10px 20px !important;
+    height: auto !important;
+    min-height: unset !important;
     width: 100% !important;
     background-color: #000000 !important;
     border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
@@ -313,10 +315,14 @@ footer {
   }
 
   .banner_section .app_btn li a img {
-    height: 28px !important;
+    height: 25px !important;
     width: auto !important;
     max-width: 100% !important;
     object-fit: contain !important;
+    position: static !important;
+    top: 0 !important;
+    transform: none !important;
+    margin: 0 !important;
   }
 
   .banner_section .banner_slider {
@@ -350,17 +356,20 @@ footer {
 
   .key_innner .section_title {
     margin-bottom: 18px !important;
+    background: transparent !important;
+    box-shadow: none !important;
   }
 
   .key_innner .section_title h2 {
     font-size: 24px !important;
     padding: 0 12px !important;
+    background: transparent !important;
+    box-shadow: none !important;
   }
 
-  .key_innner .dotes_blue {
-    top: -30%;
-    max-width: 220px;
-    opacity: 0.4;
+  .key_innner .dotes_blue,
+  #home-services-section .dotes_blue {
+    display: none !important;
   }
 
   .key_innner .owl-nav {

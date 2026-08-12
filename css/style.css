@@ -16,6 +16,18 @@
   --red-color: #ff0000;
 }
 
+.ew-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 /* ------Common-Css------------- */
 
 html {
@@ -150,6 +162,21 @@ h3 {
   color: var(--text-white);
   transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
     rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+}
+
+/* Investors Page — Apply for Investment Buttons */
+.about_us_section .btn_block a.puprple_btn,
+.our_value_section .btn_block a.puprple_btn,
+a.puprple_btn[href="form.html"] {
+  font-size: 18px !important;
+  padding: 14px 44px !important;
+  font-weight: 700 !important;
+  border-radius: 30px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  letter-spacing: 0.01em !important;
+  margin-left: 0 !important;
 }
 
 .btn_block {
@@ -697,7 +724,7 @@ header {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 10px 24px !important;
+  padding: 12px 24px 8px 24px !important;
   background-color: #000000 !important;
   border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
   border-radius: 14px !important;
@@ -719,10 +746,12 @@ header {
 
 .banner_section .app_btn li a img {
   transition: all 0.3s ease !important;
-  height: 34px !important;
+  height: 32px !important;
   width: auto !important;
-  position: relative !important;
-  top: 4px !important;
+  position: static !important;
+  top: 0 !important;
+  transform: none !important;
+  margin: 0 !important;
 }
 
 /* hero slider users */
@@ -1937,20 +1966,22 @@ iframe#youtubevideo {
   overflow: hidden;
 }
 
-.key_innner .dotes_blue {
-  position: absolute;
-  top: -55%;
-  left: 50%;
-  transform: translateX(-50%);
+.key_innner .dotes_blue,
+#home-services-section .dotes_blue {
+  display: none !important;
 }
 
 .key_innner .section_title {
   margin-bottom: 24px !important;
   position: relative;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 .key_innner .section_title h2 {
   color: var(--text-white);
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 .key_innner .owl-nav button {
@@ -2683,9 +2714,9 @@ footer .download_side .app_btn li a img {
 
 /* ===============About Page Css Start================== */
 .about_us_section {
-  padding-top: 60px;
+  padding-top: 48px !important;
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: 64px !important;
 }
 
 .about_us_section::before,
@@ -3191,9 +3222,18 @@ footer .download_side .app_btn li a img {
 }
 
 /* -----------Meet Our Team Section Css---------- */
+.about_us_section .section_title {
+  margin-bottom: 48px !important;
+}
+
 .experts_team_section {
-  margin-top: 50px;
+  margin-top: 0 !important;
+  padding-top: 16px !important;
   position: relative;
+}
+
+.about_us_section + .experts_team_section {
+  padding-top: 16px !important;
 }
 
 .experts_team_section::before,
@@ -3213,7 +3253,7 @@ footer .download_side .app_btn li a img {
 }
 
 .experts_team_section .section_title {
-  margin-bottom: 40px;
+  margin-bottom: 48px !important;
 }
 
 .experts_team_section .col-md-4 {
@@ -3333,19 +3373,27 @@ footer .download_side .app_btn li a img {
 }
 
 /* ===============FAQ Section Css Start============ */
-.faq_section {
-  margin-top: 60px;
-  padding-top: 0;
-}
-
+.faq_section,
 .experts_team_section + .faq_section,
-.row_am + .faq_section {
-  margin-top: 60px !important;
+.row_am + .faq_section,
+.row_am.faq_section {
+  margin-top: 70px !important;
   padding-top: 0 !important;
 }
 
-.experts_team_section .row > div:last-child {
-  margin-bottom: 10px !important;
+.experts_team_section {
+  padding-bottom: 40px !important;
+  margin-bottom: 0 !important;
+}
+
+.experts_team_section .row {
+  margin-bottom: 0 !important;
+}
+
+.experts_team_section .row > div:last-child,
+.experts_team_section .col-md-4:last-child,
+.experts_team_section .col-md-4:last-child .experts_box {
+  margin-bottom: 0 !important;
 }
 
 .faq_section .section_title {
@@ -4691,8 +4739,10 @@ footer .logo a img {
 .btn-main-row-service-inner-banner {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 10px;
   align-items: flex-start;
+  margin-top: 36px !important;
+  margin-bottom: 28px !important;
 }
 
 .btn-main-row-service-inner-banner .btn_block {
@@ -5514,5 +5564,115 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
 
   .footer_bottom .ft_inner p a:hover {
     text-decoration: underline !important;
+  }
+}
+
+/* ================= Single Box Feature Scroll Section ================= */
+.task_app_section_single {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.task_single_block .dotes_blue,
+.task_single_indicators {
+  display: none !important;
+}
+
+@media screen and (min-width: 992px) {
+  .task_single_box_wrapper {
+    height: 500vh;
+    position: relative;
+    max-width: 1370px;
+    margin: 0 auto;
+  }
+
+  .task_single_block {
+    position: sticky !important;
+    top: 75px !important;
+    background-color: #2786a5 !important;
+    background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.14) 0%, transparent 42%), linear-gradient(325deg, rgba(0, 0, 0, 0.12) 0%, transparent 45%) !important;
+    padding: 44px 70px !important;
+    border-radius: 30px !important;
+    overflow: hidden !important;
+    box-shadow: 0 18px 40px rgba(39, 134, 165, 0.28) !important;
+    box-sizing: border-box !important;
+    z-index: 99 !important;
+    height: calc(100vh - 110px) !important;
+    min-height: 680px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+  }
+
+  .task_single_stage {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .task_single_card_item[data-index="1"] { z-index: 1 !important; }
+  .task_single_card_item[data-index="2"] { z-index: 2 !important; }
+  .task_single_card_item[data-index="3"] { z-index: 3 !important; }
+
+  .task_single_card_item {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 40px !important;
+    opacity: 0;
+    transform: translateY(180px) scale(0.94);
+    will-change: transform, opacity;
+    pointer-events: none !important;
+  }
+
+  /* Left Side: Image Stage */
+  .task_single_card_item .task_single_img_stage {
+    flex: 0 0 46% !important;
+    width: 46% !important;
+    height: calc(100vh - 200px) !important;
+    min-height: 580px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    border-radius: 24px !important;
+  }
+
+  .task_single_card_item .task_single_img_stage .task_single_img_item {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .task_single_card_item .task_single_img_stage img {
+    max-height: calc(100vh - 200px) !important;
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border-radius: 20px !important;
+  }
+
+  /* Right Side: Text Stage */
+  .task_single_card_item .task_single_text_stage {
+    flex: 0 0 50% !important;
+    width: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden !important;
+  }
+
+  .task_single_card_item .task_single_text_stage .task_single_text_item {
+    width: 100% !important;
   }
 }

@@ -833,6 +833,10 @@ footer a,
     font-size: 35px;
   }
 
+  .section_title h2 span {
+    display: block !important;
+  }
+
   .section_title h2 br {
     display: none;
   }

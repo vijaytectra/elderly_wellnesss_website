@@ -68,7 +68,7 @@ async function loadBlogs() {
               <h3><a href="${href}">${title}</a></h3>
               <div class="tag_more">
                 <span class="tag">Blogs</span>
-                <a href="${href}">Read more<span class="ew-sr-only"> about ${title}</span> <i class="icofont-arrow-right" aria-hidden="true"></i></a>
+                <a href="${href}" aria-label="Read more about ${title}">Read More <i class="icofont-arrow-right" aria-hidden="true"></i></a>
               </div>
             </div>
           </div>

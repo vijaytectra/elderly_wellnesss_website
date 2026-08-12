@@ -364,15 +364,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setupPostNavLinks();
 
-  // Clean up trailing colons from Table of Contents links (e.g. Problem:, Solution:, Outcome:)
-  function cleanTocColons() {
+  // Clean up trailing colons and leading numbers from Table of Contents links
+  function cleanTocLinks() {
     document.querySelectorAll("#rank-math-toc nav a").forEach(function (link) {
-      const text = link.textContent.trim();
+      let text = link.textContent.trim();
       if (text.endsWith(":")) {
-        link.textContent = text.slice(0, -1).trim();
+        text = text.slice(0, -1).trim();
       }
+      text = text.replace(/^\s*\d+[\.\)\-]\s*/, "");
+      link.textContent = text;
     });
   }
 
-  cleanTocColons();
+  cleanTocLinks();
 });

@@ -40,7 +40,11 @@ def ul(items: list[str]) -> str:
 
 
 def toc(items: list[tuple[str, str]]) -> str:
-    lis = "".join(f'<li><a href="#{aid}">{label}</a></li>' for aid, label in items)
+    cleaned_items = []
+    for aid, label in items:
+        clean_lbl = re.sub(r'^\s*\d+[\.\)\-]\s*', '', label)
+        cleaned_items.append((aid, clean_lbl))
+    lis = "".join(f'<li><a href="#{aid}">{label}</a></li>' for aid, label in cleaned_items)
     return (
         f'<div class="wp-block-rank-math-toc-block" id="rank-math-toc">'
         f"<h2>In This Guide</h2><nav><ul>{lis}</ul></nav></div>\n\n\n\n"
@@ -1183,16 +1187,33 @@ def render_post(template: str, blog: dict, prev_slug: str, prev_title: str, next
     )
 
     # Prev/next
+    def _clean(t):
+        if not t:
+            return ""
+        t = t.replace('&nbsp;', ' ').replace('\u00a0', ' ')
+        t = t.split(':')[0].strip() if ':' in t else t
+        t = re.split(r'\s*&(?:amp;)?\s*', t)[0].strip()
+        t = re.split(r'\s*[–—]\s*', t)[0].strip()
+        if re.search(r',\s*Chennai\b', t, flags=re.IGNORECASE):
+            t = re.sub(r',\s*Chennai\b.*$', '...', t, flags=re.IGNORECASE)
+        words = t.split()
+        if not words:
+            return ""
+        return ' '.join(words)
+
+    prev_disp = _clean(prev_title)
+    next_disp = _clean(next_title)
+
     html = re.sub(
         r'(<div class="nav-previous">.*?href=")[^"]*(" rel="prev">)[^<]*(</a>)',
-        rf'\1../{prev_slug}\2{esc(prev_title)}\3',
+        rf'\1../{prev_slug}\2{esc(prev_disp)}\3',
         html,
         count=1,
         flags=re.DOTALL,
     )
     html = re.sub(
         r'(<div class="nav-next">.*?href=")[^"]*(" rel="next">)[^<]*(</a>)',
-        rf'\1../{next_slug}\2{esc(next_title)}\3',
+        rf'\1../{next_slug}\2{esc(next_disp)}\3',
         html,
         count=1,
         flags=re.DOTALL,

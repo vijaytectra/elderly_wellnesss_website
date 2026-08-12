@@ -684,8 +684,9 @@ header {
 .banner_section .app_btn {
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
   gap: 14px !important;
+  margin-top: 24px !important;
 }
 
 .banner_section .app_btn li {
@@ -704,6 +705,11 @@ header {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
+.banner_section .app_btn li a[href*="play.google.com"] {
+  padding-left: 30px !important;
+  padding-right: 18px !important;
+}
+
 .banner_section .app_btn li a:hover {
   transform: translateY(-2px) scale(1.02) !important;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25) !important;
@@ -715,6 +721,8 @@ header {
   transition: all 0.3s ease !important;
   height: 34px !important;
   width: auto !important;
+  position: relative !important;
+  top: 4px !important;
 }
 
 /* hero slider users */
@@ -2861,38 +2869,55 @@ footer .download_side .app_btn li a img {
   margin-bottom: 0 !important;
 }
 
-.our_value_section .owl-nav button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 100px;
-  border: 1px solid var(--greay) !important;
-  transition: 0.4s all;
+.our_value_section .owl-nav {
+  display: block !important;
 }
 
-.our_value_section .owl-nav button span {
-  color: var(--greay);
-  font-size: 22px;
-  line-height: 1.2;
+.our_value_section .owl-nav button {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background-color: #ffffff !important;
+  border: 1.5px solid var(--primery, #2786a5) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 30 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12) !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
 }
 
 .our_value_section .owl-nav button.owl-prev {
-  left: -50px;
+  left: 10px !important;
 }
 
 .our_value_section .owl-nav button.owl-next {
-  right: -50px;
+  right: 10px !important;
+}
+
+.our_value_section .owl-nav button span {
+  color: var(--primery, #2786a5) !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  margin-top: -2px !important;
+  transition: color 0.3s ease !important;
 }
 
 .our_value_section .owl-nav button:hover {
-  background-color: var(--bg-white);
-  border-color: var(--bg-white);
+  background-color: var(--primery, #2786a5) !important;
+  border-color: var(--primery, #2786a5) !important;
+  box-shadow: 0 6px 18px rgba(39, 134, 165, 0.3) !important;
+  transform: translateY(-50%) scale(1.08) !important;
 }
 
 .our_value_section .owl-nav button:hover span {
-  color: var(--primery);
+  color: #ffffff !important;
 }
 
 /* ==============Why We Unique Section================ */
@@ -3236,7 +3261,7 @@ footer .download_side .app_btn li a img {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  justify-content: space-between !important;
+  justify-content: flex-start !important;
   flex-grow: 1 !important;
 }
 
@@ -3309,7 +3334,18 @@ footer .download_side .app_btn li a img {
 
 /* ===============FAQ Section Css Start============ */
 .faq_section {
-  margin-top: 30px;
+  margin-top: 60px;
+  padding-top: 0;
+}
+
+.experts_team_section + .faq_section,
+.row_am + .faq_section {
+  margin-top: 60px !important;
+  padding-top: 0 !important;
+}
+
+.experts_team_section .row > div:last-child {
+  margin-bottom: 10px !important;
 }
 
 .faq_section .section_title {
@@ -3394,7 +3430,7 @@ footer .download_side .app_btn li a img {
   text-align: left !important;
   color: #0f172a !important;
   text-decoration: none !important;
-  padding: 12px 48px 12px 0 !important;
+  padding: 12px 52px 12px 0 !important;
   font-weight: 700 !important;
   position: relative !important;
   font-size: 1.05rem !important;
@@ -3414,7 +3450,7 @@ footer .download_side .app_btn li a img {
 
 .faq_section .card .card-header button .icons i {
   position: absolute !important;
-  right: 8px !important;
+  right: 20px !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
   color: var(--purple, #2786a5) !important;
@@ -4664,12 +4700,34 @@ footer .logo a img {
 }
 
 .btn_block.btn_white .black_btn {
-  background-color: var(--bg-white);
-  color: var(--black);
+  background-color: var(--black, #000000) !important;
+  color: #ffffff !important;
+}
+
+.btn_block.btn_white .black_btn:hover {
+  background-color: var(--primery, #2786a5) !important;
+  color: #ffffff !important;
+}
+
+/* Book An Appointment Button - Compassionate Support Brand Color (#2786a5) */
+.appointment_btn,
+a.appointment_btn,
+.btn-main-row-service-inner-banner a[href*="wa.me"] {
+  background-color: var(--primery, #2786a5) !important;
+  color: #ffffff !important;
+  border-color: var(--primery, #2786a5) !important;
+}
+
+.appointment_btn:hover,
+a.appointment_btn:hover,
+.btn-main-row-service-inner-banner a[href*="wa.me"]:hover {
+  background-color: #1a6578 !important;
+  border-color: #1a6578 !important;
+  color: #ffffff !important;
 }
 
 .btn_bottom.white {
-  border-color: rgba(255, 255, 255, 0.8);
+  border-color: var(--black, #000000) !important;
 }
 #mt-top {
   margin-top: 80px;
@@ -5196,16 +5254,6 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
 .entry-content li a:hover {
   color: #1a6578 !important;
   text-decoration: underline !important;
-}
-
-/* Explicit Table of Contents Link Style Reset */
-#rank-math-toc a {
-  color: #475569 !important;
-  text-decoration: none !important;
-}
-#rank-math-toc a:hover {
-  color: var(--primery, #2786a5) !important;
-  text-decoration: none !important;
 }
 
 /* Bold Numbered List Markers */

@@ -289,10 +289,12 @@ h1, h2, h3, .banner_text h1, .banner_text h2, .section_title h2, .section_title 
 
 .navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li a:hover,
 .navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li a:focus {
-  background-color: rgba(39, 134, 165, 0.08) !important;
+  background-color: transparent !important;
+  background: transparent !important;
   color: #2786a5 !important;
-  outline: 2px solid #2786a5 !important;
-  outline-offset: -2px !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
 }
 
 .navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li a .sub-title {

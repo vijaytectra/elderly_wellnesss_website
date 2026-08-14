@@ -28,6 +28,293 @@
   border: 0 !important;
 }
 
+/* WCAG 2.4.1 Skip to Content Link */
+.skip-link {
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  z-index: 999999 !important;
+}
+
+.skip-link:focus,
+.skip-link:active {
+  left: 12px !important;
+  top: 12px !important;
+  position: fixed !important;
+  background-color: #2786a5 !important;
+  color: #ffffff !important;
+  padding: 12px 20px !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+  outline: 3px solid #38bdf8 !important;
+  text-decoration: none !important;
+}
+
+/* Trust Strip Component (2-Hour Replacement, Police-Verified, No Lock-In) */
+.ew-trust-strip {
+  background: #f8fafc;
+  border-top: 1.5px solid #e2e8f0;
+  border-bottom: 1.5px solid #e2e8f0;
+  padding: 16px 0;
+  margin: 0;
+  width: 100%;
+}
+
+.ew-trust-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .ew-trust-strip-inner {
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.ew-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.ew-trust-item i {
+  font-size: 16px;
+  color: #2786a5;
+  background: rgba(39, 134, 165, 0.12);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Compact Inline Trust Bar under CTA buttons / Form */
+.ew-trust-strip-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.ew-trust-strip-inline span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.ew-trust-strip-inline i {
+  color: #2786a5;
+  font-size: 14px;
+}
+
+/* Unified Top Spacing / Gap below Sticky Header Navbar across ALL Pages */
+#services-inner-page-banner-section,
+.banner_section,
+.contact_section,
+.about_us_section,
+.page_banner_section,
+.advisors_section,
+.investors_section,
+.row-privacy-policy,
+.terms-and-conditions,
+.refund-policy,
+.company-policy-section,
+body.blog #content,
+body.single-post #content,
+body.archive #content,
+body.author #content,
+body.search #content {
+  padding-top: 64px !important;
+  margin-top: 0 !important;
+}
+
+/* Prevent single orphan words on new lines across headings */
+h1, h2, h3, .banner_text h1, .banner_text h2, .section_title h2, .section_title h3 {
+  text-wrap: balance !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+@media (max-width: 991px) {
+  #services-inner-page-banner-section,
+  .banner_section,
+  .contact_section,
+  .about_us_section,
+  .page_banner_section,
+  .advisors_section,
+  .investors_section,
+  .row-privacy-policy,
+  .terms-and-conditions,
+  .refund-policy,
+  .company-policy-section,
+  body.blog #content,
+  body.single-post #content,
+  body.archive #content,
+  body.author #content,
+  body.search #content {
+    padding-top: 44px !important;
+    margin-top: 0 !important;
+  }
+}
+
+/* ==========================================================================
+   Accessible Click/Tap & Hover-Intent Dropdown Navigation System
+   ========================================================================== */
+.navbar-expand-lg .navbar-nav .has_dropdown {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.drp_btn {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  padding: 4px 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #2786a5 !important;
+  font-size: 13px !important;
+  transition: transform 0.2s ease, color 0.2s ease !important;
+  margin-left: 2px !important;
+  margin-right: 0 !important;
+}
+
+.drp_btn:focus-visible {
+  outline: 2px solid #2786a5 !important;
+  outline-offset: 2px !important;
+  border-radius: 4px !important;
+}
+
+.drp_btn:hover,
+.has_dropdown.open .drp_btn,
+.has_dropdown:hover .drp_btn {
+  color: #2786a5 !important;
+}
+
+.has_dropdown.open .drp_btn i,
+.has_dropdown:hover .drp_btn i {
+  transform: rotate(180deg) !important;
+}
+
+/* Invisible bridge overlay to prevent accidental mouse-leave closes */
+.navbar-expand-lg .navbar-nav .has_dropdown .sub_menu::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -16px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 20px !important;
+  background: transparent !important;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .has_dropdown .sub_menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background-color: #ffffff !important;
+    border-radius: 14px !important;
+    min-width: 280px !important;
+    max-width: 320px !important;
+    padding: 10px !important;
+    margin-top: 4px !important;
+    box-shadow: 0 12px 36px rgba(15, 40, 55, 0.14), 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+    border: 1.5px solid #e2e8f0 !important;
+    border-top: 3px solid #2786a5 !important;
+    z-index: 99999 !important;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease !important;
+  }
+
+  .navbar-expand-lg .navbar-nav .has_dropdown.open .sub_menu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+.navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul {
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li {
+  margin-bottom: 6px !important;
+  width: 100% !important;
+}
+
+.navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li:last-child {
+  margin-bottom: 0 !important;
+}
+
+.navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li a {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  min-height: 48px !important;
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+}
+
+.navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li a:hover,
+.navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li a:focus {
+  background-color: rgba(39, 134, 165, 0.08) !important;
+  color: #2786a5 !important;
+  outline: 2px solid #2786a5 !important;
+  outline-offset: -2px !important;
+}
+
+.navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li a .sub-title {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #1a2e35 !important;
+  line-height: 1.35 !important;
+}
+
+.navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li a:hover .sub-title,
+.navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li a:focus .sub-title {
+  color: #2786a5 !important;
+}
+
+.navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li a .sub-hint {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #64748b !important;
+  line-height: 1.35 !important;
+  margin-top: 3px !important;
+}
+
 /* ------Common-Css------------- */
 
 html {
@@ -111,7 +398,7 @@ h3 {
 
 .section_title h2 span {
   color: var(--primery);
-  display: block;
+  display: inline;
 }
 
 .section_title h2 span img {
@@ -5676,4 +5963,304 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   .task_single_card_item .task_single_text_stage .task_single_text_item {
     width: 100% !important;
   }
+}
+
+/* Restored Copyright Year Font Reset */
+.ew-current-year {
+  font-weight: inherit !important;
+  color: inherit !important;
+}
+
+/* Ensure page_wrapper container does not clip or trap fixed overlays */
+.page_wrapper {
+  overflow: visible !important;
+}
+
+/* Fixed Floating WhatsApp Contact Overlay on Left Side (Matches Location Page Chaty design) */
+.ew-whatsapp-floating-btn {
+  position: fixed !important;
+  bottom: 25px !important;
+  left: 25px !important;
+  right: auto !important;
+  top: auto !important;
+  width: auto !important;
+  height: 54px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  z-index: 2147483647 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: translate3d(0, 0, 0) !important;
+  pointer-events: auto !important;
+}
+
+.ew-wa-circle {
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 50% !important;
+  background-color: #49E670 !important;
+  box-shadow: 0 4px 16px rgba(73, 230, 112, 0.45) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  flex-shrink: 0 !important;
+}
+
+/* Hide text bubble / CTA badge to keep ONLY the logo icon */
+.chaty-btn-cta,
+.chaty-svg-cta,
+.ew-wa-bubble {
+  display: none !important;
+}
+
+/* Compact map iframe height for mobile screens */
+@media screen and (max-width: 767.98px) {
+  .map_block iframe {
+    height: 250px !important;
+    max-height: 250px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Properly sized prominent blog section heading on mobile */
+  #home-blog-section .section_title h2 {
+    font-size: 32px !important;
+    line-height: 1.25 !important;
+    font-weight: 800 !important;
+  }
+}
+
+.ew-whatsapp-floating-btn:hover .ew-wa-circle {
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 22px rgba(73, 230, 112, 0.65) !important;
+}
+
+.ew-wa-bubble {
+  position: relative !important;
+  margin-left: 12px !important;
+  background: #ffffff !important;
+  color: #1e293b !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  padding: 10px 18px !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14) !important;
+  white-space: nowrap !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.ew-whatsapp-floating-btn:hover .ew-wa-bubble {
+  transform: translateX(3px) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.ew-wa-arrow {
+  position: absolute !important;
+  left: -7px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-top: 6px solid transparent !important;
+  border-bottom: 6px solid transparent !important;
+  border-right: 8px solid #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Header Book Care Button - Reduced size to fit header perfectly while keeping 3D effect */
+.navbar-expand-lg .navbar-nav .nav-link.dark_btn.ew-book-care-btn {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  padding: 6px 18px !important;
+  line-height: 1.4 !important;
+  border-radius: 25px !important;
+  background-color: #2786a5 !important;
+  color: #ffffff !important;
+  min-height: auto !important;
+  display: inline-block !important;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link.dark_btn.ew-book-care-btn:hover {
+  background-color: #1f6f8b !important;
+}
+
+/* Hero CTA Action Buttons on Homepage */
+.hero_cta_buttons {
+  margin-top: 24px !important;
+  margin-bottom: 18px !important;
+  display: flex !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+}
+
+.ew-hero-btn-primary {
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 26px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 30px !important;
+  background-color: #2786a5 !important;
+  color: #ffffff !important;
+  border: none !important;
+  margin: 0 !important;
+  box-shadow: 0 4px 16px rgba(39, 134, 165, 0.35) !important;
+  transition: all 0.25s ease !important;
+}
+
+.ew-hero-btn-primary:hover {
+  background-color: #1f6f8b !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+.ew-hero-btn-secondary {
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 24px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 30px !important;
+  background-color: #1a2e35 !important;
+  color: #ffffff !important;
+  border: none !important;
+  margin: 0 !important;
+  transition: all 0.25s ease !important;
+}
+
+.ew-hero-btn-secondary:hover {
+  background-color: #0f1c21 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+.hero_app_badges {
+  margin-top: 14px !important;
+}
+
+.hero_app_note {
+  display: block !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  margin-bottom: 8px !important;
+}
+
+.hero_app_btn_sm li a img {
+  height: 30px !important;
+  width: auto !important;
+}
+/* Mobile Sticky Bottom Bar Disabled - Floating WhatsApp Icon Only */
+.ew-mobile-sticky-bottom-bar {
+  display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-bottom: 0 !important;
+  }
+
+  .ew-whatsapp-floating-btn {
+    bottom: 25px !important;
+  }
+
+  .ew-mobile-sticky-bottom-bar {
+    display: none !important;
+  }
+}
+
+
+/* Floating WhatsApp Button & Clean Bottom Body (Universal) */
+body {
+  padding-bottom: 0 !important;
+}
+
+.ew-mobile-sticky-bottom-bar {
+  display: none !important;
+}
+
+a.ew-whatsapp-floating-btn,
+.ew-whatsapp-floating-btn {
+  position: fixed !important;
+  bottom: 25px !important;
+  left: 25px !important;
+  right: auto !important;
+  top: auto !important;
+  width: auto !important;
+  height: 54px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  z-index: 2147483647 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: translate3d(0, 0, 0) !important;
+  pointer-events: auto !important;
+}
+
+.ew-whatsapp-floating-btn .ew-wa-circle {
+  width: 54px !important;
+  height: 54px !important;
+  min-width: 54px !important;
+  min-height: 54px !important;
+  border-radius: 50% !important;
+  background-color: #49E670 !important;
+  box-shadow: 0 4px 16px rgba(73, 230, 112, 0.45) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ew-whatsapp-floating-btn:hover .ew-wa-circle {
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 22px rgba(73, 230, 112, 0.65) !important;
+}
+
+
+/* Pricing Teaser Chip Zoom Effect (Light Soft Chip - No Color Shift) */
+.pricing-teaser-link {
+  color: #2786a5 !important;
+  background: #e6f4f8 !important;
+  border: 1.5px solid #bce2ed !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  padding: 6px 18px !important;
+  border-radius: 20px !important;
+  text-decoration: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.pricing-teaser-link:hover {
+  color: #2786a5 !important;
+  background: #e6f4f8 !important;
+  border-color: #bce2ed !important;
+  transform: scale(1.06) !important;
+  box-shadow: 0 4px 14px rgba(39, 134, 165, 0.25) !important;
 }

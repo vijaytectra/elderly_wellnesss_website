@@ -1,11 +1,122 @@
 function preloader_fade() {
   $("#preloader").fadeOut("slow");
 }
-$(".drp_btn").click(function () {
-  $(this).siblings(".sub_menu").slideToggle(500);
-});
+// Accessible Click/Tap, Keyboard & Hover-Intent Dropdown Navigation
+(function () {
+  var openTimer = null;
+  var closeTimer = null;
+
+  function closeAllDropdowns() {
+    $(".has_dropdown").removeClass("open").find(".drp_btn").attr("aria-expanded", "false");
+    if ($(window).width() > 991) {
+      $(".has_dropdown .sub_menu").stop(true, true).fadeOut(150);
+    } else {
+      $(".has_dropdown .sub_menu").stop(true, true).slideUp(150);
+    }
+  }
+
+  function openSingleDropdown($item) {
+    // Close all other dropdowns
+    $(".has_dropdown").not($item).removeClass("open").find(".drp_btn").attr("aria-expanded", "false");
+    if ($(window).width() > 991) {
+      $(".has_dropdown").not($item).find(".sub_menu").stop(true, true).fadeOut(150);
+    } else {
+      $(".has_dropdown").not($item).find(".sub_menu").stop(true, true).slideUp(150);
+    }
+
+    $item.addClass("open").find(".drp_btn").attr("aria-expanded", "true");
+    if ($(window).width() > 991) {
+      $item.find(".sub_menu").stop(true, true).fadeIn(150);
+    } else {
+      $item.find(".sub_menu").stop(true, true).slideDown(150);
+    }
+  }
+
+  // Combined Click & Tap Handler for Parent Link and Arrow Toggle Button
+  $(document).on("click", ".has_dropdown > a, .drp_btn", function (e) {
+    var $parent = $(this).closest(".has_dropdown");
+    var href = $parent.children("a").attr("href");
+    var isLink = $(this).is("a");
+
+    if (!isLink || !href || href === "#" || href === "javascript:void(0);" || href.includes("#")) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if ($parent.hasClass("open")) {
+        closeAllDropdowns();
+      } else {
+        openSingleDropdown($parent);
+      }
+    }
+  });
+
+  // Close dropdown when clicking outside
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".has_dropdown").length) {
+      closeAllDropdowns();
+    }
+  });
+
+  // Desktop Hover Intent with 180ms open & 250ms close delays
+  $(document).on("mouseenter", ".has_dropdown", function () {
+    if ($(window).width() <= 991) return;
+    var $this = $(this);
+    clearTimeout(closeTimer);
+    openTimer = setTimeout(function () {
+      openSingleDropdown($this);
+    }, 180);
+  });
+
+  $(document).on("mouseleave", ".has_dropdown", function () {
+    if ($(window).width() <= 991) return;
+    var $this = $(this);
+    clearTimeout(openTimer);
+    closeTimer = setTimeout(function () {
+      $this.removeClass("open").find(".drp_btn").attr("aria-expanded", "false");
+      $this.find(".sub_menu").stop(true, true).fadeOut(150);
+    }, 250);
+  });
+
+  // Keyboard navigation: Escape key closes dropdown and returns focus
+  $(document).on("keydown", function (e) {
+    if (e.key === "Escape" || e.keyCode === 27) {
+      var $openDropdown = $(".has_dropdown.open");
+      if ($openDropdown.length) {
+        closeAllDropdowns();
+        $openDropdown.find(".drp_btn, > a").first().focus();
+      }
+    }
+  });
+
+  // Keyboard navigation: Enter & Space toggle button trigger
+  $(document).on("keydown", ".drp_btn", function (e) {
+    if (e.key === "Enter" || e.key === " " || e.keyCode === 13 || e.keyCode === 32) {
+      e.preventDefault();
+      $(this).trigger("click");
+    }
+  });
+})();
 $(document).ready(function () {
   window.setTimeout("preloader_fade();", 500);
+  var currentYear = new Date().getFullYear();
+  $(".ew-current-year, #yr, #copyright-year").text(currentYear);
+
+  // Inject Floating WhatsApp Support Button on pages without native Chaty (Logo only)
+  if ($(".chaty-widget, .chaty-main-button, .ew-whatsapp-floating-btn").length === 0) {
+    var waUrl = "https://api.whatsapp.com/send?phone=919944890577&text=Hello%20Elderly%20Wellness%2C%20I%20would%20like%20to%20inquire%20about%20your%20senior%20care%20services.";
+    var waHtml = '<a href="' + waUrl + '" target="_blank" rel="noopener noreferrer" class="ew-whatsapp-floating-btn" aria-label="Contact Elderly Wellness on WhatsApp">' +
+                 '<div class="ew-wa-circle">' +
+                 '<svg width="34" height="34" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+                 '<circle cx="19.4395" cy="19.4395" r="19.4395" fill="#49E670"/>' +
+                 '<path d="M12.9821 10.1115C12.7029 10.7767 11.5862 11.442 10.7486 11.575C10.1902 11.7081 9.35269 11.8411 6.84003 10.7767C3.48981 9.44628 1.39593 6.25317 1.25634 6.12012C1.11674 5.85403 0 4.39053 0 2.92702C0 1.46351 0.83755 0.665231 1.11673 0.399139C1.39592 0.133046 1.8147 0 2.23348 0C2.37307 0 2.51267 0 2.65226 0C2.93144 0 3.21063 0 3.35022 0.532183C3.62941 1.19741 4.32736 2.66092 4.32736 2.79397C4.46696 2.92702 4.46696 3.19311 4.32736 3.32616C4.18777 3.59225 4.18777 3.59224 3.90858 3.85834C3.76899 3.99138 3.6294 4.12443 3.48981 4.39052C3.35022 4.52357 3.21063 4.78966 3.35022 5.05576C3.48981 5.32185 4.18777 6.38622 5.16491 7.18449C6.42125 8.24886 7.39839 8.51496 7.81717 8.78105C8.09636 8.91409 8.37554 8.9141 8.65472 8.648C8.93391 8.38191 9.21309 7.98277 9.49228 7.58363C9.77146 7.31754 10.0507 7.1845 10.3298 7.31754C10.609 7.45059 12.2841 8.11582 12.5633 8.38191C12.8425 8.51496 13.1217 8.648 13.1217 8.78105C13.1217 8.78105 13.1217 9.44628 12.9821 10.1115Z" transform="translate(12.9597 12.9597)" fill="#FAFAFA"/>' +
+                 '<path d="M0.196998 23.295L0.131434 23.4862L0.323216 23.4223L5.52771 21.6875C7.4273 22.8471 9.47325 23.4274 11.6637 23.4274C18.134 23.4274 23.4274 18.134 23.4274 11.6637C23.4274 5.19344 18.134 -0.1 11.6637 -0.1C5.19344 -0.1 -0.1 5.19344 -0.1 11.6637C-0.1 13.9996 0.624492 16.3352 1.93021 18.2398L0.196998 23.295ZM5.87658 19.8847L5.84025 19.8665L5.80154 19.8788L2.78138 20.8398L3.73978 17.9646L3.75932 17.906L3.71562 17.8623L3.43104 17.5777C2.27704 15.8437 1.55796 13.8245 1.55796 11.6637C1.55796 6.03288 6.03288 1.55796 11.6637 1.55796C17.2945 1.55796 21.7695 6.03288 21.7695 11.6637C21.7695 17.2945 17.2945 21.7695 11.6637 21.7695C9.64222 21.7695 7.76778 21.1921 6.18227 20.039L6.17557 20.0342L6.16817 20.0305L5.87658 19.8847Z" transform="translate(7.7758 7.77582)" fill="white" stroke="white" stroke-width="0.2"/>' +
+                 '</svg>' +
+                 '</div>' +
+                 '</a>';
+    document.body.insertAdjacentHTML('beforeend', waHtml);
+  }
+
+  // Floating WhatsApp icon is active on all pages
 });
 
 if ($.fn && $.fn.owlCarousel) {
@@ -377,4 +488,52 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   cleanTocLinks();
+
+  // WCAG Form Validation & Handling for ewPageCallbackForm
+  $(document).on("submit", ".ew-4field-form, #ewPageCallbackForm", function (e) {
+    e.preventDefault();
+    var $form = $(this);
+    var isValid = true;
+
+    // Clear previous error messages
+    $form.find(".ew-field-error").hide();
+
+    // Validate Name
+    var $name = $form.find("input[name='name'], #ew_name");
+    if ($name.length && (!$.trim($name.val()) || $.trim($name.val()).length < 2)) {
+      $form.find("#ew_name_error").show();
+      isValid = false;
+    }
+
+    // Validate Phone
+    var $phone = $form.find("input[name='phone'], #ew_phone");
+    var phoneVal = $phone.length ? $.trim($phone.val()).replace(/\D/g, "") : "";
+    if ($phone.length && (!phoneVal || phoneVal.length < 10)) {
+      $form.find("#ew_phone_error").show();
+      isValid = false;
+    }
+
+    // Validate Required Service Consent Checkbox
+    var $consentService = $form.find("#ew_consent_service, input[name='consent_service']");
+    if ($consentService.length && !$consentService.is(":checked")) {
+      $form.find("#ew_consent_service_error").show();
+      isValid = false;
+    }
+
+    if (!isValid) {
+      // Keep everything user typed - DO NOT RESET FORM
+      return false;
+    }
+
+    // On valid submit: show clear success message inside aria-live="polite"
+    var $successMsg = $form.find("#ew_form_success");
+    if ($successMsg.length) {
+      $successMsg.slideDown();
+    } else {
+      $form.prepend('<div id="ew_form_success" aria-live="polite" style="background: #f0fdf4; border: 1.5px solid #86efac; color: #166534; padding: 16px 20px; border-radius: 12px; margin-bottom: 24px; font-weight: 700; font-size: 15px; text-align: center;"><i class="icofont-check-circled" style="font-size: 20px; vertical-align: -2px; margin-right: 6px;"></i> Thank you! Your callback request has been received. Our care specialist will reach out shortly.</div>');
+    }
+
+    // Disable submit button to prevent double submits
+    $form.find("button[type='submit']").attr("disabled", true).css("opacity", "0.6");
+  });
 });

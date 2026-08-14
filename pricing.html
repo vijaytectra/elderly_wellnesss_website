@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Transparent Pricing | Elderly Care Services in Chennai - Elderly Wellness</title>
+    <meta name="description" content="View transparent, slab-based pricing for elderly care services in Chennai. Clear starting rates for Physiotherapy, Nursing Care, Geriatric Care, and Assisted Living."/>
+    <meta property="og:title" content="Transparent Pricing | Elderly Wellness"/>
+    <meta property="og:description" content="Transparent rates with no hidden fees. Flexible per-visit, per-shift, and monthly care plans."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://theelderlywellness.com/images/og-share-banner.jpg"/>
+    <meta name="Robots" content="index, follow"/>
+    <link rel="canonical" href="javascript:void(0);"/>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/icofont.min.css?v=114.0"/>
+    <link rel="stylesheet" href="css/callback-form.css?v=173.0"/>
+    <link rel="stylesheet" href="css/owl.carousel.min.css?v=114.0"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css?v=114.0"/>
+    <link rel="stylesheet" href="css/aos.css?v=114.0"/>
+    <link rel="stylesheet" href="css/style.css?v=178.0"/>
+    <link rel="stylesheet" href="css/responsive.css?v=114.0"/>
+    <link rel="stylesheet" href="css/home-responsive.css?v=114.0"/>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com/"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"/>
+
+    <style>
+      .pricing_card_box {
+        background: #ffffff;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 32px 20px;
+        box-shadow: 0 10px 25px rgba(15, 40, 55, 0.05);
+        transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      /* Hover outline effect for all boxes */
+      .pricing_card_box:hover {
+        border-color: #2786a5 !important;
+        transform: translateY(-6px);
+        box-shadow: 0 16px 36px rgba(39, 134, 165, 0.18);
+      }
+      .popular_badge {
+        position: absolute;
+        top: -14px;
+        right: 20px;
+        background-color: #2786a5;
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .pricing_title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1a2e35;
+        margin-bottom: 4px;
+      }
+      .pricing_sub {
+        font-size: 13px;
+        color: #64748b;
+        margin-bottom: 16px;
+      }
+      .pricing_amount {
+        font-size: 36px;
+        font-weight: 800;
+        color: #2786a5;
+        font-family: 'Outfit', sans-serif;
+        line-height: 1.2;
+      }
+      .pricing_amount span {
+        font-size: 15px;
+        font-weight: 600;
+        color: #64748b;
+      }
+      .price_range_hint {
+        font-size: 13px;
+        font-weight: 600;
+        color: #1a2e35;
+        margin-top: 6px;
+        margin-bottom: 20px;
+      }
+      .pricing_features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px 0;
+      }
+      .pricing_features li {
+        padding: 8px 0;
+        font-size: 14px;
+        color: #334155;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .pricing_features li i {
+        color: #2786a5;
+        font-size: 18px;
+        margin-top: 1px;
+      }
+
+      /* Clean two-line disclaimer below button */
+      .no_lock_in_note {
+        margin-top: 14px;
+        padding-top: 10px;
+        border-top: 1px dashed #e2e8f0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+      }
+      .no_lock_in_note .lock_in_head {
+        font-size: 13px;
+        font-weight: 700;
+        color: #1a2e35;
+        display: block;
+      }
+      .no_lock_in_note .policy_line {
+        font-size: 11.5px;
+        color: #64748b;
+        display: block;
+        white-space: nowrap;
+      }
+      .no_lock_in_note .policy_line a {
+        color: #2786a5 !important;
+        text-decoration: underline !important;
+        font-weight: 600;
+      }
+
+      .pricing_factor_card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 28px 24px;
+        border: 1.5px solid #e2e8f0;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+        transition: border-color 0.3s ease, transform 0.3s ease;
+        height: 100%;
+      }
+      .pricing_factor_card:hover {
+        border-color: #2786a5;
+        transform: translateY(-3px);
+      }
+      .pricing_factor_card .icon_box {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background: rgba(39, 134, 165, 0.1);
+        color: #2786a5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+      .pricing_factor_card h4 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a2e35;
+        margin-bottom: 8px;
+      }
+      .pricing_factor_card p {
+        font-size: 14px;
+        color: #64748b;
+        line-height: 1.5;
+        margin: 0;
+      }
+      .clean-pill-btn {
+        min-height: 44px;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 10px 24px;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none !important;
+        transition: all 0.25s ease;
+        border: none;
+      }
+      .clean-pill-btn-primary {
+        background-color: #2786a5 !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 14px rgba(39, 134, 165, 0.25);
+      }
+      .clean-pill-btn-primary:hover {
+        background-color: #1f6f8b !important;
+        color: #ffffff !important;
+        transform: translateY(-1px);
+      }
+      .clean-pill-btn-secondary {
+        background-color: #ffffff !important;
+        color: #1a2e35 !important;
+      }
+      .clean-pill-btn-secondary:hover {
+        background-color: #f1f5f9 !important;
+        color: #1a2e35 !important;
+        transform: translateY(-1px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+
+    <div class="page_wrapper" id="main">
+      <!-- Shared Header Component -->
+      <header>
+        <div class="container">
+          <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html">
+              <img src="images/logo.png" alt="Elderly Wellness"/>
+            </a>
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+                <span class="toggle-wrap">
+                  <span class="toggle-bar"></span>
+                </span>
+              </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto align-items-center">
+              <li class="nav-item has_dropdown">
+                <a class="nav-link" href="services.html">Services</a>
+                <button type="button" class="drp_btn menu-toggle" aria-expanded="false" aria-controls="services-sub-menu" aria-label="Toggle Services Menu"><i class="icofont-rounded-down"></i></button>
+                <div class="sub_menu" id="services-sub-menu">
+                  <ul>
+                    <li>
+                      <a href="physiotherapy-services-for-elders.html">
+                        <span class="sub-title">Physiotherapy</span>
+                        <span class="sub-hint">Mobility, pain relief &amp; recovery after surgery</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="nursing-services-for-elders.html">
+                        <span class="sub-title">Nursing Service</span>
+                        <span class="sub-hint">24/7 professional in-home medical care</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="geriatric-care-services-for-elders.html">
+                        <span class="sub-title">Geriatric Care</span>
+                        <span class="sub-hint">Comprehensive elder health &amp; wellness support</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="assisted-living-support-services-for-elders.html">
+                        <span class="sub-title">Assisted Living Support</span>
+                        <span class="sub-hint">Daily living assistance &amp; compassionate care</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="how-elderly-wellness-works.html">How It Works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pricing.html">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blogs/index.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="chennai.html"><i class="icofont-location-pin" style="color: #2786a5; margin-right: 4px;"></i>Serving Chennai</a>
+              </li>
+              <li class="nav-item header-phone-item d-none d-lg-inline-block">
+                <a href="tel:+919944890577" class="nav-link header-phone-link" style="color: #2786a5; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;"><i class="icofont-phone"></i> +91 99448 90577</a>
+              </li>
+              <li class="nav-item ml-lg-2">
+                <div class="btn_block">
+                  <a class="nav-link dark_btn ew-book-care-btn" href="contact.html">Book Care</a>
+                  <div class="btn_bottom"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        </div>
+      </header>
+
+      <!-- Banner Section -->
+      <section class="page_banner_section row_am" style="padding-top: 40px; padding-bottom: 20px;">
+        <div class="container">
+          <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
+            <span class="title_badge">Transparent &amp; Slab-Based Pricing</span>
+            <h2>Simple, <span>Transparent Care Slabs</span></h2>
+            <p style="max-width: 640px; margin: 12px auto 0;">
+              Clear starting rates per visit, per shift, or per month with zero hidden fees. Pay for exactly what your parents need.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section Start -->
+      <section class="row_am pricing_section" style="padding-top: 20px; padding-bottom: 60px;">
+        <div class="container">
+          <div class="row">
+            <!-- Card 1: Physiotherapy -->
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+              <div class="pricing_card_box">
+                <div>
+                  <div class="pricing_title">Physiotherapy</div>
+                  <div class="pricing_sub">At-home mobility &amp; rehab</div>
+
+                  <div class="pricing_amount">₹600 <span>/ visit</span></div>
+                  <div class="price_range_hint">Range: ₹600 – ₹1,200 / visit</div>
+
+                  <ul class="pricing_features">
+                    <li><i class="icofont-check-circled"></i> Certified physiotherapist home visit</li>
+                    <li><i class="icofont-check-circled"></i> Post-stroke &amp; ortho rehabilitation</li>
+                    <li><i class="icofont-check-circled"></i> Pain management &amp; mobility exercises</li>
+                    <li><i class="icofont-check-circled"></i> Real-time progress updates in app</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a href="contact.html" class="clean-pill-btn clean-pill-btn-primary w-100">Book Care</a>
+                  <div class="no_lock_in_note">
+                    <span class="lock_in_head">No lock-in.</span>
+                    <span class="policy_line"><a href="company/refund-and-cancellation-policies.html">Cancel as per our refund policy.</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Nursing Services -->
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+              <div class="pricing_card_box">
+                <span class="popular_badge">MOST REQUESTED</span>
+                <div>
+                  <div class="pricing_title">Nursing Care</div>
+                  <div class="pricing_sub">Qualified home nursing</div>
+
+                  <div class="pricing_amount">₹800 <span>/ shift</span></div>
+                  <div class="price_range_hint">Range: ₹800 – ₹2,500 / shift</div>
+
+                  <ul class="pricing_features">
+                    <li><i class="icofont-check-circled"></i> Vitals &amp; medication monitoring</li>
+                    <li><i class="icofont-check-circled"></i> Wound dressing &amp; IV/catheter care</li>
+                    <li><i class="icofont-check-circled"></i> Post-hospitalization recovery care</li>
+                    <li><i class="icofont-check-circled"></i> Daily digital health reports</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a href="contact.html" class="clean-pill-btn clean-pill-btn-primary w-100">Book Nursing</a>
+                  <div class="no_lock_in_note">
+                    <span class="lock_in_head">No lock-in.</span>
+                    <span class="policy_line"><a href="company/refund-and-cancellation-policies.html">Cancel as per our refund policy.</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Geriatric Care -->
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+              <div class="pricing_card_box">
+                <div>
+                  <div class="pricing_title">Geriatric Care</div>
+                  <div class="pricing_sub">Daily assistance &amp; support</div>
+
+                  <div class="pricing_amount">₹500 <span>/ visit</span></div>
+                  <div class="price_range_hint">Range: ₹500 – ₹1,500 / day</div>
+
+                  <ul class="pricing_features">
+                    <li><i class="icofont-check-circled"></i> Hygiene, bathing &amp; mobility support</li>
+                    <li><i class="icofont-check-circled"></i> Doctor visit accompaniment</li>
+                    <li><i class="icofont-check-circled"></i> Companionship &amp; emotional care</li>
+                    <li><i class="icofont-check-circled"></i> Dedicated family manager support</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a href="contact.html" class="clean-pill-btn clean-pill-btn-primary w-100">Book Care</a>
+                  <div class="no_lock_in_note">
+                    <span class="lock_in_head">No lock-in.</span>
+                    <span class="policy_line"><a href="company/refund-and-cancellation-policies.html">Cancel as per our refund policy.</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Assisted Living -->
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
+              <div class="pricing_card_box">
+                <div>
+                  <div class="pricing_title">Assisted Living</div>
+                  <div class="pricing_sub">Monthly home care plan</div>
+
+                  <div class="pricing_amount">₹15,000 <span>/ month</span></div>
+                  <div class="price_range_hint">Range: ₹15k – ₹45k / mo</div>
+
+                  <ul class="pricing_features">
+                    <li><i class="icofont-check-circled"></i> Dedicated caregiver team</li>
+                    <li><i class="icofont-check-circled"></i> 24/7 emergency coordination</li>
+                    <li><i class="icofont-check-circled"></i> Weekly supervisor audit &amp; visits</li>
+                    <li><i class="icofont-check-circled"></i> Full Elderly Care Plus app access</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <a href="contact.html" class="clean-pill-btn clean-pill-btn-primary w-100">Book Monthly Plan</a>
+                  <div class="no_lock_in_note">
+                    <span class="lock_in_head">No lock-in.</span>
+                    <span class="policy_line"><a href="company/refund-and-cancellation-policies.html">Cancel as per our refund policy.</a></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Pricing Section End -->
+
+      <!-- Why Pricing Varies Section Start -->
+      <section class="row_am why_choose" style="padding: 50px 0; background-color: #f8fafc;">
+        <div class="container">
+          <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
+            <span class="title_badge">Price Transparency</span>
+            <h2>Why Do Prices <span>Vary Within a Range?</span></h2>
+            <p style="max-width: 650px; margin: 10px auto 0;">
+              Every elderly care requirement is unique. Here are the key factors that determine custom pricing for your parents:
+            </p>
+          </div>
+
+          <div class="row" style="margin-top: 36px;">
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+              <div class="pricing_factor_card">
+                <div class="icon_box"><i class="icofont-clock-time"></i></div>
+                <h4>Shift Duration</h4>
+                <p>Rates depend on whether care is needed per session (1–2 hrs), 8-hour day shifts, 12-hour shifts, or continuous 24-hour care.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+              <div class="pricing_factor_card">
+                <div class="icon_box"><i class="icofont-doctor-alt"></i></div>
+                <h4>Skill Level Required</h4>
+                <p>General companionship caregivers have lower starting rates compared to specialized ICU nurses or senior stroke physiotherapists.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
+              <div class="pricing_factor_card">
+                <div class="icon_box"><i class="icofont-moon"></i></div>
+                <h4>Night Care &amp; Overnights</h4>
+                <p>Overnight patient monitoring and emergency night support carry slightly adjusted slab rates to support dedicated night staff.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
+              <div class="pricing_factor_card">
+                <div class="icon_box"><i class="icofont-calendar"></i></div>
+                <h4>Weekend &amp; Plan Type</h4>
+                <p>Flexible long-term monthly care packages offer higher savings per visit compared to single emergency weekend bookings.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Why Pricing Varies Section End -->
+
+      <!-- CTA Callout Section Start -->
+      <section class="row_am cta_section" style="padding: 60px 0; background: #1a2e35; color: #ffffff;">
+        <div class="container text-center">
+          <div class="section_title white_text" data-aos="fade-up" data-aos-duration="1500">
+            <h2 style="font-size: 36px; color: #ffffff;">Need a Customized <span>Care Plan?</span></h2>
+            <p style="max-width: 600px; margin: 12px auto 28px; color: #cbd5e1;">
+              Speak directly with our care manager in Chennai to get an exact custom quote based on your parents' health profile.
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 16px; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <a href="contact.html" class="clean-pill-btn clean-pill-btn-primary" style="padding: 12px 30px; font-size: 15px;">
+              Request a Callback
+            </a>
+            <a href="tel:+919944890577" class="clean-pill-btn clean-pill-btn-secondary" style="padding: 12px 28px; font-size: 15px;">
+              Call +91 99448 90577
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Quick 4-Field Callback Form & 3-Way Contact Hub Section -->
+      <section id="callback-form-section" class="row_am" style="padding: 60px 0; background: #f8fafc;">
+        <div class="container">
+          <div class="ew-callback-card">
+            <div class="ew-callback-header">
+              <span class="ew-callback-badge"><i class="icofont-headphone-alt"></i> Fast 2-Hour Response</span>
+              <h3>Request a Callback</h3>
+              <p>Leave your details below and our senior care specialist in Chennai will reach out to you.</p>
+            </div>
+
+            <!-- 4-Field Form -->
+            <form class="ew-4field-form" id="ewPageCallbackForm" novalidate style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px;">
+              <div id="ew_form_success" aria-live="polite" style="grid-column: 1 / -1; display: none; background: #f0fdf4; border: 1.5px solid #86efac; color: #166534; padding: 14px 18px; border-radius: 10px; margin-bottom: 8px; font-weight: 700; font-size: 14.5px; text-align: center;">
+                <i class="icofont-check-circled" style="font-size: 18px; vertical-align: -2px; margin-right: 6px;"></i> Thank you! Your callback request has been received. Our care specialist will reach out shortly.
+              </div>
+
+              <div class="ew-field-group" style="margin-bottom: 0;">
+                <label for="ew_name" class="ew-field-label" style="display: block; font-weight: 600; font-size: 14px; color: #1e293b; margin-bottom: 4px;">
+                  Full Name <span style="color: #b91c1c; font-weight: 400; font-size: 14px; margin-left: 1px;">*</span>
+                </label>
+                <input type="text" id="ew_name" name="name" class="ew-field-control" placeholder="e.g. Rajesh Kumar" autocomplete="name" aria-describedby="ew_name_error" required style="width: 100%; height: 46px; padding: 10px 42px 10px 14px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 14.5px; color: #1e293b; background: #fff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%232786a5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"%3E%3C/polyline%3E%3C/svg%3E') no-repeat right 18px center / 14px 14px; -webkit-appearance: none; appearance: none; cursor: pointer;" />
+                <span class="ew-field-error" id="ew_name_error" style="display: none; color: #b91c1c; font-size: 13px; font-weight: 500; margin-top: 3px;">Please enter your full name.</span>
+              </div>
+
+              <div class="ew-field-group" style="margin-bottom: 0;">
+                <label for="ew_phone" class="ew-field-label" style="display: block; font-weight: 600; font-size: 14px; color: #1e293b; margin-bottom: 4px;">
+                  Phone Number <span style="color: #b91c1c; font-weight: 400; font-size: 14px; margin-left: 1px;">*</span>
+                </label>
+                <input type="tel" id="ew_phone" name="phone" class="ew-field-control" placeholder="e.g. +91 98765 43210" autocomplete="tel" aria-describedby="ew_phone_error" required style="width: 100%; height: 46px; padding: 10px 42px 10px 14px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 14.5px; color: #1e293b; background: #fff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%232786a5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"%3E%3C/polyline%3E%3C/svg%3E') no-repeat right 18px center / 14px 14px; -webkit-appearance: none; appearance: none; cursor: pointer;" />
+                <span class="ew-field-error" id="ew_phone_error" style="display: none; color: #b91c1c; font-size: 13px; font-weight: 500; margin-top: 3px;">Please enter a valid 10-digit phone number.</span>
+              </div>
+
+              <div class="ew-field-group" style="margin-bottom: 0;">
+                <label for="ew_service" class="ew-field-label" style="display: block; font-weight: 600; font-size: 14px; color: #1e293b; margin-bottom: 4px;">
+                  Select Service <span style="color: #b91c1c; font-weight: 400; font-size: 14px; margin-left: 1px;">*</span>
+                </label>
+                <select id="ew_service" name="service" class="ew-field-control" aria-describedby="ew_service_error" required style="width: 100%; height: 46px; padding: 10px 42px 10px 14px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 14.5px; color: #1e293b; background: #fff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%232786a5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"%3E%3C/polyline%3E%3C/svg%3E') no-repeat right 18px center / 14px 14px; -webkit-appearance: none; appearance: none; cursor: pointer;">
+                  <option value="Physiotherapy">Physiotherapy at Home</option>
+                  <option value="Home Nursing">Home Nursing Care</option>
+                  <option value="Geriatric Care">Geriatric Care</option>
+                  <option value="Assisted Living">Assisted Living Support</option>
+                  <option value="General Care Inquiry" selected>General Care Inquiry</option>
+                </select>
+                <span class="ew-field-error" id="ew_service_error" style="display: none; color: #b91c1c; font-size: 13px; font-weight: 500; margin-top: 3px;">Please select a service option.</span>
+              </div>
+
+              <div class="ew-field-group" style="margin-bottom: 0;">
+                <label for="ew_time" class="ew-field-label" style="display: block; font-weight: 600; font-size: 14px; color: #1e293b; margin-bottom: 4px;">
+                  Best Time to Call <span style="color: #b91c1c; font-weight: 400; font-size: 14px; margin-left: 1px;">*</span>
+                </label>
+                <select id="ew_time" name="time_to_call" class="ew-field-control" aria-describedby="ew_time_error" required style="width: 100%; height: 46px; padding: 10px 42px 10px 14px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 14.5px; color: #1e293b; background: #fff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%232786a5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"%3E%3C/polyline%3E%3C/svg%3E') no-repeat right 18px center / 14px 14px; -webkit-appearance: none; appearance: none; cursor: pointer;">
+                  <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
+                  <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
+                  <option value="Evening (4 PM - 8 PM)">Evening (4 PM - 8 PM)</option>
+                  <option value="Anytime (ASAP)" selected>Anytime (ASAP)</option>
+                </select>
+                <span class="ew-field-error" id="ew_time_error" style="display: none; color: #b91c1c; font-size: 13px; font-weight: 500; margin-top: 3px;">Please select a preferred callback time.</span>
+              </div>
+
+              <!-- Compact, Clean Full-Width Consent Box -->
+              <div class="ew-consent-box" style="grid-column: 1 / -1; width: 100%; margin-top: 4px; margin-bottom: 4px; padding: 14px 16px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px; width: 100%;">
+                  <input type="checkbox" id="ew_consent_service" name="consent_service" aria-describedby="ew_consent_service_error" required style="width: 18px; height: 18px; min-width: 18px; cursor: pointer; accent-color: #2786a5; flex-shrink: 0;" />
+                  <label for="ew_consent_service" style="font-size: 13.5px; color: #334155; font-weight: 600; cursor: pointer; line-height: 1.35; margin: 0;">
+                    I agree to be contacted regarding senior care services <span style="color: #b91c1c; font-weight: 400; font-size: 13.5px; margin-left: 1px;">*</span>
+                  </label>
+                </div>
+                <span class="ew-field-error" id="ew_consent_service_error" style="display: none; color: #b91c1c; font-size: 13px; font-weight: 500; margin-left: 28px; margin-bottom: 6px;">You must agree to be contacted to submit this enquiry.</span>
+
+                <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
+                  <input type="checkbox" id="ew_consent_marketing" name="consent_marketing" style="width: 18px; height: 18px; min-width: 18px; cursor: pointer; accent-color: #2786a5; flex-shrink: 0;" />
+                  <label for="ew_consent_marketing" style="font-size: 13.5px; color: #334155; font-weight: 600; cursor: pointer; line-height: 1.35; margin: 0;">
+                    Send me newsletters, health tips, and special offers
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="ew-callback-submit-btn" style="grid-column: 1 / -1; width: 100%; padding: 12px 24px; background: #2786a5; color: #ffffff; font-weight: 700; font-size: 15.5px; border: none; border-radius: 10px; cursor: pointer; transition: background 0.2s ease; margin-top: 4px;">
+                Request Callback Now
+              </button>
+            </form>
+
+            <div style="margin-top: 28px; text-align: center; border-top: 1px dashed #cbd5e1; padding-top: 24px;">
+              <span style="font-size: 12.5px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.6px;">Or Choose How to Reach Us</span>
+              
+              <!-- Contact Buttons (WhatsApp & Call Now) -->
+              <div class="ew-3way-contact-hub">
+                <!-- 1. WhatsApp with pre-filled page context -->
+                <a href="https://wa.me/919944890577?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20Elderly%20Wellness%20care%20services" target="_blank" rel="noopener noreferrer" class="ew-hub-btn ew-hub-btn-whatsapp">
+                  <i class="icofont-brand-whatsapp"></i> Chat on WhatsApp
+                </a>
+                <!-- 2. Call Now tel: link -->
+                <a href="tel:+919944890577" class="ew-hub-btn ew-hub-btn-call">
+                  <i class="icofont-phone"></i> Call Now: +91 99448 90577
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Shared Footer Component -->
+      <footer class="white_text" id="download-btn">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="logo_side">
+          <div class="logo">
+            <a href="index.html">
+              <img src="images/ft_logo.png" alt="Elderly Wellness"/>
+            </a>
+          </div>
+          <h3 class="mb-4">Contact Us</h3>
+          <ul class="contact_info">
+            <li><a href="tel:+919944890577">+91 99448 90577</a></li>
+          </ul>
+          <ul class="contact_info">
+            <li><a href="mailto:info@theelderlywellness.com">info@theelderlywellness.com</a></li>
+          </ul>
+          <ul class="social_media">
+            <li><a href="https://www.facebook.com/profile.php?id=100089074061784" target="_blank" rel="noopener noreferrer"><i class="icofont-facebook"></i></a></li>
+            <li><a href="https://x.com/elderly____?s=11" target="_blank" rel="noopener noreferrer"><i class="icofont-twitter"></i></a></li>
+            <li><a href="https://www.instagram.com/elderly__wellness?igsh=MW43cmZpb2liaGNzdA==" target="_blank" rel="noopener noreferrer"><i class="icofont-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/elderly-wellness-service-pvt-ltd/about/" target="_blank" rel="noopener noreferrer"><i class="icofont-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="logo_side" id="quick_links_side">
+          <h3>Quick Links</h3>
+          <ul class="contact_info" id="quick_links">
+            <li><a href="company/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="company/refund-and-cancellation-policies.html">Refund &amp; Cancellation Policy</a></li>
+            <li><a href="company/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="assets/elderly_wellness.pdf" download type="application/pdf">Company Brochure (PDF, 3.2 MB)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="download_side">
+          <h3>Download app</h3>
+          <ul class="app_btn">
+            <li>
+              <a href="https://play.google.com/store/apps/details?id=com.elderly.nri" target="_blank" rel="noopener noreferrer">
+                <img class="blue_img" src="images/googleplay.png" alt="Download Elderly Care Plus on Google Play"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://apps.apple.com/in/app/elderly-care-plus/id6740391242" target="_blank" rel="noopener noreferrer">
+                <img class="blue_img" src="images/appstorebtn.png" alt="Download Elderly Care Plus on the App Store"/>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="ft_inner">
+        <div class="copy_text">
+          <p>© Copyrights <span class="ew-current-year">2026</span>. All rights reserved.</p>
+        </div>
+        <div class="design_by">
+          <p>
+            Developed by
+            <a href="https://www.tectratechnologies.com/" target="_blank" rel="noopener noreferrer">Tectra Technologies</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      <!-- go top button -->
+      <div class="go_top" id="Gotop">
+        <span><i class="icofont-arrow-up"></i></span>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/main.js?v=173.0"></script>
+    <script src="js/callback-form.js?v=123.0"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+  </body>
+</html>

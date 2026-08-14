@@ -32,23 +32,20 @@ body.single-post {
 body.blog .site.grid-container,
 body.archive .site.grid-container,
 body.author .site.grid-container,
-body.search .site.grid-container {
-  width: min(100%, 1200px);
-  max-width: 1200px;
-  padding-inline: 15px;
-  box-sizing: border-box;
-}
-
-body.single-post .site.grid-container {
-  width: 100%;
-  max-width: 1170px;
-  padding-inline: 15px;
-  box-sizing: border-box;
-  margin-inline: auto;
+body.search .site.grid-container,
+body.single-post .site.grid-container,
+body.single-post #page,
+body.blog #page,
+body.archive #page {
+  width: min(100%, 1200px) !important;
+  max-width: 1200px !important;
+  padding-inline: 15px !important;
+  box-sizing: border-box !important;
+  margin-inline: auto !important;
+  margin-top: 0 !important;
   padding-top: 0 !important;
 }
 
-body.single-post #page,
 body.single-post article,
 body.single-post .inside-article {
   margin-bottom: 0 !important;
@@ -58,23 +55,35 @@ body.single-post .inside-article {
 body.single-post main#main,
 body.single-post .site-main {
   display: block !important;
-  padding-top: 24px !important;
-  margin-top: 24px !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
 }
 
-/* Single post: two-column layout with aligned bottom boxes */
+/* Single post: fixed 2-column layout with consistent top spacing */
 body.single-post #content,
-body.single-post .site-content {
+body.single-post .site-content,
+body.blog #content,
+body.archive #content {
   display: flex !important;
   flex-wrap: nowrap !important;
   align-items: stretch !important;
   gap: 32px;
-  padding-top: 54px !important;
-  margin-top: 24px !important;
+  padding-top: 64px !important;
+  margin-top: 0 !important;
   padding-bottom: 60px !important;
   overflow: visible !important;
+}
+
+@media (max-width: 991px) {
+  body.single-post #content,
+  body.single-post .site-content,
+  body.blog #content,
+  body.archive #content {
+    padding-top: 44px !important;
+    flex-wrap: wrap !important;
+  }
 }
 
 body.single-post .content-area {
@@ -183,17 +192,29 @@ body.blog .site-main::after {
 }
 
 body.blog .site-main::before {
-  content: "Elderly Wellness Blog";
-  display: block;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: 800;
-  color: #1a2e35;
-  margin-bottom: -8px !important;
-  line-height: 1.2;
+  content: none !important;
+  display: none !important;
+}
+
+/* Explicit Blog Page Title System */
+.ew-blog-page-title {
+  grid-column: 1 / -1;
+  font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
+  font-weight: 800 !important;
+  color: #1a2e35 !important;
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+  line-height: 1.2 !important;
+}
+
+.ew-blog-page-title span,
+.archive-title span,
+.page-header h1 span {
+  color: #2786a5 !important;
 }
 
 :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .site-main > .page-header {
-  margin-bottom: -8px !important;
+  margin-bottom: 16px !important;
   padding: 0 !important;
   background: transparent !important;
   border: none !important;
@@ -1887,3 +1908,158 @@ a.ew-blog-cta__btn:active {
   }
 }
 
+/* Ensure page_wrapper container does not clip or trap fixed overlays */
+.page_wrapper {
+  overflow: visible !important;
+}
+
+/* Fixed Floating WhatsApp Contact Overlay on Left Side (Matches Location Page Chaty design) */
+.ew-whatsapp-floating-btn {
+  position: fixed !important;
+  bottom: 25px !important;
+  left: 25px !important;
+  right: auto !important;
+  top: auto !important;
+  width: auto !important;
+  height: 54px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  z-index: 2147483647 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: translate3d(0, 0, 0) !important;
+  pointer-events: auto !important;
+}
+
+.ew-wa-circle {
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 50% !important;
+  background-color: #49E670 !important;
+  box-shadow: 0 4px 16px rgba(73, 230, 112, 0.45) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  flex-shrink: 0 !important;
+}
+
+/* Hide text bubble / CTA badge to keep ONLY the logo icon */
+.chaty-btn-cta,
+.chaty-svg-cta,
+.ew-wa-bubble {
+  display: none !important;
+}
+
+.ew-whatsapp-floating-btn:hover .ew-wa-circle {
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 22px rgba(73, 230, 112, 0.65) !important;
+}
+
+.ew-whatsapp-floating-btn:hover .ew-wa-bubble {
+  transform: translateX(3px) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.ew-wa-arrow {
+  position: absolute !important;
+  left: -7px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-top: 6px solid transparent !important;
+  border-bottom: 6px solid transparent !important;
+  border-right: 8px solid #ffffff !important;
+}
+
+
+
+
+/* Floating WhatsApp Button & Clean Bottom Body (Universal) */
+body {
+  padding-bottom: 0 !important;
+}
+
+.ew-mobile-sticky-bottom-bar {
+  display: none !important;
+}
+
+a.ew-whatsapp-floating-btn,
+.ew-whatsapp-floating-btn {
+  position: fixed !important;
+  bottom: 25px !important;
+  left: 25px !important;
+  right: auto !important;
+  top: auto !important;
+  width: auto !important;
+  height: 54px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  z-index: 2147483647 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: translate3d(0, 0, 0) !important;
+  pointer-events: auto !important;
+}
+
+.ew-whatsapp-floating-btn .ew-wa-circle {
+  width: 54px !important;
+  height: 54px !important;
+  min-width: 54px !important;
+  min-height: 54px !important;
+  border-radius: 50% !important;
+  background-color: #49E670 !important;
+  box-shadow: 0 4px 16px rgba(73, 230, 112, 0.45) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ew-whatsapp-floating-btn:hover .ew-wa-circle {
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 22px rgba(73, 230, 112, 0.65) !important;
+}
+
+
+/* Pricing Teaser Chip Zoom Effect (Light Soft Chip - No Color Shift) */
+.pricing-teaser-link {
+  color: #2786a5 !important;
+  background: #e6f4f8 !important;
+  border: 1.5px solid #bce2ed !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  padding: 6px 18px !important;
+  border-radius: 20px !important;
+  text-decoration: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.pricing-teaser-link:hover {
+  color: #2786a5 !important;
+  background: #e6f4f8 !important;
+  border-color: #bce2ed !important;
+  transform: scale(1.06) !important;
+  box-shadow: 0 4px 14px rgba(39, 134, 165, 0.25) !important;
+}

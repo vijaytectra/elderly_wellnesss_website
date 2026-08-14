@@ -1,0 +1,467 @@
+/* Elderly Wellness - Service Pages Design Enhancements & Card Systems */
+
+/* ==========================================================================
+   0. Hero Section Top Spacing & Generous Title Spacing
+   ========================================================================== */
+#services-inner-page-banner-section,
+.banner_section {
+  padding-top: 64px !important;
+  padding-bottom: 72px !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 991px) {
+  #services-inner-page-banner-section,
+  .banner_section {
+    padding-top: 44px !important;
+    padding-bottom: 52px !important;
+  }
+}
+
+.ew-services-overview-section {
+  padding: 80px 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.ew-booking-cta-section {
+  padding: 80px 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.ew-card-action-btn {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  padding: 12px 20px !important;
+  background-color: #2786a5 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.ew-card-action-btn:hover {
+  background-color: #1e6b85 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ==========================================================================
+   Service Comparison Table Top-Alignment & Button System
+   ========================================================================== */
+.ew-comparison-section .table {
+  vertical-align: top !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+.ew-comparison-section .table thead th {
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+  background-color: #2786a5 !important;
+  color: #ffffff !important;
+  padding: 16px 20px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border: none !important;
+}
+
+.ew-comparison-section .table tbody td {
+  vertical-align: top !important;
+  padding: 20px !important;
+  line-height: 1.6 !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+.ew-comparison-section .table tbody tr:first-child td {
+  border-top: none !important;
+}
+
+.ew-table-btn {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  padding: 8px 18px !important;
+  background-color: #2786a5 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease, transform 0.2s ease !important;
+  box-shadow: 0 2px 6px rgba(39, 134, 165, 0.2) !important;
+}
+
+.ew-table-btn:hover {
+  background-color: #1e6b85 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ==========================================================================
+   High-Contrast Readable Footer System Site-Wide
+   ========================================================================== */
+footer.footer_section {
+  background-color: #0f172a !important;
+  color: #94a3b8 !important;
+}
+
+footer.footer_section .abt_side p,
+footer.footer_section .links p {
+  color: #cbd5e1 !important;
+  line-height: 1.6 !important;
+}
+
+footer.footer_section .links h3,
+footer.footer_section .abt_side h3 {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  margin-bottom: 16px !important;
+}
+
+footer.footer_section .links ul li a {
+  color: #cbd5e1 !important;
+  font-size: 14.5px !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+footer.footer_section .links ul li a:hover {
+  color: #38bdf8 !important;
+}
+
+footer.footer_section .bottom_footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding-top: 20px !important;
+  color: #94a3b8 !important;
+}
+
+footer.footer_section .bottom_footer a {
+  color: #cbd5e1 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+footer.footer_section .bottom_footer a:hover {
+  color: #38bdf8 !important;
+}
+
+/* Prevent single orphan words on new lines */
+h1, h2, h3, .banner_text h1, .banner_text h2, .section_title h2, .section_title h3 {
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+#services-inner-page-banner-section .banner_text h1 {
+  font-size: 32px !important;
+  line-height: 1.35 !important;
+  color: #1a2e35 !important;
+  font-weight: 800 !important;
+  margin-bottom: 24px !important;
+}
+
+#services-inner-page-banner-section .banner_text h1 span {
+  display: inline-block;
+  color: #2786a5 !important;
+}
+
+#services-inner-page-banner-section .banner_text h2 {
+  font-size: 20px !important;
+  line-height: 1.4 !important;
+  color: #2786a5 !important;
+  font-weight: 700 !important;
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+}
+
+#services-inner-page-banner-section .banner_text p {
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+  color: #475569 !important;
+  margin-bottom: 18px !important;
+}
+
+.service-pricing-teaser {
+  margin-top: 24px !important;
+  margin-bottom: 28px !important;
+}
+
+.btn-main-row-service-inner-banner {
+  margin-bottom: 28px !important;
+}
+
+/* ==========================================================================
+   1. "Why Choose Elderly Wellness for [Service] ?" Section Cards & Icons
+   ========================================================================== */
+#services-inner-icon-section {
+  padding: 72px 0 80px 0 !important;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  position: relative;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+#services-inner-icon-section .section_title h2 {
+  color: #1a2e35 !important;
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  text-align: center;
+  margin-bottom: 10px !important;
+  letter-spacing: -0.3px;
+}
+
+#services-inner-icon-section .section_title h2 span {
+  color: #2786a5 !important;
+}
+
+/* Crisp Feature Card System */
+.ew-feature-card {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  padding: 30px 26px !important;
+  box-shadow: 0 4px 16px rgba(15, 40, 55, 0.04) !important;
+  border: 1.5px solid #e2e8f0 !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+  margin-bottom: 24px !important;
+}
+
+.ew-feature-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #2786a5 !important;
+  box-shadow: 0 12px 32px rgba(39, 134, 165, 0.12) !important;
+}
+
+.ew-feature-icon {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  border-radius: 16px;
+  background: rgba(39, 134, 165, 0.12);
+  color: #2786a5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ew-feature-card:hover .ew-feature-icon {
+  transform: scale(1.08);
+  background: #2786a5;
+  color: #ffffff;
+}
+
+.ew-feature-text h3 {
+  color: #1a2e35 !important;
+  font-size: 19px !important;
+  font-weight: 800 !important;
+  margin: 0 0 10px 0 !important;
+  line-height: 1.35 !important;
+}
+
+.ew-feature-text p {
+  color: #475569 !important;
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+/* ==========================================================================
+   2. "How Care Works in 3 Simple Steps" - Premium Card System
+   ========================================================================== */
+.ew-3step-grid {
+  row-gap: 24px;
+}
+
+.ew-step-card {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  padding: 30px 24px !important;
+  height: 100% !important;
+  box-shadow: 0 4px 20px rgba(15, 40, 55, 0.04) !important;
+  text-align: left !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  position: relative;
+}
+
+.ew-step-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: #2786a5 !important;
+  box-shadow: 0 12px 32px rgba(39, 134, 165, 0.12) !important;
+}
+
+.ew-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ew-step-num {
+  font-size: 14px;
+  font-weight: 800;
+  color: #2786a5;
+  background: rgba(39, 134, 165, 0.1);
+  padding: 5px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.ew-step-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  color: #2786a5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.ew-step-card:hover .ew-step-icon {
+  background: #2786a5;
+  color: #ffffff;
+  border-color: #2786a5;
+}
+
+.ew-step-card h3 {
+  font-size: 18.5px !important;
+  font-weight: 800 !important;
+  color: #1a2e35 !important;
+  margin: 0 0 10px 0 !important;
+  line-height: 1.35 !important;
+}
+
+.ew-step-card p {
+  font-size: 14.5px !important;
+  color: #475569 !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+}
+
+/* ==========================================================================
+   3. Expander Button Hover Effects
+   ========================================================================== */
+.ew-expand-process-btn {
+  background: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  color: #2786a5 !important;
+  border-radius: 30px !important;
+  padding: 10px 28px !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.ew-expand-process-btn:hover {
+  background: #2786a5 !important;
+  color: #ffffff !important;
+  border-color: #2786a5 !important;
+  transform: scale(1.04) !important;
+  box-shadow: 0 6px 18px rgba(39, 134, 165, 0.35) !important;
+}
+
+.ew-expand-process-btn:hover span,
+.ew-expand-process-btn:hover i {
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   4. Expanded 10-Step Process Cards & Spacing
+   ========================================================================== */
+.arrange-home-physio {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 20px !important;
+  padding: 24px 28px !important;
+  margin-bottom: 24px !important;
+  box-shadow: 0 6px 20px rgba(15, 40, 55, 0.04) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+@media (max-width: 640px) {
+  .arrange-home-physio {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 20px !important;
+    gap: 16px !important;
+  }
+}
+
+.arrange-home-physio:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 30px rgba(15, 40, 55, 0.08) !important;
+  border-color: #2786a5 !important;
+}
+
+.arrange-home-physio > div:first-child {
+  width: 72px;
+  height: 72px;
+  min-width: 72px;
+  border-radius: 18px;
+  background: rgba(39, 134, 165, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.arrange-home-physio > div:first-child img {
+  max-width: 48px;
+  max-height: 48px;
+  object-fit: contain;
+}
+
+.arrange-home-physio h3 {
+  font-size: 19px !important;
+  font-weight: 800 !important;
+  color: #1a2e35 !important;
+  margin: 0 0 8px 0 !important;
+}
+
+.arrange-home-physio p {
+  font-size: 14.5px !important;
+  color: #475569 !important;
+  line-height: 1.6 !important;
+  margin: 0 0 8px 0 !important;
+}
+
+.arrange-home-physio p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.arrange-home-physio ul {
+  margin: 6px 0 8px 0;
+  padding-left: 20px;
+}
+
+.arrange-home-physio ul li {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 4px;
+}

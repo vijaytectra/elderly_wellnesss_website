@@ -183,9 +183,38 @@ h1, h2, h3, .banner_text h1, .banner_text h2, .section_title h2, .section_title 
   margin-bottom: 18px !important;
 }
 
+/* Service Pages Pricing Teaser - Centered Layout (Start Price & View Full Pricing Button Below It) */
 .service-pricing-teaser {
-  margin-top: 24px !important;
-  margin-bottom: 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin: 20px auto 24px auto !important;
+  gap: 10px !important;
+}
+
+.service-pricing-teaser > span:first-child {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  font-size: 15px !important;
+  color: #1e293b !important;
+}
+
+/* Hide vertical divider pipe when stacked centered */
+.service-pricing-teaser > span:nth-child(2) {
+  display: none !important;
+}
+
+.service-pricing-teaser .pricing-teaser-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
 }
 
 .btn-main-row-service-inner-banner {
@@ -251,6 +280,12 @@ h1, h2, h3, .banner_text h1, .banner_text h2, .section_title h2, .section_title 
   margin-bottom: 20px;
   font-size: 26px;
   transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ew-feature-icon i {
+  animation: none !important;
+  transform: none !important;
+  display: inline-block !important;
 }
 
 .ew-feature-card:hover .ew-feature-icon {
@@ -687,12 +722,31 @@ footer {
 .abt_slides img {
   width: 100% !important;
   max-width: 100% !important;
-  height: 380px !important;
-  max-height: 380px !important;
+  height: 280px !important;
+  max-height: 280px !important;
   object-fit: cover !important;
-  border-radius: 20px !important;
+  border-radius: 16px !important;
   display: block !important;
   margin: 0 auto !important;
+  box-shadow: 0 8px 24px rgba(15, 40, 55, 0.08) !important;
+}
+
+@media screen and (max-width: 991.98px) {
+  .about_slider #about_slider .abt_slides img,
+  .about_slider .abt_slides img,
+  .abt_slides img {
+    height: 240px !important;
+    max-height: 240px !important;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .about_slider #about_slider .abt_slides img,
+  .about_slider .abt_slides img,
+  .abt_slides img {
+    height: 200px !important;
+    max-height: 200px !important;
+  }
 }
 
 /* ==========================================================================

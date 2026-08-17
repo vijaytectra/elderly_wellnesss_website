@@ -144,7 +144,6 @@ if ($.fn && $.fn.owlCarousel) {
     }
   }
 
-  }
   $("#company_slider").owlCarousel({
     loop: !0,
     margin: 10,
@@ -227,17 +226,19 @@ if ($.fn && $.fn.owlCarousel) {
     responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 4 } },
   }),
   $("#about_slider").owlCarousel({
-    loop: !0,
-    margin: 20,
-    nav: !1,
-    dots: !1,
-    center: !0,
-    autoplay: !0,
-    slideTransition: "linear",
-    autoplayTimeout: 4e3,
-    autoplaySpeed: 4e3,
-    autoWidth: !0,
-    responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 4 } },
+    loop: true,
+    margin: 16,
+    nav: false,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 3500,
+    smartSpeed: 800,
+    responsive: {
+      0: { items: 1.2, margin: 12 },
+      576: { items: 2, margin: 14 },
+      768: { items: 3, margin: 16 },
+      992: { items: 4, margin: 20 }
+    }
   }),
   $("#value_slider").owlCarousel({
     loop: !0,

@@ -313,9 +313,20 @@ body.single-post header.entry-header {
   border-top: none !important;
 }
 
-:is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .entry-summary p {
+:is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .entry-summary p,
+.entry-summary p,
+.blog_post p,
+.blog_listings .blog_text p,
+.home-blog-listing .blog_post p {
   margin-bottom: 0 !important;
   flex-grow: 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.6 !important;
+  max-height: calc(1.6em * 3) !important;
 }
 
 :is(body.blog, body.archive, body.author, body.search).wp-theme-generatepress .entry-summary .read-more {

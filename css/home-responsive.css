@@ -961,3 +961,114 @@ footer.row_am {
   color: #ffffff !important;
   text-decoration: none !important;
 }
+
+@media screen and (max-width: 767.98px) {
+  .hero_cta_buttons,
+  .btn-main-row-service-inner-banner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 20px auto 16px auto !important;
+  }
+
+  .ew-hero-btn-primary,
+  .ew-hero-btn-secondary,
+  .btn-main-row-service-inner-banner .btn_block,
+  .btn-main-row-service-inner-banner .black_btn,
+  .btn-main-row-service-inner-banner .puprple_btn,
+  .btn-main-row-service-inner-banner a {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 20px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    border-radius: 30px !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
+  .task_single_card_item {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .task_single_card_item .task_single_text_stage {
+    order: 1 !important;
+  }
+
+  .task_single_card_item .task_single_img_stage {
+    order: 2 !important;
+  }
+
+  /* Horizontal Inline Layout for iPad Air & Tablet Viewports (>= 441px or 768px) and Pixel 7 Pro (400px - 425px) */
+  @media screen and (min-width: 400px) and (max-width: 425px), screen and (min-width: 441px) {
+    .ew-trust-strip-inline {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px 18px !important;
+      flex-wrap: wrap !important;
+      width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .ew-trust-strip-inline span {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      width: auto !important;
+      white-space: nowrap !important;
+    }
+  }
+
+/* Pixel 7 Pro (400px - 425px):
+   Center the 1st trust item ("2-Hour Replacement Guarantee") on Line 1,
+   and place items 2 & 3 side-by-side centered on Line 2 below it. */
+@media screen and (min-width: 400px) and (max-width: 425px) {
+  .ew-hero-trust-strip > div,
+  .ew-trust-strip-inline {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px 16px !important;
+  }
+
+  .ew-hero-trust-strip > div > div:first-child,
+  .ew-hero-trust-strip > div > span:first-child,
+  .ew-trust-strip-inline span:first-child,
+  .ew-trust-strip-inline div:first-child {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 4px !important;
+  }
+
+  .ew-hero-trust-strip > div > div:not(:first-child),
+  .ew-hero-trust-strip > div > span:not(:first-child),
+  .ew-trust-strip-inline span:not(:first-child),
+  .ew-trust-strip-inline div:not(:first-child) {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+}

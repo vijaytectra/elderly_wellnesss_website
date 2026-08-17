@@ -3183,34 +3183,8 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     padding-bottom: 0 !important;
   }
 
-  .task_single_card_item .task_single_img_stage {
-    width: 100% !important;
-    height: auto !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin-bottom: 8px !important;
-  }
-
-  .task_single_card_item .task_single_img_stage .task_single_img_item {
-    position: relative !important;
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-
-  .task_single_card_item .task_single_img_stage img {
-    max-height: 360px !important;
-    max-width: 100% !important;
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain !important;
-  }
-
   .task_single_card_item .task_single_text_stage {
+    order: 1 !important;
     width: 100% !important;
     position: relative !important;
     height: auto !important;
@@ -3229,6 +3203,16 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
   .task_single_card_item .task_single_text_stage .section_title {
     text-align: center !important;
     margin-bottom: 0 !important;
+  }
+
+  .task_single_card_item .task_single_img_stage {
+    order: 2 !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 8px !important;
   }
 
   .task_single_indicators {

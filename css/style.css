@@ -6814,3 +6814,243 @@ footer {
   margin-top: 48px !important;
   clear: both !important;
 }
+
+/* Enforce 3 lines max for all blog description text */
+.entry-summary p,
+.blog_post .text p,
+.blog_post p,
+.blog_listings .blog_text p,
+.home-blog-listing .blog_post p {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  line-height: 1.6 !important;
+  max-height: calc(1.6em * 3) !important;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE HERO BUTTONS (< 768px)
+   - Desktop & iPad Air / Tablets (>= 768px): Side-by-side horizontal buttons.
+   - Mobile (< 768px): Stack buttons vertically with equal width, height, and alignment.
+   ========================================================================== */
+/* ==========================================================================
+   HERO IMAGE SPACING & DEVICE-SPECIFIC ARRANGEMENT (< 992px)
+   ========================================================================== */
+@media screen and (max-width: 991.98px) {
+  .ew-hero-image-wrap,
+  .image-sec-banner-inner-service,
+  #services-inner-page-banner-section .image-sec-banner-inner-service,
+  #services-inner-page-banner-section .ew-hero-image-wrap,
+  .banner_section .banner_slider {
+    margin-top: 36px !important;
+    padding-top: 0 !important;
+    clear: both !important;
+  }
+
+  .banner_text,
+  #services-inner-page-banner-section .banner_text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .banner_text .title_badge,
+  #services-inner-page-banner-section .banner_text .title_badge {
+    display: inline-block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .banner_text h1,
+  #services-inner-page-banner-section .banner_text h1,
+  .banner_text p,
+  #services-inner-page-banner-section .banner_text p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+  }
+
+  .banner_text p,
+  #services-inner-page-banner-section .banner_text p {
+    max-width: 520px !important;
+  }
+
+  .ew-hero-trust-strip {
+    margin-top: 22px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-top: 18px !important;
+  }
+}
+
+/* Tablet & iPad Air (768px - 991px): Side-by-side horizontal CTA buttons & Trust Strip */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .hero_cta_buttons,
+  .btn-main-row-service-inner-banner {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    width: auto !important;
+    margin: 24px auto 20px auto !important;
+  }
+
+  .ew-hero-btn-primary,
+  .ew-hero-btn-secondary {
+    width: auto !important;
+    max-width: none !important;
+    height: 46px !important;
+    padding: 10px 24px !important;
+    display: inline-flex !important;
+  }
+
+  .ew-hero-trust-strip > div {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px 24px !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+/* Mobile Devices (< 768px): Vertical Stacked CTA Buttons with Equal Width */
+@media screen and (max-width: 767.98px) {
+  .hero_cta_buttons,
+  .btn-main-row-service-inner-banner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 20px auto 16px auto !important;
+  }
+
+  .ew-hero-btn-primary,
+  .ew-hero-btn-secondary,
+  .btn-main-row-service-inner-banner .btn_block,
+  .btn-main-row-service-inner-banner .black_btn,
+  .btn-main-row-service-inner-banner .puprple_btn,
+  .btn-main-row-service-inner-banner a {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 20px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    border-radius: 30px !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+}
+
+/* Explore Full Pricing Button Single-Line Rule */
+.ew-explore-pricing-btn {
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  max-width: calc(100% - 24px) !important;
+}
+
+@media screen and (max-width: 575.98px) {
+  .ew-explore-pricing-btn {
+    font-size: 13.5px !important;
+    padding: 12px 20px !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Guarantee feature card icons stay upright and never spin/rotate */
+.ew-feature-icon i {
+  animation: none !important;
+  transform: none !important;
+  display: inline-block !important;
+}
+
+/* Pixel 7 Pro (400px - 425px):
+   Center the 1st trust item ("2-Hour Replacement Guarantee") on Line 1,
+   and place items 2 & 3 side-by-side centered on Line 2 below it. */
+@media screen and (min-width: 400px) and (max-width: 425px) {
+  .ew-hero-trust-strip > div,
+  .ew-trust-strip-inline {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px 16px !important;
+  }
+
+  .ew-hero-trust-strip > div > div:first-child,
+  .ew-hero-trust-strip > div > span:first-child,
+  .ew-trust-strip-inline span:first-child,
+  .ew-trust-strip-inline div:first-child {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 4px !important;
+  }
+
+  .ew-hero-trust-strip > div > div:not(:first-child),
+  .ew-hero-trust-strip > div > span:not(:first-child),
+  .ew-trust-strip-inline span:not(:first-child),
+  .ew-trust-strip-inline div:not(:first-child) {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+}
+
+/* Service Pages Pricing Teaser - Centered Layout (Start Price & View Full Pricing Button Below It) */
+.service-pricing-teaser {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin: 20px auto 24px auto !important;
+  gap: 10px !important;
+}
+
+.service-pricing-teaser > span:first-child {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  font-size: 15px !important;
+  color: #1e293b !important;
+}
+
+.service-pricing-teaser > span:nth-child(2) {
+  display: none !important;
+}
+
+.service-pricing-teaser .pricing-teaser-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}

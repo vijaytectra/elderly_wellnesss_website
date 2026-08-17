@@ -115,7 +115,12 @@ async function loadBlogs() {
   blogContainer.innerHTML = markup.join("");
 
   if (window.jQuery && window.jQuery.fn.owlCarousel) {
-    window.jQuery(blogContainer).owlCarousel({
+    var $owl = window.jQuery(blogContainer);
+    if ($owl.hasClass("owl-loaded")) {
+      $owl.trigger("destroy.owl.carousel");
+      $owl.removeClass("owl-loaded");
+    }
+    $owl.owlCarousel({
       loop: true,
       margin: 24,
       nav: false,
@@ -125,7 +130,7 @@ async function loadBlogs() {
       autoplayHoverPause: true,
       responsive: {
         0: { items: 1 },
-        600: { items: 2 },
+        768: { items: 2 },
         992: { items: 3 }
       }
     });

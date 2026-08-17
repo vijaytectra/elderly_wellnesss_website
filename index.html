@@ -31,6 +31,140 @@
     <link rel="stylesheet" href="css/responsive.css?v=20260817i"/>
     <link rel="stylesheet" href="css/callback-form.css?v=20260817i"/>
     <link rel="stylesheet" href="css/home-responsive.css?v=20260817i"/>
+    <style>
+      /* Hero Video Box Container & Controls */
+      .banner_slider {
+        position: relative !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+      }
+
+      .banner_slider .owl-dots {
+        display: none !important;
+      }
+
+      .banner_slider #frmae_slider,
+      .banner_slider .owl-stage-outer,
+      .banner_slider .owl-stage,
+      .banner_slider .owl-item {
+        border-radius: 28px !important;
+        overflow: hidden !important;
+        background: transparent !important;
+      }
+
+      .slider_media {
+        position: relative !important;
+        border-radius: 28px !important;
+        overflow: hidden !important;
+        cursor: pointer;
+        background: #0f172a !important;
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18) !important;
+        line-height: 0 !important;
+        font-size: 0 !important;
+      }
+
+      .slider_media video {
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        border-radius: 28px !important;
+        object-fit: cover !important;
+        aspect-ratio: 16 / 10 !important;
+      }
+
+      /* Center Play/Pause Button - Premium Glassmorphic Circle */
+      .video_play_toggle_btn {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 72px !important;
+        height: 72px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 50% !important;
+        background: rgba(15, 23, 42, 0.72) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border: 2.5px solid rgba(255, 255, 255, 0.95) !important;
+        color: #ffffff !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        z-index: 20 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 0 4px rgba(255, 255, 255, 0.15) !important;
+        outline: none !important;
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease !important;
+      }
+
+      /* Hide center button ONLY when video is playing AND mouse is not hovering */
+      .slider_media:not(.video-paused):not(:hover) .video_play_toggle_btn {
+        opacity: 0 !important;
+        visibility: hidden !important;
+      }
+
+      .video_play_toggle_btn:hover {
+        background: #2786a5 !important;
+        border-color: #ffffff !important;
+        transform: translate(-50%, -50%) scale(1.1) !important;
+        box-shadow: 0 12px 35px rgba(39, 134, 165, 0.6), 0 0 0 6px rgba(255, 255, 255, 0.25) !important;
+      }
+
+      /* Small Curved Floating Box Navigation at Bottom of Video (Floating Pill Container) */
+      .hero_video_nav_tabs {
+        position: absolute !important;
+        bottom: 16px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 15 !important;
+        background: rgba(15, 23, 42, 0.75) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        padding: 4px 6px !important;
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 4px !important;
+        border-radius: 30px !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        max-width: 90% !important;
+        width: auto !important;
+        margin-top: 0 !important;
+      }
+
+      .hero_vid_tab {
+        padding: 6px 16px !important;
+        border-radius: 20px !important;
+        font-size: 12.5px !important;
+        font-weight: 600 !important;
+        border: none !important;
+        background: transparent !important;
+        color: rgba(255, 255, 255, 0.85) !important;
+        cursor: pointer !important;
+        transition: all 0.25s ease !important;
+        outline: none !important;
+        white-space: nowrap !important;
+        line-height: 1.2 !important;
+      }
+
+      .hero_vid_tab:hover {
+        background: rgba(255, 255, 255, 0.18) !important;
+        color: #ffffff !important;
+      }
+
+      .hero_vid_tab.active {
+        background: #2786a5 !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        box-shadow: 0 4px 12px rgba(39, 134, 165, 0.5) !important;
+      }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com/"/>
     
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
@@ -248,39 +382,39 @@
 
           <!-- banner slides start -->
           <div class="col-lg-6 col-md-12">
-            <div class="banner_slider" style="position: relative;">
+            <div class="banner_slider">
               <div id="frmae_slider" class="owl-carousel owl-theme">
                 <div class="item">
-                  <div class="slider_media" style="position: relative;">
-                    <video src="images/home/1.mp4" autoplay muted loop playsinline webkit-playsinline></video>
-                    <button class="video_play_toggle_btn" onclick="toggleHeroVideo(this)" aria-label="Pause video" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 64px; height: 64px; border-radius: 50%; background: rgba(39, 134, 165, 0.85); border: 2.5px solid #ffffff; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: transform 0.2s ease, background 0.2s ease; box-shadow: 0 6px 18px rgba(0,0,0,0.35);">
-                      <i class="icofont-pause" style="font-size: 26px; line-height: 1;"></i>
+                  <div class="slider_media video-paused" data-slide-index="0">
+                    <video src="images/home/opt/1.mp4" poster="images/home/opt/poster-1.jpg" muted preload="metadata" playsinline webkit-playsinline></video>
+                    <button class="video_play_toggle_btn" aria-label="Play video">
+                      <svg class="play-icon" width="26" height="26" viewBox="0 0 24 24" fill="#ffffff" style="margin-left: 3px;"><path d="M8 5v14l11-7z"/></svg>
                     </button>
                   </div>
                 </div>
                 <div class="item">
-                  <div class="slider_media" style="position: relative;">
-                    <video src="images/home/2.mp4" autoplay muted loop playsinline webkit-playsinline></video>
-                    <button class="video_play_toggle_btn" onclick="toggleHeroVideo(this)" aria-label="Pause video" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 64px; height: 64px; border-radius: 50%; background: rgba(39, 134, 165, 0.85); border: 2.5px solid #ffffff; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: transform 0.2s ease, background 0.2s ease; box-shadow: 0 6px 18px rgba(0,0,0,0.35);">
-                      <i class="icofont-pause" style="font-size: 26px; line-height: 1;"></i>
+                  <div class="slider_media video-paused" data-slide-index="1">
+                    <video src="images/home/opt/2.mp4" poster="images/home/opt/poster-2.jpg" muted preload="metadata" playsinline webkit-playsinline></video>
+                    <button class="video_play_toggle_btn" aria-label="Play video">
+                      <svg class="play-icon" width="26" height="26" viewBox="0 0 24 24" fill="#ffffff" style="margin-left: 3px;"><path d="M8 5v14l11-7z"/></svg>
                     </button>
                   </div>
                 </div>
                 <div class="item">
-                  <div class="slider_media" style="position: relative;">
-                    <video src="images/home/3.mp4" muted loop autoplay playsinline webkit-playsinline></video>
-                    <button class="video_play_toggle_btn" onclick="toggleHeroVideo(this)" aria-label="Pause video" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 64px; height: 64px; border-radius: 50%; background: rgba(39, 134, 165, 0.85); border: 2.5px solid #ffffff; color: #ffffff; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: transform 0.2s ease, background 0.2s ease; box-shadow: 0 6px 18px rgba(0,0,0,0.35);">
-                      <i class="icofont-pause" style="font-size: 26px; line-height: 1;"></i>
+                  <div class="slider_media video-paused" data-slide-index="2">
+                    <video src="images/home/opt/3.mp4" poster="images/home/opt/poster-3.jpg" muted preload="metadata" playsinline webkit-playsinline></video>
+                    <button class="video_play_toggle_btn" aria-label="Play video">
+                      <svg class="play-icon" width="26" height="26" viewBox="0 0 24 24" fill="#ffffff" style="margin-left: 3px;"><path d="M8 5v14l11-7z"/></svg>
                     </button>
                   </div>
                 </div>
               </div>
 
-              <!-- 3 Navigation Video Names / Tabs below Video Player -->
-              <div class="hero_video_nav_tabs" style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
-                <button class="hero_vid_tab active" onclick="goToHeroVideo(0)" style="padding: 8px 18px; border-radius: 20px; font-size: 13.5px; font-weight: 700; border: 1.5px solid #2786a5; background: #2786a5; color: #ffffff; cursor: pointer; transition: all 0.25s ease;">Physiotherapy Care</button>
-                <button class="hero_vid_tab" onclick="goToHeroVideo(1)" style="padding: 8px 18px; border-radius: 20px; font-size: 13.5px; font-weight: 700; border: 1.5px solid #cbd5e1; background: #ffffff; color: #475569; cursor: pointer; transition: all 0.25s ease;">24/7 Home Nursing</button>
-                <button class="hero_vid_tab" onclick="goToHeroVideo(2)" style="padding: 8px 18px; border-radius: 20px; font-size: 13.5px; font-weight: 700; border: 1.5px solid #cbd5e1; background: #ffffff; color: #475569; cursor: pointer; transition: all 0.25s ease;">Geriatric Care</button>
+              <!-- Small Curved Floating Box Navigation at Bottom of Video -->
+              <div class="hero_video_nav_tabs">
+                <button class="hero_vid_tab active" onclick="goToHeroVideo(0, event)">Physio</button>
+                <button class="hero_vid_tab" onclick="goToHeroVideo(1, event)">Nursing</button>
+                <button class="hero_vid_tab" onclick="goToHeroVideo(2, event)">Geriatric</button>
               </div>
             </div>
           </div>
@@ -1091,53 +1225,154 @@
       </div>
 
 <script>
-function toggleHeroVideo(btn) {
-  var media = btn.parentElement;
-  var video = media.querySelector('video');
-  var icon = btn.querySelector('i');
-  if (video) {
-    if (video.paused) {
-      video.play();
-      icon.className = 'icofont-pause';
-      btn.setAttribute('aria-label', 'Pause video');
-    } else {
-      video.pause();
-      icon.className = 'icofont-ui-play';
-      btn.setAttribute('aria-label', 'Play video');
+window.currentHeroIndex = 0;
+window.isHeroVideoUserPlaying = false;
+
+var playSvg = '<svg class="play-icon" width="26" height="26" viewBox="0 0 24 24" fill="#ffffff" style="margin-left: 3px;"><path d="M8 5v14l11-7z"/></svg>';
+var pauseSvg = '<svg class="pause-icon" width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+
+function updateHeroVidTabs(index) {
+  window.currentHeroIndex = index;
+  $('.hero_vid_tab').removeClass('active').css({
+    'background': 'transparent',
+    'color': 'rgba(255, 255, 255, 0.85)',
+    'font-weight': '600'
+  });
+  $('.hero_vid_tab').eq(index).addClass('active').css({
+    'background': '#2786a5',
+    'color': '#ffffff',
+    'font-weight': '700'
+  });
+}
+
+function pauseHeroVideo(videoEl) {
+  if (!videoEl) return;
+  videoEl.pause();
+  var $media = $(videoEl).closest('.slider_media');
+  $media.addClass('video-paused');
+  $media.find('.video_play_toggle_btn').html(playSvg).attr('aria-label', 'Play video');
+}
+
+function playHeroVideo(videoEl) {
+  if (!videoEl) return;
+  $('#frmae_slider video').each(function() {
+    if (this !== videoEl) {
+      pauseHeroVideo(this);
     }
+  });
+  videoEl.muted = true;
+  var $media = $(videoEl).closest('.slider_media');
+  var playPromise = videoEl.play();
+  if (playPromise !== undefined) {
+    playPromise.then(function() {
+      $media.removeClass('video-paused');
+      $media.find('.video_play_toggle_btn').html(pauseSvg).attr('aria-label', 'Pause video');
+    }).catch(function(err) {
+      console.warn('Video play interrupted:', err);
+      pauseHeroVideo(videoEl);
+    });
   }
 }
-</script>
-<script>
-function goToHeroVideo(index) {
+
+function toggleHeroVideo(btnOrMedia, event) {
+  if (event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+  var $media = $(btnOrMedia).closest('.slider_media');
+  if (!$media.length) {
+    $media = $('.slider_media[data-slide-index="' + window.currentHeroIndex + '"]');
+  }
+  var video = $media.find('video')[0];
+  if (!video) return;
+
+  if (video.paused) {
+    window.isHeroVideoUserPlaying = true;
+    playHeroVideo(video);
+  } else {
+    window.isHeroVideoUserPlaying = false;
+    pauseHeroVideo(video);
+  }
+}
+
+function goToHeroVideo(index, event) {
+  if (event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+  window.currentHeroIndex = index;
+  
+  // Pause any playing videos when manually switching tabs
+  $('#frmae_slider video').each(function() {
+    pauseHeroVideo(this);
+  });
+
   var $owl = $('#frmae_slider');
   if ($owl.length && typeof $owl.trigger === 'function') {
     $owl.trigger('to.owl.carousel', [index, 300]);
   }
   updateHeroVidTabs(index);
-}
 
-function updateHeroVidTabs(index) {
-  $('.hero_vid_tab').each(function(i) {
-    if (i === index) {
-      $(this).css({ 'background': '#2786a5', 'color': '#ffffff', 'border-color': '#2786a5' }).addClass('active');
-    } else {
-      $(this).css({ 'background': '#ffffff', 'color': '#475569', 'border-color': '#cbd5e1' }).removeClass('active');
+  // If user was actively watching playlist, auto-play video on target tab
+  if (window.isHeroVideoUserPlaying) {
+    var targetMedia = $('.slider_media[data-slide-index="' + index + '"]');
+    var targetVid = targetMedia.find('video')[0];
+    if (targetVid) {
+      try { targetVid.currentTime = 0; } catch (e) {}
+      playHeroVideo(targetVid);
     }
-  });
+  }
 }
 
 $(document).ready(function() {
+  updateHeroVidTabs(0);
+
+  $('.slider_media').addClass('video-paused');
+  $('.video_play_toggle_btn').html(playSvg).attr('aria-label', 'Play video');
+
+  $('#frmae_slider video').each(function(idx) {
+    var self = this;
+    self.pause();
+    
+    // When video ends naturally, auto-advance to next video if in playing state
+    self.addEventListener('ended', function() {
+      pauseHeroVideo(self);
+      try { self.currentTime = 0; } catch (err) {}
+
+      if (window.isHeroVideoUserPlaying) {
+        var nextIndex = (idx + 1) % 3;
+        goToHeroVideo(nextIndex);
+      }
+    });
+  });
+
+  // Listen for owl carousel slide changes (e.g., drag/swipe)
   var $owl = $('#frmae_slider');
   if ($owl.length) {
-    $owl.on('changed.owl.carousel', function(event) {
-      if (!event.namespace) return;
-      var itemIndex = event.item.index - event.relatedTarget._clones.length / 2;
-      var totalItems = event.item.count;
-      var currentSlide = (itemIndex % totalItems + totalItems) % totalItems;
-      updateHeroVidTabs(currentSlide);
+    $owl.on('changed.owl.carousel', function(e) {
+      if (e.item && typeof e.item.index === 'number') {
+        var idx = e.item.index;
+        updateHeroVidTabs(idx);
+      }
     });
   }
+
+  // Prevent mousedown/touchstart propagation so Owl Carousel never interprets clicks as drag
+  $(document).on('mousedown touchstart', '.slider_media, .video_play_toggle_btn, .hero_video_nav_tabs', function(e) {
+    e.stopPropagation();
+  });
+
+  // Delegated click handling
+  $(document).on('click', '.video_play_toggle_btn', function(e) {
+    toggleHeroVideo(this, e);
+  });
+
+  $(document).on('click', '.slider_media', function(e) {
+    if ($(e.target).closest('.hero_video_nav_tabs').length || $(e.target).closest('.video_play_toggle_btn').length) {
+      return;
+    }
+    toggleHeroVideo(this, e);
+  });
 });
 </script>
 </body>

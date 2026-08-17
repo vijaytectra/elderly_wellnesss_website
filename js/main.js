@@ -121,29 +121,30 @@ $(document).ready(function () {
 
 if ($.fn && $.fn.owlCarousel) {
   if ($("#frmae_slider").length) {
-    $("#frmae_slider").owlCarousel({
-      loop: !0,
+    var $heroSlider = $("#frmae_slider").owlCarousel({
+      loop: false,
       margin: 0,
-      autoplay: !0,
-      smartSpeed: 1500,
-      nav: !1,
-      dots: !0,
-      responsive: { 0: { items: 1 }, 600: { items: 1 }, 1e3: { items: 1 } },
+      autoplay: false,
+      autoplayTimeout: 0,
+      autoplayHoverPause: false,
+      mouseDrag: false,
+      touchDrag: false,
+      pullDrag: false,
+      freeDrag: false,
+      smartSpeed: 800,
+      nav: false,
+      dots: false,
+      responsive: { 0: { items: 1 }, 600: { items: 1 }, 1000: { items: 1 } },
     });
+    var owlData = $heroSlider.data('owl.carousel');
+    if (owlData && owlData._plugins && owlData._plugins.autoplay) {
+      owlData._plugins.autoplay.stop();
+      owlData._plugins.autoplay._next = function() {};
+      owlData._plugins.autoplay.play = function() {};
+    }
   }
 
-  // Keep hero videos playing (Owl clones break native autoplay)
-  function playHeroVideos() {
-    $("#frmae_slider video").each(function () {
-      this.muted = true;
-      var playPromise = this.play();
-      if (playPromise && typeof playPromise.catch === "function") {
-        playPromise.catch(function () {});
-      }
-    });
   }
-  playHeroVideos();
-  $("#frmae_slider").on("translated.owl.carousel initialized.owl.carousel", playHeroVideos);
   $("#company_slider").owlCarousel({
     loop: !0,
     margin: 10,

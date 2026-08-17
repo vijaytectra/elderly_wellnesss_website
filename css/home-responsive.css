@@ -1034,10 +1034,10 @@ footer.row_am {
     }
   }
 
-/* Pixel 7 Pro (400px - 425px):
+/* Mobile Devices (< 768px):
    Center the 1st trust item ("2-Hour Replacement Guarantee") on Line 1,
    and place items 2 & 3 side-by-side centered on Line 2 below it. */
-@media screen and (min-width: 400px) and (max-width: 425px) {
+@media screen and (max-width: 767.98px) {
   .ew-hero-trust-strip > div,
   .ew-trust-strip-inline {
     display: flex !important;
@@ -1045,6 +1045,7 @@ footer.row_am {
     justify-content: center !important;
     align-items: center !important;
     gap: 8px 16px !important;
+    width: 100% !important;
   }
 
   .ew-hero-trust-strip > div > div:first-child,

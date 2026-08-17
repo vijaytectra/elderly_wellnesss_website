@@ -60,7 +60,7 @@ async function loadBlogs() {
   }
 
   const markup = [];
-  posts.slice(0, 4).forEach((item) => {
+  posts.slice(0, 3).forEach((item) => {
     const date = item.date
       ? new Date(item.date).toLocaleDateString("en-US", {
           month: "long",

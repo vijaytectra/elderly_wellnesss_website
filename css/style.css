@@ -6266,3 +6266,548 @@ a.ew-whatsapp-floating-btn,
   transform: scale(1.06) !important;
   box-shadow: 0 4px 14px rgba(39, 134, 165, 0.25) !important;
 }
+
+
+/* ==========================================================================
+   MEDICAL DISCLAIMER BOX & COMMENT HIDE (PRESERVING ORIGINAL DESIGN 100%)
+   ========================================================================== */
+.comments-area,
+#comments,
+#respond,
+.comment-respond,
+.comment-form,
+.entry-meta-comment-count,
+.comments-link {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ew-medical-disclaimer {
+  margin: 24px 0 !important;
+  padding: 16px 20px !important;
+  background-color: #fff8f6 !important;
+  border: 1px solid #fee2e2 !important;
+  border-left: 4px solid #ef4444 !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+.ew-disclaimer-icon {
+  color: #ef4444 !important;
+  font-size: 18px !important;
+  flex-shrink: 0 !important;
+  margin-top: 2px !important;
+}
+
+.ew-disclaimer-text p {
+  margin: 0 !important;
+  font-size: 0.9rem !important;
+  color: #7f1d1d !important;
+  line-height: 1.5 !important;
+}
+
+
+/* ==========================================================================
+   BLOG TYPOGRAPHY, SPACING TIGHTENING & BOTTOM EMPTY BOX REMOVAL
+   ========================================================================== */
+
+/* 1. Font Size Increase & Tighten Paragraph Gaps */
+.entry-content p,
+article .entry-content p,
+.inside-article p {
+  font-size: 1.08rem !important;
+  line-height: 1.68 !important;
+  color: #334155 !important;
+  margin-bottom: 16px !important;
+  padding-bottom: 0 !important;
+}
+
+.entry-content h2,
+article .entry-content h2 {
+  font-size: 1.6rem !important;
+  line-height: 1.35 !important;
+  color: #1e293b !important;
+  margin-top: 28px !important;
+  margin-bottom: 14px !important;
+  font-weight: 800 !important;
+}
+
+.entry-content h3,
+article .entry-content h3 {
+  font-size: 1.3rem !important;
+  line-height: 1.4 !important;
+  color: #1e293b !important;
+  margin-top: 22px !important;
+  margin-bottom: 10px !important;
+  font-weight: 700 !important;
+}
+
+/* 2. Correct Sequential List Number Order (1, 2, 3, 4, 5) */
+ol,
+.entry-content ol,
+article ol,
+.wp-block-list {
+  list-style-type: decimal !important;
+  padding-left: 24px !important;
+  margin-top: 12px !important;
+  margin-bottom: 18px !important;
+}
+
+ol > li,
+.entry-content ol > li,
+article ol > li,
+.wp-block-list > li {
+  display: list-item !important;
+  list-style-type: decimal !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 8px !important;
+  padding-left: 4px !important;
+  color: #1e293b !important;
+}
+
+ol > li::before,
+.entry-content ol > li::before,
+article ol > li::before,
+.wp-block-list > li::before {
+  content: none !important;
+}
+
+/* 3. Remove Empty Box at Bottom of Article */
+footer.entry-meta,
+footer.entry-meta:empty,
+.comments-area,
+.comments-area:empty,
+#respond,
+#comments {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+
+/* ==========================================================================
+   TABLE OF CONTENTS FULL HORIZONTAL EXPANSION & FONT SIZE INCREASE
+   ========================================================================== */
+#rank-math-toc,
+.wp-block-rank-math-toc-block {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 24px !important;
+  margin-bottom: 28px !important;
+  padding: 24px 28px !important;
+  background-color: #f8fafc !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-left: 4px solid #2786a5 !important;
+  border-radius: 16px !important;
+  box-sizing: border-box !important;
+}
+
+#rank-math-toc h2,
+.wp-block-rank-math-toc-block h2 {
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  color: #1e293b !important;
+  margin-bottom: 16px !important;
+  margin-top: 0 !important;
+}
+
+#rank-math-toc nav ul,
+.wp-block-rank-math-toc-block nav ul {
+  padding-left: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+  width: 100% !important;
+}
+
+#rank-math-toc nav ul li,
+.wp-block-rank-math-toc-block nav ul li {
+  margin-bottom: 10px !important;
+  padding-left: 0 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.5 !important;
+  width: 100% !important;
+}
+
+#rank-math-toc nav ul li a,
+.wp-block-rank-math-toc-block nav ul li a {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  display: block !important;
+  width: 100% !important;
+  transition: color 0.2s ease !important;
+}
+
+#rank-math-toc nav ul li a:hover,
+.wp-block-rank-math-toc-block nav ul li a:hover {
+  color: #2786a5 !important;
+}
+
+/* Fill Horizontal Article Space & Correct Sequential List Numbers */
+.entry-content,
+article .entry-content,
+.inside-article {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.entry-content p,
+article .entry-content p {
+  width: 100% !important;
+  max-width: 100% !important;
+  font-size: 1.08rem !important;
+  line-height: 1.68 !important;
+  color: #334155 !important;
+  margin-bottom: 16px !important;
+}
+
+ol,
+.entry-content ol,
+article ol,
+.wp-block-list {
+  list-style-type: decimal !important;
+  padding-left: 24px !important;
+  margin-top: 14px !important;
+  margin-bottom: 18px !important;
+  width: 100% !important;
+}
+
+ol > li,
+.entry-content ol > li,
+article ol > li,
+.wp-block-list > li {
+  display: list-item !important;
+  list-style-type: decimal !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 10px !important;
+  padding-left: 4px !important;
+  color: #1e293b !important;
+}
+
+ol > li::before,
+.entry-content ol > li::before,
+article ol > li::before,
+.wp-block-list > li::before {
+  content: none !important;
+}
+
+
+/* ==========================================================================
+   TIGHTEN BOTTOM EMPTY SPACES BEFORE FOOTER
+   ========================================================================== */
+.post-views,
+.post-views.content-post {
+  margin-top: 12px !important;
+  margin-bottom: 14px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.ew-medical-disclaimer {
+  margin-top: 16px !important;
+  margin-bottom: 20px !important;
+}
+
+.single-post #page,
+.single-post .site-content,
+.single-post #primary,
+.single-post .site-main,
+.single-post article,
+.single-post .inside-article,
+.single-post #right-sidebar,
+.single-post .inside-right-sidebar {
+  padding-bottom: 12px !important;
+  margin-bottom: 0 !important;
+}
+
+body.single-post footer,
+body.single footer,
+footer,
+footer.site-footer,
+footer.row_am {
+  margin-top: 24px !important;
+}
+
+
+/* ==========================================================================
+   INCREASE POST VIEWS SIZE & ELIMINATE SPACE BELOW DISCLAIMER
+   ========================================================================== */
+.post-views,
+.post-views.content-post {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 20px !important;
+  padding: 8px 18px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 16px !important;
+  margin-bottom: 12px !important;
+}
+
+.post-views-icon,
+.post-views .dashicons {
+  font-size: 1.2rem !important;
+  color: #2786a5 !important;
+  vertical-align: middle !important;
+}
+
+.ew-medical-disclaimer {
+  margin-top: 16px !important;
+  margin-bottom: 8px !important;
+}
+
+.single-post #page,
+.single-post .site-content,
+.single-post #primary,
+.single-post .site-main,
+.single-post article,
+.single-post .inside-article,
+.single-post #right-sidebar,
+.single-post .inside-right-sidebar,
+.single-post .widget-area {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+body.single-post footer,
+body.single footer,
+footer,
+footer.site-footer,
+footer.row_am {
+  margin-top: 12px !important;
+}
+
+
+/* ==========================================================================
+   HIGH CONTRAST TEXT VISIBILITY FIX FOR DARK CTA CARDS & BANNER BOXES
+   ========================================================================== */
+.ew-blog-cta--app,
+.ew-blog-service-card,
+.ew-blog-cta {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  border-radius: 16px !important;
+  padding: 28px 32px !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25) !important;
+  margin: 32px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__eyebrow,
+.ew-blog-service-card .ew-blog-cta__eyebrow,
+.ew-blog-cta .ew-blog-cta__eyebrow {
+  color: #38bdf8 !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 8px !important;
+  display: block !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__heading,
+.ew-blog-cta--app h3,
+.ew-blog-cta--app h4,
+.ew-blog-service-card .ew-blog-cta__heading,
+.ew-blog-service-card h3,
+.ew-blog-service-card h4,
+.ew-blog-cta h3,
+.ew-blog-cta h4 {
+  color: #ffffff !important;
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  margin-top: 4px !important;
+  margin-bottom: 10px !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__text,
+.ew-blog-cta--app p,
+.ew-blog-service-card .ew-blog-cta__text,
+.ew-blog-service-card p,
+.ew-blog-cta p {
+  color: #f1f5f9 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 18px !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__btn,
+.ew-blog-service-card .ew-blog-cta__btn,
+.ew-blog-cta--app a.btn,
+.ew-blog-service-card a.btn,
+.ew-blog-cta a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 12px 24px !important;
+  border-radius: 30px !important;
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__btn:hover,
+.ew-blog-service-card .ew-blog-cta__btn:hover,
+.ew-blog-cta a:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.5) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+
+/* ==========================================================================
+   MASTER HIGH-SPECIFICITY CONTRAST FIX FOR DARK CTA CARDS (BEATING ENTRY-CONTENT P)
+   ========================================================================== */
+.entry-content .ew-blog-cta p,
+.entry-content .ew-blog-cta--app p,
+.entry-content .ew-blog-service-card p,
+.inside-article .ew-blog-cta p,
+.inside-article .ew-blog-cta--app p,
+.inside-article .ew-blog-service-card p,
+.ew-blog-cta p,
+.ew-blog-cta--app p,
+.ew-blog-service-card p {
+  color: #f1f5f9 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+}
+
+.entry-content .ew-blog-cta h3,
+.entry-content .ew-blog-cta--app h3,
+.entry-content .ew-blog-service-card h3,
+.inside-article .ew-blog-cta h3,
+.inside-article .ew-blog-cta--app h3,
+.inside-article .ew-blog-service-card h3,
+.ew-blog-cta h3,
+.ew-blog-cta--app h3,
+.ew-blog-service-card h3 {
+  color: #ffffff !important;
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
+}
+
+.entry-content .ew-blog-cta .ew-blog-cta__eyebrow,
+.entry-content .ew-blog-cta--app .ew-blog-cta__eyebrow,
+.entry-content .ew-blog-service-card .ew-blog-cta__eyebrow,
+.inside-article .ew-blog-cta .ew-blog-cta__eyebrow,
+.inside-article .ew-blog-cta--app .ew-blog-cta__eyebrow,
+.inside-article .ew-blog-service-card .ew-blog-cta__eyebrow,
+.ew-blog-cta .ew-blog-cta__eyebrow,
+.ew-blog-cta--app .ew-blog-cta__eyebrow,
+.ew-blog-service-card .ew-blog-cta__eyebrow {
+  color: #38bdf8 !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+
+/* ==========================================================================
+   MASTER PARAGRAPH TEXT CONTRAST FIX (CRISP DARK TEXT ON WHITE BACKGROUND)
+   ========================================================================== */
+
+/* 1. Article Body Text on White Background */
+.entry-content p,
+article .entry-content p,
+.inside-article p,
+.site-content p {
+  color: #334155 !important;
+  font-size: 1.08rem !important;
+  line-height: 1.68 !important;
+}
+
+.entry-content a,
+.inside-article a {
+  color: #0284c7 !important;
+  text-decoration: underline !important;
+}
+
+.entry-content a:hover,
+.inside-article a:hover {
+  color: #0369a1 !important;
+}
+
+/* 2. Dark CTA Card Text ONLY */
+.ew-blog-cta,
+.ew-blog-cta--app,
+.ew-blog-service-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  color: #ffffff !important;
+}
+
+.ew-blog-cta p,
+.ew-blog-cta--app p,
+.ew-blog-service-card p {
+  color: #f1f5f9 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+}
+
+.ew-blog-cta h3,
+.ew-blog-cta--app h3,
+.ew-blog-service-card h3 {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+.ew-blog-cta .ew-blog-cta__eyebrow,
+.ew-blog-cta--app .ew-blog-cta__eyebrow,
+.ew-blog-service-card .ew-blog-cta__eyebrow {
+  color: #38bdf8 !important;
+  font-weight: 700 !important;
+}
+
+.ew-blog-cta a.ew-blog-cta__btn,
+.ew-blog-cta--app a.ew-blog-cta__btn,
+.ew-blog-service-card a.ew-blog-cta__btn {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+}
+
+
+/* ==========================================================================
+   CLEAN WHITE SPACE / GAP ABOVE FOOTER SECTION
+   ========================================================================== */
+#callback-form-section,
+.ew-contact-hub-section,
+.service_section#callback-form-section,
+.how_it_section,
+.row_am:last-of-type {
+  margin-bottom: 48px !important;
+  padding-bottom: 0 !important;
+}
+
+body footer,
+body.inner-services-page footer,
+footer.white_text,
+footer {
+  margin-top: 48px !important;
+  clear: both !important;
+}

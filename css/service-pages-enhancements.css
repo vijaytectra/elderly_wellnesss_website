@@ -695,13 +695,17 @@ footer {
   margin: 0 auto !important;
 }
 
-@media (max-width: 767px) {
-  .about_slider #about_slider .abt_slides img,
-  .about_slider .abt_slides img,
-  .abt_slides img {
-    height: 260px !important;
-    max-height: 260px !important;
-  }
+/* ==========================================================================
+   HERO BANNER HEADING TEAL COLOR RESTORATION
+   ========================================================================== */
+#banner-font2,
+#banner-font2 .hero-age,
+#banner-font2 .hero-serif,
+.banner_section .banner_text #banner-font2,
+.banner_section .banner_text #banner-font2 .hero-age,
+.banner_section .banner_text #banner-font2 .hero-serif {
+  color: #2786a5 !important;
 }
+
 
 

@@ -944,12 +944,12 @@ header {
 .banner_section .banner_text #banner-font2 {
   font-family: "Cormorant Garamond", "Times New Roman", serif;
   font-size: 62px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.22;
-  letter-spacing: 0;
-  text-transform: none !important;
-  color: #000000 !important;
-  margin: 0 0 28px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin: 0 0 40px;
 }
 
 .banner_section .banner_text #banner-font2 .hero-age {
@@ -958,8 +958,7 @@ header {
   font-weight: 400;
   line-height: 0.85;
   letter-spacing: 0;
-  text-transform: none !important;
-  color: #000000 !important;
+  text-transform: none;
   display: inline-block;
   margin-right: 10px;
   vertical-align: baseline;
@@ -969,9 +968,7 @@ header {
 
 .banner_section .banner_text #banner-font2 .hero-serif {
   font-family: "Cormorant Garamond", "Times New Roman", serif;
-  font-weight: 400;
-  text-transform: none !important;
-  color: #000000 !important;
+  font-weight: 300;
 }
 
 .banner_section .banner_text #banner-font2 .hero-line2 {

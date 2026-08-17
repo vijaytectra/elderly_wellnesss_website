@@ -696,7 +696,7 @@ footer {
 }
 
 /* ==========================================================================
-   HERO BANNER HEADING TEAL COLOR RESTORATION
+   HERO BANNER HEADING BLACK COLOR & MIXED CASE RESTORATION
    ========================================================================== */
 #banner-font2,
 #banner-font2 .hero-age,
@@ -704,8 +704,10 @@ footer {
 .banner_section .banner_text #banner-font2,
 .banner_section .banner_text #banner-font2 .hero-age,
 .banner_section .banner_text #banner-font2 .hero-serif {
-  color: #2786a5 !important;
+  color: #000000 !important;
+  text-transform: none !important;
 }
+
 
 
 

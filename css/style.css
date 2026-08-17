@@ -946,9 +946,9 @@ header {
   font-size: 62px;
   font-weight: 400;
   line-height: 1.22;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #2786a5 !important;
+  letter-spacing: 0;
+  text-transform: none !important;
+  color: #000000 !important;
   margin: 0 0 28px;
 }
 
@@ -958,8 +958,8 @@ header {
   font-weight: 400;
   line-height: 0.85;
   letter-spacing: 0;
-  text-transform: none;
-  color: #2786a5 !important;
+  text-transform: none !important;
+  color: #000000 !important;
   display: inline-block;
   margin-right: 10px;
   vertical-align: baseline;
@@ -970,7 +970,8 @@ header {
 .banner_section .banner_text #banner-font2 .hero-serif {
   font-family: "Cormorant Garamond", "Times New Roman", serif;
   font-weight: 400;
-  color: #2786a5 !important;
+  text-transform: none !important;
+  color: #000000 !important;
 }
 
 .banner_section .banner_text #banner-font2 .hero-line2 {

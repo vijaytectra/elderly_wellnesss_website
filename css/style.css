@@ -1598,10 +1598,10 @@ iframe#youtubevideo {
 .service_section .service_blocks .img img,
 .inner_block .img img,
 .image-sec-banner-inner-service img {
-  width: 100% !important;
+  width: auto !important;
   max-width: 100% !important;
+  max-height: 440px !important;
   height: auto !important;
-  max-height: none !important;
   object-fit: contain !important;
   border-radius: 20px !important;
   display: block !important;

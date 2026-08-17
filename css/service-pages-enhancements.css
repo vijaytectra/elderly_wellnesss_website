@@ -660,3 +660,32 @@ footer {
   margin-top: 48px !important;
   clear: both !important;
 }
+
+/* ==========================================================================
+   SERVICE SECTION IMAGE SIZE REDUCTION (NO CROPPING)
+   ========================================================================== */
+.service_section .service_blocks .inner_block img,
+.service_section .service_blocks .img img,
+.service_section .img img,
+.inner_block .img img,
+.image-sec-banner-inner-service img {
+  width: auto !important;
+  max-width: 100% !important;
+  max-height: 440px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 20px !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 767px) {
+  .service_section .service_blocks .inner_block img,
+  .service_section .service_blocks .img img,
+  .service_section .img img,
+  .inner_block .img img,
+  .image-sec-banner-inner-service img {
+    max-height: 320px !important;
+  }
+}
+

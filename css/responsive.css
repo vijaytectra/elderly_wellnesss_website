@@ -833,6 +833,10 @@ footer a,
     font-size: 35px;
   }
 
+  .section_title h2 span {
+    display: block !important;
+  }
+
   .section_title h2 br {
     display: none;
   }
@@ -3179,34 +3183,8 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     padding-bottom: 0 !important;
   }
 
-  .task_single_card_item .task_single_img_stage {
-    width: 100% !important;
-    height: auto !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin-bottom: 8px !important;
-  }
-
-  .task_single_card_item .task_single_img_stage .task_single_img_item {
-    position: relative !important;
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-
-  .task_single_card_item .task_single_img_stage img {
-    max-height: 360px !important;
-    max-width: 100% !important;
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain !important;
-  }
-
   .task_single_card_item .task_single_text_stage {
+    order: 1 !important;
     width: 100% !important;
     position: relative !important;
     height: auto !important;
@@ -3227,7 +3205,387 @@ p a:not(.ew-blog-cta__btn):not(.btn):not(.dark_btn):hover,
     margin-bottom: 0 !important;
   }
 
+  .task_single_card_item .task_single_img_stage {
+    order: 2 !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 8px !important;
+  }
+
   .task_single_indicators {
     display: none !important;
   }
+}
+
+/* Restored Copyright Year Font Reset */
+.ew-current-year {
+  font-weight: inherit !important;
+  color: inherit !important;
+}
+
+/* Ensure page_wrapper container does not clip or trap fixed overlays */
+.page_wrapper {
+  overflow: visible !important;
+}
+
+/* Fixed Floating WhatsApp Contact Overlay on Left Side (Matches Location Page Chaty design) */
+a.ew-whatsapp-floating-btn,
+.ew-whatsapp-floating-btn {
+  position: fixed !important;
+  bottom: 25px !important;
+  left: 25px !important;
+  right: auto !important;
+  top: auto !important;
+  width: auto !important;
+  height: 54px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  z-index: 2147483647 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: translate3d(0, 0, 0) !important;
+  pointer-events: auto !important;
+}
+
+.ew-whatsapp-floating-btn .ew-wa-circle {
+  width: 54px !important;
+  height: 54px !important;
+  min-width: 54px !important;
+  min-height: 54px !important;
+  border-radius: 50% !important;
+  background-color: #49E670 !important;
+  box-shadow: 0 4px 16px rgba(73, 230, 112, 0.45) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide text bubble / CTA badge to keep ONLY the logo icon */
+.chaty-btn-cta,
+.chaty-svg-cta,
+.ew-wa-bubble {
+  display: none !important;
+}
+
+.ew-whatsapp-floating-btn:hover .ew-wa-circle {
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 22px rgba(73, 230, 112, 0.65) !important;
+}
+
+.ew-whatsapp-floating-btn:hover .ew-wa-bubble {
+  transform: translateX(3px) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.ew-whatsapp-floating-btn .ew-wa-arrow {
+  position: absolute !important;
+  left: -7px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-top: 6px solid transparent !important;
+  border-bottom: 6px solid transparent !important;
+  border-right: 8px solid #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Compact map iframe height for mobile screens */
+@media screen and (max-width: 767.98px) {
+  .map_block iframe {
+    height: 250px !important;
+    max-height: 250px !important;
+    border-radius: 12px !important;
+  }
+}
+
+/* Floating WhatsApp Button & Clean Bottom Body (Universal) */
+body {
+  padding-bottom: 0 !important;
+}
+
+.ew-mobile-sticky-bottom-bar {
+  display: none !important;
+}
+
+a.ew-whatsapp-floating-btn,
+.ew-whatsapp-floating-btn {
+  position: fixed !important;
+  bottom: 25px !important;
+  left: 25px !important;
+  right: auto !important;
+  top: auto !important;
+  width: auto !important;
+  height: 54px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  z-index: 2147483647 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: translate3d(0, 0, 0) !important;
+  pointer-events: auto !important;
+}
+
+.ew-whatsapp-floating-btn .ew-wa-circle {
+  width: 54px !important;
+  height: 54px !important;
+  min-width: 54px !important;
+  min-height: 54px !important;
+  border-radius: 50% !important;
+  background-color: #49E670 !important;
+  box-shadow: 0 4px 16px rgba(73, 230, 112, 0.45) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ew-whatsapp-floating-btn:hover .ew-wa-circle {
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 22px rgba(73, 230, 112, 0.65) !important;
+}
+
+
+/* Pricing Teaser Chip Zoom Effect (Light Soft Chip - No Color Shift) */
+.pricing-teaser-link {
+  color: #2786a5 !important;
+  background: #e6f4f8 !important;
+  border: 1.5px solid #bce2ed !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  padding: 6px 18px !important;
+  border-radius: 20px !important;
+  text-decoration: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.pricing-teaser-link:hover {
+  color: #2786a5 !important;
+  background: #e6f4f8 !important;
+  border-color: #bce2ed !important;
+  transform: scale(1.06) !important;
+  box-shadow: 0 4px 14px rgba(39, 134, 165, 0.25) !important;
+}
+
+
+/* ==========================================================================
+   TIGHTEN BOTTOM EMPTY SPACES BEFORE FOOTER
+   ========================================================================== */
+.post-views,
+.post-views.content-post {
+  margin-top: 12px !important;
+  margin-bottom: 14px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.ew-medical-disclaimer {
+  margin-top: 16px !important;
+  margin-bottom: 20px !important;
+}
+
+.single-post #page,
+.single-post .site-content,
+.single-post #primary,
+.single-post .site-main,
+.single-post article,
+.single-post .inside-article,
+.single-post #right-sidebar,
+.single-post .inside-right-sidebar {
+  padding-bottom: 12px !important;
+  margin-bottom: 0 !important;
+}
+
+body.single-post footer,
+body.single footer,
+footer,
+footer.site-footer,
+footer.row_am {
+  margin-top: 24px !important;
+}
+
+
+/* ==========================================================================
+   INCREASE POST VIEWS SIZE & ELIMINATE SPACE BELOW DISCLAIMER
+   ========================================================================== */
+.post-views,
+.post-views.content-post {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 20px !important;
+  padding: 8px 18px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 16px !important;
+  margin-bottom: 12px !important;
+}
+
+.post-views-icon,
+.post-views .dashicons {
+  font-size: 1.2rem !important;
+  color: #2786a5 !important;
+  vertical-align: middle !important;
+}
+
+.ew-medical-disclaimer {
+  margin-top: 16px !important;
+  margin-bottom: 8px !important;
+}
+
+.single-post #page,
+.single-post .site-content,
+.single-post #primary,
+.single-post .site-main,
+.single-post article,
+.single-post .inside-article,
+.single-post #right-sidebar,
+.single-post .inside-right-sidebar,
+.single-post .widget-area {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+body.single-post footer,
+body.single footer,
+footer,
+footer.site-footer,
+footer.row_am {
+  margin-top: 12px !important;
+}
+
+
+/* ==========================================================================
+   HIGH CONTRAST TEXT VISIBILITY FIX FOR DARK CTA CARDS & BANNER BOXES
+   ========================================================================== */
+.ew-blog-cta--app,
+.ew-blog-service-card,
+.ew-blog-cta {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  border-radius: 16px !important;
+  padding: 28px 32px !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25) !important;
+  margin: 32px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__eyebrow,
+.ew-blog-service-card .ew-blog-cta__eyebrow,
+.ew-blog-cta .ew-blog-cta__eyebrow {
+  color: #38bdf8 !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 8px !important;
+  display: block !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__heading,
+.ew-blog-cta--app h3,
+.ew-blog-cta--app h4,
+.ew-blog-service-card .ew-blog-cta__heading,
+.ew-blog-service-card h3,
+.ew-blog-service-card h4,
+.ew-blog-cta h3,
+.ew-blog-cta h4 {
+  color: #ffffff !important;
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  margin-top: 4px !important;
+  margin-bottom: 10px !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__text,
+.ew-blog-cta--app p,
+.ew-blog-service-card .ew-blog-cta__text,
+.ew-blog-service-card p,
+.ew-blog-cta p {
+  color: #f1f5f9 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 18px !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__btn,
+.ew-blog-service-card .ew-blog-cta__btn,
+.ew-blog-cta--app a.btn,
+.ew-blog-service-card a.btn,
+.ew-blog-cta a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 12px 24px !important;
+  border-radius: 30px !important;
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__btn:hover,
+.ew-blog-service-card .ew-blog-cta__btn:hover,
+.ew-blog-cta a:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.5) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+
+/* ==========================================================================
+   CLEAN WHITE SPACE / GAP ABOVE FOOTER SECTION
+   ========================================================================== */
+#callback-form-section,
+.ew-contact-hub-section,
+.service_section#callback-form-section,
+.how_it_section,
+.row_am:last-of-type {
+  margin-bottom: 48px !important;
+  padding-bottom: 0 !important;
+}
+
+body footer,
+body.inner-services-page footer,
+footer.white_text,
+footer {
+  margin-top: 48px !important;
+  clear: both !important;
 }

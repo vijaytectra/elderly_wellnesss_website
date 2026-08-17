@@ -8,32 +8,169 @@
     <title>Elderly Wellness | Elder Care Services in Chennai</title>
     <meta property="og:site_name" content="Elderly Wellness"/>
     <meta name="description" content=" Contact us today at +91 99448 90577 for expert elder care services in Chennai. Elderly Wellness provides compassionate and personalized care for your loved ones."/>
-    <meta property="og:title" content="Elderly Wellness"/>
+    <meta property="og:title" content="Elderly Wellness | Trusted In-Home Elder Care Services in Chennai"/>
     <meta property="og:site_name" content="Elderly Wellness"/>
-    <meta property="og:url" content="."/>
-    <meta property="og:description" content="Discover trusted elderly care services in Chennai and explore wellness blogs dedicated to senior health, safety, and holistic well-being."/>
+    <meta property="og:url" content="https://theelderlywellness.com/index.html"/>
+    <meta property="og:description" content="Connect with certified physiotherapists, home nurses, and caregivers in Chennai. Personalized, compassionate senior care delivered right to your doorstep."/>
     <meta property="og:type" content="website"/>
-    <meta property="og:image" content="images/logo.png"/>
+    <meta property="og:image" content="https://theelderlywellness.com/images/og-share-banner.jpg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
     <meta name="Robots" content="index, follow"/>
-    <link rel="canonical" href="index.html"/>
+    <link rel="canonical" href="https://www.theelderlywellness.com/"/>
     <!-- icofont-css-link -->
-    <link rel="stylesheet" href="css/icofont.min.css"/>
+    <link rel="stylesheet" href="css/icofont.min.css?v=20260817i"/>
     <!-- Owl-Carosal-Style-link -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="css/owl.carousel.min.css?v=20260817i"/>
     <!-- Bootstrap-Style-link -->
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css?v=20260817i"/>
     <!-- Aos-Style-link -->
-    <link rel="stylesheet" href="css/aos.css"/>
-    <link rel="stylesheet" href="css/style.css?v=26.0"/>
+    <link rel="stylesheet" href="css/aos.css?v=20260817i"/>
+    <link rel="stylesheet" href="css/style.css?v=20260817restored"/>
     <!-- Responsive-Style-link -->
-    <link rel="stylesheet" href="css/responsive.css?v=11.0"/>
-    <link rel="stylesheet" href="css/home-responsive.css?v=3.0"/>
+    <link rel="stylesheet" href="css/responsive.css?v=20260817i"/>
+    <link rel="stylesheet" href="css/callback-form.css?v=20260817i"/>
+    <link rel="stylesheet" href="css/home-responsive.css?v=20260817i"/>
+    <style>
+      /* Hero Video Box Container & Controls */
+      .banner_slider {
+        position: relative !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+      }
+
+      .banner_slider .owl-dots {
+        display: none !important;
+      }
+
+      .banner_slider #frmae_slider,
+      .banner_slider .owl-stage-outer,
+      .banner_slider .owl-stage,
+      .banner_slider .owl-item {
+        border-radius: 28px !important;
+        overflow: hidden !important;
+        background: transparent !important;
+      }
+
+      .slider_media {
+        position: relative !important;
+        border-radius: 28px !important;
+        overflow: hidden !important;
+        cursor: pointer;
+        background: #0f172a !important;
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18) !important;
+        line-height: 0 !important;
+        font-size: 0 !important;
+      }
+
+      .slider_media video {
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        border-radius: 28px !important;
+        object-fit: cover !important;
+        aspect-ratio: 16 / 10 !important;
+      }
+
+      /* Center Play/Pause Button - Premium Glassmorphic Circle */
+      .video_play_toggle_btn {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 72px !important;
+        height: 72px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 50% !important;
+        background: rgba(15, 23, 42, 0.72) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border: 2.5px solid rgba(255, 255, 255, 0.95) !important;
+        color: #ffffff !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        z-index: 20 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), 0 0 0 4px rgba(255, 255, 255, 0.15) !important;
+        outline: none !important;
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease !important;
+      }
+
+      /* Hide center button ONLY when video is playing AND mouse is not hovering */
+      .slider_media:not(.video-paused):not(:hover) .video_play_toggle_btn {
+        opacity: 0 !important;
+        visibility: hidden !important;
+      }
+
+      .video_play_toggle_btn:hover {
+        background: #2786a5 !important;
+        border-color: #ffffff !important;
+        transform: translate(-50%, -50%) scale(1.1) !important;
+        box-shadow: 0 12px 35px rgba(39, 134, 165, 0.6), 0 0 0 6px rgba(255, 255, 255, 0.25) !important;
+      }
+
+      /* Small Curved Floating Box Navigation at Bottom of Video (Floating Pill Container) */
+      .hero_video_nav_tabs {
+        position: absolute !important;
+        bottom: 16px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 15 !important;
+        background: rgba(15, 23, 42, 0.75) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        padding: 4px 6px !important;
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 4px !important;
+        border-radius: 30px !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        max-width: 90% !important;
+        width: auto !important;
+        margin-top: 0 !important;
+      }
+
+      .hero_vid_tab {
+        padding: 6px 16px !important;
+        border-radius: 20px !important;
+        font-size: 12.5px !important;
+        font-weight: 600 !important;
+        border: none !important;
+        background: transparent !important;
+        color: rgba(255, 255, 255, 0.85) !important;
+        cursor: pointer !important;
+        transition: all 0.25s ease !important;
+        outline: none !important;
+        white-space: nowrap !important;
+        line-height: 1.2 !important;
+      }
+
+      .hero_vid_tab:hover {
+        background: rgba(255, 255, 255, 0.18) !important;
+        color: #ffffff !important;
+      }
+
+      .hero_vid_tab.active {
+        background: #2786a5 !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
+        box-shadow: 0 4px 12px rgba(39, 134, 165, 0.5) !important;
+      }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com/"/>
     
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
     
-    <link href="css/cormorant-garamond.css" rel="stylesheet"/>
-    <link href="css/playball.css" rel="stylesheet"/>
+    <link href="css/cormorant-garamond.css?v=20260817i" rel="stylesheet"/>
+    <link href="css/playball.css?v=20260817i" rel="stylesheet"/>
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"/>
     
@@ -75,16 +212,19 @@
         }
       }
     </script>
-  </head>
+    <link rel="stylesheet" href="css/theme-tokens.css?v=20260817i" />
+</head>
 
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <!-- Google Tag Manager (noscript) -->
     
     <!-- End Google Tag Manager (noscript) -->
     <!-- Preloader -->
     <div id="preloader">
       <div id="loader"></div>
-    </div>
+</div>
 
                         <!-- Header Start -->
     <header>
@@ -92,7 +232,7 @@
       <div class="container">
         <!-- navigation bar -->
         <nav class="navbar navbar-expand-lg">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="javascript:void(0);">
             <img src="images/logo.png" alt="Elderly Wellness"/>
           </a>
           <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,59 +244,57 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="about.html" class="nav-link">About Us</a>
-              </li>
+            <ul class="navbar-nav ml-auto align-items-center">
               <li class="nav-item has_dropdown">
-                <a class="nav-link" href="index.html#">Services</a>
-                <span class="drp_btn"><i class="icofont-rounded-down"></i></span>
-                <div class="sub_menu">
+                <a class="nav-link" href="services.html">Services</a>
+                <button type="button" class="drp_btn menu-toggle" aria-expanded="false" aria-controls="services-sub-menu" aria-label="Toggle Services Menu"><i class="icofont-rounded-down" aria-hidden="true"></i></button>
+                <div class="sub_menu" id="services-sub-menu">
                   <ul>
                     <li>
-                      <a href="physiotherapy-services-for-elders.html">Physiotherapy</a>
+                      <a href="physiotherapy-services-for-elders.html">
+                        <span class="sub-title">Physiotherapy</span>
+                        <span class="sub-hint">Mobility, pain relief &amp; recovery after surgery</span>
+                      </a>
                     </li>
                     <li>
-                      <a href="nursing-services-for-elders.html">Nursing Service</a>
+                      <a href="nursing-services-for-elders.html">
+                        <span class="sub-title">Nursing Service</span>
+                        <span class="sub-hint">24/7 professional in-home medical care</span>
+                      </a>
                     </li>
                     <li>
-                      <a href="geriatric-care-services-for-elders.html">Geriatric Care</a>
+                      <a href="geriatric-care-services-for-elders.html">
+                        <span class="sub-title">Geriatric Care</span>
+                        <span class="sub-hint">Comprehensive elder health &amp; wellness support</span>
+                      </a>
                     </li>
                     <li>
-                      <a href="assisted-living-support-services-for-elders.html">Assisted Living Support</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item has_dropdown">
-                <a class="nav-link" href="index.html#">Locations</a>
-                <span class="drp_btn"><i class="icofont-rounded-down"></i></span>
-                <div class="sub_menu">
-                  <ul>
-                    <li>
-                      <a href="blogs/elderly-care-services-in-chennai/index.html">Chennai</a>
+                      <a href="assisted-living-support-services-for-elders.html">
+                        <span class="sub-title">Assisted Living Support</span>
+                        <span class="sub-hint">Daily living assistance &amp; compassionate care</span>
+                      </a>
                     </li>
                   </ul>
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="board-of-advisors.html">Board of Advisors</a>
+                <a class="nav-link" href="how-elderly-wellness-works.html">How It Works</a>
+              </li>
+                            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="investors.html">Investors</a>
+                <a class="nav-link" href="blogs/index.html">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="blogs/index.html">Blogs</a>
+                <a class="nav-link" href="chennai.html"><i class="icofont-location-pin" style="color: #2786a5; margin-right: 4px;" aria-hidden="true"></i>Serving Chennai</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
+              <li class="nav-item header-phone-item d-none d-lg-inline-block">
+                <a href="tel:+919944890577" class="nav-link header-phone-link" style="color: #2786a5; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;"><i class="icofont-phone" aria-hidden="true"></i> +91 99448 90577</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item ml-lg-2">
                 <div class="btn_block">
-                  <a class="nav-link dark_btn" href="assets/elderly_wellness.pdf" download="elderly_wellness.pdf">Download</a>
+                  <a class="nav-link dark_btn ew-book-care-btn" href="contact.html">Book Care</a>
                   <div class="btn_bottom"></div>
                 </div>
               </li>
@@ -177,29 +315,65 @@
           <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="1500">
             <!-- banner text -->
             <div class="banner_text">
-              <h2 class="heading-font" id="banner-font2">
+              <h1 class="heading-font" id="banner-font2">
                 <span class="hero-age">Age</span>
-                <span class="hero-serif">MEETS</span>
-                <span class="hero-serif hero-line2">ASSISTANCE.</span>
-              </h2>
+                <span class="hero-serif">Meets</span>
+                <span class="hero-serif hero-line2">Assistance.</span>
+              </h1>
               <p class="remove-br">
-                At Elderly, we bridge the gap between physiotherapists, nursing
-                assistants, caregivers, and the elderly.
+                At Elderly Wellness, we bridge the gap between physiotherapists, nursing
+                assistants, caregivers, and the elderly. <br/>
+                <span class="brand-clarification" style="display: inline-block; margin-top: 6px; font-weight: 600; color: #2786a5;">Elderly Wellness is our care service. Elderly Care Plus is our app.</span>
               </p>
 
-              <!-- app buttons -->
-              <ul class="app_btn">
-                <li>
-                  <a href="https://play.google.com/store/apps/details?id=com.elderly.nri">
-                    <img class="blue_img" src="images/googleplay.png" alt="image"/>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://apps.apple.com/in/app/elderly-care-plus/id6740391242">
-                    <img class="blue_img" src="images/appstorebtn.png" alt="image"/>
-                  </a>
-                </li>
-              </ul>
+              <!-- Hero CTA Action Buttons -->
+              <div class="hero_cta_buttons">
+                <a href="contact.html" class="btn puprple_btn ml-0 ew-hero-btn-primary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: -3px;"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg> Request a Callback
+                </a>
+                <a href="tel:+919944890577" class="btn black_btn ml-0 ew-hero-btn-secondary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: -3px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Call Now
+                </a>
+              </div>
+
+              <!-- App Store Badges (smaller below buttons) -->
+              <div class="hero_app_badges">
+                <span class="hero_app_note">Or download our app:</span>
+                <ul class="app_btn hero_app_btn_sm">
+                  <li>
+                    <a href="https://play.google.com/store/apps/details?id=com.elderly.nri" target="_blank" rel="noopener noreferrer">
+                      <img loading="lazy" class="blue_img" src="images/googleplay.png" alt="Download Elderly Care Plus on Google Play"/>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://apps.apple.com/in/app/elderly-care-plus/id6740391242" target="_blank" rel="noopener noreferrer">
+                      <img loading="lazy" class="blue_img" src="images/appstorebtn.png" alt="Download Elderly Care Plus on the App Store"/>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              
+              
+              
+              
+              <!-- Hero Trust Strip (Exact requested text & matching 2px stroke SVG icons) -->
+              <div class="ew-hero-trust-strip" style="margin-top: 22px; padding-top: 16px; border-top: 1.5px dashed rgba(39, 134, 165, 0.25);">
+                <div style="display: flex; gap: 14px 24px; flex-wrap: wrap; align-items: center;">
+                  <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #1e293b;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2786a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>2-Hour Replacement Guarantee</span>
+                  </div>
+                  <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #1e293b;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2786a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+                    <span>Police-Verified, Trained Caregivers</span>
+                  </div>
+                  <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #1e293b;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2786a5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><polyline points="16 9 10 15 7 12"></polyline></svg>
+                    <span>No Lock-In Contracts</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -208,20 +382,36 @@
             <div class="banner_slider">
               <div id="frmae_slider" class="owl-carousel owl-theme">
                 <div class="item">
-                  <div class="slider_media">
-                    <video src="images/home/1.mp4" autoplay muted loop playsinline webkit-playsinline></video>
+                  <div class="slider_media video-paused" data-slide-index="0">
+                    <video src="images/home/opt/1.mp4" poster="images/home/opt/poster-1.jpg" muted preload="metadata" playsinline webkit-playsinline></video>
+                    <button class="video_play_toggle_btn" aria-label="Play video">
+                      <svg class="play-icon" width="26" height="26" viewBox="0 0 24 24" fill="#ffffff" style="margin-left: 3px;"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
                   </div>
                 </div>
                 <div class="item">
-                  <div class="slider_media">
-                    <video src="images/home/2.mp4" autoplay muted loop playsinline webkit-playsinline></video>
+                  <div class="slider_media video-paused" data-slide-index="1">
+                    <video src="images/home/opt/2.mp4" poster="images/home/opt/poster-2.jpg" muted preload="metadata" playsinline webkit-playsinline></video>
+                    <button class="video_play_toggle_btn" aria-label="Play video">
+                      <svg class="play-icon" width="26" height="26" viewBox="0 0 24 24" fill="#ffffff" style="margin-left: 3px;"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
                   </div>
                 </div>
                 <div class="item">
-                  <div class="slider_media">
-                    <video src="images/home/3.mp4" muted loop autoplay playsinline webkit-playsinline></video>
+                  <div class="slider_media video-paused" data-slide-index="2">
+                    <video src="images/home/opt/3.mp4" poster="images/home/opt/poster-3.jpg" muted preload="metadata" playsinline webkit-playsinline></video>
+                    <button class="video_play_toggle_btn" aria-label="Play video">
+                      <svg class="play-icon" width="26" height="26" viewBox="0 0 24 24" fill="#ffffff" style="margin-left: 3px;"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
                   </div>
                 </div>
+              </div>
+
+              <!-- Small Curved Floating Box Navigation at Bottom of Video -->
+              <div class="hero_video_nav_tabs">
+                <button class="hero_vid_tab active" onclick="goToHeroVideo(0, event)">Physio</button>
+                <button class="hero_vid_tab" onclick="goToHeroVideo(1, event)">Nursing</button>
+                <button class="hero_vid_tab" onclick="goToHeroVideo(2, event)">Geriatric</button>
               </div>
             </div>
           </div>
@@ -233,14 +423,14 @@
     </section>
     <!-- Banner-Section-end -->
 
-    <!-- Service Section Start -->
+<!-- Service Section Start -->
 
-    <div class="page_wrapper">
+    <div class="page_wrapper" id="main">
       <!-- Key Feature Section Start -->
       <section class="key_feature_section row_am" id="home-services-section">
         <div class="key_innner">
           <div class="dotes_blue">
-            <img src="images/blue_dotes.png" alt="image"/>
+            <img loading="lazy" src="images/blue_dotes.png" alt=""/>
           </div>
           <div class="container">
             <div class="section_title">
@@ -258,7 +448,7 @@
                       </p>
                     </div>
                     <div class="img">
-                      <img src="images/home/Physiotherapy.png" alt="image"/>
+                      <img loading="lazy" src="images/home/Physiotherapy.png" alt="Elderly Wellness Care Services"/>
                     </div>
                   </div>
                 </a>
@@ -274,7 +464,7 @@
                       </p>
                     </div>
                     <div class="img">
-                      <img src="images/home/Nurse.png" alt="image"/>
+                      <img loading="lazy" src="images/home/Nurse.png" alt="Elderly Wellness Care Services"/>
                     </div>
                   </div>
                 </a>
@@ -290,7 +480,7 @@
                       </p>
                     </div>
                     <div class="img">
-                      <img src="images/home/geriatric-care.png" alt="image"/>
+                      <img loading="lazy" src="images/home/geriatric-care.png" alt="Elderly Wellness Care Services"/>
                     </div>
                   </div>
                 </a>
@@ -306,7 +496,7 @@
                       </p>
                     </div>
                     <div class="img">
-                      <img src="images/home/assisted-living-care.png" alt="image"/>
+                      <img loading="lazy" src="images/home/assisted-living-care.png" alt="Elderly Wellness Care Services"/>
                     </div>
                   </div>
                 </a>
@@ -326,10 +516,8 @@
           <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
             <span class="title_badge mb-1">About us</span>
             <h2>
-              Application where Touch of Care
-              <br/>
-              <span>meets the</span>
-              <span>Ease of Technology.</span>
+              Application where Touch of Care<br/>
+              <span>meets the Ease of Technology.</span>
             </h2>
           </div>
           <div class="row">
@@ -337,25 +525,25 @@
               <ul class="app_statstic" id="counter" data-aos="fade-in" data-aos-duration="1500">
                 <li data-aos="fade-up" data-aos-duration="1500">
                   <div class="text">
-                    <i class="icofont-user-suited stat_icon"></i>
+                    <i class="icofont-user-suited stat_icon" aria-hidden="true"></i>
                     <p>Experienced Health<br/>and Home Care<br/>Experts</p>
                   </div>
                 </li>
                 <li data-aos="fade-up" data-aos-duration="1500">
                   <div class="text">
-                    <i class="icofont-ui-calendar stat_icon"></i>
+                    <i class="icofont-ui-calendar stat_icon" aria-hidden="true"></i>
                     <p>Simple and<br/>Convenient<br/>Bookings</p>
                   </div>
                 </li>
                 <li data-aos="fade-up" data-aos-duration="1500">
                   <div class="text">
-                    <i class="icofont-home stat_icon"></i>
+                    <i class="icofont-home stat_icon" aria-hidden="true"></i>
                     <p>Personalized Care<br/>at Your<br/>Doorstep</p>
                   </div>
                 </li>
                 <li data-aos="fade-up" data-aos-duration="1500">
                   <div class="text">
-                    <i class="icofont-headphone-alt stat_icon"></i>
+                    <i class="icofont-headphone-alt stat_icon" aria-hidden="true"></i>
                     <p>24/7 Customer<br/>Support</p>
                   </div>
                 </li>
@@ -363,7 +551,7 @@
             </div>
             <div class="col-lg-4 col-md-6">
               <div class="abtImg text-center" data-aos="fade-up" data-aos-duration="1500">
-                <img src="images/appscreen.png" alt="image"/>
+                <img loading="lazy" src="images/appscreen.png" alt="Elderly Wellness Care Services"/>
               </div>
             </div>
             <div class="col-lg-4">
@@ -384,10 +572,10 @@
                 ones receive the best possible care when and where they need it.
               </p>
               <div class="video_block" data-aos="fade-up" data-aos-duration="1500">
-                <img class="thumbnil" src="images/applicationvideothumb.jpg" alt="image"/>
+                <img loading="lazy" class="thumbnil" src="images/applicationvideothumb.jpg" alt="Elderly Wellness Care Services"/>
                 <div class="playBtn">
-                  <a href="index.html#" class="popup-youtube play-button play_icon" data-url="https://www.youtube.com/embed/h_Kc4mmA3oU?autoplay=1&amp;mute=1" data-toggle="modal" data-target="#myModal" title="XJj2PbenIsU"><img src="images/play-white.png" alt="img"/></a>
-                  <img class="spin_text" src="images/playvideotext.png" alt="image"/>
+                  <a href="javascript:void(0);" class="popup-youtube play-button play_icon" data-url="https://www.youtube.com/embed/h_Kc4mmA3oU?autoplay=1&amp;mute=1" data-toggle="modal" data-target="#myModal" title="XJj2PbenIsU"><img loading="lazy" src="images/play-white.png" alt="img"/></a>
+                  <img loading="lazy" class="spin_text" src="images/playvideotext.png" alt="Elderly Wellness Care Services"/>
                 </div>
               </div>
             </div>
@@ -406,14 +594,14 @@
             <div class="task_single_card_item active" data-index="1">
               <div class="task_single_img_stage">
                 <div class="task_single_img_item">
-                  <img src="images/feature1a.png" alt="Simplified Discovery Process" />
+                  <img loading="lazy" src="images/feature1a.png" alt="Simplified Discovery Process" />
                 </div>
               </div>
               <div class="task_single_text_stage">
                 <div class="task_single_text_item">
                   <div class="section_title white_text">
                     <span class="icon">
-                      <img src="images/feature-icon1.svg" alt="image"/>
+                      <img loading="lazy" src="images/icons/feature-icon1.svg" alt=""/ aria-hidden="true">
                     </span>
                     <h2>Simplified Discovery Process</h2>
                     <p>
@@ -431,14 +619,14 @@
             <div class="task_single_card_item" data-index="2">
               <div class="task_single_img_stage">
                 <div class="task_single_img_item">
-                  <img src="images/feature2a.png" alt="Affordable, Transparent Care" />
+                  <img loading="lazy" src="images/feature2a.png" alt="Affordable, Transparent Care" />
                 </div>
               </div>
               <div class="task_single_text_stage">
                 <div class="task_single_text_item">
                   <div class="section_title white_text">
                     <span class="icon">
-                      <img src="images/feature-icon3.svg" alt="image"/>
+                      <img loading="lazy" src="images/icons/feature-icon3.svg" alt=""/ aria-hidden="true">
                     </span>
                     <h2>Affordable, Transparent Care</h2>
                     <p>
@@ -456,14 +644,14 @@
             <div class="task_single_card_item" data-index="3">
               <div class="task_single_img_stage">
                 <div class="task_single_img_item">
-                  <img src="images/feature3a.png" alt="Reliable, Long-term Support" />
+                  <img loading="lazy" src="images/feature3a.png" alt="Reliable, Long-term Support" />
                 </div>
               </div>
               <div class="task_single_text_stage">
                 <div class="task_single_text_item">
                   <div class="section_title white_text">
                     <span class="icon">
-                      <img src="images/feature-icon2.svg" alt="image"/>
+                      <img loading="lazy" src="images/icons/feature-icon2.svg" alt=""/ aria-hidden="true">
                     </span>
                     <h2>Reliable, Long-term Support</h2>
                     <p>
@@ -482,6 +670,45 @@
       </div>
     </section>
     <!-- Task-App-Section-end -->
+
+      <!-- Pricing Summary Section (Item 10) -->
+
+
+
+      <!-- Testimonials & Proof Section (Item 29) -->
+      <section class="testimonials_section" style="padding: 40px 0 40px 0; background: #ffffff; border-top: 1px solid #f1f5f9;">
+        <div class="container">
+          <div class="section_title text-center mb-4" data-aos="fade-up">
+            <span class="title_badge mb-2">Patient &amp; Family Proof</span>
+            <h2>Trusted by 500+ Families Across Chennai</h2>
+            <p style="max-width: 640px; margin: 12px auto 0; color: #64748b; font-size: 15px;">Read how our verified caregivers and nurses bring peace of mind to NRI sons, daughters, and elderly parents.</p>
+          </div>
+          <div class="row" style="row-gap: 24px;">
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div style="background: #f8fafc; border-radius: 16px; padding: 28px 24px; border: 1.5px solid #e2e8f0; height: 100%;">
+                <div style="color: #f59e0b; margin-bottom: 14px; font-size: 16px;">★★★★★</div>
+                <p style="font-size: 14px; color: #334155; line-height: 1.65; margin-bottom: 20px;">"Living in the US, I was worried about my mother's post-surgery care in Anna Nagar. Elderly Wellness assigned a professional nurse within hours. Highly recommended!"</p>
+                <div style="font-weight: 700; font-size: 14px; color: #1a2e35;">— Rajesh K., NRI Family (USA)</div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+              <div style="background: #f8fafc; border-radius: 16px; padding: 28px 24px; border: 1.5px solid #e2e8f0; height: 100%;">
+                <div style="color: #f59e0b; margin-bottom: 14px; font-size: 16px;">★★★★★</div>
+                <p style="font-size: 14px; color: #334155; line-height: 1.65; margin-bottom: 20px;">"The physiotherapist came daily to our house in Adyar for my father's stroke rehabilitation. His walking has improved dramatically. The 2-hour replacement promise gave us immense confidence."</p>
+                <div style="font-weight: 700; font-size: 14px; color: #1a2e35;">— Sundaram V., Adyar, Chennai</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div style="background: #f8fafc; border-radius: 16px; padding: 28px 24px; border: 1.5px solid #e2e8f0; height: 100%;">
+                <div style="color: #f59e0b; margin-bottom: 14px; font-size: 16px;">★★★★★</div>
+                <p style="font-size: 14px; color: #334155; line-height: 1.65; margin-bottom: 20px;">"Transparent pricing with no hidden charges. The care manager sends daily health updates right on the app. Truly a lifesaver for elder care."</p>
+                <div style="font-weight: 700; font-size: 14px; color: #1a2e35;">— Anita M., T. Nagar, Chennai</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
     <!-- Page Wraper -->
     <div class="page_wrapper">
@@ -534,7 +761,7 @@
       <!-- Image-Section -->
       <section class="row_am pricing_section white_text" data-aos="fade-in" data-aos-duration="1500">
         <div class="pricing_inner">
-          <img src="images/e4.jpg" alt=" image"/>
+          <img loading="lazy" src="images/e4.jpg" alt=" image"/>
         </div>
         <!-- container start end -->
       </section>
@@ -544,22 +771,22 @@
       <div class="text_list_section row_am downaload_section" data-aos="fade-in" data-aos-duration="1500">
         <div class="container">
           <div class="yellow_dotes">
-            <img src="images/yellow_dotes.png" alt="image"/>
+            <img loading="lazy" src="images/yellow_dotes.png" alt=""/>
           </div>
           <div class="center_screen" id="home-download-center-screen">
             <div class="img">
-              <img src="images/downloadScreen.png" alt="image" id="home-download-screen-img"/>
+              <img loading="lazy" src="images/downloadScreen.png" alt="Elderly Wellness Care Services" id="home-download-screen-img"/>
             </div>
             <!-- app buttons -->
             <ul class="app_btn" id="home-download-app-btn">
               <li>
                 <a href="https://play.google.com/store/apps/details?id=com.elderly.nri">
-                  <img class="blue_img" src="images/googleplay.png" alt="image"/>
+                  <img loading="lazy" class="blue_img" src="images/googleplay.png" alt="Download Elderly Care Plus on Google Play"/>
                 </a>
               </li>
               <li>
                 <a href="https://apps.apple.com/in/app/elderly-care-plus/id6740391242">
-                  <img class="blue_img" src="images/appstorebtn.png" alt="image"/>
+                  <img loading="lazy" class="blue_img" src="images/appstorebtn.png" alt="Download Elderly Care Plus on the App Store"/>
                 </a>
               </li>
             </ul>
@@ -655,10 +882,10 @@
       <!-- Text List flow Section End -->
 
       <!-- Blog Section Start -->
-      <section class="blog_section row_am" id="home-blog-section">
+      <section class="blog_section row_am" id="home-blog-section" style="padding: 40px 0 20px 0;">
         <div class="container">
           <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
-            <span class="title_badge">Lates updates</span>
+            <span class="title_badge">Latest updates</span>
             <h2>Our latest <span>blog post</span></h2>
           </div>
           <div id="blog-posts" class="blog_listing home-blog-listing">
@@ -668,103 +895,192 @@
       </section>
       <!-- Blog Section End -->
 
-      <!-- Footer-Section start -->
-      <footer class="white_text" data-aos="fade-in" data-aos-duration="1500" id="download-btn" style="margin-top: 0">
+      <!-- Quick 4-Field Callback Form & 3-Way Contact Hub Section -->
+      <section id="callback-form-section" class="row_am" style="padding: 40px 0; background: #f8fafc;">
         <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="logo_side">
-                <div class="logo">
-                  <a href="index.html">
-                    <img src="images/ft_logo.png" alt="Elderly Wellness"/>
-                  </a>
+          <div class="ew-callback-card">
+            <div class="ew-callback-header">
+              <span class="ew-callback-badge"><i class="icofont-headphone-alt" aria-hidden="true"></i> Fast 2-Hour Response</span>
+              <h3>Request a Callback</h3>
+              <p>Leave your details below and our senior care specialist in Chennai will reach out to you.</p>
+            </div>
+
+            <!-- 4-Field Form -->
+            <form class="ew-4field-form" id="ewPageCallbackForm" novalidate style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px;">
+              <div id="ew_form_success" aria-live="polite" style="grid-column: 1 / -1; display: none; background: #f0fdf4; border: 1.5px solid #86efac; color: #166534; padding: 14px 18px; border-radius: 10px; margin-bottom: 8px; font-weight: 700; font-size: 14.5px; text-align: center;">
+                <i class="icofont-check-circled" style="font-size: 18px; vertical-align: -2px; margin-right: 6px;" aria-hidden="true"></i> Thank you! Your callback request has been received. Our care specialist will reach out shortly.
+              </div>
+
+              <div class="ew-field-group" style="margin-bottom: 0;">
+                <label for="ew_name" class="ew-field-label" style="display: block; font-weight: 600; font-size: 14px; color: #1e293b; margin-bottom: 4px;">
+                  Full Name <span style="color: #b91c1c; font-weight: 400; font-size: 14px; margin-left: 1px;">*</span>
+                </label>
+                <input type="text" id="ew_name" name="name" class="ew-field-control" placeholder="e.g. Rajesh Kumar" autocomplete="name" aria-describedby="ew_name_error" required style="width: 100%; height: 46px; padding: 10px 42px 10px 14px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 14.5px; color: #1e293b; background: #fff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%232786a5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"%3E%3C/polyline%3E%3C/svg%3E') no-repeat right 18px center / 14px 14px; -webkit-appearance: none; appearance: none; cursor: pointer;" aria-label="e.g. Rajesh Kumar"/>
+                <span class="ew-field-error" id="ew_name_error" style="display: none; color: #b91c1c; font-size: 13px; font-weight: 500; margin-top: 3px;">Please enter your full name.</span>
+              </div>
+
+              <div class="ew-field-group" style="margin-bottom: 0;">
+                <label for="ew_phone" class="ew-field-label" style="display: block; font-weight: 600; font-size: 14px; color: #1e293b; margin-bottom: 4px;">
+                  Phone Number <span style="color: #b91c1c; font-weight: 400; font-size: 14px; margin-left: 1px;">*</span>
+                </label>
+                <input type="tel" id="ew_phone" name="phone" class="ew-field-control" placeholder="e.g. +91 98765 43210" autocomplete="tel" aria-describedby="ew_phone_error" required style="width: 100%; height: 46px; padding: 10px 42px 10px 14px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 14.5px; color: #1e293b; background: #fff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%232786a5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"%3E%3C/polyline%3E%3C/svg%3E') no-repeat right 18px center / 14px 14px; -webkit-appearance: none; appearance: none; cursor: pointer;" aria-label="e.g. +91 98765 43210"/>
+                <span class="ew-field-error" id="ew_phone_error" style="display: none; color: #b91c1c; font-size: 13px; font-weight: 500; margin-top: 3px;">Please enter a valid 10-digit phone number.</span>
+              </div>
+
+              <div class="ew-field-group" style="margin-bottom: 0;">
+                <label for="ew_service" class="ew-field-label" style="display: block; font-weight: 600; font-size: 14px; color: #1e293b; margin-bottom: 4px;">
+                  Select Service <span style="color: #b91c1c; font-weight: 400; font-size: 14px; margin-left: 1px;">*</span>
+                </label>
+                <select id="ew_service" name="service" class="ew-field-control" aria-describedby="ew_service_error" required style="width: 100%; height: 46px; padding: 10px 42px 10px 14px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 14.5px; color: #1e293b; background: #fff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%232786a5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"%3E%3C/polyline%3E%3C/svg%3E') no-repeat right 18px center / 14px 14px; -webkit-appearance: none; appearance: none; cursor: pointer;">
+                  <option value="Physiotherapy">Physiotherapy at Home</option>
+                  <option value="Home Nursing">Home Nursing Care</option>
+                  <option value="Geriatric Care">Geriatric Care</option>
+                  <option value="Assisted Living">Assisted Living Support</option>
+                  <option value="General Care Inquiry" selected>General Care Inquiry</option>
+                </select>
+                <span class="ew-field-error" id="ew_service_error" style="display: none; color: #b91c1c; font-size: 13px; font-weight: 500; margin-top: 3px;">Please select a service option.</span>
+              </div>
+
+              <div class="ew-field-group" style="margin-bottom: 0;">
+                <label for="ew_time" class="ew-field-label" style="display: block; font-weight: 600; font-size: 14px; color: #1e293b; margin-bottom: 4px;">
+                  Best Time to Call <span style="color: #b91c1c; font-weight: 400; font-size: 14px; margin-left: 1px;">*</span>
+                </label>
+                <select id="ew_time" name="time_to_call" class="ew-field-control" aria-describedby="ew_time_error" required style="width: 100%; height: 46px; padding: 10px 42px 10px 14px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-size: 14.5px; color: #1e293b; background: #fff url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%232786a5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"%3E%3Cpolyline points="6 9 12 15 18 9"%3E%3C/polyline%3E%3C/svg%3E') no-repeat right 18px center / 14px 14px; -webkit-appearance: none; appearance: none; cursor: pointer;">
+                  <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
+                  <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
+                  <option value="Evening (4 PM - 8 PM)">Evening (4 PM - 8 PM)</option>
+                  <option value="Anytime (ASAP)" selected>Anytime (ASAP)</option>
+                </select>
+                <span class="ew-field-error" id="ew_time_error" style="display: none; color: #b91c1c; font-size: 13px; font-weight: 500; margin-top: 3px;">Please select a preferred callback time.</span>
+              </div>
+
+              <!-- Compact, Clean Full-Width Consent Box -->
+              <div class="ew-consent-box" style="grid-column: 1 / -1; width: 100%; margin-top: 4px; margin-bottom: 4px; padding: 14px 16px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px; width: 100%;">
+                  <input type="checkbox" id="ew_consent_service" name="consent_service" aria-describedby="ew_consent_service_error" required style="width: 18px; height: 18px; min-width: 18px; cursor: pointer; accent-color: #2786a5; flex-shrink: 0;" />
+                  <label for="ew_consent_service" style="font-size: 13.5px; color: #334155; font-weight: 600; cursor: pointer; line-height: 1.35; margin: 0;">
+                    I agree to be contacted regarding senior care services <span style="color: #b91c1c; font-weight: 400; font-size: 13.5px; margin-left: 1px;">*</span>
+                  </label>
                 </div>
-                <h3 class="mb-4">Contact Us</h3>
-                <ul class="contact_info">
-                  <li>
-                    <a href="tel:919944890577">+91 99448 90577</a>
-                  </li>
-                </ul>
-                <ul class="contact_info">
-                  <li>
-                    <a href="mailto:info@theelderlywellness.com">info@theelderlywellness.com</a>
-                  </li>
-                </ul>
-                <ul class="social_media">
-                  <li>
-                    <a href="https://www.facebook.com/profile.php?id=100089074061784" target="_blank"><i class="icofont-facebook"></i></a>
-                  </li>
-                  <li>
-                    <a href="https://x.com/elderly____?s=11" target="_blank"><i class="icofont-twitter"></i></a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/elderly__wellness?igsh=MW43cmZpb2liaGNzdA==" target="_blank"><i class="icofont-instagram"></i></a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/company/elderly-wellness-service-pvt-ltd/about/" target="_blank"><i class="icofont-linkedin"></i></a>
-                  </li>
-                </ul>
+                <span class="ew-field-error" id="ew_consent_service_error" style="display: none; color: #b91c1c; font-size: 13px; font-weight: 500; margin-left: 28px; margin-bottom: 6px;">You must agree to be contacted to submit this enquiry.</span>
+
+                <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
+                  <input type="checkbox" id="ew_consent_marketing" name="consent_marketing" style="width: 18px; height: 18px; min-width: 18px; cursor: pointer; accent-color: #2786a5; flex-shrink: 0;" />
+                  <label for="ew_consent_marketing" style="font-size: 13.5px; color: #334155; font-weight: 600; cursor: pointer; line-height: 1.35; margin: 0;">
+                    Send me newsletters, health tips, and special offers
+                  </label>
+                </div>
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="logo_side" id="quick_links_side">
-                <h3>Quick Links</h3>
-                <ul class="contact_info" id="quick_links">
-                  <li>
-                    <a href="company/privacy-policy.html">Privacy Policy</a>
-                  </li>
-                  <li>
-                    <a href="company/refund-and-cancellation-policies.html">Refund &amp; Cancellation Policy</a>
-                  </li>
-                  <li>
-                    <a href="company/terms-and-conditions.html">Terms &amp; Conditions</a>
-                  </li>
-                  <li>
-                    <a href="contact.html">Contact Us</a>
-                  </li>
-                </ul>
+
+              <button type="submit" class="ew-callback-submit-btn" style="grid-column: 1 / -1; width: 100%; padding: 12px 24px; background: #2786a5; color: #ffffff; font-weight: 700; font-size: 15.5px; border: none; border-radius: 10px; cursor: pointer; transition: background 0.2s ease; margin-top: 4px;">
+                Request Callback Now
+              </button>
+            </form>
+
+            <div style="margin-top: 28px; text-align: center; border-top: 1px dashed #cbd5e1; padding-top: 24px;">
+              <span style="font-size: 12.5px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.6px;">Or Choose How to Reach Us</span>
+              
+              <!-- Contact Buttons (WhatsApp & Call Now) -->
+              <div class="ew-3way-contact-hub">
+                <!-- 1. WhatsApp with pre-filled page context -->
+                <a href="https://wa.me/919944890577?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20Elderly%20Wellness%20care%20services" target="_blank" rel="noopener noreferrer" class="ew-hub-btn ew-hub-btn-whatsapp">
+                  <i class="icofont-brand-whatsapp" aria-hidden="true"></i> Chat on WhatsApp
+                </a>
+                <!-- 2. Call Now tel: link -->
+                <a href="tel:+919944890577" class="ew-hub-btn ew-hub-btn-call">
+                  <i class="icofont-phone" aria-hidden="true"></i> Call Now: +91 99448 90577
+                </a>
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="download_side">
-                <h3>Download app</h3>
-                <ul class="app_btn">
-                  <li>
-                    <a href="https://play.google.com/store/apps/details?id=com.elderly.nri">
-                      <img class="blue_img" src="images/googleplay.png" alt="image"/>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://apps.apple.com/in/app/elderly-care-plus/id6740391242">
-                      <img class="blue_img" src="images/appstorebtn.png" alt="image"/>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+
+                
+                <div class="ew-trust-strip-inline">
+                  <span><i class="icofont-clock-time" aria-hidden="true"></i> 2-Hour Replacement Guarantee</span>
+                  <span><i class="icofont-clock-time" aria-hidden="true"></i> Police-Verified Caregivers</span>
+                  <span><i class="icofont-clock-time" aria-hidden="true"></i> No Lock-In Contracts</span>
+                </div>
             </div>
           </div>
         </div>
-        <div class="footer_bottom">
-          <div class="container">
-            <div class="ft_inner">
-              <div class="copy_text">
-                <p>© Copyrights 2024. All rights reserved.</p>
-              </div>
-              <div class="design_by">
-                <p>
-                  Developed by
-                  <a href="https://www.tectratechnologies.com/" target="blank">Tectra Technologies</a>
-                </p>
-              </div>
-            </div>
+      </section>
+
+      <!-- Footer-Section start -->
+      <footer class="white_text" id="download-btn">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="logo_side">
+          <div class="logo">
+            <a href="index.html">
+              <img src="images/ft_logo.png" alt="Elderly Wellness"/>
+            </a>
           </div>
+          <h3 class="mb-4">Contact Us</h3>
+          <ul class="contact_info">
+            <li><a href="tel:+919944890577">+91 99448 90577</a></li>
+          </ul>
+          <ul class="contact_info">
+            <li><a href="mailto:info@theelderlywellness.com">info@theelderlywellness.com</a></li>
+          </ul>
+          <ul class="social_media">
+            <li><a href="https://www.facebook.com/profile.php?id=100089074061784" target="_blank" rel="noopener noreferrer"><i class="icofont-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="https://x.com/elderly____?s=11" target="_blank" rel="noopener noreferrer"><i class="icofont-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.instagram.com/elderly__wellness?igsh=MW43cmZpb2liaGNzdA==" target="_blank" rel="noopener noreferrer"><i class="icofont-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/elderly-wellness-service-pvt-ltd/about/" target="_blank" rel="noopener noreferrer"><i class="icofont-linkedin" aria-hidden="true"></i></a></li>
+          </ul>
         </div>
-      </footer>
+      </div>
+      <div class="col-md-4">
+        <div class="logo_side" id="quick_links_side">
+          <h3>Quick Links</h3>
+          <ul class="contact_info" id="quick_links">
+            <li><a href="company/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="company/refund-and-cancellation-policies.html">Refund &amp; Cancellation Policy</a></li>
+            <li><a href="company/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="assets/elderly_wellness.pdf" download type="application/pdf">Company Brochure (PDF, 3.2 MB)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="download_side">
+          <h3>Download app</h3>
+          <ul class="app_btn">
+            <li>
+              <a href="https://play.google.com/store/apps/details?id=com.elderly.nri" target="_blank" rel="noopener noreferrer">
+                <img loading="lazy" class="blue_img" src="images/googleplay.png" alt="Download Elderly Care Plus on Google Play"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://apps.apple.com/in/app/elderly-care-plus/id6740391242" target="_blank" rel="noopener noreferrer">
+                <img loading="lazy" class="blue_img" src="images/appstorebtn.png" alt="Download Elderly Care Plus on the App Store"/>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="ft_inner">
+        <div class="copy_text">
+          <p>© Copyrights <span class="ew-current-year">2026</span>. All rights reserved.</p>
+        </div>
+        <div class="design_by">
+          <p>
+            Developed by
+            <a href="https://www.tectratechnologies.com/" target="_blank" rel="noopener noreferrer">Tectra Technologies</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
       <!-- Footer-Section end -->
 
       <!-- go top button -->
       <div class="go_top" id="Gotop">
-        <span><i class="icofont-arrow-up"></i></span>
+        <span><i class="icofont-arrow-up" aria-hidden="true"></i></span>
       </div>
 
       <!-- Video Model Start -->
@@ -772,7 +1088,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <button id="close-video" type="button" class="button btn btn-default text-right" data-dismiss="modal">
-              <i class="icofont-close-line-circled"></i>
+              <i class="icofont-close-line-circled" aria-hidden="true"></i>
             </button>
             <div class="modal-body">
               <div id="video-container" class="video-container">
@@ -798,9 +1114,10 @@
     <!-- Typed Js Cdn -->
     <script src="js/typed.min.js"></script>
     <!-- main-js-Link -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=20260817i"></script>
+    <script src="js/callback-form.js?v=20260817i"></script>
     <script src="js/home-perf.js"></script>
-    <script src="js/article.js?v=20260720b"></script>
+    <script src="js/article.js?v=20260817ib"></script>
 
     <script>
       $("#typed").typed({
@@ -831,5 +1148,164 @@
       });
 
     </script>
-  </body>
+    <script src="js/analytics.js?v=20260817i"></script>
+
+      <!-- Sticky Floating Quick-Booking CTA (Rule: Booking button visible or within 1 scroll at every point) -->
+      <div class="ew-sticky-booking-bar d-md-none" style="position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff; padding: 12px 16px; border-top: 1px solid #e2e8f0; box-shadow: 0 -4px 16px rgba(0,0,0,0.08); z-index: 9999; display: flex; gap: 10px; align-items: center;">
+        <a href="contact.html" class="btn puprple_btn" style="flex: 1; text-align: center; padding: 10px 0; font-size: 14px; font-weight: 700;">Book Care Now</a>
+        <a href="tel:+919944890577" class="btn black_btn" style="padding: 10px 16px; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;"><i class="icofont-phone"></i> Call</a>
+      </div>
+
+<script>
+window.currentHeroIndex = 0;
+window.isHeroVideoUserPlaying = false;
+
+var playSvg = '<svg class="play-icon" width="26" height="26" viewBox="0 0 24 24" fill="#ffffff" style="margin-left: 3px;"><path d="M8 5v14l11-7z"/></svg>';
+var pauseSvg = '<svg class="pause-icon" width="26" height="26" viewBox="0 0 24 24" fill="#ffffff"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+
+function updateHeroVidTabs(index) {
+  window.currentHeroIndex = index;
+  $('.hero_vid_tab').removeClass('active').css({
+    'background': 'transparent',
+    'color': 'rgba(255, 255, 255, 0.85)',
+    'font-weight': '600'
+  });
+  $('.hero_vid_tab').eq(index).addClass('active').css({
+    'background': '#2786a5',
+    'color': '#ffffff',
+    'font-weight': '700'
+  });
+}
+
+function pauseHeroVideo(videoEl) {
+  if (!videoEl) return;
+  videoEl.pause();
+  var $media = $(videoEl).closest('.slider_media');
+  $media.addClass('video-paused');
+  $media.find('.video_play_toggle_btn').html(playSvg).attr('aria-label', 'Play video');
+}
+
+function playHeroVideo(videoEl) {
+  if (!videoEl) return;
+  $('#frmae_slider video').each(function() {
+    if (this !== videoEl) {
+      pauseHeroVideo(this);
+    }
+  });
+  videoEl.muted = true;
+  var $media = $(videoEl).closest('.slider_media');
+  var playPromise = videoEl.play();
+  if (playPromise !== undefined) {
+    playPromise.then(function() {
+      $media.removeClass('video-paused');
+      $media.find('.video_play_toggle_btn').html(pauseSvg).attr('aria-label', 'Pause video');
+    }).catch(function(err) {
+      console.warn('Video play interrupted:', err);
+      pauseHeroVideo(videoEl);
+    });
+  }
+}
+
+function toggleHeroVideo(btnOrMedia, event) {
+  if (event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+  var $media = $(btnOrMedia).closest('.slider_media');
+  if (!$media.length) {
+    $media = $('.slider_media[data-slide-index="' + window.currentHeroIndex + '"]');
+  }
+  var video = $media.find('video')[0];
+  if (!video) return;
+
+  if (video.paused) {
+    window.isHeroVideoUserPlaying = true;
+    playHeroVideo(video);
+  } else {
+    window.isHeroVideoUserPlaying = false;
+    pauseHeroVideo(video);
+  }
+}
+
+function goToHeroVideo(index, event) {
+  if (event) {
+    event.stopPropagation();
+    event.preventDefault();
+  }
+  window.currentHeroIndex = index;
+  
+  // Pause any playing videos when manually switching tabs
+  $('#frmae_slider video').each(function() {
+    pauseHeroVideo(this);
+  });
+
+  var $owl = $('#frmae_slider');
+  if ($owl.length && typeof $owl.trigger === 'function') {
+    $owl.trigger('to.owl.carousel', [index, 300]);
+  }
+  updateHeroVidTabs(index);
+
+  // If user was actively watching playlist, auto-play video on target tab
+  if (window.isHeroVideoUserPlaying) {
+    var targetMedia = $('.slider_media[data-slide-index="' + index + '"]');
+    var targetVid = targetMedia.find('video')[0];
+    if (targetVid) {
+      try { targetVid.currentTime = 0; } catch (e) {}
+      playHeroVideo(targetVid);
+    }
+  }
+}
+
+$(document).ready(function() {
+  updateHeroVidTabs(0);
+
+  $('.slider_media').addClass('video-paused');
+  $('.video_play_toggle_btn').html(playSvg).attr('aria-label', 'Play video');
+
+  $('#frmae_slider video').each(function(idx) {
+    var self = this;
+    self.pause();
+    
+    // When video ends naturally, auto-advance to next video if in playing state
+    self.addEventListener('ended', function() {
+      pauseHeroVideo(self);
+      try { self.currentTime = 0; } catch (err) {}
+
+      if (window.isHeroVideoUserPlaying) {
+        var nextIndex = (idx + 1) % 3;
+        goToHeroVideo(nextIndex);
+      }
+    });
+  });
+
+  // Listen for owl carousel slide changes (e.g., drag/swipe)
+  var $owl = $('#frmae_slider');
+  if ($owl.length) {
+    $owl.on('changed.owl.carousel', function(e) {
+      if (e.item && typeof e.item.index === 'number') {
+        var idx = e.item.index;
+        updateHeroVidTabs(idx);
+      }
+    });
+  }
+
+  // Prevent mousedown/touchstart propagation so Owl Carousel never interprets clicks as drag
+  $(document).on('mousedown touchstart', '.slider_media, .video_play_toggle_btn, .hero_video_nav_tabs', function(e) {
+    e.stopPropagation();
+  });
+
+  // Delegated click handling
+  $(document).on('click', '.video_play_toggle_btn', function(e) {
+    toggleHeroVideo(this, e);
+  });
+
+  $(document).on('click', '.slider_media', function(e) {
+    if ($(e.target).closest('.hero_video_nav_tabs').length || $(e.target).closest('.video_play_toggle_btn').length) {
+      return;
+    }
+    toggleHeroVideo(this, e);
+  });
+});
+</script>
+</body>
 </html>

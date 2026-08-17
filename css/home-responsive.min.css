@@ -1,1 +1,256 @@
 html,body{max-width:100%}.banner_section,.key_feature_section,.about_section,.task_app_section,.downaload_section,.blog_section,footer{max-width:100%}.banner_section img,.key_feature_section img,.about_section img,.task_app_section img,.downaload_section img,.pricing_inner img,.blog_section img{max-width:100%;height:auto}.pricing_inner{overflow:hidden;border-radius:20px}.pricing_inner img{width:100%;display:block;object-fit:cover}@media screen and (max-width:1199px){.banner_section::before{width:min(100vw,1100px);height:80%;background-size:contain}.banner_section .banner_text #banner-font2{font-size:52px}.banner_section .banner_text #banner-font2 .hero-age{font-size:80px}.task_app_section .task_block{padding:32px 40px}.task_app_section .task_img img{max-height:min(46vh,360px)}.task_app_section .task_text{padding-left:16px}.slider_media{max-height:420px}#home-blog-section .home-blog-listing .blog_post{width:100% !important}}@media screen and (max-width:991px){.banner_section{margin-top:8px !important;padding-top:0 !important;padding-bottom:20px}.banner_section::before{width:100%;top:10%;opacity:0.45}.banner_section .banner_text{margin-top:0 !important;padding-top:0 !important;padding-left:24px;padding-right:24px;text-align:center}.banner_section .banner_text #banner-font2{font-size:42px;margin-top:4px !important;margin-bottom:24px}.banner_section .banner_text #banner-font2 .hero-age{font-size:64px;top:4px;margin-right:6px}.banner_section .banner_text p.remove-br{max-width:540px;margin-left:auto;margin-right:auto;font-size:16px}.banner_section .app_btn{justify-content:center;flex-wrap:wrap;gap:12px}.banner_section .app_btn li:last-child{margin-left:0}.banner_section .banner_slider{margin-top:36px;padding:0 10px}.slider_media{aspect-ratio:16 / 11;max-height:360px;border-radius:28px}.slider_media video,.banner_section .banner_slider #frmae_slider,.owl-carousel .owl-stage-outer{border-radius:28px}.key_innner{padding:48px 0 56px;border-radius:16px;margin:0 10px}.feature_box{min-height:360px;padding:24px 20px 0}.feature_box h3{font-size:20px}.about_section .app_statstic{display:grid !important;grid-template-columns:1fr 1fr !important;gap:14px !important;width:100% !important;max-width:340px;padding:0 !important;margin:0 auto !important;list-style:none !important;justify-items:center}.about_section .app_statstic li,.about_section .app_statstic li:first-child,.about_section .app_statstic li:last-child{width:auto !important;text-align:center !important;list-style:none !important;padding:0 !important;margin:0 !important}.about_section .app_statstic li .text{width:148px !important;max-width:148px !important;height:148px !important;margin:0 auto !important;padding:12px !important;box-sizing:border-box !important;overflow:hidden !important;display:flex !important;align-items:center !important;justify-content:center !important;text-align:center !important}.about_section .app_statstic li .text p{font-size:12px !important;line-height:1.25 !important;text-align:center !important;width:100% !important;margin:0 !important;padding:0 !important}.task_app_section .task_block{position:relative !important;top:auto !important;padding:28px 24px;border-radius:22px}.task_app_section .task_block--alt .row,.task_app_section .task_block .row{flex-direction:column}.task_app_section .task_img{margin-bottom:8px;padding:4px}.task_app_section .task_img img{max-height:min(40vh,300px)}.task_app_section .task_img::before{width:200px;height:200px;box-shadow:0 0 0 12px rgba(255,255,255,0.05)}.task_app_section .task_text,.task_app_section .task_block--alt .task_text{padding:4px 8px 0}.task_app_section .task_text .section_title{text-align:center;max-width:none;margin:0 auto}.task_app_section .task_text .section_title .task_step{margin-left:auto;margin-right:auto}.task_app_section .task_text .section_title .icon{margin:0 auto 14px}.task_app_section .task_text .section_title h2{font-size:24px}.task_app_section .task_text .section_title p{max-width:none;margin-left:auto;margin-right:auto}.task_app_section .dotes_blue{left:-40px;bottom:-60px;opacity:0.18;max-width:160px}.downaload_section{padding:48px 0}.downaload_section .center_screen{position:relative !important;top:auto !important;left:auto !important;transform:none !important;width:100% !important;max-width:480px;margin:0 auto}.downaload_section .center_screen .img img{width:62%;max-width:340px}.downaload_section .background_slider{padding:36px 0}.downaload_section .yellow_dotes{display:none !important}.downaload_section .app_btn{justify-content:center;flex-wrap:wrap;gap:12px;margin-top:18px !important}.downaload_section .app_btn li:last-child{margin-left:0}#home-blog-section .home-blog-listing{display:grid !important;grid-template-columns:1fr !important;gap:18px}#home-blog-section .home-blog-listing .blog_post{width:100% !important;padding:20px}#home-blog-section .home-blog-listing .blog_post h3{font-size:20px;margin:14px 0 16px}#home-blog-section .home-blog-listing .blog_post h3 a{-webkit-line-clamp:3;line-clamp:3}#home-blog-section .home-blog-listing .blog_post .tag_more{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}#home-blog-section .home-blog-listing .blog_post .tag_more a{white-space:nowrap}}@media screen and (max-width:767px){.banner_section{margin-top:8px;padding-bottom:28px}.banner_section{margin-top:4px !important;padding-top:0 !important}.banner_section .container{padding-left:15px;padding-right:15px}.banner_section .banner_text{margin-top:0 !important;padding-top:0 !important;padding-left:8px;padding-right:8px}.banner_section .banner_text #banner-font2{font-size:30px;letter-spacing:0.03em;margin-top:4px !important;margin-bottom:18px;line-height:1.2}.banner_section .banner_text #banner-font2 .hero-age{font-size:46px;top:2px;display:inline-block !important;margin:0 6px 0 0 !important}.banner_section .banner_text #banner-font2 .hero-line2{display:block !important;margin-top:0 !important}.banner_section .banner_text p.remove-br{max-width:100%;font-size:15px;line-height:1.6;margin-bottom:24px;padding:0 4px}.banner_section .app_btn{flex-direction:row;justify-content:center;gap:10px}.banner_section .app_btn li{margin:0}.banner_section .app_btn li a{padding:10px 18px}.banner_section .app_btn li a img{height:24px}.banner_section .banner_slider{margin-top:16px;padding:0}.slider_media{aspect-ratio:4 / 3;max-height:280px;border-radius:20px}.slider_media video,.banner_section .banner_slider #frmae_slider,.owl-carousel .owl-stage-outer{border-radius:20px}.key_feature_section{padding-left:10px !important;padding-right:10px !important}.key_innner{margin:0;padding:40px 0 48px;border-radius:16px}.key_innner .section_title h2{font-size:26px;padding:0 12px}.key_innner .dotes_blue{top:-30%;max-width:220px;opacity:0.4}.key_innner .owl-nav button.owl-next{right:16px !important}.key_innner .owl-nav button.owl-prev{left:16px !important}.feature_box{min-height:auto;padding:22px 18px 0}.feature_box .img img{max-height:160px}.task_app_section{padding-left:10px !important;padding-right:10px !important;padding-bottom:24px}.task_app_section .task_block{padding:24px 16px;margin-bottom:16px;border-radius:18px;position:relative !important}.task_app_section .task_img{margin-bottom:6px}.task_app_section .task_img img{max-height:min(36vh,240px) !important}.task_app_section .task_text .section_title h2{font-size:22px}.task_app_section .task_text .section_title p{font-size:14px}.task_app_section .task_img::before{width:140px;height:140px}.task_app_section .dotes_blue{display:none}.text_list_section .text_block span{font-size:22px}.pricing_section{padding-left:10px !important;padding-right:10px !important}.pricing_inner{border-radius:16px}.downaload_section{padding:40px 0 48px;overflow:hidden}.downaload_section .container{position:relative;z-index:2}.downaload_section .center_screen{position:relative !important;top:auto !important;left:auto !important;transform:none !important;width:100% !important;max-width:420px;margin:0 auto 8px;padding:0 12px}.downaload_section .center_screen .img img{width:78% !important;max-width:280px !important;height:auto !important;filter:drop-shadow(0 14px 24px rgba(15,40,55,0.2))}.downaload_section .background_slider{padding:28px 0;margin-top:-8px}.downaload_section .yellow_dotes{display:none !important}.downaload_section .app_btn{display:flex !important;flex-direction:row !important;flex-wrap:wrap !important;justify-content:center !important;align-items:center !important;gap:10px !important;margin-top:16px !important}.downaload_section .app_btn li{margin:0 !important}.downaload_section .app_btn li:last-child{margin-left:0 !important}.downaload_section .app_btn li a{padding:8px 14px !important}.downaload_section .app_btn li a img{height:28px !important;width:auto !important}#home-blog-section{padding-top:20px;padding-bottom:30px}#home-blog-section .section_title{margin-bottom:24px}#home-blog-section .section_title h2{font-size:26px}#home-blog-section .home-blog-listing{display:grid !important;grid-template-columns:1fr !important;gap:16px !important}#home-blog-section .home-blog-listing .blog_post{width:100% !important;max-width:100% !important;padding:18px}#home-blog-section .home-blog-listing .blog_post .img{aspect-ratio:16 / 9 !important;height:auto !important}#home-blog-section .home-blog-listing .blog_post .img img{height:100% !important;width:100% !important;object-fit:cover !important}#home-blog-section .home-blog-listing .blog_post h3{font-size:18px;margin:12px 0 14px}#home-blog-section .home-blog-listing .blog_post h3 a{-webkit-line-clamp:3 !important;line-clamp:3 !important}#home-blog-section .home-blog-listing .blog_post .blog_info{font-size:12px;flex-wrap:wrap}#home-blog-section .home-blog-listing .blog_post .tag_more{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 12px;margin-top:auto}#home-blog-section .home-blog-listing .blog_post .tag_more .tag{flex-shrink:0}#home-blog-section .home-blog-listing .blog_post .tag_more a{white-space:nowrap;display:inline-flex;align-items:center;gap:4px}footer{padding:48px 0 30px !important;background-size:cover}footer .logo_side .logo{margin-bottom:24px;text-align:center}footer .logo_side h3,footer .download_side h3{text-align:center}footer .col-md-4{margin-bottom:8px}}@media screen and (max-width:480px){.banner_section .banner_text #banner-font2{font-size:26px !important}.banner_section .banner_text #banner-font2 .hero-age{font-size:40px !important;display:inline-block !important;margin-right:5px !important}.banner_section .banner_text p.remove-br{font-size:14px}.banner_section .app_btn{flex-direction:column;align-items:center}.banner_section .app_btn li a{min-width:180px;text-align:center}.slider_media{max-height:220px;border-radius:16px}.slider_media video,.banner_section .banner_slider #frmae_slider,.owl-carousel .owl-stage-outer{border-radius:16px}.key_innner .section_title h2,.about_section .section_title h2,#home-blog-section .section_title h2{font-size:22px}.task_app_section .task_block{padding:22px 14px;margin-bottom:16px;border-radius:18px}.task_app_section .task_img img{max-height:min(38vh,260px) !important}.task_app_section .task_text .section_title h2{font-size:20px}.task_app_section .task_text .section_title p{font-size:14px;line-height:1.55}.feature_box h3{font-size:18px}.feature_box p{font-size:14px}.downaload_section{padding:32px 0 40px}.downaload_section .center_screen .img img{width:72% !important;max-width:210px !important}.downaload_section .background_slider{padding:22px 0}.downaload_section .app_btn li a img{height:26px !important}}@media screen and (max-width:360px){.banner_section .banner_text #banner-font2{font-size:24px}.banner_section .banner_text #banner-font2 .hero-age{font-size:36px}.section_title h2{font-size:20px !important}}@media (prefers-reduced-motion:reduce){.slider_media video{animation:none !important}}.banner_section .owl-dots{display:flex !important;justify-content:center;margin-top:20px;position:relative;z-index:2}#frmae_slider.owl-carousel{display:block;width:100%}#frmae_slider.owl-carousel:not(.owl-loaded)>.item{display:none}#frmae_slider.owl-carousel:not(.owl-loaded)>.item:first-child{display:block}
+
+/* Floating WhatsApp Button & Clean Bottom Body (Universal) */
+body {
+  padding-bottom: 0 !important;
+}
+
+.ew-mobile-sticky-bottom-bar {
+  display: none !important;
+}
+
+a.ew-whatsapp-floating-btn,
+.ew-whatsapp-floating-btn {
+  position: fixed !important;
+  bottom: 25px !important;
+  left: 25px !important;
+  right: auto !important;
+  top: auto !important;
+  width: auto !important;
+  height: 54px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  z-index: 2147483647 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: translate3d(0, 0, 0) !important;
+  pointer-events: auto !important;
+}
+
+.ew-whatsapp-floating-btn .ew-wa-circle {
+  width: 54px !important;
+  height: 54px !important;
+  min-width: 54px !important;
+  min-height: 54px !important;
+  border-radius: 50% !important;
+  background-color: #49E670 !important;
+  box-shadow: 0 4px 16px rgba(73, 230, 112, 0.45) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ew-whatsapp-floating-btn:hover .ew-wa-circle {
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 22px rgba(73, 230, 112, 0.65) !important;
+}
+
+
+/* Pricing Teaser Chip Zoom Effect (Light Soft Chip - No Color Shift) */
+.pricing-teaser-link {
+  color: #2786a5 !important;
+  background: #e6f4f8 !important;
+  border: 1.5px solid #bce2ed !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  padding: 6px 18px !important;
+  border-radius: 20px !important;
+  text-decoration: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.pricing-teaser-link:hover {
+  color: #2786a5 !important;
+  background: #e6f4f8 !important;
+  border-color: #bce2ed !important;
+  transform: scale(1.06) !important;
+  box-shadow: 0 4px 14px rgba(39, 134, 165, 0.25) !important;
+}
+
+
+/* ==========================================================================
+   TIGHTEN BOTTOM EMPTY SPACES BEFORE FOOTER
+   ========================================================================== */
+.post-views,
+.post-views.content-post {
+  margin-top: 12px !important;
+  margin-bottom: 14px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.ew-medical-disclaimer {
+  margin-top: 16px !important;
+  margin-bottom: 20px !important;
+}
+
+.single-post #page,
+.single-post .site-content,
+.single-post #primary,
+.single-post .site-main,
+.single-post article,
+.single-post .inside-article,
+.single-post #right-sidebar,
+.single-post .inside-right-sidebar {
+  padding-bottom: 12px !important;
+  margin-bottom: 0 !important;
+}
+
+body.single-post footer,
+body.single footer,
+footer,
+footer.site-footer,
+footer.row_am {
+  margin-top: 24px !important;
+}
+
+
+/* ==========================================================================
+   INCREASE POST VIEWS SIZE & ELIMINATE SPACE BELOW DISCLAIMER
+   ========================================================================== */
+.post-views,
+.post-views.content-post {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 20px !important;
+  padding: 8px 18px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 16px !important;
+  margin-bottom: 12px !important;
+}
+
+.post-views-icon,
+.post-views .dashicons {
+  font-size: 1.2rem !important;
+  color: #2786a5 !important;
+  vertical-align: middle !important;
+}
+
+.ew-medical-disclaimer {
+  margin-top: 16px !important;
+  margin-bottom: 8px !important;
+}
+
+.single-post #page,
+.single-post .site-content,
+.single-post #primary,
+.single-post .site-main,
+.single-post article,
+.single-post .inside-article,
+.single-post #right-sidebar,
+.single-post .inside-right-sidebar,
+.single-post .widget-area {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+body.single-post footer,
+body.single footer,
+footer,
+footer.site-footer,
+footer.row_am {
+  margin-top: 12px !important;
+}
+
+
+/* ==========================================================================
+   HIGH CONTRAST TEXT VISIBILITY FIX FOR DARK CTA CARDS & BANNER BOXES
+   ========================================================================== */
+.ew-blog-cta--app,
+.ew-blog-service-card,
+.ew-blog-cta {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  border-radius: 16px !important;
+  padding: 28px 32px !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25) !important;
+  margin: 32px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__eyebrow,
+.ew-blog-service-card .ew-blog-cta__eyebrow,
+.ew-blog-cta .ew-blog-cta__eyebrow {
+  color: #38bdf8 !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 8px !important;
+  display: block !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__heading,
+.ew-blog-cta--app h3,
+.ew-blog-cta--app h4,
+.ew-blog-service-card .ew-blog-cta__heading,
+.ew-blog-service-card h3,
+.ew-blog-service-card h4,
+.ew-blog-cta h3,
+.ew-blog-cta h4 {
+  color: #ffffff !important;
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  margin-top: 4px !important;
+  margin-bottom: 10px !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__text,
+.ew-blog-cta--app p,
+.ew-blog-service-card .ew-blog-cta__text,
+.ew-blog-service-card p,
+.ew-blog-cta p {
+  color: #f1f5f9 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 18px !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__btn,
+.ew-blog-service-card .ew-blog-cta__btn,
+.ew-blog-cta--app a.btn,
+.ew-blog-service-card a.btn,
+.ew-blog-cta a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 12px 24px !important;
+  border-radius: 30px !important;
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__btn:hover,
+.ew-blog-service-card .ew-blog-cta__btn:hover,
+.ew-blog-cta a:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.5) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}

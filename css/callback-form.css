@@ -1,0 +1,464 @@
+/* Elderly Wellness - 4-Field Quick Callback Form & Contact Hub Styles */
+
+.ew-callback-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 36px 32px;
+  box-shadow: 0 12px 32px rgba(15, 40, 55, 0.05);
+  max-width: 680px;
+  margin: 0 auto;
+  font-family: inherit;
+}
+
+.ew-callback-card.dark-theme {
+  background: #1e293b;
+  border-color: #334155;
+  color: #ffffff;
+}
+
+.ew-callback-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.ew-callback-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(39, 134, 165, 0.1);
+  color: #2786a5;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 12px;
+}
+
+.dark-theme .ew-callback-badge {
+  background: rgba(39, 134, 165, 0.25);
+  color: #38bdf8;
+}
+
+.ew-callback-header h3 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1a2e35;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.3px;
+}
+
+.dark-theme .ew-callback-header h3 {
+  color: #ffffff;
+}
+
+.ew-callback-header p {
+  font-size: 14.5px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.dark-theme .ew-callback-header p {
+  color: #94a3b8;
+}
+
+/* Form Layout (4 Fields Only) */
+.ew-4field-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .ew-4field-form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.ew-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ew-field-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.ew-field-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.dark-theme .ew-field-label {
+  color: #cbd5e1;
+}
+
+.ew-field-control {
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1.5px solid #cbd5e1;
+  background: #f8fafc;
+  font-size: 14.5px;
+  color: #1e293b;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.dark-theme .ew-field-control {
+  background: #0f172a;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+select.ew-field-control {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%232786a5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 18px center !important;
+  background-size: 14px 14px !important;
+  padding-left: 14px !important;
+  padding-right: 42px !important;
+  cursor: pointer !important;
+}
+
+.ew-field-control.invalid {
+  border-color: #ef4444 !important;
+  background-color: #fef2f2 !important;
+}
+
+/* Submit Button - Site Design Matching Pill Button */
+.ew-callback-submit-btn {
+  grid-column: 1 / -1;
+  height: 52px;
+  background: #2786a5;
+  color: #ffffff;
+  border: 1.5px solid #2786a5;
+  border-radius: 30px;
+  font-size: 15.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  box-shadow: 0 4px 14px rgba(39, 134, 165, 0.25);
+  margin-top: 8px;
+}
+
+.ew-callback-submit-btn:hover {
+  background: #1f6f8b;
+  border-color: #1f6f8b;
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(39, 134, 165, 0.35);
+}
+
+/* Website Native Success View */
+.ew-callback-success {
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+  grid-column: 1 / -1;
+  margin-top: 0;
+  margin-bottom: 24px;
+  animation: fadeIn 0.3s ease;
+}
+
+.ew-callback-success i {
+  font-size: 44px;
+  color: #16a34a;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.ew-callback-success h4 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #15803d;
+  margin: 0 0 6px 0;
+}
+
+.ew-callback-success p {
+  font-size: 15px;
+  color: #166534;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+}
+
+/* Left-to-Right Summary Box */
+.ew-success-summary-box {
+  background: #ffffff;
+  border: 1px solid #dcfce7;
+  border-radius: 14px;
+  padding: 18px 24px;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.ew-summary-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+  font-size: 14px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.ew-summary-row:last-child {
+  border-bottom: none;
+}
+
+.ew-summary-label {
+  color: #64748b;
+  font-weight: 600;
+  min-width: 90px;
+  width: 90px;
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.ew-summary-val {
+  color: #1e293b;
+  font-weight: 700;
+  text-align: left;
+  flex-grow: 1;
+}
+
+/* Contact Hub Buttons Container (WhatsApp & Call Now) */
+.ew-3way-contact-hub {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.ew-hub-btn {
+  min-height: 48px;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 14.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ew-hub-btn-whatsapp {
+  background: #25d366;
+  color: #ffffff !important;
+  border: 1.5px solid #25d366;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+}
+
+.ew-hub-btn-whatsapp:hover {
+  background: #1da851;
+  border-color: #1da851;
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+}
+
+.ew-hub-btn-call {
+  background: #ffffff;
+  color: #1e293b !important;
+  border: 1.5px solid #cbd5e1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.ew-hub-btn-call:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  transform: scale(1.03);
+}
+
+
+/* ==========================================================================
+   TIGHTEN BOTTOM EMPTY SPACES BEFORE FOOTER
+   ========================================================================== */
+.post-views,
+.post-views.content-post {
+  margin-top: 12px !important;
+  margin-bottom: 14px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.ew-medical-disclaimer {
+  margin-top: 16px !important;
+  margin-bottom: 20px !important;
+}
+
+.single-post #page,
+.single-post .site-content,
+.single-post #primary,
+.single-post .site-main,
+.single-post article,
+.single-post .inside-article,
+.single-post #right-sidebar,
+.single-post .inside-right-sidebar {
+  padding-bottom: 12px !important;
+  margin-bottom: 0 !important;
+}
+
+body.single-post footer,
+body.single footer,
+footer,
+footer.site-footer,
+footer.row_am {
+  margin-top: 24px !important;
+}
+
+
+/* ==========================================================================
+   INCREASE POST VIEWS SIZE & ELIMINATE SPACE BELOW DISCLAIMER
+   ========================================================================== */
+.post-views,
+.post-views.content-post {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 20px !important;
+  padding: 8px 18px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 16px !important;
+  margin-bottom: 12px !important;
+}
+
+.post-views-icon,
+.post-views .dashicons {
+  font-size: 1.2rem !important;
+  color: #2786a5 !important;
+  vertical-align: middle !important;
+}
+
+.ew-medical-disclaimer {
+  margin-top: 16px !important;
+  margin-bottom: 8px !important;
+}
+
+.single-post #page,
+.single-post .site-content,
+.single-post #primary,
+.single-post .site-main,
+.single-post article,
+.single-post .inside-article,
+.single-post #right-sidebar,
+.single-post .inside-right-sidebar,
+.single-post .widget-area {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+body.single-post footer,
+body.single footer,
+footer,
+footer.site-footer,
+footer.row_am {
+  margin-top: 12px !important;
+}
+
+
+/* ==========================================================================
+   HIGH CONTRAST TEXT VISIBILITY FIX FOR DARK CTA CARDS & BANNER BOXES
+   ========================================================================== */
+.ew-blog-cta--app,
+.ew-blog-service-card,
+.ew-blog-cta {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+  border-radius: 16px !important;
+  padding: 28px 32px !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25) !important;
+  margin: 32px 0 !important;
+  box-sizing: border-box !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__eyebrow,
+.ew-blog-service-card .ew-blog-cta__eyebrow,
+.ew-blog-cta .ew-blog-cta__eyebrow {
+  color: #38bdf8 !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 8px !important;
+  display: block !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__heading,
+.ew-blog-cta--app h3,
+.ew-blog-cta--app h4,
+.ew-blog-service-card .ew-blog-cta__heading,
+.ew-blog-service-card h3,
+.ew-blog-service-card h4,
+.ew-blog-cta h3,
+.ew-blog-cta h4 {
+  color: #ffffff !important;
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  margin-top: 4px !important;
+  margin-bottom: 10px !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__text,
+.ew-blog-cta--app p,
+.ew-blog-service-card .ew-blog-cta__text,
+.ew-blog-service-card p,
+.ew-blog-cta p {
+  color: #f1f5f9 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 18px !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__btn,
+.ew-blog-service-card .ew-blog-cta__btn,
+.ew-blog-cta--app a.btn,
+.ew-blog-service-card a.btn,
+.ew-blog-cta a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 12px 24px !important;
+  border-radius: 30px !important;
+  text-decoration: none !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.ew-blog-cta--app .ew-blog-cta__btn:hover,
+.ew-blog-service-card .ew-blog-cta__btn:hover,
+.ew-blog-cta a:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.5) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}

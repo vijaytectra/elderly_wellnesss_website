@@ -60,7 +60,7 @@ async function loadBlogs() {
   }
 
   const markup = [];
-  posts.slice(0, 3).forEach((item) => {
+  posts.slice(0, 4).forEach((item) => {
     const date = item.date
       ? new Date(item.date).toLocaleDateString("en-US", {
           month: "long",
@@ -93,7 +93,8 @@ async function loadBlogs() {
       : "";
 
     markup.push(`
-        <div class="blog_post" data-aos="fade-up" data-aos-duration="1500">
+        <div class="item">
+          <div class="blog_post" data-aos="fade-up" data-aos-duration="1500">
           ${image}
           <div class="text">
             <ul class="blog_info">
@@ -107,10 +108,29 @@ async function loadBlogs() {
             </div>
           </div>
         </div>
+      </div>
       `);
   });
 
   blogContainer.innerHTML = markup.join("");
+
+  if (window.jQuery && window.jQuery.fn.owlCarousel) {
+    window.jQuery(blogContainer).owlCarousel({
+      loop: true,
+      margin: 24,
+      nav: false,
+      dots: true,
+      autoplay: true,
+      autoplayTimeout: 4000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: { items: 1 },
+        600: { items: 2 },
+        992: { items: 3 }
+      }
+    });
+  }
+
   if (typeof AOS !== "undefined" && typeof AOS.refresh === "function") {
     AOS.refresh();
   }

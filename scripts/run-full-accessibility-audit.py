@@ -57,7 +57,6 @@ def main():
         "index.html",
         "about.html",
         "contact.html",
-        "pricing.html",
         "services.html",
         "physiotherapy-services-for-elders.html",
         "nursing-services-for-elders.html",

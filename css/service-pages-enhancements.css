@@ -679,13 +679,29 @@ footer {
   margin: 0 auto !important;
 }
 
+/* ==========================================================================
+   ABOUT PAGE SLIDER UNIFORM IMAGE SIZING
+   ========================================================================== */
+.about_slider #about_slider .abt_slides img,
+.about_slider .abt_slides img,
+.abt_slides img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 380px !important;
+  max-height: 380px !important;
+  object-fit: cover !important;
+  border-radius: 20px !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
 @media (max-width: 767px) {
-  .service_section .service_blocks .inner_block img,
-  .service_section .service_blocks .img img,
-  .service_section .img img,
-  .inner_block .img img,
-  .image-sec-banner-inner-service img {
-    max-height: 320px !important;
+  .about_slider #about_slider .abt_slides img,
+  .about_slider .abt_slides img,
+  .abt_slides img {
+    height: 260px !important;
+    max-height: 260px !important;
   }
 }
+
 

@@ -695,7 +695,18 @@ footer {
   margin: 0 auto !important;
 }
 
-
+/* ==========================================================================
+   HERO BANNER HEADING BLACK COLOR & MIXED CASE RESTORATION
+   ========================================================================== */
+#banner-font2,
+#banner-font2 .hero-age,
+#banner-font2 .hero-serif,
+.banner_section .banner_text #banner-font2,
+.banner_section .banner_text #banner-font2 .hero-age,
+.banner_section .banner_text #banner-font2 .hero-serif {
+  color: #000000 !important;
+  text-transform: none !important;
+}
 
 
 

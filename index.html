@@ -248,7 +248,7 @@
 
           <!-- banner slides start -->
           <div class="col-lg-6 col-md-12">
-            <div class="banner_slider">
+            <div class="banner_slider" style="position: relative;">
               <div id="frmae_slider" class="owl-carousel owl-theme">
                 <div class="item">
                   <div class="slider_media" style="position: relative;">
@@ -274,6 +274,13 @@
                     </button>
                   </div>
                 </div>
+              </div>
+
+              <!-- 3 Navigation Video Names / Tabs below Video Player -->
+              <div class="hero_video_nav_tabs" style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
+                <button class="hero_vid_tab active" onclick="goToHeroVideo(0)" style="padding: 8px 18px; border-radius: 20px; font-size: 13.5px; font-weight: 700; border: 1.5px solid #2786a5; background: #2786a5; color: #ffffff; cursor: pointer; transition: all 0.25s ease;">Physiotherapy Care</button>
+                <button class="hero_vid_tab" onclick="goToHeroVideo(1)" style="padding: 8px 18px; border-radius: 20px; font-size: 13.5px; font-weight: 700; border: 1.5px solid #cbd5e1; background: #ffffff; color: #475569; cursor: pointer; transition: all 0.25s ease;">24/7 Home Nursing</button>
+                <button class="hero_vid_tab" onclick="goToHeroVideo(2)" style="padding: 8px 18px; border-radius: 20px; font-size: 13.5px; font-weight: 700; border: 1.5px solid #cbd5e1; background: #ffffff; color: #475569; cursor: pointer; transition: all 0.25s ease;">Geriatric Care</button>
               </div>
             </div>
           </div>
@@ -1100,6 +1107,38 @@ function toggleHeroVideo(btn) {
     }
   }
 }
+</script>
+<script>
+function goToHeroVideo(index) {
+  var $owl = $('#frmae_slider');
+  if ($owl.length && typeof $owl.trigger === 'function') {
+    $owl.trigger('to.owl.carousel', [index, 300]);
+  }
+  updateHeroVidTabs(index);
+}
+
+function updateHeroVidTabs(index) {
+  $('.hero_vid_tab').each(function(i) {
+    if (i === index) {
+      $(this).css({ 'background': '#2786a5', 'color': '#ffffff', 'border-color': '#2786a5' }).addClass('active');
+    } else {
+      $(this).css({ 'background': '#ffffff', 'color': '#475569', 'border-color': '#cbd5e1' }).removeClass('active');
+    }
+  });
+}
+
+$(document).ready(function() {
+  var $owl = $('#frmae_slider');
+  if ($owl.length) {
+    $owl.on('changed.owl.carousel', function(event) {
+      if (!event.namespace) return;
+      var itemIndex = event.item.index - event.relatedTarget._clones.length / 2;
+      var totalItems = event.item.count;
+      var currentSlide = (itemIndex % totalItems + totalItems) % totalItems;
+      updateHeroVidTabs(currentSlide);
+    });
+  }
+});
 </script>
 </body>
 </html>

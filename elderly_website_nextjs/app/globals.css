@@ -1,0 +1,23 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  /* Placeholder brand tokens — Phase 2b replaces with values extracted from source CSS.
+     Primary observed in source index.html: #2786a5 */
+  --color-brand: #2786a5;
+  --color-brand-dark: #1f6b85;
+  --color-brand-foreground: #ffffff;
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+  --font-sans: var(--font-sans), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-background);
+  color: var(--color-foreground);
+}

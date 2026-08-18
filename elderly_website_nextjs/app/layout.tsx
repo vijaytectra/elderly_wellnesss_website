@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
-import { inter } from "./fonts";
+import { SITE_EMAIL, SITE_PHONE, SOCIAL_LINKS } from "@/data/site";
+import { cormorant, playball } from "./fonts";
 import "./globals.css";
 
 const description =
@@ -34,15 +38,42 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: SITE_NAME,
+  url: `${SITE_URL}/`,
+  logo: `${SITE_URL}/images/logo.png`,
+  email: SITE_EMAIL,
+  telephone: SITE_PHONE,
+  sameAs: SOCIAL_LINKS.map((link) => link.href),
+};
+
+const websiteSchema: Record<string, unknown> = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: SITE_NAME,
+  url: `${SITE_URL}/`,
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  inLanguage: "en-US",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${playball.variable}`}
+    >
       <body>
-        {/* Header goes here — Phase 2b (Shared UI) */}
-        {children}
-        {/* Footer goes here — Phase 2b (Shared UI) */}
+        <JsonLd id="organization-schema" data={organizationSchema} />
+        <JsonLd id="website-schema" data={websiteSchema} />
+        <Header />
+        <main id="main">{children}</main>
+        <Footer />
       </body>
     </html>
   );

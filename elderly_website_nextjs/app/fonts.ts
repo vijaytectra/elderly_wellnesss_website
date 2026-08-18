@@ -1,9 +1,32 @@
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 
-// Stub — Phase 2b replaces with `next/font/local` loaders for the actual
-// woff2 files under ../fonts/ (cormorant-garamond-300, playball, icofont, etc.)
-export const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
+/**
+ * Cormorant Garamond, weight 300 only — sourced from ../fonts/ in the legacy
+ * repo. The legacy site only ships weight 300 (see MIGRATION_INVENTORY §11);
+ * if more weights are needed later, drop more .woff2 files into
+ * `public/fonts/` and extend the `src` array.
+ */
+export const cormorant = localFont({
+  src: [
+    {
+      path: "../public/fonts/cormorant-garamond-300.woff2",
+      weight: "300",
+      style: "normal",
+    },
+  ],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+/** Playball display script, single weight. */
+export const playball = localFont({
+  src: [
+    {
+      path: "../public/fonts/playball.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-display",
   display: "swap",
 });

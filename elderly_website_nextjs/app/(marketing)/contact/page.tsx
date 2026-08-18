@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { ContactForm } from "@/components/ContactForm";
 import { SectionTitle } from "@/components/sections/SectionTitle";
+import { SITE_PHONE_TEL } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -74,7 +75,7 @@ export default function ContactPage() {
                 Call us
               </span>
               <a
-                href="tel:917550067872"
+                href={SITE_PHONE_TEL}
                 className="text-base font-semibold text-[color:var(--color-foreground)] hover:text-[color:var(--color-brand)]"
               >
                 +91 99448 90577

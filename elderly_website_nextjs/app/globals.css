@@ -49,6 +49,15 @@
 .icofont-linkedin::before { content: "\ed4d"; }
 .icofont-rounded-down::before { content: "\eaa1"; }
 
+/* Phase 3a additions (bullet-check / step / brand icons). */
+.icofont-ui-check::before { content: "\ec4b"; }
+.icofont-ui-clock::before { content: "\ec4e"; }
+.icofont-check-circled::before { content: "\eed7"; }
+.icofont-gear::before { content: "\ef3a"; }
+.icofont-tasks-alt::before { content: "\f006"; }
+.icofont-brand-android-robot::before { content: "\e8a4"; }
+.icofont-brand-apple::before { content: "\e8a7"; }
+
 /* -------------------------------------------------------------------------
  * Design tokens
  *

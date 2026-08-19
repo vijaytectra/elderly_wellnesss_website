@@ -43,11 +43,11 @@
 /* Codepoints taken from the icofont v1 map (https://icofont.com). Only the
  * glyphs referenced by shared UI are declared here; page-specific icons will
  * be added in Phase 3 as they are needed. */
-.icofont-facebook::before { content: "\ed36"; }
+.icofont-facebook::before { content: "\ed37"; }
 .icofont-twitter::before { content: "\ed7a"; }
 .icofont-instagram::before { content: "\ed46"; }
 .icofont-linkedin::before { content: "\ed4d"; }
-.icofont-rounded-down::before { content: "\eaa1"; }
+.icofont-rounded-down::before { content: "\ea99"; }
 
 /* Phase 3a additions (bullet-check / step / brand icons). */
 .icofont-ui-check::before { content: "\ec4b"; }

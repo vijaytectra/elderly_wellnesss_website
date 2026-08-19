@@ -30,29 +30,20 @@ body.single-post article #rank-math-faq h3.rank-math-question,
 body.single-post article .entry-content h3.rank-math-question,
 h3.rank-math-question {
   cursor: pointer !important;
-  padding-top: 16px !important;
-  padding-bottom: 16px !important;
-  padding-left: 16px !important;
-  padding-right: 44px !important;
+  padding-top: 22px !important;
+  padding-bottom: 22px !important;
+  padding-left: 32px !important;
+  padding-right: 64px !important;
   margin: 0 !important;
-  font-size: 0.98rem !important;
+  font-size: 1.05rem !important;
   font-weight: 700 !important;
-  line-height: 1.4 !important;
+  line-height: 1.5 !important;
   position: relative !important;
   color: #0f172a !important;
   user-select: none !important;
   transition: color 0.2s ease !important;
   text-align: left !important;
-  text-wrap: wrap !important;
   box-sizing: border-box !important;
-}
-
-#rank-math-faq .rank-math-question *,
-.rank-math-block .rank-math-question * {
-  color: inherit !important;
-  font-size: inherit !important;
-  font-weight: inherit !important;
-  text-align: left !important;
 }
 
 #rank-math-faq .rank-math-list-item.is-open .rank-math-question,
@@ -65,10 +56,10 @@ h3.rank-math-question {
 h3.rank-math-question::after {
   content: "+" !important;
   position: absolute !important;
-  right: 22px !important;
+  right: 28px !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
-  font-size: 22px !important;
+  font-size: 24px !important;
   line-height: 1 !important;
   color: var(--blog-accent, #2786a5) !important;
   font-weight: 600 !important;
@@ -85,22 +76,15 @@ h3.rank-math-question::after {
 body.single-post .entry-content #rank-math-faq .rank-math-answer,
 body.single-post article #rank-math-faq .rank-math-answer {
   display: none !important;
-  padding-top: 14px !important;
-  padding-bottom: 16px !important;
-  padding-left: 16px !important;
-  padding-right: 16px !important;
+  padding-top: 16px !important;
+  padding-bottom: 24px !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
   color: #475569 !important;
-  font-size: 0.95rem !important;
-  line-height: 1.65 !important;
+  font-size: 0.98rem !important;
+  line-height: 1.7 !important;
   border-top: 1px solid #f1f5f9 !important;
   box-sizing: border-box !important;
-  text-align: left !important;
-}
-
-#rank-math-faq .rank-math-answer p,
-.rank-math-block .rank-math-answer p {
-  text-align: left !important;
-  margin-bottom: 0 !important;
 }
 
 #rank-math-faq .rank-math-list-item.is-open .rank-math-answer,
@@ -108,293 +92,10 @@ body.single-post article #rank-math-faq .rank-math-answer {
   display: block !important;
 }
 
+#rank-math-faq .rank-math-answer p:last-child {
+  margin-bottom: 0;
+}
+
 #rank-math-faq .rank-math-list-item.is-hidden {
-  display: none !important;
-}
-
-@media screen and (max-width: 767px) {
-  #rank-math-faq .rank-math-question,
-  .rank-math-block .rank-math-question,
-  h3.rank-math-question {
-    padding-top: 14px !important;
-    padding-bottom: 14px !important;
-    padding-left: 12px !important;
-    padding-right: 38px !important;
-    font-size: 0.90rem !important;
-    line-height: 1.35 !important;
-    letter-spacing: -0.01em !important;
-  }
-
-  #rank-math-faq .rank-math-question::after,
-  .rank-math-block .rank-math-question::after,
-  h3.rank-math-question::after {
-    right: 18px !important;
-    font-size: 18px !important;
-  }
-
-  #rank-math-faq .rank-math-answer,
-  .rank-math-block .rank-math-answer {
-    padding-top: 12px !important;
-    padding-bottom: 14px !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-    font-size: 0.90rem !important;
-    line-height: 1.55 !important;
-  }
-}
-
-
-/* Floating WhatsApp Button & Clean Bottom Body (Universal) */
-body {
-  padding-bottom: 0 !important;
-}
-
-.ew-mobile-sticky-bottom-bar {
-  display: none !important;
-}
-
-a.ew-whatsapp-floating-btn,
-.ew-whatsapp-floating-btn {
-  position: fixed !important;
-  bottom: 25px !important;
-  left: 25px !important;
-  right: auto !important;
-  top: auto !important;
-  width: auto !important;
-  height: 54px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  z-index: 2147483647 !important;
-  text-decoration: none !important;
-  cursor: pointer !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  transform: translate3d(0, 0, 0) !important;
-  pointer-events: auto !important;
-}
-
-.ew-whatsapp-floating-btn .ew-wa-circle {
-  width: 54px !important;
-  height: 54px !important;
-  min-width: 54px !important;
-  min-height: 54px !important;
-  border-radius: 50% !important;
-  background-color: #49E670 !important;
-  box-shadow: 0 4px 16px rgba(73, 230, 112, 0.45) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
-  flex-shrink: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.ew-whatsapp-floating-btn:hover .ew-wa-circle {
-  transform: scale(1.08) !important;
-  box-shadow: 0 6px 22px rgba(73, 230, 112, 0.65) !important;
-}
-
-
-/* Pricing Teaser Chip Zoom Effect (Light Soft Chip - No Color Shift) */
-.pricing-teaser-link {
-  color: #2786a5 !important;
-  background: #e6f4f8 !important;
-  border: 1.5px solid #bce2ed !important;
-  font-size: 13.5px !important;
-  font-weight: 700 !important;
-  padding: 6px 18px !important;
-  border-radius: 20px !important;
-  text-decoration: none !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-}
-
-.pricing-teaser-link:hover {
-  color: #2786a5 !important;
-  background: #e6f4f8 !important;
-  border-color: #bce2ed !important;
-  transform: scale(1.06) !important;
-  box-shadow: 0 4px 14px rgba(39, 134, 165, 0.25) !important;
-}
-
-
-/* ==========================================================================
-   TIGHTEN BOTTOM EMPTY SPACES BEFORE FOOTER
-   ========================================================================== */
-.post-views,
-.post-views.content-post {
-  margin-top: 12px !important;
-  margin-bottom: 14px !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.ew-medical-disclaimer {
-  margin-top: 16px !important;
-  margin-bottom: 20px !important;
-}
-
-.single-post #page,
-.single-post .site-content,
-.single-post #primary,
-.single-post .site-main,
-.single-post article,
-.single-post .inside-article,
-.single-post #right-sidebar,
-.single-post .inside-right-sidebar {
-  padding-bottom: 12px !important;
-  margin-bottom: 0 !important;
-}
-
-body.single-post footer,
-body.single footer,
-footer,
-footer.site-footer,
-footer.row_am {
-  margin-top: 24px !important;
-}
-
-
-/* ==========================================================================
-   INCREASE POST VIEWS SIZE & ELIMINATE SPACE BELOW DISCLAIMER
-   ========================================================================== */
-.post-views,
-.post-views.content-post {
-  font-size: 1.05rem !important;
-  font-weight: 600 !important;
-  color: #334155 !important;
-  background-color: #f1f5f9 !important;
-  border: 1px solid #cbd5e1 !important;
-  border-radius: 20px !important;
-  padding: 8px 18px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  margin-top: 16px !important;
-  margin-bottom: 12px !important;
-}
-
-.post-views-icon,
-.post-views .dashicons {
-  font-size: 1.2rem !important;
-  color: #2786a5 !important;
-  vertical-align: middle !important;
-}
-
-.ew-medical-disclaimer {
-  margin-top: 16px !important;
-  margin-bottom: 8px !important;
-}
-
-.single-post #page,
-.single-post .site-content,
-.single-post #primary,
-.single-post .site-main,
-.single-post article,
-.single-post .inside-article,
-.single-post #right-sidebar,
-.single-post .inside-right-sidebar,
-.single-post .widget-area {
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-body.single-post footer,
-body.single footer,
-footer,
-footer.site-footer,
-footer.row_am {
-  margin-top: 12px !important;
-}
-
-
-/* ==========================================================================
-   HIGH CONTRAST TEXT VISIBILITY FIX FOR DARK CTA CARDS & BANNER BOXES
-   ========================================================================== */
-.ew-blog-cta--app,
-.ew-blog-service-card,
-.ew-blog-cta {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
-  border-radius: 16px !important;
-  padding: 28px 32px !important;
-  color: #ffffff !important;
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25) !important;
-  margin: 32px 0 !important;
-  box-sizing: border-box !important;
-}
-
-.ew-blog-cta--app .ew-blog-cta__eyebrow,
-.ew-blog-service-card .ew-blog-cta__eyebrow,
-.ew-blog-cta .ew-blog-cta__eyebrow {
-  color: #38bdf8 !important;
-  font-size: 0.85rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
-  margin-bottom: 8px !important;
-  display: block !important;
-}
-
-.ew-blog-cta--app .ew-blog-cta__heading,
-.ew-blog-cta--app h3,
-.ew-blog-cta--app h4,
-.ew-blog-service-card .ew-blog-cta__heading,
-.ew-blog-service-card h3,
-.ew-blog-service-card h4,
-.ew-blog-cta h3,
-.ew-blog-cta h4 {
-  color: #ffffff !important;
-  font-size: 1.45rem !important;
-  font-weight: 800 !important;
-  line-height: 1.35 !important;
-  margin-top: 4px !important;
-  margin-bottom: 10px !important;
-}
-
-.ew-blog-cta--app .ew-blog-cta__text,
-.ew-blog-cta--app p,
-.ew-blog-service-card .ew-blog-cta__text,
-.ew-blog-service-card p,
-.ew-blog-cta p {
-  color: #f1f5f9 !important;
-  font-size: 1.05rem !important;
-  line-height: 1.6 !important;
-  margin-bottom: 18px !important;
-}
-
-.ew-blog-cta--app .ew-blog-cta__btn,
-.ew-blog-service-card .ew-blog-cta__btn,
-.ew-blog-cta--app a.btn,
-.ew-blog-service-card a.btn,
-.ew-blog-cta a {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  font-size: 1rem !important;
-  padding: 12px 24px !important;
-  border-radius: 30px !important;
-  text-decoration: none !important;
-  border: none !important;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-}
-
-.ew-blog-cta--app .ew-blog-cta__btn:hover,
-.ew-blog-service-card .ew-blog-cta__btn:hover,
-.ew-blog-cta a:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.5) !important;
-  color: #ffffff !important;
-  text-decoration: none !important;
+  display: none;
 }

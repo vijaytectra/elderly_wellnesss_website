@@ -1,118 +1,86 @@
 async function loadBlogs() {
   const blogContainer = document.getElementById("blog-posts");
-  const blogSection = document.getElementById("home-blog-section");
   if (!blogContainer) return;
-
-  const hideSection = () => {
-    if (blogSection) {
-      blogSection.style.display = "none";
-    }
-  };
-
-  const esc = (s) =>
-    String(s == null ? "" : s)
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
-
-  let posts = [];
-
   try {
     const response = await fetch("blogs/blog-manifest.json");
-    if (response.ok) {
-      posts = await response.json();
-    }
-  } catch (e) {
-    // Manifest fetch failed, fallback will be attempted
-  }
+    const posts = await response.json();
+    // Titles in blog-manifest.json already carry HTML entities (e.g. "&amp;"),
+    // so '&' is deliberately left alone -- escaping it would double-encode and
+    // render "&amp;" literally. Tag and attribute delimiters are still escaped
+    // so a title can never break out of the markup it is interpolated into.
+    const esc = (s) =>
+      String(s == null ? "" : s)
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
 
-  // Fallback to WordPress REST API if manifest returned no posts
-  if (!Array.isArray(posts) || posts.length === 0) {
-    try {
-      const wpResponse = await fetch("blogs/wp-json/wp/v2/posts?per_page=4&_embed");
-      if (wpResponse.ok) {
-        const wpData = await wpResponse.json();
-        posts = wpData.map((item) => {
-          const featuredMedia = item._embedded && item._embedded["wp:featuredmedia"] ? item._embedded["wp:featuredmedia"][0] : null;
-          return {
-            title: item.title ? item.title.rendered : "",
-            date: item.date,
-            link: item.link,
-            slug: item.slug,
-            image: featuredMedia ? featuredMedia.source_url : "",
-          };
-        });
+    // Built as one string and assigned once. The previous `innerHTML +=` per
+    // post re-parsed and re-laid-out the whole container on every iteration.
+    const markup = [];
+
+    // Homepage shows 4 newest posts (2 per row)
+    posts.slice(0, 4).forEach((item) => {
+      const date = item.date
+        ? new Date(item.date).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })
+        : "";
+
+      // Always stay under blogs/ — never link to /slug at the site root
+      let slug = (item.slug || "").replace(/^\/+|\/+$/g, "");
+      if (!slug && item.link) {
+        const match = String(item.link).match(/blogs\/([^/?#]+)/i);
+        slug = match ? match[1] : "";
       }
-    } catch (e) {
-      // Fallback failed
-    }
-  }
+      // Relative from homepage so Live Server + production both resolve correctly
+      const link = slug ? `blogs/${slug}/` : "blogs/";
 
-  // If no posts available, hide the entire section (never show an empty heading)
-  if (!Array.isArray(posts) || posts.length === 0) {
-    hideSection();
-    return;
-  }
+      let imageSrc = (item.image || "")
+        .replace(/^\//, "")
+        .replace(/^https?:\/\/(www\.)?theelderlywellness\.com\//i, "");
 
-  // Ensure section is visible if posts exist
-  if (blogSection) {
-    blogSection.style.display = "";
-  }
+      // Prefer compressed homepage thumbs when available (same image, smaller file)
+      if (imageSrc.indexOf("images/blogs/") === 0) {
+        const base = imageSrc.replace(/^images\/blogs\//, "").replace(/\.[^.]+$/, "");
+        imageSrc = "images/blogs/opt/" + base + ".jpg";
+      }
 
-  const markup = [];
-  posts.slice(0, 3).forEach((item) => {
-    const date = item.date
-      ? new Date(item.date).toLocaleDateString("en-US", {
-          month: "long",
-          day: "numeric",
-          year: "numeric",
-        })
-      : "";
+      const title = esc(item.title);
+      const href = esc(link);
 
-    let slug = (item.slug || "").replace(/^\/+|\/+$/g, "");
-    if (!slug && item.link) {
-      const match = String(item.link).match(/blogs\/([^/?#]+)/i);
-      slug = match ? match[1] : "";
-    }
-    const link = slug ? `blogs/${slug}/` : "blogs/";
+      const image = imageSrc
+        ? `<a href="${href}" class="img" tabindex="-1" aria-hidden="true"><img src="${esc(imageSrc)}" width="640" height="400" alt="${title}" loading="lazy" decoding="async"/></a>`
+        : "";
 
-    let imageSrc = (item.image || "")
-      .replace(/^\//, "")
-      .replace(/^https?:\/\/(www\.)?theelderlywellness\.com\//i, "");
-
-    if (imageSrc.indexOf("images/blogs/") === 0) {
-      const base = imageSrc.replace(/^images\/blogs\//, "").replace(/\.[^.]+$/, "");
-      imageSrc = "images/blogs/opt/" + base + ".jpg";
-    }
-
-    const title = esc(item.title);
-    const href = esc(link);
-
-    const image = imageSrc
-      ? `<a href="${href}" class="img" tabindex="-1" aria-hidden="true"><img src="${esc(imageSrc)}" width="640" height="400" alt="${title}" loading="lazy" decoding="async"/></a>`
-      : "";
-
-    markup.push(`
-        <div class="blog_post" data-aos="fade-up" data-aos-duration="1500">
-          ${image}
-          <div class="text">
-            <ul class="blog_info">
-              <li>${esc(date)}</li>
-              <li>Blogs</li>
-            </ul>
-            <h3><a href="${href}">${title}</a></h3>
-            <div class="tag_more">
-              <span class="tag">Blogs</span>
-              <a href="${href}" aria-label="Read more about ${title}">Read More <i class="icofont-arrow-right" aria-hidden="true"></i></a>
+      // "Read more" on its own is not a descriptive link name (Lighthouse SEO
+      // link-text). The visible label stays the same; the accessible name
+      // carries the post title.
+      markup.push(`
+          <div class="blog_post" data-aos="fade-up" data-aos-duration="1500">
+            ${image}
+            <div class="text">
+              <ul class="blog_info">
+                <li>${esc(date)}</li>
+                <li>Blogs</li>
+              </ul>
+              <h3><a href="${href}">${title}</a></h3>
+              <div class="tag_more">
+                <span class="tag">Blogs</span>
+                <a href="${href}">Read more<span class="ew-sr-only"> about ${title}</span> <i class="icofont-arrow-right" aria-hidden="true"></i></a>
+              </div>
             </div>
           </div>
-        </div>
-      `);
-  });
+        `);
+    });
 
-  blogContainer.innerHTML = markup.join("");
-  if (typeof AOS !== "undefined" && typeof AOS.refresh === "function") {
-    AOS.refresh();
+    blogContainer.innerHTML = markup.join("");
+    if (typeof AOS !== "undefined" && typeof AOS.refresh === "function") {
+      AOS.refresh();
+    }
+  } catch (error) {
+    blogContainer.innerHTML = "<p>Failed to load blog posts.</p>";
   }
 }
 

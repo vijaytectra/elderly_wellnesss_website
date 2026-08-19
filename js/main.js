@@ -1,150 +1,173 @@
 function preloader_fade() {
   $("#preloader").fadeOut("slow");
 }
-// Accessible Click/Tap, Keyboard & Hover-Intent Dropdown Navigation
-(function () {
-  var openTimer = null;
-  var closeTimer = null;
 
-  function closeAllDropdowns() {
-    $(".has_dropdown").removeClass("open").find(".drp_btn").attr("aria-expanded", "false");
-    if ($(window).width() > 991) {
-      $(".has_dropdown .sub_menu").stop(true, true).fadeOut(150);
-    } else {
-      $(".has_dropdown .sub_menu").stop(true, true).slideUp(150);
-    }
+$(".drp_btn").on("click", function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+  var $btn = $(this);
+  var $item = $btn.closest(".has_dropdown");
+  var $menu = $item.children(".sub_menu");
+  var willOpen = !$item.hasClass("open");
+
+  // Accordion: close other open dropdowns in this nav
+  $item
+    .siblings(".has_dropdown.open")
+    .removeClass("open")
+    .find(".drp_btn")
+    .removeClass("active")
+    .end()
+    .children(".sub_menu")
+    .stop(true, true)
+    .slideUp(200);
+
+  $item.toggleClass("open", willOpen);
+  $btn.toggleClass("active", willOpen);
+  $menu.stop(true, true);
+  if (willOpen) {
+    $menu.slideDown(200);
+  } else {
+    $menu.slideUp(200);
   }
-
-  function openSingleDropdown($item) {
-    // Close all other dropdowns
-    $(".has_dropdown").not($item).removeClass("open").find(".drp_btn").attr("aria-expanded", "false");
-    if ($(window).width() > 991) {
-      $(".has_dropdown").not($item).find(".sub_menu").stop(true, true).fadeOut(150);
-    } else {
-      $(".has_dropdown").not($item).find(".sub_menu").stop(true, true).slideUp(150);
-    }
-
-    $item.addClass("open").find(".drp_btn").attr("aria-expanded", "true");
-    if ($(window).width() > 991) {
-      $item.find(".sub_menu").stop(true, true).fadeIn(150);
-    } else {
-      $item.find(".sub_menu").stop(true, true).slideDown(150);
-    }
-  }
-
-  // Combined Click & Tap Handler for Parent Link and Arrow Toggle Button
-  $(document).on("click", ".has_dropdown > a, .drp_btn", function (e) {
-    var $parent = $(this).closest(".has_dropdown");
-    var href = $parent.children("a").attr("href");
-    var isLink = $(this).is("a");
-
-    if (!isLink || !href || href === "#" || href === "javascript:void(0);" || href.includes("#")) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      if ($parent.hasClass("open")) {
-        closeAllDropdowns();
-      } else {
-        openSingleDropdown($parent);
-      }
-    }
-  });
-
-  // Close dropdown when clicking outside
-  $(document).on("click", function (e) {
-    if (!$(e.target).closest(".has_dropdown").length) {
-      closeAllDropdowns();
-    }
-  });
-
-  // Desktop Hover Intent with 180ms open & 250ms close delays
-  $(document).on("mouseenter", ".has_dropdown", function () {
-    if ($(window).width() <= 991) return;
-    var $this = $(this);
-    clearTimeout(closeTimer);
-    openTimer = setTimeout(function () {
-      openSingleDropdown($this);
-    }, 180);
-  });
-
-  $(document).on("mouseleave", ".has_dropdown", function () {
-    if ($(window).width() <= 991) return;
-    var $this = $(this);
-    clearTimeout(openTimer);
-    closeTimer = setTimeout(function () {
-      $this.removeClass("open").find(".drp_btn").attr("aria-expanded", "false");
-      $this.find(".sub_menu").stop(true, true).fadeOut(150);
-    }, 250);
-  });
-
-  // Keyboard navigation: Escape key closes dropdown and returns focus
-  $(document).on("keydown", function (e) {
-    if (e.key === "Escape" || e.keyCode === 27) {
-      var $openDropdown = $(".has_dropdown.open");
-      if ($openDropdown.length) {
-        closeAllDropdowns();
-        $openDropdown.find(".drp_btn, > a").first().focus();
-      }
-    }
-  });
-
-  // Keyboard navigation: Enter & Space toggle button trigger
-  $(document).on("keydown", ".drp_btn", function (e) {
-    if (e.key === "Enter" || e.key === " " || e.keyCode === 13 || e.keyCode === 32) {
-      e.preventDefault();
-      $(this).trigger("click");
-    }
-  });
-})();
-$(document).ready(function () {
-  window.setTimeout("preloader_fade();", 500);
-  var currentYear = new Date().getFullYear();
-  $(".ew-current-year, #yr, #copyright-year").text(currentYear);
-
-  // Inject Floating WhatsApp Support Button on pages without native Chaty (Logo only)
-  if ($(".chaty-widget, .chaty-main-button, .ew-whatsapp-floating-btn").length === 0) {
-    var waUrl = "https://api.whatsapp.com/send?phone=919944890577&text=Hello%20Elderly%20Wellness%2C%20I%20would%20like%20to%20inquire%20about%20your%20senior%20care%20services.";
-    var waHtml = '<a href="' + waUrl + '" target="_blank" rel="noopener noreferrer" class="ew-whatsapp-floating-btn" aria-label="Contact Elderly Wellness on WhatsApp">' +
-                 '<div class="ew-wa-circle">' +
-                 '<svg width="34" height="34" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-                 '<circle cx="19.4395" cy="19.4395" r="19.4395" fill="#49E670"/>' +
-                 '<path d="M12.9821 10.1115C12.7029 10.7767 11.5862 11.442 10.7486 11.575C10.1902 11.7081 9.35269 11.8411 6.84003 10.7767C3.48981 9.44628 1.39593 6.25317 1.25634 6.12012C1.11674 5.85403 0 4.39053 0 2.92702C0 1.46351 0.83755 0.665231 1.11673 0.399139C1.39592 0.133046 1.8147 0 2.23348 0C2.37307 0 2.51267 0 2.65226 0C2.93144 0 3.21063 0 3.35022 0.532183C3.62941 1.19741 4.32736 2.66092 4.32736 2.79397C4.46696 2.92702 4.46696 3.19311 4.32736 3.32616C4.18777 3.59225 4.18777 3.59224 3.90858 3.85834C3.76899 3.99138 3.6294 4.12443 3.48981 4.39052C3.35022 4.52357 3.21063 4.78966 3.35022 5.05576C3.48981 5.32185 4.18777 6.38622 5.16491 7.18449C6.42125 8.24886 7.39839 8.51496 7.81717 8.78105C8.09636 8.91409 8.37554 8.9141 8.65472 8.648C8.93391 8.38191 9.21309 7.98277 9.49228 7.58363C9.77146 7.31754 10.0507 7.1845 10.3298 7.31754C10.609 7.45059 12.2841 8.11582 12.5633 8.38191C12.8425 8.51496 13.1217 8.648 13.1217 8.78105C13.1217 8.78105 13.1217 9.44628 12.9821 10.1115Z" transform="translate(12.9597 12.9597)" fill="#FAFAFA"/>' +
-                 '<path d="M0.196998 23.295L0.131434 23.4862L0.323216 23.4223L5.52771 21.6875C7.4273 22.8471 9.47325 23.4274 11.6637 23.4274C18.134 23.4274 23.4274 18.134 23.4274 11.6637C23.4274 5.19344 18.134 -0.1 11.6637 -0.1C5.19344 -0.1 -0.1 5.19344 -0.1 11.6637C-0.1 13.9996 0.624492 16.3352 1.93021 18.2398L0.196998 23.295ZM5.87658 19.8847L5.84025 19.8665L5.80154 19.8788L2.78138 20.8398L3.73978 17.9646L3.75932 17.906L3.71562 17.8623L3.43104 17.5777C2.27704 15.8437 1.55796 13.8245 1.55796 11.6637C1.55796 6.03288 6.03288 1.55796 11.6637 1.55796C17.2945 1.55796 21.7695 6.03288 21.7695 11.6637C21.7695 17.2945 17.2945 21.7695 11.6637 21.7695C9.64222 21.7695 7.76778 21.1921 6.18227 20.039L6.17557 20.0342L6.16817 20.0305L5.87658 19.8847Z" transform="translate(7.7758 7.77582)" fill="white" stroke="white" stroke-width="0.2"/>' +
-                 '</svg>' +
-                 '</div>' +
-                 '</a>';
-    document.body.insertAdjacentHTML('beforeend', waHtml);
-  }
-
-  // Floating WhatsApp icon is active on all pages
 });
 
-if ($.fn && $.fn.owlCarousel) {
-  if ($("#frmae_slider").length) {
-    var $heroSlider = $("#frmae_slider").owlCarousel({
-      loop: false,
-      margin: 0,
-      autoplay: false,
-      autoplayTimeout: 0,
-      autoplayHoverPause: false,
-      mouseDrag: false,
-      touchDrag: false,
-      pullDrag: false,
-      freeDrag: false,
-      smartSpeed: 800,
-      nav: false,
-      dots: false,
-      responsive: { 0: { items: 1 }, 600: { items: 1 }, 1000: { items: 1 } },
-    });
-    var owlData = $heroSlider.data('owl.carousel');
-    if (owlData && owlData._plugins && owlData._plugins.autoplay) {
-      owlData._plugins.autoplay.stop();
-      owlData._plugins.autoplay._next = function() {};
-      owlData._plugins.autoplay.play = function() {};
-    }
-  }
+$(document).ready(function () {
+    window.setTimeout("preloader_fade();", 300);
+});
 
-  $("#company_slider").owlCarousel({
+// Owl builds its dots as <button role="button"> with no text (no accessible
+// name) and its arrows as <button role="presentation"> (a role that is not
+// allowed on button). Both fail Lighthouse a11y, so patch each carousel's
+// generated controls as it initialises or refreshes.
+function ewPatchOwlA11y(root) {
+  var scope = root && root.querySelectorAll ? root : document;
+  var each = function (sel, fn) {
+    Array.prototype.forEach.call(scope.querySelectorAll(sel), fn);
+  };
+
+  each(".owl-dot", function (dot, i) {
+    dot.removeAttribute("role");
+    dot.setAttribute("type", "button");
+    if (!dot.getAttribute("aria-label")) {
+      dot.setAttribute("aria-label", "Go to slide " + (i + 1));
+    }
+  });
+  each(".owl-prev", function (btn) {
+    btn.removeAttribute("role");
+    btn.setAttribute("type", "button");
+    if (!btn.getAttribute("aria-label")) btn.setAttribute("aria-label", "Previous slide");
+  });
+  each(".owl-next", function (btn) {
+    btn.removeAttribute("role");
+    btn.setAttribute("type", "button");
+    if (!btn.getAttribute("aria-label")) btn.setAttribute("aria-label", "Next slide");
+  });
+}
+
+// Registered before any carousel is initialised so no init event is missed.
+$(document).on(
+  "initialized.owl.carousel refreshed.owl.carousel changed.owl.carousel",
+  function (e) {
+    ewPatchOwlA11y(e.target);
+  }
+);
+
+// Hero slider: bind first, then init (so all 3 videos rotate)
+//
+// The hero videos are preload="none" with no autoplay attribute. Playback is
+// armed only after the window load event, so ~630KB of MP4 never competes with
+// the LCP poster for bandwidth on first paint.
+var ewHeroVideosArmed = false;
+
+function playHeroVideos() {
+  if (!ewHeroVideosArmed) return;
+  $("#frmae_slider .owl-item").each(function () {
+    var video = $(this).find("video").get(0);
+    if (!video) return;
+    video.muted = true;
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
+    if ($(this).hasClass("active")) {
+      var playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(function () {});
+      }
+    } else {
+      video.pause();
+    }
+  });
+}
+
+function armHeroVideos() {
+  if (ewHeroVideosArmed) return;
+  ewHeroVideosArmed = true;
+  playHeroVideos();
+}
+
+function ewAfterLoad(fn) {
+  if (document.readyState === "complete") ewIdle(fn, 1500);
+  else
+    window.addEventListener("load", function () {
+      ewIdle(fn, 1500);
+    });
+}
+
+ewAfterLoad(function () {
+  ewInitHeroSlider();
+  armHeroVideos();
+});
+
+var $heroSlider = $("#frmae_slider");
+$heroSlider.on(
+  "initialized.owl.carousel changed.owl.carousel translated.owl.carousel",
+  playHeroVideos
+);
+
+// Initialising Owl on the hero was the largest single main-thread task during
+// load. The static .hero_poster behind the slider is already painted by then,
+// so the carousel can be built after load without any visible gap.
+function ewInitHeroSlider() {
+  if (!$heroSlider.length || $heroSlider.hasClass("owl-loaded")) return;
+  $heroSlider.owlCarousel({
+    loop: !0,
+    margin: 0,
+    items: 1,
+    autoplay: !0,
+    autoplayTimeout: 4500,
+    autoplayHoverPause: !1,
+    autoplaySpeed: 800,
+    smartSpeed: 800,
+    nav: !1,
+    dots: !0,
+    touchDrag: !0,
+    mouseDrag: !0,
+    responsive: { 0: { items: 1 }, 600: { items: 1 }, 1e3: { items: 1 } },
+  });
+
+  playHeroVideos();
+  $heroSlider.find("video").on("loadedmetadata", function () {
+    $heroSlider.trigger("refresh.owl.carousel");
+  });
+}
+
+function ewIdle(fn, timeout) {
+  if (typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(fn, { timeout: timeout || 2500 });
+  } else {
+    window.setTimeout(fn, 1);
+  }
+}
+
+function initOwlIfPresent(selector, options) {
+  var $el = $(selector);
+  if (!$el.length || typeof $el.owlCarousel !== "function") return;
+  $el.owlCarousel(options);
+}
+// Non-hero carousels, keyed by selector. Initialising all nine up-front
+// produced a single ~400ms main-thread task inside the TBT window, so each one
+// is now initialised on its own as the reader approaches it.
+var EW_CAROUSELS = {
+  "#company_slider": {
     loop: !0,
     margin: 10,
     nav: !1,
@@ -152,17 +175,17 @@ if ($.fn && $.fn.owlCarousel) {
     smartSpeed: 1500,
     dots: !0,
     responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 5 } },
-  }),
-  $("#testimonial_slider").owlCarousel({
+  },
+  "#testimonial_slider": {
     loop: !0,
-    margin: 10,
-    nav: !1,
+    margin: 0,
+    nav: !0,
+    dots: !1,
     autoplay: !0,
     smartSpeed: 2500,
-    dots: !0,
-    responsive: { 0: { items: 1 }, 600: { items: 1 }, 1e3: { items: 1 } },
-  }),
-  $("#screen_slider").owlCarousel({
+    items: 1,
+  },
+  "#screen_slider": {
     loop: !0,
     margin: 10,
     nav: !1,
@@ -171,8 +194,8 @@ if ($.fn && $.fn.owlCarousel) {
     smartSpeed: 2500,
     center: !0,
     responsive: { 0: { items: 1 }, 600: { items: 3 }, 1e3: { items: 5 } },
-  }),
-  $("#feature_slider").owlCarousel({
+  },
+  "#feature_slider": {
     loop: !0,
     margin: 16,
     nav: !0,
@@ -185,8 +208,8 @@ if ($.fn && $.fn.owlCarousel) {
       992: { items: 3 },
       1200: { items: 4, margin: 20 },
     },
-  }),
-  $("#text_list_flow").owlCarousel({
+  },
+  "#text_list_flow": {
     loop: !0,
     margin: 0,
     nav: !1,
@@ -198,8 +221,8 @@ if ($.fn && $.fn.owlCarousel) {
     autoplaySpeed: 4e3,
     autoWidth: !0,
     responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 4 } },
-  }),
-  $("#text_list_flow_download").owlCarousel({
+  },
+  "#text_list_flow_download": {
     loop: !0,
     margin: 0,
     nav: !1,
@@ -211,8 +234,8 @@ if ($.fn && $.fn.owlCarousel) {
     autoplaySpeed: 4e3,
     autoWidth: !0,
     responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 4 } },
-  }),
-  $("#client_slider").owlCarousel({
+  },
+  "#client_slider": {
     loop: !0,
     margin: 30,
     nav: !1,
@@ -224,23 +247,21 @@ if ($.fn && $.fn.owlCarousel) {
     autoplaySpeed: 4e3,
     autoWidth: !0,
     responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 4 } },
-  }),
-  $("#about_slider").owlCarousel({
-    loop: true,
-    margin: 16,
-    nav: false,
-    dots: true,
-    autoplay: true,
-    autoplayTimeout: 3500,
-    smartSpeed: 800,
-    responsive: {
-      0: { items: 1.2, margin: 12 },
-      576: { items: 2, margin: 14 },
-      768: { items: 3, margin: 16 },
-      992: { items: 4, margin: 20 }
-    }
-  }),
-  $("#value_slider").owlCarousel({
+  },
+  "#about_slider": {
+    loop: !0,
+    margin: 20,
+    nav: !1,
+    dots: !1,
+    center: !0,
+    autoplay: !0,
+    slideTransition: "linear",
+    autoplayTimeout: 4e3,
+    autoplaySpeed: 4e3,
+    autoWidth: !0,
+    responsive: { 0: { items: 2 }, 600: { items: 3 }, 1e3: { items: 4 } },
+  },
+  "#value_slider": {
     loop: !0,
     margin: 15,
     nav: !0,
@@ -253,17 +274,139 @@ if ($.fn && $.fn.owlCarousel) {
       1e3: { items: 3 },
       1400: { margin: 60 },
     },
-  }),
-  $("#testimonial_slider").owlCarousel({
-    loop: !0,
-    margin: 0,
-    nav: !0,
-    dots: !1,
-    autoplay: !0,
-    smartSpeed: 2500,
-    items: 1,
+  },
+};
+
+function ewInitCarousel(selector) {
+  var $el = $(selector);
+  if (!$el.length || $el.hasClass("owl-loaded") || $el.data("ewPending")) return;
+
+  // An autoWidth carousel sizes its stage from the measured width of each
+  // slide. Initialising before the slide images have decoded yields a stage
+  // that is too narrow, and the floated slides then wrap onto a second row --
+  // #about_slider rendered 700px tall instead of 350px. A post-init
+  // refresh.owl.carousel does NOT recompute the stage width, so the images
+  // have to be in before Owl runs at all.
+  var pending = $el
+    .find("img")
+    .toArray()
+    .filter(function (img) {
+      return !img.complete;
+    });
+
+  // Owl's initial autoWidth pass can measure the stage short -- it produced a
+  // 2780px stage for #about_slider whose slides actually total 2957px, so the
+  // floated slides wrapped onto a second row and the carousel rendered 700px
+  // tall instead of 350px. Its own refresh recomputes the width correctly, so
+  // run one right after init. Reproducible on a fully settled page, so this is
+  // an Owl measurement bug rather than an image-timing race.
+  var initOwl = function () {
+    initOwlIfPresent(selector, EW_CAROUSELS[selector]);
+    if (!EW_CAROUSELS[selector] || !EW_CAROUSELS[selector].autoWidth) return;
+    window.requestAnimationFrame(function () {
+      $el.trigger("refresh.owl.carousel");
+    });
+  };
+
+  if (!pending.length) {
+    initOwl();
+    return;
+  }
+
+  $el.data("ewPending", true);
+  var start = function () {
+    if (!$el.data("ewPending")) return;
+    $el.data("ewPending", false);
+    initOwl();
+  };
+
+  var remaining = pending.length;
+  var settle = function () {
+    if (--remaining === 0) start();
+  };
+  pending.forEach(function (img) {
+    img.addEventListener("load", settle, { once: true });
+    img.addEventListener("error", settle, { once: true });
   });
+
+  // A stalled or never-loaded image must not leave the carousel hidden.
+  window.setTimeout(start, 3000);
 }
+
+function ewInitBelowFoldCarousels() {
+  Object.keys(EW_CAROUSELS).forEach(ewInitCarousel);
+}
+
+// Observe each below-the-fold carousel and initialise only the ones the reader
+// actually approaches. Falls back to the old idle-time batch where
+// IntersectionObserver is unavailable.
+(function () {
+  var present = Object.keys(EW_CAROUSELS).filter(function (sel) {
+    return document.querySelector(sel);
+  });
+  if (!present.length) return;
+
+  if (typeof IntersectionObserver !== "function") {
+    ewIdle(ewInitBelowFoldCarousels, 2000);
+    return;
+  }
+
+  // target element -> carousel selector
+  var watched = [];
+
+  var io = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        io.unobserve(entry.target);
+        watched
+          .filter(function (w) {
+            return w.target === entry.target;
+          })
+          .forEach(function (w) {
+            ewInitCarousel(w.sel);
+          });
+      });
+    },
+    { rootMargin: "400px 0px" }
+  );
+
+  present.forEach(function (sel) {
+    var el = document.querySelector(sel);
+    // Owl's stylesheet sets .owl-carousel{display:none} until it initialises,
+    // so the carousel element itself has no box and would NEVER intersect --
+    // observing it directly leaves the section permanently invisible. Watch the
+    // nearest laid-out ancestor instead.
+    var target = el;
+    while (target && !target.offsetHeight && target !== document.body) {
+      target = target.parentElement;
+    }
+    target = target || el;
+    watched.push({ target: target, sel: sel });
+    io.observe(target);
+  });
+
+  // Safety net: a carousel that never initialises is invisible content (Owl
+  // hides .owl-carousel until load), so guarantee every one comes up after
+  // load even if the observer never fires for it. Initialised one per timer
+  // tick so the sweep can never become a single long task.
+  var sweep = function () {
+    window.setTimeout(function () {
+      io.disconnect();
+      var queue = present.slice();
+      var next = function () {
+        var sel = queue.shift();
+        if (!sel) return;
+        ewInitCarousel(sel);
+        window.setTimeout(next, 0);
+      };
+      next();
+    }, 3000);
+  };
+  if (document.readyState === "complete") sweep();
+  else window.addEventListener("load", sweep);
+})();
+
 let counter_find = document.querySelector("#counter");
 void 0 !== counter_find &&
   null != counter_find &&
@@ -305,8 +448,8 @@ void 0 !== counter_find &&
             }
           );
         });
-  }),
-  $(document).ready(function () {
+  });
+$(document).ready(function () {
     $(".collapse.show").each(function () {
       $(this)
         .prev(".card-header")
@@ -371,48 +514,64 @@ void 0 !== counter_find &&
     $("#youtubevideo").attr("src", "");
   }),
   $(document).ready(function () {
-    function setNavState(isOpen) {
-      var $toggler = $(".navbar-toggler");
-      var $wrap = $toggler.find(".toggle-wrap");
-      if (isOpen) {
-        $wrap.addClass("active");
-        $toggler.removeClass("collapsed").attr("aria-expanded", "true");
-      } else {
-        $wrap.removeClass("active");
-        $toggler.addClass("collapsed").attr("aria-expanded", "false");
-      }
-    }
+    $(".navbar-toggler").click(function () {
+      $(this)
+        .children("span")
+        .children(".ico_menu")
+        .hasClass("icofont-navigation-menu")
+        ? $(this)
+            .children("span")
+            .children(".ico_menu")
+            .removeClass("icofont-navigation-menu")
+            .addClass("icofont-close")
+        : $(this)
+            .children("span")
+            .children(".ico_menu")
+            .removeClass("icofont-close")
+            .addClass("icofont-navigation-menu");
+    });
 
-    $(".navbar-collapse")
-      .on("show.bs.collapse", function () {
-        setNavState(true);
-      })
-      .on("hide.bs.collapse", function () {
-        setNavState(false);
-      });
-
-    // Close mobile menu and reset icon to menu icon when selecting a menu item
-    $(document).on("click", ".navbar-collapse a", function (e) {
-      if ($(window).width() < 992) {
-        var href = $(this).attr("href");
-        var isDropdownToggle = (!href || href === "#" || href === "index.html#" || href.endsWith("#") || $(this).siblings(".sub_menu").length > 0);
-
-        if (isDropdownToggle) {
-          var $subMenu = $(this).siblings(".sub_menu");
-          if ($subMenu.length > 0) {
-            e.preventDefault();
-            $subMenu.slideToggle(300);
-          }
-        } else {
-          var $navCollapse = $(this).closest(".navbar-collapse");
-          if ($navCollapse.hasClass("show")) {
-            $navCollapse.collapse("hide");
-          }
-        }
-      }
+    // Sync hamburger ↔ open/close state with Bootstrap collapse
+    var $navCollapse = $("#navbarSupportedContent");
+    var $toggleWrap = $(".navbar-toggler .toggle-wrap");
+    $navCollapse.on("show.bs.collapse", function () {
+      $toggleWrap.addClass("active");
+      $(".navbar-toggler").attr("aria-expanded", "true");
+    });
+    $navCollapse.on("hide.bs.collapse", function () {
+      $toggleWrap.removeClass("active");
+      $(".navbar-toggler").attr("aria-expanded", "false");
     });
   }),
-  AOS.init();
+// Only animate aside drawers when present (not the site navbar hamburger)
+$("aside .toggle-wrap, .sidebar .toggle-wrap").on("click", function () {
+  $(this).toggleClass("active");
+  $("aside").animate({ width: "toggle" }, 200);
+});
+
+function initAosWhenReady() {
+  var done = false;
+  function tryInit() {
+    if (done || typeof AOS === "undefined") return false;
+    done = true;
+    AOS.init({
+      once: true,
+      duration: 700,
+      offset: 60,
+      disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    });
+    return true;
+  }
+  window.addEventListener("ew:aos-ready", tryInit);
+  ewIdle(function () {
+    if (tryInit()) return;
+    var n = 0;
+    var t = setInterval(function () {
+      if (tryInit() || ++n > 50) clearInterval(t);
+    }, 100);
+  }, 2500);
+}
+initAosWhenReady();
 
 function ActiveMenu() {
   // Get all links
@@ -446,96 +605,4 @@ document.addEventListener("DOMContentLoaded", function () {
   // Update the DOM to display the updated view count for this page
   const viewCountEl = document.getElementById("view-count");
   if (viewCountEl) viewCountEl.innerText = `${views} Views`;
-
-  // Dynamically wrap post-navigation icons in native <a> tags & attach click handlers
-  function setupPostNavLinks() {
-    document.querySelectorAll(".nav-previous, .nav-next").forEach(function (container) {
-      const link = container.querySelector("a");
-      if (link && link.href) {
-        const href = link.getAttribute("href");
-        const icon = container.querySelector(".gp-icon");
-        if (icon && !icon.closest("a")) {
-          const iconLink = document.createElement("a");
-          iconLink.setAttribute("href", href);
-          if (link.hasAttribute("rel")) {
-            iconLink.setAttribute("rel", link.getAttribute("rel"));
-          }
-          iconLink.className = "gp-icon-link";
-          icon.parentNode.insertBefore(iconLink, icon);
-          iconLink.appendChild(icon);
-        }
-
-        container.style.cursor = "pointer";
-        container.onclick = function (e) {
-          if (e.target.tagName !== "A" && !e.target.closest("a")) {
-            window.location.href = link.href;
-          }
-        };
-      }
-    });
-  }
-
-  setupPostNavLinks();
-
-  // Clean up trailing colons and leading numbers from Table of Contents links
-  function cleanTocLinks() {
-    document.querySelectorAll("#rank-math-toc nav a").forEach(function (link) {
-      let text = link.textContent.trim();
-      if (text.endsWith(":")) {
-        text = text.slice(0, -1).trim();
-      }
-      text = text.replace(/^\s*\d+[\.\)\-]\s*/, "");
-      link.textContent = text;
-    });
-  }
-
-  cleanTocLinks();
-
-  // WCAG Form Validation & Handling for ewPageCallbackForm
-  $(document).on("submit", ".ew-4field-form, #ewPageCallbackForm", function (e) {
-    e.preventDefault();
-    var $form = $(this);
-    var isValid = true;
-
-    // Clear previous error messages
-    $form.find(".ew-field-error").hide();
-
-    // Validate Name
-    var $name = $form.find("input[name='name'], #ew_name");
-    if ($name.length && (!$.trim($name.val()) || $.trim($name.val()).length < 2)) {
-      $form.find("#ew_name_error").show();
-      isValid = false;
-    }
-
-    // Validate Phone
-    var $phone = $form.find("input[name='phone'], #ew_phone");
-    var phoneVal = $phone.length ? $.trim($phone.val()).replace(/\D/g, "") : "";
-    if ($phone.length && (!phoneVal || phoneVal.length < 10)) {
-      $form.find("#ew_phone_error").show();
-      isValid = false;
-    }
-
-    // Validate Required Service Consent Checkbox
-    var $consentService = $form.find("#ew_consent_service, input[name='consent_service']");
-    if ($consentService.length && !$consentService.is(":checked")) {
-      $form.find("#ew_consent_service_error").show();
-      isValid = false;
-    }
-
-    if (!isValid) {
-      // Keep everything user typed - DO NOT RESET FORM
-      return false;
-    }
-
-    // On valid submit: show clear success message inside aria-live="polite"
-    var $successMsg = $form.find("#ew_form_success");
-    if ($successMsg.length) {
-      $successMsg.slideDown();
-    } else {
-      $form.prepend('<div id="ew_form_success" aria-live="polite" style="background: #f0fdf4; border: 1.5px solid #86efac; color: #166534; padding: 16px 20px; border-radius: 12px; margin-bottom: 24px; font-weight: 700; font-size: 15px; text-align: center;"><i class="icofont-check-circled" style="font-size: 20px; vertical-align: -2px; margin-right: 6px;"></i> Thank you! Your callback request has been received. Our care specialist will reach out shortly.</div>');
-    }
-
-    // Disable submit button to prevent double submits
-    $form.find("button[type='submit']").attr("disabled", true).css("opacity", "0.6");
-  });
 });

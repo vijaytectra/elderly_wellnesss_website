@@ -1,8 +1,0 @@
-# Custom 404 Error Document
-ErrorDocument 404 /404.html
-
-# Enable Rewrite Engine
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-</IfModule>

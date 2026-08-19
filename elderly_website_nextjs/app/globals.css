@@ -1,0 +1,434 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* -------------------------------------------------------------------------
+ * Design tokens
+ *
+ * Extracted from ../css/style.css `:root` block (see MIGRATION_INVENTORY
+ * §10). Legacy names carried the "primery/greay" misspellings — those are
+ * corrected here.
+ * ---------------------------------------------------------------------- */
+@theme inline {
+  /* Brand */
+  --color-brand: #2786a5;         /* legacy --primery */
+  --color-brand-dark: #1f6b85;    /* derived — 15% darker than --primery */
+  --color-brand-foreground: #ffffff;
+  --color-accent: #57c4e3;        /* used in title_badge / how_it_section CTA */
+
+  /* Neutrals */
+  --color-background: #ffffff;    /* legacy --bg-white */
+  --color-foreground: #181a22;    /* legacy responsive.css --dark-black */
+  --color-muted: #f5f5f5;         /* legacy .text_list_section bg */
+  --color-border: #e5e7eb;
+  --color-highlight: #eaf3f7;     /* light brand tint (replaces legacy cream) */
+  --color-muted-foreground: #848484;  /* legacy --text-greay */
+
+  /* Typography */
+  --font-sans:
+    var(--font-sans), "Manrope", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-serif:
+    var(--font-serif), "Cormorant Garamond", "Times New Roman", serif;
+  --font-display: var(--font-display), "Playball", cursive;
+
+  /* Radii — reflect the legacy 10/25/100px pattern in style.css */
+  --radius-sm: 10px;
+  --radius-md: 15px;
+  --radius-lg: 25px;
+  --radius-pill: 100px;
+
+  /* Elevation */
+  --shadow-card: 0 8px 24px -12px rgba(24, 26, 34, 0.18);
+  --shadow-header: 0 2px 12px -6px rgba(24, 26, 34, 0.08);
+}
+
+/* -------------------------------------------------------------------------
+ * :root CSS custom properties
+ *
+ * Tailwind v4's `@theme inline` block above generates utility classes
+ * but does NOT emit these as CSS custom properties on :root, so any
+ * component that references them directly via `var(--color-brand-*)`
+ * (e.g. `text-[color:var(--color-brand-foreground)]`) resolves to
+ * undefined and falls back to inherited color — which is why branded
+ * buttons like the Header "Download" CTA were rendering with dark
+ * text on teal. Duplicating the tokens here fixes every such usage
+ * site-wide without changing the Tailwind utility surface.
+ * ---------------------------------------------------------------------- */
+:root {
+  --color-brand: #2786a5;
+  --color-brand-dark: #1f6b85;
+  --color-brand-foreground: #ffffff;
+  --color-accent: #57c4e3;
+
+  --color-background: #ffffff;
+  --color-foreground: #181a22;
+  --color-muted: #f5f5f5;
+  --color-border: #e5e7eb;
+  --color-highlight: #eaf3f7;
+  --color-muted-foreground: #848484;
+
+  --radius-sm: 10px;
+  --radius-md: 15px;
+  --radius-lg: 25px;
+  --radius-pill: 100px;
+
+  --shadow-card: 0 8px 24px -12px rgba(24, 26, 34, 0.18);
+  --shadow-header: 0 2px 12px -6px rgba(24, 26, 34, 0.08);
+}
+
+/* -------------------------------------------------------------------------
+ * Base element styles
+ * ---------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+#elder-care-services {
+  scroll-margin-top: 5rem;
+}
+
+/* Section vertical rhythm — compact on phone, still airy on desktop */
+.section-y {
+  padding-block: 1.75rem;
+}
+@media (min-width: 640px) {
+  .section-y {
+    padding-block: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .section-y {
+    padding-block: 2.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-y {
+    padding-block: 2.5rem;
+  }
+}
+
+.section-head {
+  margin-bottom: 1.25rem;
+}
+@media (min-width: 768px) {
+  .section-head {
+    margin-bottom: 1.5rem;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-foreground);
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*
+ * Brand CTAs always use white labels. `a { color: inherit }` plus missing
+ * :root tokens previously left "Download" / "Back to home" as dark text
+ * on teal.
+ */
+.btn-brand,
+a.btn-brand,
+button.btn-brand {
+  background-color: var(--color-brand);
+  color: #ffffff !important;
+}
+.btn-brand:hover,
+a.btn-brand:hover,
+button.btn-brand:hover {
+  background-color: var(--color-brand-dark);
+  color: #ffffff !important;
+}
+
+/* Dark / WhatsApp pills: `a { color: inherit }` otherwise paints dark text. */
+.btn-dark,
+a.btn-dark {
+  background-color: #181a22;
+  color: #ffffff !important;
+}
+.btn-dark:hover,
+a.btn-dark:hover {
+  background-color: #000000;
+  color: #ffffff !important;
+}
+.btn-whatsapp,
+a.btn-whatsapp {
+  background-color: #25d366;
+  color: #ffffff !important;
+}
+.btn-whatsapp:hover,
+a.btn-whatsapp:hover {
+  background-color: #1ebe57;
+  color: #ffffff !important;
+}
+
+/*
+ * Do NOT set a global `a:hover` color rule here — it overrides Tailwind
+ * text-color utilities on branded buttons (e.g. text-white on bg-brand
+ * flips to text-brand on hover, making the label invisible against a
+ * darker brand background). Every interactive link/button defines its
+ * own hover state via component-local Tailwind classes.
+ */
+
+/* -------------------------------------------------------------------------
+ * Blog FAQ accordion (converted from Rank Math markup at build time —
+ * see scripts/extract-blogs.ts convertRankMathFaqToDetails)
+ * ---------------------------------------------------------------------- */
+.ew-faq-item,
+.prose details.ew-faq-item {
+  margin: 0.75rem 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  padding: 0;
+  interpolate-size: allow-keywords;
+}
+
+.ew-faq-question,
+.prose .ew-faq-question {
+  list-style: none;
+  cursor: pointer;
+  display: block;
+  padding: 1rem 3.25rem 1rem 1.25rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--color-foreground);
+  position: relative;
+  user-select: none;
+  transition: color 200ms ease;
+}
+.ew-faq-question:hover {
+  color: var(--color-brand);
+}
+.ew-faq-question::-webkit-details-marker { display: none; }
+.ew-faq-question::marker { content: ""; }
+
+/* + becomes − when open */
+.ew-faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--color-brand);
+  border-radius: 999px;
+  color: var(--color-brand);
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  text-align: center;
+  background: none;
+}
+.ew-faq-item[open] > .ew-faq-question::after {
+  content: "−";
+  transform: translateY(-50%);
+}
+
+.ew-faq-answer,
+.prose .ew-faq-answer {
+  padding: 0 1.25rem 1rem;
+  color: var(--color-muted-foreground);
+  line-height: 1.7;
+}
+.ew-faq-answer > :first-child { margin-top: 0; }
+.ew-faq-answer > :last-child { margin-bottom: 0; }
+
+/* Typography plugin can keep FAQ answers visible — hide unless open. */
+.ew-faq-item:not([open]) > .ew-faq-answer,
+.prose details.ew-faq-item:not([open]) > .ew-faq-answer {
+  display: none;
+}
+
+.ew-faq-item::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition: block-size 300ms ease, content-visibility 300ms allow-discrete;
+}
+.ew-faq-item[open]::details-content {
+  block-size: auto;
+}
+
+/* Subheadings in posts (e.g. "1. Nursing Care Services") — same family as
+ * body copy. Only h1/h2 keep the serif display face. */
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  scroll-margin-top: 6rem;
+}
+
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--color-foreground);
+  letter-spacing: 0;
+}
+
+.prose,
+.prose p,
+.prose li {
+  color: #1e293b;
+}
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.35rem;
+}
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.35rem;
+}
+.prose ul > li::marker,
+.prose ol > li::marker {
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 1.05em;
+}
+.prose li {
+  margin-top: 0.45rem;
+  margin-bottom: 0.45rem;
+}
+
+.ew-blog-toc {
+  padding: 0 0 0.25rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+.ew-blog-toc__title {
+  margin: 0 0 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2786a5;
+}
+.ew-blog-toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid #e2e8f0;
+}
+.ew-blog-toc__list li {
+  margin: 0;
+}
+.ew-blog-toc__list a {
+  display: block;
+  margin: 0;
+  padding: 0.5rem 0 0.5rem 0.9rem;
+  border: 0;
+  border-left: 2px solid transparent;
+  margin-left: -2px;
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #475569;
+}
+.ew-blog-toc__list a:hover {
+  color: #2786a5;
+  background: transparent;
+}
+.ew-blog-toc__list a.is-active {
+  color: #0f172a;
+  border-left-color: #2786a5;
+}
+
+@media (max-width: 1023px) {
+  .ew-blog-toc {
+    margin-bottom: 0.5rem;
+    padding: 1rem 1.1rem;
+    border: 1.5px solid #dbe7ee;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ew-blog-toc-sticky {
+    position: sticky;
+    top: 5.75rem;
+  }
+}
+
+/* In-article CTAs */
+.ew-blog-cta,
+.prose .ew-blog-cta {
+  margin: 2rem 0;
+  padding: 1.5rem 1.5rem 1.35rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+  box-shadow: var(--shadow-card);
+}
+.ew-blog-cta--app,
+.prose .ew-blog-cta--app {
+  border-color: color-mix(in srgb, var(--color-brand) 35%, var(--color-border));
+}
+.prose .ew-blog-cta__eyebrow,
+.ew-blog-cta__eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+.prose .ew-blog-cta h3,
+.ew-blog-cta h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-foreground);
+}
+.prose .ew-blog-cta p,
+.ew-blog-cta p {
+  margin: 0 0 0.75rem;
+  color: var(--color-muted-foreground);
+  font-size: 0.95rem;
+}
+.prose .ew-blog-cta__action,
+.ew-blog-cta__action {
+  margin: 0;
+}
+.prose a.ew-blog-cta__btn,
+a.ew-blog-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background-color: var(--color-brand);
+  color: #ffffff !important;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.prose a.ew-blog-cta__btn:hover,
+a.ew-blog-cta__btn:hover {
+  background-color: var(--color-brand-dark);
+  color: #ffffff !important;
+}

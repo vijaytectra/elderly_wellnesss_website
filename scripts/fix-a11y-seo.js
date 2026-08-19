@@ -113,11 +113,11 @@ for (const page of ALL_PAGES) {
   const f = 'about.html';
   let html = read(f);
   const out = html.replace(
-    /<a href="the-inspiring-journey-of-elderly-wellness\.html"([^>]*)>Read More<\/a>/i,
+    /<a href="the-inspiring-journey-of-eldery\.html"([^>]*)>Read More<\/a>/i,
     (m, attrs) => {
       if (/aria-label=/i.test(attrs)) return m;
       bump('link-text');
-      return `<a href="the-inspiring-journey-of-elderly-wellness.html"${attrs} aria-label="Read more: the inspiring journey of Elderly Wellness">Read More</a>`;
+      return `<a href="the-inspiring-journey-of-eldery.html"${attrs} aria-label="Read more: the inspiring journey of Elderly">Read More</a>`;
     }
   );
   if (out !== html) write(f, out);

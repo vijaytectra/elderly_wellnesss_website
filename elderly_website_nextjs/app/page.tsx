@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { JsonLd } from "@/components/JsonLd";
+import { HomepageBlogStrip } from "@/components/sections/HomepageBlogStrip";
 import { SectionTitle } from "@/components/sections/SectionTitle";
 import { APP_LINKS } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
@@ -420,30 +421,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Blog placeholder — real listing lives at /blogs/ (Phase 4) */}
-      <section className="py-12 sm:py-16">
-        <Container>
-          <SectionTitle
-            badge="Latest updates"
-            heading={
-              <>
-                Our latest{" "}
-                <span className="text-[color:var(--color-brand)]">
-                  blog post
-                </span>
-              </>
-            }
-          />
-          <div className="mt-8 text-center">
-            <Link
-              href="/blogs/"
-              className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-[color:var(--color-brand-foreground)] shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
-            >
-              Read our blog
-            </Link>
-          </div>
-        </Container>
-      </section>
+      {/* Latest 3 blog posts + CTA (Phase 4) */}
+      <HomepageBlogStrip />
     </div>
   );
 }

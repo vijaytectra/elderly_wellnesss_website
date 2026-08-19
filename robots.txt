@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /private/
-Disallow: /tmp/
-Disallow: /scripts/
-Allow: /public/
-Sitemap: https://theelderlywellness.com/sitemap.xml

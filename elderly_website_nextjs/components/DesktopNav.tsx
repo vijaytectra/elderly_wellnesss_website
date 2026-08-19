@@ -4,37 +4,55 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { NAV_ITEMS } from "./nav-items";
 
+const CLOSE_DELAY_MS = 220;
+
 /**
- * Horizontal navigation for the desktop viewport (>= lg). Dropdowns for
- * Services and Locations are click-toggle (client component) — the previous
- * hover-only pattern closed as soon as the pointer briefly left the trigger
- * or gap between trigger and menu, making the dropdown items hard to reach.
- *
- * Behavior:
- *   - Click a parent to open its menu; click again (or the trigger of a
- *     different parent) to switch.
- *   - Click outside any dropdown to close.
- *   - Press Escape to close and return focus to the trigger.
- *   - Clicking a child link closes the menu (Link handles navigation).
+ * Desktop nav. Dropdowns stay open while the pointer is over the item or
+ * the menu (with a short leave delay so the gap cannot close it). Clicking
+ * a child link — or the parent label — closes the menu.
  */
 export function DesktopNav() {
   const [openLabel, setOpenLabel] = useState<string | null>(null);
   const rootRef = useRef<HTMLElement | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function clearCloseTimer() {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }
+
+  function openMenu(label: string) {
+    clearCloseTimer();
+    setOpenLabel(label);
+  }
+
+  function scheduleClose() {
+    clearCloseTimer();
+    closeTimer.current = setTimeout(() => setOpenLabel(null), CLOSE_DELAY_MS);
+  }
+
+  function closeMenu() {
+    clearCloseTimer();
+    setOpenLabel(null);
+  }
 
   useEffect(() => {
     function onDocClick(e: MouseEvent) {
       if (!rootRef.current) return;
       if (rootRef.current.contains(e.target as Node)) return;
-      setOpenLabel(null);
+      closeMenu();
     }
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") setOpenLabel(null);
+      if (e.key === "Escape") closeMenu();
     }
     document.addEventListener("mousedown", onDocClick);
     document.addEventListener("keydown", onKey);
     return () => {
       document.removeEventListener("mousedown", onDocClick);
       document.removeEventListener("keydown", onKey);
+      clearCloseTimer();
     };
   }, []);
 
@@ -57,39 +75,62 @@ export function DesktopNav() {
           }
           const isOpen = openLabel === item.label;
           return (
-            <li key={item.label} className="relative">
-              <button
-                type="button"
-                onClick={() => setOpenLabel(isOpen ? null : item.label)}
-                className="inline-flex items-center gap-1 rounded px-3 py-2 text-sm font-medium text-[color:var(--color-foreground)] transition-colors hover:text-[color:var(--color-brand)]"
-                aria-haspopup="menu"
-                aria-expanded={isOpen}
-              >
-                {item.label}
-                <i
-                  className={`icofont-rounded-down text-xs transition-transform ${isOpen ? "rotate-180" : ""}`}
-                  aria-hidden="true"
-                />
-              </button>
+            <li
+              key={item.label}
+              className="relative"
+              onMouseEnter={() => openMenu(item.label)}
+              onMouseLeave={scheduleClose}
+            >
+              <div className="inline-flex items-center">
+                <Link
+                  href={item.href}
+                  onClick={closeMenu}
+                  className="inline-flex items-center rounded-l px-3 py-2 text-sm font-medium text-[color:var(--color-foreground)] transition-colors hover:text-[color:var(--color-brand)]"
+                >
+                  {item.label}
+                </Link>
+                <button
+                  type="button"
+                  onClick={() =>
+                    isOpen ? closeMenu() : openMenu(item.label)
+                  }
+                  className="inline-flex items-center rounded-r py-2 pr-3 text-[color:var(--color-foreground)] transition-colors hover:text-[color:var(--color-brand)]"
+                  aria-haspopup="menu"
+                  aria-expanded={isOpen}
+                  aria-label={`${item.label} menu`}
+                >
+                  <i
+                    className={`icofont-rounded-down text-xs transition-transform ${isOpen ? "rotate-180" : ""}`}
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
               {isOpen ? (
                 <div
                   role="menu"
-                  className="absolute left-0 top-full z-50 mt-1 min-w-[220px] rounded-[var(--radius-md)] border border-[color:var(--color-border)] bg-white p-2 shadow-[var(--shadow-card)]"
+                  className="absolute left-0 top-full z-50 min-w-[220px] pt-2"
                 >
-                  <ul className="flex flex-col">
-                    {item.children?.map((child) => (
-                      <li key={child.href}>
-                        <Link
-                          href={child.href}
-                          role="menuitem"
-                          onClick={() => setOpenLabel(null)}
-                          className="block rounded px-3 py-2 text-sm text-[color:var(--color-foreground)] transition-colors hover:bg-[color:var(--color-muted)] hover:text-[color:var(--color-brand)]"
-                        >
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="min-w-[280px] rounded-[var(--radius-md)] border border-[color:var(--color-border)] bg-white p-2 shadow-[var(--shadow-card)]">
+                    <ul className="flex flex-col">
+                      {item.children?.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            role="menuitem"
+                            onClick={closeMenu}
+                            className="block rounded px-3 py-2 text-sm text-[color:var(--color-foreground)] transition-colors hover:bg-[color:var(--color-muted)] hover:text-[color:var(--color-brand)]"
+                          >
+                            <span className="block font-semibold">{child.label}</span>
+                            {child.hint ? (
+                              <span className="mt-0.5 block text-xs font-normal text-[color:var(--color-muted-foreground)]">
+                                {child.hint}
+                              </span>
+                            ) : null}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               ) : null}
             </li>

@@ -34,12 +34,12 @@ export function ServiceInfoBlock({
   tinted = false,
 }: ServiceInfoBlockProps) {
   const sectionClass = tinted
-    ? "py-12 sm:py-16 bg-[color:var(--color-highlight)]"
-    : "py-12 sm:py-16";
+    ? "section-y bg-[color:var(--color-highlight)]"
+    : "section-y";
   return (
     <section className={sectionClass}>
       <Container>
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center lg:gap-8">
           <div className={reversed ? "md:order-2" : ""}>
             <h2 className="mb-4 font-[family-name:var(--font-serif)] text-2xl leading-tight sm:text-3xl md:text-4xl">
               {heading}
@@ -66,7 +66,7 @@ export function ServiceInfoBlock({
             </ul>
           </div>
           <div className={reversed ? "md:order-1" : ""}>
-            <Image quality={95}
+            <Image quality={80}
               src={image}
               alt={imageAlt}
               width={720}

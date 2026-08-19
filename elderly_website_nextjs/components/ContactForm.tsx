@@ -130,7 +130,7 @@ export function ContactForm() {
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-8 py-3 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)] disabled:cursor-not-allowed disabled:opacity-60"
+            className="btn-brand inline-flex items-center rounded-full px-8 py-3 text-sm font-semibold shadow-[var(--shadow-card)] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {status === "submitting" ? "Submitting…" : "Submit"}
           </button>

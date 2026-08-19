@@ -4,12 +4,11 @@ import { SITE_NAME, SITE_URL } from "./site";
 export interface BuildMetadataInput {
   title: string;
   description: string;
-  /** Absolute or root-relative path, e.g. "/about/" */
   path: string;
-  /** Absolute or root-relative image URL. Defaults to /images/logo.png */
   image?: string;
-  /** OpenGraph type. Defaults to "website" */
   type?: "website" | "article";
+  keywords?: string;
+  noIndex?: boolean;
 }
 
 function toAbsolute(pathOrUrl: string): string {
@@ -24,13 +23,29 @@ export function buildMetadata({
   path,
   image = "/images/logo.png",
   type = "website",
+  keywords,
+  noIndex = false,
 }: BuildMetadataInput): Metadata {
   const canonical = toAbsolute(path);
   const absoluteImage = toAbsolute(image);
 
   return {
-    title,
+    title: { absolute: title },
     description,
+    keywords,
+    robots: noIndex
+      ? { index: false, follow: false }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1,
+          },
+        },
     alternates: {
       canonical,
     },
@@ -39,7 +54,8 @@ export function buildMetadata({
       description,
       url: canonical,
       siteName: SITE_NAME,
-      images: [{ url: absoluteImage }],
+      locale: "en_IN",
+      images: [{ url: absoluteImage, width: 1200, height: 630, alt: SITE_NAME }],
       type,
     },
     twitter: {

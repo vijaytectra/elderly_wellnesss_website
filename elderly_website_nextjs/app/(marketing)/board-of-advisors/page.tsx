@@ -69,7 +69,7 @@ const advisors: readonly Advisor[] = [
 export default function BoardOfAdvisorsPage() {
   return (
     <div>
-      <section className="py-12 sm:py-16">
+      <section className="section-y">
         <Container>
           <SectionTitle
             badge="Board of Advisors"
@@ -86,7 +86,7 @@ export default function BoardOfAdvisorsPage() {
         </Container>
       </section>
 
-      <section className="pb-16 sm:pb-24">
+      <section className="pb-4 sm:pb-6">
         <Container>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {advisors.map((a, idx) => (
@@ -94,13 +94,15 @@ export default function BoardOfAdvisorsPage() {
                 key={a.name}
                 className="flex flex-col overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)] transition hover:shadow-lg"
               >
-                <div className="relative aspect-square w-full bg-[color:var(--color-muted)]">
-                  <Image quality={95}
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-[color:var(--color-muted)] sm:aspect-square">
+                  <Image
+                    quality={80}
+                    unoptimized
                     src={a.image}
                     alt={a.alt}
-                    width={a.width}
-                    height={a.height}
-                    className="h-full w-full object-cover"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+                    className="object-cover object-top"
                     priority={idx === 0}
                   />
                 </div>

@@ -20,9 +20,9 @@ interface ArrangeStepsProps {
  */
 export function ArrangeSteps({ heading, intro, steps }: ArrangeStepsProps) {
   return (
-    <section className="py-12 sm:py-16">
+    <section className="section-y">
       <Container>
-        <div className="mx-auto mb-10 max-w-3xl text-center">
+        <div className="mx-auto section-head max-w-3xl text-center">
           <h2 className="mb-3 font-[family-name:var(--font-serif)] text-3xl leading-tight sm:text-4xl">
             {heading}
           </h2>
@@ -34,15 +34,17 @@ export function ArrangeSteps({ heading, intro, steps }: ArrangeStepsProps) {
           {steps.map((s, i) => (
             <li
               key={s.title}
-              className="grid grid-cols-1 gap-4 rounded-[var(--radius-lg)] bg-white p-6 shadow-[var(--shadow-card)] md:grid-cols-[88px_1fr] md:items-center md:gap-6"
+              className="grid grid-cols-1 gap-4 rounded-[var(--radius-lg)] border border-[color:var(--color-border)] bg-white p-5 shadow-[var(--shadow-card)] md:grid-cols-[56px_1fr] md:items-center md:gap-5"
             >
               <div className="flex justify-center md:justify-start">
-                <Image quality={95}
+                <Image
                   src={s.image}
                   alt=""
-                  width={96}
-                  height={96}
-                  className="h-16 w-16 object-contain md:h-[88px] md:w-[88px]"
+                  width={56}
+                  height={56}
+                  quality={80}
+                  unoptimized
+                  className="h-12 w-12 object-contain"
                   loading={i > 1 ? "lazy" : undefined}
                 />
               </div>

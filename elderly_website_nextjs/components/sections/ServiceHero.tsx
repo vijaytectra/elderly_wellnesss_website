@@ -28,16 +28,17 @@ export function ServiceHero({
   paragraphs,
 }: ServiceHeroProps) {
   return (
-    <section className="py-12 sm:py-16">
+    <section className="section-y">
       <Container>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:items-center md:gap-8">
           <div>
-            <Image quality={95}
+            <Image quality={80}
               src={image}
               alt={imageAlt}
               width={720}
               height={720}
               priority
+              sizes="(max-width: 768px) 100vw, 560px"
               className="mx-auto w-full max-w-[560px]"
             />
           </div>
@@ -61,18 +62,16 @@ export function ServiceHero({
             ))}
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
-                href="#download-btn"
-                className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
+                href="/contact/"
+                className="btn-brand inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold shadow-[var(--shadow-card)]"
               >
-                Download the App
+                Request a Callback
               </Link>
               <a
-                href="https://wa.me/919944890577"
-                target="_blank"
-                rel="noopener"
-                className="inline-flex items-center rounded-full border border-[color:var(--color-brand)] bg-white px-6 py-3 text-sm font-semibold text-[color:var(--color-brand)] shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-highlight)]"
+                href="tel:+919944890577"
+                className="btn-dark inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold shadow-[var(--shadow-card)]"
               >
-                Book An Appointment
+                Call Now
               </a>
             </div>
           </div>

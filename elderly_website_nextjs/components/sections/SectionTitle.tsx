@@ -26,7 +26,7 @@ export function SectionTitle({
   return (
     <div className={`max-w-3xl ${alignment} ${className}`.trim()}>
       {badge ? (
-        <span className="mb-4 inline-block rounded-full bg-[color:var(--color-highlight)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)]">
+        <span className="mb-2 inline-block rounded-full border border-[color:var(--color-border)] px-3 py-0.5 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)] sm:mb-3">
           {badge}
         </span>
       ) : null}
@@ -34,7 +34,7 @@ export function SectionTitle({
         {heading}
       </h2>
       {description ? (
-        <div className="mt-4 text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-lg">
+        <div className="mt-2 text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:mt-3 sm:text-lg">
           {description}
         </div>
       ) : null}

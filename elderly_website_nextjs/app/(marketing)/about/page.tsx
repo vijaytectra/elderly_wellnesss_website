@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/sections/SectionTitle";
+import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
+import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -59,14 +61,6 @@ const slides = [
   { src: "/images/abt-slide4.jpg", alt: "Elderly care moment" },
 ] as const;
 
-const whyChoose = [
-  "Supportive",
-  "Engaging",
-  "Empathetic",
-  "Reliable",
-  "Appealing",
-] as const;
-
 interface FaqItem {
   q: string;
   a: string;
@@ -115,7 +109,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* About us hero */}
-      <section className="py-12 sm:py-16">
+      <section className="section-y">
         <Container>
           <SectionTitle
             badge="About us"
@@ -138,14 +132,14 @@ export default function AboutPage() {
           />
         </Container>
 
-        <div className="mt-10 overflow-hidden">
+        <div className="mt-5 overflow-hidden sm:mt-6">
           <div className="mx-auto grid max-w-[1400px] grid-cols-2 gap-4 px-4 sm:grid-cols-4">
             {slides.map((s, idx) => (
               <div
                 key={s.src}
                 className="relative aspect-square overflow-hidden rounded-[var(--radius-lg)]"
               >
-                <Image quality={95}
+                <Image quality={80}
                   src={s.src}
                   alt={s.alt}
                   width={600}
@@ -180,7 +174,7 @@ export default function AboutPage() {
                 <Link
                   href="/blogs/journey-of-eldery/"
                   aria-label="Read more: the inspiring journey of Elderly"
-                  className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
+                  className="btn-brand inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold shadow-[var(--shadow-card)]"
                 >
                   Read More
                   <span className="sr-only">
@@ -194,29 +188,12 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Why choose our app strip */}
-      <section className="py-8 sm:py-12">
-        <Container>
-          <div className="mb-4 text-center">
-            <span className="inline-block rounded-full bg-[color:var(--color-highlight)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)]">
-              Why choose our app
-            </span>
-          </div>
-          <ul className="flex flex-wrap items-center justify-center gap-4 text-2xl font-[family-name:var(--font-serif)] text-[color:var(--color-foreground)] sm:gap-8 sm:text-3xl">
-            {whyChoose.map((word) => (
-              <li key={word} className="flex items-center gap-4">
-                <span>{word}</span>
-                <span className="text-[color:var(--color-brand)]">•</span>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
+      <WhyChooseApp />
 
       {/* Process / Overview */}
-      <section className="py-12 sm:py-16">
+      <section className="section-y">
         <Container>
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center md:gap-8">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-[color:var(--color-highlight)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)]">
                 <i className="icofont-gear" aria-hidden="true"></i>
@@ -247,13 +224,13 @@ export default function AboutPage() {
               </ul>
               <a
                 href="https://play.google.com/store/apps/details?id=com.elderly.nri"
-                className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
+                className="btn-brand inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold shadow-[var(--shadow-card)]"
               >
                 Download App
               </a>
             </div>
             <div>
-              <Image quality={95}
+              <Image quality={80}
                 src="/images/process.png"
                 alt="Elderly Wellness process overview"
                 width={720}
@@ -266,7 +243,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-12 sm:py-16">
+      <section className="section-y">
         <Container>
           <SectionTitle
             badge="Experts"
@@ -279,19 +256,21 @@ export default function AboutPage() {
               </>
             }
           />
-          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-5 grid grid-cols-1 gap-6 sm:mt-6 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((m) => (
               <div
                 key={m.name}
                 className="flex flex-col overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)]"
               >
-                <div className="relative aspect-square w-full bg-[color:var(--color-muted)]">
-                  <Image quality={95}
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-[color:var(--color-muted)] sm:aspect-square">
+                  <Image
+                    quality={80}
+                    unoptimized
                     src={m.image}
                     alt={m.name}
-                    width={480}
-                    height={480}
-                    className="h-full w-full object-cover"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="flex flex-col items-start gap-2 p-6">
@@ -326,42 +305,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* FAQ */}
-      <section className="py-12 sm:py-16">
-        <Container>
-          <SectionTitle
-            badge="Question & Answer"
-            heading={
-              <>
-                <span className="text-[color:var(--color-brand)]">FAQs</span> -
-                Frequently Asked Questions
-              </>
-            }
-          />
-          <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-2">
-            {faqs.map((f, i) => (
-              <details
-                key={f.q}
-                className="group rounded-[var(--radius-md)] border border-[color:var(--color-border)] bg-white p-5 shadow-[var(--shadow-card)]"
-                open={i === 0}
-              >
-                <summary className="flex cursor-pointer items-center justify-between gap-4 text-base font-semibold text-[color:var(--color-foreground)] marker:content-['']">
-                  <span>{f.q}</span>
-                  <span
-                    aria-hidden="true"
-                    className="ml-2 text-[color:var(--color-brand)] transition group-open:rotate-45"
-                  >
-                    +
-                  </span>
-                </summary>
-                <p className="mt-3 text-sm leading-relaxed text-[color:var(--color-muted-foreground)]">
-                  {f.a}
-                </p>
-              </details>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <ServiceFAQ items={faqs} />
     </div>
   );
 }

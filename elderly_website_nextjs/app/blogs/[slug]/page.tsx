@@ -139,7 +139,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
         </Container>
       </section>
 
-      <section className="py-8 sm:py-12">
+      <section className="section-y">
         <Container>
           <header className="mx-auto max-w-3xl text-center">
             <h1 className="mb-4 font-[family-name:var(--font-serif)] text-3xl leading-tight text-[color:var(--color-foreground)] sm:text-4xl md:text-5xl">
@@ -158,17 +158,18 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
         </Container>
       </section>
 
-      <section className="pb-16">
+      <section className="pb-10 sm:pb-12">
         <Container>
           <article
-            className="prose prose-lg mx-auto max-w-3xl prose-headings:font-[family-name:var(--font-serif)] prose-a:text-[color:var(--color-brand)] prose-img:rounded-[var(--radius-md)]"
+            className="prose prose-lg mx-auto max-w-3xl prose-headings:font-[family-name:var(--font-sans)] prose-h1:font-[family-name:var(--font-serif)] prose-h2:font-[family-name:var(--font-serif)] prose-a:text-[color:var(--color-brand)] prose-img:rounded-[var(--radius-md)]"
             dangerouslySetInnerHTML={{ __html: html }}
+            suppressHydrationWarning
           />
         </Container>
       </section>
 
       {related.length > 0 ? (
-        <section className="border-t border-[color:var(--color-border)] py-12 sm:py-16">
+        <section className="border-t border-[color:var(--color-border)] section-y">
           <Container>
             <h2 className="mb-8 text-center font-[family-name:var(--font-serif)] text-2xl text-[color:var(--color-foreground)] sm:text-3xl">
               Related reads

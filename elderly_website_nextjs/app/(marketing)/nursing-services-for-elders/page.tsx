@@ -394,7 +394,7 @@ export default function NursingPage() {
           <>
             Why Choose Elderly Wellness for{" "}
             <span className="text-[color:var(--color-brand)]">
-              Nursing Servicess?
+              Nursing Services?
             </span>
           </>
         }

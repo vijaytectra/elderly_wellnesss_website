@@ -1,24 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BROCHURE_HREF } from "@/data/site";
+import { SITE_PHONE, SITE_PHONE_TEL } from "@/data/site";
 import { Container } from "./Container";
 import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
 
-/**
- * Site-wide sticky header. Structure mirrors about.html:70–149:
- *   [ logo ] [ desktop nav ] [ Download CTA ]      (mobile: hamburger)
- */
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-[color:var(--color-border)] bg-white/95 backdrop-blur shadow-[var(--shadow-header)]">
+    <header className="sticky top-0 z-40 border-b border-[color:var(--color-border)] bg-white shadow-[var(--shadow-header)]">
       <Container className="flex h-16 items-center justify-between gap-4 sm:h-20">
         <Link
           href="/"
           className="flex items-center"
           aria-label="Elderly Wellness — home"
         >
-          <Image quality={95}
+          <Image
             src="/images/logo.png"
             alt="Elderly Wellness"
             width={180}
@@ -30,14 +26,19 @@ export function Header() {
 
         <DesktopNav />
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 sm:gap-3">
           <a
-            href={BROCHURE_HREF}
-            download="elderly_wellness.pdf"
-            className="hidden rounded-full bg-[color:var(--color-brand)] px-5 py-2 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition-colors hover:bg-[color:var(--color-brand-dark)] sm:inline-flex"
+            href={SITE_PHONE_TEL}
+            className="hidden items-center gap-1.5 text-sm font-bold text-[color:var(--color-brand)] xl:inline-flex"
           >
-            Download
+            {SITE_PHONE}
           </a>
+          <Link
+            href="/contact/"
+            className="btn-brand hidden rounded-full px-5 py-2 text-sm font-semibold shadow-[var(--shadow-card)] sm:inline-flex"
+          >
+            Book Care
+          </Link>
           <MobileNav />
         </div>
       </Container>

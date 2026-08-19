@@ -140,6 +140,39 @@ html {
   scroll-behavior: smooth;
 }
 
+#elder-care-services {
+  scroll-margin-top: 5rem;
+}
+
+/* Section vertical rhythm — compact on phone, still airy on desktop */
+.section-y {
+  padding-block: 1.75rem;
+}
+@media (min-width: 640px) {
+  .section-y {
+    padding-block: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .section-y {
+    padding-block: 2.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-y {
+    padding-block: 2.5rem;
+  }
+}
+
+.section-head {
+  margin-bottom: 1.25rem;
+}
+@media (min-width: 768px) {
+  .section-head {
+    margin-bottom: 1.5rem;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -147,7 +180,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: var(--color-foreground);
-  background-color: var(--color-background);
+  background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -156,6 +189,46 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/*
+ * Brand CTAs always use white labels. `a { color: inherit }` plus missing
+ * :root tokens previously left "Download" / "Back to home" as dark text
+ * on teal.
+ */
+.btn-brand,
+a.btn-brand,
+button.btn-brand {
+  background-color: var(--color-brand);
+  color: #ffffff !important;
+}
+.btn-brand:hover,
+a.btn-brand:hover,
+button.btn-brand:hover {
+  background-color: var(--color-brand-dark);
+  color: #ffffff !important;
+}
+
+/* Dark / WhatsApp pills: `a { color: inherit }` otherwise paints dark text. */
+.btn-dark,
+a.btn-dark {
+  background-color: #181a22;
+  color: #ffffff !important;
+}
+.btn-dark:hover,
+a.btn-dark:hover {
+  background-color: #000000;
+  color: #ffffff !important;
+}
+.btn-whatsapp,
+a.btn-whatsapp {
+  background-color: #25d366;
+  color: #ffffff !important;
+}
+.btn-whatsapp:hover,
+a.btn-whatsapp:hover {
+  background-color: #1ebe57;
+  color: #ffffff !important;
 }
 
 /*
@@ -170,57 +243,63 @@ a {
  * Blog FAQ accordion (converted from Rank Math markup at build time —
  * see scripts/extract-blogs.ts convertRankMathFaqToDetails)
  * ---------------------------------------------------------------------- */
-.ew-faq-item {
+.ew-faq-item,
+.prose details.ew-faq-item {
   margin: 0.75rem 0;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: #ffffff;
   box-shadow: var(--shadow-card);
   overflow: hidden;
-  /* Enable animating to intrinsic sizes for the details expansion. */
+  padding: 0;
   interpolate-size: allow-keywords;
 }
 
-.ew-faq-question {
+.ew-faq-question,
+.prose .ew-faq-question {
   list-style: none;
   cursor: pointer;
-  padding: 1rem 3rem 1rem 1.25rem;
+  display: block;
+  padding: 1rem 3.25rem 1rem 1.25rem;
   font-weight: 600;
-  color: var(--color-foreground);
-  position: relative;
   font-size: 1rem;
   line-height: 1.4;
+  color: var(--color-foreground);
+  position: relative;
   user-select: none;
   transition: color 200ms ease;
 }
 .ew-faq-question:hover {
   color: var(--color-brand);
 }
-/* Hide the native disclosure marker */
 .ew-faq-question::-webkit-details-marker { display: none; }
 .ew-faq-question::marker { content: ""; }
 
-/* Custom +/- indicator */
+/* + becomes − when open */
 .ew-faq-question::after {
-  content: "";
+  content: "+";
   position: absolute;
-  right: 1.25rem;
+  right: 1rem;
   top: 50%;
-  width: 1rem;
-  height: 1rem;
   transform: translateY(-50%);
-  background:
-    linear-gradient(var(--color-brand), var(--color-brand)) no-repeat center / 100% 2px,
-    linear-gradient(var(--color-brand), var(--color-brand)) no-repeat center / 2px 100%;
-  transition: transform 300ms ease;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--color-brand);
+  border-radius: 999px;
+  color: var(--color-brand);
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  text-align: center;
+  background: none;
 }
 .ew-faq-item[open] > .ew-faq-question::after {
-  transform: translateY(-50%) rotate(90deg);
-  background:
-    linear-gradient(var(--color-brand), var(--color-brand)) no-repeat center / 100% 2px;
+  content: "−";
+  transform: translateY(-50%);
 }
 
-.ew-faq-answer {
+.ew-faq-answer,
+.prose .ew-faq-answer {
   padding: 0 1.25rem 1rem;
   color: var(--color-muted-foreground);
   line-height: 1.7;
@@ -228,8 +307,12 @@ a {
 .ew-faq-answer > :first-child { margin-top: 0; }
 .ew-faq-answer > :last-child { margin-bottom: 0; }
 
-/* Smooth expand/collapse — supported in Chrome 131+, Firefox 137+.
- * Older browsers snap open/closed (identical to current behavior). */
+/* Typography plugin can keep FAQ answers visible — hide unless open. */
+.ew-faq-item:not([open]) > .ew-faq-answer,
+.prose details.ew-faq-item:not([open]) > .ew-faq-answer {
+  display: none;
+}
+
 .ew-faq-item::details-content {
   block-size: 0;
   overflow: clip;
@@ -237,4 +320,76 @@ a {
 }
 .ew-faq-item[open]::details-content {
   block-size: auto;
+}
+
+/* Subheadings in posts (e.g. "1. Nursing Care Services") — same family as
+ * body copy. Only h1/h2 keep the serif display face. */
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--color-foreground);
+  letter-spacing: 0;
+}
+
+/* In-article CTAs */
+.ew-blog-cta,
+.prose .ew-blog-cta {
+  margin: 2rem 0;
+  padding: 1.5rem 1.5rem 1.35rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+  box-shadow: var(--shadow-card);
+}
+.ew-blog-cta--app,
+.prose .ew-blog-cta--app {
+  border-color: color-mix(in srgb, var(--color-brand) 35%, var(--color-border));
+}
+.prose .ew-blog-cta__eyebrow,
+.ew-blog-cta__eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+.prose .ew-blog-cta h3,
+.ew-blog-cta h3 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-foreground);
+}
+.prose .ew-blog-cta p,
+.ew-blog-cta p {
+  margin: 0 0 0.75rem;
+  color: var(--color-muted-foreground);
+  font-size: 0.95rem;
+}
+.prose .ew-blog-cta__action,
+.ew-blog-cta__action {
+  margin: 0;
+}
+.prose a.ew-blog-cta__btn,
+a.ew-blog-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background-color: var(--color-brand);
+  color: #ffffff !important;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.prose a.ew-blog-cta__btn:hover,
+a.ew-blog-cta__btn:hover {
+  background-color: var(--color-brand-dark);
+  color: #ffffff !important;
 }

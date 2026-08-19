@@ -13,26 +13,26 @@ export function HomepageBlogStrip() {
   if (latest.length === 0) return null;
 
   return (
-    <section className="py-12 sm:py-16">
+    <section className="section-y">
       <Container>
         <SectionTitle
           badge="Latest updates"
           heading={
             <>
               Our latest{" "}
-              <span className="text-[color:var(--color-brand)]">blog posts</span>
+              <span className="text-[color:var(--color-brand)]">blog post</span>
             </>
           }
         />
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-5 grid grid-cols-1 gap-6 sm:mt-6 sm:grid-cols-2 lg:grid-cols-3">
           {latest.map((b, i) => (
             <BlogCard key={b.slug} blog={b} priority={i === 0} />
           ))}
         </div>
-        <div className="mt-10 text-center">
+        <div className="mt-6 text-center sm:mt-8">
           <Link
             href="/blogs/"
-            className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
+            className="btn-brand inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold shadow-[var(--shadow-card)]"
           >
             Read our blog
           </Link>

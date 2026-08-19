@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { HeroCtas } from "@/components/HeroCtas";
+import { HeroVideos } from "@/components/HeroVideos";
 import { JsonLd } from "@/components/JsonLd";
 import { StoreBadge } from "@/components/StoreBadge";
+import { TrustStrip } from "@/components/TrustStrip";
 import { HomepageBlogStrip } from "@/components/sections/HomepageBlogStrip";
 import { SectionTitle } from "@/components/sections/SectionTitle";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Elderly Wellness | Elder Care Services in Chennai",
   description:
-    "Contact us today at +91 99448 90577 for expert elder care services in Chennai. Elderly Wellness provides compassionate and personalized care for your loved ones.",
+    "Home nursing, physiotherapy, geriatric care, and assisted living in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 99448 90577.",
   path: "/",
   image: "/videos/home/poster-1.jpg",
 });
@@ -84,44 +90,53 @@ interface Step {
   step: string;
   title: string;
   body: string;
-  image: string;
-  icon: string;
+  icon: ReactNode;
 }
 
 const steps: readonly Step[] = [
   {
-    step: "Step 01",
+    step: "01",
     title: "Simplified Discovery Process",
     body:
       "Finding the right care provider can be overwhelming, but our care specialists make it easy. They assess your loved one's needs and match them with the most suitable caregiver, saving you time and effort.",
-    image: "/images/feature1a.webp",
-    icon: "/images/feature-icon1.svg",
+    icon: (
+      <svg viewBox="0 0 48 48" className="h-9 w-9" fill="none" aria-hidden="true">
+        <circle cx="21" cy="21" r="10" stroke="currentColor" strokeWidth="2.4" />
+        <path d="m29 29 8 8" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+        <path d="M17 21h8M21 17v8" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
-    step: "Step 02",
+    step: "02",
     title: "Affordable, Transparent Care",
     body:
       "We offer flexible, slab-based pricing, ensuring top-quality care that fits within your budget. Our transparent pricing system helps you choose the right service without any surprises.",
-    image: "/images/feature2a.webp",
-    icon: "/images/feature-icon3.svg",
+    icon: (
+      <svg viewBox="0 0 48 48" className="h-9 w-9" fill="none" aria-hidden="true">
+        <rect x="10" y="8" width="28" height="32" rx="4" stroke="currentColor" strokeWidth="2.4" />
+        <path d="M18 18h12M18 24h12M18 30h7" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
-    step: "Step 03",
+    step: "03",
     title: "Reliable, Long-term Support",
     body:
       "At Elderly Wellness, we ensure consistent, reliable care. Our caregivers are carefully vetted and trained at our Elderly Academy of Caretaking & Hospitality (EACH). In case of delays or no-shows, we guarantee a replacement caregiver within 2 hours, ensuring continuous care for your loved ones.",
-    image: "/images/feature3a.webp",
-    icon: "/images/feature-icon2.svg",
+    icon: (
+      <svg viewBox="0 0 48 48" className="h-9 w-9" fill="none" aria-hidden="true">
+        <path
+          d="M24 8 10 14v12c0 8.2 5.6 13.6 14 16.2 8.4-2.6 14-8 14-16.2V14L24 8Z"
+          stroke="currentColor"
+          strokeWidth="2.4"
+          strokeLinejoin="round"
+        />
+        <path d="m18 24 4.2 4.2L31 19.5" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
   },
 ];
-
-const whyChoose = [
-  { label: "Supportive", accent: "#2786a5" },
-  { label: "Engaging", accent: "#57c4e3" },
-  { label: "Empathetic", accent: "#e07a5f" },
-  { label: "Reliable", accent: "#3ba272" },
-  { label: "Appealing", accent: "#f2b134" },
-] as const;
 
 export default function HomePage() {
   return (
@@ -129,72 +144,55 @@ export default function HomePage() {
       <JsonLd id="home-product-schema" data={productSchema} />
 
       {/* Banner / Hero */}
-      <section className="py-8 sm:py-12">
+      <section className="section-y">
         <Container>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:items-center md:gap-8">
             <div>
-              <h1 className="mb-6 font-[family-name:var(--font-serif)] text-4xl leading-[1.05] sm:text-5xl md:text-6xl">
+              <h1 className="mb-4 font-[family-name:var(--font-serif)] text-4xl leading-[1.05] sm:text-5xl md:text-6xl">
                 <span className="font-[family-name:var(--font-display)] text-[color:var(--color-brand)]">
                   Age
                 </span>{" "}
                 <span className="font-[family-name:var(--font-serif)]">
-                  MEETS
+                  Meets
                 </span>
                 <span className="mt-1 block font-[family-name:var(--font-serif)]">
-                  ASSISTANCE.
+                  Assistance.
                 </span>
               </h1>
-              <p className="mb-6 max-w-lg text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-lg">
-                At Elderly, we bridge the gap between physiotherapists, nursing
-                assistants, caregivers, and the elderly.
+              <p className="mb-4 max-w-lg text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-lg">
+                At Elderly Wellness, we bridge the gap between physiotherapists,
+                nursing assistants, caregivers, and the elderly.
               </p>
-              <ul className="flex flex-wrap items-center gap-4">
-                <li>
-                  <StoreBadge kind="google-play" size="md" />
-                </li>
-                <li>
-                  <StoreBadge kind="app-store" size="md" />
-                </li>
-              </ul>
+              <p className="mb-6 max-w-lg text-base font-semibold text-[color:var(--color-brand)]">
+                Elderly Wellness is our care service. Elderly Care Plus is our
+                app.
+              </p>
+              <HeroCtas />
+              <div className="mt-5">
+                <p className="mb-2 text-sm text-[color:var(--color-muted-foreground)]">
+                  Or download our app:
+                </p>
+                <ul className="flex flex-wrap items-center gap-3">
+                  <li>
+                    <StoreBadge kind="google-play" size="sm" />
+                  </li>
+                  <li>
+                    <StoreBadge kind="app-store" size="sm" />
+                  </li>
+                </ul>
+              </div>
+              <TrustStrip />
             </div>
-            <div className="relative aspect-square w-full max-w-[560px] overflow-hidden rounded-[40px] bg-[#181a22] md:ml-auto">
-              <Image quality={95}
-                src="/videos/home/poster-1.jpg"
-                alt="Elderly care at home"
-                width={800}
-                height={800}
-                priority
-                fetchPriority="high"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <video
-                src="/videos/home/1.mp4"
-                muted
-                loop
-                playsInline
-                autoPlay
-                preload="metadata"
-                poster="/videos/home/poster-1.jpg"
-                className="relative z-10 h-full w-full object-cover"
-              />
-            </div>
+            <HeroVideos />
           </div>
         </Container>
       </section>
 
       {/* Services */}
-      <section className="relative py-12 sm:py-16">
-        <Image quality={95}
-          src="/images/blue_dotes.png"
-          alt=""
-          width={200}
-          height={200}
-          aria-hidden="true"
-          className="pointer-events-none absolute right-0 top-0 h-40 w-40 opacity-40"
-        />
+      <section id="elder-care-services" className="section-y">
         <Container>
           <SectionTitle heading="Elder Care Services" />
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-5 grid grid-cols-1 gap-5 sm:mt-6 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s) => (
               <Link
                 href={s.href}
@@ -202,11 +200,12 @@ export default function HomePage() {
                 className="group block overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)] transition hover:shadow-lg"
               >
                 <div className="relative aspect-square w-full bg-[color:var(--color-muted)]">
-                  <Image quality={95}
+                  <Image quality={80}
                     src={s.image}
                     alt={s.title}
                     width={400}
                     height={400}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
                     className="h-full w-full object-cover transition group-hover:scale-[1.02]"
                   />
                 </div>
@@ -225,40 +224,31 @@ export default function HomePage() {
       </section>
 
       {/* About us */}
-      <section className="py-12 sm:py-16">
+      <section className="section-y">
         <Container>
           <SectionTitle
             badge="About us"
             heading={
               <>
-                Application where Touch of Care <br />
+                Application where Touch of Care{" "}
                 <span className="text-[color:var(--color-brand)]">
                   meets the Ease of Technology.
                 </span>
               </>
             }
           />
-          <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-3">
-            <ul className="grid grid-cols-2 gap-4">
-              {aboutBullets.map((b) => (
-                <li
-                  key={b}
-                  className="flex h-36 items-center justify-center rounded-full bg-[color:var(--color-highlight)] p-6 text-center text-sm font-medium text-[color:var(--color-brand)]"
-                >
-                  <p>{b}</p>
-                </li>
-              ))}
-            </ul>
-            <div className="flex justify-center">
-              <Image quality={95}
-                src="/images/appscreen.webp"
-                alt="Elderly Wellness app preview"
-                width={450}
-                height={912}
-                className="w-full max-w-[320px] object-contain"
-              />
-            </div>
-            <div className="space-y-4">
+          <div className="mt-5 grid grid-cols-1 items-start gap-6 lg:mt-6 lg:grid-cols-2 lg:gap-8">
+            <div className="order-2 space-y-5 lg:order-1">
+              <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                {aboutBullets.map((b) => (
+                  <li
+                    key={b}
+                    className="rounded-[var(--radius-md)] border border-[color:var(--color-border)] bg-white px-4 py-4 text-sm font-medium leading-snug text-[color:var(--color-foreground)] shadow-[var(--shadow-card)]"
+                  >
+                    {b}
+                  </li>
+                ))}
+              </ul>
               <p className="text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-lg">
                 As the global population ages, the need for reliable, quality
                 elderly care services has never been greater. Finding the right
@@ -276,113 +266,56 @@ export default function HomePage() {
                 ones receive the best possible care when and where they need
                 it.
               </p>
-              <div className="relative overflow-hidden rounded-[var(--radius-lg)]">
-                <Image quality={95}
-                  src="/images/applicationvideothumb.jpg"
-                  alt="Elderly Wellness application video"
-                  width={1000}
-                  height={596}
-                  className="h-auto w-full object-cover"
-                />
-              </div>
+            </div>
+            <div className="order-1 mx-auto w-full max-w-[280px] sm:max-w-[320px] lg:order-2 lg:max-w-none">
+              <Image
+                quality={80}
+                src="/images/appscreen.webp"
+                alt="Elderly Wellness app preview"
+                width={450}
+                height={912}
+                className="mx-auto h-auto w-full max-w-[280px] object-contain sm:max-w-[320px]"
+              />
             </div>
           </div>
         </Container>
       </section>
 
       {/* Task/steps */}
-      <section className="py-12 sm:py-16">
-        <div className="space-y-8">
-          {steps.map((s, i) => (
-            <div
-              key={s.step}
-              className="mx-auto max-w-[1200px] rounded-[28px] bg-[color:var(--color-brand)] p-8 shadow-[0_18px_40px_rgba(39,134,165,0.28)] sm:p-12"
-            >
-              <div
-                className={`grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center ${
-                  i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
-                }`}
-              >
-                <div className="flex justify-center">
-                  <Image quality={95}
-                    src={s.image}
-                    alt={s.title}
-                    width={720}
-                    height={926}
-                    className="max-h-[360px] w-auto object-contain drop-shadow-2xl"
-                  />
-                </div>
-                <div className="text-white">
-                  <span className="mb-4 inline-block rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white/80">
-                    {s.step}
-                  </span>
-                  <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-[16px] bg-white shadow-[0_8px_20px_rgba(0,0,0,0.12)]">
-                    <Image quality={95}
-                      src={s.icon}
-                      alt=""
-                      width={30}
-                      height={30}
-                      className="h-8 w-8"
-                    />
-                  </span>
-                  <h2 className="mb-3 text-2xl font-extrabold leading-tight sm:text-3xl">
-                    {s.title}
-                  </h2>
-                  <p className="max-w-[38ch] text-sm leading-relaxed text-white/90 sm:text-base">
-                    {s.body}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Why choose our app */}
-      <section className="py-12 sm:py-16">
+      <section className="section-y">
         <Container>
-          <div className="mb-10 text-center">
-            <span className="inline-block rounded-full bg-[color:var(--color-highlight)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)]">
-              Why choose our app
-            </span>
-            <h2 className="mt-3 font-[family-name:var(--font-serif)] text-3xl leading-tight sm:text-4xl">
-              Built on values that
-              <span className="text-[color:var(--color-brand)]">
-                {" "}put families first
-              </span>
-            </h2>
-          </div>
-          <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 md:gap-6">
-            {whyChoose.map((w, i) => (
-              <li
-                key={w.label}
-                className="group relative flex flex-col items-center justify-end overflow-hidden rounded-[var(--radius-lg)] bg-white p-6 pt-10 text-center shadow-[var(--shadow-card)] transition-transform hover:-translate-y-1"
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {steps.map((s) => (
+              <article
+                key={s.step}
+                className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[var(--shadow-card)]"
               >
-                <span
-                  aria-hidden="true"
-                  className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full px-3 py-1 text-[10px] font-bold tracking-widest text-white shadow-[var(--shadow-card)]"
-                  style={{ backgroundColor: w.accent }}
-                >
-                  0{i + 1}
-                </span>
-                <span
-                  aria-hidden="true"
-                  className="mb-3 h-1 w-8 rounded-full transition-all duration-300 group-hover:w-16"
-                  style={{ backgroundColor: w.accent }}
-                />
-                <span className="font-[family-name:var(--font-serif)] text-lg font-semibold text-[color:var(--color-foreground)] sm:text-xl">
-                  {w.label}
-                </span>
-              </li>
+                <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[color:var(--color-brand)] text-white">
+                  {s.icon}
+                </div>
+                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--color-brand)]">
+                  Step {s.step}
+                </p>
+                <h2 className="mb-3 font-[family-name:var(--font-serif)] text-2xl font-semibold leading-tight">
+                  {s.title}
+                </h2>
+                <p className="text-sm leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-base">
+                  {s.body}
+                </p>
+              </article>
             ))}
-          </ul>
+          </div>
         </Container>
       </section>
 
+      <Testimonials />
+
+      <WhyChooseApp />
+
       {/* Image / banner */}
-      <section className="py-8 sm:py-12">
+      <section className="section-y">
         <Container>
-          <Image quality={95}
+          <Image quality={80}
             src="/images/e4.jpg"
             alt="Elderly care family moment"
             width={1200}
@@ -393,10 +326,10 @@ export default function HomePage() {
       </section>
 
       {/* Download */}
-      <section className="py-12 sm:py-16">
+      <section className="section-y">
         <Container>
           <div className="mx-auto max-w-[520px] text-center">
-            <Image quality={95}
+            <Image quality={80}
               src="/images/downloadScreen.webp"
               alt="Download Elderly Wellness app"
               width={450}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  BROCHURE_HREF,
   DEVELOPER_CREDIT,
   SITE_EMAIL,
   SITE_PHONE,
@@ -29,12 +30,12 @@ const quickLinks: ReadonlyArray<{ label: string; href: string }> = [
  */
 export function Footer() {
   return (
-    <footer className="mt-20 bg-[color:var(--color-foreground)] text-white">
-      <Container className="py-12 sm:py-16">
-        <div className="grid gap-10 md:grid-cols-3">
+    <footer className="bg-[color:var(--color-foreground)] pb-24 text-white md:pb-0">
+      <Container className="section-y">
+        <div className="grid gap-6 md:grid-cols-3 md:gap-8">
           <div>
             <Link href="/" className="inline-flex items-center" aria-label="Elderly Wellness — home">
-              <Image quality={95}
+              <Image quality={80}
                 src="/images/ft_logo.png"
                 alt="Elderly Wellness"
                 width={180}
@@ -79,6 +80,15 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href={BROCHURE_HREF}
+                  download="elderly_wellness.pdf"
+                  className="text-white/85 transition-colors hover:text-white"
+                >
+                  Company Brochure (PDF, 3.2 MB)
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -98,7 +108,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <Container className="flex flex-col items-center justify-between gap-2 py-4 text-xs text-white/70 sm:flex-row">
-          <p>© Copyrights 2024. All rights reserved.</p>
+          <p>© Copyrights 2026. All rights reserved.</p>
           <p>
             Developed by{" "}
             <a

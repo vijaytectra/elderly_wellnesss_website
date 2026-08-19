@@ -29,15 +29,15 @@ const VALUES: readonly Value[] = [
 ];
 
 /**
- * "Our values driven by relations" three-up card grid. Same content across
- * all four service pages.
+ * "Our values driven by relations" three-up card grid. Portraits already
+ * include a circular frame, so we show the full file (no extra crop).
  */
 export function OurValues() {
   return (
-    <section className="py-12 sm:py-16">
+    <section className="section-y">
       <Container>
-        <div className="mx-auto mb-10 max-w-3xl text-center">
-          <span className="mb-4 inline-block rounded-full bg-[color:var(--color-highlight)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)]">
+        <div className="mx-auto section-head max-w-3xl text-center">
+          <span className="mb-4 inline-block rounded-full border border-[color:var(--color-border)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)]">
             Our values
           </span>
           <h2 className="font-[family-name:var(--font-serif)] text-3xl leading-tight sm:text-4xl">
@@ -49,17 +49,17 @@ export function OurValues() {
           {VALUES.map((v) => (
             <div
               key={v.title}
-              className="flex flex-col items-center gap-4 rounded-[var(--radius-lg)] bg-white p-8 text-center shadow-[var(--shadow-card)]"
+              className="flex flex-col items-center gap-4 rounded-[var(--radius-lg)] border border-[color:var(--color-border)] bg-white p-8 text-center shadow-[var(--shadow-card)]"
             >
-              <div className="relative h-28 w-28 overflow-hidden rounded-full bg-[color:var(--color-highlight)] ring-4 ring-[color:var(--color-brand)]/15 shadow-[var(--shadow-card)]">
-                <Image quality={95}
-                  src={v.image}
-                  alt={v.title}
-                  fill
-                  sizes="112px"
-                  className="object-cover"
-                />
-              </div>
+              <Image
+                src={v.image}
+                alt={v.title}
+                width={280}
+                height={280}
+                quality={80}
+                sizes="180px"
+                className="h-44 w-44 object-contain"
+              />
               <h3 className="font-[family-name:var(--font-serif)] text-xl font-semibold">
                 {v.title}
               </h3>

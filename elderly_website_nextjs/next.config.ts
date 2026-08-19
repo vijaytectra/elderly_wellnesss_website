@@ -4,15 +4,41 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   reactStrictMode: true,
   images: {
-    formats: ["image/avif", "image/webp"],
-    // Allow high-quality renders — components request quality={90} to
-    // preserve the crispness of source PNG/WebP assets. Next 16 requires
-    // any non-default quality to be pre-declared here.
-    qualities: [75, 85, 90, 95, 100],
+    formats: ["image/webp"],
+    qualities: [75, 80, 85, 90, 95, 100],
+    deviceSizes: [390, 640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60 * 60 * 24 * 30,
   },
+  compress: true,
   async redirects() {
-    // Phase 5 wires up the full redirect map from docs/REDIRECT_MAP.md
-    return [];
+    return [
+      {
+        source: "/blogs/category/locations/chennai",
+        destination: "/locations/chennai/",
+        permanent: true,
+      },
+      {
+        source: "/blogs/category/locations",
+        destination: "/locations/chennai/",
+        permanent: true,
+      },
+      {
+        source: "/how-elderly-wellness-works.html",
+        destination: "/how-elderly-wellness-works/",
+        permanent: true,
+      },
+      {
+        source: "/chennai.html",
+        destination: "/locations/chennai/",
+        permanent: true,
+      },
+      {
+        source: "/contact.html",
+        destination: "/contact/",
+        permanent: true,
+      },
+    ];
   },
 };
 

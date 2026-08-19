@@ -376,9 +376,9 @@ function convertRankMathFaqToDetails(html: string): string {
     /<div[^>]*(?:id="rank-math-faq"|class="[^"]*\brank-math-(?:block|list)\b[^"]*")[^>]*>/g,
     "",
   );
-  // Remove now-orphaned close tags near our converted items. Best-effort — we
-  // leave a well-formed document to node's HTML parser at render time.
-  // (Extra `</div>` at end of an FAQ region is tolerated by browsers.)
+  // Drop closing tags that belonged to the stripped rank-math wrappers.
+  // They otherwise sit after the last <details> and break the article DOM.
+  out = out.replace(/(<\/details>)(\s*<\/div>)+/g, "$1");
   return out;
 }
 

@@ -21,7 +21,7 @@ interface LegalPageProps {
  */
 export function LegalPage({ title, html }: LegalPageProps) {
   return (
-    <section className="legal-body py-12 sm:py-16">
+    <section className="legal-body section-y">
       <Container>
         <h1 className="mb-8 font-[family-name:var(--font-serif)] text-3xl leading-tight text-[color:var(--color-foreground)] sm:text-4xl md:text-5xl">
           {title}

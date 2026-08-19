@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/sections/SectionTitle";
+import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -105,19 +106,11 @@ const whyElderly = [
   },
 ] as const;
 
-const whyChoose = [
-  "Supportive",
-  "Engaging",
-  "Empathetic",
-  "Reliable",
-  "Appealing",
-] as const;
-
 export default function ElderlyWellnessPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="py-12 sm:py-16">
+      <section className="section-y">
         <Container>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center">
             <div className="md:col-span-8">
@@ -150,10 +143,10 @@ export default function ElderlyWellnessPage() {
       </section>
 
       {/* App Feature */}
-      <section className="py-12 sm:py-16">
+      <section className="section-y">
         <Container>
           <SectionTitle heading="App Feature" />
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-5 grid grid-cols-1 gap-6 sm:mt-6 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => (
               <div
                 key={f.title}
@@ -172,9 +165,9 @@ export default function ElderlyWellnessPage() {
       </section>
 
       {/* How it works */}
-      <section className="bg-[color:var(--color-brand)] py-16 text-white">
+      <section className="section-y">
         <Container>
-          <div className="mb-10 text-center">
+          <div className="mb-6 text-center sm:mb-8">
             <h2 className="font-[family-name:var(--font-serif)] text-3xl sm:text-4xl">
               How it works in 3 steps
             </h2>
@@ -183,15 +176,17 @@ export default function ElderlyWellnessPage() {
             {steps.map((s) => (
               <div
                 key={s.step}
-                className="relative rounded-[var(--radius-lg)] bg-white/10 p-8 backdrop-blur"
+                className="relative rounded-[var(--radius-lg)] border border-[color:var(--color-border)] bg-white p-8 shadow-[var(--shadow-card)]"
               >
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white p-3">
-                  <Image quality={95}
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--color-border)]">
+                  <Image
+                    quality={80}
                     src={s.icon}
                     alt=""
-                    width={64}
-                    height={64}
-                    className="h-10 w-10 object-contain"
+                    width={28}
+                    height={28}
+                    unoptimized
+                    className="h-6 w-6 object-contain"
                   />
                 </div>
                 <h3 className="mb-3 font-[family-name:var(--font-serif)] text-2xl">
@@ -203,7 +198,7 @@ export default function ElderlyWellnessPage() {
                       <a
                         href="https://play.google.com/store/apps/details?id=com.elderly.nri"
                         aria-label="Get it on Google Play"
-                        className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/20 hover:bg-white/30"
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[color:var(--color-border)] text-[color:var(--color-brand)] hover:bg-[color:var(--color-muted)]"
                       >
                         <i
                           className="icofont-brand-android-robot"
@@ -215,7 +210,7 @@ export default function ElderlyWellnessPage() {
                       <a
                         href="https://apps.apple.com/in/app/elderly-care-plus/id6740391242"
                         aria-label="Download on the App Store"
-                        className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/20 hover:bg-white/30"
+                        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[color:var(--color-border)] text-[color:var(--color-brand)] hover:bg-[color:var(--color-muted)]"
                       >
                         <i
                           className="icofont-brand-apple"
@@ -226,16 +221,16 @@ export default function ElderlyWellnessPage() {
                   </ul>
                 ) : null}
                 {"tag" in s && s.tag ? (
-                  <span className="mb-2 block text-sm font-semibold text-white/90">
+                  <span className="mb-2 block text-sm font-semibold text-[color:var(--color-brand)]">
                     {s.tag}
                   </span>
                 ) : null}
-                <p className="text-sm leading-relaxed text-white/85">
+                <p className="text-sm leading-relaxed text-[color:var(--color-muted-foreground)]">
                   {s.body}
                 </p>
                 <span
                   aria-hidden="true"
-                  className="absolute right-6 top-6 font-[family-name:var(--font-display)] text-4xl text-white/30"
+                  className="absolute right-6 top-6 font-[family-name:var(--font-display)] text-4xl text-[color:var(--color-brand)]/20"
                 >
                   {s.step}
                 </span>
@@ -246,7 +241,7 @@ export default function ElderlyWellnessPage() {
       </section>
 
       {/* Premium Services — Patients */}
-      <section className="py-12 sm:py-16">
+      <section className="section-y">
         <Container>
           <SectionTitle
             badge="Services"
@@ -262,7 +257,7 @@ export default function ElderlyWellnessPage() {
             }
           />
 
-          <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
+          <div className="mt-5 grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center md:gap-8">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-[color:var(--color-highlight)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)]">
                 <i className="icofont-tasks-alt" aria-hidden="true"></i>
@@ -289,7 +284,7 @@ export default function ElderlyWellnessPage() {
               </ul>
             </div>
             <div>
-              <Image quality={95}
+              <Image quality={80}
                 src="/images/service1.png"
                 alt="Elderly for Patients app preview"
                 width={720}
@@ -299,7 +294,7 @@ export default function ElderlyWellnessPage() {
             </div>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
+          <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center md:gap-8">
             <div className="order-1 md:order-2">
               <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-[color:var(--color-highlight)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)]">
                 <i className="icofont-ui-clock" aria-hidden="true"></i>
@@ -329,7 +324,7 @@ export default function ElderlyWellnessPage() {
               </ul>
             </div>
             <div className="order-2 md:order-1">
-              <Image quality={95}
+              <Image quality={80}
                 src="/images/service2.png"
                 alt="Elderly for Service Providers app preview"
                 width={720}
@@ -342,9 +337,9 @@ export default function ElderlyWellnessPage() {
       </section>
 
       {/* Why Elderly */}
-      <section className="py-12 sm:py-16">
+      <section className="section-y">
         <Container>
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-8">
             <div>
               <h2 className="mb-4 font-[family-name:var(--font-serif)] text-3xl sm:text-4xl">
                 <span className="text-[color:var(--color-brand)]">Why</span>{" "}
@@ -375,19 +370,10 @@ export default function ElderlyWellnessPage() {
                 ))}
               </ul>
             </div>
-            <div className="rounded-[var(--radius-lg)] bg-[color:var(--color-highlight)] p-8">
-              <ul className="space-y-4 text-lg font-[family-name:var(--font-serif)] text-[color:var(--color-brand)]">
-                {whyChoose.map((w) => (
-                  <li key={w} className="flex items-center gap-3">
-                    <span className="text-[color:var(--color-brand)]">•</span>
-                    <span>{w}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </Container>
       </section>
+      <WhyChooseApp />
     </div>
   );
 }

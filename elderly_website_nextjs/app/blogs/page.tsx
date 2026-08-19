@@ -59,7 +59,7 @@ export default function BlogsIndexPage() {
       <JsonLd id="blog-collection-schema" data={collectionSchema} />
       <JsonLd id="blog-breadcrumb-schema" data={breadcrumbSchema} />
 
-      <section className="py-12 sm:py-16">
+      <section className="section-y">
         <Container>
           <SectionTitle
             badge="Blog"
@@ -74,7 +74,7 @@ export default function BlogsIndexPage() {
         </Container>
       </section>
 
-      <section className="pb-16 sm:pb-24">
+      <section className="pb-4 sm:pb-6">
         <Container>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {blogs.map((b, i) => (

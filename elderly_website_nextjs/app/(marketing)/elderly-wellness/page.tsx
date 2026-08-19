@@ -180,7 +180,7 @@ export default function ElderlyWellnessPage() {
               >
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--color-border)]">
                   <Image
-                    quality={80}
+                    quality={95}
                     src={s.icon}
                     alt=""
                     width={28}
@@ -284,7 +284,7 @@ export default function ElderlyWellnessPage() {
               </ul>
             </div>
             <div>
-              <Image quality={80}
+              <Image quality={95}
                 src="/images/service1.png"
                 alt="Elderly for Patients app preview"
                 width={720}
@@ -324,7 +324,7 @@ export default function ElderlyWellnessPage() {
               </ul>
             </div>
             <div className="order-2 md:order-1">
-              <Image quality={80}
+              <Image quality={95}
                 src="/images/service2.png"
                 alt="Elderly for Service Providers app preview"
                 width={720}

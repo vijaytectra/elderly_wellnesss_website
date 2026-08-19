@@ -7,7 +7,17 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/tmp/"],
+        disallow: [
+          "/api/",
+          "/tmp/",
+          "/wp-admin/",
+          "/wp-includes/",
+          "/wp-content/",
+          "/company/js/",
+          "/company/css/",
+          "/blogs/js/",
+          "/blogs/css/",
+        ],
       },
     ],
     host: SITE_URL,

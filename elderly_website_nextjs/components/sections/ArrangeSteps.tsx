@@ -42,7 +42,7 @@ export function ArrangeSteps({ heading, intro, steps }: ArrangeStepsProps) {
                   alt=""
                   width={56}
                   height={56}
-                  quality={80}
+                  quality={95}
                   unoptimized
                   className="h-12 w-12 object-contain"
                   loading={i > 1 ? "lazy" : undefined}

@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { getLegacyRedirects } from "./lib/internal-urls";
 
 const nextConfig: NextConfig = {
   trailingSlash: true,
@@ -12,33 +13,7 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   async redirects() {
-    return [
-      {
-        source: "/blogs/category/locations/chennai",
-        destination: "/locations/chennai/",
-        permanent: true,
-      },
-      {
-        source: "/blogs/category/locations",
-        destination: "/locations/chennai/",
-        permanent: true,
-      },
-      {
-        source: "/how-elderly-wellness-works.html",
-        destination: "/how-elderly-wellness-works/",
-        permanent: true,
-      },
-      {
-        source: "/chennai.html",
-        destination: "/locations/chennai/",
-        permanent: true,
-      },
-      {
-        source: "/contact.html",
-        destination: "/contact/",
-        permanent: true,
-      },
-    ];
+    return getLegacyRedirects();
   },
 };
 

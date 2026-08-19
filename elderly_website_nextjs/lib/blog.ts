@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import indexData from "@/content/blogs/_index.json";
+import { rewriteHrefsInHtml } from "@/lib/internal-urls";
 
 export interface BlogIndexEntry {
   slug: string;
@@ -72,8 +73,10 @@ export function getBlogBySlug(slug: string): { meta: BlogMeta; html: string } {
   const meta = JSON.parse(
     readFileSync(resolve(CONTENT_DIR, `${slug}.meta.json`), "utf8"),
   ) as BlogMeta;
-  let html = dropOrphanClosingDivs(
-    readFileSync(resolve(CONTENT_DIR, `${slug}.html`), "utf8"),
+  let html = rewriteHrefsInHtml(
+    dropOrphanClosingDivs(
+      readFileSync(resolve(CONTENT_DIR, `${slug}.html`), "utf8"),
+    ),
   );
   if (!html.includes("ew-blog-cta")) {
     html = `${html}\n${DEFAULT_APP_CTA}`;

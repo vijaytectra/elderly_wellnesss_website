@@ -24,7 +24,7 @@ application ‘Elderly’
 <p>
 Please carefully go through these terms and conditions (“Terms”)
 and the privacy policy available at
-<a href="https://www.theelderlywellness.com/company/privacy">https://www.theelderlywellness.com/company/privacy</a>
+<a href="https://www.theelderlywellness.com/privacy-policy/">https://www.theelderlywellness.com/privacy-policy/</a>
 (“Privacy Policy”) before you decide to avail the services made
 available on Elderly. These Terms and the Privacy Policy
 together constitute a legal agreement (“Agreement”) between you
@@ -2108,7 +2108,7 @@ at the following email address:
 <a href="mailto:info@theelderlywellness.com">info@theelderlywellness.com</a>
 or via the contact information available from the following
 hyperlink:
-<a href="https://www.theelderlywellness.com/contact">www.theelderlywellness.com/contact</a>.
+<a href="https://www.theelderlywellness.com/contact/">www.theelderlywellness.com/contact</a>.
 </li>
 <li>
 <strong>16.2.</strong> In accordance with the Information

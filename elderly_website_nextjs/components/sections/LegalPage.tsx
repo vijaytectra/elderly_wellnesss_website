@@ -1,4 +1,5 @@
 import { Container } from "@/components/Container";
+import { rewriteHrefsInHtml } from "@/lib/internal-urls";
 
 interface LegalPageProps {
   /** Page heading shown once at the top of the page. */
@@ -28,7 +29,7 @@ export function LegalPage({ title, html }: LegalPageProps) {
         </h1>
         <div
           className="legal-body__content space-y-6 text-base leading-relaxed text-[color:var(--color-foreground)]"
-          dangerouslySetInnerHTML={{ __html: html }}
+          dangerouslySetInnerHTML={{ __html: rewriteHrefsInHtml(html) }}
         />
       </Container>
       <style>{`

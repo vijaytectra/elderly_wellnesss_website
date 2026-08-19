@@ -96,7 +96,7 @@ export default function BoardOfAdvisorsPage() {
               >
                 <div className="relative aspect-[4/5] w-full overflow-hidden bg-[color:var(--color-muted)] sm:aspect-square">
                   <Image
-                    quality={80}
+                    quality={95}
                     unoptimized
                     src={a.image}
                     alt={a.alt}

@@ -150,13 +150,10 @@ export default function HomePage() {
             <div>
               <h1 className="mb-4 font-[family-name:var(--font-serif)] text-4xl leading-[1.05] sm:text-5xl md:text-6xl">
                 <span className="font-[family-name:var(--font-display)] text-[color:var(--color-brand)]">
-                  Age
-                </span>{" "}
-                <span className="font-[family-name:var(--font-serif)]">
-                  Meets
+                  Care at home
                 </span>
                 <span className="mt-1 block font-[family-name:var(--font-serif)]">
-                  Assistance.
+                  for your parents.
                 </span>
               </h1>
               <p className="mb-4 max-w-lg text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-lg">
@@ -200,7 +197,7 @@ export default function HomePage() {
                 className="group block overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)] transition hover:shadow-lg"
               >
                 <div className="relative aspect-square w-full bg-[color:var(--color-muted)]">
-                  <Image quality={80}
+                  <Image quality={95}
                     src={s.image}
                     alt={s.title}
                     width={400}
@@ -269,7 +266,7 @@ export default function HomePage() {
             </div>
             <div className="order-1 mx-auto w-full max-w-[280px] sm:max-w-[320px] lg:order-2 lg:max-w-none">
               <Image
-                quality={80}
+                quality={95}
                 src="/images/appscreen.webp"
                 alt="Elderly Wellness app preview"
                 width={450}
@@ -315,7 +312,7 @@ export default function HomePage() {
       {/* Image / banner */}
       <section className="section-y">
         <Container>
-          <Image quality={80}
+          <Image quality={95}
             src="/images/e4.jpg"
             alt="Elderly care family moment"
             width={1200}
@@ -329,7 +326,7 @@ export default function HomePage() {
       <section className="section-y">
         <Container>
           <div className="mx-auto max-w-[520px] text-center">
-            <Image quality={80}
+            <Image quality={95}
               src="/images/downloadScreen.webp"
               alt="Download Elderly Wellness app"
               width={450}

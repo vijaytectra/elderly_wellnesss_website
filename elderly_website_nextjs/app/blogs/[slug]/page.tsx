@@ -178,7 +178,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
                     alt={meta.title}
                     fill
                     priority
-                    quality={80}
+                    quality={95}
                     sizes="(max-width: 1024px) 100vw, 800px"
                     className="object-cover"
                   />

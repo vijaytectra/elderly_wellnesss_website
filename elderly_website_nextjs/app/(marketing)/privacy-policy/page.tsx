@@ -28,7 +28,7 @@ This privacy policy ("Privacy Policy") explains how we collect,
 use, share, disclose and protect Personal information about the
 Users of the Services, including the Practitioners (as defined
 in the Terms of Use, which may be accessed via the following
-weblink https://theelderlywellness.com/company/privacy (the
+weblink https://www.theelderlywellness.com/privacy-policy/ (the
 “Terms of Use”)), the End-Users (as defined in the Terms of
 Use), and the visitors of Elderly (jointly and severally
 referred to as “you” or “Users” in this Privacy Policy). We

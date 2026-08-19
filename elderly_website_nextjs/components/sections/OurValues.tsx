@@ -56,7 +56,7 @@ export function OurValues() {
                 alt={v.title}
                 width={280}
                 height={280}
-                quality={80}
+                quality={95}
                 sizes="180px"
                 className="h-44 w-44 object-contain"
               />

@@ -124,7 +124,16 @@ function decodeEntities(input: string): string {
  *   9. `#anchor`, `tel:`, `mailto:`, external URLs preserved as-is
  *  10. Author URL (`../author/elderly` etc.) -> `/blogs/` (author archive is dropped)
  *  11. Category/tag URLs (`../category/...`, `../tag/...`) -> `/blogs/`
+ *  12. Root-relative `/known-blog-slug/` -> `/blogs/{slug}/` (WP mixed permalinks)
  */
+const EXTRA_ALIASES: Readonly<Record<string, string>> = {
+  "exercise-for-seniors-over-75": "exercises-for-seniors-over-75",
+  "comprehensive-guide-to-caregivers": "what-is-caregivers",
+  "the-inspiring-journey-of-eldery": "journey-of-eldery",
+};
+
+let blogSlugSet = new Set<string>();
+
 function rewriteUrl(raw: string): string {
   if (!raw) return raw;
   const url = raw.trim();
@@ -140,18 +149,14 @@ function rewriteUrl(raw: string): string {
     return url;
   }
 
-  // 2. Strip our own origin
+  // 2. Strip our own origin (http/https, www/apex)
   let s = url;
-  if (s.startsWith(`${SITE_URL_WWW}/`)) {
-    s = s.slice(SITE_URL_WWW.length);
-  } else if (s === SITE_URL_WWW) {
-    s = "/";
-  } else if (s.startsWith(`${SITE_URL_APEX}/`)) {
-    s = s.slice(SITE_URL_APEX.length);
-  } else if (s === SITE_URL_APEX) {
-    s = "/";
+  const originMatch = s.match(
+    /^https?:\/\/(?:www\.)?theelderlywellness\.com(?::\d+)?(\/.*)?$/i,
+  );
+  if (originMatch) {
+    s = originMatch[1] || "/";
   } else if (/^https?:\/\//i.test(s) || s.startsWith("//")) {
-    // Genuinely external — leave alone.
     return s;
   }
 
@@ -217,10 +222,19 @@ function rewriteUrl(raw: string): string {
     if (s.startsWith("/wp-content/uploads/")) {
       return "/blogs" + s;
     }
-    // `/images/...` and `/blogs/*` preserved
-    if (s.startsWith("/images/") || s.startsWith("/blogs/")) return s;
-    // Root-relative `.html` -> clean path
+    // `/images/...` preserved
+    if (s.startsWith("/images/")) return s;
+    if (s === "/index" || s === "/index/" || s === "/index.html") return "/";
+    if (/^\/blogs\/(?:page|author|category|tag)(?:\/|$)/i.test(s)) return "/blogs/";
+    if (/^\/blogs\/\d+\/?$/.test(s)) return "/blogs/";
+    const asBlog = maybeBlogPath(s);
+    if (asBlog) return asBlog;
+    // `/blogs/*` preserved (after alias check above)
+    if (s.startsWith("/blogs/")) return s;
+    // Root-relative `.html` -> clean path (blog slug.html included)
     if (s.endsWith(".html")) {
+      const fromHtml = maybeBlogPath("/" + s.slice(1).replace(/\.html$/i, ""));
+      if (fromHtml) return fromHtml;
       return normalizeTopLevel(s.slice(1));
     }
     return s;
@@ -238,9 +252,20 @@ function rewriteUrl(raw: string): string {
 }
 
 /**
- * `foo.html` (or `foo.html#section` / `foo.html?a=b`) -> `/foo/`
- * (or `/foo/#section` / `/foo/?a=b`). Preserves trailing suffixes.
+ * `/slug` or `/blogs/typo-slug` -> canonical `/blogs/{slug}/` when known.
  */
+function maybeBlogPath(pathname: string): string | null {
+  const m = pathname.match(/^\/(?:blogs\/)?([^/?#]+)\/?(?:index\.html)?([?#].*)?$/i);
+  if (!m?.[1] || m[1] === "blogs") return null;
+  const rawSlug = m[1].replace(/\.html$/i, "");
+  if (rawSlug === "page" || rawSlug === "author" || rawSlug === "category" || rawSlug === "tag") {
+    return "/blogs/";
+  }
+  const slug = EXTRA_ALIASES[rawSlug] ?? rawSlug;
+  if (!blogSlugSet.has(slug)) return null;
+  return `/blogs/${slug}/${m[2] ?? ""}`;
+}
+
 function normalizeTopLevel(rest: string): string {
   const m = rest.match(/^([^?#]+?)(?:\.html)?([?#].*)?$/);
   if (!m) return "/" + rest;
@@ -539,6 +564,7 @@ function main(): void {
     console.error(`[extract-blogs] manifest is empty or malformed`);
     process.exit(1);
   }
+  blogSlugSet = new Set(manifest.map((e) => e.slug).filter(Boolean));
 
   mkdirSync(OUT_DIR, { recursive: true });
 

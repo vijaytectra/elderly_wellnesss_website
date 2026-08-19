@@ -19,6 +19,7 @@ const quickLinks: ReadonlyArray<{ label: string; href: string }> = [
   },
   { label: "Terms & Conditions", href: "/terms-and-conditions/" },
   { label: "Contact Us", href: "/contact/" },
+  { label: "Sitemap", href: "/site-map/" },
 ];
 
 /**
@@ -35,7 +36,7 @@ export function Footer() {
         <div className="grid gap-6 md:grid-cols-3 md:gap-8">
           <div>
             <Link href="/" className="inline-flex items-center" aria-label="Elderly Wellness — home">
-              <Image quality={80}
+              <Image quality={95}
                 src="/images/ft_logo.png"
                 alt="Elderly Wellness"
                 width={180}

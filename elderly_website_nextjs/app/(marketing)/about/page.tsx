@@ -139,7 +139,7 @@ export default function AboutPage() {
                 key={s.src}
                 className="relative aspect-square overflow-hidden rounded-[var(--radius-lg)]"
               >
-                <Image quality={80}
+                <Image quality={95}
                   src={s.src}
                   alt={s.alt}
                   width={600}
@@ -230,7 +230,7 @@ export default function AboutPage() {
               </a>
             </div>
             <div>
-              <Image quality={80}
+              <Image quality={95}
                 src="/images/process.png"
                 alt="Elderly Wellness process overview"
                 width={720}
@@ -264,7 +264,7 @@ export default function AboutPage() {
               >
                 <div className="relative aspect-[4/5] w-full overflow-hidden bg-[color:var(--color-muted)] sm:aspect-square">
                   <Image
-                    quality={80}
+                    quality={95}
                     unoptimized
                     src={m.image}
                     alt={m.name}

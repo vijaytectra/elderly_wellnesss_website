@@ -79,7 +79,7 @@ export default function HowItWorksPage() {
             </div>
             <div className="overflow-hidden rounded-3xl border-2 border-slate-200 shadow-xl">
               <Image
-                quality={80}
+                quality={95}
                 src="/images/blogs/elderly-wellness-works.webp"
                 alt="How Elderly Wellness Works"
                 width={900}

@@ -19,8 +19,8 @@ export function Header() {
             alt="Elderly Wellness"
             width={180}
             height={48}
-            quality={95}
             priority
+            fetchPriority="high"
             className="h-10 w-auto sm:h-12"
           />
         </Link>

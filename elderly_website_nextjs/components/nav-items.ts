@@ -40,6 +40,6 @@ export const NAV_ITEMS: readonly NavItem[] = [
   },
   { label: "How It Works", href: "/how-elderly-wellness-works/" },
   { label: "About", href: "/about/" },
-  { label: "Blog", href: "/blogs/" },
+  { label: "Blogs", href: "/blogs/" },
   { label: "Serving Chennai", href: "/locations/chennai/" },
 ];

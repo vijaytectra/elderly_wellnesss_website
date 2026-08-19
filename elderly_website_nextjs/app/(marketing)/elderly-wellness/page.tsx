@@ -3,6 +3,14 @@ import Image from "next/image";
 import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/sections/SectionTitle";
 import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
+import {
+  IconAndroid,
+  IconApple,
+  IconCheck,
+  IconCheckCircle,
+  IconClock,
+  IconTasks,
+} from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -200,10 +208,7 @@ export default function ElderlyWellnessPage() {
                         aria-label="Get it on Google Play"
                         className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[color:var(--color-border)] text-[color:var(--color-brand)] hover:bg-[color:var(--color-muted)]"
                       >
-                        <i
-                          className="icofont-brand-android-robot"
-                          aria-hidden="true"
-                        ></i>
+                        <IconAndroid className="h-4 w-4" />
                       </a>
                     </li>
                     <li>
@@ -212,10 +217,7 @@ export default function ElderlyWellnessPage() {
                         aria-label="Download on the App Store"
                         className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[color:var(--color-border)] text-[color:var(--color-brand)] hover:bg-[color:var(--color-muted)]"
                       >
-                        <i
-                          className="icofont-brand-apple"
-                          aria-hidden="true"
-                        ></i>
+                        <IconApple className="h-4 w-4" />
                       </a>
                     </li>
                   </ul>
@@ -260,7 +262,7 @@ export default function ElderlyWellnessPage() {
           <div className="mt-5 grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center md:gap-8">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-[color:var(--color-highlight)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)]">
-                <i className="icofont-tasks-alt" aria-hidden="true"></i>
+                <IconTasks className="h-3.5 w-3.5" />
                 <span>Elderly for Patients</span>
               </div>
               <h3 className="mb-4 font-[family-name:var(--font-serif)] text-2xl leading-tight sm:text-3xl">
@@ -276,7 +278,7 @@ export default function ElderlyWellnessPage() {
                     className="flex items-start gap-3 text-base leading-relaxed text-[color:var(--color-foreground)]"
                   >
                     <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[color:var(--color-brand)] text-xs text-white">
-                      <i className="icofont-ui-check" aria-hidden="true"></i>
+                      <IconCheck className="h-3 w-3" />
                     </span>
                     <span>{b}</span>
                   </li>
@@ -297,7 +299,7 @@ export default function ElderlyWellnessPage() {
           <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center md:gap-8">
             <div className="order-1 md:order-2">
               <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-[color:var(--color-highlight)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)]">
-                <i className="icofont-ui-clock" aria-hidden="true"></i>
+                <IconClock className="h-3.5 w-3.5" />
                 <span>Elderly for Service Providers</span>
               </div>
               <h3 className="mb-4 font-[family-name:var(--font-serif)] text-2xl leading-tight sm:text-3xl">
@@ -313,10 +315,7 @@ export default function ElderlyWellnessPage() {
                     className="flex items-start gap-3 text-base leading-relaxed text-[color:var(--color-foreground)]"
                   >
                     <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[color:var(--color-brand)] text-xs text-white">
-                      <i
-                        className="icofont-check-circled"
-                        aria-hidden="true"
-                      ></i>
+                      <IconCheckCircle className="h-3 w-3" />
                     </span>
                     <span>{b}</span>
                   </li>
@@ -356,7 +355,7 @@ export default function ElderlyWellnessPage() {
                 {whyElderly.map((w) => (
                   <li key={w.title} className="flex items-start gap-4">
                     <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[color:var(--color-brand)] text-white">
-                      <i className="icofont-ui-check" aria-hidden="true"></i>
+                      <IconCheck className="h-3 w-3" />
                     </span>
                     <div>
                       <h3 className="mb-1 text-lg font-semibold">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/sections/SectionTitle";
+import { IconLinkedin } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -123,10 +124,7 @@ export default function BoardOfAdvisorsPage() {
                           aria-label={`${a.name} on LinkedIn`}
                           className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--color-brand)] text-white transition hover:bg-[color:var(--color-brand-dark)]"
                         >
-                          <i
-                            className="icofont-linkedin"
-                            aria-hidden="true"
-                          ></i>
+                          <IconLinkedin className="h-4 w-4" />
                         </a>
                       </li>
                     </ul>

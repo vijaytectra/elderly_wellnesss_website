@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { NAV_ITEMS } from "./nav-items";
+import { IconChevronDown } from "./icons";
 
 const CLOSE_DELAY_MS = 220;
 
@@ -99,9 +100,8 @@ export function DesktopNav() {
                   aria-expanded={isOpen}
                   aria-label={`${item.label} menu`}
                 >
-                  <i
-                    className={`icofont-rounded-down text-xs transition-transform ${isOpen ? "rotate-180" : ""}`}
-                    aria-hidden="true"
+                  <IconChevronDown
+                    className={`h-3 w-3 transition-transform ${isOpen ? "rotate-180" : ""}`}
                   />
                 </button>
               </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container } from "@/components/Container";
+import { IconCheck } from "@/components/icons";
 
 export interface ServiceInfoBullet {
   title: string;
@@ -53,7 +54,7 @@ export function ServiceInfoBlock({
               {bullets.map((b) => (
                 <li key={b.title} className="flex items-start gap-4">
                   <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[color:var(--color-brand)] text-white">
-                    <i className="icofont-ui-check" aria-hidden="true"></i>
+                    <IconCheck className="h-4 w-4" />
                   </span>
                   <div>
                     <h3 className="mb-1 text-lg font-semibold">{b.title}</h3>

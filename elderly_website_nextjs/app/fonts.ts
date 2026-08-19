@@ -10,7 +10,7 @@ import localFont from "next/font/local";
 export const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "700"],
   display: "swap",
   preload: true,
 });
@@ -31,6 +31,7 @@ export const cormorant = localFont({
   ],
   variable: "--font-serif",
   display: "swap",
+  preload: false,
 });
 
 /** Playball display script, single weight. */
@@ -44,4 +45,5 @@ export const playball = localFont({
   ],
   variable: "--font-display",
   display: "swap",
+  preload: false,
 });

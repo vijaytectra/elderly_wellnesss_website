@@ -5,6 +5,7 @@ import { HeroCtas } from "@/components/HeroCtas";
 import { TrustStrip } from "@/components/TrustStrip";
 import { SectionTitle } from "@/components/sections/SectionTitle";
 import { SITE_PHONE } from "@/data/site";
+import { IconCheckCircle } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -136,10 +137,7 @@ export default function HowItWorksPage() {
                 <ul className="space-y-2 text-sm text-slate-700">
                   {step.bullets.map((b) => (
                     <li key={b} className="flex items-center gap-2">
-                      <i
-                        className="icofont-check-circled text-[color:var(--color-brand)]"
-                        aria-hidden="true"
-                      />
+                      <IconCheckCircle className="h-4 w-4 shrink-0 text-[color:var(--color-brand)]" />
                       {b}
                     </li>
                   ))}

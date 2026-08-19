@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import dynamic from "next/dynamic";
+import { DeferredCallbackForm } from "@/components/DeferredCallbackForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
@@ -8,11 +8,6 @@ import { SITE_EMAIL, SOCIAL_LINKS } from "@/data/site";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { cormorant, manrope, playball } from "./fonts";
 import "./globals.css";
-
-const CallbackForm = dynamic(
-  () => import("@/components/CallbackForm").then((mod) => mod.CallbackForm),
-  { ssr: true },
-);
 
 const description =
   "Home nursing, physiotherapy, geriatric care, and assisted living in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 99448 90577.";
@@ -133,7 +128,7 @@ export default function RootLayout({
         <JsonLd id="website-schema" data={websiteSchema} />
         <Header />
         <main id="main">{children}</main>
-        <CallbackForm />
+        <DeferredCallbackForm />
         <Footer />
         <StickyBookingBar />
       </body>

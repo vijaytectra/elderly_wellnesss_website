@@ -192,7 +192,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
             </div>
 
             {tocItems.length > 0 ? (
-              <aside className="order-first lg:sticky lg:top-24 lg:order-2 lg:self-start">
+              <aside className="hidden lg:sticky lg:top-24 lg:block lg:self-start">
                 <BlogToc items={tocItems} />
               </aside>
             ) : null}

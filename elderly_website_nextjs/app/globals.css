@@ -2,63 +2,6 @@
 @plugin "@tailwindcss/typography";
 
 /* -------------------------------------------------------------------------
- * IcoFont
- *
- * The legacy site uses IcoFont via CSS class names (e.g. `<i class=
- * "icofont-facebook">`), so we cannot load it through `next/font`. Instead we
- * declare the @font-face here and rely on class names to look up glyph code
- * points from the icofont character map. The icon set files live in
- * `public/fonts/`.
- * ---------------------------------------------------------------------- */
-@font-face {
-  font-family: "IcoFont";
-  src:
-    url("/fonts/icofont.woff2") format("woff2"),
-    url("/fonts/icofont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Base icofont class — replicates the minimal shape of the legacy
- * icofont.min.css so `<i class="icofont-facebook">` renders. Individual glyph
- * unicode mappings live in the font's cmap; the browser looks them up by
- * matching the classes we set to the icofont naming convention. Because we
- * don't ship the full icofont stylesheet, we use unicode escapes for the
- * handful of glyphs we actually reference (socials + rounded-down). */
-[class^="icofont-"],
-[class*=" icofont-"] {
-  font-family: "IcoFont" !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: inline-block;
-}
-
-/* Codepoints taken from the icofont v1 map (https://icofont.com). Only the
- * glyphs referenced by shared UI are declared here; page-specific icons will
- * be added in Phase 3 as they are needed. */
-.icofont-facebook::before { content: "\ed37"; }
-.icofont-twitter::before { content: "\ed7a"; }
-.icofont-instagram::before { content: "\ed46"; }
-.icofont-linkedin::before { content: "\ed4d"; }
-.icofont-rounded-down::before { content: "\ea99"; }
-
-/* Phase 3a additions (bullet-check / step / brand icons). */
-.icofont-ui-check::before { content: "\ec4b"; }
-.icofont-ui-clock::before { content: "\ec4e"; }
-.icofont-check-circled::before { content: "\eed7"; }
-.icofont-gear::before { content: "\ef3a"; }
-.icofont-tasks-alt::before { content: "\f006"; }
-.icofont-brand-android-robot::before { content: "\e8a4"; }
-.icofont-brand-apple::before { content: "\e8a7"; }
-
-/* -------------------------------------------------------------------------
  * Design tokens
  *
  * Extracted from ../css/style.css `:root` block (see MIGRATION_INVENTORY

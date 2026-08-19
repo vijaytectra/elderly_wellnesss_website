@@ -25,8 +25,8 @@ export function HomepageBlogStrip() {
           }
         />
         <div className="mt-5 grid grid-cols-1 gap-6 sm:mt-6 sm:grid-cols-2 lg:grid-cols-3">
-          {latest.map((b, i) => (
-            <BlogCard key={b.slug} blog={b} priority={i === 0} />
+          {latest.map((b) => (
+            <BlogCard key={b.slug} blog={b} />
           ))}
         </div>
         <div className="mt-6 text-center sm:mt-8">

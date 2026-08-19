@@ -5,6 +5,7 @@ import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/sections/SectionTitle";
 import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
+import { IconGear, IconLinkedin } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -196,7 +197,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center md:gap-8">
             <div>
               <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-[color:var(--color-highlight)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)]">
-                <i className="icofont-gear" aria-hidden="true"></i>
+                <IconGear className="h-3.5 w-3.5" />
                 <span>Process</span>
               </div>
               <h2 className="mb-4 font-[family-name:var(--font-serif)] text-3xl sm:text-4xl">
@@ -290,10 +291,7 @@ export default function AboutPage() {
                           aria-label={`${m.name} on LinkedIn`}
                           className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[color:var(--color-brand)] text-white transition hover:bg-[color:var(--color-brand-dark)]"
                         >
-                          <i
-                            className="icofont-linkedin"
-                            aria-hidden="true"
-                          ></i>
+                          <IconLinkedin className="h-4 w-4" />
                         </a>
                       </li>
                     </ul>

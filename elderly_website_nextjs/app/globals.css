@@ -122,9 +122,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.25s ease;
 }
 
-a:hover {
-  color: var(--color-brand);
-}
+/*
+ * Do NOT set a global `a:hover` color rule here — it overrides Tailwind
+ * text-color utilities on branded buttons (e.g. text-white on bg-brand
+ * flips to text-brand on hover, making the label invisible against a
+ * darker brand background). Every interactive link/button defines its
+ * own hover state via component-local Tailwind classes.
+ */

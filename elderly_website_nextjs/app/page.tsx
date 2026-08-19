@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { JsonLd } from "@/components/JsonLd";
+import { StoreBadge } from "@/components/StoreBadge";
 import { HomepageBlogStrip } from "@/components/sections/HomepageBlogStrip";
 import { SectionTitle } from "@/components/sections/SectionTitle";
-import { APP_LINKS } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -150,24 +150,10 @@ export default function HomePage() {
               </p>
               <ul className="flex flex-wrap items-center gap-4">
                 <li>
-                  <a href={APP_LINKS.googlePlay}>
-                    <Image quality={90}
-                      src="/images/googleplay.png"
-                      alt="Get it on Google Play"
-                      width={135}
-                      height={40}
-                    />
-                  </a>
+                  <StoreBadge kind="google-play" size="md" />
                 </li>
                 <li>
-                  <a href={APP_LINKS.appStore}>
-                    <Image quality={90}
-                      src="/images/appstorebtn.png"
-                      alt="Download on the App Store"
-                      width={135}
-                      height={40}
-                    />
-                  </a>
+                  <StoreBadge kind="app-store" size="md" />
                 </li>
               </ul>
             </div>
@@ -397,24 +383,10 @@ export default function HomePage() {
             />
             <ul className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <li>
-                <a href={APP_LINKS.googlePlay}>
-                  <Image quality={90}
-                    src="/images/googleplay.png"
-                    alt="Get it on Google Play"
-                    width={135}
-                    height={40}
-                  />
-                </a>
+                <StoreBadge kind="google-play" size="md" />
               </li>
               <li>
-                <a href={APP_LINKS.appStore}>
-                  <Image quality={90}
-                    src="/images/appstorebtn.png"
-                    alt="Download on the App Store"
-                    width={135}
-                    height={40}
-                  />
-                </a>
+                <StoreBadge kind="app-store" size="md" />
               </li>
             </ul>
           </div>

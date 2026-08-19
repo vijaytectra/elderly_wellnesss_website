@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  APP_LINKS,
   DEVELOPER_CREDIT,
   SITE_EMAIL,
   SITE_PHONE,
@@ -9,6 +8,7 @@ import {
 } from "@/data/site";
 import { Container } from "./Container";
 import { SocialLinks } from "./SocialLinks";
+import { StoreBadge } from "./StoreBadge";
 
 const quickLinks: ReadonlyArray<{ label: string; href: string }> = [
   { label: "Privacy Policy", href: "/privacy-policy/" },
@@ -86,36 +86,10 @@ export function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Download app</h3>
             <ul className="flex flex-wrap items-center gap-3">
               <li>
-                <a
-                  href={APP_LINKS.googlePlay}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Get the Elderly Wellness app on Google Play"
-                >
-                  <Image quality={90}
-                    src="/images/googleplay.png"
-                    alt="Google Play"
-                    width={160}
-                    height={48}
-                    className="h-12 w-auto"
-                  />
-                </a>
+                <StoreBadge kind="google-play" size="md" />
               </li>
               <li>
-                <a
-                  href={APP_LINKS.appStore}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Get the Elderly Wellness app on the App Store"
-                >
-                  <Image quality={90}
-                    src="/images/appstorebtn.png"
-                    alt="App Store"
-                    width={160}
-                    height={48}
-                    className="h-12 w-auto"
-                  />
-                </a>
+                <StoreBadge kind="app-store" size="md" />
               </li>
             </ul>
           </div>

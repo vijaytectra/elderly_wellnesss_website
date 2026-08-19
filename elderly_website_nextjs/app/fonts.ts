@@ -1,4 +1,18 @@
+import { Manrope } from "next/font/google";
 import localFont from "next/font/local";
+
+/**
+ * Manrope — body sans-serif, matches the legacy site's intended stack
+ * (see MIGRATION_INVENTORY §10). Loaded from Google Fonts so body text
+ * renders consistently across Windows / macOS / Linux / Android rather
+ * than falling through to each OS's system UI font.
+ */
+export const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 
 /**
  * Cormorant Garamond, weight 300 only — sourced from ../fonts/ in the legacy

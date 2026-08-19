@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { SITE_EMAIL, SITE_PHONE, SOCIAL_LINKS } from "@/data/site";
-import { cormorant, playball } from "./fonts";
+import { cormorant, manrope, playball } from "./fonts";
 import "./globals.css";
 
 const description =
@@ -66,7 +66,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${playball.variable}`}
+      className={`${manrope.variable} ${cormorant.variable} ${playball.variable}`}
     >
       <body>
         <JsonLd id="organization-schema" data={organizationSchema} />

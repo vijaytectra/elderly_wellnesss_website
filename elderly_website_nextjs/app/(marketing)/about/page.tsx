@@ -56,12 +56,6 @@ const team: readonly TeamMember[] = [
     image: "/images/profile/Danny.png",
     linkedin: "https://www.linkedin.com/in/danny-lalwani/",
   },
-  {
-    name: "Nikita Kharche",
-    role: "Digital Marketing Head",
-    image: "/images/profile/Nikita.png",
-    linkedin: "https://www.linkedin.com/in/nikitazambre",
-  },
 ];
 
 const slides = [

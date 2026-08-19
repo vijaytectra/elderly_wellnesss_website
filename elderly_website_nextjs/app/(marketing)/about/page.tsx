@@ -27,12 +27,6 @@ const team: readonly TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/santosh-kumar-94168b39/",
   },
   {
-    name: "Tanya Mehtani",
-    role: "Lead - Business Process & Design",
-    image: "/images/profile/2.png",
-    linkedin: "https://www.linkedin.com/in/tanyamehtani/",
-  },
-  {
     name: "Jaffar A",
     role: "Product Architect",
     image: "/images/profile/3.png",

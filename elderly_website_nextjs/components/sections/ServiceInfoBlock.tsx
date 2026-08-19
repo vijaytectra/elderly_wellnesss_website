@@ -66,7 +66,7 @@ export function ServiceInfoBlock({
             </ul>
           </div>
           <div className={reversed ? "md:order-1" : ""}>
-            <Image
+            <Image quality={90}
               src={image}
               alt={imageAlt}
               width={720}

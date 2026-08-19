@@ -37,7 +37,7 @@ export function ArrangeSteps({ heading, intro, steps }: ArrangeStepsProps) {
               className="grid grid-cols-1 gap-6 rounded-[var(--radius-lg)] bg-white p-6 shadow-[var(--shadow-card)] md:grid-cols-[160px_1fr] md:items-center md:gap-8"
             >
               <div className="flex justify-center md:justify-start">
-                <Image
+                <Image quality={90}
                   src={s.image}
                   alt=""
                   width={160}

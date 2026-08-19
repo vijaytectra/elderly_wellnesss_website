@@ -18,7 +18,7 @@ export function Header() {
           className="flex items-center"
           aria-label="Elderly Wellness — home"
         >
-          <Image
+          <Image quality={90}
             src="/images/logo.png"
             alt="Elderly Wellness"
             width={180}

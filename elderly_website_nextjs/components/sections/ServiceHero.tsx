@@ -32,7 +32,7 @@ export function ServiceHero({
       <Container>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
           <div>
-            <Image
+            <Image quality={90}
               src={image}
               alt={imageAlt}
               width={720}

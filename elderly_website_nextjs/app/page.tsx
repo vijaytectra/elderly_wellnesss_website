@@ -151,7 +151,7 @@ export default function HomePage() {
               <ul className="flex flex-wrap items-center gap-4">
                 <li>
                   <a href={APP_LINKS.googlePlay}>
-                    <Image
+                    <Image quality={90}
                       src="/images/googleplay.png"
                       alt="Get it on Google Play"
                       width={135}
@@ -161,7 +161,7 @@ export default function HomePage() {
                 </li>
                 <li>
                   <a href={APP_LINKS.appStore}>
-                    <Image
+                    <Image quality={90}
                       src="/images/appstorebtn.png"
                       alt="Download on the App Store"
                       width={135}
@@ -172,7 +172,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="relative aspect-square w-full max-w-[560px] overflow-hidden rounded-[40px] bg-[#181a22] md:ml-auto">
-              <Image
+              <Image quality={90}
                 src="/videos/home/poster-1.jpg"
                 alt="Elderly care at home"
                 width={800}
@@ -198,7 +198,7 @@ export default function HomePage() {
 
       {/* Services */}
       <section className="relative py-12 sm:py-16">
-        <Image
+        <Image quality={90}
           src="/images/blue_dotes.png"
           alt=""
           width={200}
@@ -216,7 +216,7 @@ export default function HomePage() {
                 className="group block overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)] transition hover:shadow-lg"
               >
                 <div className="relative aspect-square w-full bg-[color:var(--color-muted)]">
-                  <Image
+                  <Image quality={90}
                     src={s.image}
                     alt={s.title}
                     width={400}
@@ -264,7 +264,7 @@ export default function HomePage() {
               ))}
             </ul>
             <div className="flex justify-center">
-              <Image
+              <Image quality={90}
                 src="/images/appscreen.webp"
                 alt="Elderly Wellness app preview"
                 width={450}
@@ -291,7 +291,7 @@ export default function HomePage() {
                 it.
               </p>
               <div className="relative overflow-hidden rounded-[var(--radius-lg)]">
-                <Image
+                <Image quality={90}
                   src="/images/applicationvideothumb.jpg"
                   alt="Elderly Wellness application video"
                   width={1000}
@@ -318,7 +318,7 @@ export default function HomePage() {
                 }`}
               >
                 <div className="flex justify-center">
-                  <Image
+                  <Image quality={90}
                     src={s.image}
                     alt={s.title}
                     width={720}
@@ -331,7 +331,7 @@ export default function HomePage() {
                     {s.step}
                   </span>
                   <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-[16px] bg-white shadow-[0_8px_20px_rgba(0,0,0,0.12)]">
-                    <Image
+                    <Image quality={90}
                       src={s.icon}
                       alt=""
                       width={30}
@@ -374,7 +374,7 @@ export default function HomePage() {
       {/* Image / banner */}
       <section className="py-8 sm:py-12">
         <Container>
-          <Image
+          <Image quality={90}
             src="/images/e4.jpg"
             alt="Elderly care family moment"
             width={1200}
@@ -388,7 +388,7 @@ export default function HomePage() {
       <section className="py-12 sm:py-16">
         <Container>
           <div className="mx-auto max-w-[520px] text-center">
-            <Image
+            <Image quality={90}
               src="/images/downloadScreen.webp"
               alt="Download Elderly Wellness app"
               width={450}
@@ -398,7 +398,7 @@ export default function HomePage() {
             <ul className="mt-6 flex flex-wrap items-center justify-center gap-4">
               <li>
                 <a href={APP_LINKS.googlePlay}>
-                  <Image
+                  <Image quality={90}
                     src="/images/googleplay.png"
                     alt="Get it on Google Play"
                     width={135}
@@ -408,7 +408,7 @@ export default function HomePage() {
               </li>
               <li>
                 <a href={APP_LINKS.appStore}>
-                  <Image
+                  <Image quality={90}
                     src="/images/appstorebtn.png"
                     alt="Download on the App Store"
                     width={135}

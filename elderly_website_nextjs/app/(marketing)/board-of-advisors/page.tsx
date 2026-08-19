@@ -95,7 +95,7 @@ export default function BoardOfAdvisorsPage() {
                 className="flex flex-col overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)] transition hover:shadow-lg"
               >
                 <div className="relative aspect-square w-full bg-[color:var(--color-muted)]">
-                  <Image
+                  <Image quality={90}
                     src={a.image}
                     alt={a.alt}
                     width={a.width}

@@ -34,7 +34,7 @@ export function WhyChooseUs({ heading, features }: WhyChooseUsProps) {
               className="flex flex-col items-start gap-4 rounded-[var(--radius-lg)] bg-white p-6 shadow-[var(--shadow-card)]"
             >
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[color:var(--color-highlight)]">
-                <Image
+                <Image quality={90}
                   src={f.icon}
                   alt=""
                   width={64}

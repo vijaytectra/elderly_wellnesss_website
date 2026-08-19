@@ -133,7 +133,7 @@ export default function InvestorsPage() {
                 className="flex flex-col items-center gap-4 rounded-[var(--radius-lg)] bg-white p-8 text-center shadow-[var(--shadow-card)]"
               >
                 <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[color:var(--color-highlight)]">
-                  <Image
+                  <Image quality={90}
                     src={v.image}
                     alt={v.title}
                     width={96}

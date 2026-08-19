@@ -157,7 +157,7 @@ export default function AboutPage() {
                 key={s.src}
                 className="relative aspect-square overflow-hidden rounded-[var(--radius-lg)]"
               >
-                <Image
+                <Image quality={90}
                   src={s.src}
                   alt={s.alt}
                   width={600}
@@ -265,7 +265,7 @@ export default function AboutPage() {
               </a>
             </div>
             <div>
-              <Image
+              <Image quality={90}
                 src="/images/process.png"
                 alt="Elderly Wellness process overview"
                 width={720}
@@ -298,7 +298,7 @@ export default function AboutPage() {
                 className="flex flex-col overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)]"
               >
                 <div className="relative aspect-square w-full bg-[color:var(--color-muted)]">
-                  <Image
+                  <Image quality={90}
                     src={m.image}
                     alt={m.name}
                     width={480}

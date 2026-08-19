@@ -34,7 +34,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <Link href="/" className="inline-flex items-center" aria-label="Elderly Wellness — home">
-              <Image
+              <Image quality={90}
                 src="/images/ft_logo.png"
                 alt="Elderly Wellness"
                 width={180}
@@ -92,7 +92,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   aria-label="Get the Elderly Wellness app on Google Play"
                 >
-                  <Image
+                  <Image quality={90}
                     src="/images/googleplay.png"
                     alt="Google Play"
                     width={160}
@@ -108,7 +108,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   aria-label="Get the Elderly Wellness app on the App Store"
                 >
-                  <Image
+                  <Image quality={90}
                     src="/images/appstorebtn.png"
                     alt="App Store"
                     width={160}

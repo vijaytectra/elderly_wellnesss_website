@@ -145,7 +145,7 @@ export default function AboutPage() {
                 key={s.src}
                 className="relative aspect-square overflow-hidden rounded-[var(--radius-lg)]"
               >
-                <Image quality={90}
+                <Image quality={95}
                   src={s.src}
                   alt={s.alt}
                   width={600}
@@ -180,7 +180,7 @@ export default function AboutPage() {
                 <Link
                   href="/blogs/journey-of-eldery/"
                   aria-label="Read more: the inspiring journey of Elderly"
-                  className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-[color:var(--color-brand-foreground)] shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
+                  className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
                 >
                   Read More
                   <span className="sr-only">
@@ -247,13 +247,13 @@ export default function AboutPage() {
               </ul>
               <a
                 href="https://play.google.com/store/apps/details?id=com.elderly.nri"
-                className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-[color:var(--color-brand-foreground)] shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
+                className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
               >
                 Download App
               </a>
             </div>
             <div>
-              <Image quality={90}
+              <Image quality={95}
                 src="/images/process.png"
                 alt="Elderly Wellness process overview"
                 width={720}
@@ -286,7 +286,7 @@ export default function AboutPage() {
                 className="flex flex-col overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)]"
               >
                 <div className="relative aspect-square w-full bg-[color:var(--color-muted)]">
-                  <Image quality={90}
+                  <Image quality={95}
                     src={m.image}
                     alt={m.name}
                     width={480}

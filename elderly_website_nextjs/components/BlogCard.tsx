@@ -20,7 +20,7 @@ export function BlogCard({ blog, priority = false }: BlogCardProps) {
       className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)] transition hover:shadow-lg"
     >
       <div className="relative aspect-[16/9] w-full overflow-hidden bg-[color:var(--color-muted)]">
-        <Image quality={90}
+        <Image quality={95}
           src={blog.image}
           alt={blog.title}
           fill

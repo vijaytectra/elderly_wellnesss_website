@@ -186,7 +186,7 @@ export default function ElderlyWellnessPage() {
                 className="relative rounded-[var(--radius-lg)] bg-white/10 p-8 backdrop-blur"
               >
                 <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white p-3">
-                  <Image quality={90}
+                  <Image quality={95}
                     src={s.icon}
                     alt=""
                     width={64}
@@ -289,7 +289,7 @@ export default function ElderlyWellnessPage() {
               </ul>
             </div>
             <div>
-              <Image quality={90}
+              <Image quality={95}
                 src="/images/service1.png"
                 alt="Elderly for Patients app preview"
                 width={720}
@@ -329,7 +329,7 @@ export default function ElderlyWellnessPage() {
               </ul>
             </div>
             <div className="order-2 md:order-1">
-              <Image quality={90}
+              <Image quality={95}
                 src="/images/service2.png"
                 alt="Elderly for Service Providers app preview"
                 width={720}

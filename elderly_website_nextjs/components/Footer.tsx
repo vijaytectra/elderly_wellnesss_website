@@ -34,7 +34,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <Link href="/" className="inline-flex items-center" aria-label="Elderly Wellness — home">
-              <Image quality={90}
+              <Image quality={95}
                 src="/images/ft_logo.png"
                 alt="Elderly Wellness"
                 width={180}

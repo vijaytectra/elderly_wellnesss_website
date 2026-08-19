@@ -18,7 +18,7 @@ export function Header() {
           className="flex items-center"
           aria-label="Elderly Wellness — home"
         >
-          <Image quality={90}
+          <Image quality={95}
             src="/images/logo.png"
             alt="Elderly Wellness"
             width={180}
@@ -34,7 +34,7 @@ export function Header() {
           <a
             href={BROCHURE_HREF}
             download="elderly_wellness.pdf"
-            className="hidden rounded-full bg-[color:var(--color-brand)] px-5 py-2 text-sm font-semibold text-[color:var(--color-brand-foreground)] shadow-[var(--shadow-card)] transition-colors hover:bg-[color:var(--color-brand-dark)] sm:inline-flex"
+            className="hidden rounded-full bg-[color:var(--color-brand)] px-5 py-2 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition-colors hover:bg-[color:var(--color-brand-dark)] sm:inline-flex"
           >
             Download
           </a>

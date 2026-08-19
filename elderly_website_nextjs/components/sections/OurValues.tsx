@@ -51,13 +51,13 @@ export function OurValues() {
               key={v.title}
               className="flex flex-col items-center gap-4 rounded-[var(--radius-lg)] bg-white p-8 text-center shadow-[var(--shadow-card)]"
             >
-              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[color:var(--color-highlight)]">
-                <Image quality={90}
+              <div className="relative h-28 w-28 overflow-hidden rounded-full bg-[color:var(--color-highlight)] ring-4 ring-[color:var(--color-brand)]/15 shadow-[var(--shadow-card)]">
+                <Image quality={95}
                   src={v.image}
                   alt={v.title}
-                  width={96}
-                  height={96}
-                  className="h-16 w-16 object-contain"
+                  fill
+                  sizes="112px"
+                  className="object-cover"
                 />
               </div>
               <h3 className="font-[family-name:var(--font-serif)] text-xl font-semibold">

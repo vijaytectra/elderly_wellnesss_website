@@ -116,11 +116,11 @@ const steps: readonly Step[] = [
 ];
 
 const whyChoose = [
-  "Supportive",
-  "Engaging",
-  "Empathetic",
-  "Reliable",
-  "Appealing",
+  { label: "Supportive", accent: "#2786a5" },
+  { label: "Engaging", accent: "#57c4e3" },
+  { label: "Empathetic", accent: "#e07a5f" },
+  { label: "Reliable", accent: "#3ba272" },
+  { label: "Appealing", accent: "#f2b134" },
 ] as const;
 
 export default function HomePage() {
@@ -158,7 +158,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="relative aspect-square w-full max-w-[560px] overflow-hidden rounded-[40px] bg-[#181a22] md:ml-auto">
-              <Image quality={90}
+              <Image quality={95}
                 src="/videos/home/poster-1.jpg"
                 alt="Elderly care at home"
                 width={800}
@@ -184,7 +184,7 @@ export default function HomePage() {
 
       {/* Services */}
       <section className="relative py-12 sm:py-16">
-        <Image quality={90}
+        <Image quality={95}
           src="/images/blue_dotes.png"
           alt=""
           width={200}
@@ -202,7 +202,7 @@ export default function HomePage() {
                 className="group block overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)] transition hover:shadow-lg"
               >
                 <div className="relative aspect-square w-full bg-[color:var(--color-muted)]">
-                  <Image quality={90}
+                  <Image quality={95}
                     src={s.image}
                     alt={s.title}
                     width={400}
@@ -250,7 +250,7 @@ export default function HomePage() {
               ))}
             </ul>
             <div className="flex justify-center">
-              <Image quality={90}
+              <Image quality={95}
                 src="/images/appscreen.webp"
                 alt="Elderly Wellness app preview"
                 width={450}
@@ -277,7 +277,7 @@ export default function HomePage() {
                 it.
               </p>
               <div className="relative overflow-hidden rounded-[var(--radius-lg)]">
-                <Image quality={90}
+                <Image quality={95}
                   src="/images/applicationvideothumb.jpg"
                   alt="Elderly Wellness application video"
                   width={1000}
@@ -304,7 +304,7 @@ export default function HomePage() {
                 }`}
               >
                 <div className="flex justify-center">
-                  <Image quality={90}
+                  <Image quality={95}
                     src={s.image}
                     alt={s.title}
                     width={720}
@@ -317,7 +317,7 @@ export default function HomePage() {
                     {s.step}
                   </span>
                   <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-[16px] bg-white shadow-[0_8px_20px_rgba(0,0,0,0.12)]">
-                    <Image quality={90}
+                    <Image quality={95}
                       src={s.icon}
                       alt=""
                       width={30}
@@ -338,19 +338,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why choose our app strip */}
-      <section className="py-8 sm:py-12">
+      {/* Why choose our app */}
+      <section className="py-12 sm:py-16">
         <Container>
-          <div className="mb-4 text-center">
+          <div className="mb-10 text-center">
             <span className="inline-block rounded-full bg-[color:var(--color-highlight)] px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-brand)]">
               Why choose our app
             </span>
+            <h2 className="mt-3 font-[family-name:var(--font-serif)] text-3xl leading-tight sm:text-4xl">
+              Built on values that
+              <span className="text-[color:var(--color-brand)]">
+                {" "}put families first
+              </span>
+            </h2>
           </div>
-          <ul className="flex flex-wrap items-center justify-center gap-4 text-2xl font-[family-name:var(--font-serif)] text-[color:var(--color-foreground)] sm:gap-8 sm:text-3xl">
-            {whyChoose.map((w) => (
-              <li key={w} className="flex items-center gap-4">
-                <span>{w}</span>
-                <span className="text-[color:var(--color-brand)]">•</span>
+          <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 md:gap-6">
+            {whyChoose.map((w, i) => (
+              <li
+                key={w.label}
+                className="group relative flex flex-col items-center justify-end overflow-hidden rounded-[var(--radius-lg)] bg-white p-6 pt-10 text-center shadow-[var(--shadow-card)] transition-transform hover:-translate-y-1"
+              >
+                <span
+                  aria-hidden="true"
+                  className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full px-3 py-1 text-[10px] font-bold tracking-widest text-white shadow-[var(--shadow-card)]"
+                  style={{ backgroundColor: w.accent }}
+                >
+                  0{i + 1}
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="mb-3 h-1 w-8 rounded-full transition-all duration-300 group-hover:w-16"
+                  style={{ backgroundColor: w.accent }}
+                />
+                <span className="font-[family-name:var(--font-serif)] text-lg font-semibold text-[color:var(--color-foreground)] sm:text-xl">
+                  {w.label}
+                </span>
               </li>
             ))}
           </ul>
@@ -360,7 +382,7 @@ export default function HomePage() {
       {/* Image / banner */}
       <section className="py-8 sm:py-12">
         <Container>
-          <Image quality={90}
+          <Image quality={95}
             src="/images/e4.jpg"
             alt="Elderly care family moment"
             width={1200}
@@ -374,7 +396,7 @@ export default function HomePage() {
       <section className="py-12 sm:py-16">
         <Container>
           <div className="mx-auto max-w-[520px] text-center">
-            <Image quality={90}
+            <Image quality={95}
               src="/images/downloadScreen.webp"
               alt="Download Elderly Wellness app"
               width={450}

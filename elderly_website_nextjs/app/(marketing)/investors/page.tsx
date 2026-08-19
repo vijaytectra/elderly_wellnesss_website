@@ -45,7 +45,7 @@ function ApplyButton() {
   return (
     <Link
       href="/contact/"
-      className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-[color:var(--color-brand-foreground)] shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
+      className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
     >
       Apply for Investment
     </Link>
@@ -133,7 +133,7 @@ export default function InvestorsPage() {
                 className="flex flex-col items-center gap-4 rounded-[var(--radius-lg)] bg-white p-8 text-center shadow-[var(--shadow-card)]"
               >
                 <div className="flex h-24 w-24 items-center justify-center rounded-full bg-[color:var(--color-highlight)]">
-                  <Image quality={90}
+                  <Image quality={95}
                     src={v.image}
                     alt={v.title}
                     width={96}

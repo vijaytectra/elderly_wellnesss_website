@@ -32,7 +32,7 @@ export function HomepageBlogStrip() {
         <div className="mt-10 text-center">
           <Link
             href="/blogs/"
-            className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-[color:var(--color-brand-foreground)] shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
+            className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
           >
             Read our blog
           </Link>

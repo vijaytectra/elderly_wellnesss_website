@@ -34,15 +34,15 @@ export function ArrangeSteps({ heading, intro, steps }: ArrangeStepsProps) {
           {steps.map((s, i) => (
             <li
               key={s.title}
-              className="grid grid-cols-1 gap-6 rounded-[var(--radius-lg)] bg-white p-6 shadow-[var(--shadow-card)] md:grid-cols-[160px_1fr] md:items-center md:gap-8"
+              className="grid grid-cols-1 gap-4 rounded-[var(--radius-lg)] bg-white p-6 shadow-[var(--shadow-card)] md:grid-cols-[88px_1fr] md:items-center md:gap-6"
             >
               <div className="flex justify-center md:justify-start">
-                <Image quality={90}
+                <Image quality={95}
                   src={s.image}
                   alt=""
-                  width={160}
-                  height={160}
-                  className="h-32 w-32 object-contain md:h-40 md:w-40"
+                  width={96}
+                  height={96}
+                  className="h-16 w-16 object-contain md:h-[88px] md:w-[88px]"
                   loading={i > 1 ? "lazy" : undefined}
                 />
               </div>

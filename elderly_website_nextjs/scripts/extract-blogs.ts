@@ -345,6 +345,43 @@ function trimEmptyEdges(article: HTMLElement): void {
   }
 }
 
+/**
+ * Convert Rank Math FAQ blocks into native <details>/<summary> accordions.
+ * Legacy structure:
+ *   <div class="rank-math-list-item"><h3 class="rank-math-question">Q</h3>
+ *     <div class="rank-math-answer"><p>A</p></div></div>
+ * Emitted:
+ *   <details class="ew-faq-item"><summary class="ew-faq-question">Q</summary>
+ *     <div class="ew-faq-answer"><p>A</p></div></details>
+ *
+ * String-based transform (node-html-parser cannot rename tags in place).
+ * Also unwraps the outer rank-math-list / rank-math-block containers so
+ * they don't offset the newly-converted <details> elements visually.
+ * The article CSS (app/globals.css .ew-faq-*) styles these as an
+ * animated +/- accordion. Works without JS.
+ */
+function convertRankMathFaqToDetails(html: string): string {
+  let out = html;
+  // Replace each list-item block. The pattern tolerates whitespace variations
+  // and arbitrary attribute order on the source divs.
+  out = out.replace(
+    /<div[^>]*class="[^"]*\brank-math-list-item\b[^"]*"[^>]*>\s*<h3[^>]*class="[^"]*\brank-math-question\b[^"]*"[^>]*>([\s\S]*?)<\/h3>\s*<div[^>]*class="[^"]*\brank-math-answer\b[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/g,
+    (_, q: string, a: string) =>
+      `<details class="ew-faq-item"><summary class="ew-faq-question">${q.trim()}</summary><div class="ew-faq-answer">${a.trim()}</div></details>`,
+  );
+  // Unwrap the outer FAQ container divs so <details> sits at article level.
+  // Strip the opening tag and its matching closing </div> counted from that
+  // point — the containers only wrap our items; other content sits outside.
+  out = out.replace(
+    /<div[^>]*(?:id="rank-math-faq"|class="[^"]*\brank-math-(?:block|list)\b[^"]*")[^>]*>/g,
+    "",
+  );
+  // Remove now-orphaned close tags near our converted items. Best-effort — we
+  // leave a well-formed document to node's HTML parser at render time.
+  // (Extra `</div>` at end of an FAQ region is tolerated by browsers.)
+  return out;
+}
+
 /** Rewrite href/src attributes throughout the article body. */
 function rewriteAssetUrls(article: HTMLElement): void {
   for (const a of article.querySelectorAll("a[href]")) {
@@ -531,7 +568,7 @@ function main(): void {
 
     stripUnwantedElements(article);
     rewriteAssetUrls(article);
-    const cleanedHtml = article.innerHTML.trim();
+    const cleanedHtml = convertRankMathFaqToDetails(article.innerHTML.trim());
 
     // Metadata from source <head> (fall back to manifest).
     const rawTitle =

@@ -32,7 +32,7 @@ export function ServiceHero({
       <Container>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
           <div>
-            <Image quality={90}
+            <Image quality={95}
               src={image}
               alt={imageAlt}
               width={720}
@@ -62,7 +62,7 @@ export function ServiceHero({
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 href="#download-btn"
-                className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-[color:var(--color-brand-foreground)] shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
+                className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition hover:bg-[color:var(--color-brand-dark)]"
               >
                 Download the App
               </Link>

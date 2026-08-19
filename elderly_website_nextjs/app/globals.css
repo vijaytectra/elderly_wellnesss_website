@@ -165,3 +165,76 @@ a {
  * darker brand background). Every interactive link/button defines its
  * own hover state via component-local Tailwind classes.
  */
+
+/* -------------------------------------------------------------------------
+ * Blog FAQ accordion (converted from Rank Math markup at build time —
+ * see scripts/extract-blogs.ts convertRankMathFaqToDetails)
+ * ---------------------------------------------------------------------- */
+.ew-faq-item {
+  margin: 0.75rem 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  /* Enable animating to intrinsic sizes for the details expansion. */
+  interpolate-size: allow-keywords;
+}
+
+.ew-faq-question {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 3rem 1rem 1.25rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.4;
+  user-select: none;
+  transition: color 200ms ease;
+}
+.ew-faq-question:hover {
+  color: var(--color-brand);
+}
+/* Hide the native disclosure marker */
+.ew-faq-question::-webkit-details-marker { display: none; }
+.ew-faq-question::marker { content: ""; }
+
+/* Custom +/- indicator */
+.ew-faq-question::after {
+  content: "";
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  width: 1rem;
+  height: 1rem;
+  transform: translateY(-50%);
+  background:
+    linear-gradient(var(--color-brand), var(--color-brand)) no-repeat center / 100% 2px,
+    linear-gradient(var(--color-brand), var(--color-brand)) no-repeat center / 2px 100%;
+  transition: transform 300ms ease;
+}
+.ew-faq-item[open] > .ew-faq-question::after {
+  transform: translateY(-50%) rotate(90deg);
+  background:
+    linear-gradient(var(--color-brand), var(--color-brand)) no-repeat center / 100% 2px;
+}
+
+.ew-faq-answer {
+  padding: 0 1.25rem 1rem;
+  color: var(--color-muted-foreground);
+  line-height: 1.7;
+}
+.ew-faq-answer > :first-child { margin-top: 0; }
+.ew-faq-answer > :last-child { margin-bottom: 0; }
+
+/* Smooth expand/collapse — supported in Chrome 131+, Firefox 137+.
+ * Older browsers snap open/closed (identical to current behavior). */
+.ew-faq-item::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition: block-size 300ms ease, content-visibility 300ms allow-discrete;
+}
+.ew-faq-item[open]::details-content {
+  block-size: auto;
+}

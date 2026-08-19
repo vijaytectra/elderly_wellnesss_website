@@ -42,7 +42,7 @@ export default function ContactPage() {
           <ul className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
             <li className="flex flex-col items-center gap-3 rounded-[var(--radius-lg)] bg-white p-8 text-center shadow-[var(--shadow-card)]">
               <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[color:var(--color-brand)] shadow-[var(--shadow-card)]">
-                <Image quality={90}
+                <Image quality={95}
                   src="/images/mail_icon.png"
                   alt=""
                   width={40}
@@ -63,7 +63,7 @@ export default function ContactPage() {
 
             <li className="flex flex-col items-center gap-3 rounded-[var(--radius-lg)] bg-white p-8 text-center shadow-[var(--shadow-card)]">
               <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[color:var(--color-brand)] shadow-[var(--shadow-card)]">
-                <Image quality={90}
+                <Image quality={95}
                   src="/images/phone_icon.png"
                   alt=""
                   width={40}
@@ -84,7 +84,7 @@ export default function ContactPage() {
 
             <li className="flex flex-col items-center gap-3 rounded-[var(--radius-lg)] bg-white p-8 text-center shadow-[var(--shadow-card)]">
               <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[color:var(--color-brand)] shadow-[var(--shadow-card)]">
-                <Image quality={90}
+                <Image quality={95}
                   src="/images/location_icon.png"
                   alt=""
                   width={40}
@@ -140,7 +140,7 @@ export default function ContactPage() {
           <div className="flex justify-center">
             <Link
               href="/"
-              className="text-sm font-semibold text-[color:var(--color-brand)] hover:text-[color:var(--color-brand-dark)]"
+              className="inline-flex items-center rounded-full bg-[color:var(--color-brand)] px-6 py-3 text-sm font-semibold text-white shadow-[var(--shadow-card)] transition-colors hover:bg-[color:var(--color-brand-dark)]"
             >
               Back to home
             </Link>

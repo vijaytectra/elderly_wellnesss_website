@@ -52,7 +52,7 @@ export function StoreBadge({ kind, size = "md" }: StoreBadgeProps) {
           alt=""
           fill
           sizes="32px"
-          quality={90}
+          quality={95}
           className="object-contain"
         />
       </span>

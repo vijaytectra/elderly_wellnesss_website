@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   reactStrictMode: true,
   images: {
+    // Hobby Image Optimization returns 402 (OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED).
+    unoptimized: true,
     formats: ["image/webp"],
     qualities: [75, 80, 85, 90, 95, 100],
     deviceSizes: [390, 640, 750, 828, 1080, 1200, 1920],

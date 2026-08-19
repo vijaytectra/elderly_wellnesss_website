@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/mvoeleov";
+const ENQUIRY_ENDPOINT = "/api/enquiry";
 
 type SubmitStatus = "idle" | "submitting" | "success" | "error";
 
@@ -40,10 +40,29 @@ export function ContactForm() {
 
     try {
       const data = new FormData(form);
-      const response = await fetch(FORMSPREE_ENDPOINT, {
+      const fullName = String(data.get("full-name") ?? "").trim();
+      const response = await fetch(ENQUIRY_ENDPOINT, {
         method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          type: "application",
+          subject: `New caregiver application${fullName ? ` from ${fullName}` : ""}`,
+          heading: "New caregiver application",
+          fields: {
+            "Full Name": fullName,
+            Age: String(data.get("age") ?? "").trim(),
+            Phone: String(data.get("phone") ?? "").trim(),
+            Email: String(data.get("email") ?? "").trim(),
+            Experience: String(data.get("experience") ?? "").trim(),
+            Education: String(data.get("education") ?? "").trim(),
+            "Additional certification": String(
+              data.get("additional-certification") ?? "",
+            ).trim(),
+            "Area of expertise": String(data.get("area-of-expertise") ?? "").trim(),
+            "Physio device": String(data.get("physio-device") ?? "").trim(),
+            "Marketing consent": data.get("terms") === "on" ? "yes" : "no",
+          },
+        }),
       });
 
       if (response.ok) {
@@ -54,12 +73,9 @@ export function ContactForm() {
         const message =
           payload &&
           typeof payload === "object" &&
-          "errors" in payload &&
-          Array.isArray((payload as { errors: unknown }).errors)
-            ? ((payload as { errors: Array<{ message?: string }> }).errors
-                .map((e) => e.message)
-                .filter(Boolean)
-                .join(", ") || "Submission failed. Please try again.")
+          "error" in payload &&
+          typeof payload.error === "string"
+            ? payload.error
             : "Submission failed. Please try again.";
         setErrorMessage(message);
         setStatus("error");

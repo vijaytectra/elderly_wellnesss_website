@@ -35,6 +35,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Blog extraction output — regenerated at build via `pnpm prebuild`,
+# but committed so the Next app is self-contained on Vercel (where the
+# source `../blogs/` folder lives outside the configured Root Directory).
+# The whitelist ensures ad-hoc regeneration doesn't get lost in gitignore.
+!content/
+!content/blogs/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

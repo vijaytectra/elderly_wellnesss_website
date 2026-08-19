@@ -81,6 +81,59 @@ export function getBlogBySlug(slug: string): { meta: BlogMeta; html: string } {
   return { meta, html };
 }
 
+/** Pull Rank Math / "In This Guide" TOC out of the article for a sidebar. */
+export function splitBlogToc(html: string): { tocHtml: string | null; bodyHtml: string } {
+  const start = html.search(/<div[^>]*class="[^"]*wp-block-rank-math-toc-block[^"]*"[^>]*>/i);
+  if (start === -1) return { tocHtml: null, bodyHtml: html };
+
+  let depth = 0;
+  let i = start;
+  while (i < html.length) {
+    const nextOpen = html.indexOf("<div", i);
+    const nextClose = html.indexOf("</div>", i);
+    if (nextClose === -1) break;
+    if (nextOpen !== -1 && nextOpen < nextClose) {
+      depth += 1;
+      i = nextOpen + 4;
+    } else {
+      depth -= 1;
+      i = nextClose + 6;
+      if (depth === 0) {
+        const tocHtml = html.slice(start, i);
+        const bodyHtml = `${html.slice(0, start)}${html.slice(i)}`.trim();
+        return { tocHtml, bodyHtml };
+      }
+    }
+  }
+  return { tocHtml: null, bodyHtml: html };
+}
+
+export interface BlogTocItem {
+  href: string;
+  label: string;
+}
+
+/** Top-level TOC links for the sticky “In This Article” sidebar. */
+export function getBlogTocItems(tocHtml: string | null): BlogTocItem[] {
+  if (!tocHtml) return [];
+  const navMatch = tocHtml.match(/<nav[^>]*>([\s\S]*?)<\/nav>/i);
+  const chunk = navMatch?.[1] ?? tocHtml;
+  const topUl = chunk.match(/<ul[^>]*>([\s\S]*?)<\/ul>/i);
+  const list = topUl?.[1] ?? chunk;
+  const items: BlogTocItem[] = [];
+  const liRe = /<li\b[^>]*>([\s\S]*?)<\/li>/gi;
+  let m: RegExpExecArray | null;
+  while ((m = liRe.exec(list))) {
+    const inner = m[1] ?? "";
+    const a = inner.match(/<a\b[^>]*href="(#[^"]+)"[^>]*>([\s\S]*?)<\/a>/i);
+    if (!a?.[1]) continue;
+    const label = a[2]?.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+    if (!label) continue;
+    items.push({ href: a[1], label });
+  }
+  return items;
+}
+
 /**
  * Return up to `count` blog entries that are not `excludeSlug`, in
  * newest-first order. Used for the "related posts" strip and the

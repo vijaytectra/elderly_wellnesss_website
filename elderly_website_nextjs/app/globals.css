@@ -183,7 +183,7 @@ body {
   background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a {
@@ -324,6 +324,14 @@ a.btn-whatsapp:hover {
 
 /* Subheadings in posts (e.g. "1. Nursing Care Services") — same family as
  * body copy. Only h1/h2 keep the serif display face. */
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  scroll-margin-top: 6rem;
+}
+
 .prose h3,
 .prose h4,
 .prose h5,
@@ -332,6 +340,94 @@ a.btn-whatsapp:hover {
   font-weight: 700;
   color: var(--color-foreground);
   letter-spacing: 0;
+}
+
+.prose,
+.prose p,
+.prose li {
+  color: #1e293b;
+}
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.35rem;
+}
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.35rem;
+}
+.prose ul > li::marker,
+.prose ol > li::marker {
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 1.05em;
+}
+.prose li {
+  margin-top: 0.45rem;
+  margin-bottom: 0.45rem;
+}
+
+.ew-blog-toc {
+  padding: 0 0 0.25rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+.ew-blog-toc__title {
+  margin: 0 0 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2786a5;
+}
+.ew-blog-toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid #e2e8f0;
+}
+.ew-blog-toc__list li {
+  margin: 0;
+}
+.ew-blog-toc__list a {
+  display: block;
+  margin: 0;
+  padding: 0.5rem 0 0.5rem 0.9rem;
+  border: 0;
+  border-left: 2px solid transparent;
+  margin-left: -2px;
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #475569;
+}
+.ew-blog-toc__list a:hover {
+  color: #2786a5;
+  background: transparent;
+}
+.ew-blog-toc__list a.is-active {
+  color: #0f172a;
+  border-left-color: #2786a5;
+}
+
+@media (max-width: 1023px) {
+  .ew-blog-toc {
+    margin-bottom: 0.5rem;
+    padding: 1rem 1.1rem;
+    border: 1.5px solid #dbe7ee;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ew-blog-toc-sticky {
+    position: sticky;
+    top: 5.75rem;
+  }
 }
 
 /* In-article CTAs */

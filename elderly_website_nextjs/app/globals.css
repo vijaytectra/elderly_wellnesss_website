@@ -77,7 +77,7 @@
   --color-foreground: #181a22;    /* legacy responsive.css --dark-black */
   --color-muted: #f5f5f5;         /* legacy .text_list_section bg */
   --color-border: #e5e7eb;
-  --color-highlight: #fdf7ec;     /* legacy --light-yellow */
+  --color-highlight: #eaf3f7;     /* light brand tint (replaces legacy cream) */
   --color-muted-foreground: #848484;  /* legacy --text-greay */
 
   /* Typography */
@@ -121,7 +121,7 @@
   --color-foreground: #181a22;
   --color-muted: #f5f5f5;
   --color-border: #e5e7eb;
-  --color-highlight: #fdf7ec;
+  --color-highlight: #eaf3f7;
   --color-muted-foreground: #848484;
 
   --radius-sm: 10px;

@@ -12,6 +12,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: p.priority,
   }));
 
+  const llms: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/llms.txt`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.3,
+    },
+  ];
+
   const blogs: MetadataRoute.Sitemap = getSitemapBlogs().map((b) => ({
     url: `${SITE_URL}${b.path}`,
     lastModified: new Date(b.modifiedTime || b.publishedTime),
@@ -19,5 +28,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...pages, ...blogs];
+  return [...pages, ...llms, ...blogs];
 }

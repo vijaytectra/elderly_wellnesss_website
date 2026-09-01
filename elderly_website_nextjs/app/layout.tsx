@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { DeferredCallbackForm } from "@/components/DeferredCallbackForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -8,6 +9,10 @@ import { SITE_EMAIL, SOCIAL_LINKS } from "@/data/site";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { cormorant, manrope, playball } from "./fonts";
 import "./globals.css";
+
+const GTM_ID = "GTM-5G9CTKBR";
+const GOOGLE_SITE_VERIFICATION =
+  "BgdLTr1rRUPNF1uD96e921lVhaEuBoFSUE8OHHpD1k0";
 
 const description =
   "Home nursing, physiotherapy, geriatric care, and assisted living in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 99448 90577.";
@@ -60,6 +65,9 @@ export const metadata: Metadata = {
     title: `${SITE_NAME} | Elder Care Services in Chennai`,
     description,
     images: ["/images/logo.png"],
+  },
+  verification: {
+    google: GOOGLE_SITE_VERIFICATION,
   },
   alternates: {
     canonical: `${SITE_URL}/`,
@@ -118,6 +126,16 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-3 focus:py-2"
@@ -131,6 +149,14 @@ export default function RootLayout({
         <DeferredCallbackForm />
         <Footer />
         <StickyBookingBar />
+        {/* Google Tag Manager */}
+        <Script id="gtm-base" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`}
+        </Script>
       </body>
     </html>
   );

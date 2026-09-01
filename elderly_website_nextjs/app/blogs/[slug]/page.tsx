@@ -144,6 +144,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
             ← Back to Blogs
           </Link>
           <Breadcrumb
+            className="mt-4"
             items={[
               { label: "Home", href: "/" },
               { label: "Blog", href: "/blogs/" },
@@ -153,12 +154,12 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
         </Container>
       </section>
 
-      <section className="pb-10 sm:pb-12">
+      <section className="pt-6 pb-10 sm:pt-8 sm:pb-12">
         <Container>
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_260px] lg:items-start xl:grid-cols-[minmax(0,1fr)_280px]">
-            <div className="min-w-0 lg:order-1">
+            <div className="min-w-0">
               <header className="max-w-3xl">
-                <h1 className="mb-3 font-[family-name:var(--font-serif)] text-3xl leading-tight text-[color:var(--color-foreground)] sm:text-4xl md:text-[2.75rem]">
+                <h1 className="mb-4 font-[family-name:var(--font-serif)] text-3xl leading-tight text-[color:var(--color-foreground)] sm:text-4xl md:text-[2.75rem]">
                   {meta.title}
                 </h1>
                 <p className="text-sm text-[color:var(--color-muted-foreground)]">

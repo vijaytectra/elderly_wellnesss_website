@@ -6,8 +6,7 @@ import { SITE_PHONE, SITE_PHONE_TEL } from "@/data/site";
 import { Container } from "@/components/Container";
 import { TrustStrip } from "@/components/TrustStrip";
 
-const FORMSUBMIT_ENDPOINT =
-  "https://formsubmit.co/ajax/kaushikganesh1512@gmail.com";
+const ENQUIRY_ENDPOINT = "/api/enquiry";
 
 const SERVICES = [
   { value: "Physiotherapy", label: "Physiotherapy at Home" },
@@ -96,11 +95,38 @@ export function CallbackForm() {
     };
 
     try {
-      await fetch(FORMSUBMIT_ENDPOINT, {
+      const response = await fetch(ENQUIRY_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          type: "callback",
+          subject: payload._subject,
+          heading: "New callback request",
+          fields: {
+            Name: name,
+            Phone: phone,
+            Service: service,
+            "Best time to call": time_to_call,
+            "Service consent": payload.consent_service,
+            "Marketing consent": payload.consent_marketing,
+            "Submitted from": payload.submitted_from_page,
+            "Submitted at": payload.submitted_at,
+          },
+        }),
       });
+      if (!response.ok) {
+        const result: unknown = await response.json().catch(() => null);
+        const message =
+          result &&
+          typeof result === "object" &&
+          "error" in result &&
+          typeof result.error === "string"
+            ? result.error
+            : "Could not send right now. Please call us or try WhatsApp.";
+        setErrorMessage(message);
+        setStatus("error");
+        return;
+      }
       setSummary({ name, phone, service, time_to_call });
       setStatus("success");
       form.reset();

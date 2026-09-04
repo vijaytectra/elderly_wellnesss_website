@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { Container } from "@/components/Container";
 import { buildMetadata } from "@/lib/seo";
 import { LegalPage } from "@/components/sections/LegalPage";
 
@@ -808,5 +810,19 @@ Data Protection Officer at
 </section>`;
 
 export default function Page() {
-  return <LegalPage title="Privacy Policy" html={HTML} />;
+  return (
+    <div>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Privacy Policy" },
+            ]}
+          />
+        </Container>
+      </section>
+      <LegalPage title="Privacy Policy" html={HTML} />
+    </div>
+  );
 }

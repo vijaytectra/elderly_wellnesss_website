@@ -7,6 +7,7 @@ import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
 import { IconGear, IconLinkedin } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: "About Elderly: Supporting Health & Wellness for the Elderly",
@@ -109,6 +110,16 @@ const faqs: readonly FaqItem[] = [
 export default function AboutPage() {
   return (
     <div>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "About" },
+            ]}
+          />
+        </Container>
+      </section>
       {/* About us hero */}
       <section className="section-y">
         <Container>

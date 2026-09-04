@@ -9,6 +9,8 @@ import {
 } from "@/components/sections/ServiceInfoBlock";
 import { WhyChooseUs, type WhyChooseUsFeature } from "@/components/sections/WhyChooseUs";
 import { buildMetadata } from "@/lib/seo";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { Container } from "@/components/Container";
 
 export const metadata: Metadata = buildMetadata({
   title:
@@ -331,6 +333,16 @@ const faqs: readonly ServiceFAQItem[] = [
 export default function AssistedLivingSupportPage() {
   return (
     <div>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Assisted Living Support Services For Elders" },
+            ]}
+          />
+        </Container>
+      </section>
       <ServiceHero
         image="/images/services/assisted/1.png"
         imageAlt="Caregiver assisting an elderly person with daily activities"

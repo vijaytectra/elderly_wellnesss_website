@@ -9,6 +9,8 @@ import {
 } from "@/components/sections/ServiceInfoBlock";
 import { WhyChooseUs, type WhyChooseUsFeature } from "@/components/sections/WhyChooseUs";
 import { buildMetadata } from "@/lib/seo";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { Container } from "@/components/Container";
 
 export const metadata: Metadata = buildMetadata({
   title: "Best Geriatric Care Services for Elders at Home – Elderly Wellness",
@@ -326,6 +328,16 @@ const faqs: readonly ServiceFAQItem[] = [
 export default function GeriatricCarePage() {
   return (
     <div>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Geriatric Care Services For Elders" },
+            ]}
+          />
+        </Container>
+      </section>
       <ServiceHero
         image="/images/services/geriatric/1.png"
         imageAlt="Geriatric care specialist supporting an elderly patient"

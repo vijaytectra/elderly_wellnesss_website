@@ -197,6 +197,9 @@ export function CallbackForm() {
                     type="text"
                     autoComplete="name"
                     placeholder="e.g. Rajesh Kumar"
+                    onChange={(e) => {
+                      e.target.value = e.target.value.replace(/[^a-zA-Z\s\-']/g, "");
+                    }}
                     className="h-[46px] w-full rounded-[10px] border border-slate-300 px-3.5 text-[14.5px] outline-none focus:border-[color:var(--color-brand)]"
                   />
                   {fieldErrors.name ? (
@@ -214,6 +217,9 @@ export function CallbackForm() {
                     type="tel"
                     autoComplete="tel"
                     placeholder="e.g. +91 98765 43210"
+                    onChange={(e) => {
+                      e.target.value = e.target.value.replace(/[^\d\+\s\-()]/g, "");
+                    }}
                     className="h-[46px] w-full rounded-[10px] border border-slate-300 px-3.5 text-[14.5px] outline-none focus:border-[color:var(--color-brand)]"
                   />
                   {fieldErrors.phone ? (

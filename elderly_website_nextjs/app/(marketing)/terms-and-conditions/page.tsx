@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { Container } from "@/components/Container";
 import { buildMetadata } from "@/lib/seo";
 import { LegalPage } from "@/components/sections/LegalPage";
 
@@ -2163,5 +2165,19 @@ for any other different or subsequent breach.
 <div class="page_wrapper">`;
 
 export default function Page() {
-  return <LegalPage title="Elderly — Terms and Conditions" html={HTML} />;
+  return (
+    <div>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Terms And Conditions" },
+            ]}
+          />
+        </Container>
+      </section>
+      <LegalPage title="Elderly — Terms and Conditions" html={HTML} />
+    </div>
+  );
 }

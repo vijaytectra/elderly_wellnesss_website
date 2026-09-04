@@ -1,6 +1,7 @@
 import { getAllBlogs, getChennaiLocationBlogs } from "@/lib/blog";
 import { SITE_URL } from "@/lib/site";
 import { MARKETING_SITEMAP } from "@/lib/sitemap";
+import { SITE_EMAIL } from "@/data/site";
 
 function abs(path: string): string {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
@@ -102,7 +103,7 @@ Full FAQ list: [About Us](${abs("/about/")}) and each service page (e.g. [Physio
 ## Contact
 
 - Phone: [+91 99448 90577](tel:919944890577)
-- Email: [info@theelderlywellness.com](mailto:info@theelderlywellness.com)
+- Email: [${SITE_EMAIL}](mailto:${SITE_EMAIL})
 - Contact page: ${abs("/contact/")}
 - Facebook: https://www.facebook.com/profile.php?id=100089074061784
 - Instagram: https://www.instagram.com/elderly__wellness

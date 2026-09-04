@@ -10,6 +10,8 @@ import {
 } from "@/components/sections/ServiceInfoBlock";
 import { WhyChooseUs, type WhyChooseUsFeature } from "@/components/sections/WhyChooseUs";
 import { buildMetadata } from "@/lib/seo";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { Container } from "@/components/Container";
 
 export const metadata: Metadata = buildMetadata({
   title: "Best Nursing Services for Elders at Home - Elderly Wellness",
@@ -327,6 +329,16 @@ const faqs: readonly ServiceFAQItem[] = [
 export default function NursingPage() {
   return (
     <div>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Nursing Services For Elders" },
+            ]}
+          />
+        </Container>
+      </section>
       <ServiceHero
         image="/images/services/nursing/1.png"
         imageAlt="Nurse caring for an elderly patient at home"

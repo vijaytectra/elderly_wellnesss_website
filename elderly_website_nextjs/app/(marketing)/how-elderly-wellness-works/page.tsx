@@ -7,6 +7,7 @@ import { SectionTitle } from "@/components/sections/SectionTitle";
 import { SITE_PHONE } from "@/data/site";
 import { IconCheckCircle } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: "How Elderly Wellness Works : Revolutionizing Elderly Care at Home",
@@ -52,6 +53,16 @@ const STEPS = [
 export default function HowItWorksPage() {
   return (
     <div>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "How Elderly Wellness Works" },
+            ]}
+          />
+        </Container>
+      </section>
       <section className="section-y">
         <Container>
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-8">
@@ -61,7 +72,7 @@ export default function HowItWorksPage() {
               </p>
               <h1 className="mb-4 font-[family-name:var(--font-serif)] text-3xl leading-tight sm:text-4xl md:text-5xl">
                 How Elderly Wellness Works{" "}
-                <span className="mt-1 block text-[color:var(--color-brand)]">
+                <span className="text-[color:var(--color-brand)]">
                   Revolutionizing Senior Care at Home
                 </span>
               </h1>

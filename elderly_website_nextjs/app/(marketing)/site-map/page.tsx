@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { MARKETING_SITEMAP, getSitemapBlogs } from "@/lib/sitemap";
 import { buildMetadata } from "@/lib/seo";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: "Sitemap | Elderly Wellness",
@@ -38,6 +39,16 @@ export default function SiteMapPage() {
             const items = MARKETING_SITEMAP.filter((p) => p.group === group);
             return (
               <div key={group}>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Site Map" },
+            ]}
+          />
+        </Container>
+      </section>
                 <h2 className="mb-3 font-[family-name:var(--font-serif)] text-2xl text-[color:var(--color-foreground)]">
                   {group}
                 </h2>

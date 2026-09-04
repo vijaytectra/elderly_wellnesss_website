@@ -12,6 +12,7 @@ import {
   IconTasks,
 } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: "Elderly Wellness: Personalized Care for Senior Citizens",
@@ -117,6 +118,16 @@ const whyElderly = [
 export default function ElderlyWellnessPage() {
   return (
     <div>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Elderly Wellness" },
+            ]}
+          />
+        </Container>
+      </section>
       {/* Hero */}
       <section className="section-y">
         <Container>

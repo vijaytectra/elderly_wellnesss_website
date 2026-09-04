@@ -10,6 +10,8 @@ import {
 } from "@/components/sections/ServiceInfoBlock";
 import { WhyChooseUs, type WhyChooseUsFeature } from "@/components/sections/WhyChooseUs";
 import { buildMetadata } from "@/lib/seo";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { Container } from "@/components/Container";
 
 export const metadata: Metadata = buildMetadata({
   title: "Best Physiotherapy Services for Elders at Home - Elderly Wellness",
@@ -328,6 +330,16 @@ const faqs: readonly ServiceFAQItem[] = [
 export default function PhysiotherapyPage() {
   return (
     <div>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Physiotherapy Services For Elders" },
+            ]}
+          />
+        </Container>
+      </section>
       <ServiceHero
         image="/images/services/banner-left.png"
         imageAlt="Physiotherapist assisting an elderly patient at home"

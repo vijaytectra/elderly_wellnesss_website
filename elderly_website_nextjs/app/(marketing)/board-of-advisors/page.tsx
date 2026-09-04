@@ -4,6 +4,7 @@ import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/sections/SectionTitle";
 import { IconLinkedin } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: "Meet the Experts Behind Elderly Wellness: Our Board of Advisors",
@@ -70,6 +71,16 @@ const advisors: readonly Advisor[] = [
 export default function BoardOfAdvisorsPage() {
   return (
     <div>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Board Of Advisors" },
+            ]}
+          />
+        </Container>
+      </section>
       <section className="section-y">
         <Container>
           <SectionTitle

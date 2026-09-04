@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { Container } from "@/components/Container";
 import { buildMetadata } from "@/lib/seo";
 import { LegalPage } from "@/components/sections/LegalPage";
 
@@ -378,5 +380,19 @@ avoid confusion.
 </section>`;
 
 export default function Page() {
-  return <LegalPage title="Elderly App Refund and Cancellation Policy" html={HTML} />;
+  return (
+    <div>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Refund And Cancellation Policy" },
+            ]}
+          />
+        </Container>
+      </section>
+      <LegalPage title="Elderly App Refund and Cancellation Policy" html={HTML} />
+    </div>
+  );
 }

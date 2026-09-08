@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { StickyBookingBar } from "@/components/StickyBookingBar";
-import { SITE_EMAIL, SOCIAL_LINKS } from "@/data/site";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { cormorant, manrope, playball } from "./fonts";
 import "./globals.css";
@@ -27,14 +27,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: `${SITE_NAME} | Elder Care Services in Chennai`,
   description,
-  keywords: [
-    "elderly care Chennai",
-    "home nursing Chennai",
-    "physiotherapy at home",
-    "geriatric care",
-    "assisted living support",
-    "Elderly Wellness",
-  ],
   robots: {
     index: true,
     follow: true,
@@ -74,47 +66,8 @@ export const metadata: Metadata = {
   },
 };
 
-const organizationSchema: Record<string, unknown> = {
-  "@context": "https://schema.org",
-  "@type": "HomeHealthCareService",
-  "@id": `${SITE_URL}/#organization`,
-  name: SITE_NAME,
-  url: `${SITE_URL}/`,
-  logo: `${SITE_URL}/images/logo.png`,
-  image: `${SITE_URL}/images/logo.png`,
-  email: SITE_EMAIL,
-  telephone: "+91-99448-90577",
-  priceRange: "₹₹",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress:
-      "4214, 21st Floor, Tower 4, TVH Ouranya Bay, Rajiv Gandhi Salai, OMR, Padur Kazhipattur",
-    addressLocality: "Chennai",
-    addressRegion: "Tamil Nadu",
-    postalCode: "603103",
-    addressCountry: "IN",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 12.837,
-    longitude: 80.229,
-  },
-  areaServed: {
-    "@type": "City",
-    name: "Chennai",
-  },
-  sameAs: SOCIAL_LINKS.map((link) => link.href),
-};
-
-const websiteSchema: Record<string, unknown> = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": `${SITE_URL}/#website`,
-  name: SITE_NAME,
-  url: `${SITE_URL}/`,
-  publisher: { "@id": `${SITE_URL}/#organization` },
-  inLanguage: "en-IN",
-};
+const orgSchema = organizationSchema();
+const siteSchema = websiteSchema();
 
 export default function RootLayout({
   children,
@@ -142,8 +95,8 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <JsonLd id="organization-schema" data={organizationSchema} />
-        <JsonLd id="website-schema" data={websiteSchema} />
+        <JsonLd id="organization-schema" data={orgSchema} />
+        <JsonLd id="website-schema" data={siteSchema} />
         <Header />
         <main id="main">{children}</main>
         <DeferredCallbackForm />

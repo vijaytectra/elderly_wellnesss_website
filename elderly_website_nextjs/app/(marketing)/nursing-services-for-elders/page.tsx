@@ -10,14 +10,24 @@ import {
 } from "@/components/sections/ServiceInfoBlock";
 import { WhyChooseUs, type WhyChooseUsFeature } from "@/components/sections/WhyChooseUs";
 import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  breadcrumbSchema,
+  faqPageSchema,
+  serviceSchema,
+} from "@/lib/schema";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Best Nursing Services for Elders at Home - Elderly Wellness",
+  title: "Home Nursing Services for Elders in Chennai",
   description:
-    "Contact us today +919944890577. Offering professional home nursing for elders, Elderly Wellness improves mobility and quality of life for seniors.",
+    "Wound care, catheters and injections are not things a family should improvise. Elderly Wellness places trained home nursing staff with elders across Chennai.",
+  ogTitle: "Clinical Care Without the Hospital",
+  ogDescription:
+    "Trained nurses handling wound care, medication, monitoring and post-operative recovery at home in Chennai.",
   path: "/nursing-services-for-elders/",
+  image: "/videos/home/Nurse.jpg",
 });
 
 const importanceBullets: readonly ServiceInfoBullet[] = [
@@ -326,9 +336,24 @@ const faqs: readonly ServiceFAQItem[] = [
   },
 ];
 
+const PATH = "/nursing-services-for-elders/";
+
+const pageSchemas = [
+  serviceSchema({
+    name: "Home Nursing Services for Elders",
+    serviceType: "Elderly home nursing",
+    description:
+      "In-home nursing for elderly patients in Chennai, covering chronic condition management, medication administration, post-surgery care and monitoring.",
+    path: PATH,
+  }),
+  faqPageSchema(PATH, faqs),
+  breadcrumbSchema([{ name: "Nursing Services For Elders", path: PATH }]),
+];
+
 export default function NursingPage() {
   return (
     <div>
+      <JsonLd id="page-schema" data={pageSchemas} />
       <section className="pt-6 sm:pt-10">
         <Container>
           <Breadcrumb

@@ -12,12 +12,19 @@ import {
   IconTasks,
 } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { APP_LINKS } from "@/data/site";
+import { breadcrumbSchema, orgRef } from "@/lib/schema";
+import { SITE_URL } from "@/lib/site";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Elderly Wellness: Personalized Care for Senior Citizens",
+  title: "Elderly Wellness | Personalised Care for Seniors",
   description:
-    "Explore Elderly Wellness, offering tailored health services for seniors. We connect you with qualified care providers for personalized in-home care.",
+    "Every family's care need is different, and a generic package rarely fits. See how Elderly Wellness builds personalised in-home care plans for senior citizens.",
+  ogTitle: "Care Built Around One Person",
+  ogDescription:
+    "How personalised in-home care plans are put together, and what the Elderly Care Plus app adds.",
   path: "/elderly-wellness/",
 });
 
@@ -115,9 +122,31 @@ const whyElderly = [
   },
 ] as const;
 
+const PATH = "/elderly-wellness/";
+
+// This page documents the Elderly Care Plus app. Store URLs come from
+// data/site.ts - both are real, published listings.
+const pageSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "@id": `${SITE_URL}${PATH}#app`,
+    name: "Elderly Care Plus",
+    applicationCategory: "HealthApplication",
+    operatingSystem: "Android, iOS",
+    description:
+      "Book and manage in-home nursing, physiotherapy, geriatric care and assisted living support for an elderly parent in Chennai.",
+    publisher: orgRef,
+    installUrl: [APP_LINKS.googlePlay, APP_LINKS.appStore],
+    sameAs: [APP_LINKS.googlePlay, APP_LINKS.appStore],
+  },
+  breadcrumbSchema([{ name: "Elderly Wellness", path: PATH }]),
+];
+
 export default function ElderlyWellnessPage() {
   return (
     <div>
+      <JsonLd id="page-schema" data={pageSchemas} />
       <section className="pt-6 sm:pt-10">
         <Container>
           <Breadcrumb

@@ -5,8 +5,12 @@ import { buildMetadata } from "@/lib/seo";
 import { LegalPage } from "@/components/sections/LegalPage";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Terms & Conditions",
-  description: "Terms and conditions for using Elderly Wellness elder care services in Chennai, covering bookings, payments, and service responsibilities.",
+  title: "Terms and Conditions | Elderly Wellness",
+  description:
+    "The terms that apply when you book elder care through Elderly Wellness in Chennai, covering bookings, payments, caregiver responsibilities and cancellations.",
+  ogTitle: "The Terms of Using Elderly Wellness",
+  ogDescription:
+    "Bookings, payments, responsibilities and cancellations for elder care arranged through Elderly Wellness.",
   path: "/terms-and-conditions/",
 });
 

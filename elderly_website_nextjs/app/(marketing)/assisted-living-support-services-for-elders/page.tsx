@@ -9,15 +9,24 @@ import {
 } from "@/components/sections/ServiceInfoBlock";
 import { WhyChooseUs, type WhyChooseUsFeature } from "@/components/sections/WhyChooseUs";
 import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  breadcrumbSchema,
+  faqPageSchema,
+  serviceSchema,
+} from "@/lib/schema";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    "Best Assisted Living Support Services for Elders at Home – Elderly Wellness",
+  title: "Assisted Living Support at Home in Chennai",
   description:
-    "Offering professional home assisted living support for seniors. Elderly Wellness ensures your loved ones receive the best care at home. Contact us today at +919944890577.",
+    "Bathing, meals and medication get harder long before a care home is the answer. Elderly Wellness provides assisted living support in your parent's own home.",
+  ogTitle: "Assisted Living, Without Leaving Home",
+  ogDescription:
+    "Daily support with hygiene, meals, medication and companionship, so a parent can stay in their own home.",
   path: "/assisted-living-support-services-for-elders/",
+  image: "/videos/home/assisted-living-care.jpg",
 });
 
 const importanceBullets: readonly ServiceInfoBullet[] = [
@@ -330,9 +339,24 @@ const faqs: readonly ServiceFAQItem[] = [
   },
 ];
 
+const PATH = "/assisted-living-support-services-for-elders/";
+
+const pageSchemas = [
+  serviceSchema({
+    name: "Assisted Living Support for Elders",
+    serviceType: "Assisted living support",
+    description:
+      "In-home assisted living support in Chennai, covering personal care, medication management, meal preparation, household assistance and companionship.",
+    path: PATH,
+  }),
+  faqPageSchema(PATH, faqs),
+  breadcrumbSchema([{ name: "Assisted Living Support Services For Elders", path: PATH }]),
+];
+
 export default function AssistedLivingSupportPage() {
   return (
     <div>
+      <JsonLd id="page-schema" data={pageSchemas} />
       <section className="pt-6 sm:pt-10">
         <Container>
           <Breadcrumb

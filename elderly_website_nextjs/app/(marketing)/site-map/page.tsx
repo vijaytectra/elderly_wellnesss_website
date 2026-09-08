@@ -8,7 +8,10 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 export const metadata: Metadata = buildMetadata({
   title: "Sitemap | Elderly Wellness",
   description:
-    "Browse every Elderly Wellness page and blog post — services, how it works, locations, and elder-care guides for Chennai families.",
+    "Every page on the Elderly Wellness site in one place: elder care services, how the service works, Chennai neighbourhoods covered, and our elder-care guides.",
+  ogTitle: "Everything on This Site",
+  ogDescription:
+    "Services, locations, guides and policies: the full Elderly Wellness page index in one place.",
   path: "/site-map/",
 });
 

@@ -5,6 +5,10 @@ export interface BuildMetadataInput {
   title: string;
   description: string;
   path: string;
+  /** Share-context headline. Falls back to `title` when omitted. */
+  ogTitle?: string;
+  /** Share-context blurb. Falls back to `description` when omitted. */
+  ogDescription?: string;
   image?: string;
   type?: "website" | "article";
   keywords?: string;
@@ -21,6 +25,8 @@ export function buildMetadata({
   title,
   description,
   path,
+  ogTitle,
+  ogDescription,
   image = "/images/logo.png",
   type = "website",
   keywords,
@@ -28,6 +34,8 @@ export function buildMetadata({
 }: BuildMetadataInput): Metadata {
   const canonical = toAbsolute(path);
   const absoluteImage = toAbsolute(image);
+  const shareTitle = ogTitle ?? title;
+  const shareDescription = ogDescription ?? description;
 
   return {
     title: { absolute: title },
@@ -50,8 +58,8 @@ export function buildMetadata({
       canonical,
     },
     openGraph: {
-      title,
-      description,
+      title: shareTitle,
+      description: shareDescription,
       url: canonical,
       siteName: SITE_NAME,
       locale: "en_IN",
@@ -60,8 +68,8 @@ export function buildMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: shareTitle,
+      description: shareDescription,
       images: [absoluteImage],
     },
   };

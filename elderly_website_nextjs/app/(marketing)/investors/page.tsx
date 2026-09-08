@@ -8,9 +8,12 @@ import { buildMetadata } from "@/lib/seo";
 import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Invest in the Future of Elderly Care with Elderly Wellness",
+  title: "Investors | Elderly Wellness",
   description:
-    "Join Elderly Wellness as an investor and support a platform revolutionizing elderly care through technology and professional service providers.",
+    "India is ageing faster than its care infrastructure can keep up with. Elderly Wellness is building the home-care platform for that gap, and open to investors.",
+  ogTitle: "Investing in India's Ageing Problem",
+  ogDescription:
+    "The market gap Elderly Wellness is built for, and how the platform and app scale beyond Chennai.",
   path: "/investors/",
 });
 

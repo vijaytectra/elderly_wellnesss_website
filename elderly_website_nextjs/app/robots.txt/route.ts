@@ -8,6 +8,10 @@ const body = `# robots.txt for ${SITE_URL}/
 User-agent: *
 Allow: /
 
+# Form-handling endpoint only — nothing here is a page worth indexing.
+# /_next/ is deliberately NOT blocked: Google needs the JS and CSS to render.
+Disallow: /api/
+
 Sitemap: ${SITE_URL}/sitemap.xml
 `;
 

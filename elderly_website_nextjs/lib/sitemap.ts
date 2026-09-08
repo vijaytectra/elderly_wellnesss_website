@@ -10,22 +10,33 @@ export interface SitemapPage {
   group: "Pages" | "Services" | "Company" | "Legal";
   changeFrequency: SitemapChangeFrequency;
   priority: number;
+  /**
+   * Date this page's content or metadata last genuinely changed (YYYY-MM-DD).
+   *
+   * MAINTAIN THIS BY HAND when you edit a page. It must NOT be derived from
+   * the build clock: stamping `new Date()` tells search engines every page
+   * changed on every deploy, and once a site's lastmod is shown to be
+   * unreliable, crawlers stop trusting it. A slightly stale honest date is
+   * worth more than a fresh dishonest one.
+   */
+  lastModified: string;
 }
 
 export const MARKETING_SITEMAP: readonly SitemapPage[] = [
-  { path: "/", title: "Home", group: "Pages", changeFrequency: "weekly", priority: 1 },
-  { path: "/about/", title: "About Us", group: "Pages", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/how-elderly-wellness-works/", title: "How It Works", group: "Pages", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/locations/chennai/", title: "Serving Chennai", group: "Pages", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/contact/", title: "Contact / Book Care", group: "Pages", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blogs/", title: "Blog", group: "Pages", changeFrequency: "weekly", priority: 0.7 },
-  { path: "/site-map/", title: "Sitemap", group: "Pages", changeFrequency: "weekly", priority: 0.3 },
+  { path: "/", title: "Home", group: "Pages", changeFrequency: "weekly", priority: 1, lastModified: "2026-09-08" },
+  { path: "/about/", title: "About Us", group: "Pages", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-09-08" },
+  { path: "/how-elderly-wellness-works/", title: "How It Works", group: "Pages", changeFrequency: "monthly", priority: 0.9, lastModified: "2026-09-08" },
+  { path: "/locations/chennai/", title: "Serving Chennai", group: "Pages", changeFrequency: "weekly", priority: 0.8, lastModified: "2026-09-08" },
+  { path: "/contact/", title: "Contact / Book Care", group: "Pages", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-09-08" },
+  { path: "/blogs/", title: "Blog", group: "Pages", changeFrequency: "weekly", priority: 0.7, lastModified: "2026-09-08" },
+  { path: "/site-map/", title: "Sitemap", group: "Pages", changeFrequency: "weekly", priority: 0.3, lastModified: "2026-09-08" },
   {
     path: "/physiotherapy-services-for-elders/",
     title: "Physiotherapy",
     group: "Services",
     changeFrequency: "monthly",
     priority: 0.9,
+    lastModified: "2026-09-08",
   },
   {
     path: "/nursing-services-for-elders/",
@@ -33,6 +44,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     group: "Services",
     changeFrequency: "monthly",
     priority: 0.9,
+    lastModified: "2026-09-08",
   },
   {
     path: "/geriatric-care-services-for-elders/",
@@ -40,6 +52,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     group: "Services",
     changeFrequency: "monthly",
     priority: 0.9,
+    lastModified: "2026-09-08",
   },
   {
     path: "/assisted-living-support-services-for-elders/",
@@ -47,6 +60,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     group: "Services",
     changeFrequency: "monthly",
     priority: 0.9,
+    lastModified: "2026-09-08",
   },
   {
     path: "/elderly-wellness/",
@@ -54,6 +68,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     group: "Company",
     changeFrequency: "monthly",
     priority: 0.6,
+    lastModified: "2026-09-08",
   },
   {
     path: "/board-of-advisors/",
@@ -61,6 +76,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     group: "Company",
     changeFrequency: "yearly",
     priority: 0.5,
+    lastModified: "2026-09-08",
   },
   {
     path: "/investors/",
@@ -68,6 +84,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     group: "Company",
     changeFrequency: "yearly",
     priority: 0.4,
+    lastModified: "2026-09-08",
   },
   {
     path: "/privacy-policy/",
@@ -75,6 +92,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     group: "Legal",
     changeFrequency: "yearly",
     priority: 0.3,
+    lastModified: "2026-09-08",
   },
   {
     path: "/terms-and-conditions/",
@@ -82,6 +100,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     group: "Legal",
     changeFrequency: "yearly",
     priority: 0.3,
+    lastModified: "2026-09-08",
   },
   {
     path: "/refund-and-cancellation-policy/",
@@ -89,6 +108,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     group: "Legal",
     changeFrequency: "yearly",
     priority: 0.3,
+    lastModified: "2026-09-08",
   },
 ];
 

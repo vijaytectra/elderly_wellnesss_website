@@ -7,11 +7,16 @@ import { SectionTitle } from "@/components/sections/SectionTitle";
 import { SITE_PHONE } from "@/data/site";
 import { IconCheckCircle } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, howToSchema } from "@/lib/schema";
 
 export const metadata: Metadata = buildMetadata({
-  title: "How Elderly Wellness Works : Revolutionizing Elderly Care at Home",
+  title: "How Elderly Wellness Works | Elder Care in Chennai",
   description:
-    "Elderly Wellness is revolutionizing home care, providing a seamless, stress-free solution to elderly care right in the comfort of your home. Learn how Elderly Wellness works.",
+    "Arranging care for a parent should not take a week of phone calls. See how Elderly Wellness goes from first consultation to a matched caregiver at the door.",
+  ogTitle: "From First Call to Caregiver at the Door",
+  ogDescription:
+    "Consultation, transparent pricing, academy-trained caregiver matching, and a 2-hour replacement guarantee.",
   path: "/how-elderly-wellness-works/",
 });
 
@@ -49,9 +54,25 @@ const STEPS = [
   },
 ] as const;
 
+const PATH = "/how-elderly-wellness-works/";
+
+// This page is the canonical explainer for the brand process. The blog post
+// at /blogs/how-elderly-wellness-works/ is retargeted to the generic
+// "elder care at home" query and deliberately carries no competing HowTo.
+const pageSchemas = [
+  howToSchema(
+    PATH,
+    "How Elderly Wellness Works",
+    "How Elderly Wellness arranges elder care at home in Chennai, from the first consultation through to caregiver matching and daily monitoring.",
+    STEPS.map((step) => ({ name: step.title, text: step.body })),
+  ),
+  breadcrumbSchema([{ name: "How It Works", path: PATH }]),
+];
+
 export default function HowItWorksPage() {
   return (
     <div>
+      <JsonLd id="page-schema" data={pageSchemas} />
       <section className="section-y">
         <Container>
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-8">

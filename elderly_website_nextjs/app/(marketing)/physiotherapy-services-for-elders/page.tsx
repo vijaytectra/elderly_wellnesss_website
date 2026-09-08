@@ -10,12 +10,22 @@ import {
 } from "@/components/sections/ServiceInfoBlock";
 import { WhyChooseUs, type WhyChooseUsFeature } from "@/components/sections/WhyChooseUs";
 import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  breadcrumbSchema,
+  faqPageSchema,
+  serviceSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Best Physiotherapy Services for Elders at Home - Elderly Wellness",
+  title: "Home Physiotherapy for Elders in Chennai",
   description:
-    "Contact us today +919944890577. Offering professional home physiotherapy for elders, Elderly Wellness improves mobility and quality of life for seniors.",
+    "Recovering from a hip surgery or a stroke takes more than rest. Elderly Wellness sends licensed physiotherapists to your parent's home, anywhere in Chennai.",
+  ogTitle: "Physiotherapy That Comes to Them",
+  ogDescription:
+    "Licensed physiotherapists treating pain, mobility loss and post-surgical recovery in your parent's own home.",
   path: "/physiotherapy-services-for-elders/",
+  image: "/videos/home/Physiotherapy.jpg",
 });
 
 const importanceBullets: readonly ServiceInfoBullet[] = [
@@ -325,9 +335,24 @@ const faqs: readonly ServiceFAQItem[] = [
   },
 ];
 
+const PATH = "/physiotherapy-services-for-elders/";
+
+const pageSchemas = [
+  serviceSchema({
+    name: "Home Physiotherapy for Elders",
+    serviceType: "Elderly physiotherapy",
+    description:
+      "In-home physiotherapy for elderly patients in Chennai, covering pain relief, mobility improvement, muscle strengthening and post-surgery recovery.",
+    path: PATH,
+  }),
+  faqPageSchema(PATH, faqs),
+  breadcrumbSchema([{ name: "Physiotherapy Services", path: PATH }]),
+];
+
 export default function PhysiotherapyPage() {
   return (
     <div>
+      <JsonLd id="page-schema" data={pageSchemas} />
       <ServiceHero
         image="/images/services/banner-left.png"
         imageAlt="Physiotherapist assisting an elderly patient at home"

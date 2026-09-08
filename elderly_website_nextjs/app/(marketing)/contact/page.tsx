@@ -3,17 +3,33 @@ import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/sections/SectionTitle";
 import { SITE_PHONE, SITE_PHONE_TEL } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, contactPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Get in Touch with Elderly Wellness for Care and Support",
+  title: "Contact Elderly Wellness | Chennai Elder Care",
   description:
-    "Request a callback from Elderly Wellness. A senior care specialist in Chennai will reach out about physiotherapy, nursing, geriatric care, or assisted living.",
+    "Tell us what your parent needs and a senior care specialist in Chennai will call you back about physiotherapy, nursing, geriatric care or assisted living.",
+  ogTitle: "Talk to a Senior Care Specialist",
+  ogDescription:
+    "Request a callback and we will help you work out what level of care your parent actually needs.",
   path: "/contact/",
 });
+
+const PATH = "/contact/";
+
+// ContactPoint only — no PostalAddress. No street address is published in
+// visible copy anywhere on this site, and schema must not assert what the
+// page does not show. See lib/schema.ts.
+const pageSchemas = [
+  contactPageSchema(PATH),
+  breadcrumbSchema([{ name: "Contact", path: PATH }]),
+];
 
 export default function ContactPage() {
   return (
     <section className="pt-6 pb-2 sm:pt-8">
+      <JsonLd id="page-schema" data={pageSchemas} />
       <Container>
         <SectionTitle
           badge="Book Care"

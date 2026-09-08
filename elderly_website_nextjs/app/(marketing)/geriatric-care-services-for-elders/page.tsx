@@ -9,12 +9,22 @@ import {
 } from "@/components/sections/ServiceInfoBlock";
 import { WhyChooseUs, type WhyChooseUsFeature } from "@/components/sections/WhyChooseUs";
 import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  breadcrumbSchema,
+  faqPageSchema,
+  serviceSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Best Geriatric Care Services for Elders at Home – Elderly Wellness",
+  title: "Geriatric Care for Elders at Home in Chennai",
   description:
-    "Offering professional home geriatric care for seniors. Elderly Wellness ensures your loved ones receive the best care at home. Contact us today at +919944890577.",
+    "Dementia, frailty and multiple medications need more than a general caregiver. Elderly Wellness provides specialist geriatric care at home across Chennai.",
+  ogTitle: "Specialist Care for Complex Ageing",
+  ogDescription:
+    "Geriatric specialists supporting dementia, frailty and multi-condition care in your parent's own home.",
   path: "/geriatric-care-services-for-elders/",
+  image: "/videos/home/geriatric-care.jpg",
 });
 
 const importanceBullets: readonly ServiceInfoBullet[] = [
@@ -323,9 +333,24 @@ const faqs: readonly ServiceFAQItem[] = [
   },
 ];
 
+const PATH = "/geriatric-care-services-for-elders/";
+
+const pageSchemas = [
+  serviceSchema({
+    name: "Geriatric Care Services for Elders",
+    serviceType: "Geriatric care",
+    description:
+      "Specialist in-home geriatric care in Chennai, covering chronic condition management, cognitive support, medication management and companionship.",
+    path: PATH,
+  }),
+  faqPageSchema(PATH, faqs),
+  breadcrumbSchema([{ name: "Geriatric Care", path: PATH }]),
+];
+
 export default function GeriatricCarePage() {
   return (
     <div>
+      <JsonLd id="page-schema" data={pageSchemas} />
       <ServiceHero
         image="/images/services/geriatric/1.png"
         imageAlt="Geriatric care specialist supporting an elderly patient"

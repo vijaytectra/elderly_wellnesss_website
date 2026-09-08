@@ -40,13 +40,14 @@ export async function generateMetadata({
   const base = buildMetadata({
     title: meta.title,
     description: meta.description,
+    ogTitle: meta.ogTitle,
+    ogDescription: meta.ogDescription,
     path: entry.path,
     image: meta.ogImage,
     type: "article",
   });
   return {
     ...base,
-    keywords: meta.keywords,
     authors: [{ name: meta.author.name }],
     openGraph: {
       ...base.openGraph,
@@ -87,7 +88,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "@id": `${canonical}#blogposting`,
-    headline: meta.title,
+    headline: meta.headline,
     description: meta.description,
     datePublished: meta.publishedTime,
     dateModified: meta.modifiedTime,
@@ -103,7 +104,6 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
     },
     wordCount: meta.wordCount,
   };
-  if (meta.keywords) blogPostingSchema.keywords = meta.keywords;
 
   const breadcrumbSchema: Record<string, unknown> = {
     "@context": "https://schema.org",

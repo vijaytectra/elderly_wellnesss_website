@@ -3,8 +3,12 @@ import { buildMetadata } from "@/lib/seo";
 import { LegalPage } from "@/components/sections/LegalPage";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Privacy Policy",
-  description: "Privacy Policy for Elderly Wellness - how we collect, use, and protect the personal information of our elder care service users in Chennai.",
+  title: "Privacy Policy | Elderly Wellness",
+  description:
+    "Booking elder care means sharing health details about someone you love. This policy sets out what Elderly Wellness collects, why, and how it is protected.",
+  ogTitle: "How We Handle Your Family's Data",
+  ogDescription:
+    "What Elderly Wellness collects when you book care, how long it is kept, and the choices you have.",
   path: "/privacy-policy/",
 });
 

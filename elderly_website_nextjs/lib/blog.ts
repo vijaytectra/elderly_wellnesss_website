@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import indexData from "@/content/blogs/_index.json";
+import { BLOG_SEO_OVERRIDES } from "@/lib/blog-seo";
 import { rewriteHrefsInHtml } from "@/lib/internal-urls";
 
 export interface BlogIndexEntry {
@@ -19,9 +20,14 @@ export interface BlogMeta {
   description: string;
   canonical: string;
   ogImage: string;
+  /** Share-context title. Set by lib/blog-seo.ts. */
+  ogTitle?: string;
+  /** Share-context description. Set by lib/blog-seo.ts. */
+  ogDescription?: string;
+  /** Article headline for BlogPosting.headline, without the SEO suffix. */
+  headline: string;
   publishedTime: string;
   modifiedTime: string;
-  keywords?: string;
   author: { name: string };
   wordCount: number;
   readingMinutes: number;
@@ -69,10 +75,36 @@ const DEFAULT_APP_CTA = `<div class="ew-blog-cta ew-blog-cta--app">
 <p class="ew-blog-cta__action"><a class="ew-blog-cta__btn" href="https://play.google.com/store/apps/details?id=com.elderly.nri">Download the App →</a></p>
 </div>`;
 
+/** "Some Title | Elderly Wellness" -> "Some Title". */
+function stripSiteSuffix(title: string): string {
+  return title.replace(/\s*[|–—-]\s*Elderly\s*Wellness\s*$/i, "").trim();
+}
+
+/**
+ * Applies the hand-written overrides in lib/blog-seo.ts on top of the
+ * generated meta. Done at read time because the generated files are rebuilt
+ * from the legacy WordPress HTML by the `prebuild` step.
+ */
+function applySeoOverride(meta: BlogMeta, slug: string): BlogMeta {
+  const override = BLOG_SEO_OVERRIDES[slug];
+  if (!override) {
+    return { ...meta, headline: stripSiteSuffix(meta.title) };
+  }
+  return {
+    ...meta,
+    title: override.title,
+    description: override.description,
+    ogTitle: override.ogTitle,
+    ogDescription: override.ogDescription,
+    headline: stripSiteSuffix(override.headline ?? override.title),
+  };
+}
+
 export function getBlogBySlug(slug: string): { meta: BlogMeta; html: string } {
-  const meta = JSON.parse(
+  const raw = JSON.parse(
     readFileSync(resolve(CONTENT_DIR, `${slug}.meta.json`), "utf8"),
   ) as BlogMeta;
+  const meta = applySeoOverride(raw, slug);
   let html = rewriteHrefsInHtml(
     dropOrphanClosingDivs(
       readFileSync(resolve(CONTENT_DIR, `${slug}.html`), "utf8"),

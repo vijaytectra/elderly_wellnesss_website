@@ -3,8 +3,12 @@ import { buildMetadata } from "@/lib/seo";
 import { LegalPage } from "@/components/sections/LegalPage";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Elderly App Refund and Cancellation Policy",
-  description: "Refund and cancellation policy for Elderly Wellness elder care services - booking changes, cancellation windows, and how refunds are processed.",
+  title: "Refund and Cancellation Policy | Elderly Wellness",
+  description:
+    "Care plans change, sometimes at short notice. This policy explains Elderly Wellness cancellation windows, how refunds are calculated, and when they are paid.",
+  ogTitle: "Cancellations and Refunds, Explained",
+  ogDescription:
+    "Cancellation windows, how refunds are calculated, and the timeline for money coming back to you.",
   path: "/refund-and-cancellation-policy/",
 });
 

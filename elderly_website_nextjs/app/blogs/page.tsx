@@ -8,9 +8,12 @@ import { buildMetadata } from "@/lib/seo";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Blog | Elderly Wellness",
+  title: "Elder Care Guides for Families | Elderly Wellness",
   description:
-    "Guides, checklists, and expert advice on elderly care from Elderly Wellness — home safety, health, nutrition, and caregiving in Chennai.",
+    "Most families learn elder care in an emergency. These guides cover the ground beforehand: home safety, dementia, nutrition, recovery and hiring caregivers.",
+  ogTitle: "Elder Care Guides for Chennai Families",
+  ogDescription:
+    "Home safety, dementia, nutrition, recovery and hiring caregivers, written by the people doing the work.",
   path: "/blogs/",
 });
 

@@ -4,11 +4,17 @@ import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/sections/SectionTitle";
 import { IconLinkedin } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { aboutPageSchema, breadcrumbSchema, orgRef } from "@/lib/schema";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Meet the Experts Behind Elderly Wellness: Our Board of Advisors",
+  title: "Our Board of Advisors | Elderly Wellness",
   description:
-    "Get to know the expert team guiding Elderly Wellness. Learn about our advisory board's expertise in healthcare, elderly support, and wellness.",
+    "Trusting a service with your parent means knowing who stands behind it. Meet the healthcare and eldercare advisors guiding how Elderly Wellness is run.",
+  ogTitle: "The People Behind the Standards",
+  ogDescription:
+    "Healthcare, geriatric and business advisors shaping how Elderly Wellness trains and vets its caregivers.",
   path: "/board-of-advisors/",
 });
 
@@ -67,9 +73,42 @@ const advisors: readonly Advisor[] = [
   },
 ];
 
+const PATH = "/board-of-advisors/";
+
+// Person entries are built from the advisor list rendered on this page —
+// real names, real roles, real LinkedIn profiles. Nothing is invented.
+const pageSchemas = [
+  aboutPageSchema({
+    path: PATH,
+    name: "Board of Advisors",
+    description:
+      "The healthcare, geriatric and business advisors guiding how Elderly Wellness trains, vets and deploys its care professionals in Chennai.",
+  }),
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${SITE_URL}${PATH}#advisors`,
+    name: "Board of Advisors",
+    itemListElement: advisors.map((advisor, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Person",
+        name: advisor.name,
+        jobTitle: advisor.role,
+        image: `${SITE_URL}${advisor.image}`,
+        affiliation: orgRef,
+        ...(advisor.linkedin ? { sameAs: [advisor.linkedin] } : {}),
+      },
+    })),
+  },
+  breadcrumbSchema([{ name: "Board of Advisors", path: PATH }]),
+];
+
 export default function BoardOfAdvisorsPage() {
   return (
     <div>
+      <JsonLd id="page-schema" data={pageSchemas} />
       <section className="section-y">
         <Container>
           <SectionTitle

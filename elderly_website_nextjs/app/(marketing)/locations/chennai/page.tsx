@@ -9,10 +9,14 @@ import { buildMetadata } from "@/lib/seo";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Chennai",
+  title: "Elder Care Across Chennai Neighbourhoods",
   description:
-    "Elderly care services across Chennai — physiotherapy, nursing, geriatric care, and assisted living support in neighbourhoods including Adyar, Ambattur, Alwarpet, and more.",
+    "Care is only useful if it reaches your parent's street. Elderly Wellness places nurses, physiotherapists and caregivers with elders in neighbourhoods citywide.",
+  ogTitle: "Find Elder Care in Your Part of Chennai",
+  ogDescription:
+    "From Adyar to Ambattur: nurses, physiotherapists and caregivers placed with elderly parents across Chennai.",
   path: "/locations/chennai/",
+  image: "/videos/home/poster-1.jpg",
 });
 
 export default function ChennaiLocationsPage() {

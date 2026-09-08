@@ -79,7 +79,7 @@ export function rewriteInternalUrl(raw: string): string {
     return url;
   }
 
-  let path = stripOrigin(url);
+  const path = stripOrigin(url);
   if (/^https?:\/\//i.test(path) || path.startsWith("//")) return url;
 
   const hashQuery = path.match(/^([^?#]*)([?#].*)?$/);

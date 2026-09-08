@@ -7,11 +7,20 @@ import { ServiceFAQ } from "@/components/sections/ServiceFAQ";
 import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
 import { IconGear, IconLinkedin } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  aboutPageSchema,
+  breadcrumbSchema,
+  faqPageSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About Elderly: Supporting Health & Wellness for the Elderly",
+  title: "About Elderly Wellness | Elder Care in Chennai",
   description:
-    "Learn how Elderly is transforming elderly care with professional physiotherapists, caregivers, and nursing assistants. Tailored services ensuring dignity and care.",
+    "Most families looking for elder care are choosing in a hurry, under stress. Elderly Wellness was built to make that choice safer, with vetted professionals.",
+  ogTitle: "Why Elderly Wellness Exists",
+  ogDescription:
+    "The people and the standards behind the nurses, physiotherapists and caregivers we send into Chennai homes.",
   path: "/about/",
 });
 
@@ -106,9 +115,23 @@ const faqs: readonly FaqItem[] = [
   },
 ];
 
+const PATH = "/about/";
+
+const pageSchemas = [
+  aboutPageSchema({
+    path: PATH,
+    name: "About Elderly Wellness",
+    description:
+      "Elderly Wellness connects families in Chennai with police-verified nurses, physiotherapists, caregivers and geriatric-care specialists for care at home.",
+  }),
+  faqPageSchema(PATH, faqs),
+  breadcrumbSchema([{ name: "About", path: PATH }]),
+];
+
 export default function AboutPage() {
   return (
     <div>
+      <JsonLd id="page-schema" data={pageSchemas} />
       {/* About us hero */}
       <section className="section-y">
         <Container>

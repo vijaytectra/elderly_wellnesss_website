@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { HeroCtas } from "@/components/HeroCtas";
 import { HeroVideos } from "@/components/HeroVideos";
-import { JsonLd } from "@/components/JsonLd";
 import { StoreBadge } from "@/components/StoreBadge";
 import { TrustStrip } from "@/components/TrustStrip";
 import { HomepageBlogStrip } from "@/components/sections/HomepageBlogStrip";
@@ -13,33 +12,17 @@ import { SectionTitle } from "@/components/sections/SectionTitle";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
 import { buildMetadata } from "@/lib/seo";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Elderly Wellness | Elder Care Services in Chennai",
   description:
     "Home nursing, physiotherapy, geriatric care, and assisted living in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 99448 90577.",
+  ogTitle: "Elder Care at Your Parent's Doorstep",
+  ogDescription:
+    "Nursing, physiotherapy, geriatric care and assisted living support, delivered at home across Chennai by police-verified caregivers.",
   path: "/",
   image: "/videos/home/poster-1.jpg",
 });
-
-// Fixed pre-existing typo — source JSON-LD used "Elderly Eellness" for WebSite.name.
-const productSchema: Record<string, unknown> = {
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  name: SITE_NAME,
-  image: `${SITE_URL}/images/logo.png`,
-  description:
-    "Elderly Wellness connects families with trained professionals providing nursing care, physiotherapy, and assisted living support, ensuring peace of mind and improved quality of life for seniors.",
-  brand: { "@type": "Brand", name: SITE_NAME },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "45",
-  },
-};
 
 interface ServiceCard {
   href: string;
@@ -141,7 +124,6 @@ const steps: readonly Step[] = [
 export default function HomePage() {
   return (
     <div>
-      <JsonLd id="home-product-schema" data={productSchema} />
 
       {/* Banner / Hero */}
       <section className="section-y">

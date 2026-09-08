@@ -16,6 +16,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { APP_LINKS } from "@/data/site";
 import { breadcrumbSchema, orgRef } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: "Elderly Wellness | Personalised Care for Seniors",
@@ -146,6 +147,16 @@ export default function ElderlyWellnessPage() {
   return (
     <div>
       <JsonLd id="page-schema" data={pageSchemas} />
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Elderly Wellness" },
+            ]}
+          />
+        </Container>
+      </section>
       {/* Hero */}
       <section className="section-y">
         <Container>

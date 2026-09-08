@@ -13,6 +13,7 @@ import {
   breadcrumbSchema,
   faqPageSchema,
 } from "@/lib/schema";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: "About Elderly Wellness | Elder Care in Chennai",
@@ -132,6 +133,16 @@ export default function AboutPage() {
   return (
     <div>
       <JsonLd id="page-schema" data={pageSchemas} />
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "About" },
+            ]}
+          />
+        </Container>
+      </section>
       {/* About us hero */}
       <section className="section-y">
         <Container>

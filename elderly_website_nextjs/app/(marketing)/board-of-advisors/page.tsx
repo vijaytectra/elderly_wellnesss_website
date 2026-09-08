@@ -7,6 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { aboutPageSchema, breadcrumbSchema, orgRef } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: "Our Board of Advisors | Elderly Wellness",
@@ -102,13 +103,23 @@ const pageSchemas = [
       },
     })),
   },
-  breadcrumbSchema([{ name: "Board of Advisors", path: PATH }]),
+  breadcrumbSchema([{ name: "Board Of Advisors", path: PATH }]),
 ];
 
 export default function BoardOfAdvisorsPage() {
   return (
     <div>
       <JsonLd id="page-schema" data={pageSchemas} />
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Board Of Advisors" },
+            ]}
+          />
+        </Container>
+      </section>
       <section className="section-y">
         <Container>
           <SectionTitle

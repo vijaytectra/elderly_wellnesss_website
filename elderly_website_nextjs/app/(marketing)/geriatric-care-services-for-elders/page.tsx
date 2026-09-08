@@ -15,6 +15,8 @@ import {
   faqPageSchema,
   serviceSchema,
 } from "@/lib/schema";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { Container } from "@/components/Container";
 
 export const metadata: Metadata = buildMetadata({
   title: "Geriatric Care for Elders at Home in Chennai",
@@ -344,13 +346,23 @@ const pageSchemas = [
     path: PATH,
   }),
   faqPageSchema(PATH, faqs),
-  breadcrumbSchema([{ name: "Geriatric Care", path: PATH }]),
+  breadcrumbSchema([{ name: "Geriatric Care Services For Elders", path: PATH }]),
 ];
 
 export default function GeriatricCarePage() {
   return (
     <div>
       <JsonLd id="page-schema" data={pageSchemas} />
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Geriatric Care Services For Elders" },
+            ]}
+          />
+        </Container>
+      </section>
       <ServiceHero
         image="/images/services/geriatric/1.png"
         imageAlt="Geriatric care specialist supporting an elderly patient"

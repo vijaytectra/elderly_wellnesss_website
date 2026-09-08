@@ -12,7 +12,7 @@ export const SITE_PHONE = "+91 99448 90577";
 /** `tel:` href-friendly form (no spaces, includes country code) */
 export const SITE_PHONE_TEL = "tel:919944890577";
 
-export const SITE_EMAIL = "info@theelderlywellness.com";
+export const SITE_EMAIL = process.env.NEXT_PUBLIC_SITE_EMAIL || "infotheelderlywellness@gmail.com";
 
 /**
  * The legacy footer does not print a postal address; only phone + email.

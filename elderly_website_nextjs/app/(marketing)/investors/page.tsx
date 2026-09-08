@@ -5,6 +5,7 @@ import { SectionTitle } from "@/components/sections/SectionTitle";
 import { OurValues } from "@/components/sections/OurValues";
 import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
 import { buildMetadata } from "@/lib/seo";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: "Investors | Elderly Wellness",
@@ -30,6 +31,16 @@ function ApplyButton() {
 export default function InvestorsPage() {
   return (
     <div>
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Investors" },
+            ]}
+          />
+        </Container>
+      </section>
       <section className="section-y">
         <Container>
           <SectionTitle

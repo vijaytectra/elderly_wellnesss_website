@@ -15,6 +15,8 @@ import {
   faqPageSchema,
   serviceSchema,
 } from "@/lib/schema";
+import { Breadcrumb } from "@/components/Breadcrumb";
+import { Container } from "@/components/Container";
 
 export const metadata: Metadata = buildMetadata({
   title: "Assisted Living Support at Home in Chennai",
@@ -348,13 +350,23 @@ const pageSchemas = [
     path: PATH,
   }),
   faqPageSchema(PATH, faqs),
-  breadcrumbSchema([{ name: "Assisted Living Support", path: PATH }]),
+  breadcrumbSchema([{ name: "Assisted Living Support Services For Elders", path: PATH }]),
 ];
 
 export default function AssistedLivingSupportPage() {
   return (
     <div>
       <JsonLd id="page-schema" data={pageSchemas} />
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Assisted Living Support Services For Elders" },
+            ]}
+          />
+        </Container>
+      </section>
       <ServiceHero
         image="/images/services/assisted/1.png"
         imageAlt="Caregiver assisting an elderly person with daily activities"

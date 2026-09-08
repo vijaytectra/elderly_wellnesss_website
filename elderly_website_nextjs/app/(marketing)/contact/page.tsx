@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 import { SectionTitle } from "@/components/sections/SectionTitle";
 import { SITE_PHONE, SITE_PHONE_TEL } from "@/data/site";
@@ -23,13 +24,24 @@ const PATH = "/contact/";
 // page does not show. See lib/schema.ts.
 const pageSchemas = [
   contactPageSchema(PATH),
-  breadcrumbSchema([{ name: "Contact", path: PATH }]),
+  breadcrumbSchema([{ name: "Contact Us", path: PATH }]),
 ];
 
 export default function ContactPage() {
   return (
-    <section className="pt-6 pb-2 sm:pt-8">
+    <div>
       <JsonLd id="page-schema" data={pageSchemas} />
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Contact Us" },
+            ]}
+          />
+        </Container>
+      </section>
+      <section className="pt-6 pb-2 sm:pt-8">
       <Container>
         <SectionTitle
           badge="Book Care"
@@ -56,5 +68,6 @@ export default function ContactPage() {
         />
       </Container>
     </section>
+    </div>
   );
 }

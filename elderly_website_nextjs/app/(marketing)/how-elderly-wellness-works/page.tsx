@@ -9,6 +9,7 @@ import { IconCheckCircle } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, howToSchema } from "@/lib/schema";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = buildMetadata({
   title: "How Elderly Wellness Works | Elder Care in Chennai",
@@ -66,13 +67,23 @@ const pageSchemas = [
     "How Elderly Wellness arranges elder care at home in Chennai, from the first consultation through to caregiver matching and daily monitoring.",
     STEPS.map((step) => ({ name: step.title, text: step.body })),
   ),
-  breadcrumbSchema([{ name: "How It Works", path: PATH }]),
+  breadcrumbSchema([{ name: "How Elderly Wellness Works", path: PATH }]),
 ];
 
 export default function HowItWorksPage() {
   return (
     <div>
       <JsonLd id="page-schema" data={pageSchemas} />
+      <section className="pt-6 sm:pt-10">
+        <Container>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "How Elderly Wellness Works" },
+            ]}
+          />
+        </Container>
+      </section>
       <section className="section-y">
         <Container>
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2 md:gap-8">
@@ -82,7 +93,7 @@ export default function HowItWorksPage() {
               </p>
               <h1 className="mb-4 font-[family-name:var(--font-serif)] text-3xl leading-tight sm:text-4xl md:text-5xl">
                 How Elderly Wellness Works{" "}
-                <span className="mt-1 block text-[color:var(--color-brand)]">
+                <span className="text-[color:var(--color-brand)]">
                   Revolutionizing Senior Care at Home
                 </span>
               </h1>

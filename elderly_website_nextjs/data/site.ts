@@ -8,9 +8,9 @@
  *  - about.html header (nav items, brochure download)
  */
 
-export const SITE_PHONE = "+91 99448 90577";
+export const SITE_PHONE = "+91 81226 66490";
 /** `tel:` href-friendly form (no spaces, includes country code) */
-export const SITE_PHONE_TEL = "tel:919944890577";
+export const SITE_PHONE_TEL = "tel:918122666490";
 
 export const SITE_EMAIL = process.env.NEXT_PUBLIC_SITE_EMAIL || "infotheelderlywellness@gmail.com";
 

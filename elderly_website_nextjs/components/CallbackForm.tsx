@@ -40,7 +40,7 @@ function whatsappHref(pathname: string): string {
   else if (p.includes("geriatric")) text = "Hi, I would like to know about Geriatric Care services";
   else if (p.includes("assisted-living")) text = "Hi, I would like to know about Assisted Living services";
   else if (p.includes("contact")) text = "Hi, I would like to contact Elderly Wellness";
-  return `https://wa.me/919944890577?text=${encodeURIComponent(text)}`;
+  return `https://wa.me/918122666490?text=${encodeURIComponent(text)}`;
 }
 
 type Status = "idle" | "submitting" | "success" | "error";

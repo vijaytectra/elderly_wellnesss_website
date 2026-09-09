@@ -15,7 +15,7 @@ const GOOGLE_SITE_VERIFICATION =
   "BgdLTr1rRUPNF1uD96e921lVhaEuBoFSUE8OHHpD1k0";
 
 const description =
-  "Home nursing, physiotherapy, geriatric care, and assisted living in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 99448 90577.";
+  "Home nursing, physiotherapy, geriatric care, and assisted living in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 81226 66490.";
 
 export const viewport: Viewport = {
   themeColor: "#2786a5",

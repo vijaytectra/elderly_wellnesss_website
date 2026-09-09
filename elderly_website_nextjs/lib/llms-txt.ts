@@ -102,7 +102,7 @@ Full FAQ list: [About Us](${abs("/about/")}) and each service page (e.g. [Physio
 
 ## Contact
 
-- Phone: [+91 99448 90577](tel:919944890577)
+- Phone: [+91 81226 66490](tel:918122666490)
 - Email: [${SITE_EMAIL}](mailto:${SITE_EMAIL})
 - Contact page: ${abs("/contact/")}
 - Facebook: https://www.facebook.com/profile.php?id=100089074061784

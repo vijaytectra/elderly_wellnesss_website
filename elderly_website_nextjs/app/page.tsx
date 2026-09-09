@@ -16,7 +16,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Elderly Wellness | Elder Care Services in Chennai",
   description:
-    "Home nursing, physiotherapy, geriatric care, and assisted living in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 99448 90577.",
+    "Home nursing, physiotherapy, geriatric care, and assisted living in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 81226 66490.",
   ogTitle: "Elder Care at Your Parent's Doorstep",
   ogDescription:
     "Nursing, physiotherapy, geriatric care and assisted living support, delivered at home across Chennai by police-verified caregivers.",

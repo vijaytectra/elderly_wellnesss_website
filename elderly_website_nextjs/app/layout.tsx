@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import { DeferredCallbackForm } from "@/components/DeferredCallbackForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -14,8 +13,17 @@ const GTM_ID = "GTM-5G9CTKBR";
 const GOOGLE_SITE_VERIFICATION =
   "BgdLTr1rRUPNF1uD96e921lVhaEuBoFSUE8OHHpD1k0";
 
+const GEO_POSITION = "12.84236971761543, 80.22651263719975";
+
+const GTM_SNIPPET = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`;
+
 const description =
   "Home nursing, physiotherapy, geriatric care, and assisted living in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 81226 66490.";
+const homeTitle = `${SITE_NAME} | Elder Care Services in Chennai`;
 
 export const viewport: Viewport = {
   themeColor: "#2786a5",
@@ -25,7 +33,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: `${SITE_NAME} | Elder Care Services in Chennai`,
+  title: homeTitle,
   description,
   robots: {
     index: true,
@@ -47,14 +55,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | Elder Care Services in Chennai`,
+    title: homeTitle,
     description,
     url: SITE_URL,
     images: [{ url: "/images/logo.png", alt: SITE_NAME }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | Elder Care Services in Chennai`,
+    title: homeTitle,
     description,
     images: ["/images/logo.png"],
   },
@@ -63,6 +71,17 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: `${SITE_URL}/`,
+    languages: {
+      "en-IN": `${SITE_URL}/`,
+    },
+  },
+  other: {
+    "DC.publisher": SITE_NAME,
+    "DC.language": "en-IN",
+    "geo.region": "IN-TN",
+    "geo.placename": "Chennai",
+    "geo.position": GEO_POSITION,
+    ICBM: GEO_POSITION,
   },
 };
 
@@ -78,6 +97,13 @@ export default function RootLayout({
       className={`${manrope.variable} ${cormorant.variable} ${playball.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{ __html: GTM_SNIPPET }}
+        />
+        {/* End Google Tag Manager */}
+      </head>
       <body suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -102,14 +128,6 @@ export default function RootLayout({
         <DeferredCallbackForm />
         <Footer />
         <StickyBookingBar />
-        {/* Google Tag Manager */}
-        <Script id="gtm-base" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GTM_ID}');`}
-        </Script>
       </body>
     </html>
   );

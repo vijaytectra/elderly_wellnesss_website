@@ -22,6 +22,7 @@ export const metadata: Metadata = buildMetadata({
     "Nursing, physiotherapy, geriatric care and assisted living support, delivered at home across Chennai by police-verified caregivers.",
   path: "/",
   image: "/videos/home/poster-1.jpg",
+  dcType: "Text.Homepage",
 });
 
 interface ServiceCard {

@@ -45,9 +45,18 @@ export async function generateMetadata({
     path: entry.path,
     image: meta.ogImage,
     type: "article",
+    keywords: meta.keywords,
   });
+  const tags = meta.keywords
+    ? meta.keywords
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean)
+    : undefined;
+
   return {
     ...base,
+    keywords: meta.keywords,
     authors: [{ name: meta.author.name }],
     openGraph: {
       ...base.openGraph,
@@ -55,6 +64,11 @@ export async function generateMetadata({
       publishedTime: meta.publishedTime,
       modifiedTime: meta.modifiedTime,
       authors: [meta.author.name],
+      tags,
+    },
+    other: {
+      ...base.other,
+      ...(meta.keywords ? { keywords: meta.keywords, news_keywords: meta.keywords } : {}),
     },
   };
 }
@@ -90,6 +104,7 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
     "@id": `${canonical}#blogposting`,
     headline: meta.headline,
     description: meta.description,
+    keywords: meta.keywords,
     datePublished: meta.publishedTime,
     dateModified: meta.modifiedTime,
     inLanguage: "en-US",

@@ -26,6 +26,7 @@ export interface BlogMeta {
   ogDescription?: string;
   /** Article headline for BlogPosting.headline, without the SEO suffix. */
   headline: string;
+  keywords?: string;
   publishedTime: string;
   modifiedTime: string;
   author: { name: string };
@@ -96,6 +97,7 @@ function applySeoOverride(meta: BlogMeta, slug: string): BlogMeta {
     description: override.description,
     ogTitle: override.ogTitle,
     ogDescription: override.ogDescription,
+    keywords: override.keywords ?? meta.keywords,
     headline: stripSiteSuffix(override.headline ?? override.title),
   };
 }

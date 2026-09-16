@@ -90,6 +90,7 @@ export function buildMetadata({
     other: {
       "DC.title": title,
       "DC.description": description,
+      ...(keywords ? { "DC.subject": keywords } : {}),
       "DC.publisher": SITE_NAME,
       "DC.language": "en-IN",
       "DC.type": resolvedDcType,

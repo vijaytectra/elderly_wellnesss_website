@@ -32,6 +32,8 @@ export interface BlogSeoOverride {
   ogTitle: string;
   /** og:description / twitter:description. */
   ogDescription: string;
+  /** `<meta name="keywords">`. */
+  keywords?: string;
   /**
    * `BlogPosting.headline` — the article's actual headline, without the
    * "| Elderly Wellness" SEO suffix. Defaults to `title` when omitted.
@@ -123,6 +125,28 @@ export const BLOG_SEO_OVERRIDES: Readonly<
   /* ---------------------------------------------------------------- */
   /* Editorial posts                                                   */
   /* ---------------------------------------------------------------- */
+  "calcium-for-seniors-bone-health": {
+    title: "Calcium for Seniors: Why It's Critical for Bone Health",
+    description:
+      "Discover why calcium for seniors is essential for strong bones, how to spot deficiency signs, and the best foods and habits to protect bone health.",
+    ogTitle: "Calcium for Seniors: Why It's Critical for Bone Health",
+    ogDescription:
+      "Essential guide on calcium for seniors: bone density protection, deficiency warning signs, and the best foods and habits to prevent osteoporosis.",
+    keywords:
+      "calcium for seniors, bone health in elderly, calcium deficiency signs, osteoporosis prevention, nutritious diet for seniors, Bone Health, Calcium, Senior Nutrition, Osteoporosis, The Elderly Wellness",
+    headline: "Why Calcium for Seniors is Critical for Bone Health",
+  },
+  "benefits-of-professional-geriatric-care-services": {
+    title: "Benefits of Professional Geriatric Care Services",
+    description:
+      "Discover the key benefits of professional geriatric care services — personalised support, medication management, home safety, and peace of mind for families.",
+    ogTitle: "The Benefits of Professional Geriatric Care Services",
+    ogDescription:
+      "How professional geriatric care services help seniors manage multiple health conditions, medication routines, and daily activities safely at home.",
+    keywords:
+      "geriatric care services, elderly nursing care, senior care services, personalised care plan for seniors, Geriatric Care, Senior Health, Elderly Nursing Care, The Elderly Wellness",
+    headline: "The Benefits of Professional Geriatric Care Services",
+  },
   "home-care-vs-assisted-living-chennai": {
     title: "Home Care vs Assisted Living in Chennai | Elderly Wellness",
     description:

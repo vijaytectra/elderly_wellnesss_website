@@ -309,6 +309,24 @@ a.btn-whatsapp:hover {
   margin-bottom: 0.45rem;
 }
 
+/* Contextual inline links inside article body */
+.prose p a,
+.prose li a,
+.prose blockquote a {
+  color: #2786a5 !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 1.5px !important;
+  text-underline-offset: 3px !important;
+  font-weight: 600;
+  transition: color 150ms ease;
+}
+.prose p a:hover,
+.prose li a:hover,
+.prose blockquote a:hover {
+  color: #1f6b85 !important;
+  text-decoration-color: #1f6b85 !important;
+}
+
 .ew-blog-toc {
   padding: 0 0 0.25rem;
   background: transparent;

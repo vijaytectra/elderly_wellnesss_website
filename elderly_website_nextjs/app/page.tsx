@@ -12,6 +12,7 @@ import { SectionTitle } from "@/components/sections/SectionTitle";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
 import { buildMetadata } from "@/lib/seo";
+import { IconCheck } from "@/components/icons";
 
 export const metadata: Metadata = buildMetadata({
   title: "Elderly Wellness | Elder Care Services in Chennai",
@@ -29,37 +30,67 @@ interface ServiceCard {
   href: string;
   title: string;
   body: string;
+  bullets?: readonly string[];
   image: string;
 }
 
 const services: readonly ServiceCard[] = [
   {
-    href: "/physiotherapy-services-for-elders/",
-    title: "Physiotherapy",
-    body:
-      "Personalized therapy to help you regain strength, mobility, and live pain-free with expert care.",
-    image: "/videos/home/Physiotherapy.jpg",
-  },
-  {
-    href: "/nursing-services-for-elders/",
-    title: "Nursing Service",
-    body:
-      "Compassionate nursing care at your doorstep, ensuring comfort, recovery, and peace of mind.",
-    image: "/videos/home/Nurse.jpg",
-  },
-  {
     href: "/geriatric-care-services-for-elders/",
-    title: "Geriatric Care",
+    title: "Post-Operative & Discharge Care at Home",
     body:
-      "Dedicated support for elderly loved ones, promoting independence, health, and emotional well-being.",
-    image: "/videos/home/geriatric-care.jpg",
+      "Professional care and support after surgery or hospital discharge, helping patients recover safely and comfortably at home.",
+    bullets: [
+      "Wound and dressing care",
+      "Medicine and injection support",
+      "BP, temperature, pulse and oxygen monitoring",
+      "Personal hygiene and toileting support",
+      "Walking, movement and daily activity assistance",
+    ],
+    image: "/images/services/geriatric/2.webp",
   },
   {
     href: "/assisted-living-support-services-for-elders/",
-    title: "Assisted Living Support",
+    title: "Elderly Care at Home",
     body:
-      "Helping seniors with daily tasks while ensuring dignity, safety, and a better quality of life.",
-    image: "/videos/home/assisted-living-care.jpg",
+      "Comfortable and compassionate daily care for seniors, helping them stay safe, active and comfortable at home.",
+    bullets: [
+      "Bathing, grooming and personal hygiene",
+      "Feeding and meal assistance",
+      "Walking and mobility support",
+      "Medicine reminders",
+      "Companionship and help with daily activities",
+    ],
+    image: "/images/services/assisted/2.webp",
+  },
+  {
+    href: "/nursing-services-for-elders/",
+    title: "Critical & Skilled Nursing Support at Home",
+    body:
+      "Professional nursing support for patients who need regular medical care and special attention at home.",
+    bullets: [
+      "Vital signs monitoring",
+      "Injections and IV care as prescribed",
+      "Wound, dressing and bed-sore care",
+      "Catheter and feeding-tube care",
+      "Tracheostomy, oxygen and respiratory care",
+      "Stroke, Paralysis, Bedridden Patients, Feeding-Tube Care",
+    ],
+    image: "/images/services/nursing/2.webp",
+  },
+  {
+    href: "/physiotherapy-services-for-elders/",
+    title: "Personalised Physiotherapy & Rehabilitation at Home",
+    body:
+      "Personalised physiotherapy to improve movement, strength and balance and help patients return to their daily activities.",
+    bullets: [
+      "Stroke and paralysis rehabilitation",
+      "Post-fracture and post-surgery recovery",
+      "Joint replacement rehabilitation",
+      "Strength, balance and walking exercises",
+      "Mobility training and pain/stiffness management",
+    ],
+    image: "/images/services/2.webp",
   },
 ];
 
@@ -80,9 +111,9 @@ interface Step {
 const steps: readonly Step[] = [
   {
     step: "01",
-    title: "Simplified Discovery Process",
+    title: "Tell Us About Your Care Needs",
     body:
-      "Finding the right care provider can be overwhelming, but our care specialists make it easy. They assess your loved one's needs and match them with the most suitable caregiver, saving you time and effort.",
+      "Share your family's unique situation and what kind of support your loved one needs. Our care team will listen carefully to understand your requirements.",
     icon: (
       <svg viewBox="0 0 48 48" className="h-9 w-9" fill="none" aria-hidden="true">
         <circle cx="21" cy="21" r="10" stroke="currentColor" strokeWidth="2.4" />
@@ -93,9 +124,9 @@ const steps: readonly Step[] = [
   },
   {
     step: "02",
-    title: "Affordable, Transparent Care",
+    title: "Care Assessment & Plan",
     body:
-      "We offer flexible, slab-based pricing, ensuring top-quality care that fits within your budget. Our transparent pricing system helps you choose the right service without any surprises.",
+      "We conduct a thorough assessment of the patient's condition and recommend a personalized care plan that ensures their safety, comfort, and recovery at home.",
     icon: (
       <svg viewBox="0 0 48 48" className="h-9 w-9" fill="none" aria-hidden="true">
         <rect x="10" y="8" width="28" height="32" rx="4" stroke="currentColor" strokeWidth="2.4" />
@@ -105,9 +136,9 @@ const steps: readonly Step[] = [
   },
   {
     step: "03",
-    title: "Reliable, Long-term Support",
+    title: "Right Professional, Right Care",
     body:
-      "At Elderly Wellness, we ensure consistent, reliable care. Our caregivers are carefully vetted and trained at our Elderly Academy of Caretaking & Hospitality (EACH). In case of delays or no-shows, we guarantee a replacement caregiver within 2 hours, ensuring continuous care for your loved ones.",
+      "We match your loved one with a qualified, background-checked professional—whether a nurse, physiotherapist, or caregiver—who has the right skills for the job.",
     icon: (
       <svg viewBox="0 0 48 48" className="h-9 w-9" fill="none" aria-hidden="true">
         <path
@@ -117,6 +148,17 @@ const steps: readonly Step[] = [
           strokeLinejoin="round"
         />
         <path d="m18 24 4.2 4.2L31 19.5" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    step: "04",
+    title: "Ongoing Care & Family Support",
+    body:
+      "We provide continuous support and open communication. You'll stay informed about your loved one's progress, and we'll adjust the care plan as their needs evolve.",
+    icon: (
+      <svg viewBox="0 0 48 48" className="h-9 w-9" fill="none" aria-hidden="true">
+        <path d="M12 24c0-6.6 5.4-12 12-12s12 5.4 12 12M24 16v8M24 24l-4 4" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -172,32 +214,41 @@ export default function HomePage() {
       <section id="elder-care-services" className="section-y">
         <Container>
           <SectionTitle heading="Elder Care Services" />
-          <div className="mt-5 grid grid-cols-1 gap-5 sm:mt-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-5 grid grid-cols-1 gap-6 sm:mt-8 lg:grid-cols-2">
             {services.map((s) => (
-              <Link
-                href={s.href}
+              <div
                 key={s.title}
-                className="group block overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)] transition hover:shadow-lg"
+                className="group flex flex-col overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)] transition hover:shadow-lg"
               >
-                <div className="relative aspect-square w-full bg-[color:var(--color-muted)]">
+                <div className="relative aspect-[16/9] w-full shrink-0 bg-[color:var(--color-muted)]">
                   <Image quality={95}
                     src={s.image}
                     alt={s.title}
-                    width={400}
-                    height={400}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
-                    className="h-full w-full object-cover transition group-hover:scale-[1.02]"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                    className="object-cover transition group-hover:scale-[1.02]"
                   />
                 </div>
-                <div className="p-5">
-                  <h3 className="mb-2 font-[family-name:var(--font-serif)] text-xl font-semibold text-[color:var(--color-brand)]">
+                <div className="flex flex-1 flex-col p-6 sm:p-8">
+                  <h3 className="mb-3 font-[family-name:var(--font-serif)] text-xl font-semibold text-[color:var(--color-brand)] sm:text-2xl">
                     {s.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-[color:var(--color-muted-foreground)]">
+                  <p className="mb-5 text-sm leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-base">
                     {s.body}
                   </p>
+                  <ul className="mb-6 space-y-2.5">
+                    {s.bullets?.map((bullet, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-[color:var(--color-foreground)] sm:text-base">
+                        <IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--color-brand)] sm:h-5 sm:w-5" />
+                        <span className="leading-snug">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto pt-4">
+                    <HeroCtas primaryLabel="Book care" callLabel="Call Now" primaryHref={s.href} />
+                  </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </Container>
@@ -264,7 +315,12 @@ export default function HomePage() {
       {/* Task/steps */}
       <section className="section-y">
         <Container>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="mb-10 text-center">
+            <h2 className="font-[family-name:var(--font-serif)] text-3xl font-semibold sm:text-4xl text-[color:var(--color-brand)]">
+              HOW IT WORKS
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((s) => (
               <article
                 key={s.step}
@@ -276,7 +332,7 @@ export default function HomePage() {
                 <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--color-brand)]">
                   Step {s.step}
                 </p>
-                <h2 className="mb-3 font-[family-name:var(--font-serif)] text-2xl font-semibold leading-tight">
+                <h2 className="mb-3 font-[family-name:var(--font-serif)] text-xl font-semibold leading-tight sm:text-2xl">
                   {s.title}
                 </h2>
                 <p className="text-sm leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-base">
@@ -284,6 +340,23 @@ export default function HomePage() {
                 </p>
               </article>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="section-y bg-[color:var(--color-highlight)]">
+        <Container>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="mb-4 font-[family-name:var(--font-serif)] text-3xl font-semibold text-[color:var(--color-brand)] sm:text-4xl">
+              Need Help Choosing the Right Care?
+            </h2>
+            <p className="mb-8 text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-lg">
+              Our care specialists are here to answer your questions and help you build a personalized care plan for your loved one.
+            </p>
+            <div className="flex justify-center">
+              <HeroCtas primaryLabel="Book a Care Assessment" callLabel="Call Us" primaryHref="/contact/" />
+            </div>
           </div>
         </Container>
       </section>

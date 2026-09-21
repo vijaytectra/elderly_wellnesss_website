@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrangeSteps, type ArrangeStep } from "@/components/sections/ArrangeSteps";
 import { OurValues } from "@/components/sections/OurValues";
 import { ServiceFAQ, type ServiceFAQItem } from "@/components/sections/ServiceFAQ";
@@ -18,36 +17,26 @@ import {
 } from "@/lib/schema";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
+import {
+  getPrimaryServiceByHref,
+  toServiceInfoBullets,
+} from "@/data/primary-services";
+
+const SERVICE = getPrimaryServiceByHref("/physiotherapy-services-for-elders/")!;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Home Physiotherapy for Elders in Chennai",
+  title: "Personalised Physiotherapy & Rehabilitation at Home in Chennai",
   description:
-    "Recovering from a hip surgery or a stroke takes more than rest. Elderly Wellness sends licensed physiotherapists to your parent's home, anywhere in Chennai.",
-  ogTitle: "Physiotherapy That Comes to Them",
-  ogDescription:
-    "Licensed physiotherapists treating pain, mobility loss and post-surgical recovery in your parent's own home.",
+    "Home physiotherapy in Chennai for stroke, paralysis, fractures, surgery and joint replacement — strength, balance and mobility training.",
+  ogTitle: "Physiotherapy & Rehabilitation at Home",
+  ogDescription: SERVICE.body,
   path: "/physiotherapy-services-for-elders/",
-  image: "/videos/home/Physiotherapy.jpg",
+  image: SERVICE.image,
 });
 
-const importanceBullets: readonly ServiceInfoBullet[] = [
-  {
-    title: "Pain Relief",
-    body: "Targeting conditions like arthritis, muscle stiffness, and joint problems.",
-  },
-  {
-    title: "Mobility Improvement",
-    body: "Increasing flexibility and reducing the risk of falls.",
-  },
-  {
-    title: "Muscle Strengthening",
-    body: "Supporting weak muscles and enhancing balance.",
-  },
-  {
-    title: "Post-Surgery Recovery",
-    body: "Facilitating faster recovery from surgeries like hip replacements or joint surgeries.",
-  },
-];
+const whatWeProvideBullets: readonly ServiceInfoBullet[] = toServiceInfoBullets(
+  SERVICE.bullets,
+);
 
 const roleBullets: readonly ServiceInfoBullet[] = [
   {
@@ -168,10 +157,10 @@ const steps: readonly ArrangeStep[] = [
           type of care your loved one needs:
         </p>
         <ul>
-          <li>Nursing Care</li>
-          <li>Physiotherapy</li>
-          <li>Geriatric Care</li>
-          <li>Assisted Living Support</li>
+          <li>Post-Operative &amp; Discharge Care at Home</li>
+          <li>Elderly Care at Home</li>
+          <li>Critical &amp; Skilled Nursing Support at Home</li>
+          <li>Personalised Physiotherapy &amp; Rehabilitation at Home</li>
         </ul>
         <p>
           Each service option is designed to address specific needs, so
@@ -341,14 +330,13 @@ const PATH = "/physiotherapy-services-for-elders/";
 
 const pageSchemas = [
   serviceSchema({
-    name: "Home Physiotherapy for Elders",
-    serviceType: "Elderly physiotherapy",
-    description:
-      "In-home physiotherapy for elderly patients in Chennai, covering pain relief, mobility improvement, muscle strengthening and post-surgery recovery.",
+    name: SERVICE.title,
+    serviceType: "Physiotherapy and rehabilitation",
+    description: SERVICE.body,
     path: PATH,
   }),
   faqPageSchema(PATH, faqs),
-  breadcrumbSchema([{ name: "Physiotherapy Services For Elders", path: PATH }]),
+  breadcrumbSchema([{ name: SERVICE.title, path: PATH }]),
 ];
 
 export default function PhysiotherapyPage() {
@@ -360,43 +348,26 @@ export default function PhysiotherapyPage() {
           <Breadcrumb
             items={[
               { label: "Home", href: "/" },
-              { label: "Physiotherapy Services For Elders" },
+              { label: SERVICE.title },
             ]}
           />
         </Container>
       </section>
       <ServiceHero
-        image="/images/services/banner-left.png"
-        imageAlt="Physiotherapist assisting an elderly patient at home"
-        headingLead="Physiotherapy Services for Elders:"
+        image={SERVICE.image}
+        imageAlt={SERVICE.imageAlt}
+        headingLead={SERVICE.title}
         headingAccent="Enhance Mobility & Wellness"
         subheading="Where Age Meets Assistance"
-        paragraphs={[
-          <>
-            Elderly Wellness connects families with professional caregivers,
-            offering physiotherapy services in the comfort of your home. Our
-            home-based physiotherapy services for seniors help elderly
-            individuals lead a safe, independent, and dignified life. Our
-            services are designed to improve the health and mobility of
-            seniors, providing them with the support they need to thrive in
-            their own homes. We focus on{" "}
-            <Link
-              href="/elderly-wellness/"
-              className="text-[color:var(--color-brand)] underline"
-            >
-              elderly wellness,
-            </Link>{" "}
-            ensuring both families and seniors enjoy peace of mind.
-          </>,
-        ]}
+        paragraphs={[SERVICE.body]}
       />
 
       <ServiceInfoBlock
-        heading="Why are Physiotherapy Services Important for Elders?"
-        intro="As seniors age, maintaining their physical health is crucial. Physiotherapy plays a vital role in reducing pain, improving mobility, and enhancing overall quality of life. Here’s how physiotherapy helps elders:"
-        bullets={importanceBullets}
+        heading="What we provide"
+        intro="Personalised physiotherapy to improve movement, strength and balance at home."
+        bullets={whatWeProvideBullets}
         image="/images/services/1.png"
-        imageAlt="Elderly patient receiving physiotherapy"
+        imageAlt={SERVICE.imageAlt}
       />
 
       <ServiceInfoBlock

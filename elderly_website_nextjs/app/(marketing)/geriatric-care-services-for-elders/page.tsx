@@ -17,36 +17,26 @@ import {
 } from "@/lib/schema";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
+import {
+  getPrimaryServiceByHref,
+  toServiceInfoBullets,
+} from "@/data/primary-services";
+
+const SERVICE = getPrimaryServiceByHref("/geriatric-care-services-for-elders/")!;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Geriatric Care for Elders at Home in Chennai",
+  title: "Post-Operative & Discharge Care at Home in Chennai",
   description:
-    "Dementia, frailty and multiple medications need more than a general caregiver. Elderly Wellness provides specialist geriatric care at home across Chennai.",
-  ogTitle: "Specialist Care for Complex Ageing",
-  ogDescription:
-    "Geriatric specialists supporting dementia, frailty and multi-condition care in your parent's own home.",
+    "Professional post-surgery and hospital discharge care at home in Chennai — wound care, medication support, vitals monitoring and recovery assistance.",
+  ogTitle: "Post-Operative Care at Home",
+  ogDescription: SERVICE.body,
   path: "/geriatric-care-services-for-elders/",
-  image: "/videos/home/geriatric-care.jpg",
+  image: SERVICE.image,
 });
 
-const importanceBullets: readonly ServiceInfoBullet[] = [
-  {
-    title: "Chronic Condition Management",
-    body: "Monitoring and managing long-term health conditions like diabetes, arthritis, and heart disease.",
-  },
-  {
-    title: "Cognitive Support",
-    body: "Providing assistance to those experiencing dementia, Alzheimer’s, or other cognitive disorders.",
-  },
-  {
-    title: "Medication Management",
-    body: "Ensuring correct medication administration and preventing adverse drug interactions.",
-  },
-  {
-    title: "Companionship",
-    body: "Offering emotional support and companionship to prevent isolation and improve mental health.",
-  },
-];
+const whatWeProvideBullets: readonly ServiceInfoBullet[] = toServiceInfoBullets(
+  SERVICE.bullets,
+);
 
 const roleBullets: readonly ServiceInfoBullet[] = [
   {
@@ -167,10 +157,10 @@ const steps: readonly ArrangeStep[] = [
           type of care your loved one needs:
         </p>
         <ul>
-          <li>Geriatric Care</li>
-          <li>Nursing Care</li>
-          <li>Physiotherapy</li>
-          <li>Assisted Living Support</li>
+          <li>Post-Operative &amp; Discharge Care at Home</li>
+          <li>Elderly Care at Home</li>
+          <li>Critical &amp; Skilled Nursing Support at Home</li>
+          <li>Personalised Physiotherapy &amp; Rehabilitation at Home</li>
         </ul>
         <p>
           Each service option is designed to address specific needs, so
@@ -339,14 +329,13 @@ const PATH = "/geriatric-care-services-for-elders/";
 
 const pageSchemas = [
   serviceSchema({
-    name: "Geriatric Care Services for Elders",
-    serviceType: "Geriatric care",
-    description:
-      "Specialist in-home geriatric care in Chennai, covering chronic condition management, cognitive support, medication management and companionship.",
+    name: SERVICE.title,
+    serviceType: "Post-operative and discharge care",
+    description: SERVICE.body,
     path: PATH,
   }),
   faqPageSchema(PATH, faqs),
-  breadcrumbSchema([{ name: "Geriatric Care Services For Elders", path: PATH }]),
+  breadcrumbSchema([{ name: SERVICE.title, path: PATH }]),
 ];
 
 export default function GeriatricCarePage() {
@@ -358,39 +347,26 @@ export default function GeriatricCarePage() {
           <Breadcrumb
             items={[
               { label: "Home", href: "/" },
-              { label: "Geriatric Care Services For Elders" },
+              { label: SERVICE.title },
             ]}
           />
         </Container>
       </section>
       <ServiceHero
-        image="/images/services/geriatric/1.png"
-        imageAlt="Geriatric care specialist supporting an elderly patient"
-        headingLead="Geriatric Care Services for Elders"
-        headingAccent="Compassionate Support for Senior Well-being"
+        image={SERVICE.image}
+        imageAlt={SERVICE.imageAlt}
+        headingLead={SERVICE.title}
+        headingAccent="Safe Recovery in the Comfort of Home"
         subheading="Where Age Meets Expert Care"
-        paragraphs={[
-          <>
-            Elderly Wellness connects families with professional caregivers,
-            offering geriatric care in the comfort of your home. Our home-based
-            geriatric care services ensure that elderly individuals receive the
-            right support to live a safe, independent, and dignified life.
-          </>,
-          <>
-            Our geriatric services are designed to improve the health, comfort,
-            and independence of seniors, providing them with the assistance
-            they need to thrive in their own homes. We focus on elderly
-            wellness, ensuring both families and seniors enjoy peace of mind.
-          </>,
-        ]}
+        paragraphs={[SERVICE.body]}
       />
 
       <ServiceInfoBlock
-        heading="Why is Geriatric Care Important for Elders?"
-        intro="As seniors age, their physical, emotional, and mental health needs become more complex. Geriatric care plays a vital role in addressing these needs and ensuring the elderly receive appropriate care to maintain their quality of life. Here’s how geriatric care helps elders:"
-        bullets={importanceBullets}
+        heading="What we provide"
+        intro="Focused post-operative and discharge support, delivered at home by trained care professionals."
+        bullets={whatWeProvideBullets}
         image="/images/services/geriatric/2.png"
-        imageAlt="Geriatric specialist reviewing a care plan"
+        imageAlt={SERVICE.imageAlt}
       />
 
       <ServiceInfoBlock

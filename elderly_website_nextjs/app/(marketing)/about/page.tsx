@@ -252,10 +252,10 @@ export default function AboutPage() {
                 independently, and with dignity at home. Our services include:
               </p>
               <ul className="mb-6 space-y-1 pl-5 text-base leading-relaxed text-[color:var(--color-foreground)] [list-style-type:disc]">
-                <li>Physiotherapy</li>
-                <li>Nursing Services</li>
-                <li>Geriatric Care</li>
-                <li>Assisted Living Support</li>
+                <li>Post-Operative &amp; Discharge Care at Home</li>
+                <li>Elderly Care at Home</li>
+                <li>Critical &amp; Skilled Nursing Support at Home</li>
+                <li>Personalised Physiotherapy &amp; Rehabilitation at Home</li>
               </ul>
               <a
                 href="https://play.google.com/store/apps/details?id=com.elderly.nri"

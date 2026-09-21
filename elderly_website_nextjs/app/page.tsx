@@ -12,7 +12,7 @@ import { SectionTitle } from "@/components/sections/SectionTitle";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
 import { buildMetadata } from "@/lib/seo";
-import { IconCheck } from "@/components/icons";
+import { PRIMARY_SERVICES } from "@/data/primary-services";
 
 export const metadata: Metadata = buildMetadata({
   title: "Elderly Wellness | Elder Care Services in Chennai",
@@ -26,74 +26,6 @@ export const metadata: Metadata = buildMetadata({
   dcType: "Text.Homepage",
 });
 
-interface ServiceCard {
-  href: string;
-  title: string;
-  body: string;
-  bullets?: readonly string[];
-  image: string;
-}
-
-const services: readonly ServiceCard[] = [
-  {
-    href: "/geriatric-care-services-for-elders/",
-    title: "Post-Operative & Discharge Care at Home",
-    body:
-      "Professional care and support after surgery or hospital discharge, helping patients recover safely and comfortably at home.",
-    bullets: [
-      "Wound and dressing care",
-      "Medicine and injection support",
-      "BP, temperature, pulse and oxygen monitoring",
-      "Personal hygiene and toileting support",
-      "Walking, movement and daily activity assistance",
-    ],
-    image: "/images/services/geriatric/2.webp",
-  },
-  {
-    href: "/assisted-living-support-services-for-elders/",
-    title: "Elderly Care at Home",
-    body:
-      "Comfortable and compassionate daily care for seniors, helping them stay safe, active and comfortable at home.",
-    bullets: [
-      "Bathing, grooming and personal hygiene",
-      "Feeding and meal assistance",
-      "Walking and mobility support",
-      "Medicine reminders",
-      "Companionship and help with daily activities",
-    ],
-    image: "/images/services/assisted/2.webp",
-  },
-  {
-    href: "/nursing-services-for-elders/",
-    title: "Critical & Skilled Nursing Support at Home",
-    body:
-      "Professional nursing support for patients who need regular medical care and special attention at home.",
-    bullets: [
-      "Vital signs monitoring",
-      "Injections and IV care as prescribed",
-      "Wound, dressing and bed-sore care",
-      "Catheter and feeding-tube care",
-      "Tracheostomy, oxygen and respiratory care",
-      "Stroke, Paralysis, Bedridden Patients, Feeding-Tube Care",
-    ],
-    image: "/images/services/nursing/2.webp",
-  },
-  {
-    href: "/physiotherapy-services-for-elders/",
-    title: "Personalised Physiotherapy & Rehabilitation at Home",
-    body:
-      "Personalised physiotherapy to improve movement, strength and balance and help patients return to their daily activities.",
-    bullets: [
-      "Stroke and paralysis rehabilitation",
-      "Post-fracture and post-surgery recovery",
-      "Joint replacement rehabilitation",
-      "Strength, balance and walking exercises",
-      "Mobility training and pain/stiffness management",
-    ],
-    image: "/images/services/2.webp",
-  },
-];
-
 const aboutBullets = [
   "Experienced Health and Home Care Experts",
   "Simple and Convenient Bookings",
@@ -105,6 +37,8 @@ interface Step {
   step: string;
   title: string;
   body: string;
+  pointsLabel: string;
+  points: readonly string[];
   icon: ReactNode;
 }
 
@@ -113,7 +47,14 @@ const steps: readonly Step[] = [
     step: "01",
     title: "Tell Us About Your Care Needs",
     body:
-      "Share your family's unique situation and what kind of support your loved one needs. Our care team will listen carefully to understand your requirements.",
+      "Speak with our care team and share the patient's condition, daily routine, care requirements and preferred service.",
+    pointsLabel: "We understand",
+    points: [
+      "Patient's current condition",
+      "Type of care required",
+      "Preferred timing and duration",
+      "Home and family requirements",
+    ],
     icon: (
       <svg viewBox="0 0 48 48" className="h-9 w-9" fill="none" aria-hidden="true">
         <circle cx="21" cy="21" r="10" stroke="currentColor" strokeWidth="2.4" />
@@ -126,7 +67,13 @@ const steps: readonly Step[] = [
     step: "02",
     title: "Care Assessment & Plan",
     body:
-      "We conduct a thorough assessment of the patient's condition and recommend a personalized care plan that ensures their safety, comfort, and recovery at home.",
+      "We understand the patient's needs and recommend the right care option, whether it is elderly care, nursing, post-operative care or physiotherapy.",
+    pointsLabel: "We provide",
+    points: [
+      "Care requirement assessment",
+      "Suitable service recommendation",
+      "Clear pricing and service details",
+    ],
     icon: (
       <svg viewBox="0 0 48 48" className="h-9 w-9" fill="none" aria-hidden="true">
         <rect x="10" y="8" width="28" height="32" rx="4" stroke="currentColor" strokeWidth="2.4" />
@@ -138,7 +85,14 @@ const steps: readonly Step[] = [
     step: "03",
     title: "Right Professional, Right Care",
     body:
-      "We match your loved one with a qualified, background-checked professional—whether a nurse, physiotherapist, or caregiver—who has the right skills for the job.",
+      "We match your family with a suitable caregiver, nurse or physiotherapist based on the patient's needs and the required level of care.",
+    pointsLabel: "Our focus",
+    points: [
+      "Suitable professional matching",
+      "Verified and trained professionals",
+      "Clear handover of care requirements",
+      "Service start as scheduled",
+    ],
     icon: (
       <svg viewBox="0 0 48 48" className="h-9 w-9" fill="none" aria-hidden="true">
         <path
@@ -155,7 +109,14 @@ const steps: readonly Step[] = [
     step: "04",
     title: "Ongoing Care & Family Support",
     body:
-      "We provide continuous support and open communication. You'll stay informed about your loved one's progress, and we'll adjust the care plan as their needs evolve.",
+      "Once care begins, our team stays connected with the family to understand how the service is going and address any concerns.",
+    pointsLabel: "We provide",
+    points: [
+      "Regular follow-up",
+      "Family communication",
+      "Caregiver/nurse coordination",
+      "Support for changes or additional care needs",
+    ],
     icon: (
       <svg viewBox="0 0 48 48" className="h-9 w-9" fill="none" aria-hidden="true">
         <path d="M12 24c0-6.6 5.4-12 12-12s12 5.4 12 12M24 16v8M24 24l-4 4" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
@@ -175,17 +136,20 @@ export default function HomePage() {
             <div>
               <h1 className="mb-4 font-[family-name:var(--font-serif)] text-4xl leading-[1.05] sm:text-5xl md:text-6xl">
                 <span className="font-[family-name:var(--font-display)] text-[color:var(--color-brand)]">
-                  Care at home
+                  Trusted Elderly & Home Healthcare,
                 </span>
                 <span className="mt-1 block font-[family-name:var(--font-serif)]">
-                  for your parents.
+                  Delivered at Home.
                 </span>
               </h1>
               <p className="mb-4 max-w-lg text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-lg">
-                At Elderly Wellness, we bridge the gap between physiotherapists,
-                nursing assistants, caregivers, and the elderly.
+                Professional nurses, caregivers and physiotherapists providing
+                personalised care for seniors across Tamil Nadu — from everyday
+                elderly care and post-hospital recovery to specialised nursing
+                needs.
               </p>
-              <p className="mb-6 max-w-lg text-base font-semibold text-[color:var(--color-brand)]">
+              <TrustStrip />
+              <p className="mb-6 mt-5 max-w-lg text-base font-semibold text-[color:var(--color-brand)]">
                 Elderly Wellness is our care service. Elderly Care Plus is our
                 app.
               </p>
@@ -203,7 +167,6 @@ export default function HomePage() {
                   </li>
                 </ul>
               </div>
-              <TrustStrip />
             </div>
             <HeroVideos />
           </div>
@@ -213,38 +176,33 @@ export default function HomePage() {
       {/* Services */}
       <section id="elder-care-services" className="section-y">
         <Container>
-          <SectionTitle heading="Elder Care Services" />
+          <SectionTitle heading="Services" />
           <div className="mt-5 grid grid-cols-1 gap-6 sm:mt-8 lg:grid-cols-2">
-            {services.map((s) => (
+            {PRIMARY_SERVICES.map((s) => (
               <div
-                key={s.title}
+                key={s.id}
                 className="group flex flex-col overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)] transition hover:shadow-lg"
               >
-                <div className="relative aspect-[16/9] w-full shrink-0 bg-[color:var(--color-muted)]">
-                  <Image quality={95}
+                <Link href={s.href} className="relative aspect-[16/9] w-full shrink-0 bg-[color:var(--color-muted)]">
+                  <Image
+                    quality={95}
                     src={s.image}
-                    alt={s.title}
+                    alt={s.imageAlt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
-                    className="object-cover transition group-hover:scale-[1.02]"
+                    className="object-cover object-center transition group-hover:scale-[1.02]"
                   />
-                </div>
+                </Link>
                 <div className="flex flex-1 flex-col p-6 sm:p-8">
                   <h3 className="mb-3 font-[family-name:var(--font-serif)] text-xl font-semibold text-[color:var(--color-brand)] sm:text-2xl">
-                    {s.title}
+                    <Link href={s.href} className="hover:underline">
+                      {s.title}
+                    </Link>
                   </h3>
-                  <p className="mb-5 text-sm leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-base">
+                  <p className="mb-6 text-sm leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-base">
                     {s.body}
                   </p>
-                  <ul className="mb-6 space-y-2.5">
-                    {s.bullets?.map((bullet, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-[color:var(--color-foreground)] sm:text-base">
-                        <IconCheck className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--color-brand)] sm:h-5 sm:w-5" />
-                        <span className="leading-snug">{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-auto pt-4">
+                  <div className="mt-auto pt-2">
                     <HeroCtas primaryLabel="Book care" callLabel="Call Now" primaryHref={s.href} />
                   </div>
                 </div>
@@ -312,32 +270,57 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Task/steps */}
-      <section className="section-y">
+      {/* How it works */}
+      <section id="how-it-works" className="section-y">
         <Container>
-          <div className="mb-10 text-center">
-            <h2 className="font-[family-name:var(--font-serif)] text-3xl font-semibold sm:text-4xl text-[color:var(--color-brand)]">
-              HOW IT WORKS
+          <div className="mb-10 mx-auto max-w-3xl text-center">
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--color-brand)]">
+              How It Works
+            </p>
+            <h2 className="mb-3 font-[family-name:var(--font-serif)] text-3xl font-semibold text-[color:var(--color-foreground)] sm:text-4xl">
+              Simple, Personalised Care — From Your First Call to Ongoing Support
             </h2>
+            <p className="text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-lg">
+              We understand your family&apos;s needs, recommend the right care, and stay connected throughout the service.
+            </p>
           </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {steps.map((s) => (
               <article
                 key={s.step}
-                className="rounded-2xl border border-slate-200 bg-white p-7 shadow-[var(--shadow-card)]"
+                className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-[var(--shadow-card)]"
               >
-                <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-[color:var(--color-brand)] text-white">
-                  {s.icon}
+                <div className="mb-5 flex items-center gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[color:var(--color-brand)] text-white">
+                    {s.icon}
+                  </div>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--color-brand)]">
+                    {s.step}
+                  </p>
                 </div>
-                <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[color:var(--color-brand)]">
-                  Step {s.step}
-                </p>
-                <h2 className="mb-3 font-[family-name:var(--font-serif)] text-xl font-semibold leading-tight sm:text-2xl">
+                <h3 className="mb-3 font-[family-name:var(--font-serif)] text-xl font-semibold leading-tight sm:text-2xl">
                   {s.title}
-                </h2>
-                <p className="text-sm leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-base">
+                </h3>
+                <p className="mb-4 text-sm leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-base">
                   {s.body}
                 </p>
+                <p className="mb-2 text-sm font-semibold text-[color:var(--color-foreground)]">
+                  {s.pointsLabel}:
+                </p>
+                <ul className="mt-auto space-y-2">
+                  {s.points.map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-start gap-2.5 text-sm leading-snug text-[color:var(--color-foreground)]"
+                    >
+                      <span
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--color-brand)]"
+                        aria-hidden="true"
+                      />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
@@ -352,10 +335,15 @@ export default function HomePage() {
               Need Help Choosing the Right Care?
             </h2>
             <p className="mb-8 text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-lg">
-              Our care specialists are here to answer your questions and help you build a personalized care plan for your loved one.
+              Tell us about your loved one&apos;s needs. Our care team will guide
+              you to the right service and support.
             </p>
             <div className="flex justify-center">
-              <HeroCtas primaryLabel="Book a Care Assessment" callLabel="Call Us" primaryHref="/contact/" />
+              <HeroCtas
+                primaryLabel="Book a Care Assessment"
+                callLabel="Call Us"
+                primaryHref="/contact/"
+              />
             </div>
           </div>
         </Container>

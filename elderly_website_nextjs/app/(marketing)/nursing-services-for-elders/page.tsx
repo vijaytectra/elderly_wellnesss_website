@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArrangeSteps, type ArrangeStep } from "@/components/sections/ArrangeSteps";
 import { OurValues } from "@/components/sections/OurValues";
 import { ServiceFAQ, type ServiceFAQItem } from "@/components/sections/ServiceFAQ";
@@ -18,36 +17,26 @@ import {
 } from "@/lib/schema";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
+import {
+  getPrimaryServiceByHref,
+  toServiceInfoBullets,
+} from "@/data/primary-services";
+
+const SERVICE = getPrimaryServiceByHref("/nursing-services-for-elders/")!;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Home Nursing Services for Elders in Chennai",
+  title: "Critical & Skilled Nursing Support at Home in Chennai",
   description:
-    "Wound care, catheters and injections are not things a family should improvise. Elderly Wellness places trained home nursing staff with elders across Chennai.",
-  ogTitle: "Clinical Care Without the Hospital",
-  ogDescription:
-    "Trained nurses handling wound care, medication, monitoring and post-operative recovery at home in Chennai.",
+    "Skilled home nursing in Chennai — vitals monitoring, injections, IV care, wound dressing, catheter and feeding-tube care for complex needs.",
+  ogTitle: "Critical & Skilled Nursing at Home",
+  ogDescription: SERVICE.body,
   path: "/nursing-services-for-elders/",
-  image: "/videos/home/Nurse.jpg",
+  image: SERVICE.image,
 });
 
-const importanceBullets: readonly ServiceInfoBullet[] = [
-  {
-    title: "Chronic Condition Management",
-    body: "Monitoring and managing health conditions like diabetes, hypertension, and heart disease.",
-  },
-  {
-    title: "Medication Management",
-    body: "Administering and organizing medications to ensure correct dosages.",
-  },
-  {
-    title: "Post-Surgery Care",
-    body: "Assisting with recovery after surgery, including wound care and mobility support.",
-  },
-  {
-    title: "Emotional Support",
-    body: "Offering companionship and emotional reassurance to prevent isolation.",
-  },
-];
+const whatWeProvideBullets: readonly ServiceInfoBullet[] = toServiceInfoBullets(
+  SERVICE.bullets,
+);
 
 const roleBullets: readonly ServiceInfoBullet[] = [
   {
@@ -168,10 +157,10 @@ const steps: readonly ArrangeStep[] = [
           type of care your loved one needs:
         </p>
         <ul>
-          <li>Nursing Care</li>
-          <li>Geriatric Care</li>
-          <li>Physiotherapy</li>
-          <li>Assisted Living Support</li>
+          <li>Post-Operative &amp; Discharge Care at Home</li>
+          <li>Elderly Care at Home</li>
+          <li>Critical &amp; Skilled Nursing Support at Home</li>
+          <li>Personalised Physiotherapy &amp; Rehabilitation at Home</li>
         </ul>
         <p>
           Each service option is designed to address specific needs, so
@@ -340,14 +329,13 @@ const PATH = "/nursing-services-for-elders/";
 
 const pageSchemas = [
   serviceSchema({
-    name: "Home Nursing Services for Elders",
-    serviceType: "Elderly home nursing",
-    description:
-      "In-home nursing for elderly patients in Chennai, covering chronic condition management, medication administration, post-surgery care and monitoring.",
+    name: SERVICE.title,
+    serviceType: "Critical and skilled nursing",
+    description: SERVICE.body,
     path: PATH,
   }),
   faqPageSchema(PATH, faqs),
-  breadcrumbSchema([{ name: "Nursing Services For Elders", path: PATH }]),
+  breadcrumbSchema([{ name: SERVICE.title, path: PATH }]),
 ];
 
 export default function NursingPage() {
@@ -359,45 +347,26 @@ export default function NursingPage() {
           <Breadcrumb
             items={[
               { label: "Home", href: "/" },
-              { label: "Nursing Services For Elders" },
+              { label: SERVICE.title },
             ]}
           />
         </Container>
       </section>
       <ServiceHero
-        image="/images/services/nursing/1.png"
-        imageAlt="Nurse caring for an elderly patient at home"
-        headingLead="Nursing Services for Elders -"
-        headingAccent="Enhance Mobility & Wellness"
+        image={SERVICE.image}
+        imageAlt={SERVICE.imageAlt}
+        headingLead={SERVICE.title}
+        headingAccent="Clinical Care Without the Hospital"
         subheading="Where Age Meets Professional Assistance"
-        paragraphs={[
-          <>
-            Elderly Wellness connects families with professional caregivers,
-            offering Nnursing services in the comfort of your home. Our
-            home-based nursing services for seniors help elderly individuals
-            lead a safe, independent, and dignified life.
-          </>,
-          <>
-            Our services are designed to improve the health and mobility of
-            seniors, providing them with the support they need to thrive in
-            their own homes. We focus on{" "}
-            <Link
-              href="/elderly-wellness/"
-              className="text-[color:var(--color-brand)] underline"
-            >
-              elderly wellness
-            </Link>
-            , ensuring both families and seniors enjoy peace of mind.
-          </>,
-        ]}
+        paragraphs={[SERVICE.body]}
       />
 
       <ServiceInfoBlock
-        heading="Why are Nursing Services Important for Elders?"
-        intro="As seniors age, their healthcare needs become more complex. Nursing care plays a critical role in managing chronic conditions, providing emotional support, and ensuring that seniors remain comfortable at home. Here’s how nursing services benefit elders:"
-        bullets={importanceBullets}
+        heading="What we provide"
+        intro="Skilled nursing support for patients who need regular medical care and special attention at home."
+        bullets={whatWeProvideBullets}
         image="/images/services/nursing/2.png"
-        imageAlt="Nurse taking notes with an elderly patient"
+        imageAlt={SERVICE.imageAlt}
       />
 
       <ServiceInfoBlock

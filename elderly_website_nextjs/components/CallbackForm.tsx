@@ -9,10 +9,10 @@ import { TrustStrip } from "@/components/TrustStrip";
 const ENQUIRY_ENDPOINT = "/api/enquiry";
 
 const SERVICES = [
-  { value: "Physiotherapy", label: "Physiotherapy at Home" },
-  { value: "Home Nursing", label: "Home Nursing Care" },
-  { value: "Geriatric Care", label: "Geriatric Care" },
-  { value: "Assisted Living", label: "Assisted Living Support" },
+  { value: "Post-Operative Care", label: "Post-Operative & Discharge Care" },
+  { value: "Elderly Care at Home", label: "Elderly Care at Home" },
+  { value: "Critical Nursing", label: "Critical & Skilled Nursing" },
+  { value: "Physiotherapy", label: "Physiotherapy & Rehabilitation" },
   { value: "General Care Inquiry", label: "General Care Inquiry" },
 ] as const;
 
@@ -26,19 +26,19 @@ const TIMES = [
 function defaultServiceFromPath(pathname: string): string {
   const p = pathname.toLowerCase();
   if (p.includes("physiotherapy")) return "Physiotherapy";
-  if (p.includes("nursing")) return "Home Nursing";
-  if (p.includes("geriatric")) return "Geriatric Care";
-  if (p.includes("assisted-living")) return "Assisted Living";
+  if (p.includes("nursing")) return "Critical Nursing";
+  if (p.includes("geriatric")) return "Post-Operative Care";
+  if (p.includes("assisted-living")) return "Elderly Care at Home";
   return "General Care Inquiry";
 }
 
 function whatsappHref(pathname: string): string {
   const p = pathname.toLowerCase();
   let text = "Hi, I would like to inquire about Elderly Wellness care services";
-  if (p.includes("physiotherapy")) text = "Hi, I would like to know about Physiotherapy services";
-  else if (p.includes("nursing")) text = "Hi, I would like to know about Home Nursing services";
-  else if (p.includes("geriatric")) text = "Hi, I would like to know about Geriatric Care services";
-  else if (p.includes("assisted-living")) text = "Hi, I would like to know about Assisted Living services";
+  if (p.includes("physiotherapy")) text = "Hi, I would like to know about Physiotherapy & Rehabilitation services";
+  else if (p.includes("nursing")) text = "Hi, I would like to know about Critical & Skilled Nursing services";
+  else if (p.includes("geriatric")) text = "Hi, I would like to know about Post-Operative & Discharge Care";
+  else if (p.includes("assisted-living")) text = "Hi, I would like to know about Elderly Care at Home";
   else if (p.includes("contact")) text = "Hi, I would like to contact Elderly Wellness";
   return `https://wa.me/918122666490?text=${encodeURIComponent(text)}`;
 }

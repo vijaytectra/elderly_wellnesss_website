@@ -4,7 +4,7 @@ import { IconCheck } from "@/components/icons";
 
 export interface ServiceInfoBullet {
   title: string;
-  body: string;
+  body?: string;
 }
 
 interface ServiceInfoBlockProps {
@@ -58,9 +58,11 @@ export function ServiceInfoBlock({
                   </span>
                   <div>
                     <h3 className="mb-1 text-lg font-semibold">{b.title}</h3>
-                    <p className="text-sm leading-relaxed text-[color:var(--color-muted-foreground)]">
-                      {b.body}
-                    </p>
+                    {b.body ? (
+                      <p className="text-sm leading-relaxed text-[color:var(--color-muted-foreground)]">
+                        {b.body}
+                      </p>
+                    ) : null}
                   </div>
                 </li>
               ))}

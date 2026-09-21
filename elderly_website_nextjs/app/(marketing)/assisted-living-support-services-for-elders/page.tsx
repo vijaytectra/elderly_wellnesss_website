@@ -17,40 +17,28 @@ import {
 } from "@/lib/schema";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
+import {
+  getPrimaryServiceByHref,
+  toServiceInfoBullets,
+} from "@/data/primary-services";
+
+const SERVICE = getPrimaryServiceByHref(
+  "/assisted-living-support-services-for-elders/",
+)!;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Assisted Living Support at Home in Chennai",
+  title: "Elderly Care at Home in Chennai",
   description:
-    "Bathing, meals and medication get harder long before a care home is the answer. Elderly Wellness provides assisted living support in your parent's own home.",
-  ogTitle: "Assisted Living, Without Leaving Home",
-  ogDescription:
-    "Daily support with hygiene, meals, medication and companionship, so a parent can stay in their own home.",
+    "Compassionate daily elderly care at home in Chennai — bathing, feeding, mobility support, medicine reminders and companionship.",
+  ogTitle: "Elderly Care at Home",
+  ogDescription: SERVICE.body,
   path: "/assisted-living-support-services-for-elders/",
-  image: "/videos/home/assisted-living-care.jpg",
+  image: SERVICE.image,
 });
 
-const importanceBullets: readonly ServiceInfoBullet[] = [
-  {
-    title: "Personal Care",
-    body: "Assistance with daily activities such as bathing, dressing, grooming, and toileting.",
-  },
-  {
-    title: "Medication Management",
-    body: "Ensuring proper administration of medications, reducing the risk of medication errors.",
-  },
-  {
-    title: "Meal Preparation",
-    body: "Preparing nutritious meals and helping with feeding, ensuring proper diet and hydration.",
-  },
-  {
-    title: "Household Assistance",
-    body: "Light housekeeping, laundry, and maintaining a clean living environment.",
-  },
-  {
-    title: "Companionship",
-    body: "Providing emotional support and companionship to combat loneliness and improve mental health.",
-  },
-];
+const whatWeProvideBullets: readonly ServiceInfoBullet[] = toServiceInfoBullets(
+  SERVICE.bullets,
+);
 
 const roleBullets: readonly ServiceInfoBullet[] = [
   {
@@ -171,10 +159,10 @@ const steps: readonly ArrangeStep[] = [
           type of care your loved one needs:
         </p>
         <ul>
-          <li>Assisted Living Support</li>
-          <li>Nursing Care</li>
-          <li>Physiotherapy</li>
-          <li>Geriatric Care</li>
+          <li>Post-Operative &amp; Discharge Care at Home</li>
+          <li>Elderly Care at Home</li>
+          <li>Critical &amp; Skilled Nursing Support at Home</li>
+          <li>Personalised Physiotherapy &amp; Rehabilitation at Home</li>
         </ul>
         <p>
           Each service option is designed to address specific needs, so
@@ -343,14 +331,13 @@ const PATH = "/assisted-living-support-services-for-elders/";
 
 const pageSchemas = [
   serviceSchema({
-    name: "Assisted Living Support for Elders",
-    serviceType: "Assisted living support",
-    description:
-      "In-home assisted living support in Chennai, covering personal care, medication management, meal preparation, household assistance and companionship.",
+    name: SERVICE.title,
+    serviceType: "Elderly care at home",
+    description: SERVICE.body,
     path: PATH,
   }),
   faqPageSchema(PATH, faqs),
-  breadcrumbSchema([{ name: "Assisted Living Support Services For Elders", path: PATH }]),
+  breadcrumbSchema([{ name: SERVICE.title, path: PATH }]),
 ];
 
 export default function AssistedLivingSupportPage() {
@@ -362,39 +349,26 @@ export default function AssistedLivingSupportPage() {
           <Breadcrumb
             items={[
               { label: "Home", href: "/" },
-              { label: "Assisted Living Support Services For Elders" },
+              { label: SERVICE.title },
             ]}
           />
         </Container>
       </section>
       <ServiceHero
-        image="/images/services/assisted/1.png"
-        imageAlt="Caregiver assisting an elderly person with daily activities"
-        headingLead="Assisted Living Support for Elders"
+        image={SERVICE.image}
+        imageAlt={SERVICE.imageAlt}
+        headingLead={SERVICE.title}
         headingAccent="Compassionate Care for Daily Living"
         subheading="Where Age Meets Comprehensive Assistance"
-        paragraphs={[
-          <>
-            Elderly Wellness connects families with offering assisted living
-            support in the comfort of your home. Our home-based assisted
-            living support services help elderly individuals lead a safe,
-            independent, and dignified life.
-          </>,
-          <>
-            Our services are designed to improve the health, comfort, and
-            independence of seniors, providing them with the assistance they
-            need to thrive in their own homes. We focus on elderly wellness,
-            ensuring both families and seniors enjoy peace of mind.
-          </>,
-        ]}
+        paragraphs={[SERVICE.body]}
       />
 
       <ServiceInfoBlock
-        heading="Why is Assisted Living Support Important for Elders?"
-        intro="As seniors age, their ability to perform daily activities may decline. Assisted living support is crucial for helping elderly individuals with routine tasks while preserving their independence. Here’s how assisted living support benefits elders:"
-        bullets={importanceBullets}
+        heading="What we provide"
+        intro="Day-to-day support that helps seniors stay safe, active and comfortable at home."
+        bullets={whatWeProvideBullets}
         image="/images/services/assisted/2.png"
-        imageAlt="Caregiver helping elderly person"
+        imageAlt={SERVICE.imageAlt}
       />
 
       <ServiceInfoBlock

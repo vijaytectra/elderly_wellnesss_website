@@ -22,7 +22,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','${GTM_ID}');`;
 
 const description =
-  "Home nursing, physiotherapy, geriatric care, and assisted living in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 81226 66490.";
+  "Post-operative care, elderly care, skilled nursing and physiotherapy at home in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 81226 66490.";
 const homeTitle = `${SITE_NAME} | Elder Care Services in Chennai`;
 
 export const viewport: Viewport = {

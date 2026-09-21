@@ -78,7 +78,7 @@ export default function ChennaiLocationsPage() {
                 <span className="text-[color:var(--color-brand)]">Chennai</span>
               </>
             }
-            description="Home physiotherapy, nursing, geriatric care, and assisted living support across Chennai neighbourhoods. Choose your area to see how we care for families nearby."
+            description="Home physiotherapy, nursing, post-operative care and elderly care across Chennai neighbourhoods. Choose your area to see how we care for families nearby."
           />
         </Container>
       </section>

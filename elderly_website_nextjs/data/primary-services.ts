@@ -13,12 +13,13 @@ export interface PrimaryService {
   readonly bullets: readonly string[];
   readonly image: string;
   readonly imageAlt: string;
+  readonly imagePosition?: string;
 }
 
 export const PRIMARY_SERVICES: readonly PrimaryService[] = [
   {
     id: "post-operative",
-    href: "/geriatric-care-services-for-elders/",
+    href: "/post-operative-discharge-care-at-home/",
     navLabel: "Post-Operative Care",
     navHint: "Recovery support after surgery or hospital discharge",
     title: "Post-Operative & Discharge Care at Home",
@@ -36,7 +37,7 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
   },
   {
     id: "elderly-care",
-    href: "/assisted-living-support-services-for-elders/",
+    href: "/elderly-care-at-home/",
     navLabel: "Elderly Care at Home",
     navHint: "Daily living assistance and compassionate companionship",
     title: "Elderly Care at Home",
@@ -54,7 +55,7 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
   },
   {
     id: "nursing",
-    href: "/nursing-services-for-elders/",
+    href: "/critical-skilled-nursing-at-home/",
     navLabel: "Critical & Skilled Nursing",
     navHint: "Medical nursing care for complex needs at home",
     title: "Critical & Skilled Nursing Support at Home",
@@ -72,7 +73,7 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
   },
   {
     id: "physiotherapy",
-    href: "/physiotherapy-services-for-elders/",
+    href: "/physiotherapy-rehabilitation-at-home/",
     navLabel: "Physiotherapy & Rehabilitation",
     navHint: "Mobility, strength and recovery at home",
     title: "Personalised Physiotherapy & Rehabilitation at Home",
@@ -87,6 +88,7 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
     ],
     image: "/images/services/hero/physiotherapy.jpg",
     imageAlt: "Indian physiotherapist guiding an elderly woman through exercises at home",
+    imagePosition: "object-top",
   },
 ] as const;
 

@@ -22,15 +22,15 @@ import {
   toServiceInfoBullets,
 } from "@/data/primary-services";
 
-const SERVICE = getPrimaryServiceByHref("/geriatric-care-services-for-elders/")!;
+const SERVICE = getPrimaryServiceByHref("/physiotherapy-rehabilitation-at-home/")!;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Post-Operative & Discharge Care at Home in Chennai",
+  title: "Personalised Physiotherapy & Rehabilitation at Home in Chennai",
   description:
-    "Professional post-surgery and hospital discharge care at home in Chennai — wound care, medication support, vitals monitoring and recovery assistance.",
-  ogTitle: "Post-Operative Care at Home",
+    "Home physiotherapy in Chennai for stroke, paralysis, fractures, surgery and joint replacement — strength, balance and mobility training.",
+  ogTitle: "Physiotherapy & Rehabilitation at Home",
   ogDescription: SERVICE.body,
-  path: "/geriatric-care-services-for-elders/",
+  path: "/physiotherapy-rehabilitation-at-home/",
   image: SERVICE.image,
 });
 
@@ -40,58 +40,58 @@ const whatWeProvideBullets: readonly ServiceInfoBullet[] = toServiceInfoBullets(
 
 const roleBullets: readonly ServiceInfoBullet[] = [
   {
-    title: "Assess health status",
-    body: "Thoroughly assess physical, mental, and emotional health to create a tailored care plan.",
+    title: "Assess physical health",
+    body: "A thorough assessment of the patient’s needs and conditions.",
   },
   {
-    title: "Develop care plans",
-    body: "Create personalized care plans to address specific geriatric needs, from mobility support to emotional well-being.",
-  },
-  {
-    title: "Monitor health",
-    body: "Regularly track the health progress of seniors and adjust care plans accordingly.",
+    title: "Develop personalized plans",
+    body: "Creating tailored exercise and rehabilitation plans.",
   },
   {
     title: "Provide hands-on care",
-    body: "Assist with daily tasks, mobility, personal care, and offer emotional support.",
+    body: "Guiding and assisting through exercises and stretches.",
+  },
+  {
+    title: "Monitor progress",
+    body: "Ensuring therapy is progressing and making necessary adjustments.",
   },
 ];
 
 const whyHomeBullets: readonly ServiceInfoBullet[] = [
   {
     title: "Convenience",
-    body: "Seniors receive comprehensive care without having to leave the comfort of their homes.",
+    body: "No need to travel, making it ideal for seniors with limited mobility.",
   },
   {
     title: "Personalized Care",
-    body: "One-on-one care designed to meet the unique needs of each elderly individual.",
+    body: "One-on-one physiotherapy sessions tailored to the individual's needs.",
   },
   {
     title: "Comfort",
-    body: "Remaining in a familiar environment reduces stress and promotes a sense of security.",
+    body: "The therapy is conducted in a familiar and comfortable home environment.",
   },
   {
     title: "Consistency",
-    body: "Regular and ongoing care ensures that seniors receive continuous attention and support.",
+    body: "Regular and continuous physiotherapy ensures steady progress and better results.",
   },
 ];
 
 const expectBullets: readonly ServiceInfoBullet[] = [
   {
     title: "Initial assessment",
-    body: "A geriatric care specialist will evaluate your loved one’s physical, mental, and emotional health.",
+    body: "The physiotherapist will evaluate your loved one’s physical health.",
   },
   {
-    title: "Customized care plan",
-    body: "Based on the assessment, a personalized care plan will be developed to address their specific needs.",
+    title: "Customized treatment plan",
+    body: "A plan will be created to address specific health issues.",
   },
   {
-    title: "Ongoing support",
-    body: "The specialist will provide daily care, assist with mobility, manage medications, and offer companionship.",
+    title: "Therapy sessions",
+    body: "Focus on improving strength, mobility, and reducing pain.",
   },
   {
-    title: "Regular monitoring",
-    body: "Progress will be tracked, and adjustments will be made to the care plan as needed.",
+    title: "Regular follow-ups",
+    body: "Progress will be monitored to ensure effective treatment.",
   },
 ];
 
@@ -99,12 +99,12 @@ const whyChooseFeatures: readonly WhyChooseUsFeature[] = [
   {
     icon: "/images/services/physio-icons/simplified-discovery-process.png",
     title: "Simplified Discovery Process",
-    body: "Finding the right geriatric care provider can be challenging. Our care specialists make it easy by assessing your loved one’s needs and matching them with the most suitable caregiver, saving you time and effort.",
+    body: "Finding the right care provider can be overwhelming, but our care specialists make it easy. They assess your loved one’s needs and match them with the most suitable caregiver, saving you time and effort.",
   },
   {
     icon: "/images/services/physio-icons/affordable-transparent-care.png",
     title: "Affordable, Transparent Care",
-    body: "We offer flexible, slab-based pricing, ensuring you receive top-quality care at an affordable price. Our transparent pricing system helps you choose the right service without any surprises.",
+    body: "We offer flexible, , ensuring top-quality care that fits within your budget. Our transparent pricing system helps you choose the right service without any surprises.",
   },
   {
     icon: "/images/services/physio-icons/reliable-long-term-support.png",
@@ -114,12 +114,12 @@ const whyChooseFeatures: readonly WhyChooseUsFeature[] = [
   {
     icon: "/images/services/physio-icons/quality-you-can-count-on.png",
     title: "Quality You Can Count On",
-    body: "We only work with caregivers who are thoroughly screened, vetted, and trained to provide the highest quality care. All our caregivers are part of the Elderly Wellness family, trained at EACH. This ensures your loved ones receive the best possible care—whether they need help with daily tasks, medical care, or emotional support.",
+    body: "At Elderly Wellness, we only work with caregivers who are thoroughly screened, vetted, and trained to provide the highest quality care. All our caregivers are part of the Elderly Wellness family and are trained at our Elderly Academy of Caretaking & Hospitality (EACH). This academy is dedicated to elevating their skills and expertise, ensuring your loved ones receive the best care possible—whether they need physical assistance, medical care, or emotional support.",
   },
   {
     icon: "/images/services/physio-icons/longevity-of-care.png",
     title: "Longevity of Care",
-    body: "At Elderly Wellness, we don’t just provide short-term solutions. We are committed to offering long-term care, ensuring ongoing support for your loved ones. Should any issues arise, we’re here to resolve them quickly and maintain continuity of care.",
+    body: "At Elderly Wellness, we don’t just offer short-term solutions. We’re committed to providing long-term support for your loved ones, ensuring consistent and dependable care for as long as necessary. Should any issues arise, we’re here to quickly resolve them and maintain continuity of care.",
   },
 ];
 
@@ -219,10 +219,7 @@ const steps: readonly ArrangeStep[] = [
           <li>Qualifications and experience</li>
           <li>Availability</li>
         </ul>
-        <p>
-          This way, you&rsquo;ll know exactly who will be providing care for
-          your loved one.
-        </p>
+        <p>This way, you&rsquo;ll know exactly who will be providing care for your loved one.</p>
       </>
     ),
   },
@@ -276,61 +273,65 @@ const steps: readonly ArrangeStep[] = [
 
 const faqs: readonly ServiceFAQItem[] = [
   {
-    q: "What is geriatric care for elderly individuals?",
-    a: "Geriatric care involves comprehensive medical and personal support for seniors, including managing chronic conditions, medication, and emotional well-being.",
+    q: "What is physiotherapy and rehabilitation at home?",
+    a: "Physiotherapy helps seniors maintain and improve mobility, strength, and flexibility. It is an essential part of elderly care to prevent physical decline.",
   },
   {
-    q: "How often should elderly people receive geriatric care?",
-    a: "The frequency of care depends on individual needs. It could range from daily visits for those with complex health needs to weekly check-ins for those who require less frequent support.",
+    q: "How often should elderly people receive physiotherapy?",
+    a: "Frequency varies, but typically, 1-2 sessions per week are ideal to see improvements in physical health.",
   },
   {
-    q: "Is home geriatric care covered by insurance?",
-    a: "Insurance coverage varies by plan. Check with your provider to determine if home geriatric care is covered under your policy.",
+    q: "Is home physiotherapy covered by insurance?",
+    a: "Coverage depends on the insurance plan. We recommend checking with your insurance provider to determine eligibility.",
   },
   {
-    q: "How qualified are your geriatric care specialists?",
-    a: "Our geriatric care specialists are licensed professionals with extensive experience in elderly care, ensuring the highest level of care for your loved one.",
+    q: "How qualified are your physiotherapists?",
+    a: "All our physiotherapists are licensed professionals with extensive experience in elderly care.",
   },
   {
-    q: "What happens after I sign up and select the geriatric care service I need?",
-    a: "Once you sign up, an Elderly Wellness specialist will contact you to discuss your loved one’s needs and assign the most suitable caregiver.",
+    q: "What happens after I sign up and select the physiotherapy service I need?",
+    a: "Once you sign up and choose the service you need, one of our Elderly Wellness specialists will contact you to discuss your requirements. They will assign the most suitable physiotherapist based on your elderly loved one’s specific needs and preferences.",
   },
   {
     q: "Can I book more than one session in a day?",
-    a: "Yes, multiple sessions can be scheduled in a day. Confirm the availability during the call with our specialist.",
+    a: "Yes, you can schedule multiple sessions on the same day. During the call with our specialist, you can check the availability of your service provider and arrange additional sessions if necessary.",
   },
   {
     q: "How do I pay for the service?",
-    a: "Once the service provider is assigned, you’ll make a secure payment directly through the app, and the booking will be finalized.",
+    a: "After the service provider is assigned, you will receive their details. You can then make a secure payment directly through the app. Once the payment is confirmed, your booking will be finalized, and the service will be scheduled.",
   },
   {
     q: "How can I change the contact information or address of the elderly person?",
-    a: "You can easily update contact details and address in your account settings within the app.",
+    a: "You can easily update the contact details and address of the elderly person in your account settings within the app. Ensure these details are correct before finalizing any service bookings.",
   },
   {
     q: "How do I track the status of my booking or service?",
-    a: "Receive real-time notifications through the app, allowing you to track the progress of your loved one’s care.",
+    a: "Once the service provider is assigned, you will receive notifications via the app regarding their arrival time and status updates. You can track the real-time progress of the session through the app.",
+  },
+  {
+    q: "How will I know which service provider is assigned to my booking?",
+    a: "After our specialist contacts you, they will assign a provider based on the elderly person's needs. You will receive detailed information about the physiotherapist, including their profile, qualifications, and experience through the app.",
   },
   {
     q: "What if the service provider does not arrive on time?",
-    a: "If there’s a delay, you’ll be notified through the app. For significant delays, contact customer support for assistance.",
+    a: "If there is any delay, you will be notified through the app. If there are significant delays, please reach out to our customer support team, and we will assist in resolving the issue as quickly as possible.",
   },
   {
-    q: "Can I request the same caregiver for future sessions?",
-    a: "Yes, you can request the same caregiver for future sessions as long as they are available.",
+    q: "Can I request the same physiotherapist for future sessions?",
+    a: "Yes, you can request the same physiotherapist for future sessions. Simply note their profile and mention it when booking. If they are available, they can be scheduled for additional sessions.",
   },
   {
     q: "Is my payment information safe?",
-    a: "Yes, all payments are securely processed through encrypted methods, ensuring the protection of your financial and personal information.",
+    a: "Absolutely! All payment transactions are processed through secure encryption methods. Your payment and personal details are fully protected and stored securely in accordance with the highest standards of privacy and security.",
   },
 ];
 
-const PATH = "/geriatric-care-services-for-elders/";
+const PATH = "/physiotherapy-rehabilitation-at-home/";
 
 const pageSchemas = [
   serviceSchema({
     name: SERVICE.title,
-    serviceType: "Post-operative and discharge care",
+    serviceType: "Physiotherapy and rehabilitation",
     description: SERVICE.body,
     path: PATH,
   }),
@@ -338,7 +339,7 @@ const pageSchemas = [
   breadcrumbSchema([{ name: SERVICE.title, path: PATH }]),
 ];
 
-export default function GeriatricCarePage() {
+export default function PhysiotherapyPage() {
   return (
     <div>
       <JsonLd id="page-schema" data={pageSchemas} />
@@ -356,42 +357,42 @@ export default function GeriatricCarePage() {
         image={SERVICE.image}
         imageAlt={SERVICE.imageAlt}
         headingLead={SERVICE.title}
-        headingAccent="Safe Recovery in the Comfort of Home"
-        subheading="Where Age Meets Expert Care"
+        headingAccent="Enhance Mobility & Wellness"
+        subheading="Where Age Meets Assistance"
         paragraphs={[SERVICE.body]}
       />
 
       <ServiceInfoBlock
         heading="What we provide"
-        intro="Focused post-operative and discharge support, delivered at home by trained care professionals."
+        intro="Personalised physiotherapy to improve movement, strength and balance at home."
         bullets={whatWeProvideBullets}
-        image="/images/services/info/postop-provide-indian.jpg"
-        imageAlt="Indian nurse providing wound dressing care for an elderly patient at home"
+        image="/images/services/info/physio-provide-indian.jpg"
+        imageAlt="Indian physiotherapist guiding an elderly man through shoulder exercises at home"
       />
 
       <ServiceInfoBlock
-        heading="The Role of a Geriatric Care Specialist"
-        intro="A geriatric care specialist plays a crucial role in ensuring that seniors receive the care they need. They:"
+        heading="The Role of Physiotherapy & Rehabilitation at Home"
+        intro="A physiotherapist helps patients rebuild movement, strength and balance at home. They:"
         bullets={roleBullets}
-        image="/images/services/info/postop-role-indian.jpg"
-        imageAlt="Indian nurse providing wound care for an elderly patient at home"
+        image="/images/services/info/physio-role-indian.jpg"
+        imageAlt="Indian physiotherapist guiding an elderly man through seated exercises at home"
         reversed
       />
 
       <ServiceInfoBlock
-        heading="Why Choose Home Geriatric Care for Elders?"
-        intro="Opting for home geriatric care offers numerous benefits:"
+        heading="Why Choose Physiotherapy & Rehabilitation at Home?"
+        intro="Home physiotherapy is a convenient, effective way to rebuild strength and mobility. Benefits include:"
         bullets={whyHomeBullets}
-        image="/images/services/info/why-home-care-indian.jpg"
-        imageAlt="Senior receiving caring support at home in India"
+        image="/images/services/info/physio-why-indian.jpg"
+        imageAlt="Elderly man walking with support during home physiotherapy in India"
       />
 
       <ServiceInfoBlock
-        heading="What to Expect from At-Home Geriatric Care Services for Elders?"
-        intro="When you arrange home geriatric care, here’s what you can expect:"
+        heading="What to Expect from Physiotherapy & Rehabilitation at Home?"
+        intro="When you arrange physiotherapy at home, here's what you can expect:"
         bullets={expectBullets}
-        image="/images/services/info/care-plan-expect-indian.jpg"
-        imageAlt="Indian nurse reviewing a care plan with family at home"
+        image="/images/services/info/physio-expect-indian.jpg"
+        imageAlt="Indian physiotherapist helping an elderly woman with balance exercises at home"
         tinted
       />
 
@@ -400,7 +401,7 @@ export default function GeriatricCarePage() {
           <>
             Why Choose Elderly Wellness for{" "}
             <span className="text-[color:var(--color-brand)]">
-              Geriatric Care Services?
+              Physiotherapy & Rehabilitation?
             </span>
           </>
         }
@@ -408,7 +409,7 @@ export default function GeriatricCarePage() {
       />
 
       <ArrangeSteps
-        heading="How to Arrange Home Geriatric Care Services for Elders?"
+        heading="How to Arrange Physiotherapy & Rehabilitation at Home?"
         intro="Looking for trustworthy, compassionate care for your aging loved ones? Elderly Wellness is here to help. With just a few clicks, you can connect with highly trained professionals who are ready to provide the care your family deserves."
         steps={steps}
       />
@@ -417,6 +418,7 @@ export default function GeriatricCarePage() {
 
       <ServiceFAQ items={faqs} />
 
+      {/* Anchor for the site-wide Download CTA */}
       <div id="download-btn" aria-hidden="true" />
     </div>
   );

@@ -123,7 +123,7 @@ const pageSchemas = [
     path: PATH,
     name: "About Elderly Wellness",
     description:
-      "Elderly Wellness connects families in Chennai with police-verified nurses, physiotherapists, caregivers and geriatric-care specialists for care at home.",
+      "Elderly Wellness connects families in Chennai with police-verified nurses, physiotherapists, caregivers and care specialists for care at home.",
   }),
   faqPageSchema(PATH, faqs),
   breadcrumbSchema([{ name: "About", path: PATH }]),
@@ -160,7 +160,7 @@ export default function AboutPage() {
               <p>
                 Elderly Wellness is a comprehensive platform that connects
                 families with professional, vetted caregivers providing nursing
-                care, physiotherapy, and assisted living support—all in the
+                care, physiotherapy, and elderly care at home—all in the
                 comfort of home.
               </p>
             }
@@ -243,7 +243,7 @@ export default function AboutPage() {
                 At Elderly Wellness, we&apos;re focused on making elderly care
                 easy, reliable, and accessible. By connecting families with
                 highly trained professionals who specialize in nursing care,
-                physiotherapy, and assisted living support, we ensure peace of
+                physiotherapy, and elderly care at home, we ensure peace of
                 mind for families, and quality of life for seniors.
               </p>
               <p className="mb-4 text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-lg">

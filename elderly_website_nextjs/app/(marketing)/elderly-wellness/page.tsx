@@ -135,7 +135,7 @@ const pageSchemas = [
     applicationCategory: "HealthApplication",
     operatingSystem: "Android, iOS",
     description:
-      "Book and manage in-home nursing, physiotherapy, geriatric care and assisted living support for an elderly parent in Chennai.",
+      "Book and manage in-home nursing, physiotherapy, post-operative care and elderly care for a parent in Chennai.",
     publisher: orgRef,
     installUrl: [APP_LINKS.googlePlay, APP_LINKS.appStore],
     sameAs: [APP_LINKS.googlePlay, APP_LINKS.appStore],

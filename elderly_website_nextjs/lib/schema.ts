@@ -39,7 +39,7 @@ export function organizationSchema(): Record<string, unknown> {
     logo: `${SITE_URL}/images/logo.png`,
     image: `${SITE_URL}/images/logo.png`,
     description:
-      "A home elder-care service connecting families in Chennai with police-verified nurses, physiotherapists, caregivers, and geriatric-care specialists.",
+      "A home elder-care service connecting families in Chennai with police-verified nurses, physiotherapists and caregivers for post-operative care, elderly care, nursing and physiotherapy.",
     email: SITE_EMAIL,
     telephone: SITE_PHONE,
     areaServed: { "@type": "City", name: "Chennai" },

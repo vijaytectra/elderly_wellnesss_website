@@ -31,7 +31,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
   { path: "/blogs/", title: "Blog", group: "Pages", changeFrequency: "weekly", priority: 0.7, lastModified: "2026-09-08" },
   { path: "/site-map/", title: "Sitemap", group: "Pages", changeFrequency: "weekly", priority: 0.3, lastModified: "2026-09-08" },
   {
-    path: "/physiotherapy-services-for-elders/",
+    path: "/physiotherapy-rehabilitation-at-home/",
     title: "Physiotherapy & Rehabilitation",
     group: "Services",
     changeFrequency: "monthly",
@@ -39,7 +39,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     lastModified: "2026-09-21",
   },
   {
-    path: "/nursing-services-for-elders/",
+    path: "/critical-skilled-nursing-at-home/",
     title: "Critical & Skilled Nursing",
     group: "Services",
     changeFrequency: "monthly",
@@ -47,7 +47,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     lastModified: "2026-09-21",
   },
   {
-    path: "/geriatric-care-services-for-elders/",
+    path: "/post-operative-discharge-care-at-home/",
     title: "Post-Operative & Discharge Care",
     group: "Services",
     changeFrequency: "monthly",
@@ -55,7 +55,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     lastModified: "2026-09-21",
   },
   {
-    path: "/assisted-living-support-services-for-elders/",
+    path: "/elderly-care-at-home/",
     title: "Elderly Care at Home",
     group: "Services",
     changeFrequency: "monthly",

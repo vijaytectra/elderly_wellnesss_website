@@ -26,14 +26,14 @@ const STEPS = [
     n: "01",
     kicker: "Step One",
     title: "Personalized Care Consultation",
-    body: "A dedicated Senior Care Manager connects with your family to assess your parent's mobility, medical history, chronic conditions, and routine preferences.",
+    body: "A dedicated Care Manager connects with your family to assess your parent's mobility, medical history, chronic conditions, and routine preferences.",
     bullets: ["Free Telephonic Health Assessment", "Tailored Care Plan Creation"],
   },
   {
     n: "02",
     kicker: "Step Two",
     title: "Transparent Pricing & Options",
-    body: "Review clear, slab-based pricing with zero hidden fees. Select flexible shift durations (12-hour, 24-hour, or per-visit sessions) that fit your budget.",
+    body: "Review clear,  with zero hidden fees. Select flexible shift durations (12-hour, 24-hour, or per-visit sessions) that fit your budget.",
     bullets: ["Transparent Slab Rates", "Flexible Contract Options"],
   },
   {

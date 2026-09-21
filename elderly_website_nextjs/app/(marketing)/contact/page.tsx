@@ -10,7 +10,7 @@ import { breadcrumbSchema, contactPageSchema } from "@/lib/schema";
 export const metadata: Metadata = buildMetadata({
   title: "Contact Elderly Wellness | Chennai Elder Care",
   description:
-    "Tell us what your parent needs and a senior care specialist in Chennai will call you back about physiotherapy, nursing, geriatric care or assisted living.",
+    "Tell us what your parent needs and a senior care specialist in Chennai will call you back about physiotherapy, nursing, post-operative care or elderly care at home.",
   ogTitle: "Talk to a Senior Care Specialist",
   ogDescription:
     "Request a callback and we will help you work out what level of care your parent actually needs.",

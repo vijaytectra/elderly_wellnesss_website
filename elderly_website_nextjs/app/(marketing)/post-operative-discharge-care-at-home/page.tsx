@@ -22,15 +22,15 @@ import {
   toServiceInfoBullets,
 } from "@/data/primary-services";
 
-const SERVICE = getPrimaryServiceByHref("/nursing-services-for-elders/")!;
+const SERVICE = getPrimaryServiceByHref("/post-operative-discharge-care-at-home/")!;
 
 export const metadata: Metadata = buildMetadata({
-  title: "Critical & Skilled Nursing Support at Home in Chennai",
+  title: "Post-Operative & Discharge Care at Home in Chennai",
   description:
-    "Skilled home nursing in Chennai — vitals monitoring, injections, IV care, wound dressing, catheter and feeding-tube care for complex needs.",
-  ogTitle: "Critical & Skilled Nursing at Home",
+    "Professional post-surgery and hospital discharge care at home in Chennai — wound care, medication support, vitals monitoring and recovery assistance.",
+  ogTitle: "Post-Operative Care at Home",
   ogDescription: SERVICE.body,
-  path: "/nursing-services-for-elders/",
+  path: "/post-operative-discharge-care-at-home/",
   image: SERVICE.image,
 });
 
@@ -40,58 +40,58 @@ const whatWeProvideBullets: readonly ServiceInfoBullet[] = toServiceInfoBullets(
 
 const roleBullets: readonly ServiceInfoBullet[] = [
   {
-    title: "Assess health conditions",
-    body: "Thoroughly assess the elderly person’s health and medical history.",
+    title: "Support recovery at home",
+    body: "Help patients settle after surgery or hospital discharge with wound care, hygiene and safe daily routines.",
   },
   {
-    title: "Develop care plans",
-    body: "Create personalized nursing plans tailored to meet specific health needs.",
+    title: "Manage medicines and vitals",
+    body: "Support prescribed medicines, injections and regular checks of BP, temperature, pulse and oxygen.",
   },
   {
-    title: "Provide medical care",
-    body: "Administer medications, handle medical equipment, and support with daily activities.",
+    title: "Prevent complications",
+    body: "Watch for infection, pain, mobility risks and other post-discharge warning signs, and escalate when needed.",
   },
   {
-    title: "Monitor progress",
-    body: "Ensure care plans are followed, making adjustments as necessary to improve health outcomes.",
+    title: "Guide families",
+    body: "Explain the care plan clearly so family members know what to expect during recovery at home.",
   },
 ];
 
 const whyHomeBullets: readonly ServiceInfoBullet[] = [
   {
-    title: "Convenience",
-    body: "Seniors receive care at home, avoiding the stress of hospital visits.",
+    title: "Safer recovery",
+    body: "Continue healing at home with professional support instead of prolonged hospital stays.",
   },
   {
-    title: "Personalized Care",
-    body: "One-on-one care tailored to your loved one’s specific health needs.",
+    title: "Personalised attention",
+    body: "One-on-one care focused on the patient’s surgery, discharge notes and recovery goals.",
   },
   {
-    title: "Comfort",
-    body: "Familiar home environment reduces anxiety and promotes healing.",
+    title: "Familiar surroundings",
+    body: "Recovering at home reduces stress and helps patients feel more comfortable and secure.",
   },
   {
-    title: "Consistency",
-    body: "Continuity of care ensures your loved one’s health and well-being are always monitored.",
+    title: "Family involvement",
+    body: "Loved ones stay close to the care process and receive clear updates along the way.",
   },
 ];
 
 const expectBullets: readonly ServiceInfoBullet[] = [
   {
     title: "Initial assessment",
-    body: "The nurse will evaluate your loved one’s health status and needs.",
+    body: "A care professional reviews discharge notes, wound status, medicines and home safety needs.",
   },
   {
-    title: "Personalized care plan",
-    body: "A plan will be created to address their specific medical requirements.",
+    title: "Customised recovery plan",
+    body: "A clear plan covers wound care, vitals, hygiene, mobility support and medicine reminders.",
   },
   {
-    title: "Care sessions",
-    body: "Nurses will assist with medication, wound care, and other medical tasks.",
+    title: "Hands-on recovery support",
+    body: "Caregivers or nurses assist with daily recovery tasks so the patient can heal comfortably at home.",
   },
   {
-    title: "Regular follow-ups",
-    body: "Health status will be monitored, and updates provided to family members.",
+    title: "Progress check-ins",
+    body: "Recovery is monitored and the plan is adjusted if symptoms, mobility or care needs change.",
   },
 ];
 
@@ -99,12 +99,12 @@ const whyChooseFeatures: readonly WhyChooseUsFeature[] = [
   {
     icon: "/images/services/physio-icons/simplified-discovery-process.png",
     title: "Simplified Discovery Process",
-    body: "Finding the right care provider can be overwhelming, but our specialists make it easy. They assess your loved one’s needs and match them with the most suitable caregiver, saving you time and effort.",
+    body: "Finding the right post-operative care support can be challenging. Our specialists assess recovery needs and match your loved one with the most suitable nurse or caregiver, saving you time and effort.",
   },
   {
     icon: "/images/services/physio-icons/affordable-transparent-care.png",
     title: "Affordable, Transparent Care",
-    body: "We offer flexible, slab-based pricing, ensuring top-quality care that fits within your budget. Our transparent pricing system helps you choose the right service without any surprises.",
+    body: "We offer flexible, , ensuring you receive top-quality care at an affordable price. Our transparent pricing system helps you choose the right service without any surprises.",
   },
   {
     icon: "/images/services/physio-icons/reliable-long-term-support.png",
@@ -114,12 +114,12 @@ const whyChooseFeatures: readonly WhyChooseUsFeature[] = [
   {
     icon: "/images/services/physio-icons/quality-you-can-count-on.png",
     title: "Quality You Can Count On",
-    body: "At Elderly Wellness, we only work with caregivers who are thoroughly screened, vetted, and trained to provide the highest quality care. All our caregivers are part of the Elderly Wellness family and are trained at our Elderly Academy of Caretaking & Hospitality (EACH). This academy is dedicated to elevating their skills and expertise, ensuring your loved ones receive the best care possible—whether they need physical assistance, medical care, or emotional support.",
+    body: "We only work with caregivers who are thoroughly screened, vetted, and trained to provide the highest quality care. All our caregivers are part of the Elderly Wellness family, trained at EACH. This ensures your loved ones receive the best possible care—whether they need help with daily tasks, medical care, or emotional support.",
   },
   {
     icon: "/images/services/physio-icons/longevity-of-care.png",
     title: "Longevity of Care",
-    body: "We don’t just offer short-term solutions. We’re committed to providing long-term support, ensuring consistent and dependable care for as long as necessary. Should any issues arise, we’re here to quickly resolve them and maintain continuity of care.",
+    body: "At Elderly Wellness, we don’t just provide short-term solutions. We are committed to offering long-term care, ensuring ongoing support for your loved ones. Should any issues arise, we’re here to resolve them quickly and maintain continuity of care.",
   },
 ];
 
@@ -276,61 +276,61 @@ const steps: readonly ArrangeStep[] = [
 
 const faqs: readonly ServiceFAQItem[] = [
   {
-    q: "What is nursing care for elderly individuals?",
-    a: "Nursing care for seniors involves providing medical support, administering medications, assisting with mobility, and offering emotional support to ensure elderly individuals remain comfortable and healthy in their own homes.",
+    q: "What is post-operative and discharge care at home?",
+    a: "It is professional support after surgery or hospital discharge — including wound care, medicine support, vitals monitoring, hygiene help and safe mobility assistance at home.",
   },
   {
-    q: "How often should elderly people receive nursing care?",
-    a: "The frequency of nursing care varies based on the individual's health condition. Some may require daily visits, while others might need care a few times a week. A personalized care plan will be created based on specific needs.",
+    q: "How often is post-operative care needed?",
+    a: "Frequency depends on the procedure and recovery plan. Some patients need daily visits initially; others need shorter support as they regain strength.",
   },
   {
-    q: "Is home nursing care covered by insurance?",
-    a: "Insurance coverage for home nursing services depends on the individual’s policy. It’s recommended to check with your insurance provider to confirm whether home nursing care is covered under your plan.",
+    q: "Is home post-operative care covered by insurance?",
+    a: "Coverage varies by plan. Check with your insurer to confirm whether home recovery support is included under your policy.",
   },
   {
-    q: "How qualified are your nurses?",
-    a: "All our nurses are licensed professionals with extensive experience in elderly care. They are trained to provide the highest quality care and are regularly updated on best practices in elderly wellness.",
+    q: "Who provides the care?",
+    a: "Trained nurses and caregivers experienced in post-surgery and discharge support, matched to your loved one’s recovery needs.",
   },
   {
-    q: "What happens after I sign up and select the nursing care service I need?",
-    a: "Once you sign up and select the nursing care service, an Elderly Wellness specialist will contact you. They will discuss your loved one’s needs and assign the most suitable nurse based on their specific requirements and preferences.",
+    q: "What happens after I select post-operative care?",
+    a: "An Elderly Wellness specialist will contact you, review discharge needs, and assign the most suitable nurse or caregiver.",
   },
   {
     q: "Can I book more than one session in a day?",
-    a: "Yes, you can book multiple sessions on the same day. You can confirm the availability of the service provider during your call with our specialist and schedule additional sessions if necessary.",
+    a: "Yes, multiple sessions can be scheduled in a day. Confirm the availability during the call with our specialist.",
   },
   {
     q: "How do I pay for the service?",
-    a: "After the nurse is assigned, you will receive their details. You can then make a secure payment directly through the Elderly Wellness app. The booking will be confirmed once the payment is processed.",
+    a: "Once the service provider is assigned, you’ll make a secure payment directly through the app, and the booking will be finalized.",
   },
   {
     q: "How can I change the contact information or address of the elderly person?",
-    a: "You can easily update the contact details and address of the elderly person in your account settings within the app. Make sure the details are up-to-date before finalizing any service bookings.",
+    a: "You can easily update contact details and address in your account settings within the app.",
   },
   {
     q: "How do I track the status of my booking or service?",
-    a: "Once the service provider is assigned, you will receive notifications via the app regarding their arrival time and status updates. You can track the real-time progress of the session through the app.",
+    a: "Receive real-time notifications through the app, allowing you to track the progress of your loved one’s care.",
   },
   {
     q: "What if the service provider does not arrive on time?",
-    a: "If there is any delay, you will be notified through the app. In case of significant delays, please reach out to our customer support team, and we will assist in resolving the issue as quickly as possible.",
+    a: "If there’s a delay, you’ll be notified through the app. For significant delays, contact customer support for assistance.",
   },
   {
-    q: "Can I request the same nurse for future sessions?",
-    a: "Yes, you can request the same nurse for future sessions. Simply note their profile and mention it when booking. If the nurse is available, they can be scheduled for additional sessions.",
+    q: "Can I request the same caregiver for future sessions?",
+    a: "Yes, you can request the same caregiver for future sessions as long as they are available.",
   },
   {
     q: "Is my payment information safe?",
-    a: "Yes, all payment transactions are processed securely using encrypted methods. Your payment and personal details are fully protected and stored securely, ensuring complete confidentiality.",
+    a: "Yes, all payments are securely processed through encrypted methods, ensuring the protection of your financial and personal information.",
   },
 ];
 
-const PATH = "/nursing-services-for-elders/";
+const PATH = "/post-operative-discharge-care-at-home/";
 
 const pageSchemas = [
   serviceSchema({
     name: SERVICE.title,
-    serviceType: "Critical and skilled nursing",
+    serviceType: "Post-operative and discharge care",
     description: SERVICE.body,
     path: PATH,
   }),
@@ -338,7 +338,7 @@ const pageSchemas = [
   breadcrumbSchema([{ name: SERVICE.title, path: PATH }]),
 ];
 
-export default function NursingPage() {
+export default function PostOperativeCarePage() {
   return (
     <div>
       <JsonLd id="page-schema" data={pageSchemas} />
@@ -356,42 +356,42 @@ export default function NursingPage() {
         image={SERVICE.image}
         imageAlt={SERVICE.imageAlt}
         headingLead={SERVICE.title}
-        headingAccent="Clinical Care Without the Hospital"
-        subheading="Where Age Meets Professional Assistance"
+        headingAccent="Safe Recovery in the Comfort of Home"
+        subheading="Where Age Meets Expert Care"
         paragraphs={[SERVICE.body]}
       />
 
       <ServiceInfoBlock
         heading="What we provide"
-        intro="Skilled nursing support for patients who need regular medical care and special attention at home."
+        intro="Focused post-operative and discharge support, delivered at home by trained care professionals."
         bullets={whatWeProvideBullets}
-        image="/images/services/info/nursing-provide-indian.jpg"
-        imageAlt="Indian nurse preparing medication for an elderly patient at home"
+        image="/images/services/info/postop-provide-indian.jpg"
+        imageAlt="Indian nurse providing wound dressing care for an elderly patient at home"
       />
 
       <ServiceInfoBlock
-        heading="The Role of a Nurse in Elder Care"
-        intro="A qualified nurse is essential in providing comprehensive care for seniors with medical needs. They:"
+        heading="The Role of Post-Operative Care at Home"
+        intro="After surgery or hospital discharge, trained care professionals help patients recover safely at home. They:"
         bullets={roleBullets}
-        image="/images/services/info/nursing-role-indian.jpg"
-        imageAlt="Indian nurse standing beside the bed explaining medication to an elderly patient"
+        image="/images/services/info/postop-role-indian.jpg"
+        imageAlt="Indian nurse providing wound care for an elderly patient at home"
         reversed
       />
 
       <ServiceInfoBlock
-        heading="Why Choose Home Nursing Services for Elders?"
-        intro="Opting for home nursing services provides the following benefits:"
+        heading="Why Choose Post-Operative Care at Home?"
+        intro="Choosing recovery support at home offers these benefits:"
         bullets={whyHomeBullets}
         image="/images/services/info/why-home-care-indian.jpg"
-        imageAlt="Elderly woman receiving compassionate care at home in India"
+        imageAlt="Senior receiving caring support at home in India"
       />
 
       <ServiceInfoBlock
-        heading="What to Expect from At-Home Nursing Services for Elders?"
-        intro="When scheduling home nursing services, you can expect:"
+        heading="What to Expect from Post-Operative & Discharge Care at Home?"
+        intro="When you arrange post-operative care at home, here’s what you can expect:"
         bullets={expectBullets}
-        image="/images/services/info/nursing-expect-indian.jpg"
-        imageAlt="Indian nurse checking vitals for an elderly woman at home"
+        image="/images/services/info/care-plan-expect-indian.jpg"
+        imageAlt="Indian nurse reviewing a care plan with family at home"
         tinted
       />
 
@@ -400,7 +400,7 @@ export default function NursingPage() {
           <>
             Why Choose Elderly Wellness for{" "}
             <span className="text-[color:var(--color-brand)]">
-              Nursing Services?
+              Post-Operative Care?
             </span>
           </>
         }
@@ -408,7 +408,7 @@ export default function NursingPage() {
       />
 
       <ArrangeSteps
-        heading="How to Arrange Home Nursing Services for Elders?"
+        heading="How to Arrange Post-Operative & Discharge Care at Home?"
         intro="Looking for trustworthy, compassionate care for your aging loved ones? Elderly Wellness is here to help. With just a few clicks, you can connect with highly trained professionals who are ready to provide the care your family deserves."
         steps={steps}
       />

@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { HeroCtas } from "@/components/HeroCtas";
-import { HeroVideos } from "@/components/HeroVideos";
+
 import { StoreBadge } from "@/components/StoreBadge";
-import { TrustStrip } from "@/components/TrustStrip";
+
 import { HomepageBlogStrip } from "@/components/sections/HomepageBlogStrip";
 import { SectionTitle } from "@/components/sections/SectionTitle";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -17,10 +17,10 @@ import { PRIMARY_SERVICES } from "@/data/primary-services";
 export const metadata: Metadata = buildMetadata({
   title: "Elderly Wellness | Elder Care Services in Chennai",
   description:
-    "Home nursing, physiotherapy, geriatric care, and assisted living in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 81226 66490.",
+    "Post-operative care, elderly care, skilled nursing and physiotherapy at home in Chennai. Police-verified caregivers, 2-hour replacement, no lock-in. Call +91 81226 66490.",
   ogTitle: "Elder Care at Your Parent's Doorstep",
   ogDescription:
-    "Nursing, physiotherapy, geriatric care and assisted living support, delivered at home across Chennai by police-verified caregivers.",
+    "Skilled nursing, physiotherapy, post-operative care and elderly home care, delivered across Chennai by police-verified caregivers.",
   path: "/",
   image: "/videos/home/poster-1.jpg",
   dcType: "Text.Homepage",
@@ -130,45 +130,104 @@ export default function HomePage() {
     <div>
 
       {/* Banner / Hero */}
-      <section className="section-y">
-        <Container>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:items-center md:gap-8">
+      <section className="relative overflow-hidden flex flex-col justify-center min-h-[calc(100dvh-64px)] sm:min-h-[calc(100dvh-80px)] py-4 lg:py-0 before:absolute before:inset-0 before:-z-10 before:bg-[url('/images/blue_dotes.png')] before:bg-no-repeat before:bg-[length:20%] before:bg-[position:-5%_-10%] before:opacity-30">
+        <Container className="w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center">
+            {/* Left side content */}
             <div>
-              <h1 className="mb-4 font-[family-name:var(--font-serif)] text-4xl leading-[1.05] sm:text-5xl md:text-6xl">
-                <span className="font-[family-name:var(--font-display)] text-[color:var(--color-brand)]">
-                  Trusted Elderly & Home Healthcare,
+              <p className="mb-2 text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#5c7a99]">
+                COMPASSIONATE CARE &bull; SKILLED SUPPORT &bull; AT HOME
+              </p>
+              <h1 className="mb-3 font-[family-name:var(--font-serif)] text-[1.75rem] leading-[1.1] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#002f5e]">
+                <span className="font-[family-name:var(--font-display)] text-[#1ba1b5] block mb-1 font-normal text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+                  Trusted Home Healthcare
                 </span>
-                <span className="mt-1 block font-[family-name:var(--font-serif)]">
-                  Delivered at Home.
-                </span>
+                for Your Loved Ones
               </h1>
-              <p className="mb-4 max-w-lg text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-lg">
-                Professional nurses, caregivers and physiotherapists providing
-                personalised care for seniors across Tamil Nadu — from everyday
-                elderly care and post-hospital recovery to specialised nursing
-                needs.
+              <p className="mb-4 max-w-xl text-[12px] leading-snug text-[#3a5875] sm:text-[14px] lg:text-[17px] lg:leading-relaxed">
+                From daily care to specialised nursing support, we bring trained professionals to your home &mdash; so your loved ones get the care, comfort and dignity they deserve.
               </p>
-              <TrustStrip />
-              <p className="mb-6 mt-5 max-w-lg text-base font-semibold text-[color:var(--color-brand)]">
-                Elderly Wellness is our care service. Elderly Care Plus is our
-                app.
-              </p>
-              <HeroCtas />
-              <div className="mt-5">
-                <p className="mb-2 text-sm text-[color:var(--color-muted-foreground)]">
-                  Or download our app:
-                </p>
-                <ul className="flex flex-wrap items-center gap-3">
-                  <li>
-                    <StoreBadge kind="google-play" size="sm" />
-                  </li>
-                  <li>
-                    <StoreBadge kind="app-store" size="sm" />
-                  </li>
-                </ul>
+              
+              {/* 4 Features */}
+              <div className="grid grid-cols-4 gap-2 sm:gap-4 mb-4 lg:mb-8">
+                {/* Feature 1 */}
+                <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-1.5 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-[#eaf6f6] border border-[#d2ebeb] flex items-center justify-center text-[#1ba1b5]">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-[22px] lg:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a4 4 0 0 1 4 4v1H8V6a4 4 0 0 1 4-4z"/><path d="M6 10v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10"/><path d="M9 14h6"/><path d="M12 11v6"/></svg>
+                  </div>
+                  <p className="text-[8px] sm:text-[10px] lg:text-[13px] font-semibold text-[#002f5e] leading-[1.2]">Trained &amp; Verified<br className="hidden sm:block"/> Care</p>
+                </div>
+                {/* Feature 2 */}
+                <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-1.5 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-[#f2f4ff] border border-[#dde4fc] flex items-center justify-center text-[#4a6cf7]">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-[22px] lg:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 17c-2 0-3.5-1.5-3.5-3.5S10 10 12 10s3.5 1.5 3.5 3.5S14 17 12 17z"/></svg>
+                  </div>
+                  <p className="text-[8px] sm:text-[10px] lg:text-[13px] font-semibold text-[#002f5e] leading-[1.2]">Personalised<br className="hidden sm:block"/> Plans</p>
+                </div>
+                {/* Feature 3 */}
+                <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-1.5 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-[#fff0f2] border border-[#ffe0e4] flex items-center justify-center text-[#ff5975]">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-[22px] lg:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </div>
+                  <p className="text-[8px] sm:text-[10px] lg:text-[13px] font-semibold text-[#002f5e] leading-[1.2]">Recovery<br className="hidden sm:block"/> Care</p>
+                </div>
+                {/* Feature 4 */}
+                <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-1.5 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-[#eefaff] border border-[#d2f1ff] flex items-center justify-center text-[#00b0ff]">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-[22px] lg:h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/><path d="M12 13h-2l-1-4 3-6 2 4h1"/></svg>
+                  </div>
+                  <p className="text-[8px] sm:text-[10px] lg:text-[13px] font-semibold text-[#002f5e] leading-[1.2]">Critical<br className="hidden sm:block"/> Support</p>
+                </div>
+              </div>
+
+              {/* Safe Badge */}
+              <div className="inline-flex items-center gap-2 sm:gap-3 lg:gap-4 bg-[#ebf5f5] rounded-full px-3 py-2 sm:px-4 sm:py-2.5 lg:px-5 lg:py-3.5 mb-4 lg:mb-8 w-full sm:w-auto">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-full bg-[#1ba1b5] text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                </div>
+                <div>
+                  <p className="text-[10px] sm:text-[12px] lg:text-[14px] font-semibold text-[#002f5e]"><span className="font-bold">Safe &bull; Reliable &bull; Compassionate</span></p>
+                  <p className="text-[9px] sm:text-[10px] lg:text-[12px] text-[#5c7a99] mt-0.5">Because every home deserves expert care.</p>
+                </div>
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-4">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full px-4 py-2 sm:px-5 sm:py-2.5 lg:px-7 lg:py-3.5 text-[12px] sm:text-[13px] lg:text-[15px] font-bold text-white shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5" style={{ backgroundColor: "#007c91" }}>
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-[18px] lg:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                  Book Care
+                </Link>
+                <a href="tel:+918122666490" className="inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full border-2 border-[#002f5e] bg-white px-4 py-2 sm:px-5 sm:py-2.5 lg:px-7 lg:py-3.5 text-[12px] sm:text-[13px] lg:text-[15px] font-bold text-[#002f5e] hover:bg-[#002f5e] hover:text-white transition shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-[18px] lg:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  Call Us
+                </a>
               </div>
             </div>
-            <HeroVideos />
+            
+            {/* Right side Image (animated e4) */}
+            <div className="relative mt-4 lg:mt-0 pt-2 lg:pt-4">
+              <div className="relative w-full aspect-[21/9] sm:aspect-[16/9] lg:aspect-[1.15] xl:aspect-[1.25] animate-float z-10 mx-auto max-w-2xl lg:max-w-none">
+                <Image 
+                  src="/images/e4.jpg" 
+                  alt="Elderly care" 
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover rounded-[16px] sm:rounded-[24px] lg:rounded-[60px] shadow-xl lg:shadow-2xl" 
+                  priority
+                />
+                
+                {/* White shape overlapping bottom right with angled text */}
+                <div className="absolute -bottom-3 -right-1 sm:-bottom-4 sm:-right-4 lg:-bottom-8 lg:-right-8 bg-white rounded-xl lg:rounded-3xl shadow-lg lg:shadow-2xl p-2 sm:p-3 lg:p-7 rotate-[-4deg] max-w-[140px] sm:max-w-[180px] lg:max-w-[280px] z-20">
+                  <p className="font-[family-name:var(--font-display)] text-[#004f7a] text-[15px] sm:text-[18px] lg:text-4xl leading-[1.1] text-center px-1 lg:px-2">
+                    Better Care.<br/> A Happier Tomorrow.
+                  </p>
+                  <svg className="absolute top-1 right-1 lg:top-4 lg:right-4 text-[#0099aa] w-3 h-3 lg:w-7 lg:h-7 opacity-90 rotate-[15deg]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                </div>
+              </div>
+              
+              {/* Background abstract decoration shape */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#f4fbff] rounded-full -z-10 blur-xl lg:blur-3xl opacity-80 pointer-events-none scale-110"></div>
+            </div>
           </div>
         </Container>
       </section>
@@ -193,7 +252,7 @@ export default function HomePage() {
                     alt={s.imageAlt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
-                    className="object-cover object-center transition duration-300 group-hover:scale-[1.03]"
+                    className={`object-cover transition duration-300 group-hover:scale-[1.03] ${s.imagePosition || "object-center"}`}
                   />
                 </Link>
                 <div className="flex flex-1 flex-col p-6 sm:p-8">
@@ -248,7 +307,7 @@ export default function HomePage() {
                 when managing it from afar. That&apos;s where Elderly Wellness
                 steps in, a comprehensive platform that connects families with
                 professional, vetted caregivers providing nursing care,
-                physiotherapy, and assisted living support—all in the comfort
+                physiotherapy and elderly care at home—all in the comfort
                 of home.
               </p>
               <p className="text-base leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-lg">

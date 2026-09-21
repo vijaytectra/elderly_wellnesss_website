@@ -450,3 +450,12 @@ a.ew-blog-cta__btn:hover {
   background-color: var(--color-brand-dark);
   color: #ffffff !important;
 }
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

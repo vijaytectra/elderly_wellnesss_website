@@ -51,7 +51,7 @@ export function buildLlmsTxt(): string {
 
   return `# Elderly Wellness
 
-> Elderly Wellness connects families in Chennai with professional, vetted physiotherapists, nurses, and caregivers who deliver nursing care, physiotherapy, geriatric care, and assisted living support in the elderly person's own home. Care is booked and coordinated through the Elderly Wellness Care Plus app.
+> Elderly Wellness connects families in Chennai with professional, vetted physiotherapists, nurses, and caregivers who deliver post-operative care, elderly care, skilled nursing and physiotherapy in the elderly person's own home. Care is booked and coordinated through the Elderly Wellness Care Plus app.
 
 ## About
 
@@ -98,7 +98,7 @@ ${bullets(resourceBlogs)}
 - **What if the provider does not arrive on time?** The family is notified via the app; significant delays can be escalated to customer support, and Elderly Wellness offers a 2-hour replacement guarantee.
 - **Is my payment information safe?** Yes, all payments are processed through encrypted methods.
 
-Full FAQ list: [About Us](${abs("/about/")}) and each service page (e.g. [Physiotherapy FAQs](${abs("/physiotherapy-services-for-elders/")})).
+Full FAQ list: [About Us](${abs("/about/")}) and each service page (e.g. [Physiotherapy FAQs](${abs("/physiotherapy-rehabilitation-at-home/")})).
 
 ## Contact
 

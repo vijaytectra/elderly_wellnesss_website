@@ -367,16 +367,16 @@ export default function AssistedLivingSupportPage() {
         heading="What we provide"
         intro="Day-to-day support that helps seniors stay safe, active and comfortable at home."
         bullets={whatWeProvideBullets}
-        image="/images/services/assisted/2.png"
-        imageAlt={SERVICE.imageAlt}
+        image="/images/services/info/elderly-provide-indian.jpg"
+        imageAlt="Indian caregiver helping an elderly woman with a meal at home"
       />
 
       <ServiceInfoBlock
         heading="The Role of Assisted Living Support Specialists"
         intro="An assisted living support specialist plays a critical role in maintaining the health and well-being of seniors. They:"
         bullets={roleBullets}
-        image="/images/services/assisted/3.png"
-        imageAlt="Assisted living specialist with a senior"
+        image="/images/services/info/elderly-role-indian.jpg"
+        imageAlt="Indian caregiver helping an elderly man walk with a walker at home"
         reversed
       />
 
@@ -384,16 +384,16 @@ export default function AssistedLivingSupportPage() {
         heading="Why Choose Home Assisted Living Support for Elders?"
         intro="Opting for home assisted living support offers numerous advantages:"
         bullets={whyHomeBullets}
-        image="/images/services/assisted/4.png"
-        imageAlt="Senior enjoying comfort of home with support"
+        image="/images/services/info/why-home-care-indian.jpg"
+        imageAlt="Senior enjoying comfort of home with caregiver support in India"
       />
 
       <ServiceInfoBlock
         heading="What to Expect from At-Home Assisted Living Support for Elders?"
         intro="When you arrange home assisted living support, here’s what you can expect:"
         bullets={expectBullets}
-        image="/images/services/assisted/5.png"
-        imageAlt="Care specialist creating a plan"
+        image="/images/services/info/care-plan-expect-indian.jpg"
+        imageAlt="Care specialist discussing a home care plan with family"
         tinted
       />
 

@@ -183,14 +183,17 @@ export default function HomePage() {
                 key={s.id}
                 className="group flex flex-col overflow-hidden rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)] transition hover:shadow-lg"
               >
-                <Link href={s.href} className="relative aspect-[16/9] w-full shrink-0 bg-[color:var(--color-muted)]">
+                <Link
+                  href={s.href}
+                  className="relative aspect-[16/9] w-full shrink-0 overflow-hidden border-b border-[color:var(--color-border)] bg-[color:var(--color-muted)]"
+                >
                   <Image
-                    quality={95}
+                    quality={90}
                     src={s.image}
                     alt={s.imageAlt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
-                    className="object-cover object-center transition group-hover:scale-[1.02]"
+                    className="object-cover object-center transition duration-300 group-hover:scale-[1.03]"
                   />
                 </Link>
                 <div className="flex flex-1 flex-col p-6 sm:p-8">

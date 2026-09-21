@@ -31,8 +31,8 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
       "Personal hygiene and toileting support",
       "Walking, movement and daily activity assistance",
     ],
-    image: "/images/abt-slide2.jpg",
-    imageAlt: "Nurse supporting an elderly patient during recovery at home",
+    image: "/images/services/hero/post-operative.jpg",
+    imageAlt: "Indian nurse checking blood pressure for an elderly patient at home",
   },
   {
     id: "elderly-care",
@@ -49,8 +49,8 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
       "Medicine reminders",
       "Companionship and help with daily activities",
     ],
-    image: "/images/blogs/caregivers.webp",
-    imageAlt: "Caregiver with an elderly woman at home",
+    image: "/images/services/hero/elderly-care.jpg",
+    imageAlt: "Indian caregiver helping an elderly woman walk at home",
   },
   {
     id: "nursing",
@@ -67,8 +67,8 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
       "Catheter, feeding-tube and tracheostomy care",
       "Stroke, paralysis and bedridden patient support",
     ],
-    image: "/images/services/nursing/1.webp",
-    imageAlt: "Nurse providing medication support to an elderly patient",
+    image: "/images/services/hero/nursing.jpg",
+    imageAlt: "Indian nurse giving medication to an elderly patient at home",
   },
   {
     id: "physiotherapy",
@@ -85,8 +85,8 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
       "Strength, balance and walking exercises",
       "Mobility training and pain/stiffness management",
     ],
-    image: "/images/services/geriatric/1.webp",
-    imageAlt: "Physiotherapist guiding an elderly patient through exercises",
+    image: "/images/services/hero/physiotherapy.jpg",
+    imageAlt: "Indian physiotherapist guiding an elderly woman through exercises at home",
   },
 ] as const;
 

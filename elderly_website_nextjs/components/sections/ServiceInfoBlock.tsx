@@ -69,13 +69,16 @@ export function ServiceInfoBlock({
             </ul>
           </div>
           <div className={reversed ? "md:order-1" : ""}>
-            <Image quality={95}
-              src={image}
-              alt={imageAlt}
-              width={720}
-              height={720}
-              className="mx-auto w-full max-w-[520px] rounded-[var(--radius-lg)]"
-            />
+            <div className="relative mx-auto aspect-[4/3] w-full max-w-[520px] overflow-hidden rounded-[var(--radius-lg)] border border-[color:var(--color-border)] bg-[color:var(--color-muted)] shadow-[var(--shadow-card)]">
+              <Image
+                quality={90}
+                src={image}
+                alt={imageAlt}
+                fill
+                sizes="(max-width: 768px) 100vw, 520px"
+                className="object-cover object-center"
+              />
+            </div>
           </div>
         </div>
       </Container>

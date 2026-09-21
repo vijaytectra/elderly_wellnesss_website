@@ -366,16 +366,16 @@ export default function PhysiotherapyPage() {
         heading="What we provide"
         intro="Personalised physiotherapy to improve movement, strength and balance at home."
         bullets={whatWeProvideBullets}
-        image="/images/services/1.png"
-        imageAlt={SERVICE.imageAlt}
+        image="/images/services/info/physio-provide-indian.jpg"
+        imageAlt="Indian physiotherapist guiding an elderly man through shoulder exercises at home"
       />
 
       <ServiceInfoBlock
         heading="The Role of a Physiotherapist in Elder Care"
         intro="A qualified physiotherapist plays a crucial role in assessing and treating seniors with physical limitations. They:"
         bullets={roleBullets}
-        image="/images/services/2.png"
-        imageAlt="Physiotherapist evaluating an elderly patient"
+        image="/images/services/info/physio-role-indian.jpg"
+        imageAlt="Indian physiotherapist guiding an elderly man through seated exercises at home"
         reversed
       />
 
@@ -383,16 +383,16 @@ export default function PhysiotherapyPage() {
         heading="Why Choose Home Physiotherapy for Elders?"
         intro="Opting for home physiotherapy services is a convenient and effective solution for elderly individuals. Here are the benefits:"
         bullets={whyHomeBullets}
-        image="/images/services/3.png"
-        imageAlt="Home physiotherapy session with senior"
+        image="/images/services/info/physio-why-indian.jpg"
+        imageAlt="Elderly man walking with support during home physiotherapy in India"
       />
 
       <ServiceInfoBlock
         heading="What to Expect from At-Home Physiotherapy for Elders?"
         intro="When scheduling home physiotherapy, here's what you can expect:"
         bullets={expectBullets}
-        image="/images/services/4.png"
-        imageAlt="Physiotherapist demonstrating exercises to a senior"
+        image="/images/services/info/physio-expect-indian.jpg"
+        imageAlt="Indian physiotherapist helping an elderly woman with balance exercises at home"
         tinted
       />
 

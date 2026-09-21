@@ -30,16 +30,16 @@ export function ServiceHero({
   return (
     <section className="section-y">
       <Container>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:items-center md:gap-8">
-          <div>
-            <Image quality={95}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-center md:gap-8">
+          <div className="relative mx-auto aspect-[4/3] w-full max-w-[560px] overflow-hidden rounded-[var(--radius-lg)] border border-[color:var(--color-border)] bg-[color:var(--color-muted)] shadow-[var(--shadow-card)]">
+            <Image
+              quality={90}
               src={image}
               alt={imageAlt}
-              width={720}
-              height={720}
+              fill
               priority
               sizes="(max-width: 768px) 100vw, 560px"
-              className="mx-auto w-full max-w-[560px]"
+              className="object-cover object-center"
             />
           </div>
           <div>

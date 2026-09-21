@@ -365,16 +365,16 @@ export default function NursingPage() {
         heading="What we provide"
         intro="Skilled nursing support for patients who need regular medical care and special attention at home."
         bullets={whatWeProvideBullets}
-        image="/images/services/nursing/2.png"
-        imageAlt={SERVICE.imageAlt}
+        image="/images/services/info/nursing-provide-indian.jpg"
+        imageAlt="Indian nurse preparing medication for an elderly patient at home"
       />
 
       <ServiceInfoBlock
         heading="The Role of a Nurse in Elder Care"
         intro="A qualified nurse is essential in providing comprehensive care for seniors with medical needs. They:"
         bullets={roleBullets}
-        image="/images/services/nursing/3.png"
-        imageAlt="Nurse assisting an elderly patient with medication"
+        image="/images/services/info/nursing-role-indian.jpg"
+        imageAlt="Indian nurse standing beside the bed explaining medication to an elderly patient"
         reversed
       />
 
@@ -382,16 +382,16 @@ export default function NursingPage() {
         heading="Why Choose Home Nursing Services for Elders?"
         intro="Opting for home nursing services provides the following benefits:"
         bullets={whyHomeBullets}
-        image="/images/services/nursing/4.png"
-        imageAlt="Nurse and senior in a home setting"
+        image="/images/services/info/why-home-care-indian.jpg"
+        imageAlt="Elderly woman receiving compassionate care at home in India"
       />
 
       <ServiceInfoBlock
         heading="What to Expect from At-Home Nursing Services for Elders?"
         intro="When scheduling home nursing services, you can expect:"
         bullets={expectBullets}
-        image="/images/services/nursing/5.png"
-        imageAlt="Nurse assessing an elderly patient at home"
+        image="/images/services/info/nursing-expect-indian.jpg"
+        imageAlt="Indian nurse checking vitals for an elderly woman at home"
         tinted
       />
 

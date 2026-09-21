@@ -365,16 +365,16 @@ export default function GeriatricCarePage() {
         heading="What we provide"
         intro="Focused post-operative and discharge support, delivered at home by trained care professionals."
         bullets={whatWeProvideBullets}
-        image="/images/services/geriatric/2.png"
-        imageAlt={SERVICE.imageAlt}
+        image="/images/services/info/postop-provide-indian.jpg"
+        imageAlt="Indian nurse providing wound dressing care for an elderly patient at home"
       />
 
       <ServiceInfoBlock
         heading="The Role of a Geriatric Care Specialist"
         intro="A geriatric care specialist plays a crucial role in ensuring that seniors receive the care they need. They:"
         bullets={roleBullets}
-        image="/images/services/geriatric/3.png"
-        imageAlt="Geriatric care specialist with an elderly patient"
+        image="/images/services/info/postop-role-indian.jpg"
+        imageAlt="Indian nurse providing wound care for an elderly patient at home"
         reversed
       />
 
@@ -382,16 +382,16 @@ export default function GeriatricCarePage() {
         heading="Why Choose Home Geriatric Care for Elders?"
         intro="Opting for home geriatric care offers numerous benefits:"
         bullets={whyHomeBullets}
-        image="/images/services/geriatric/4.png"
-        imageAlt="Elderly patient at home receiving geriatric care"
+        image="/images/services/info/why-home-care-indian.jpg"
+        imageAlt="Senior receiving caring support at home in India"
       />
 
       <ServiceInfoBlock
         heading="What to Expect from At-Home Geriatric Care Services for Elders?"
         intro="When you arrange home geriatric care, here’s what you can expect:"
         bullets={expectBullets}
-        image="/images/services/geriatric/5.png"
-        imageAlt="Geriatric care team preparing a personalized plan"
+        image="/images/services/info/care-plan-expect-indian.jpg"
+        imageAlt="Indian nurse reviewing a care plan with family at home"
         tinted
       />
 

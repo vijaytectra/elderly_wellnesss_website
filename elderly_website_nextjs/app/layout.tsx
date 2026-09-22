@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 
-const DeferredCallbackForm = dynamic(() => import("@/components/DeferredCallbackForm").then(m => m.DeferredCallbackForm), { ssr: false });
+const DeferredCallbackForm = dynamic(() => import("@/components/DeferredCallbackForm").then(m => m.DeferredCallbackForm));
 const Footer = dynamic(() => import("@/components/Footer").then(m => m.Footer));
 const StickyBookingBar = dynamic(() => import("@/components/StickyBookingBar").then(m => m.StickyBookingBar));
 import { organizationSchema, websiteSchema } from "@/lib/schema";

@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { DeferredCallbackForm } from "@/components/DeferredCallbackForm";
-import { Footer } from "@/components/Footer";
+import dynamic from "next/dynamic";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
-import { StickyBookingBar } from "@/components/StickyBookingBar";
+
+const DeferredCallbackForm = dynamic(() => import("@/components/DeferredCallbackForm").then(m => m.DeferredCallbackForm), { ssr: false });
+const Footer = dynamic(() => import("@/components/Footer").then(m => m.Footer));
+const StickyBookingBar = dynamic(() => import("@/components/StickyBookingBar").then(m => m.StickyBookingBar));
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { cormorant, manrope, playball } from "./fonts";

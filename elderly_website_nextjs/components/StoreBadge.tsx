@@ -1,4 +1,5 @@
 import { APP_LINKS } from "@/data/site";
+import Image from "next/image";
 
 type Kind = "google-play" | "app-store";
 
@@ -43,13 +44,13 @@ export function StoreBadge({ kind, size = "md" }: StoreBadgeProps) {
       aria-label={badge.alt}
       className="inline-block leading-none"
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={badge.src}
         alt={badge.alt}
         width={badge.width}
         height={badge.height}
         className={`${heightClass} w-auto`}
+        unoptimized
       />
     </a>
   );

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { DeferredCallbackForm } from "@/components/DeferredCallbackForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -99,7 +100,9 @@ export default function RootLayout({
     >
       <head>
         {/* Google Tag Manager */}
-        <script
+        <Script
+          id="gtm"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: GTM_SNIPPET }}
         />
         {/* End Google Tag Manager */}

@@ -102,7 +102,7 @@ export default function RootLayout({
         {/* Google Tag Manager */}
         <Script
           id="gtm"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{ __html: GTM_SNIPPET }}
         />
         {/* End Google Tag Manager */}

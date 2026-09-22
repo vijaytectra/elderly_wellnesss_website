@@ -5,14 +5,15 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { HeroCtas } from "@/components/HeroCtas";
 
+import dynamic from "next/dynamic";
 import { StoreBadge } from "@/components/StoreBadge";
-
-import { HomepageBlogStrip } from "@/components/sections/HomepageBlogStrip";
 import { SectionTitle } from "@/components/sections/SectionTitle";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
 import { buildMetadata } from "@/lib/seo";
 import { PRIMARY_SERVICES } from "@/data/primary-services";
+
+const HomepageBlogStrip = dynamic(() => import("@/components/sections/HomepageBlogStrip").then(m => m.HomepageBlogStrip));
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials").then(m => m.Testimonials));
+const WhyChooseApp = dynamic(() => import("@/components/sections/WhyChooseApp").then(m => m.WhyChooseApp));
 
 export const metadata: Metadata = buildMetadata({
   title: "Elderly Wellness | Elder Care Services in Chennai",

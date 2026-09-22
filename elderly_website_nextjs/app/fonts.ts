@@ -31,7 +31,7 @@ export const cormorant = localFont({
   ],
   variable: "--font-serif",
   display: "swap",
-  preload: false,
+  preload: true,
 });
 
 /** Playball display script, single weight. */
@@ -45,5 +45,5 @@ export const playball = localFont({
   ],
   variable: "--font-display",
   display: "swap",
-  preload: false,
+  preload: true,
 });

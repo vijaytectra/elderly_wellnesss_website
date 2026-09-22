@@ -5,14 +5,15 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { HeroCtas } from "@/components/HeroCtas";
 
+import dynamic from "next/dynamic";
 import { StoreBadge } from "@/components/StoreBadge";
-
-import { HomepageBlogStrip } from "@/components/sections/HomepageBlogStrip";
 import { SectionTitle } from "@/components/sections/SectionTitle";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { WhyChooseApp } from "@/components/sections/WhyChooseApp";
 import { buildMetadata } from "@/lib/seo";
 import { PRIMARY_SERVICES } from "@/data/primary-services";
+
+const HomepageBlogStrip = dynamic(() => import("@/components/sections/HomepageBlogStrip").then(m => m.HomepageBlogStrip));
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials").then(m => m.Testimonials));
+const WhyChooseApp = dynamic(() => import("@/components/sections/WhyChooseApp").then(m => m.WhyChooseApp));
 
 export const metadata: Metadata = buildMetadata({
   title: "Elderly Wellness | Elder Care Services in Chennai",
@@ -211,7 +212,7 @@ export default function HomePage() {
                   src="/images/e4.jpg" 
                   alt="Elderly care" 
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
                   className="object-cover rounded-[16px] sm:rounded-[24px] lg:rounded-[60px] shadow-xl lg:shadow-2xl" 
                   priority
                 />
@@ -325,6 +326,7 @@ export default function HomePage() {
                 alt="Elderly Wellness app preview"
                 width={450}
                 height={912}
+                sizes="(max-width: 640px) 280px, 320px"
                 className="mx-auto h-auto w-full max-w-[280px] object-contain sm:max-w-[320px]"
               />
             </div>
@@ -423,6 +425,7 @@ export default function HomePage() {
             alt="Elderly care family moment"
             width={1200}
             height={700}
+            sizes="(max-width: 1200px) 100vw, 1200px"
             className="h-auto w-full rounded-[var(--radius-lg)] object-cover"
           />
         </Container>
@@ -437,6 +440,7 @@ export default function HomePage() {
               alt="Download Elderly Wellness app"
               width={450}
               height={440}
+              sizes="(max-width: 640px) 100vw, 320px"
               className="mx-auto w-full max-w-[320px] object-contain"
             />
             <ul className="mt-6 flex flex-wrap items-center justify-center gap-4">

@@ -7,7 +7,6 @@ import {
   ServiceInfoBlock,
   type ServiceInfoBullet,
 } from "@/components/sections/ServiceInfoBlock";
-import { WhyChooseUs, type WhyChooseUsFeature } from "@/components/sections/WhyChooseUs";
 import { buildMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import {
@@ -95,33 +94,6 @@ const expectBullets: readonly ServiceInfoBullet[] = [
   },
 ];
 
-const whyChooseFeatures: readonly WhyChooseUsFeature[] = [
-  {
-    icon: "/images/services/physio-icons/simplified-discovery-process.png",
-    title: "Simplified Discovery Process",
-    body: "Finding the right care provider can be overwhelming, but our care specialists make it easy. They assess your loved one’s needs and match them with the most suitable caregiver, saving you time and effort.",
-  },
-  {
-    icon: "/images/services/physio-icons/affordable-transparent-care.png",
-    title: "Affordable, Transparent Care",
-    body: "We offer flexible, , ensuring top-quality care that fits within your budget. Our transparent pricing system helps you choose the right service without any surprises.",
-  },
-  {
-    icon: "/images/services/physio-icons/reliable-long-term-support.png",
-    title: "Reliable, Long-term Support",
-    body: "At Elderly Wellness, we ensure consistent, reliable care. Our caregivers are carefully vetted and trained at our Elderly Academy of Caretaking & Hospitality (EACH). In case of delays or no-shows, we guarantee a replacement caregiver within 2 hours, ensuring continuous care for your loved ones.",
-  },
-  {
-    icon: "/images/services/physio-icons/quality-you-can-count-on.png",
-    title: "Quality You Can Count On",
-    body: "At Elderly Wellness, we only work with caregivers who are thoroughly screened, vetted, and trained to provide the highest quality care. All our caregivers are part of the Elderly Wellness family and are trained at our Elderly Academy of Caretaking & Hospitality (EACH). This academy is dedicated to elevating their skills and expertise, ensuring your loved ones receive the best care possible—whether they need physical assistance, medical care, or emotional support.",
-  },
-  {
-    icon: "/images/services/physio-icons/longevity-of-care.png",
-    title: "Longevity of Care",
-    body: "At Elderly Wellness, we don’t just offer short-term solutions. We’re committed to providing long-term support for your loved ones, ensuring consistent and dependable care for as long as necessary. Should any issues arise, we’re here to quickly resolve them and maintain continuity of care.",
-  },
-];
 
 const steps: readonly ArrangeStep[] = [
   {
@@ -394,18 +366,6 @@ export default function PhysiotherapyPage() {
         image="/images/services/info/physio-expect-indian.jpg"
         imageAlt="Indian physiotherapist helping an elderly woman with balance exercises at home"
         tinted
-      />
-
-      <WhyChooseUs
-        heading={
-          <>
-            Why Choose Elderly Wellness for{" "}
-            <span className="text-[color:var(--color-brand)]">
-              Physiotherapy & Rehabilitation?
-            </span>
-          </>
-        }
-        features={whyChooseFeatures}
       />
 
       <ArrangeSteps

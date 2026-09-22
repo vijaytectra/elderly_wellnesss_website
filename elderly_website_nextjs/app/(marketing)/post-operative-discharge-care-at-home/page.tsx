@@ -7,7 +7,6 @@ import {
   ServiceInfoBlock,
   type ServiceInfoBullet,
 } from "@/components/sections/ServiceInfoBlock";
-import { WhyChooseUs, type WhyChooseUsFeature } from "@/components/sections/WhyChooseUs";
 import { buildMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import {
@@ -95,33 +94,6 @@ const expectBullets: readonly ServiceInfoBullet[] = [
   },
 ];
 
-const whyChooseFeatures: readonly WhyChooseUsFeature[] = [
-  {
-    icon: "/images/services/physio-icons/simplified-discovery-process.png",
-    title: "Simplified Discovery Process",
-    body: "Finding the right post-operative care support can be challenging. Our specialists assess recovery needs and match your loved one with the most suitable nurse or caregiver, saving you time and effort.",
-  },
-  {
-    icon: "/images/services/physio-icons/affordable-transparent-care.png",
-    title: "Affordable, Transparent Care",
-    body: "We offer flexible, , ensuring you receive top-quality care at an affordable price. Our transparent pricing system helps you choose the right service without any surprises.",
-  },
-  {
-    icon: "/images/services/physio-icons/reliable-long-term-support.png",
-    title: "Reliable, Long-term Support",
-    body: "At Elderly Wellness, we ensure consistent, reliable care. Our caregivers are carefully vetted and trained at our Elderly Academy of Caretaking & Hospitality (EACH). In case of delays or no-shows, we guarantee a replacement caregiver within 2 hours, ensuring continuous care for your loved ones.",
-  },
-  {
-    icon: "/images/services/physio-icons/quality-you-can-count-on.png",
-    title: "Quality You Can Count On",
-    body: "We only work with caregivers who are thoroughly screened, vetted, and trained to provide the highest quality care. All our caregivers are part of the Elderly Wellness family, trained at EACH. This ensures your loved ones receive the best possible care—whether they need help with daily tasks, medical care, or emotional support.",
-  },
-  {
-    icon: "/images/services/physio-icons/longevity-of-care.png",
-    title: "Longevity of Care",
-    body: "At Elderly Wellness, we don’t just provide short-term solutions. We are committed to offering long-term care, ensuring ongoing support for your loved ones. Should any issues arise, we’re here to resolve them quickly and maintain continuity of care.",
-  },
-];
 
 const steps: readonly ArrangeStep[] = [
   {
@@ -393,18 +365,6 @@ export default function PostOperativeCarePage() {
         image="/images/services/info/care-plan-expect-indian.jpg"
         imageAlt="Indian nurse reviewing a care plan with family at home"
         tinted
-      />
-
-      <WhyChooseUs
-        heading={
-          <>
-            Why Choose Elderly Wellness for{" "}
-            <span className="text-[color:var(--color-brand)]">
-              Post-Operative Care?
-            </span>
-          </>
-        }
-        features={whyChooseFeatures}
       />
 
       <ArrangeSteps

@@ -200,6 +200,11 @@ export default async function BlogArticlePage({ params }: BlogPageProps) {
                   />
                 </div>
               ) : null}
+              {tocItems.length > 0 ? (
+                <div className="mt-8 lg:hidden">
+                  <BlogToc items={tocItems} />
+                </div>
+              ) : null}
               <article
                 className="prose prose-lg mt-8 max-w-none prose-headings:font-[family-name:var(--font-sans)] prose-h1:font-[family-name:var(--font-serif)] prose-h2:font-[family-name:var(--font-serif)] prose-a:text-[color:var(--color-brand)] prose-img:rounded-[var(--radius-md)]"
                 dangerouslySetInnerHTML={{ __html: bodyHtml }}

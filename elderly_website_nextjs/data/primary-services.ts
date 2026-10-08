@@ -90,6 +90,24 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
     imageAlt: "Indian physiotherapist guiding an elderly woman through exercises at home",
     imagePosition: "object-top",
   },
+  {
+    id: "nurse-procedures",
+    href: "/nurse-procedures-at-home/",
+    navLabel: "Nurse Procedures",
+    navHint: "Specific medical procedures done at home by a nurse",
+    title: "Nurse Procedures at Home",
+    body:
+      "Professional in-home medical procedures like injections, catheter insertion, wound dressing, and sample collection by certified nurses.",
+    bullets: [
+      "Injections and IV administration",
+      "Catheter and tube insertions",
+      "Wound and stoma care",
+      "Sample collections (e.g. ABG, GRBS)",
+      "Suture removal",
+    ],
+    image: "/images/procedures/foley-cath-insertion.jpg",
+    imageAlt: "Indian nurse preparing equipment at home",
+  },
 ] as const;
 
 export function getPrimaryServiceByHref(href: string): PrimaryService | undefined {

@@ -20,7 +20,7 @@ export function Container({
 }: ContainerProps & Omit<ComponentPropsWithoutRef<"div">, keyof ContainerProps>) {
   const Component: ElementType = as ?? "div";
   const classes = [
-    "mx-auto w-full max-w-[1170px] px-4 sm:px-6 lg:px-8",
+    "mx-auto w-full max-w-[92%] px-2 sm:px-4",
     className,
   ]
     .filter(Boolean)

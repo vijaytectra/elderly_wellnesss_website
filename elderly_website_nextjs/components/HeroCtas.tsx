@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useBookingModal } from "@/context/BookingModalContext";
 import { SITE_PHONE_TEL } from "@/data/site";
 
 const headsetIcon = (
@@ -18,25 +21,74 @@ interface HeroCtasProps {
   primaryHref?: string;
   primaryLabel?: string;
   callLabel?: string;
+  compact?: boolean;
+  bookingService?: string;
+  openModalOnClick?: boolean;
+  onPrimaryClick?: () => void;
 }
 
 export function HeroCtas({
   primaryHref = "/contact/",
   primaryLabel = "Request a Callback",
   callLabel = "Call Now",
+  compact = false,
+  bookingService,
+  openModalOnClick,
+  onPrimaryClick,
 }: HeroCtasProps) {
+  const { openBookingModal } = useBookingModal();
+
+  const shouldOpenModal =
+    openModalOnClick ??
+    (bookingService !== undefined ||
+      primaryLabel.toLowerCase().includes("book") ||
+      primaryLabel.toLowerCase().includes("callback"));
+
+  const handlePrimaryClick = (e: React.MouseEvent) => {
+    if (onPrimaryClick) {
+      e.preventDefault();
+      onPrimaryClick();
+    } else if (shouldOpenModal) {
+      e.preventDefault();
+      openBookingModal(bookingService);
+    }
+  };
+
+  if (compact) {
+    return (
+      <div className="flex flex-wrap items-center gap-2">
+        <Link
+          href={primaryHref}
+          onClick={handlePrimaryClick}
+          className="btn-brand inline-flex flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-xs font-bold shadow-[var(--shadow-card)] text-center whitespace-nowrap min-w-[105px] transition-transform hover:-translate-y-0.5 cursor-pointer"
+        >
+          {headsetIcon}
+          {primaryLabel}
+        </Link>
+        <a
+          href={SITE_PHONE_TEL}
+          className="btn-dark inline-flex flex-1 items-center justify-center gap-1.5 rounded-full px-3 py-2 text-xs font-bold shadow-[var(--shadow-card)] text-center whitespace-nowrap min-w-[95px] transition-transform hover:-translate-y-0.5 cursor-pointer"
+        >
+          {phoneIcon}
+          {callLabel}
+        </a>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-wrap gap-3">
       <Link
         href={primaryHref}
-        className="btn-brand inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold shadow-[var(--shadow-card)]"
+        onClick={handlePrimaryClick}
+        className="btn-brand inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5 cursor-pointer"
       >
         {headsetIcon}
         {primaryLabel}
       </Link>
       <a
         href={SITE_PHONE_TEL}
-        className="btn-dark inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold shadow-[var(--shadow-card)]"
+        className="btn-dark inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5 cursor-pointer"
       >
         {phoneIcon}
         {callLabel}

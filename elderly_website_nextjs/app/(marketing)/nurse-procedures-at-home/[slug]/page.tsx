@@ -84,13 +84,15 @@ export default async function NurseProcedureDetailPage({ params }: Props) {
                     ₹{procedure.price.toLocaleString("en-IN")}
                   </div>
                   {procedure.oldPrice && (
-                    <div className="text-xl text-gray-400 line-through">
-                      ₹{procedure.oldPrice.toLocaleString("en-IN")}
-                    </div>
+                    <>
+                      <div className="text-xl text-gray-400 line-through">
+                        ₹{procedure.oldPrice.toLocaleString("en-IN")}
+                      </div>
+                      <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                        {Math.round(((procedure.oldPrice - procedure.price) / procedure.oldPrice) * 100)}% OFF
+                      </div>
+                    </>
                   )}
-                  <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
-                    30% OFF
-                  </div>
                 </div>
               ) : (
                 <div className="text-3xl font-bold text-brand-primary">
@@ -112,13 +114,15 @@ export default async function NurseProcedureDetailPage({ params }: Props) {
             <div className="mt-auto flex flex-col sm:flex-row gap-4">
               <a
                 href="#download-btn"
-                className="flex-1 bg-brand-primary text-white text-center py-4 rounded-full font-semibold hover:bg-brand-primary/90 transition-colors shadow-md"
+                className="btn-brand flex-1 text-center py-4 rounded-full font-semibold shadow-md transition-colors"
               >
                 Add to Cart
               </a>
               <a
                 href="#download-btn"
-                className="flex-1 bg-gray-900 text-white text-center py-4 rounded-full font-semibold hover:bg-gray-800 transition-colors shadow-md"
+                data-open-booking-modal="true"
+                data-service-name={procedure.title}
+                className="btn-dark flex-1 text-center py-4 rounded-full font-semibold shadow-md transition-colors cursor-pointer"
               >
                 Book Now
               </a>

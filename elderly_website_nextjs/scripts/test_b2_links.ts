@@ -1,9 +1,8 @@
-import fs from 'node:fs';
 import { getBlogBySlug } from '../lib/blog';
 import { parse } from 'node-html-parser';
 
 const slug = 'benefits-of-professional-geriatric-care-services';
-const { meta, html } = getBlogBySlug(slug);
+const { html } = getBlogBySlug(slug);
 
 const root = parse(html);
 const links = root.querySelectorAll('a');

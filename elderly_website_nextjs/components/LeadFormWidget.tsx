@@ -41,12 +41,15 @@ export function LeadFormWidget({
     if (borderRadius) script.setAttribute("data-border-radius", borderRadius);
     if (shadow) script.setAttribute("data-shadow", shadow);
 
-    containerRef.current.appendChild(script);
+    const container = containerRef.current;
+    if (container) {
+      container.appendChild(script);
+    }
 
     return () => {
       // Cleanup the widget if component unmounts
-      if (containerRef.current) {
-        containerRef.current.innerHTML = "";
+      if (container) {
+        container.innerHTML = "";
       }
     };
   }, [code, width, height, primaryColor, secondaryColor, borderRadius, shadow]);

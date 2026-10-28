@@ -131,26 +131,26 @@ export default function HomePage() {
     <div>
 
       {/* Banner / Hero */}
-      <section className="relative overflow-hidden flex flex-col justify-center min-h-[calc(100dvh-64px)] sm:min-h-[calc(100dvh-80px)] py-6 sm:py-8 lg:py-10 before:absolute before:inset-0 before:-z-10 before:bg-[url('/images/blue_dotes.png')] before:bg-no-repeat before:bg-[length:20%] before:bg-[position:-5%_-10%] before:opacity-30">
-        <Container className="w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 items-center">
+      <section className="relative overflow-hidden flex flex-col min-h-[calc(100svh-64px)] pb-20 sm:pb-8 lg:pb-10 pt-3 sm:pt-6 lg:pt-10 lg:justify-center lg:min-h-[calc(100dvh-80px)] before:absolute before:inset-0 before:-z-10 before:bg-[url('/images/blue_dotes.png')] before:bg-no-repeat before:bg-[length:20%] before:bg-[position:-5%_-10%] before:opacity-30">
+        <Container className="w-full flex-1 flex flex-col lg:block">
+          <div className="flex-1 flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
             {/* Left side content */}
             <div className="pt-2 sm:pt-3 lg:pt-0">
-              <p className="mb-4 sm:mb-5 text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] text-[#5c7a99]">
+              <p className="mb-2.5 sm:mb-5 text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] text-[#5c7a99]">
                 COMPASSIONATE CARE &bull; SKILLED SUPPORT &bull; AT HOME
               </p>
-              <h1 className="mb-3 font-[family-name:var(--font-serif)] text-[1.75rem] leading-[1.1] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#002f5e]">
+              <h1 className="mb-2 sm:mb-3 font-[family-name:var(--font-serif)] text-[1.75rem] leading-[1.1] sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#002f5e]">
                 <span className="font-[family-name:var(--font-display)] text-[#1ba1b5] block mb-1 font-normal text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
                   Trusted Home Healthcare
                 </span>
                 for Your Loved Ones
               </h1>
-              <p className="mb-4 max-w-xl text-[12px] leading-snug text-[#3a5875] sm:text-[14px] lg:text-[17px] lg:leading-relaxed">
+              <p className="mb-2.5 sm:mb-4 max-w-xl text-[12px] leading-snug text-[#3a5875] sm:text-[14px] lg:text-[17px] lg:leading-relaxed">
                 From daily care to specialised nursing support, we bring trained professionals to your home &mdash; so your loved ones get the care, comfort and dignity they deserve.
               </p>
               
               {/* 4 Features */}
-              <div className="grid grid-cols-4 gap-2 sm:gap-4 mb-4 lg:mb-8">
+              <div className="grid grid-cols-4 gap-1.5 sm:gap-4 mb-2.5 sm:mb-4 lg:mb-8">
                 {/* Feature 1 */}
                 <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-1.5 sm:gap-3">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-[50px] lg:h-[50px] rounded-full bg-[#eaf6f6] border border-[#d2ebeb] flex items-center justify-center text-[#1ba1b5]">
@@ -182,7 +182,7 @@ export default function HomePage() {
               </div>
 
               {/* Safe Badge */}
-              <div className="inline-flex items-center gap-2 sm:gap-3 lg:gap-4 bg-[#ebf5f5] rounded-full px-3 py-2 sm:px-4 sm:py-2.5 lg:px-5 lg:py-3.5 mb-4 lg:mb-8 w-full sm:w-auto">
+              <div className="inline-flex items-center gap-2 sm:gap-3 lg:gap-4 bg-[#ebf5f5] rounded-full px-3 py-2 sm:px-4 sm:py-2.5 lg:px-5 lg:py-3.5 mb-2.5 sm:mb-4 lg:mb-8 w-full sm:w-auto">
                 <div className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 rounded-full bg-[#1ba1b5] text-white flex items-center justify-center shrink-0 shadow-sm">
                   <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
                 </div>
@@ -194,7 +194,11 @@ export default function HomePage() {
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-4">
-                <Link href="/contact" className="btn-brand inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full px-4 py-2 sm:px-5 sm:py-2.5 lg:px-7 lg:py-3.5 text-[12px] sm:text-[13px] lg:text-[15px] font-bold shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5">
+                <Link
+                  href="/contact"
+                  data-open-booking-modal="true"
+                  className="btn-brand inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-full px-4 py-2 sm:px-5 sm:py-2.5 lg:px-7 lg:py-3.5 text-[12px] sm:text-[13px] lg:text-[15px] font-bold shadow-[var(--shadow-card)] transition-transform hover:-translate-y-0.5 cursor-pointer"
+                >
                   <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-[18px] lg:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                   Book Care
                 </Link>
@@ -206,19 +210,19 @@ export default function HomePage() {
             </div>
             
             {/* Right side Image (animated e4) */}
-            <div className="relative mt-4 lg:mt-0 pt-2 lg:pt-4">
-              <div className="relative w-full aspect-[21/9] sm:aspect-[16/9] lg:aspect-[1.15] xl:aspect-[1.25] animate-float z-10 mx-auto max-w-2xl lg:max-w-none">
+            <div className="relative mt-3 sm:mt-4 lg:mt-0 flex-1 flex flex-col min-h-0">
+              <div className="relative w-full flex-1 min-h-[220px] max-h-[460px] lg:min-h-0 lg:max-h-none lg:aspect-[1.15] xl:aspect-[1.25] animate-float z-10 mx-auto max-w-2xl lg:max-w-none">
                 <Image 
                   src="/images/e4.jpg" 
                   alt="Elderly care" 
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
-                  className="object-cover rounded-[16px] sm:rounded-[24px] lg:rounded-[60px] shadow-xl lg:shadow-2xl" 
+                  className="object-cover object-top rounded-[16px] sm:rounded-[24px] lg:rounded-[60px] shadow-xl lg:shadow-2xl" 
                   priority
                 />
                 
                 {/* White shape overlapping bottom right with angled text */}
-                <div className="absolute -bottom-3 -right-1 sm:-bottom-4 sm:-right-4 lg:-bottom-8 lg:-right-8 bg-white rounded-xl lg:rounded-3xl shadow-lg lg:shadow-2xl p-2 sm:p-3 lg:p-7 rotate-[-4deg] max-w-[140px] sm:max-w-[180px] lg:max-w-[280px] z-20">
+                <div className="absolute bottom-2 right-2 sm:-bottom-4 sm:-right-4 lg:-bottom-8 lg:-right-8 bg-white rounded-xl lg:rounded-3xl shadow-lg lg:shadow-2xl p-2 sm:p-3 lg:p-7 rotate-[-4deg] max-w-[140px] sm:max-w-[180px] lg:max-w-[280px] z-20">
                   <p className="font-[family-name:var(--font-display)] text-[#004f7a] text-[15px] sm:text-[18px] lg:text-4xl leading-[1.1] text-center px-1 lg:px-2">
                     Better Care.<br/> A Happier Tomorrow.
                   </p>
@@ -237,7 +241,7 @@ export default function HomePage() {
       <section id="elder-care-services" className="section-y">
         <Container>
           <SectionTitle heading="Services" />
-          <div className="mt-5 grid grid-cols-1 gap-6 sm:mt-8 lg:grid-cols-2">
+          <div className="mt-5 grid grid-cols-1 gap-6 sm:mt-8 sm:grid-cols-2 lg:grid-cols-4">
             {PRIMARY_SERVICES.map((s) => (
               <div
                 key={s.id}
@@ -252,21 +256,27 @@ export default function HomePage() {
                     src={s.image}
                     alt={s.imageAlt}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className={`object-cover transition duration-300 group-hover:scale-[1.03] ${s.imagePosition || "object-center"}`}
                   />
                 </Link>
-                <div className="flex flex-1 flex-col p-6 sm:p-8">
-                  <h3 className="mb-3 font-[family-name:var(--font-serif)] text-xl font-semibold text-[color:var(--color-brand)] sm:text-2xl">
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <h3 className="mb-2.5 font-[family-name:var(--font-serif)] text-lg font-semibold text-[color:var(--color-brand)] sm:text-xl line-clamp-2">
                     <Link href={s.href} className="hover:underline">
                       {s.title}
                     </Link>
                   </h3>
-                  <p className="mb-6 text-sm leading-relaxed text-[color:var(--color-muted-foreground)] sm:text-base">
+                  <p className="mb-5 text-sm leading-relaxed text-[color:var(--color-muted-foreground)] line-clamp-3">
                     {s.body}
                   </p>
                   <div className="mt-auto pt-2">
-                    <HeroCtas primaryLabel="Book care" callLabel="Call Now" primaryHref={s.href} />
+                    <HeroCtas
+                      primaryLabel="Book care"
+                      callLabel="Call Now"
+                      primaryHref={s.href}
+                      bookingService={s.title}
+                      compact
+                    />
                   </div>
                 </div>
               </div>

@@ -10,6 +10,7 @@ const StickyBookingBar = dynamic(() => import("@/components/StickyBookingBar").t
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { cormorant, manrope, playball } from "./fonts";
+import { BookingModalProvider } from "@/context/BookingModalContext";
 import "./globals.css";
 
 const GTM_ID = "GTM-5G9CTKBR";
@@ -128,11 +129,13 @@ export default function RootLayout({
         </a>
         <JsonLd id="organization-schema" data={orgSchema} />
         <JsonLd id="website-schema" data={siteSchema} />
-        <Header />
-        <main id="main">{children}</main>
-        <DeferredCallbackForm />
-        <Footer />
-        <StickyBookingBar />
+        <BookingModalProvider>
+          <Header />
+          <main id="main">{children}</main>
+          <DeferredCallbackForm />
+          <Footer />
+          <StickyBookingBar />
+        </BookingModalProvider>
       </body>
     </html>
   );

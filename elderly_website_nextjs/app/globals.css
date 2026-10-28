@@ -11,8 +11,10 @@
 @theme inline {
   /* Brand */
   --color-brand: #2786a5;         /* legacy --primery */
+  --color-brand-primary: #2786a5;
   --color-brand-dark: #1f6b85;    /* derived — 15% darker than --primery */
   --color-brand-foreground: #ffffff;
+  --color-brand-light: #eaf3f7;
   --color-accent: #57c4e3;        /* used in title_badge / how_it_section CTA */
 
   /* Neutrals */
@@ -56,8 +58,10 @@
  * ---------------------------------------------------------------------- */
 :root {
   --color-brand: #2786a5;
+  --color-brand-primary: #2786a5;
   --color-brand-dark: #1f6b85;
   --color-brand-foreground: #ffffff;
+  --color-brand-light: #eaf3f7;
   --color-accent: #57c4e3;
 
   --color-background: #ffffff;
@@ -458,4 +462,28 @@ a.ew-blog-cta__btn:hover {
 }
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+@keyframes modalBackdropFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalContentPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modal-backdrop {
+  animation: modalBackdropFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-modal-content {
+  animation: modalContentPopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

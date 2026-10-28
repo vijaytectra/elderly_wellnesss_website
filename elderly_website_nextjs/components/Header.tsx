@@ -36,7 +36,8 @@ export function Header() {
           </a>
           <Link
             href="/contact/"
-            className="btn-brand hidden rounded-full px-5 py-2 text-sm font-semibold shadow-[var(--shadow-card)] sm:inline-flex"
+            data-open-booking-modal="true"
+            className="btn-brand hidden rounded-full px-5 py-2 text-sm font-semibold shadow-[var(--shadow-card)] sm:inline-flex cursor-pointer transition-transform hover:-translate-y-0.5"
           >
             Book Care
           </Link>

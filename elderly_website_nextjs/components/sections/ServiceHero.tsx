@@ -63,7 +63,9 @@ export function ServiceHero({
             <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 href="/contact/"
-                className="btn-brand inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold shadow-[var(--shadow-card)]"
+                data-open-booking-modal="true"
+                data-service-name={headingLead}
+                className="btn-brand inline-flex items-center rounded-full px-6 py-3 text-sm font-semibold shadow-[var(--shadow-card)] cursor-pointer transition-transform hover:-translate-y-0.5"
               >
                 Request a Callback
               </Link>

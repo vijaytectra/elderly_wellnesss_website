@@ -1,21 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { SITE_PHONE, SITE_PHONE_TEL } from "@/data/site";
 import { NAV_ITEMS, type NavItem } from "./nav-items";
 
+const emptySubscribe = () => () => {};
+
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const close = useCallback(() => {
     setIsOpen(false);
@@ -161,8 +159,9 @@ export function MobileNav() {
                 </a>
                 <Link
                   href="/contact/"
+                  data-open-booking-modal="true"
                   onClick={close}
-                  className="btn-brand block rounded-full py-3 text-center text-base font-semibold"
+                  className="btn-brand block rounded-full py-3 text-center text-base font-semibold cursor-pointer"
                 >
                   Book Care
                 </Link>

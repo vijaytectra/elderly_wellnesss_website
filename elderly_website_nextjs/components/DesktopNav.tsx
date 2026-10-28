@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { NAV_ITEMS } from "./nav-items";
 import { IconChevronDown } from "./icons";
 
@@ -17,12 +17,12 @@ export function DesktopNav() {
   const rootRef = useRef<HTMLElement | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  function clearCloseTimer() {
+  const clearCloseTimer = useCallback(() => {
     if (closeTimer.current) {
       clearTimeout(closeTimer.current);
       closeTimer.current = null;
     }
-  }
+  }, []);
 
   function openMenu(label: string) {
     clearCloseTimer();
@@ -34,10 +34,10 @@ export function DesktopNav() {
     closeTimer.current = setTimeout(() => setOpenLabel(null), CLOSE_DELAY_MS);
   }
 
-  function closeMenu() {
+  const closeMenu = useCallback(() => {
     clearCloseTimer();
     setOpenLabel(null);
-  }
+  }, [clearCloseTimer]);
 
   useEffect(() => {
     function onDocClick(e: MouseEvent) {
@@ -55,7 +55,7 @@ export function DesktopNav() {
       document.removeEventListener("keydown", onKey);
       clearCloseTimer();
     };
-  }, []);
+  }, [closeMenu, clearCloseTimer]);
 
   return (
     <nav aria-label="Primary" className="hidden lg:block" ref={rootRef}>

@@ -35,7 +35,6 @@ const MANIFEST_PATH = resolve(BLOGS_SRC_DIR, "blog-manifest.json");
 const OUT_DIR = resolve(NEXT_APP_ROOT, "content", "blogs");
 
 const SITE_URL_WWW = "https://www.theelderlywellness.com";
-const SITE_URL_APEX = "https://theelderlywellness.com";
 const DEFAULT_OG_IMAGE = "/images/logo.png";
 const DEFAULT_AUTHOR = "Elderly Wellness";
 
@@ -280,7 +279,7 @@ function normalizeTopLevel(rest: string): string {
  */
 function normalizeBlogRelative(rest: string): string {
   // strip trailing `index.html`
-  let s = rest.replace(/\/index\.html(?=([?#]|$))/, "/");
+  const s = rest.replace(/\/index\.html(?=([?#]|$))/, "/");
   // ensure trailing slash before any hash/query
   const m = s.match(/^([^?#]*)([?#].*)?$/);
   if (!m) return s;
@@ -455,13 +454,6 @@ function textContent(root: HTMLElement, selector: string): string | null {
   return el ? el.text : null;
 }
 
-function attrContent(root: HTMLElement, selector: string, attr: string): string | null {
-  const el = root.querySelector(selector);
-  if (!el) return null;
-  const v = el.getAttribute(attr);
-  return v === undefined ? null : v;
-}
-
 function extractAuthor(root: HTMLElement): string {
   // Try inline JSON-LD blocks first — look for a BlogPosting / Article author.
   for (const s of root.querySelectorAll("script[type=\"application/ld+json\"]")) {
@@ -517,11 +509,6 @@ function extractName(v: unknown): string | null {
     if (typeof name === "string") return name;
   }
   return null;
-}
-
-function stripSiteSuffix(title: string): string {
-  // Trailing " | Elderly Wellness" or " - Elderly Wellness"
-  return title.replace(/\s+[|–—-]\s+Elderly Wellness\s*$/i, "").trim();
 }
 
 function computeReading(html: string): { wordCount: number; readingMinutes: number } {
@@ -610,7 +597,7 @@ function main(): void {
     // (Source has known bugs — see PHASE1_DECISIONS §4.)
     const canonical = `${SITE_URL_WWW}/blogs/${slug}/`;
 
-    let ogImageRaw =
+    const ogImageRaw =
       metaContent(root, "og:image:secure_url", "property") ??
       metaContent(root, "og:image", "property") ??
       entry.image ??

@@ -13,8 +13,8 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     slug: "sc-im-injection-vaccination",
     title: "S/C INJECTION/IM INJECTION/VACCINATION",
     desc: "Professional in-home IM and SC injection administration by certified nursing staff. Consumables will be charged as per MRP.",
-    price: 840,
-    oldPrice: 1200,
+    price: 1360,
+    oldPrice: 1600,
     image: "/images/procedures/sc-im-injection-vaccination.jpg",
     scopeOfCare: [
       "Clinical assessment before injection administration",
@@ -28,7 +28,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     slug: "ryles-tube-insertion",
     title: "RYLES TUBE INSERTION",
     desc: "Safe in-home nasogastric Ryle's tube insertion and replacement by certified nurses. Consumables will be charged as per MRP.",
-    price: 1050,
+    price: 1275,
     oldPrice: 1500,
     image: "/images/procedures/ryles-tube-insertion.jpg",
     scopeOfCare: [
@@ -43,7 +43,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     slug: "foley-cath-insertion",
     title: "FOLEY CATH INSERTION",
     desc: "Safe in-home Foley catheter insertion by certified nurses. Consumables to be charged as per MRP.",
-    price: 1260,
+    price: 1530,
     oldPrice: 1800,
     image: "/images/procedures/foley-cath-insertion.jpg",
     scopeOfCare: [
@@ -58,7 +58,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     slug: "enema",
     title: "ENEMA",
     desc: "Safe in-home enema administration by certified nurses. Consumables to be charged as per MRP.",
-    price: 1260,
+    price: 1530,
     oldPrice: 1800,
     image: "/images/procedures/enema.jpg",
     scopeOfCare: [
@@ -73,7 +73,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     slug: "colostomy-bag-change",
     title: "Colostomy Bag Change",
     desc: "Safe bedside colostomy bag change and peristomal skin care. Consumables to be charged as per MRP.",
-    price: 1400,
+    price: 1700,
     oldPrice: 2000,
     image: "/images/procedures/colostomy-bag-change.jpg",
     scopeOfCare: [

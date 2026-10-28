@@ -12,6 +12,7 @@ import { SocialLinks } from "./SocialLinks";
 import { StoreBadge } from "./StoreBadge";
 
 const quickLinks: ReadonlyArray<{ label: string; href: string }> = [
+  { label: "Careers", href: "/careers/" },
   { label: "Privacy Policy", href: "/privacy-policy/" },
   {
     label: "Refund & Cancellation Policy",

@@ -29,7 +29,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
   { path: "/locations/chennai/", title: "Serving Chennai", group: "Pages", changeFrequency: "weekly", priority: 0.8, lastModified: "2026-09-08" },
   { path: "/contact/", title: "Contact / Book Care", group: "Pages", changeFrequency: "monthly", priority: 0.8, lastModified: "2026-09-08" },
   { path: "/blogs/", title: "Blog", group: "Pages", changeFrequency: "weekly", priority: 0.7, lastModified: "2026-09-08" },
-  { path: "/site-map/", title: "Sitemap", group: "Pages", changeFrequency: "weekly", priority: 0.3, lastModified: "2026-09-08" },
+  { path: "/site-map/", title: "Sitemap", group: "Pages", changeFrequency: "weekly", priority: 0.3, lastModified: "2026-11-04" },
   {
     path: "/physiotherapy-rehabilitation-at-home/",
     title: "Physiotherapy & Rehabilitation",
@@ -61,6 +61,14 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     changeFrequency: "monthly",
     priority: 0.9,
     lastModified: "2026-09-21",
+  },
+  {
+    path: "/nurse-procedures-at-home/",
+    title: "Nurse Procedures at Home",
+    group: "Services",
+    changeFrequency: "monthly",
+    priority: 0.9,
+    lastModified: "2026-10-28",
   },
   {
     path: "/elderly-wellness/",
@@ -100,7 +108,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     group: "Legal",
     changeFrequency: "yearly",
     priority: 0.3,
-    lastModified: "2026-09-08",
+    lastModified: "2026-11-04",
   },
   {
     path: "/refund-and-cancellation-policy/",
@@ -108,7 +116,7 @@ export const MARKETING_SITEMAP: readonly SitemapPage[] = [
     group: "Legal",
     changeFrequency: "yearly",
     priority: 0.3,
-    lastModified: "2026-09-08",
+    lastModified: "2026-11-04",
   },
 ];
 

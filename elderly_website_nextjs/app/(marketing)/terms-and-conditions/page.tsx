@@ -826,8 +826,8 @@ platforms.
 </p>
 <p>
 Your publication of patient stories on the Elderly is governed
-by Clause 11 of these Terms. Without prejudice to the detailed
-terms stated in Clause 11, you hereby agree not to post or
+by Clause 10 of these Terms. Without prejudice to the detailed
+terms stated in Clause 10, you hereby agree not to post or
 publish any content on the Elderly that:
 </p>
 <ul>
@@ -843,7 +843,7 @@ limited to the IG Rules and SPI Rules.
 <p>
 Elderly, at its sole discretion, may choose not to publish your
 patient stories if so required by applicable law, and in
-accordance with Clause 11 of these Terms. You agree that Elderly
+accordance with Clause 10 of these Terms. You agree that Elderly
 may contact you through telephone, email, SMS, or any other
 electronic means of communication for the purpose of:
 </p>
@@ -1374,224 +1374,17 @@ Conditions.
 </ul>
 </div>
 <div class="column-privacy-ploicy">
-<h3>9. ELDERLY DIAGNOSTICS</h3>
+<h3>9. TERMS OF USE PRACTITIONERS</h3>
 <p>
-Qikwell Technologies India Private Limited (“QTIPL” or “we”) is
-the service provider of services mentioned below. QTIPL under
-the brand name ‘Practo’ operates the said services through
-<a href="https://www.practo.com/">https://www.practo.com</a> and
-the mobile application ‘Practo’ (together, “Website”).
-</p>
-<p>
-Please carefully go through these terms and conditions (“Terms”)
-and the privacy policy available at
-<a href="https://www.practo.com/company/privacy">https://www.practo.com/company/privacy</a>
-(“Privacy Policy”) before you decide to access the Website or
-avail the services. These Terms and the Privacy Policy together
-constitute a legal agreement (“Agreement”) between you and QTIPL
-in relation to the Services (as defined below).
-</p>
-<p>
-QTIPL is inter alia engaged in providing healthcare services, in
-the form of pathology/diagnostics services. We cater to the
-needs of patients/Users/Sample Provider where they need to get
-various tests done. These could be for the purpose of conducting
-regular tests or the specific test that the
-hospitals/clinics/medical practitioners recommend. Our
-phlebotomists/logistics partners will come to your doorstep to
-procure the samples and reports shall be provided by us online.
-</p>
-<p><strong>Information Collection</strong></p>
-<ul class="pl-zero">
-<li><p>Your Name</p></li>
-<li><p>Your date of birth</p></li>
-<li><p>Your prescription (if applicable)</p></li>
-<li><p>Your test details</p></li>
-<li><p>Your gender</p></li>
-<li>
-<p>
-Name of the doctor who prescribed the tests (if applicable)
-</p>
-</li>
-<li><p>Your email id</p></li>
-<li><p>Your address</p></li>
-<li><p>Your phone number</p></li>
-<li>
-<p>
-Your financial information and such other details as may be
-required from time to time.
-</p>
-</li>
-</ul>
-
-<p><strong>Other Terms</strong></p>
-<ul class="pl-zero">
-<li>
-<p>
-You agree to provide the details sought above, for the
-purposes mentioned herein. We will have access not just to
-your details but to your reports and health records as well.
-</p>
-</li>
-<li>
-<p>
-You understand and agree that your personal information,
-health records, shall reside with us and may be used for R&D;
-purposes or shared with third parties, to bring better user
-experience, by sometimes prompting you to take tests
-regularly if there is a lifestyle disease / such other
-concern highlighted at the time of booking or otherwise.
-</p>
-</li>
-<li>
-<p>
-You understand that QTIPL undertakes risk assessment, but
-this is provided to the best of our knowledge. They are
-based on reports based on tests undertaken at labs and
-scientific studies available in public domains (some of
-which are listed below). This is not meant to be
-professional advice and you should always consult a
-physician before making any medical decisions.
-</p>
-</li>
-<li>
-<p>
-You understand that we may sometimes reach out to you or
-record all your calls with us and/or placed through us to
-laboratories and/or logistics partner, for investigative
-purposes.
-</p>
-</li>
-<li>
-<p>
-The Sample Provider shall provide the valid prescription, if
-required and applicable, issued by a doctor which contains
-the tests that are to be conducted, for which the
-phlebotomist is required to collect the samples from the
-Sample Provider.
-</p>
-</li>
-<li>
-<p>
-The Sample Providers may be required to provide a valid
-proof of identification to the phlebotomist.
-</p>
-</li>
-<li>
-<p>
-The Sample Provider explicitly provides consent to the
-phlebotomists /QTIPL for collection of the requisite samples
-from the Sample Provider.
-</p>
-</li>
-<li>
-<p>
-The services provided by QTIPL are for the purpose of
-enabling diagnostic discovery of patient’s condition for
-which the relevant test/ procedure is prescribed/
-recommended, and for no other purpose.
-</p>
-</li>
-<li>
-<p>
-QTIPL shall use the Website to enable booking of
-appointments for pathology services including but not
-limited to home collection of samples by phlebotomist,
-delivery of reports and such related services.
-</p>
-</li>
-<li>
-<p>
-The process of home collection shall be conducted by the
-phlebotomists as per QTIPL standard operating procedures and
-policies. However, in the event any Sample Provider has a
-special request, the same may be communicated to QTIPL at
-the time of booking the appointment so that QTIPL and
-phlebotomists are enabled appropriately to handle the said
-request.
-</p>
-</li>
-<li>
-<p>
-The invoice will be provided to the Sample Provider online
-by QTIPL either before or after the home collection service.
-Payment towards the said invoice may be made either by
-electronic mode or cash on delivery (i.e., at the time of
-collection of samples).
-</p>
-</li>
-</ul>
-
-<p>
-<strong>Diagnostic Test Booking with Discount Coupon Codes</strong>
-</p>
-<p>
-Discount coupon codes and the associated terms/ discounts may
-vary from scheme to scheme.
-</p>
-
-<p><strong>Refund Policy/Cancellation</strong></p>
-<ul class="pl-zero">
-<li>
-<p>
-In case there is a no show from the Phlebotomist /
-laboratories and/or logistics partner, at your home, then we
-would indicate the same beforehand, should we fail to do so,
-you could contact us at:
-<a href="mailto:support@practo.com">support@practo.com</a>
-</p>
-</li>
-<li>
-<p>
-If there are instances where you have made payments online
-and the Phlebotomist / laboratories and/or logistics
-partner, are unable to book appointment/collect samples from
-you, we would refund your money completely within ten (10)
-working days.
-</p>
-</li>
-<li>
-<p>
-If there is a no show from you either at your home for
-collection of samples or at the laboratories, then we would
-not reimburse the amount paid to us unless upon further
-investigation by QTIPL there is a genuine reason for such no
-show, in which case QTIPL may at its discretion decide to
-reimburse such amount.
-</p>
-</li>
-</ul>
-
-<p><strong>Reach out to us</strong></p>
-<ul class="pl-zero">
-<li>
-<p>
-Should you intend to request stopping of notifications, you
-can do so, by sending mail request to
-<a href="mailto:support@practo.com">support@practo.com</a>.
-</p>
-</li>
-<li>
-<p>
-Should you have any recommendations or such other requests,
-you could reach out to us at
-<a href="mailto:support@practo.com">support@practo.com</a>.
-</p>
-</li>
-</ul>
-</div>
-<div class="column-privacy-ploicy">
-<h3>10. TERMS OF USE PRACTITIONERS</h3>
-<p>
-The terms in this Clause 10 are applicable only to
+The terms in this Clause 9 are applicable only to
 Practitioners.
 </p>
 <ul style="list-style: none">
 <li>
-<h3><strong>10.1.</strong> LISTING POLICY</h3>
+<h3><strong>9.1.</strong> LISTING POLICY</h3>
 <ul>
 <li>
-<strong>10.1.1.</strong> Elderly, directly and indirectly,
+<strong>9.1.1.</strong> Elderly, directly and indirectly,
 collects information regarding the Practitioners’
 profiles, contact details, and practice. Elderly reserves
 the right to take down any Practitioner’s profile as well
@@ -1605,12 +1398,12 @@ required to inform Elderly immediately to enable Elderly
 to make the necessary amendments.
 </li>
 <li>
-<strong>10.1.2.</strong> Elderly shall not be liable and
+<strong>9.1.2.</strong> Elderly shall not be liable and
 responsible for the ranking of the Practitioners on
 external websites and search engines.
 </li>
 <li>
-<strong>10.1.3.</strong> Elderly shall not be responsible
+<strong>9.1.3.</strong> Elderly shall not be responsible
 or liable in any manner to the Users for any losses,
 damage, injuries or expenses incurred by the Users as a
 result of any disclosures or publications made by Elderly,
@@ -1624,7 +1417,7 @@ any disclosures made by Elderly prior to its actual
 receipt of such revocation.
 </li>
 <li>
-<strong>10.1.4.</strong> Elderly reserves the right to
+<strong>9.1.4.</strong> Elderly reserves the right to
 moderate the suggestions made by the Practitioners through
 feedback and the right to remove any abusive or
 inappropriate or promotional content added on the Elderly.
@@ -1633,13 +1426,13 @@ inaccurate, fraudulent, or non-existent profiles of
 Practitioners are added to the Elderly.
 </li>
 <li>
-<strong>10.1.5.</strong> Practitioners explicitly agree
+<strong>9.1.5.</strong> Practitioners explicitly agree
 that Elderly reserves the right to publish the Content
 provided by Practitioners to a third-party including
 content platforms.
 </li>
 <li>
-<strong>10.1.6.</strong> When you are listed on
+<strong>9.1.6.</strong> When you are listed on
 Elderly.com, End-Users may see a ‘Video Call’ option. When
 End-Users choose this option, they choose to call you
 through a free video call service provided by Elderly, and
@@ -1647,7 +1440,7 @@ the records of such calls are recorded and stored in
 Elderly’s servers.
 </li>
 <li>
-<strong>10.1.7.</strong> You as a Practitioner hereby
+<strong>9.1.7.</strong> You as a Practitioner hereby
 represent and warrant that you will use the Services in
 accordance with applicable law. Any contravention of
 applicable law as a result of your use of these Services
@@ -1661,7 +1454,7 @@ liability for the same.
 <div class="column-privacy-ploicy">
 <ul style="list-style: none">
 <li>
-<strong>10.2.</strong> PROFILE OWNERSHIP AND EDITING RIGHTS
+<strong>9.2.</strong> PROFILE OWNERSHIP AND EDITING RIGHTS
 <ul>
 <li>
 Elderly ensures easy access to the Practitioners by
@@ -1684,11 +1477,11 @@ with or without notice to you.
 </ul>
 </li>
 <li>
-<strong>10.3.</strong> PATIENT STORIES DISPLAY RIGHTS OF
+<strong>9.3.</strong> PATIENT STORIES DISPLAY RIGHTS OF
 ELDERLY
 <ul>
 <li>
-<strong>10.3.1.</strong> All Critical Content is content
+<strong>9.3.1.</strong> All Critical Content is content
 created by the Users of www.theelderlywellness.com
 (“Website”) and the clients of Elderly customers and
 Practitioners, including the End-Users. As a platform,
@@ -1701,19 +1494,19 @@ Critical Content are further detailed in Clauses in these
 Terms.
 </li>
 <li>
-<strong>10.3.2.</strong> Elderly reserves the right to
+<strong>9.3.2.</strong> Elderly reserves the right to
 collect feedback and Critical Content for all the
 Practitioners, Clinics and Healthcare Providers listed on
 the Elderly.
 </li>
 <li>
-<strong>10.3.3.</strong> Elderly shall have no obligation
+<strong>9.3.3.</strong> Elderly shall have no obligation
 to pre-screen, review, flag, filter, modify, refuse or
 remove any or all Critical Content from any Service,
 except as required by applicable law.
 </li>
 <li>
-<strong>10.3.4.</strong> You understand that by using the
+<strong>9.3.4.</strong> You understand that by using the
 Services you may be exposed to Critical Content or other
 content that you may find offensive or objectionable.
 Elderly shall not be liable for any effect on
@@ -1728,7 +1521,7 @@ published by Users are further detailed in Clauses 5 and
 12 of these Terms.
 </li>
 <li>
-<strong>10.3.5.</strong> Elderly will take down
+<strong>9.3.5.</strong> Elderly will take down
 information under standards consistent with applicable
 law, and shall in no circumstances be liable or
 responsible for Critical Content, which has been created
@@ -1738,7 +1531,7 @@ shall be applicable mutatis mutandis in relation to
 Critical Content posted on the Website.
 </li>
 <li>
-<strong>10.3.6.</strong> If Elderly determines that you
+<strong>9.3.6.</strong> If Elderly determines that you
 have provided inaccurate information or enabled fraudulent
 feedback, Elderly reserves the right to immediately
 suspend any of your accounts with Elderly and makes such
@@ -1749,7 +1542,7 @@ of its business and in the interests of Users.
 </ul>
 </li>
 <li>
-<strong>10.4.</strong> RELEVANCE ALGORITHM
+<strong>9.4.</strong> RELEVANCE ALGORITHM
 <ul>
 <li>
 Elderly has designed the relevance algorithm in the best
@@ -1764,7 +1557,7 @@ in the Relevance Algorithm.
 </ul>
 </li>
 <li>
-<strong>10.5.</strong> INDEPENDENT SERVICES
+<strong>9.5.</strong> INDEPENDENT SERVICES
 <ul>
 <li>
 Your use of each Service confers upon you only the rights
@@ -1774,7 +1567,7 @@ other service that may be provided by Elderly.
 </ul>
 </li>
 <li>
-<strong>10.6.</strong> ELDERLY REACH RIGHTS
+<strong>9.6.</strong> ELDERLY REACH RIGHTS
 <ul>
 <li>
 Elderly reserves the rights to display sponsored ads on
@@ -1796,10 +1589,10 @@ liability for the same.
 </ul>
 </li>
 <li>
-<strong>10.7.</strong> BOOK APPOINTMENT AND CALL FACILITY
+<strong>9.7.</strong> BOOK APPOINTMENT AND CALL FACILITY
 <ul>
 <li>
-<strong>10.7.1.</strong> As a valuable partner on our
+<strong>9.7.1.</strong> As a valuable partner on our
 platform, we want to ensure that the Practitioners
 experience on the Elderly booking platform is beneficial
 to both, Practitioners and their Users. For all terms and
@@ -1807,7 +1600,7 @@ conditions of Book facility on Elderly profile check Book
 Standards.
 </li>
 <li>
-<strong>10.7.2.</strong> Practitioner understands that,
+<strong>9.7.2.</strong> Practitioner understands that,
 Elderly shall not be liable, under any event, for any
 comments or feedback given by any of the Users in relation
 to the Services provided by Practitioner. The option of
@@ -1818,7 +1611,7 @@ Users shall be solely at the discretion of Elderly.
 </ul>
 </li>
 <li>
-<strong>10.8.</strong> PRACTITIONER UNDERTAKING
+<strong>9.8.</strong> PRACTITIONER UNDERTAKING
 <ul>
 <li>
 The Practitioner is and shall be duly registered, licensed
@@ -1836,7 +1629,7 @@ being rendered.
 </ul>
 </li>
 <li>
-<strong>10.9.</strong> USAGE IN PROMOTIONAL &amp; MARKETING
+<strong>9.9.</strong> USAGE IN PROMOTIONAL &amp; MARKETING
 MATERIALS
 <ul class="pl-zero">
 <li>
@@ -1874,10 +1667,10 @@ and promotional materials.
 </ul>
 </div>
 <div class="column-privacy-ploicy">
-<h3>11. RIGHTS AND OBLIGATIONS RELATING TO CONTENT</h3>
+<h3>10. RIGHTS AND OBLIGATIONS RELATING TO CONTENT</h3>
 <ul style="list-style: none">
 <li>
-<strong>11.1.</strong> Prohibited Content:
+<strong>10.1.</strong> Prohibited Content:
 <ul class="pl-zero">
 <li>
 Information that belongs to another person without proper
@@ -1906,7 +1699,7 @@ of India or causing incitement to offense.
 </ul>
 </li>
 <li>
-<strong>11.2.</strong> Additional Prohibitions:
+<strong>10.2.</strong> Additional Prohibitions:
 <ul class="pl-zero">
 <li>
 Violating Elderly's integrity or security, or disrupting
@@ -1931,7 +1724,7 @@ disabling security features.
 </ul>
 </li>
 <li>
-<strong>11.3.</strong> Elderly's Action:
+<strong>10.3.</strong> Elderly's Action:
 <ul class="pl-zero">
 <li>
 Elderly reserves the right to disable or remove prohibited
@@ -1944,7 +1737,7 @@ days for investigation purposes.
 </ul>
 </li>
 <li>
-<strong>11.4.</strong> Non-Compliance:
+<strong>10.4.</strong> Non-Compliance:
 <ul class="pl-zero">
 <li>
 Elderly may terminate access or usage rights and remove
@@ -1953,7 +1746,7 @@ non-compliant information.
 </ul>
 </li>
 <li>
-<strong>11.5.</strong> Data Disclosure:
+<strong>10.5.</strong> Data Disclosure:
 <ul class="pl-zero">
 <li>
 Elderly may disclose user-generated information to
@@ -1967,7 +1760,7 @@ compliance with SPI Rules and user consent.
 </ul>
 </li>
 <li>
-<strong>11.6.</strong> Intellectual Property:
+<strong>10.6.</strong> Intellectual Property:
 <ul class="pl-zero">
 <li>
 Elderly respects intellectual property rights and
@@ -1978,10 +1771,10 @@ disclaims responsibility for violations.
 </ul>
 </div>
 <div class="column-privacy-ploicy">
-<h3>12. TERMINATION</h3>
+<h3>11. TERMINATION</h3>
 <ul style="list-style: none">
 <li>
-<strong>12.1.</strong> Elderly reserves the right to suspend
+<strong>11.1.</strong> Elderly reserves the right to suspend
 or terminate a User’s access to the Elderly and the Services
 with or without notice and to exercise any other remedy
 available under law, in cases where:
@@ -2012,7 +1805,7 @@ the Elderly.
 </ul>
 </li>
 <li>
-<strong>12.2.</strong> Once temporarily suspended,
+<strong>11.2.</strong> Once temporarily suspended,
 indefinitely suspended or terminated, the User may not
 continue to use the Elderly under the same account, a
 different account or re-register under a new account. On
@@ -2026,7 +1819,7 @@ the User’s record keeping process and practices.
 </ul>
 </div>
 <div class="column-privacy-ploicy">
-<h3>13. LIMITATION OF LIABILITY</h3>
+<h3>12. LIMITATION OF LIABILITY</h3>
 <p>
 In no event, including but not limited to negligence, shall
 Elderly, or any of its directors, officers, employees, agents or
@@ -2062,7 +1855,7 @@ Any other matter relating to the Elderly or the Service.
 </ul>
 </div>
 <div class="column-privacy-ploicy">
-<h3>14. RETENTION AND REMOVAL</h3>
+<h3>13. RETENTION AND REMOVAL</h3>
 <p>
 Elderly may retain such information collected from Users from
 its Elderly or Services for as long as necessary, depending on
@@ -2073,15 +1866,15 @@ necessary.
 </p>
 </div>
 <div class="column-privacy-ploicy">
-<h3>15. APPLICABLE LAW AND DISPUTE SETTLEMENT</h3>
+<h3>14. APPLICABLE LAW AND DISPUTE SETTLEMENT</h3>
 <ul style="list-style: none">
 <li>
-<strong>15.1.</strong> You agree that this Agreement and any
+<strong>14.1.</strong> You agree that this Agreement and any
 contractual obligation between Elderly and User will be
 governed by the laws of India.
 </li>
 <li>
-<strong>15.2.</strong> Any dispute, claim or controversy
+<strong>14.2.</strong> Any dispute, claim or controversy
 arising out of or relating to this Agreement, including the
 determination of the scope or applicability of this Agreement
 to arbitrate, or your use of the Elderly or the Services or
@@ -2095,7 +1888,7 @@ be in the English language. The award shall be final and
 binding on the parties to the dispute.
 </li>
 <li>
-<strong>15.3.</strong> Subject to the above Clause 15.2, the
+<strong>14.3.</strong> Subject to the above Clause 14.2, the
 courts at Bengaluru shall have exclusive jurisdiction over any
 disputes arising out of or in relation to this Agreement, your
 use of the Elderly or the Services or the information to which
@@ -2104,10 +1897,10 @@ it gives access.
 </ul>
 </div>
 <div class="column-privacy-ploicy">
-<h3>16. CONTACT INFORMATION GRIEVANCE OFFICER</h3>
+<h3>15. CONTACT INFORMATION GRIEVANCE OFFICER</h3>
 <ul style="list-style: none">
 <li>
-<strong>16.1.</strong> If a User has any questions concerning
+<strong>15.1.</strong> If a User has any questions concerning
 Elderly, this Agreement, the Services, or anything related to
 any of the foregoing, Elderly customer support can be reached
 at the following email address:
@@ -2117,7 +1910,7 @@ hyperlink:
 <a href="https://www.theelderlywellness.com/contact/">www.theelderlywellness.com/contact</a>.
 </li>
 <li>
-<strong>16.2.</strong> In accordance with the Information
+<strong>15.2.</strong> In accordance with the Information
 Technology Act, 2000, and the rules made there under, if you
 have any grievance with respect to the Elderly or the service,
 including any discrepancies and grievances with respect to
@@ -2126,7 +1919,7 @@ Officer through our Contact Us page or write an email to
 <a href="mailto:privacy@theelderlywellness.com">privacy@theelderlywellness.com</a>.
 </li>
 <li>
-<strong>16.3.</strong> In the event you suffer as a result of
+<strong>15.3.</strong> In the event you suffer as a result of
 access or usage of our Elderly by any person in violation of
 Rule 3 of the IG Rules, please address your grievance to the
 above person.
@@ -2134,7 +1927,7 @@ above person.
 </ul>
 </div>
 <div class="column-privacy-ploicy">
-<h3>17. SEVERABILITY</h3>
+<h3>16. SEVERABILITY</h3>
 <p>
 If any provision of the Agreement is held by a court of
 competent jurisdiction or arbitral tribunal to be unenforceable
@@ -2150,7 +1943,7 @@ or arbitral tribunal.
 </p>
 </div>
 <div class="column-privacy-ploicy">
-<h3>18. WAIVER</h3>
+<h3>17. WAIVER</h3>
 <p>
 No provision of this Agreement shall be deemed to be waived and
 no breach excused, unless such waiver or consent shall be in

@@ -3,6 +3,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 import { buildMetadata } from "@/lib/seo";
 import { LegalPage } from "@/components/sections/LegalPage";
+import { SITE_EMAIL, SITE_PHONE, SITE_PHONE_TEL } from "@/data/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Refund and Cancellation Policy | Elderly Wellness",
@@ -343,9 +344,9 @@ occurrences from the provider.
 <ul>
 <li>
 <strong>Email:</strong>
-<a href="mailto:support@theelderlywellness.com">support@theelderlywellness.com</a>
+<a href="mailto:${SITE_EMAIL}">${SITE_EMAIL}</a>
 </li>
-<li><strong>Phone:</strong> +91-99529 77470</li>
+<li><strong>Phone:</strong> <a href="${SITE_PHONE_TEL}">${SITE_PHONE}</a></li>
 <li>
 <strong>Live Chat:</strong> Available on the Elderly app
 </li>

@@ -15,7 +15,7 @@ export const MEDICAL_PROCEDURES: readonly MedicalProcedure[] = [
     desc: "Expert in-home PICC line dressing, heparin flushing, and catheter maintenance care.",
     price: 1350,
     oldPrice: 1500,
-    image: "/images/services/hero/nursing.jpg",
+    image: "/images/services/hero/nursing.webp",
     scopeOfCare: [
       "Expert PICC line dressing",
       "Heparin flushing",
@@ -27,7 +27,7 @@ export const MEDICAL_PROCEDURES: readonly MedicalProcedure[] = [
     title: "Albumin Infusion",
     desc: "Safe in-home human albumin infusion administered by certified clinical nurses.",
     price: 8100,
-    image: "/images/services/hero/nursing.jpg",
+    image: "/images/services/hero/nursing.webp",
     scopeOfCare: [
       "In-home human albumin infusion",
       "Administered by certified nurses",
@@ -39,7 +39,7 @@ export const MEDICAL_PROCEDURES: readonly MedicalProcedure[] = [
     title: "Drug Administration & Injection Service at Home",
     desc: "Safe in-home medication delivery via IV, IM, and subcutaneous routes by certified nurses. Consumables to be charged as per MRP.",
     price: null,
-    image: "/images/services/hero/nursing.jpg",
+    image: "/images/services/hero/nursing.webp",
     scopeOfCare: [
       "Safe in-home medication delivery",
       "IV, IM, and subcutaneous routes",
@@ -51,7 +51,7 @@ export const MEDICAL_PROCEDURES: readonly MedicalProcedure[] = [
     title: "Plasma Infusion",
     desc: "Hospital-grade plasma administration at home with continuous monitoring of vital signs.",
     price: null,
-    image: "/images/services/hero/nursing.jpg",
+    image: "/images/services/hero/nursing.webp",
     scopeOfCare: [
       "Hospital-grade plasma administration",
       "Continuous monitoring of vital signs",
@@ -63,7 +63,7 @@ export const MEDICAL_PROCEDURES: readonly MedicalProcedure[] = [
     title: "Blood Transfusion",
     desc: "Convenient bedside blood product transfusion delivering safe oncotic and anemia support.",
     price: null,
-    image: "/images/services/hero/nursing.jpg",
+    image: "/images/services/hero/nursing.webp",
     scopeOfCare: [
       "Bedside blood product transfusion",
       "Safe oncotic and anemia support",
@@ -75,7 +75,7 @@ export const MEDICAL_PROCEDURES: readonly MedicalProcedure[] = [
     title: "Wound Dressing",
     desc: "Professional bedside wound care by certified nurses. Consumables to be charged as per MRP.",
     price: null,
-    image: "/images/services/hero/nursing.jpg",
+    image: "/images/services/hero/nursing.webp",
     scopeOfCare: [
       "Professional bedside wound care",
       "Cleaning and dressing application",

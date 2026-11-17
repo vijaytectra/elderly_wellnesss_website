@@ -32,7 +32,7 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
       "Personal hygiene and toileting support",
       "Walking, movement and daily activity assistance",
     ],
-    image: "/images/services/hero/post-operative.jpg",
+    image: "/images/new_images/home_page/Post-Operative & Discharge Care at Home.webp",
     imageAlt: "Indian nurse checking blood pressure for an elderly patient at home",
   },
   {
@@ -50,7 +50,7 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
       "Medicine reminders",
       "Companionship and help with daily activities",
     ],
-    image: "/images/services/hero/elderly-care.jpg",
+    image: "/images/new_images/home_page/Elderly Care at Home.webp",
     imageAlt: "Indian caregiver helping an elderly woman walk at home",
   },
   {
@@ -68,7 +68,7 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
       "Catheter, feeding-tube and tracheostomy care",
       "Stroke, paralysis and bedridden patient support",
     ],
-    image: "/images/services/hero/nursing.jpg",
+    image: "/images/new_images/home_page/Critical & Skilled Nursing Support at Home.webp",
     imageAlt: "Indian nurse giving medication to an elderly patient at home",
   },
   {
@@ -86,7 +86,7 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
       "Strength, balance and walking exercises",
       "Mobility training and pain/stiffness management",
     ],
-    image: "/images/services/hero/physiotherapy.jpg",
+    image: "/images/new_images/home_page/Personalised Physiotherapy & Rehabilitation at Home.webp",
     imageAlt: "Indian physiotherapist guiding an elderly woman through exercises at home",
     imagePosition: "object-top",
   },
@@ -105,7 +105,7 @@ export const PRIMARY_SERVICES: readonly PrimaryService[] = [
       "Sample collections (e.g. ABG, GRBS)",
       "Suture removal",
     ],
-    image: "/images/procedures/foley-cath-insertion.jpg",
+    image: "/images/new_images/home_page/Nurse Procedures at Home.webp",
     imageAlt: "Indian nurse preparing equipment at home",
   },
 ] as const;

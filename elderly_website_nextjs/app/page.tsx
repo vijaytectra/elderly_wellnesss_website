@@ -131,7 +131,7 @@ export default function HomePage() {
     <div>
 
       {/* Banner / Hero */}
-      <section className="relative overflow-hidden flex flex-col min-h-[calc(100svh-64px)] pb-20 sm:pb-8 lg:pb-10 pt-3 sm:pt-6 lg:pt-10 lg:justify-center lg:min-h-[calc(100dvh-80px)] before:absolute before:inset-0 before:-z-10 before:bg-[url('/images/blue_dotes.png')] before:bg-no-repeat before:bg-[length:20%] before:bg-[position:-5%_-10%] before:opacity-30">
+      <section className="relative overflow-hidden flex flex-col min-h-[calc(100svh-64px)] pb-20 sm:pb-8 lg:pb-10 pt-3 sm:pt-6 lg:pt-10 lg:justify-center lg:min-h-[calc(100dvh-80px)] before:absolute before:inset-0 before:-z-10 before:bg-[url('/images/blue_dotes.webp')] before:bg-no-repeat before:bg-[length:20%] before:bg-[position:-5%_-10%] before:opacity-30">
         <Container className="w-full flex-1 flex flex-col lg:block">
           <div className="flex-1 flex flex-col lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
             {/* Left side content */}
@@ -211,14 +211,15 @@ export default function HomePage() {
             
             {/* Right side Image (animated e4) */}
             <div className="relative mt-3 sm:mt-4 lg:mt-0 flex-1 flex flex-col min-h-0">
-              <div className="relative w-full flex-1 min-h-[220px] max-h-[460px] lg:min-h-0 lg:max-h-none lg:aspect-[1.15] xl:aspect-[1.25] animate-float z-10 mx-auto max-w-2xl lg:max-w-none">
+              <div className="relative w-full flex-1 min-h-[220px] max-h-[460px] lg:min-h-0 lg:max-h-none lg:aspect-[1.15] xl:aspect-[1.25] lg:animate-float z-10 mx-auto max-w-2xl lg:max-w-none">
                 <Image 
-                  src="/images/e4.jpg" 
+                  src="/images/new_images/home_page/hero_1.webp" 
                   alt="Elderly care" 
                   fill
+                  priority
+                  fetchPriority="high"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
                   className="object-cover object-top rounded-[16px] sm:rounded-[24px] lg:rounded-[60px] shadow-xl lg:shadow-2xl" 
-                  priority
                 />
                 
                 {/* White shape overlapping bottom right with angled text */}
@@ -331,11 +332,11 @@ export default function HomePage() {
             </div>
             <div className="order-1 mx-auto w-full max-w-[280px] sm:max-w-[320px] lg:order-2 lg:max-w-none">
               <Image
-                quality={95}
-                src="/images/appscreen.webp"
+                quality={80}
+                src="/images/new_images/home_page/About us.webp"
                 alt="Elderly Wellness app preview"
-                width={450}
-                height={912}
+                width={320}
+                height={649}
                 sizes="(max-width: 640px) 280px, 320px"
                 className="mx-auto h-auto w-full max-w-[280px] object-contain sm:max-w-[320px]"
               />
@@ -430,11 +431,13 @@ export default function HomePage() {
       {/* Image / banner */}
       <section className="section-y">
         <Container>
-          <Image quality={95}
-            src="/images/e4.jpg"
-            alt="Elderly care family moment"
-            width={1200}
-            height={700}
+          <Image
+            quality={85}
+            src="/images/new_images/home_page/Why choose our app.webp"
+            alt="Elderly Wellness app experience"
+            width={1400}
+            height={783}
+            loading="lazy"
             sizes="(max-width: 1200px) 100vw, 1200px"
             className="h-auto w-full rounded-[var(--radius-lg)] object-cover"
           />
@@ -445,11 +448,12 @@ export default function HomePage() {
       <section className="section-y">
         <Container>
           <div className="mx-auto max-w-[520px] text-center">
-            <Image quality={95}
-              src="/images/downloadScreen.webp"
+            <Image
+              quality={85}
+              src="/images/new_images/home_page/Why choose our app_02.webp"
               alt="Download Elderly Wellness app"
-              width={450}
-              height={440}
+              width={800}
+              height={782}
               sizes="(max-width: 640px) 100vw, 320px"
               className="mx-auto w-full max-w-[320px] object-contain"
             />

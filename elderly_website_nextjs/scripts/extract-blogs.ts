@@ -38,6 +38,16 @@ const SITE_URL_WWW = "https://www.theelderlywellness.com";
 const DEFAULT_OG_IMAGE = "/images/logo.png";
 const DEFAULT_AUTHOR = "Elderly Wellness";
 
+function toWebpIfExists(url: string): string {
+  if (!url) return url;
+  const webpUrl = url.replace(/\.(png|jpe?g)$/i, ".webp");
+  const localPath = resolve(NEXT_APP_ROOT, "public", webpUrl.replace(/^\//, ""));
+  if (existsSync(localPath)) {
+    return webpUrl;
+  }
+  return url;
+}
+
 interface ManifestEntry {
   title: string;
   description: string;
@@ -603,7 +613,7 @@ function main(): void {
       entry.image ??
       DEFAULT_OG_IMAGE;
     // Rewrite relative og:image the same way we rewrite article assets.
-    const ogImage = rewriteUrl(ogImageRaw) || entry.image || DEFAULT_OG_IMAGE;
+    const ogImage = toWebpIfExists(rewriteUrl(ogImageRaw) || entry.image || DEFAULT_OG_IMAGE);
 
     const publishedTime =
       metaContent(root, "article:published_time", "property") ?? entry.date;
@@ -643,7 +653,7 @@ function main(): void {
       slug,
       title,
       description: meta.description,
-      image: entry.image || ogImage,
+      image: toWebpIfExists(entry.image || ogImage),
       publishedTime,
       modifiedTime,
       path: `/blogs/${slug}/`,

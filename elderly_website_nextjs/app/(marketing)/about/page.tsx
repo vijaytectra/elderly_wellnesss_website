@@ -69,7 +69,7 @@ const slides = [
   { src: "/images/abt-slide1.jpg", alt: "Elderly care moment" },
   { src: "/images/abt-slide2.jpg", alt: "Elderly care moment" },
   { src: "/images/abt-slide3.jpg", alt: "Elderly care moment" },
-  { src: "/images/abt-slide4.jpg", alt: "Elderly care moment" },
+  { src: "/images/abt-slide4.webp", alt: "Elderly care moment" },
 ] as const;
 
 interface FaqItem {

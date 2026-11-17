@@ -20,7 +20,7 @@ import Link from "next/link";
 const title = "Medical Procedures at Home";
 const desc = "Apollo HomeCare offers expert medical procedures at home, including injections, catheterization, wound care, and more—delivered by trained professionals in a safe environment.";
 const path = "/medical-procedures-at-home/";
-const image = "/images/services/hero/nursing.jpg";
+const image = "/images/services/hero/nursing.webp";
 
 export const metadata: Metadata = buildMetadata({
   title: "Medical Procedures at Home in Chennai",

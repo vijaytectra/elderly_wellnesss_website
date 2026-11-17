@@ -325,7 +325,7 @@ export default function PostOperativeCarePage() {
         </Container>
       </section>
       <ServiceHero
-        image={SERVICE.image}
+        image="/images/new_images/Post-Operative & Discharge Care at Home in Chennai/Post-Operative & Discharge Care at Home.webp"
         imageAlt={SERVICE.imageAlt}
         headingLead={SERVICE.title}
         headingAccent="Safe Recovery in the Comfort of Home"
@@ -337,7 +337,7 @@ export default function PostOperativeCarePage() {
         heading="What we provide"
         intro="Focused post-operative and discharge support, delivered at home by trained care professionals."
         bullets={whatWeProvideBullets}
-        image="/images/services/info/postop-provide-indian.jpg"
+        image="/images/new_images/Post-Operative & Discharge Care at Home in Chennai/What we provide.webp"
         imageAlt="Indian nurse providing wound dressing care for an elderly patient at home"
       />
 
@@ -345,7 +345,7 @@ export default function PostOperativeCarePage() {
         heading="The Role of Post-Operative Care at Home"
         intro="After surgery or hospital discharge, trained care professionals help patients recover safely at home. They:"
         bullets={roleBullets}
-        image="/images/services/info/postop-role-indian.jpg"
+        image="/images/new_images/Post-Operative & Discharge Care at Home in Chennai/The Role of Post-Operative Care at Home.webp"
         imageAlt="Indian nurse providing wound care for an elderly patient at home"
         reversed
       />
@@ -354,7 +354,7 @@ export default function PostOperativeCarePage() {
         heading="Why Choose Post-Operative Care at Home?"
         intro="Choosing recovery support at home offers these benefits:"
         bullets={whyHomeBullets}
-        image="/images/services/info/why-home-care-indian.jpg"
+        image="/images/new_images/Post-Operative & Discharge Care at Home in Chennai/Why Choose Post-Operative Care at Home.webp"
         imageAlt="Senior receiving caring support at home in India"
       />
 
@@ -362,7 +362,7 @@ export default function PostOperativeCarePage() {
         heading="What to Expect from Post-Operative & Discharge Care at Home?"
         intro="When you arrange post-operative care at home, here’s what you can expect:"
         bullets={expectBullets}
-        image="/images/services/info/care-plan-expect-indian.jpg"
+        image="/images/new_images/Post-Operative & Discharge Care at Home in Chennai/What to Expect from Post-Operative & Discharge Care at Home.webp"
         imageAlt="Indian nurse reviewing a care plan with family at home"
         tinted
       />

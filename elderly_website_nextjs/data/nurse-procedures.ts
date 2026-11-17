@@ -15,7 +15,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     desc: "Professional in-home IM and SC injection administration by certified nursing staff. Consumables will be charged as per MRP.",
     price: 1360,
     oldPrice: 1600,
-    image: "/images/procedures/sc-im-injection-vaccination.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/sc-im-injection-vaccination.webp",
     scopeOfCare: [
       "Clinical assessment before injection administration",
       "Sterile preparation of the injection site",
@@ -30,7 +30,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     desc: "Safe in-home nasogastric Ryle's tube insertion and replacement by certified nurses. Consumables will be charged as per MRP.",
     price: 1275,
     oldPrice: 1500,
-    image: "/images/procedures/ryles-tube-insertion.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/ryles-tube-insertion.webp",
     scopeOfCare: [
       "Patient assessment for contraindications",
       "Measurement and proper insertion of Ryles tube",
@@ -45,7 +45,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     desc: "Safe in-home Foley catheter insertion by certified nurses. Consumables to be charged as per MRP.",
     price: 1530,
     oldPrice: 1800,
-    image: "/images/procedures/foley-cath-insertion.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/foley-cath-insertion.webp",
     scopeOfCare: [
       "Perineal hygiene assessment and preparation",
       "Strict aseptic insertion of Foley catheter",
@@ -60,7 +60,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     desc: "Safe in-home enema administration by certified nurses. Consumables to be charged as per MRP.",
     price: 1530,
     oldPrice: 1800,
-    image: "/images/procedures/enema.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/enema.webp",
     scopeOfCare: [
       "Assessment of patient's bowel habits and medical history",
       "Preparation of enema solution",
@@ -75,7 +75,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     desc: "Safe bedside colostomy bag change and peristomal skin care. Consumables to be charged as per MRP.",
     price: 1700,
     oldPrice: 2000,
-    image: "/images/procedures/colostomy-bag-change.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/colostomy-bag-change.webp",
     scopeOfCare: [
       "Careful removal of existing colostomy bag",
       "Cleaning and inspection of the stoma and peristomal skin",
@@ -89,7 +89,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     title: "IV INJECTION (Cannula already in place)",
     desc: "Safe, sterile home injection administration by certified nurses with vital sign checks.",
     price: null,
-    image: "/images/procedures/iv-injection-cannula-in-place.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/iv-injection-cannula-in-place.webp",
     scopeOfCare: [
       "Verification of the existing cannula patency",
       "Sterile preparation of the injection port",
@@ -103,7 +103,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     title: "General Random Blood Sugar (GRBS)",
     desc: "Accurate in-home random blood sugar testing with sterile lancets and immediate results.",
     price: null,
-    image: "/images/procedures/general-random-blood-sugar-grbs.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/general-random-blood-sugar-grbs.webp",
     scopeOfCare: [
       "Preparation of the testing site",
       "Sterile finger prick using a lancet",
@@ -117,7 +117,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     title: "I/V Cannula Insertion For Antibiotics",
     desc: "Sterile peripheral IV cannula insertion at home by certified nurses. Consumables to be charged as per MRP.",
     price: null,
-    image: "/images/procedures/iv-cannula-insertion-antibiotics.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/iv-cannula-insertion-antibiotics.webp",
     scopeOfCare: [
       "Assessment of suitable veins",
       "Aseptic preparation of the insertion site",
@@ -131,7 +131,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     title: "IV Infusion Cannula already in place",
     desc: "Safe in-home IV infusion via existing cannula by certified nurses. Consumables to be charged as per MRP",
     price: null,
-    image: "/images/procedures/iv-infusion-cannula-in-place.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/iv-infusion-cannula-in-place.webp",
     scopeOfCare: [
       "Checking the patency of the existing cannula",
       "Setting up the IV infusion with correct drip rate",
@@ -145,7 +145,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     title: "ABG COLLECTION",
     desc: "Sterile in-home arterial blood gas sampling by trained nurses. Consumables to be charged as per MRP.",
     price: null,
-    image: "/images/procedures/abg-collection.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/abg-collection.webp",
     scopeOfCare: [
       "Performing the Allen's test to check collateral circulation",
       "Aseptic preparation of the arterial puncture site",
@@ -159,7 +159,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     title: "Chemo Port handling by Nurse",
     desc: "Safe in-home chemo port flushing and Huber needle care. Consumables to be charged as per MRP.",
     price: null,
-    image: "/images/procedures/chemo-port-handling.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/chemo-port-handling-nurse.webp",
     scopeOfCare: [
       "Strict sterile technique preparation",
       "Accessing the chemo port using a Huber needle",
@@ -173,7 +173,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     title: "WOUND DEBRIDMENT",
     desc: "Safe in-home wound debridement by certified nurses. Consumables to be charged as per MRP.",
     price: null,
-    image: "/images/procedures/wound-debridement.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/wound-debridement.webp",
     scopeOfCare: [
       "Comprehensive wound assessment",
       "Preparation of a sterile field",
@@ -187,7 +187,7 @@ export const NURSE_PROCEDURES: readonly NurseProcedure[] = [
     title: "SUTURE REMOVAL",
     desc: "Safe in-home surgical suture and clip removal by trained nurses. Consumables to be charged as per MRP.",
     price: null,
-    image: "/images/procedures/suture-removal.jpg",
+    image: "/images/new_images/Nurse Procedures at Home in Chennai/suture-removal.webp",
     scopeOfCare: [
       "Assessment of wound healing and edge approximation",
       "Sterile cleaning of the suture site",

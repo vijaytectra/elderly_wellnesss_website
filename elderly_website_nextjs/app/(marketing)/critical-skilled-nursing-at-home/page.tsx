@@ -325,7 +325,7 @@ export default function NursingPage() {
         </Container>
       </section>
       <ServiceHero
-        image={SERVICE.image}
+        image="/images/new_images/Critical & Skilled Nursing Support at Home in Chennai/Critical & Skilled Nursing Support at Home.webp"
         imageAlt={SERVICE.imageAlt}
         headingLead={SERVICE.title}
         headingAccent="Clinical Care Without the Hospital"
@@ -337,7 +337,7 @@ export default function NursingPage() {
         heading="What we provide"
         intro="Skilled nursing support for patients who need regular medical care and special attention at home."
         bullets={whatWeProvideBullets}
-        image="/images/services/info/nursing-provide-indian.jpg"
+        image="/images/new_images/Critical & Skilled Nursing Support at Home in Chennai/What we provide.webp"
         imageAlt="Indian nurse preparing medication for an elderly patient at home"
       />
 
@@ -345,7 +345,7 @@ export default function NursingPage() {
         heading="The Role of Critical & Skilled Nursing at Home"
         intro="A skilled nurse provides clinical care for patients with complex medical needs at home. They:"
         bullets={roleBullets}
-        image="/images/services/info/nursing-role-indian.jpg"
+        image="/images/new_images/Critical & Skilled Nursing Support at Home in Chennai/The Role of Critical & Skilled Nursing at Home.webp"
         imageAlt="Indian nurse standing beside the bed explaining medication to an elderly patient"
         reversed
       />
@@ -354,7 +354,7 @@ export default function NursingPage() {
         heading="Why Choose Critical & Skilled Nursing at Home?"
         intro="Choosing skilled nursing at home provides these benefits:"
         bullets={whyHomeBullets}
-        image="/images/services/info/why-home-care-indian.jpg"
+        image="/images/new_images/Critical & Skilled Nursing Support at Home in Chennai/Why Choose Critical & Skilled Nursing at Home.webp"
         imageAlt="Elderly woman receiving compassionate care at home in India"
       />
 
@@ -362,7 +362,7 @@ export default function NursingPage() {
         heading="What to Expect from Critical & Skilled Nursing at Home?"
         intro="When you arrange skilled nursing at home, you can expect:"
         bullets={expectBullets}
-        image="/images/services/info/nursing-expect-indian.jpg"
+        image="/images/new_images/Critical & Skilled Nursing Support at Home in Chennai/What to Expect from Critical & Skilled Nursing at Home.webp"
         imageAlt="Indian nurse checking vitals for an elderly woman at home"
         tinted
       />

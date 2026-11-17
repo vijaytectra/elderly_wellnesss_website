@@ -327,7 +327,7 @@ export default function ElderlyCareAtHomePage() {
         </Container>
       </section>
       <ServiceHero
-        image={SERVICE.image}
+        image="/images/new_images/Elderly Care at Home in Chennai/Elderly Care at Home.webp"
         imageAlt={SERVICE.imageAlt}
         headingLead={SERVICE.title}
         headingAccent="Compassionate Care for Daily Living"
@@ -339,7 +339,7 @@ export default function ElderlyCareAtHomePage() {
         heading="What we provide"
         intro="Day-to-day support that helps seniors stay safe, active and comfortable at home."
         bullets={whatWeProvideBullets}
-        image="/images/services/info/elderly-provide-indian.jpg"
+        image="/images/new_images/Elderly Care at Home in Chennai/What we provide.webp"
         imageAlt="Indian caregiver helping an elderly woman with a meal at home"
       />
 
@@ -347,7 +347,7 @@ export default function ElderlyCareAtHomePage() {
         heading="The Role of Elderly Care at Home"
         intro="An elderly care caregiver plays an important role in helping seniors stay safe, comfortable and engaged at home. They:"
         bullets={roleBullets}
-        image="/images/services/info/elderly-role-indian.jpg"
+        image="/images/new_images/Elderly Care at Home in Chennai/The Role of Elderly Care at Home.webp"
         imageAlt="Indian caregiver helping an elderly man walk with a walker at home"
         reversed
       />
@@ -356,7 +356,7 @@ export default function ElderlyCareAtHomePage() {
         heading="Why Choose Elderly Care at Home?"
         intro="Choosing elderly care at home offers these advantages:"
         bullets={whyHomeBullets}
-        image="/images/services/info/why-home-care-indian.jpg"
+        image="/images/new_images/Elderly Care at Home in Chennai/Why Choose Elderly Care at Home.webp"
         imageAlt="Senior enjoying comfort of home with caregiver support in India"
       />
 
@@ -364,7 +364,7 @@ export default function ElderlyCareAtHomePage() {
         heading="What to Expect from Elderly Care at Home?"
         intro="When you arrange elderly care at home, here’s what you can expect:"
         bullets={expectBullets}
-        image="/images/services/info/care-plan-expect-indian.jpg"
+        image="/images/new_images/Elderly Care at Home in Chennai/What to Expect from Elderly Care at Home.webp"
         imageAlt="Care specialist discussing a home care plan with family"
         tinted
       />

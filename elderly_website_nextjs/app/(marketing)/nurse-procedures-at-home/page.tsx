@@ -24,7 +24,7 @@ export const metadata: Metadata = buildMetadata({
   ogTitle: "Nurse Procedures at Home",
   ogDescription: SERVICE.body,
   path: "/nurse-procedures-at-home/",
-  image: SERVICE.image,
+  image: "/images/new_images/Nurse Procedures at Home in Chennai/Nurse Procedures at Home.webp",
 });
 
 import { NURSE_PROCEDURES } from "@/data/nurse-procedures";
@@ -120,7 +120,7 @@ export default function NurseProceduresPage() {
         </Container>
       </section>
       <ServiceHero
-        image={SERVICE.image}
+        image="/images/new_images/Nurse Procedures at Home in Chennai/Nurse Procedures at Home.webp"
         imageAlt={SERVICE.imageAlt}
         headingLead={SERVICE.title}
         headingAccent="Professional Care at Your Doorstep"

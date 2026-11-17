@@ -30,7 +30,7 @@ export const metadata: Metadata = buildMetadata({
   ogTitle: "Physiotherapy & Rehabilitation at Home",
   ogDescription: SERVICE.body,
   path: "/physiotherapy-rehabilitation-at-home/",
-  image: SERVICE.image,
+  image: "/images/new_images/Personalised Physiotherapy & Rehabilitation at Home in Chennai/Personalised Physiotherapy & Rehabilitation at Home.webp",
 });
 
 const whatWeProvideBullets: readonly ServiceInfoBullet[] = toServiceInfoBullets(
@@ -326,7 +326,7 @@ export default function PhysiotherapyPage() {
         </Container>
       </section>
       <ServiceHero
-        image={SERVICE.image}
+        image="/images/new_images/Personalised Physiotherapy & Rehabilitation at Home in Chennai/Personalised Physiotherapy & Rehabilitation at Home.webp"
         imageAlt={SERVICE.imageAlt}
         headingLead={SERVICE.title}
         headingAccent="Enhance Mobility & Wellness"
@@ -338,7 +338,7 @@ export default function PhysiotherapyPage() {
         heading="What we provide"
         intro="Personalised physiotherapy to improve movement, strength and balance at home."
         bullets={whatWeProvideBullets}
-        image="/images/services/info/physio-provide-indian.jpg"
+        image="/images/new_images/Personalised Physiotherapy & Rehabilitation at Home in Chennai/What we provide.webp"
         imageAlt="Indian physiotherapist guiding an elderly man through shoulder exercises at home"
       />
 
@@ -346,7 +346,7 @@ export default function PhysiotherapyPage() {
         heading="The Role of Physiotherapy & Rehabilitation at Home"
         intro="A physiotherapist helps patients rebuild movement, strength and balance at home. They:"
         bullets={roleBullets}
-        image="/images/services/info/physio-role-indian.jpg"
+        image="/images/new_images/Personalised Physiotherapy & Rehabilitation at Home in Chennai/The Role of Physiotherapy & Rehabilitation at Home.webp"
         imageAlt="Indian physiotherapist guiding an elderly man through seated exercises at home"
         reversed
       />
@@ -355,7 +355,7 @@ export default function PhysiotherapyPage() {
         heading="Why Choose Physiotherapy & Rehabilitation at Home?"
         intro="Home physiotherapy is a convenient, effective way to rebuild strength and mobility. Benefits include:"
         bullets={whyHomeBullets}
-        image="/images/services/info/physio-why-indian.jpg"
+        image="/images/new_images/Personalised Physiotherapy & Rehabilitation at Home in Chennai/Why Choose Physiotherapy & Rehabilitation at Home.webp"
         imageAlt="Elderly man walking with support during home physiotherapy in India"
       />
 
@@ -363,7 +363,7 @@ export default function PhysiotherapyPage() {
         heading="What to Expect from Physiotherapy & Rehabilitation at Home?"
         intro="When you arrange physiotherapy at home, here's what you can expect:"
         bullets={expectBullets}
-        image="/images/services/info/physio-expect-indian.jpg"
+        image="/images/new_images/Personalised Physiotherapy & Rehabilitation at Home in Chennai/What to Expect from Physiotherapy & Rehabilitation at Home.webp"
         imageAlt="Indian physiotherapist helping an elderly woman with balance exercises at home"
         tinted
       />
